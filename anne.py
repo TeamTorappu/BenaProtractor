@@ -172,27 +172,34 @@ class AnneNode:
                 attr_name = read_dictionary("attribute",modify["attributeType"])
                 formula = modify["formulaItem"]
                 value = modify["value"]
-                value_str = ""
+                value_str = str(value)
                 # 获取数据加成/减少的写法
-                if modify["loadFromBlackboard"]: # 读取自黑板，那value本身没用了
-                    value_str = "X"
-                elif modify["fetchBaseValueFromSourceEntity"]: # 自本尊，那value本身没用了
-                    value_str = "(来源同值)"
-                elif formula == "FINAL_SCALER": # yj的小巧思会让终乘在负的情况下+1，实际徒增学习和排错成本
-                    value_str = to_hundred_percent(value,False,True)
-                elif formula == "MULTIPLIER": # 直乘就没有这种小巧思
-                    value_str = to_hundred_percent(value,True)
-                else: # 剩下两个只看正负号
-                    value_str = str(value) if value < 0 else f"+{value}"
+                if modify["loadFromBlackboard"] or modify["fetchBaseValueFromSourceEntity"]: # 读取自黑板或本尊，那value本身没用了，写个未知数
+                    if modify["fetchBaseValueFromSourceEntity"]
+                        value_str = "(来源同值)"
+                    else:
+                        value_str = "X"
+                    #
+                    if formula == "ADDITION":
+                        value_str = "+"+value_str
+                    elif formula == "MULTIPLIER":
+                        value_str = "+"+value_str+"%"
+                    elif formula == "FINAL_ADDITION":
+                        value_str = "+"+value_str+"(终加)"
+                    elif formula == "FINAL_SCALER":
+                        value_str = "×"+value_str+"%(终乘)"
+                else:
+                    if formula == "FINAL_SCALER": # yj的小巧思会让终乘在负的情况下+1，实际徒增学习和排错成本
+                        value_str = to_hundred_percent(value,False,True) + "(终乘)"
+                    elif formula == "MULTIPLIER": # 直乘就没有这种小巧思
+                        value_str = to_hundred_percent(value,True)
+                    elif formula == "ADDITION": # 剩下两个只看正负号
+                        value_str = str(value) if value < 0 else f"+{value}"
+                    elif formula == "FINAL_ADDITION": # 剩下两个只看正负号
+                        value_str = str(value) if value < 0 else f"+{value}"
+                        value_str = value_str + "(终加)"
                 # 根据算法
-                if formula == "ADDITION" :
-                    features.append(attr_name+str(value))
-                elif formula == "MULTIPLIER" :
-                    features.append(attr_name+value_str)
-                elif formula == "FINAL_ADDITION" :
-                    features.append(attr_name+value_str+"(终加)")
-                elif formula == "FINAL_SCALER" :
-                    features.append(attr_name+"×"+value_str+"(终乘)")
+                features.append(attr_name+value_str)
         # 写入results
         if len(features) > 0:
             results.append("提供"+",".join(features))
