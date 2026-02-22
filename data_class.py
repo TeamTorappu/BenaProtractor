@@ -14,6 +14,14 @@ class Node:
         #if node_data.has_key("_buff"):
         #    # 获取子buff
         #    self.node_config["_buff"] = Buff(node_data._buff)
+        if node_name == "IfElse":
+            self.node_data["condition_node"] = Node(node_data["_conditionNode"])
+            self.node_data["succeed_nodes"] = []
+            self.node_data["fail_nodes"] = []
+            for sub_node in node_data["_succeedNodes"]:
+                self.node_data["succeed_nodes"].append(Node(sub_node))
+            for sub_node in node_data["_failNodes"]:
+                self.node_data["fail_nodes"].append(Node(sub_node))
 
 # BuffTemplate类
 class BuffTemplate:

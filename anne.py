@@ -1,5 +1,5 @@
 '''
-安妮的量角器 - 翻译组件
+安妮 - 翻译组件
 将得到的topic类或buff的node类根据翻译数据转写成对应“人类语”
 '''
 import math
@@ -222,6 +222,17 @@ class AnneNode:
         # 返回字符串
         return buff_key+"（"+";".join(results)+"）"
     
+    # 逻辑 如果+否则
+    def node_IfElse(self,node):
+        condition_line = ANNE_NODE.translate(node["condition_node"])
+        success_node_lines = []
+        fail_node_lines = []
+        for sub_node in node["succeed_nodes"]:
+            success_node_lines.append(ANNE_NODE.translate(sub_node))
+        for sub_node in node["fail_nodes"]:
+            fail_node_lines.append(ANNE_NODE.translate(sub_node))
+        return condition_line+"：\n如果是/有/可行/可处理：\n"+"\n".join(success_node_lines)+"\n\n否则：\n"+"\n".join(fail_node_lines)
+    
     # 创建Buff
     def node_CreateBuff(self,node):
         # 未解析参数：_useSpecialBuffSource _specialBuffSource _finishDerivedBuffIfParentFinish
@@ -233,7 +244,7 @@ class AnneNode:
     
     # 否则
     def node_IfNot(self,node):
-        return "若前一个Node不满足，则"
+        return "若没有/不是/不行/无法处理"
     
     # 检查是否持有某Buff
     def node_CheckContainsBuff(self,node):
@@ -243,28 +254,28 @@ class AnneNode:
             if len(node["_buffKeys"]) > 1:
                 if node["_checkBuffSource"]:
                     source_name = self.analyze_target_type(node["_buffSourceType"])
-                    return f"若{target_name}同时持有来自{source_name}的 {'、'.join(node['_buffKeys'])}，则"
+                    return f"检查{target_name}是否同时持有来自{source_name}的 {'、'.join(node['_buffKeys'])}"
                 else:
-                    return f"若{target_name}同时持有 {'、'.join(node['_buffKeys'])}，则"
+                    return f"检查{target_name}是否同时持有 {'、'.join(node['_buffKeys'])}"
             elif len(node["_buffKeys"]) == 1:
                 if node["_checkBuffSource"]:
                     source_name = self.analyze_target_type(node["_buffSourceType"])
-                    return f"若{target_name}持有来自{source_name}的 {node['_buffKeys'][0]}，则"
+                    return f"检查{target_name}是否持有来自{source_name}的 {node['_buffKeys'][0]}"
                 else:
-                    return f"若{target_name}持有 {node['_buffKeys'][0]}，则"
+                    return f"检查{target_name}是否持有 {node['_buffKeys'][0]}"
         else: # 或模式
             if len(node["_buffKeys"]) > 1:
                 if node["_checkBuffSource"]:
                     source_name = self.analyze_target_type(node["_buffSourceType"])
-                    return f"若{target_name}持有来自{source_name}的 {'、'.join(node['_buffKeys'])} 中的任意一个，则"
+                    return f"检查{target_name}是否持有来自{source_name}的 {'、'.join(node['_buffKeys'])} 中的任意一个"
                 else:
-                    return f"若{target_name}持有 {'、'.join(node['_buffKeys'])} 中的任意一个，则"
+                    return f"检查{target_name}是否持有 {'、'.join(node['_buffKeys'])} 中的任意一个"
             elif len(node["_buffKeys"]) == 1:
                 if node["_checkBuffSource"]:
                     source_name = self.analyze_target_type(node["_buffSourceType"])
-                    return f"若{target_name}持有来自{source_name}的 {node['_buffKeys'][0]}，则"
+                    return f"检查{target_name}是否持有来自{source_name}的 {node['_buffKeys'][0]}"
                 else:
-                    return f"若{target_name}持有 {node['_buffKeys'][0]}，则"
+                    return f"检查{target_name}是否持有 {node['_buffKeys'][0]}"
 
         return "（无效节点）"
 
@@ -278,6 +289,13 @@ class AnneNode:
         else:
             owner_name = self.analyze_target_type(node["_ownerType"])
             return f"让{owner_name}向{target_name}触发{ability_name}能力"
+    
+    # 检查阵营
+    def node_CheckCharacterGroupTag(self,node):
+        target_name = self.analyze_target_type(node["_targetType"])
+        group_name = node["_groupTag"] # 需要翻译
+        return f"检查{target_name}是否具有{group_name}阵营标签"
+        
 
 ANNE_NODE = AnneNode()
 #----------------------------------------
@@ -292,6 +310,7 @@ def translate_whole_buff_template(buff_template: BuffTemplate):
     for event in buff_template.events:
         lines.append(f" - 在 {event.event_key} 事件：")
         for node in event.node_list:
-            lines.append(ANNE_NODE.translate(node))
+            line = ANNE_NODE.translate(node)
+            lines += line.splitlines()
         lines.append(f"")
     return lines
