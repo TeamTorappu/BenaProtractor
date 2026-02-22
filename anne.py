@@ -15,6 +15,18 @@ if ANNE_DICTIONARY == None:
     with open(ANNE_DICTIONARY_PATH,'r',encoding="UTF-8") as _f:
         ANNE_DICTIONARY = json.load(_f)
 
+# 任何翻译器的返回数据结构大概都长这样：
+#{
+#    "main" : 核心显示文本,
+#    "description" : [备注(可选)],
+#    "true" : [逻辑真时怎么称呼(可选)],
+#    "false" : [逻辑假时怎么称呼(可选)],
+#    "children" : [
+#        {"main" : ... , "children" : ...},
+#        {"main" : ...}
+#    ],
+#}
+
 # 安妮的节点翻译器
 class AnneNode:
     def __init__(self):
@@ -420,7 +432,7 @@ class AnneNode:
     def node_AtkScaleUp(self,node):
         conditions = []
         result = {
-            "main" : f"攻击力倍率乘以{_defaultValue}倍",
+            "main" : f"攻击力倍率乘以{node['_defaultValue']}倍",
             "description" : f"会读取黑板中的{node['_atkScaleKey']}作为乘数"
         }
         # 筛选目标的攻击方式
@@ -450,12 +462,76 @@ class AnneNode:
         target_name = read_dictionary("target",node["_targetType"])
         action = ""
         if node["_restoreDefault"]:
-            action = "切换至默认模式"
+            action = "切换回默认模式"
         elif node["_loadModeFromBlackboard"]:
             action = "切换至第X号模式"
         else:
             action = f"切换至第{node['_modeIndex']}号模式"
         return {"main" : f"令{target_name}{action}"}
+    
+    # 结束特定Buff(s)
+    def node_FinishBuffsById(self,node):
+        # 未解析参数：_updateOverrideMap _finishHostBuff
+        target_name = read_dictionary("target",node["_targetType"])
+        buff_name = "特定Buff（取决于黑板）" if node["_loadFromBlackboard"] else node["_buffKey"]
+        # 仅限某人的buff
+        if node["_checkBuffSource"]:
+            source_name = read_dictionary("target",node["_sourceType"])
+            if node["_alsoClearNullSource"]:
+                buff_name = "来源于" + source_name + "或无来源的" + buff_name
+            else:
+                buff_name = "来源于" + source_name + "的" + buff_name
+        action = f"结束"
+        if node["_decCntIfStack"]:
+            if node["_decCntKey"] != None:
+                action = f"减少黑板{_decCntKey}值层叠层（变为0层时该Buff结束）"
+            else:
+                action += f"减少{_decCnt}层叠层（变为0层时该Buff结束）"
+        return {"main" : f"令{target_name}身上的{buff_name}{action}"}
+    
+    # “分摊伤害”，实际上是给予其他单位当前伤害的一部分。
+    def node_DamageSplit(self,node):
+        target_name = read_dictionary("target",node["_targetType"])
+        attack_type = read_dictionary("attack_type",node["_attackType"])
+        return {"main" : f"将本次伤害的X%以同类型{attack_type}伤害的形式传递给{target_name}（原伤害不会变化）"}
+    
+    # 伤害倍率
+    def node_DamageScale(self,node):
+        # 未解析参数：_customKey _isValidStackCnt
+        damage_scale = ""
+        action = "提升"
+        # 需要把减伤值改为*(1-X)
+        if node["_isOneMinus"]:
+            damage_scale = "(1-X)"
+            action = "降低"
+        else:
+            damage_scale = "(1+X)"
+        # 根据Buff层数加倍
+        if node["_isStackable"]:
+            damage_scale = f"({damage_scale}×Buff层数)"
+        text = f"令本次伤害{action}至{damage_scale}倍"
+        # 检查伤害类型与施加方式
+        conditions = []
+        if node["_filterDamageType"]:
+            conditions.append("伤害类型为"+read_dictionary("damage_type",node["_damageMask"]))
+        if node["_filterApplyWay"]:
+            if node["_applyWayFilter"] == "NONE":
+                conditions.append("施加方式为无类型施加")
+            elif node["_applyWayFilter"] == "MELEE":
+                conditions.append("施加方式为近战")
+            elif node["_applyWayFilter"] == "RANGED":
+                conditions.append("施加方式为远程")
+        
+        if len(conditions) > 0:
+            text = f"若{'且'.join(conditions)}，{text}"
+        # 差值记录，一般是拿来算“减少部分的伤害”的
+        if node["_cachedDeltaValueToBBKey"]:
+            text += "，并将减少/增加的部分记在黑板上"
+        return {"main" : text}
+        
+    # 创建特效
+    def node_CreateEffect(self,node):
+        return {"main" : "创建特效（暂不翻译）"}
             
     #----------------------------------------
     # 检查类Node
@@ -465,9 +541,10 @@ class AnneNode:
         target_name = read_dictionary("target",node["_targetType"])
         group_name = node["_groupTag"] # 需要翻译
         return {
-            "main" : f"检查{target_name}阵营标签：{group_name}",
-            "true" : f"若为{group_name}阵营",
-            "false" : f"若不为{group_name}阵营"
+            #"main" : f"检查{target_name}阵营标签：{group_name}",
+            "main" : f"检查{target_name}阵营标签",
+            "true" : f"若其为{group_name}阵营",
+            "false" : f"若其不为{group_name}阵营"
         }
     
     # 检查重量
@@ -476,7 +553,8 @@ class AnneNode:
         compare = read_dictionary("compare",node["_condType"])
         compare_not = read_dictionary("compare_not",node["_condType"])
         return {
-            "main" : f"检查{target_name}的重量是否{compare}X",
+            #"main" : f"检查{target_name}的重量是否{compare}X",
+            "main" : f"检查{target_name}的重量",
             "true" : f"若其重量{compare}X",
             "false" : f"若其重量{compare_not}X"
         }

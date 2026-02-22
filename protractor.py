@@ -137,11 +137,11 @@ class Protractor:
             tree_open = True
             if "style_closed" in struct and struct["style_closed"]:
                 tree_open = False
+            if "true" in struct:
+                text += f"，{struct['true']}："
             label = self.display_area.insert(master,"end",text=text,open=tree_open)
             if "description" in struct:
                 self.display_area.insert(label,"end",text=f"（{struct['description']}）",open=tree_open)
-            if "true" in struct:
-                self.display_area.insert(mlabel,"end",text=f"{struct['true']}：",open=tree_open)
             #self.display_area.rowheight(label, self.default_line_height * text.count('\n'))
             if "children" in struct:
                 for child in struct["children"]:
