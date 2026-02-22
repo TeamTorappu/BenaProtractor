@@ -117,7 +117,7 @@ class AnneNode:
         buff_key = buff_data["buffKey"]
         # 读取自数据库，一般是眩晕、寒冷那些，不管他
         if buff_data["loadFromDB"]:
-            return buff_key+"(数据库)"
+            return {"main" : buff_key+"(读取自数据库)"}
         # 开始解析
         results = []
         blackboard = {}
@@ -175,7 +175,7 @@ class AnneNode:
                 value_str = str(value)
                 # 获取数据加成/减少的写法
                 if modify["loadFromBlackboard"] or modify["fetchBaseValueFromSourceEntity"]: # 读取自黑板或本尊，那value本身没用了，写个未知数
-                    if modify["fetchBaseValueFromSourceEntity"]
+                    if modify["fetchBaseValueFromSourceEntity"]:
                         value_str = "(来源同值)"
                     else:
                         value_str = "X"
@@ -361,22 +361,109 @@ class AnneNode:
         return {"main" : "不论前一个节点是否成功，始终继续执行"}
     
     #----------------------------------------
+    # 计算类Node
+    #----------------------------------------
+    # 用各种参数计算黑板值(self,node):
+    def node_CalculateBlackboardValueViaParams(self,node):
+        # 未解析参数：
+        place_name = ""
+        input_key = node["_inputKey"]
+        output_key = node["_outputKey"]
+        formula = input_key
+        # 确认处理上下文
+        if node["_useAbilityBlackboard"] and node["_abilityName"] != "":
+            place_name = f"在能力{node['_abilityName']}的黑板中，"
+        # 解析计算方式
+        if node["_multiplyParamKey"] != None and node["_multiplyParamKey"] != "": # 乘法运算
+            formula += " × " + node["_multiplyParamKey"]
+        if node["_dividedParamKey"] != None and node["_dividedParamKey"] != "": # 除法运算
+            if node["_useRemainder"]: # 取余
+                formula += " rem " + node["_dividedParamKey"]
+            else:
+                formula += " ÷ " + node["_dividedParamKey"]
+        if node["_addParamKey"] != None and node["_addParamKey"] != "": # 加法运算
+            formula += " × " + node["_addParamKey"]
+        if node["_minusParamKey"] != None and node["_minusParamKey"] != "": # 减法运算
+            formula += " × " + node["_minusParamKey"]
+        # 上下限
+        if node["_minValueKey"] != None and node["_minValueKey"] != "": # 下限
+            if node["_maxValueKey"] != None and node["_maxValueKey"] != "":
+                formula = "clamp("+formula+","+node["_minValueKey"]+","+node["_maxValueKey"]+")"
+            else:
+                formula = "max("+formula+","+node["_minValueKey"]+")"
+        elif node["_maxValueKey"] != None and node["_maxValueKey"] != "": # 上限
+            formula = "min("+formula+","+node["_maxValueKey"]+")"
+        # 后续处理
+        if node["_finalAbs"]: # 绝对值
+            formula = "| "+formula+" |"
+        if node["_finalCeil"]: # 向上取整
+            formula += "（向上取整）"
+        elif node["_finalFloor"]: # 向上取整
+            formula += "（向下取整）"
+        elif node["_finalRound"]: # 向上取整
+            formula += "（就近取整，四舍六入五成双）"
+        # 返回完整公式
+        return {"main" : f"{place_name}计算黑板值。将 {output_key} 设置为 {formula}"}
+    
+    # 将召唤物的数量或最大数量记录到黑板中
+    def node_AssignTokenCardCntToBB(self,node):
+        target_name = read_dictionary("target",node["_targetType"])
+        count_key = node["_countKey"]
+        if node["_assignMaxCount"]:
+            return {"main" : f"在黑板上将{target_name}的召唤物最大持有数记录为 {count_key}"}
+        else:
+            return {"main" : f"在黑板上将{target_name}的召唤物当前持有数记录为 {count_key}"}
+    
+    #----------------------------------------
     # 效果类Node
     #----------------------------------------
     # 创建Buff
     def node_CreateBuff(self,node):
         # 未解析参数：_useSpecialBuffSource _specialBuffSource _finishDerivedBuffIfParentFinish
         target_name = read_dictionary("target",node["_buffOwner"])
-        if node["_isDerivedBuff"]:
-            return {
-                "main" : f"为{target_name}创建本Buff的子Buff：",
-                "children" : [self.analyze_buff(node['_buff'])]
-            }
+        buff_name = "Buff"
+        if node["_isDerivedBuff"]: # 属于子Buff
+            buff_name = "本Buff的子Buff"
+        return {
+            "main" : f"为{target_name}创建一个{buff_name}：",
+            "children" : [self.analyze_buff(node['_buff'])]
+        }
+        
+    # 创建Buff，带召唤物主人处理
+    def node_CreateBuffUseHostAsSource(self,node):
+        # 未解析参数：_finishDerivedBuffIfParentFinish
+        target_name = read_dictionary("target",node["_targetType"])
+        source_name = read_dictionary("target",node["_sourceType"])
+        buff_name = "Buff"
+        if node["_isDerivedBuff"]: # 属于子Buff
+            buff_name = "本Buff的子Buff",
+        if node["_createOnTargetHost"]: # 对目标召唤物的本尊
+            target_name = target_name + "(召唤物)的持有者"
+        return {
+            "main" : f"让{source_name}为{target_name}创建一个{buff_name}：",
+            "children" : [self.analyze_buff(node['_buffData'])]
+        }
+    
+    # 结束Buff
+    def node_FinishBuff(self,node):
+        # 未解析参数：_updateOverrideMap
+        if node["_decCntIfStack"]:
+            return {"main" : "此Buff叠层减少一层；若减少至0层则此Buff结束"}
         else:
-            return {
-                "main" : f"为{target_name}创建Buff：",
-                "children" : [self.analyze_buff(node['_buff'])]
-            }
+            return {"main" : "此Buff结束"}
+        
+    # 结束此Buff的所有子Buff
+    def node_FinishDerivedBuff(self,node):
+        # 未解析参数：_updateOverrideMap
+        return {"main" : "结束此Buff的所有子Buff"}
+        
+    # 结束某Buff的所有子Buff
+    def node_FinishDerivedBuffById(self,node):
+        # 未解析参数：_updateOverrideMap _decCntIfStack
+        if node["_decCntIfStack"]:
+            return {"main" : f"结束{node['_buffKey']}的所有无叠层的子Buff；可叠层的子Buff减少一层叠层，若减少至0层则其结束"}
+        else:
+            return {"main" : f"结束{node['_buffKey']}的所有子Buff"}
 
     # 造成无来源伤害
     def node_NoSourceDamage(self,node):
@@ -443,6 +530,14 @@ class AnneNode:
     def node_InterruptTokenSkill(self,node):
         host_name = read_dictionary("target",node["_hostType"])
         return {"main" : f"由{host_name}终止Buff持有者的技能（通常来说，持有者应该是{host_name}的召唤物）"}
+    
+    # 补充召唤物数量
+    def node_RechargeToken(self,node):
+        # 未解析参数：_rechargeTiming
+        if node["_refreshRemainingCnt"]:
+            return {"main" : "将Buff持有者的召唤物数量恢复至默认值"}
+        else:
+            return {"main" : f"根据黑板上 {node['_cntKey']} 的数值，为Buff持有者补充召唤物（不会超过上限）"}
     
     # 临时提升攻击力倍率
     def node_AtkScaleUp(self,node):
@@ -544,6 +639,11 @@ class AnneNode:
         if node["_cachedDeltaValueToBBKey"]:
             text += "，并将减少/增加的部分记在黑板上"
         return {"main" : text}
+        
+    # 播放音效
+    def node_PlayAudio(self,node):
+        target_name = read_dictionary("target",node["_target"])
+        return {"main" : f"让{target_name}播放音效 {node['_audioSignal']}"}
         
     # 创建特效
     def node_CreateEffect(self,node):
