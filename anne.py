@@ -10,11 +10,13 @@ ANNE_NODE = None
 # 安妮的节点翻译器
 class AnneNode:
     def __init__(self):
-        print("安妮的节点翻译器已创建")
+        print("[安妮]嗯。")
         
     # 翻译重定向器，本质switch case
+    # 翻译返回的结果始终是一行可供阅读的string
     def translate(self,node):
         node_name = node.node_name
+        print(f"[安妮]尝试翻译节点 {node_name}")
         method = getattr(self, "node_"+node_name, "")
         if method != "":
             return method(node.node_data)
@@ -302,6 +304,7 @@ ANNE_NODE = AnneNode()
 #以下是供调用的方法
 
 def translate_whole_buff_template(buff_template: BuffTemplate):
+    print("[安妮]尝试翻译Buff模板 "+buff_template.buff_key)
     lines = [
         buff_template.buff_key+"：",
         "事件优先级："+buff_template.on_event_priority,
