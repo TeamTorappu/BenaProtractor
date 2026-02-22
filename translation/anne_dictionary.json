@@ -153,5 +153,20 @@
 		"IS_ENVIRONMENT_ELEMENT_DAMAGE" : "环境元素损伤",
 		"SKIP_MODIFIER_CONSIDER_UNHURTABLE" : "类强制生命流失(无计算/事件，无法取消)",
 		"IS_NOT_CHANGEABLE_VALUE_MODIFIER" : "无法被其他方式增/减/免伤"
+	},
+	"profession" : {
+		"PIONEER" : "先锋",
+		"WARRIOR" : "近卫",
+		"TANK" : "重装",
+		"SNIPER" : "狙击",
+		"CASTER" : "术士",
+		"SUPPORT" : "辅助",
+		"MEDIC" : "医疗",
+		"SPECIAL" : "特种",
+		"TOKEN" : "召唤物",
+		"TRAP" : "装置"
+	},
+	"sub_profession" : {
+		"" : ""
 	}
 }

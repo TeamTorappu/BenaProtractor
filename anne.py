@@ -7,6 +7,7 @@ import math
 from data_class import *
 
 ANNE_NODE = None
+ANNE_RELIC = None
 ANNE_DICTIONARY_PATH = "./translation/anne_dictionary.json"
 ANNE_DICTIONARY = None
 
@@ -27,7 +28,11 @@ if ANNE_DICTIONARY == None:
 #    ],
 #}
 
+'''
+#----------------------------------------
 # 安妮的节点翻译器
+#----------------------------------------
+'''
 class AnneNode:
     def __init__(self):
         print("[安妮]嗯。")
@@ -40,14 +45,14 @@ class AnneNode:
             print(f"[安妮]尝试翻译节点 {node_name}")
             method = getattr(self, "node_"+node_name, "")
             if method != "" :
-                return method(node.node_data)
-            # 无法翻译，把所有数据搓成可阅读的格式
-            node.translation = {
-                "main" : node_name+"（未翻译）",
-                "style_closed" : True,
-                "children" : [{"main": str(key) + " : "+str(content)} for key,content in node.node_data.items()]
-            }
-            
+                node.translation = method(node.node_data)
+            else: # 无法翻译，把所有数据搓成可阅读的格式
+                node.translation = {
+                    "main" : node_name+"（未翻译）",
+                    "style_closed" : True,
+                    "children" : [{"main": str(key) + " : "+str(content)} for key,content in node.node_data.items()]
+                }
+        # 返回译文
         return node.translation
     
 
@@ -167,21 +172,27 @@ class AnneNode:
                 attr_name = read_dictionary("attribute",modify["attributeType"])
                 formula = modify["formulaItem"]
                 value = modify["value"]
-                if formula == "FINAL_SCALER" and value < 0: # yj的小巧思，实际徒增学习和排错成本
-                    value = value + 1
+                value_str = ""
+                # 获取数据加成/减少的写法
                 if modify["loadFromBlackboard"]: # 读取自黑板，那value本身没用了
-                    value = "X"
-                if modify["fetchBaseValueFromSourceEntity"]: # 自本尊，那value本身没用了
-                    value = "(来源同值)"
+                    value_str = "X"
+                elif modify["fetchBaseValueFromSourceEntity"]: # 自本尊，那value本身没用了
+                    value_str = "(来源同值)"
+                elif formula == "FINAL_SCALER": # yj的小巧思会让终乘在负的情况下+1，实际徒增学习和排错成本
+                    value_str = to_hundred_percent(value,False,True)
+                elif formula == "MULTIPLIER": # 直乘就没有这种小巧思
+                    value_str = to_hundred_percent(value,True)
+                else: # 剩下两个只看正负号
+                    value_str = str(value) if value < 0 else f"+{value}"
                 # 根据算法
                 if formula == "ADDITION" :
-                    features.append(attr_name+"+"+str(value))
+                    features.append(attr_name+str(value))
                 elif formula == "MULTIPLIER" :
-                    features.append(attr_name+"+"+str(value)+"%")
+                    features.append(attr_name+value_str)
                 elif formula == "FINAL_ADDITION" :
-                    features.append(attr_name+"+"+str(value)+"(最终)")
+                    features.append(attr_name+value_str+"(终加)")
                 elif formula == "FINAL_SCALER" :
-                    features.append(attr_name+"×"+str(value)+"%(最终)")
+                    features.append(attr_name+"×"+value_str+"(终乘)")
         # 写入results
         if len(features) > 0:
             results.append("提供"+",".join(features))
@@ -269,14 +280,14 @@ class AnneNode:
                 max_stack = buff_data['maxStackCnt']
                 if buff_data["refreshRemainingTimeWhenStackMax"]:
                     if buff_data["clearAllStackCntWhenTimeUp"]:
-                        results.append(f"可叠加{max_stack}(叠满后仅刷新时间，到时间一次掉完)")
+                        results.append(f"可叠加{max_stack}，叠满后仅刷新时间，到时间时Buff直接结束")
                     else:
-                        results.append(f"可叠加{max_stack}(叠满后仅刷新时间，一层一层掉)")
+                        results.append(f"可叠加{max_stack}，叠满后仅刷新时间，到时间降低一层并刷新时间")
                 else:
                     if buff_data["clearAllStackCntWhenTimeUp"]:
-                        results.append(f"可叠加{max_stack}(叠满后无法再施加，到时间一次掉完)")
+                        results.append(f"可叠加{max_stack}，叠满后无法再施加，到时间时Buff直接结束")
                     else:
-                        results.append(f"可叠加{max_stack}(叠满后无法再施加，一层一层掉)")
+                        results.append(f"可叠加{max_stack}，叠满后无法再施加，到时间降低一层并刷新时间")
                 
             elif buff_data["overrideType"] == "EXTEND" :
                 if buff_data["takeSnapshotWhenExtend"]:
@@ -318,29 +329,29 @@ class AnneNode:
         if "false" in struct:
              false_flag = struct["false"]+"："
              struct.pop("false") # 因为IfElse只影响内圈，对外圈逻辑不影响
-        success_node_lines = []
-        fail_node_lines = []
-        for sub_node in node["succeed_nodes"]:
-            success_node_lines.append(ANNE_NODE.translate(sub_node))
-        for sub_node in node["fail_nodes"]:
-            fail_node_lines.append(ANNE_NODE.translate(sub_node))
         if "children" not in struct:
             struct["children"] = []
-        struct["children"] += [
-                {
-                    "main" : true_flag,
-                    "children" : success_node_lines
-                },
-                {
-                    "main" : false_flag,
-                    "children" : fail_node_lines
-                }
-            ]
+        # 成功时执行的节点
+        success_node_lines = []
+        if len(node["succeed_nodes"]) > 0:
+            for sub_node in node["succeed_nodes"]:
+                success_node_lines.append(ANNE_NODE.translate(sub_node))
+            struct["children"].append({"main" : true_flag,"children" : success_node_lines})
+        # 失败时执行的节点
+        fail_node_lines = []
+        if len(node["succeed_nodes"]) > 0:
+            for sub_node in node["fail_nodes"]:
+                fail_node_lines.append(ANNE_NODE.translate(sub_node))
+            struct["children"].append({"main" : false_flag,"children" : fail_node_lines})
         return struct
     
     # 否则（但不在这里翻译）
     def node_IfNot(self,node):
         return {"main" : "否则"}
+    
+    # 始终执行
+    def node_AlwaysNext(self,node):
+        return {"main" : "不论前一个节点是否成功，始终继续执行"}
     
     #----------------------------------------
     # 效果类Node
@@ -371,11 +382,9 @@ class AnneNode:
         source_name = read_dictionary("target",node["_sourceType"])
         target_name = read_dictionary("target",node["_targetType"])
         damage_name = self.analyze_damage(node) # 直接把整个node传参进去
-        default_atk_scale = node["_defaultAtkScale"] * 100
-        if default_atk_scale == math.floor(default_atk_scale):
-            default_atk_scale = int(default_atk_scale)
+        default_atk_scale = to_hundred_percent(node["_defaultAtkScale"])
         return {
-            "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}%{damage_name}",
+            "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}{damage_name}",
             "description" : f"会读取黑板中的{node['_atkScaleVar']}作为攻击力倍率使用"
         }
         
@@ -484,9 +493,9 @@ class AnneNode:
         action = f"结束"
         if node["_decCntIfStack"]:
             if node["_decCntKey"] != None:
-                action = f"减少黑板{_decCntKey}值层叠层（变为0层时该Buff结束）"
+                action = f"减少黑板{node['_decCntKey']}值层叠层（变为0层时该Buff结束）"
             else:
-                action += f"减少{_decCnt}层叠层（变为0层时该Buff结束）"
+                action += f"减少{node['_decCnt']}层叠层（变为0层时该Buff结束）"
         return {"main" : f"令{target_name}身上的{buff_name}{action}"}
     
     # “分摊伤害”，实际上是给予其他单位当前伤害的一部分。
@@ -604,10 +613,120 @@ class AnneNode:
             }
         else:
             return {"main" : "（无效节点）"}
+
+'''
+#----------------------------------------
+# 安妮的藏品翻译器
+#----------------------------------------
+'''
+class AnneRelic:
+    def __init__(self):
+        print("[安妮]好的。")
+        
+    # 翻译重定向器，本质switch case
+    # 翻译返回的结果始终是一层一层的结构体
+    def translate(self,rogue_effect):
+        if rogue_effect.translation == None:
+            effect_key = rogue_effect.key
+            print(f"[安妮]尝试翻译藏品效果 {effect_key}")
+            # 全局buff有二级结构所以拆开来解析
+            if effect_key == "global_buff_normal": 
+                buff_key = rogue_effect.blackboard["key"] # 这个才是buff的名字
+                method = getattr(self, "gbn_"+buff_key, "")
+                if method != "" :
+                    rogue_effect.translation = method(rogue_effect.blackboard)
+                    return rogue_effect.translation
+                else: # 无法翻译，把所有数据搓成可阅读的格式
+                    rogue_effect.translation = {
+                        "main" : "常规全局Buff - "+buff_key+"（未翻译）",
+                        "style_closed" : True,
+                        "children" : []
+                    }
+                    for key,bb in rogue_effect.blackboard.items():
+                        rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
+            else: # 其他的效果
+                method = getattr(self, "rogue_"+effect_key, "")
+                if method != "" :
+                    rogue_effect.translation = method(rogue_effect.blackboard)
+                    return rogue_effect.translation
+                else: # 无法翻译，把所有数据搓成可阅读的格式
+                    rogue_effect.translation = {
+                        "main" : effect_key+"（未翻译）",
+                        "style_closed" : True,
+                        "children" : []
+                    }
+                    for key,bb in rogue_effect.blackboard.items():
+                        rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
+        # 返回译文
+        return rogue_effect.translation
     
-    # 检查
+    # 职业筛选的处理
+    # 返回字符串。说明筛选的职业以及“干员”和“召唤物”这样的称呼
+    def analyze_profession(self,profession_mask):
+        profession_mask = profession_mask.upper()
+        if "," in profession_mask:
+            masked_list = profession.split(",")
+            # 如果大于等于8职业的话有可能是用于筛所有干员的，进行缩减处理
+            if len(masked_list) >= 8 and "PIONEER" in masked_list and "WARRIOR" in masked_list and "TANK" in masked_list and "SNIPER" in masked_list and "CASTER" in masked_list and "SUPPORT" in masked_list and "MEDIC" in masked_list and "SPECIAL" in masked_list:
+                    if "TOKEN" in masked_list and "TRAP" in masked_list:
+                        return "干员、召唤物、装置"
+                    elif "TOKEN" in masked_list:
+                        return "干员、召唤物"
+                    else: #elif "TRAP" in masked_list:
+                        return "干员、装置"
+            else:
+                professions = []
+                objects = []
+                for masked in masked_list:
+                    if mask in ["TOKEN","TRAP"]:
+                        objects.append(read_dictionary("profession",mask))
+                    else:
+                        professions.append(read_dictionary("profession",mask))
+                return "、".join(["/".join(professions)+"干员"] + objects)
+    
+    #----------------------------------------
+    # 普通效果
+    #----------------------------------------
+    def rogue_char_attribute_mul(self,blackboard):
+        modifiers = []
+        if "max_hp" in blackboard:
+            power = to_hundred_percent(blackboard["max_hp"],True)
+            modifiers.append(f"最大生命值{sign}{power}(藏品符文)")
+        if "atk" in blackboard:
+            power = to_hundred_percent(blackboard["atk"],True)
+            modifiers.append(f"攻击力{sign}{power}(藏品符文)")
+        if "def" in blackboard:
+            power = to_hundred_percent(blackboard["def"],True)
+            modifiers.append(f"防御力{sign}{power}(藏品符文)")
+        if "magic_resistance" in blackboard:
+            power = to_hundred_percent(blackboard["magic_resistance"],True)
+            modifiers.append(f"法术抗性{sign}{power}(藏品符文)")
+        # 职业筛选处理，没有默认全部我方单位
+        if "profession" in blackboard:
+            target_name = analyze_profession(blackboard.profession)
+            return {"main" : "我方"+target_name+"、".join(modifiers)}
+        return {"main" : "全部我方单位"+"、".join(modifiers)}
+    
+    #----------------------------------------
+    # 常规全局Buff的拆分解析（gbn）
+    #----------------------------------------
+    # 敌方最大生命值最终下降
+    def gbn_enemy_max_hp_down(self,blackboard):
+        power = to_hundred_percent(blackboard["max_hp"],False,True)
+        return {"main" : f"常规全局Buff - 敌方最大生命值×{power}"}   
+
+    # 敌方防御力最终下降
+    def gbn_enemy_def_down(self,blackboard):
+        power = to_hundred_percent(blackboard["def"],False,True)
+        return {"main" : f"常规全局Buff - 敌方防御力×{power}"}
+
+    # 敌方攻击力最终下降
+    def gbn_enemy_atk_down(self,blackboard):
+        power = to_hundred_percent(blackboard["atk"],False,True)
+        return {"main" : f"常规全局Buff - 敌方防御力×{power}"}
 
 ANNE_NODE = AnneNode()
+ANNE_RELIC = AnneRelic()
 #----------------------------------------
 #以下是供调用的方法
 #----------------------------------------
@@ -617,7 +736,31 @@ ANNE_NODE = AnneNode()
 def read_dictionary(catalogue,type_str):
     return ANNE_DICTIONARY[catalogue].get(type_str,type_str)
 
-# 翻译一整个Buff Template
+# 将数值加成改成+/-百分比格式，如果结尾是.0还会自动删去
+# 可以要求提供正负符号，当然负数本来就有符号。
+def to_hundred_percent(power_value,need_sign=False,negative_need_plus_one=False):
+    percent_value = power_value * 100
+    # 如果为负则加一的可选项
+    if negative_need_plus_one and percent_value < 0:
+        percent_value += 100
+    # 去无意义小数
+    if percent_value == math.floor(percent_value): 
+        percent_value = int(percent_value)
+    # 检查正负
+    if need_sign:
+        # 提供符号
+        if percent_value < 0:
+            return str(percent_value)+"%"
+        else:
+            return "+"+str(percent_value)+"%"
+    else:
+        # 不提供符号，外部应该会自己加上符号，因此负数要打个括号
+        if percent_value < 0:
+            return "("+str(percent_value)+")%"
+        else:
+            return str(percent_value)+"%"
+
+# 翻译一整个BuffTemplate
 def translate_whole_buff_template(buff_template: BuffTemplate):
     print("[安妮]尝试翻译Buff模板 "+buff_template.buff_key)
     translation = {
@@ -651,4 +794,37 @@ def translate_whole_buff_template(buff_template: BuffTemplate):
             else:
                 event_translation["children"].append(ANNE_NODE.translate(node))
         translation["children"].append(event_translation)
+    return translation
+
+# 翻译一整个RogueItem
+def translate_whole_rogue_item(rogue_item: RogueItem):
+    print("[安妮]尝试翻译肉鸽道具 "+rogue_item.item_key)
+    translation = {
+        "main" : f"{rogue_item.display_name}（{rogue_item.item_key}）",
+        "children" : []
+    }
+    # 展示原始的文案
+    translation["children"].append({"main" : rogue_item.item_info["description"]})
+    translation["children"].append({"main" : "类型:"+rogue_item.display_type})
+    translation["children"].append({"main" : "稀有度:"+rogue_item.item_info["rarity"]}) # 需翻译
+    # 翻译藏品效果
+    if rogue_item.is_relic:
+        #原文
+        effect_origin = {
+            "main" : "藏品鹰文：",
+            "children": []
+        }
+        useage_lines = rogue_item.item_info["usage"].splitlines()
+        for useage_line in useage_lines:
+            effect_origin["children"].append({"main" : useage_line})
+        translation["children"].append(effect_origin)
+        #翻译后
+        effect_translation = {
+            "main" : "藏品效果：",
+            "children" : []
+        }
+        # 逐个效果翻译
+        for effect in rogue_item.effect_list:
+            effect_translation["children"].append(ANNE_RELIC.translate(effect))
+        translation["children"].append(effect_translation)
     return translation
