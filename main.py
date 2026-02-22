@@ -9,8 +9,8 @@ from protractor import PROTRACTOR
 
 if __name__ == "__main__":
     bena.load_buff_template_data()
-    bena.load_roguelike_topic_table()
     PROTRACTOR.load_directory("buff_template",bena.BUFF_TEMPLATE_DATA)
+    bena.load_roguelike_topic_table()
     PROTRACTOR.load_directory("rogue_item",bena.ROGUELIKE_TOPIC_TABLE["rogue_5"])
     PROTRACTOR.open()
     # 随便挑一个来测试

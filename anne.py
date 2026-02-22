@@ -808,7 +808,7 @@ def translate_whole_rogue_item(rogue_item: RogueItem):
     translation["children"].append({"main" : "类型:"+rogue_item.display_type})
     translation["children"].append({"main" : "稀有度:"+rogue_item.item_info["rarity"]}) # 需翻译
     # 翻译藏品效果
-    if rogue_item.is_relic:
+    if rogue_item.has_effect:
         #原文
         effect_origin = {
             "main" : "藏品鹰文：",

@@ -29,7 +29,7 @@ def load_buff_template_data():
     for buff_template_key in json_data.keys():
         BUFF_TEMPLATE_KEYS.append(buff_template_key)
         BUFF_TEMPLATE_DATA[buff_template_key] = BuffTemplate(buff_template_key,json_data[buff_template_key])
-        print(f"[贝娜]已读取 {buff_template_key}")
+        print(f"[贝娜]已读取Buff模板 {buff_template_key}")
     print(f"[贝娜]已完成对buff_template_data.json的读取！")
 
 # 读取roguelike_topic_table.json，并解析
@@ -48,17 +48,18 @@ def load_roguelike_topic_table():
             print(f"[贝娜]找不到肉鸽季度"+season)
             continue
         # 读取藏品数据
-        relic_data = season_data.get("relics",{})
-        item_data = season_data.get("items",{})
-        for item_key,item_info in item_data.items():
+        item_data = season_data.get("relics",{})
+        item_list = season_data.get("items",{})
+        for item_key,item_info in item_list.items():
             item_name = item_info["name"]
-            if item_key in relic_data: # 有藏品数据，说明是藏品
-                item = RogueItem(season,item_key,item_info,relic_data[item_key])
+            if item_key in item_data: # 有藏品数据，说明是藏品或者类似的东西
+                item = RogueItem(season,item_key,item_info,item_data[item_key])
                 ROGUELIKE_TOPIC_KEYS.append(season+"|"+item_key)
                 ROGUELIKE_TOPIC_TABLE[season][item_key] = item
                 print(f"[贝娜]已读取肉鸽藏品 {item_name}（{item_key}）")
-            else:
-                item = RogueItem(season,item_key,item_info)
-                ROGUELIKE_TOPIC_KEYS.append(season+"|"+item_key)
-                ROGUELIKE_TOPIC_TABLE[season][item_key] = item
-                print(f"[贝娜]已读取其他肉鸽物品 {item_name}（{item_key}）")
+            #else: 非藏品先不显示了
+            #    item = RogueItem(season,item_key,item_info)
+            #    ROGUELIKE_TOPIC_KEYS.append(season+"|"+item_key)
+            #    ROGUELIKE_TOPIC_TABLE[season][item_key] = item
+            #    print(f"[贝娜]已读取其他肉鸽物品 {item_name}（{item_key}）")
+    print(f"[贝娜]已完成对roguelike_topic_table.json的读取！")

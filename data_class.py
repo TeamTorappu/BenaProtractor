@@ -83,19 +83,17 @@ class RogueBuffData:
 
 # 肉鸽的道具类，可能是藏品，可能是资源，甚至可能是排异反应/岁时之类的东西
 class RogueItem:
-    def __init__(self, season, item_key, item_info, relic_data=None):
+    def __init__(self, season, item_key, item_info, item_data=None):
         self.item_key = item_key
         self.item_info = item_info
-        self.relic_data = relic_data
+        self.item_data = item_data
         self.season = season
         self.display_name = item_info["name"]
         self.type = item_info["type"]
         self.display_type = ""
-        self.is_relic = False
         # 处理分类显示
         if self.type == "RELIC":
             self.display_type = "藏品"
-            self.is_relic = True
         elif self.type == "BAND":
             self.display_type = "分队"
         elif self.type == "RECRUIT_TICKET":
@@ -104,11 +102,16 @@ class RogueItem:
             self.display_type = "进阶券"
         elif self.type == "ACTIVE_TOOL":
             self.display_type = "支援装置"
+        elif self.type == "FEATURE":
+            self.display_type = "精通"
+        elif self.type == "COPPER_BUFF":
+            self.display_type = "钱"
         else:
             self.display_type = "鸽物"
-        # 如果是藏品，读取持有的buff数据
-        if self.is_relic and relic_data != None and "buffs" in relic_data:
-            self.is_relic = True
-            self.effect_list = []
-            for buff in relic_data["buffs"]:
+        # 如果是藏品或者类藏品，读取持有的buff数据
+        self.effect_list = []
+        self.has_effect = False
+        if item_data != None and "buffs" in item_data:
+            self.has_effect = True
+            for buff in item_data["buffs"]:
                 self.effect_list.append(RogueBuffData(buff))
