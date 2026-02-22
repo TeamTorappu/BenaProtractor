@@ -15,7 +15,7 @@ def load_buff_template_table():
     print(f"[贝娜]开始读取buff_template_table.json")
     json_data = {}
     # 获取文件数据
-    with open(BUFF_TEMPLATE_TABLE_PATH, 'r') as _f:
+    with open(BUFF_TEMPLATE_TABLE_PATH,'r',encoding="UTF-8") as _f:
         json_data = json.load(_f)
     # 开始解析
     for buff_template_key in json_data.keys():

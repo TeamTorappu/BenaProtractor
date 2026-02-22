@@ -2,10 +2,18 @@
 安妮 - 翻译组件
 将得到的topic类或buff的node类根据翻译数据转写成对应“人类语”
 '''
+import json
 import math
 from data_class import *
 
 ANNE_NODE = None
+ANNE_DICTIONARY_PATH = "./translation/anne_dictionary.json"
+ANNE_DICTIONARY = None
+
+# 读取字典数据
+if ANNE_DICTIONARY == None:
+    with open(ANNE_DICTIONARY_PATH,'r',encoding="UTF-8") as _f:
+        ANNE_DICTIONARY = json.load(_f)
 
 # 安妮的节点翻译器
 class AnneNode:
@@ -13,25 +21,81 @@ class AnneNode:
         print("[安妮]嗯。")
         
     # 翻译重定向器，本质switch case
-    # 翻译返回的结果始终是一行可供阅读的string
+    # 翻译返回的结果始终是一层一层的结构体
     def translate(self,node):
         node_name = node.node_name
-        print(f"[安妮]尝试翻译节点 {node_name}")
-        method = getattr(self, "node_"+node_name, "")
-        if method != "":
-            return method(node.node_data)
-        return node_name+"(无法翻译)"
+        if node.translation == None:
+            print(f"[安妮]尝试翻译节点 {node_name}")
+            method = getattr(self, "node_"+node_name, "")
+            if method != "" :
+                return method(node.node_data)
+            # 无法翻译，把所有数据搓成可阅读的格式
+            node.translation = {
+                "main" : node_name+"（未翻译）",
+                "style_closed" : True,
+                "children" : [{"main": str(key) + " : "+str(content)} for key,content in node.node_data.items()]
+            }
+            
+        return node.translation
     
-    # 解析对象类型的信息
-    def analyze_target_type(self,type_str):
-        if type_str == "BUFF_OWNER":
-            return "持有者"
-        elif type_str == "BUFF_SOURCE":
-            return "来源"
-        else:
-            return type_str
 
-    # 解析子Buff的详细信息
+    # 统一解析伤害类的详细信息
+    # 返回字符串
+    def analyze_damage(self,damage_data,prefix="",suffix=""):
+        features = []
+        # 伤害类型
+        damage_type = damage_data["_damageType"]
+        damage_type_name = read_dictionary("damage_type",damage_type)
+        # 攻击类型
+        attack_type = "NONE"
+        if "_attackType" in damage_data:
+            attack_type = damage_data["_attackType"]
+        attack_type_name = read_dictionary("attack_type",attack_type)
+        # 来源处理
+        if "_noSource" in damage_data and damage_data["_noSource"]:
+            prefix += "无来源的"
+        elif "_onlyUseSourceOnCalculateDamage" in damage_data and damage_data["_onlyUseSourceOnCalculateDamage"]:
+            features.append("仅在计算伤害时使用来源处理")
+        # 特征处理
+        if "_ignoreForSp" in damage_data and damage_data["_ignoreForSp"]:
+            features.append("不触发受击回复")
+        if "_forceUseProjectileCachedAtk" in damage_data and damage_data["_forceUseProjectileCachedAtk"]:
+            features.append("强制使用弹道的缓存攻击力")
+        elif "_getCachedAtkFromBlackboard" in damage_data and damage_data["_getCachedAtkFromBlackboard"]:
+            if "_cachedAtkKey" in damage_data:
+                features.append(f"使用黑板中({damage_data['_cachedAtkKey']})作为缓存攻击力")
+        # 各种SharedFlags处理（两种写法都有，因此两种写法都判断一遍）
+        if "_skipModifierEvent" in damage_data and damage_data["_skipModifierEvent"]:
+            features.append("类生命流失(无计算/事件)")
+        if "_isEnvDamage" in damage_data and damage_data["_isEnvDamage"]:
+            features.append("环境伤害")
+        if "_isUndeadable" in damage_data and damage_data["_isUndeadable"]:
+            features.append("不会致命")
+        if "_isUndeadable" in damage_data and damage_data["_instantKillLikeDamage"]:
+            features.append("类斩杀伤害")
+        if "_isNotChangeableValue" in damage_data and damage_data["_isNotChangeableValue"]:
+            features.append("无法被其他方式增/减/免伤")
+        if "_setSharedFlag" in damage_data and damage_data["_setSharedFlag"]:
+            if "_sharedFlagIndex" in damage_data:
+                shared_flag_name = read_dictionary("sharedflag",damage_data["_sharedFlagIndex"])
+                if shared_flag_name not in features:
+                    features.append(shared_flag_name)
+        # 疑似是火陈的小巧思，限定伤害类型的无视闪避
+        if "_ignoreMissFlag" in damage_data and damage_data["_ignoreMissFlag"] != "NONE":
+            features.append("无视"+read_dictionary("damage_type",damage_data["_ignoreMissFlag"])+"闪避")
+        # 乘以黑板值
+        if "_multiplierByKey" in damage_data and damage_data["_multiplierByKey"]:
+            if "_multiplierKey" in damage_data and damage_data["_multiplierKey"]:
+                features.append("乘以黑板值"+damage_data["_multiplierKey"])
+        # 无视闪避/格挡那些的掩码，不过yj只用几个特定掩码，所以没必要做掩码解析
+        if "_ignoreCancelReasonMask" in damage_data and damage_data["_ignoreCancelReasonMask"] != "NONE":
+            features.append("无视"+read_dictionary("cancel_reason",damage_data["_ignoreCancelReasonMask"]))
+        if len(features) > 0:
+            suffix += "（"+";".join(features)+"）"
+        return prefix+damage_type_name+attack_type_name+"伤害"+suffix
+        
+    # 统一解析Buff的详细信息
+    # 返回结构体
     def analyze_buff(self,buff_data):
         buff_key = buff_data["buffKey"]
         # 读取自数据库，一般是眩晕、寒冷那些，不管他
@@ -43,7 +107,7 @@ class AnneNode:
         has_resistable_flag = False
         
         # 检查模板
-        if buff_data["templateKey"] != "empty":
+        if buff_data["templateKey"] != "empty" :
             results.append(f"使用{buff_data['templateKey']}模板")
         # 检查黑板
         if buff_data["blackboard"] and len(buff_data["blackboard"]) > 0:
@@ -60,7 +124,7 @@ class AnneNode:
         # 异常效果
         if len(attrs["abnormalFlags"]) > 0:
             for flag in attrs["abnormalFlags"]:
-                flag_name = flag  # 待翻译
+                flag_name = read_dictionary("abnormal",flag)
                 features.append(flag_name)
                 # 包含可抵抗状态
                 if flag in ["STUNNED","COLD","FROZEN"]:
@@ -68,27 +132,27 @@ class AnneNode:
         # 异常免疫
         if len(attrs["abnormalImmunes"]) > 0:
             for flag in attrs["abnormalImmunes"]:
-                flag_name = flag  # 待翻译
+                flag_name = read_dictionary("abnormal",flag)
                 features.append(flag_name+"免疫")
         # 异常反制
         if len(attrs["abnormalAntis"]) > 0:
             for flag in attrs["abnormalAntis"]:
-                flag_name = flag  # 待翻译
+                flag_name = read_dictionary("abnormal",flag)
                 features.append(flag_name+"反制")
         # 异常组合
         if len(attrs["abnormalCombos"]) > 0:
             for combo in attrs["abnormalCombos"]:
-                combo_name = combo  # 待翻译
+                combo_name = read_dictionary("abnormal",combo)
                 features.append(combo_name)
         # 异常组合免疫
         if len(attrs["abnormalImmunes"]) > 0:
             for combo in attrs["abnormalImmunes"]:
-                combo_name = combo  # 待翻译
+                combo_name = read_dictionary("abnormal",combo)
                 features.append(combo_name+"免疫")
         # 属性加成（四 则 运 算）
         if len(attrs["attributeModifiers"]) > 0:
             for modify in attrs["attributeModifiers"]:
-                attr_name = modify["attributeType"]  # 待翻译
+                attr_name = read_dictionary("attribute",modify["attributeType"])
                 formula = modify["formulaItem"]
                 value = modify["value"]
                 if formula == "FINAL_SCALER" and value < 0: # yj的小巧思，实际徒增学习和排错成本
@@ -96,16 +160,16 @@ class AnneNode:
                 if modify["loadFromBlackboard"]: # 读取自黑板，那value本身没用了
                     value = "X"
                 if modify["fetchBaseValueFromSourceEntity"]: # 自本尊，那value本身没用了
-                    value = "N"
+                    value = "(来源同值)"
                 # 根据算法
-                if formula == "ADDITION":
+                if formula == "ADDITION" :
                     features.append(attr_name+"+"+str(value))
-                elif formula == "MULTIPLIER":
+                elif formula == "MULTIPLIER" :
                     features.append(attr_name+"+"+str(value)+"%")
-                elif formula == "FINAL_ADDITION":
-                    features.append(attr_name+"++"+str(value))
-                elif formula == "FINAL_SCALER":
-                    features.append(attr_name+"x"+str(value)+"%")
+                elif formula == "FINAL_ADDITION" :
+                    features.append(attr_name+"+"+str(value)+"(最终)")
+                elif formula == "FINAL_SCALER" :
+                    features.append(attr_name+"×"+str(value)+"%(最终)")
         # 写入results
         if len(features) > 0:
             results.append("提供"+",".join(features))
@@ -131,23 +195,23 @@ class AnneNode:
         if buff_data["statusResistable"] == "YES" or (buff_data["statusResistable"] == "AUTOMATIC" and has_resistable_flag):
             results.append("可抵抗")
         # 处理覆盖时使用的Key
-        if buff_data["overrideKey"] and buff_data["overrideKey"] != "empty":
+        if buff_data["overrideKey"] and buff_data["overrideKey"] != "empty" :
             results.append(f"处理覆盖时视为{buff_data['overrideKey']}") 
         # 覆写事件优先级
         if buff_data["overrideOnEventPriority"]:
             results.append(f"事件优先级覆写为{buff_data['onEventPriority']}")
         # 持续时间配置
-        if buff_data["lifeTimeType"] == "INFINITY":
+        if buff_data["lifeTimeType"] == "INFINITY" :
             results.append("永久")
-        elif buff_data["lifeTimeType"] == "LIMITED":
-            if buff_data["durationKey"] != "none":
+        elif buff_data["lifeTimeType"] == "LIMITED" :
+            if buff_data["durationKey"] != "none" :
                 results.append(f"持续({buff_data['durationKey']})秒")
             elif buff_data["lifeTime"] == 0.0:
                 results.append("持续一瞬间")
             else:
                 results.append(f"持续{str(buff_data['lifeTime'])}秒")
         # 触发配置
-        if buff_data["triggerLifeType"] == "IMMEDIATELY": # 立即触发或不触发
+        if buff_data["triggerLifeType"] == "IMMEDIATELY" : # 立即触发或不触发
             if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
                 ticks = math.ceil(buff_data['firstTriggerInterval'] * 30)
                 results.append(f"{ticks}帧后触发")
@@ -156,7 +220,7 @@ class AnneNode:
                 results.append(f"{ticks}帧后触发")
             #else:
             #    results.append("立即触发")
-        elif buff_data["triggerLifeType"] == "INFINITY": # 无限次触发
+        elif buff_data["triggerLifeType"] == "INFINITY" : # 无限次触发
             if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
                 start_ticks = buff_data["firstTriggerInterval"]
                 if buff_data["triggerInterval"] >= 0:
@@ -167,7 +231,7 @@ class AnneNode:
             elif buff_data["triggerInterval"] >= 0:
                 ticks = math.ceil(buff_data['triggerInterval'] * 30)
                 results.append(f"每{ticks}帧触发一次")
-        elif buff_data["triggerLifeType"] == "LIMITED": # 有限次触发
+        elif buff_data["triggerLifeType"] == "LIMITED" : # 有限次触发
             if buff_data["triggerCnt"] > 1:
                 trigget_cnt = buff_data["triggerCnt"]
                 if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
@@ -188,8 +252,8 @@ class AnneNode:
                     ticks = math.ceil(buff_data['triggerInterval'] * 30)
                     results.append(f"{ticks}帧后触发")
         # 叠加类型配置
-        if buff_data["overrideType"] != "DEFAULT":
-            if buff_data["overrideType"] == "STACK":
+        if buff_data["overrideType"] != "DEFAULT" :
+            if buff_data["overrideType"] == "STACK" :
                 max_stack = buff_data['maxStackCnt']
                 if buff_data["refreshRemainingTimeWhenStackMax"]:
                     if buff_data["clearAllStackCntWhenTimeUp"]:
@@ -202,7 +266,7 @@ class AnneNode:
                     else:
                         results.append(f"可叠加{max_stack}(叠满后无法再施加，一层一层掉)")
                 
-            elif buff_data["overrideType"] == "EXTEND":
+            elif buff_data["overrideType"] == "EXTEND" :
                 if buff_data["takeSnapshotWhenExtend"]:
                     results.append(f"重复施加时仅延长原有Buff并更新数据")
                 else:
@@ -221,99 +285,292 @@ class AnneNode:
         # 最后写入黑板数据
         if len(blackboard) > 0:
             results.append(str(blackboard))
-        # 返回字符串
-        return buff_key+"（"+";".join(results)+"）"
+        # 返回buff的各项属性
+        return {
+            "main" : buff_key, # 可能需翻译
+            "description" : ";".join(results)
+        }
     
+    #----------------------------------------
+    # 逻辑类Node（都需要特别处理）
+    #----------------------------------------
     # 逻辑 如果+否则
     def node_IfElse(self,node):
-        condition_line = ANNE_NODE.translate(node["condition_node"])
+        # 判断节点
+        struct = ANNE_NODE.translate(node["condition_node"])
+        true_flag = "如果是/有/可行/可处理："
+        false_flag = "如果不是/没有/不可行/无法处理："
+        if "true" in struct:
+             true_flag = struct["true"]+"："
+             struct.pop("true") # 因为IfElse只影响内圈，对外圈逻辑不影响
+        if "false" in struct:
+             false_flag = struct["false"]+"："
+             struct.pop("false") # 因为IfElse只影响内圈，对外圈逻辑不影响
         success_node_lines = []
         fail_node_lines = []
         for sub_node in node["succeed_nodes"]:
             success_node_lines.append(ANNE_NODE.translate(sub_node))
         for sub_node in node["fail_nodes"]:
             fail_node_lines.append(ANNE_NODE.translate(sub_node))
-        return condition_line+"：\n如果是/有/可行/可处理：\n"+"\n".join(success_node_lines)+"\n\n否则：\n"+"\n".join(fail_node_lines)
+        if "children" not in struct:
+            struct["children"] = []
+        struct["children"] += [
+                {
+                    "main" : true_flag,
+                    "children" : success_node_lines
+                },
+                {
+                    "main" : false_flag,
+                    "children" : fail_node_lines
+                }
+            ]
+        return struct
     
+    # 否则（但不在这里翻译）
+    def node_IfNot(self,node):
+        return {"main" : "否则"}
+    
+    #----------------------------------------
+    # 效果类Node
+    #----------------------------------------
     # 创建Buff
     def node_CreateBuff(self,node):
         # 未解析参数：_useSpecialBuffSource _specialBuffSource _finishDerivedBuffIfParentFinish
-        target_name = self.analyze_target_type(node["_buffOwner"])
+        target_name = read_dictionary("target",node["_buffOwner"])
         if node["_isDerivedBuff"]:
-            return f"为{target_name}创建本Buff的子Buff：{self.analyze_buff(node['_buff'])}"
+            return {
+                "main" : f"为{target_name}创建本Buff的子Buff：",
+                "children" : [self.analyze_buff(node['_buff'])]
+            }
         else:
-            return f"为{target_name}创建Buff：{self.analyze_buff(node['_buff'])}"
-    
-    # 否则
-    def node_IfNot(self,node):
-        return "若没有/不是/不行/无法处理"
-    
-    # 检查是否持有某Buff
-    def node_CheckContainsBuff(self,node):
-        # 未解析参数：_loadFromBlackboard _checkSourceHost
-        target_name = self.analyze_target_type(node["_targetType"])
-        if node["isAND"]: # 与模式
-            if len(node["_buffKeys"]) > 1:
-                if node["_checkBuffSource"]:
-                    source_name = self.analyze_target_type(node["_buffSourceType"])
-                    return f"检查{target_name}是否同时持有来自{source_name}的 {'、'.join(node['_buffKeys'])}"
-                else:
-                    return f"检查{target_name}是否同时持有 {'、'.join(node['_buffKeys'])}"
-            elif len(node["_buffKeys"]) == 1:
-                if node["_checkBuffSource"]:
-                    source_name = self.analyze_target_type(node["_buffSourceType"])
-                    return f"检查{target_name}是否持有来自{source_name}的 {node['_buffKeys'][0]}"
-                else:
-                    return f"检查{target_name}是否持有 {node['_buffKeys'][0]}"
-        else: # 或模式
-            if len(node["_buffKeys"]) > 1:
-                if node["_checkBuffSource"]:
-                    source_name = self.analyze_target_type(node["_buffSourceType"])
-                    return f"检查{target_name}是否持有来自{source_name}的 {'、'.join(node['_buffKeys'])} 中的任意一个"
-                else:
-                    return f"检查{target_name}是否持有 {'、'.join(node['_buffKeys'])} 中的任意一个"
-            elif len(node["_buffKeys"]) == 1:
-                if node["_checkBuffSource"]:
-                    source_name = self.analyze_target_type(node["_buffSourceType"])
-                    return f"检查{target_name}是否持有来自{source_name}的 {node['_buffKeys'][0]}"
-                else:
-                    return f"检查{target_name}是否持有 {node['_buffKeys'][0]}"
+            return {
+                "main" : f"为{target_name}创建Buff：",
+                "children" : [self.analyze_buff(node['_buff'])]
+            }
 
-        return "（无效节点）"
-
+    # 造成无来源伤害
+    def node_NoSourceDamage(self,node):
+        damage_name = self.analyze_damage(node,"无来源的") # 直接把整个node传参进去
+        return {"main" : "对持有者造成X点"+damage_name}
+        
+    # 造成伤害
+    def node_AdvancedApplyDamage(self,node):
+        # 未解析参数：_modifierKey _emitSourceOnCalculateDamage
+        source_name = read_dictionary("target",node["_sourceType"])
+        target_name = read_dictionary("target",node["_targetType"])
+        damage_name = self.analyze_damage(node) # 直接把整个node传参进去
+        default_atk_scale = node["_defaultAtkScale"] * 100
+        if default_atk_scale == math.floor(default_atk_scale):
+            default_atk_scale = int(default_atk_scale)
+        return {
+            "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}%{damage_name}",
+            "description" : f"会读取黑板中的{node['_atkScaleVar']}作为攻击力倍率使用"
+        }
+        
     # 触发某个能力
     def node_TriggerAbility(self,node):
         # 未解析参数：_checkCanUseAblityFlag
-        target_name = self.analyze_target_type(node["_targetType"])
+        target_name = read_dictionary("target",node["_targetType"])
         ability_name = node["_abilityName"]
         if node["_ownerType"] == node["_targetType"]:
-            return f"让{target_name}触发{ability_name}能力"
+            return {"main" :f"让{target_name}触发{ability_name}能力"}
         else:
-            owner_name = self.analyze_target_type(node["_ownerType"])
-            return f"让{owner_name}向{target_name}触发{ability_name}能力"
+            owner_name = read_dictionary("target",node["_ownerType"])
+            return {"main" :f"让{owner_name}向{target_name}触发{ability_name}能力"}
     
+    # 格挡/护盾/屏障（还得具体情况具体分析）
+    def node_BlockDamage(self,node):
+        # 未解析参数：_useSource _sourceType
+        #source_name = read_dictionary("target",node["_sourceType"])
+        name = "处理概率格挡/计次护盾效果"
+        features = []
+        # 使用动态值，说明是屏障
+        if node["_useDynamicVar"]:
+            name = "处理屏障效果"
+            if node["_allowNegativeDynamicVar"]:
+                features.append("允许负屏障值")
+            if node["_showShieldUI"]:
+                features.append("在血条上显示屏障值")
+        elif node["_useFixedValue"]: # 使用定值，说明是林式阈值盾
+            name = "处理干员林的阈值格挡效果"
+        if node["_showDamageNumber"]:
+            features.append("即使成功格挡也显示伤害数值")
+        if node["_specifyBlockEffect"] != None:
+            features.append("使用格挡特效"+node["_specifyBlockEffect"])
+        # 检查伤害的施加方式
+        if node["_filterApplyWay"]:
+            if node["_applyWayFilter"] == "NONE": # 仅无类型
+                features.append("仅格挡施加方式为“无”的伤害")
+            elif node["_applyWayFilter"] == "MELEE": # 无类型与近战
+                features.append("仅格挡施加方式为“近战”或“无”的伤害")
+            elif node["_applyWayFilter"] == "RANGED": # 无类型与远程
+                features.append("仅格挡施加方式为“远程”或“无”的伤害")
+            #elif node["_applyWayFilter"] == "ALL": # 全部都可以就不用写了
+        if len(features) > 0:
+            return {"main" : name + "（"+",".join(features)+"）"}
+        else:
+            return {"main" : name}
+    
+    # 中断召唤物的技能(self,node):
+    def node_InterruptTokenSkill(self,node):
+        host_name = read_dictionary("target",node["_hostType"])
+        return {"main" : f"由{host_name}终止Buff持有者的技能（通常来说，持有者应该是{host_name}的召唤物）"}
+    
+    # 临时提升攻击力倍率
+    def node_AtkScaleUp(self,node):
+        conditions = []
+        result = {
+            "main" : f"攻击力倍率乘以{_defaultValue}倍",
+            "description" : f"会读取黑板中的{node['_atkScaleKey']}作为乘数"
+        }
+        # 筛选目标的攻击方式
+        if node["_filterApplyWay"]:
+            if node["_applyWay"] == "NONE" and node["_filterNoneApplyWay"]:
+                conditions.append("目标攻击方式为\"不攻击\"或未标注攻击方式") # 存疑
+            elif node["_applyWay"] == "NONE":
+                conditions.append("目标攻击方式为\"不攻击\"")
+            elif node["_applyWay"] == "MELEE":
+                conditions.append("目标攻击方式为\"近战\"")
+            elif node["_applyWay"] == "RANGED":
+                conditions.append("目标攻击方式为\"远程\"")
+        # 筛选弹道Key
+        if node["_filterProjectileKey"] != "":
+            conditions.append(f"伤害来自{node['_filterProjectileKey']}弹道")
+        # 写入条件
+        if len(conditions) > 0:
+            result["main"] = "若"+"且".join(conditions)+"，"+result["main"]
+        # 乘后若攻击倍率为0时，取消本次伤害
+        if node["_cancelIfAtkScaleZero"]:
+            result["description"] += "；若乘算后本次伤害的攻击力倍率为0，则取消此次伤害"
+        return result
+    
+    # 切换模式
+    def node_SwitchMode(self,node):
+        # 未解析参数：_restartFSM
+        target_name = read_dictionary("target",node["_targetType"])
+        action = ""
+        if node["_restoreDefault"]:
+            action = "切换至默认模式"
+        elif node["_loadModeFromBlackboard"]:
+            action = "切换至第X号模式"
+        else:
+            action = f"切换至第{node['_modeIndex']}号模式"
+        return {"main" : f"令{target_name}{action}"}
+            
+    #----------------------------------------
+    # 检查类Node
+    #----------------------------------------
     # 检查阵营
     def node_CheckCharacterGroupTag(self,node):
-        target_name = self.analyze_target_type(node["_targetType"])
+        target_name = read_dictionary("target",node["_targetType"])
         group_name = node["_groupTag"] # 需要翻译
-        return f"检查{target_name}是否具有{group_name}阵营标签"
-        
+        return {
+            "main" : f"检查{target_name}阵营标签：{group_name}",
+            "true" : f"若为{group_name}阵营",
+            "false" : f"若不为{group_name}阵营"
+        }
+    
+    # 检查重量
+    def node_FilterByTargetMassLevel(self,node):
+        target_name = read_dictionary("target",node["_target"])
+        compare = read_dictionary("compare",node["_condType"])
+        compare_not = read_dictionary("compare_not",node["_condType"])
+        return {
+            "main" : f"检查{target_name}的重量是否{compare}X",
+            "true" : f"若其重量{compare}X",
+            "false" : f"若其重量{compare_not}X"
+        }
+
+    # 检查是否持有某Buff
+    def node_CheckContainsBuff(self,node):
+        # 未解析参数：_loadFromBlackboard _checkSourceHost
+        target_name = read_dictionary("target",node["_targetType"])
+        condition = f"检查{target_name}是否"
+        true_flag = "若其持有"
+        false_flag = "若其没有"
+        if node["isAND"]: # 与模式
+            if len(node["_buffKeys"]) > 1:
+                if node["_checkBuffSource"]:
+                    source_name = read_dictionary("target",node["_buffSourceType"])
+                    condition += f"同时持有来自{source_name}的 {'、'.join(node['_buffKeys'])}"
+                else:
+                    condition += f"同时持有 {'、'.join(node['_buffKeys'])}"
+                true_flag = "若其全部持有"
+                false_flag = "若其少了其中任意一个"
+            elif len(node["_buffKeys"]) == 1:
+                if node["_checkBuffSource"]:
+                    source_name = read_dictionary("target",node["_buffSourceType"])
+                    condition += f"持有来自{source_name}的 {node['_buffKeys'][0]}"
+                else:
+                    condition += f"持有 {node['_buffKeys'][0]}"
+        else: # 或模式
+            if len(node["_buffKeys"]) > 1:
+                if node["_checkBuffSource"]:
+                    source_name = read_dictionary("target",node["_buffSourceType"])
+                    condition += f"持有来自{source_name}的 {'、'.join(node['_buffKeys'])} 中的任意一个"
+                else:
+                    condition += f"持有 {'、'.join(node['_buffKeys'])} 中的任意一个"
+                true_flag = "若其持有其中任意一个"
+                false_flag = "若其全部都没有"
+            elif len(node["_buffKeys"]) == 1:
+                if node["_checkBuffSource"]:
+                    source_name = read_dictionary("target",node["_buffSourceType"])
+                    condition += f"持有来自{source_name}的 {node['_buffKeys'][0]}"
+                else:
+                    condition += f"持有 {node['_buffKeys'][0]}"
+        if condition != "" :
+            return {
+                "main" : condition,
+                "true" : true_flag,
+                "false" : false_flag
+            }
+        else:
+            return {"main" : "（无效节点）"}
+    
+    # 检查
 
 ANNE_NODE = AnneNode()
 #----------------------------------------
 #以下是供调用的方法
+#----------------------------------------
 
+# 查字典方法
+# 如果查不到会返回原文
+def read_dictionary(catalogue,type_str):
+    return ANNE_DICTIONARY[catalogue].get(type_str,type_str)
+
+# 翻译一整个Buff Template
 def translate_whole_buff_template(buff_template: BuffTemplate):
     print("[安妮]尝试翻译Buff模板 "+buff_template.buff_key)
-    lines = [
-        buff_template.buff_key+"：",
-        "事件优先级："+buff_template.on_event_priority,
-        ""
-    ]
+    translation = {
+        "main" : buff_template.buff_key,
+        "children" : []
+    }
+    if buff_template.on_event_priority != "DEFAULT":
+        translation["description"] = "事件优先级："+buff_template.on_event_priority
+    # 逐个事件进行翻译
     for event in buff_template.events:
-        lines.append(f" - 在 {event.event_key} 事件：")
+        event_key = event.event_key
+        event_name = read_dictionary("event",event_key)
+        event_translation = {
+            "main" : f"{event_name}（{event_key}）",
+            "children" : []
+        }
+        # 逐个节点翻译
         for node in event.node_list:
-            line = ANNE_NODE.translate(node)
-            lines += line.splitlines()
-        lines.append(f"")
-    return lines
+            # 特别处理一下这个Node：IfNot，效果是反转前面的处理状态
+            if len(event_translation["children"]) > 0 and node.node_name == "IfNot" :
+                if "true" in event_translation["children"][-1] and "false" in event_translation["children"][-1]:
+                    true_flag = event_translation["children"][-1]["true"]
+                    false_flag = event_translation["children"][-1]["false"]
+                    event_translation["children"][-1]["true"] = false_flag
+                    event_translation["children"][-1]["false"] = true_flag
+                elif "true" in event_translation["children"][-1]:
+                    event_translation["children"][-1]["false"] = event_translation["children"][-1]["true"] 
+                    event_translation["children"][-1]["true"] = "若非\""+event_translation["children"][-1]["true"]+"\"" 
+                else: # 拿来检查前面处理不了？
+                    event_translation["children"].append({"main" : "若前面的逻辑无法处理"})
+            else:
+                event_translation["children"].append(ANNE_NODE.translate(node))
+        translation["children"].append(event_translation)
+    return translation

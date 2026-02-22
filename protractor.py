@@ -3,6 +3,7 @@
 '''
 import tkinter as tk
 from tkinter import ttk
+from tkinter import font
 import os
 import bena
 import anne
@@ -16,6 +17,7 @@ class Protractor:
         self.window = tk.Tk()
         self.window.geometry("800x600")
         self.window.title('贝娜的量角器')
+        self.style = ttk.Style()
         self.frame = ttk.Frame(self.window, padding=10)
         self.frame.pack(fill="both",expand=True)
         # 控制区域
@@ -29,18 +31,33 @@ class Protractor:
         self.search_entry.pack(fill="x",side="top")
         self.searching = False
         self.directory = ttk.Treeview(self.control_panel,selectmode="browse",show="tree")
-        self.directory_scrollbar = ttk.Scrollbar(self.control_panel,orient=tk.VERTICAL,command=self.directory.yview)
-        self.directory.configure(yscrollcommand=self.directory_scrollbar.set)
-        self.directory_scrollbar.pack(fill="y",side="left")
-        self.directory.bind('<ButtonRelease-1>',self.display)
+        self.directory_scrollbar_x = ttk.Scrollbar(self.control_panel,orient=tk.HORIZONTAL,command=self.directory.yview)
+        self.directory_scrollbar_y = ttk.Scrollbar(self.control_panel,orient=tk.VERTICAL,command=self.directory.yview)
+        self.directory.configure(xscrollcommand=self.directory_scrollbar_x.set)
+        self.directory.configure(yscrollcommand=self.directory_scrollbar_y.set)
+        self.directory_scrollbar_x.pack(fill="x",side="bottom")
+        self.directory_scrollbar_y.pack(fill="y",side="left")
+        self.directory.bind('<ButtonRelease-1>',self.display_directory_selected_item)
         self.directory.pack(fill="both",expand=True)
         # 核心区域
         self.main_panel = ttk.Frame(self.frame)
         self.main_panel.pack(fill="both",expand=True)
         # 显示
-        self.display_area = ttk.Treeview(self.main_panel,selectmode="browse")
+        self.display_area = ttk.Treeview(self.main_panel,selectmode="browse",show="tree")
+        self.display_area_scrollbar_x = ttk.Scrollbar(self.main_panel,orient=tk.HORIZONTAL,command=self.display_area.xview)
+        self.display_area_scrollbar_y = ttk.Scrollbar(self.main_panel,orient=tk.VERTICAL,command=self.display_area.yview)
+        self.display_area.configure(xscrollcommand=self.display_area_scrollbar_x.set)
+        self.display_area.configure(yscrollcommand=self.display_area_scrollbar_y.set)
+        self.display_area_scrollbar_x.pack(fill="x",side="bottom")
+        self.display_area_scrollbar_y.pack(fill="y",side="right")
+        self.display_area.bind('<ButtonRelease-1>',self.display_area_copy)
         self.display_area.pack(fill="both",expand=True)
         self.displaying = ""
+        # 默认行高
+        font_name = self.style.lookup("Treeview", "font")
+        if not font_name:
+            font_name = "TkDefaultFont"
+        self.default_line_height = font.nametofont(font_name).metrics("linespace")
     
     # 定义目录物品类
     # 可选类型有：buff_template buff relic
@@ -59,7 +76,6 @@ class Protractor:
         # 显示元素，带双向链接
         def view(self,tree_view):
             label = tree_view.insert("","end",text=self.display_name,values=(self.index))#,open=True
-            #label.link = self
             
     # 读取列表
     def load_directory(self,data_type,data_list):
@@ -95,24 +111,59 @@ class Protractor:
         #except:
         #    print("[量角器]尝试搜索，但是失败了。")
     
-    # 展示内容（使用安妮来翻译）
-    def display(self,event=None):
+    # 展示选择查看的内容（使用安妮来翻译）
+    def display_directory_selected_item(self,event=None):
         selected = self.directory.selection()
         if selected:
             linked_index = int(self.directory.item(selected[0],"values")[0])
             linked = self.directory_items[linked_index]
             if self.displaying != linked.data_reference: #如果相同说明是同一个，不需要显示
                 self.displaying = linked.data_reference
+                # 读取贝娜解析的数据
+                if linked.data_type == "buff_template":
+                    data = bena.BUFF_TEMPLATE_TABLE[linked.data_reference]
+                    if data:
+                        # 使用安妮进行翻译
+                        translation = anne.translate_whole_buff_template(data)
+                        self.display(translation)
+    
+    # 将结构体展示至展示区
+    def display(self,struct,master=""):
+        if master == "":
             self.display_area.set_children([])
-            # 使用贝娜解析的数据
-            if linked.data_type == "buff_template":
-                data = bena.BUFF_TEMPLATE_TABLE[linked.data_reference]
-                if data:
-                    # 使用安妮进行翻译
-                    lines = anne.translate_whole_buff_template(data)
-                    for line in lines:
-                        #print(line)
-                        label = self.display_area.insert("","end",text=line)
+        # 递归处理
+        if "main" in struct:
+            text = struct["main"]
+            tree_open = True
+            if "style_closed" in struct and struct["style_closed"]:
+                tree_open = False
+            label = self.display_area.insert(master,"end",text=text,open=tree_open)
+            if "description" in struct:
+                self.display_area.insert(label,"end",text=f"（{struct['description']}）",open=tree_open)
+            if "true" in struct:
+                self.display_area.insert(mlabel,"end",text=f"{struct['true']}：",open=tree_open)
+            #self.display_area.rowheight(label, self.default_line_height * text.count('\n'))
+            if "children" in struct:
+                for child in struct["children"]:
+                    self.display(child,label)
+        
+    # 复制未翻译的内容（方便写翻译器用的）
+    def display_area_copy(self,event=None):
+        selected = self.display_area.selection()
+        selected_text = self.display_area.item(selected)["text"]
+        if " : " in selected_text:
+            if selected_text.startswith("$type"):
+                selected_text = selected_text.split(" : ")[1][28:-17] # 只要内容
+            else:
+                selected_text = selected_text.split(" : ")[0] # 只要变量名
+            self.window.clipboard_clear()
+            self.window.clipboard_append(selected_text)
+            print("已复制："+selected_text)
+        elif selected_text.endswith("（未翻译）"):
+            selected_text = selected_text[:-5]
+            self.window.clipboard_clear()
+            self.window.clipboard_append(selected_text)
+            print("已复制："+selected_text)
         
     # 开启界面
     def open(self):

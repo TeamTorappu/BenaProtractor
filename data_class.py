@@ -11,6 +11,7 @@ class Node:
             node_name = node_name[28:-17]
         self.node_name = node_name
         self.node_data = node_data
+        self.translation = None
         #if node_data.has_key("_buff"):
         #    # 获取子buff
         #    self.node_config["_buff"] = Buff(node_data._buff)
