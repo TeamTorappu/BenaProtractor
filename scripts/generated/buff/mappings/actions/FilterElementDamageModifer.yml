@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: DARK
+          generated: true
       -
         value: SANITY
         display: false
         parse:
           type: literal
           return: SANITY
+          generated: true
   _filterEPType:
     type: boolean
     description: filter E P Type
@@ -26,3 +28,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

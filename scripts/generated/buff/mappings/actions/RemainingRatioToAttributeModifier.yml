@@ -10,24 +10,28 @@ fields:
         parse:
           type: literal
           return: ATK
+          generated: true
       -
         value: ATTACK_SPEED
         display: false
         parse:
           type: literal
           return: ATTACK_SPEED
+          generated: true
       -
         value: DEF
         display: false
         parse:
           type: literal
           return: DEF
+          generated: true
       -
         value: MOVE_SPEED
         display: false
         parse:
           type: literal
           return: MOVE_SPEED
+          generated: true
   _endTime:
     type: number
     description: end Time
@@ -38,18 +42,21 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 1.0499999523162842
         display: false
         parse:
           type: literal
           return: 1.0499999523162842
+          generated: true
   _formulaType:
     type: string
     description: formula Type
@@ -60,12 +67,14 @@ fields:
         parse:
           type: literal
           return: ADDITION
+          generated: true
       -
         value: MULTIPLIER
         display: false
         parse:
           type: literal
           return: MULTIPLIER
+          generated: true
   _isInversed:
     type: boolean
     description: is Inversed
@@ -76,9 +85,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

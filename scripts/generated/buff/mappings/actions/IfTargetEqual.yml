@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _target1:
     type: string
     description: target1
@@ -20,36 +21,42 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MAINBUFF_SOURCE
         display: false
         parse:
           type: literal
           return: MAINBUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _target2:
     type: string
     description: target2
@@ -60,27 +67,32 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MAIN_TARGET
         display: false
         parse:
           type: literal
           return: MAIN_TARGET
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true

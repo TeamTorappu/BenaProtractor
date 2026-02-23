@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _skillIndex:
     type: number
     description: skill Index
@@ -26,15 +28,18 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 2
         display: false
         parse:
           type: literal
           return: 2
+          generated: true

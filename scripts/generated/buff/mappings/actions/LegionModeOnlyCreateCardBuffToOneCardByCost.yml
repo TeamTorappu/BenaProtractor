@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _cardLibraryType:
     type: string
     description: card Library Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: USING
+          generated: true
   _createDeckBuff:
     type: boolean
     description: create Deck Buff
@@ -30,12 +32,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _deckBuff:
     type: object
     description: deck Buff
@@ -46,6 +50,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -56,6 +61,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -66,12 +72,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterMinCost:
     type: boolean
     description: filter Min Cost
@@ -82,12 +90,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -98,6 +108,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -108,6 +119,7 @@ fields:
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -118,3 +130,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

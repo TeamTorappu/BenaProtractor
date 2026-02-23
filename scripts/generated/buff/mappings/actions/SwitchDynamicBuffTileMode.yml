@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: hit_dec_num
         display: false
         parse:
           type: literal
           return: hit_dec_num
+          generated: true
   _modeIndex:
     type: number
     description: mode Index
@@ -26,18 +28,21 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 2
         display: false
         parse:
           type: literal
           return: 2
+          generated: true
   _operation:
     type: string
     description: operation
@@ -48,12 +53,14 @@ fields:
         parse:
           type: literal
           return: DEC_INDEX
+          generated: true
       -
         value: INDEX
         display: false
         parse:
           type: literal
           return: INDEX
+          generated: true
   _specifyTileType:
     type: boolean
     description: specify Tile Type
@@ -64,12 +71,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _tileType:
     type: string
     description: tile Type
@@ -80,6 +89,7 @@ fields:
         parse:
           type: literal
           return: REED_TILE
+          generated: true
   _useOwnerRootTile:
     type: boolean
     description: use Owner Root Tile
@@ -90,12 +100,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useSwitchResult:
     type: boolean
     description: use Switch Result
@@ -106,9 +118,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

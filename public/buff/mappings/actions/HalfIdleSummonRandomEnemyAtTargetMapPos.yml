@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _branchId:
     type: null
     description: branch Id
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _buffToEnemy:
     type: object
     description: buff To Enemy
@@ -30,6 +32,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffToEnemySourceType:
     type: string
     description: buff To Enemy Source Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _count:
     type: number
     description: count
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _disableBornTweenColor:
     type: boolean
     description: disable Born Tween Color
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _enemyIds:
     type: null
     description: enemy Ids
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _hasBuffToEnemySource:
     type: boolean
     description: has Buff To Enemy Source
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _managedByScheduler:
     type: boolean
     description: managed By Scheduler
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _motionMode:
     type: string
     description: motion Mode
@@ -100,6 +109,7 @@ fields:
         parse:
           type: literal
           return: WALK
+          generated: true
   _probs:
     type: null
     description: probs
@@ -110,6 +120,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -120,6 +131,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -130,3 +142,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

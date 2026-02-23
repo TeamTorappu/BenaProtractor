@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: "rogue_3_spChain[coreflag]"
+          generated: true
   _excludeSpecificTarget:
     type: boolean
     description: exclude Specific Target
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _excludeTargetType:
     type: string
     description: exclude Target Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _excludeToken:
     type: boolean
     description: exclude Token
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _excludeTrap:
     type: boolean
     description: exclude Trap
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -80,3 +87,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

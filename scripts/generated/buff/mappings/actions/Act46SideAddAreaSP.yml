@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _value:
     type: number
     description: value
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: -1
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
   _valueKey:
     type: string
     description: value Key
@@ -36,3 +39,4 @@ fields:
         parse:
           type: literal
           return: sp
+          generated: true

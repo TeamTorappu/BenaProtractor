@@ -10,3 +10,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

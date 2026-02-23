@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _buffs:
     type: array
     description: buffs
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _enemyKey:
     type: null | string
     description: enemy Key
@@ -36,24 +39,28 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: enemy_2130_dyswrd
         display: false
         parse:
           type: literal
           return: enemy_2130_dyswrd
+          generated: true
       -
         value: enemy_2131_dyfire
         display: false
         parse:
           type: literal
           return: enemy_2131_dyfire
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _ignoreMissEndPoint:
     type: boolean
     description: ignore Miss End Point
@@ -64,12 +71,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _managedByScheduler:
     type: boolean
     description: managed By Scheduler
@@ -80,12 +89,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _motionMode:
     type: string
     description: motion Mode
@@ -96,12 +107,14 @@ fields:
         parse:
           type: literal
           return: FLY
+          generated: true
       -
         value: WALK
         display: false
         parse:
           type: literal
           return: WALK
+          generated: true
   _source:
     type: string
     description: source
@@ -112,6 +125,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _spawnOffset:
     type: number
     description: spawn Offset
@@ -122,18 +136,21 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.05000000074505806
         display: false
         parse:
           type: literal
           return: 0.05000000074505806
+          generated: true
       -
         value: 0.30000001192092896
         display: false
         parse:
           type: literal
           return: 0.30000001192092896
+          generated: true
   _summonCount:
     type: number
     description: summon Count
@@ -144,12 +161,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
   _summonOnNearestPassableTile:
     type: boolean
     description: summon On Nearest Passable Tile
@@ -160,12 +179,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -176,12 +197,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _waitTime:
     type: number
     description: wait Time
@@ -192,15 +215,18 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.25
         display: false
         parse:
           type: literal
           return: 0.25
+          generated: true
       -
         value: 999999
         display: false
         parse:
           type: literal
           return: 999999
+          generated: true

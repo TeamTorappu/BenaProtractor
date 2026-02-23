@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -40,12 +43,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -56,18 +61,21 @@ fields:
         parse:
           type: literal
           return: HOLD_BY_BUFF
+          generated: true
       -
         value: IMMEDIATELY
         display: false
         parse:
           type: literal
           return: IMMEDIATELY
+          generated: true
       -
         value: UNTIL_NEXT_SPAWN_SYNC_WITH_BUFF
         display: false
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN_SYNC_WITH_BUFF
+          generated: true
   _profession:
     type: string
     description: profession
@@ -78,6 +86,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -88,3 +97,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

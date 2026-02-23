@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _sourceType:
     type: string
     description: source Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useSourceFaceVector:
     type: boolean
     description: use Source Face Vector
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

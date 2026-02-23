@@ -10,60 +10,70 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: Flame
         display: false
         parse:
           type: literal
           return: Flame
+          generated: true
       -
         value: M2Attack
         display: false
         parse:
           type: literal
           return: M2Attack
+          generated: true
       -
         value: PetrifiedRay
         display: false
         parse:
           type: literal
           return: PetrifiedRay
+          generated: true
       -
         value: PrismAttack
         display: false
         parse:
           type: literal
           return: PrismAttack
+          generated: true
       -
         value: S2Ability
         display: false
         parse:
           type: literal
           return: S2Ability
+          generated: true
       -
         value: S2MultiMeleeAttack
         display: false
         parse:
           type: literal
           return: S2MultiMeleeAttack
+          generated: true
       -
         value: SummonDupilr
         display: false
         parse:
           type: literal
           return: SummonDupilr
+          generated: true
       -
         value: fire
         display: false
         parse:
           type: literal
           return: fire
+          generated: true
       -
         value: lock
         display: false
         parse:
           type: literal
           return: lock
+          generated: true
   _coolDownKey:
     type: string
     description: cool Down Key
@@ -74,30 +84,35 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: PetrifiedRay_CD
         display: false
         parse:
           type: literal
           return: PetrifiedRay_CD
+          generated: true
       -
         value: SummonDupilr_CD
         display: false
         parse:
           type: literal
           return: SummonDupilr_CD
+          generated: true
       -
         value: "mandra_ray_p2[cd]"
         display: false
         parse:
           type: literal
           return: "mandra_ray_p2[cd]"
+          generated: true
       -
         value: "summon_dupilr_p2[cd]"
         display: false
         parse:
           type: literal
           return: "summon_dupilr_p2[cd]"
+          generated: true
   _keepPassedTime:
     type: boolean
     description: keep Passed Time
@@ -108,12 +123,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _loadAbilityFromBlackboard:
     type: boolean
     description: load Ability From Blackboard
@@ -124,12 +141,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _loadFromBlackboard:
     type: boolean
     description: load From Blackboard
@@ -140,12 +159,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _newPeriod:
     type: number
     description: new Period
@@ -156,6 +177,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -166,6 +188,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useAbilityBlackboard:
     type: boolean
     description: use Ability Blackboard
@@ -176,6 +199,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useNewPeriod:
     type: boolean
     description: use New Period
@@ -186,12 +210,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useOriginalCooldown:
     type: boolean
     description: use Original Cooldown
@@ -202,12 +228,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _waitFirstPeriod:
     type: boolean
     description: wait First Period
@@ -218,9 +246,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

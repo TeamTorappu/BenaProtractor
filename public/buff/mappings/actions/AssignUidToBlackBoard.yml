@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _blackBoardKey:
     type: string
     description: black Board Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: atk_target_uid
+          generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: "token_radian_tower3_s_3[trigger_link]"
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

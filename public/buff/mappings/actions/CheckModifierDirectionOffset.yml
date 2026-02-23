@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _offset:
     type: object
     description: offset
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _source:
     type: string
     description: source
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _target:
     type: string
     description: target
@@ -46,6 +50,7 @@ fields:
         parse:
           type: literal
           return: TARGET
+          generated: true
   _targetToSource:
     type: boolean
     description: target To Source
@@ -56,3 +61,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

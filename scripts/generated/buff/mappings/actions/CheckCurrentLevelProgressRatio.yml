@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: GE
+          generated: true
   _levelProgressKey:
     type: string
     description: level Progress Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: add_weapon_effect
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

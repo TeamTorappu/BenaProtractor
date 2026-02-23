@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _defaultKey:
     type: string
     description: default Key
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true

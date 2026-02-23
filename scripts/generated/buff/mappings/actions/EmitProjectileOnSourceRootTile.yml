@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _ev:
     type: string
     description: ev
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: ON_HIT_OBJECT
+          generated: true
       -
         value: ON_HIT_TILE
         display: false
         parse:
           type: literal
           return: ON_HIT_TILE
+          generated: true
   _overwriteActions:
     type: boolean
     description: overwrite Actions
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -46,9 +50,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true

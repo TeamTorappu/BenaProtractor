@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: attack_time
+          generated: true
   _attackTriggerNodes:
     type: array
     description: attack Trigger Nodes
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _intervalCacheKey:
     type: string
     description: interval Cache Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: dynamic
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true

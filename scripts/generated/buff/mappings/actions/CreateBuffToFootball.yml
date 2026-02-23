@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

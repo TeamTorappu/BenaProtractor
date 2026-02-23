@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: NONE
+          generated: true
   _filterDamageType:
     type: boolean
     description: filter Damage Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _fixedValue:
     type: number
     description: fixed Value
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true

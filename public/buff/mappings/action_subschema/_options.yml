@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   DywqgsSpawnTokenOnExceptCharacterSurroundedTiles:
     type: object
     values:
@@ -26,6 +27,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   DywqgsCheckChessSiege:
     type: object
     values:
@@ -38,3 +40,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

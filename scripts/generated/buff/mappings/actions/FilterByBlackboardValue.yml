@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _anotherKeyToCompare:
     type: null | string
     description: another Key To Compare
@@ -26,252 +28,294 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: atk_buff_cnt
         display: false
         parse:
           type: literal
           return: atk_buff_cnt
+          generated: true
       -
         value: cache_current_stack
         display: false
         parse:
           type: literal
           return: cache_current_stack
+          generated: true
       -
         value: cache_enemy_count
         display: false
         parse:
           type: literal
           return: cache_enemy_count
+          generated: true
       -
         value: cached_sniper_level
         display: false
         parse:
           type: literal
           return: cached_sniper_level
+          generated: true
       -
         value: captured_cnt_to_trigger
         display: false
         parse:
           type: literal
           return: captured_cnt_to_trigger
+          generated: true
       -
         value: check_cnt
         display: false
         parse:
           type: literal
           return: check_cnt
+          generated: true
       -
         value: check_sp_after
         display: false
         parse:
           type: literal
           return: check_sp_after
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: cost_stun
         display: false
         parse:
           type: literal
           return: cost_stun
+          generated: true
       -
         value: count
         display: false
         parse:
           type: literal
           return: count
+          generated: true
       -
         value: damage_resistance_origin
         display: false
         parse:
           type: literal
           return: damage_resistance_origin
+          generated: true
       -
         value: delta_max
         display: false
         parse:
           type: literal
           return: delta_max
+          generated: true
       -
         value: direction
         display: false
         parse:
           type: literal
           return: direction
+          generated: true
       -
         value: dynamic
         display: false
         parse:
           type: literal
           return: dynamic
+          generated: true
       -
         value: final_hp_ratio
         display: false
         parse:
           type: literal
           return: final_hp_ratio
+          generated: true
       -
         value: fly_start_speed_rate
         display: false
         parse:
           type: literal
           return: fly_start_speed_rate
+          generated: true
       -
         value: get_gold_cnt
         display: false
         parse:
           type: literal
           return: get_gold_cnt
+          generated: true
       -
         value: hit_cnt
         display: false
         parse:
           type: literal
           return: hit_cnt
+          generated: true
       -
         value: hp
         display: false
         parse:
           type: literal
           return: hp
+          generated: true
       -
         value: hp_ratio
         display: false
         parse:
           type: literal
           return: hp_ratio
+          generated: true
       -
         value: hp_target
         display: false
         parse:
           type: literal
           return: hp_target
+          generated: true
       -
         value: hp_trigger
         display: false
         parse:
           type: literal
           return: hp_trigger
+          generated: true
       -
         value: kick_times
         display: false
         parse:
           type: literal
           return: kick_times
+          generated: true
       -
         value: kill_count
         display: false
         parse:
           type: literal
           return: kill_count
+          generated: true
       -
         value: limited_dynamic
         display: false
         parse:
           type: literal
           return: limited_dynamic
+          generated: true
       -
         value: max_irrigate_time
         display: false
         parse:
           type: literal
           return: max_irrigate_time
+          generated: true
       -
         value: max_radius
         display: false
         parse:
           type: literal
           return: max_radius
+          generated: true
       -
         value: max_respawn_cnt
         display: false
         parse:
           type: literal
           return: max_respawn_cnt
+          generated: true
       -
         value: max_times
         display: false
         parse:
           type: literal
           return: max_times
+          generated: true
       -
         value: min_scale
         display: false
         parse:
           type: literal
           return: min_scale
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: other_cnt
         display: false
         parse:
           type: literal
           return: other_cnt
+          generated: true
       -
         value: other_hp_ratio
         display: false
         parse:
           type: literal
           return: other_hp_ratio
+          generated: true
       -
         value: target_count
         display: false
         parse:
           type: literal
           return: target_count
+          generated: true
       -
         value: threshold
         display: false
         parse:
           type: literal
           return: threshold
+          generated: true
       -
         value: timer_threshold
         display: false
         parse:
           type: literal
           return: timer_threshold
+          generated: true
       -
         value: times
         display: false
         parse:
           type: literal
           return: times
+          generated: true
       -
         value: total_damage_range
         display: false
         parse:
           type: literal
           return: total_damage_range
+          generated: true
       -
         value: trigger_damage_count
         display: false
         parse:
           type: literal
           return: trigger_damage_count
+          generated: true
       -
         value: trigger_value
         display: false
         parse:
           type: literal
           return: trigger_value
+          generated: true
       -
         value: unlock_owner
         display: false
         parse:
           type: literal
           return: unlock_owner
+          generated: true
   _blackboardKey:
     type: string
     description: blackboard Key
@@ -282,6 +326,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffKey:
     type: null | string
     description: buff Key
@@ -292,60 +337,70 @@ fields:
         parse:
           type: literal
           return: "act1autochess_gar_event_consume_ammo[status]"
+          generated: true
       -
         value: "act1autochess_gar_event_selfdead[doll]"
         display: false
         parse:
           type: literal
           return: "act1autochess_gar_event_selfdead[doll]"
+          generated: true
       -
         value: enemy_tjgdly_dive_cd
         display: false
         parse:
           type: literal
           return: enemy_tjgdly_dive_cd
+          generated: true
       -
         value: "enemy_vtmstr_equip_B_disarm[enemy]"
         display: false
         parse:
           type: literal
           return: "enemy_vtmstr_equip_B_disarm[enemy]"
+          generated: true
       -
         value: enemy_vtmstr_equip_avaliable
         display: false
         parse:
           type: literal
           return: enemy_vtmstr_equip_avaliable
+          generated: true
       -
         value: "get_evade_when_blocked[evade]"
         display: false
         parse:
           type: literal
           return: "get_evade_when_blocked[evade]"
+          generated: true
       -
         value: mpctrl_boss_stage
         display: false
         parse:
           type: literal
           return: mpctrl_boss_stage
+          generated: true
       -
         value: mpctrl_tower_stage
         display: false
         parse:
           type: literal
           return: mpctrl_tower_stage
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: trap_trpot_mark
         display: false
         parse:
           type: literal
           return: trap_trpot_mark
+          generated: true
   _condType:
     type: string
     description: cond Type
@@ -356,30 +411,35 @@ fields:
         parse:
           type: literal
           return: EQUALS
+          generated: true
       -
         value: GE
         display: false
         parse:
           type: literal
           return: GE
+          generated: true
       -
         value: GT
         display: false
         parse:
           type: literal
           return: GT
+          generated: true
       -
         value: LE
         display: false
         parse:
           type: literal
           return: LE
+          generated: true
       -
         value: LT
         display: false
         parse:
           type: literal
           return: LT
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -390,18 +450,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
   _valueToCompare:
     type: number
     description: value To Compare
@@ -412,39 +475,46 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 2
         display: false
         parse:
           type: literal
           return: 2
+          generated: true
       -
         value: 3
         display: false
         parse:
           type: literal
           return: 3
+          generated: true
       -
         value: 300000
         display: false
         parse:
           type: literal
           return: 300000
+          generated: true
       -
         value: 4
         display: false
         parse:
           type: literal
           return: 4
+          generated: true
       -
         value: 50
         display: false
         parse:
           type: literal
           return: 50
+          generated: true

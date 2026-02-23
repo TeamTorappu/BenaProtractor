@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _tileKeys:
     type: array
     description: tile Keys
@@ -40,6 +43,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _useCircle:
     type: boolean
     description: use Circle
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

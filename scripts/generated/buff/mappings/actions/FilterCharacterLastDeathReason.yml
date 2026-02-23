@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _finishReason:
     type: string
     description: finish Reason
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: MOVE_LIKE_RESPAWN_SELF
+          generated: true

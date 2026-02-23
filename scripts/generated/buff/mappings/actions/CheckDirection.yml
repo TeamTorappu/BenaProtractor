@@ -10,24 +10,28 @@ fields:
         parse:
           type: literal
           return: EQUAL
+          generated: true
       -
         value: FACE_TARGET
         display: false
         parse:
           type: literal
           return: FACE_TARGET
+          generated: true
       -
         value: OPPOSITE
         display: false
         parse:
           type: literal
           return: OPPOSITE
+          generated: true
       -
         value: VERTICAL
         display: false
         parse:
           type: literal
           return: VERTICAL
+          generated: true
   _source:
     type: string
     description: source
@@ -38,12 +42,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _target:
     type: string
     description: target
@@ -54,15 +60,18 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true

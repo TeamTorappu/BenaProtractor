@@ -14,3 +14,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

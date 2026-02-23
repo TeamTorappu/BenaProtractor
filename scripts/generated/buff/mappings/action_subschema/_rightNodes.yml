@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"enemy_skztxs_hack[right]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":true,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"BUFF_OWNER","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"sand_storm[canera_self]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"screen_desert_left_to_right_empty","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"BUFF_OWNER","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
         display: false
@@ -32,6 +34,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"enemy_durcar_mark[right]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"BUFF_OWNER","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
         display: false
@@ -41,6 +44,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"$type":"Torappu.Battle.Action.Nodes+SwitchMode, Assembly-CSharp","_modeIndex":0,"_loadModeFromBlackboard":false,"_restoreDefault":false,"_restartFSM":false,"_targetType":"TARGET"},{"$type":"Torappu.Battle.Action.Nodes+TriggerSkill, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkBeforeTrigger":false},{"$type":"Torappu.Battle.Action.Nodes+CreateEffect, Assembly-CSharp","_targetType":"TARGET","_sourceType":"SOURCE","_effectKey":"stonePillar_collapse_01_right","_useSourceFaceVactor":false,"_useSourceToTargetDirection":false,"_useConstDirection":false,"_constDirection":"UP","_createEffectHoldBySource":false,"_useAttackPlaybackSpeed":false,"_manualSetPlaybackSpeed":false,"_blackboardKey":"","_playbackSpeed":1}]"
         display: false
@@ -50,6 +54,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   SwitchSourceDirection:
     type: array
     values:
@@ -62,6 +67,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"$type":"Torappu.Battle.Action.Nodes+SwitchMode, Assembly-CSharp","_modeIndex":1,"_loadModeFromBlackboard":false,"_restoreDefault":false,"_restartFSM":false,"_targetType":"TARGET"},{"$type":"Torappu.Battle.Action.Nodes+SetBodyDirection, Assembly-CSharp","_targetType":"BUFF_OWNER","_direction":"LEFT","_includeFace":false,"_onlyChangeFace":false,"_useSourceDirection":false,"_directionSourceType":"SOURCE","_useDirectionFromBlackboard":false,"_directionKey":"direction","_force":false},{"$type":"Torappu.Battle.Action.Nodes+TriggerSkill, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkBeforeTrigger":false},{"$type":"Torappu.Battle.Action.Nodes+CreateEffect, Assembly-CSharp","_targetType":"TARGET","_sourceType":"SOURCE","_effectKey":"stonePillar_collapse_01_left","_useSourceFaceVactor":false,"_useSourceToTargetDirection":false,"_useConstDirection":false,"_constDirection":"UP","_createEffectHoldBySource":false,"_useAttackPlaybackSpeed":false,"_manualSetPlaybackSpeed":false,"_blackboardKey":"","_playbackSpeed":1}]"
         display: false
@@ -71,3 +77,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

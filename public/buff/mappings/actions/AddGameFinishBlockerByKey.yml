@@ -10,3 +10,4 @@ fields:
         parse:
           type: literal
           return: trap_bldore_block_game
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _attackSpeedValue:
     type: number
     description: attack Speed Value
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _blockCnt:
     type: number
     description: block Cnt
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _defValue:
     type: number
     description: def Value
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _magicResistanceValue:
     type: number
     description: magic Resistance Value
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _maxHpValue:
     type: number
     description: max Hp Value
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _target:
     type: string
     description: target
@@ -70,3 +76,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

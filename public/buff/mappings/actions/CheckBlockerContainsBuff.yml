@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffSourceType:
     type: string
     description: buff Source Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _checkBuffSource:
     type: boolean
     description: check Buff Source
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isAND:
     type: boolean
     description: is A N D
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _loadFromBlackboard:
     type: boolean
     description: load From Blackboard
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -60,3 +65,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

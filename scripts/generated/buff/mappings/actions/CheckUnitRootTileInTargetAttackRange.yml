@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -32,9 +35,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true

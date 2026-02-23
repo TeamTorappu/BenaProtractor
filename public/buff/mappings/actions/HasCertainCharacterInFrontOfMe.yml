@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: trap_032_mound
+          generated: true
   _source:
     type: string
     description: source
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _target:
     type: string
     description: target
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: TARGET
+          generated: true

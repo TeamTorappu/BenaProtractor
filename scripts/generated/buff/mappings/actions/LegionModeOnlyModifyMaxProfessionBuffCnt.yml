@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _resetToDefault:
     type: boolean
     description: reset To Default
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

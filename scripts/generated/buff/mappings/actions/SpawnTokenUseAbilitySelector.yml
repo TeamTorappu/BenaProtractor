@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: SpawnTrapTotDygmny
+          generated: true
   _force:
     type: boolean
     description: force
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: TARGET
+          generated: true
   _tileEffect:
     type: null
     description: tile Effect
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _tileHoldEffect:
     type: boolean
     description: tile Hold Effect
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _tokenToSpawn:
     type: object
     description: token To Spawn
@@ -70,3 +76,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

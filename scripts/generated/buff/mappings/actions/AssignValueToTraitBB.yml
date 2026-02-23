@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _value:
     type: number
     description: value
@@ -30,9 +32,11 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true

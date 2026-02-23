@@ -10,51 +10,60 @@ fields:
         parse:
           type: literal
           return: WANG_STONE
+          generated: true
       -
         value: act1autochess_debuff_1
         display: false
         parse:
           type: literal
           return: act1autochess_debuff_1
+          generated: true
       -
         value: act49side_print_dmg
         display: false
         parse:
           type: literal
           return: act49side_print_dmg
+          generated: true
       -
         value: chen3_s3_projectile
         display: false
         parse:
           type: literal
           return: chen3_s3_projectile
+          generated: true
       -
         value: "graceb_sk2[mark]"
         display: false
         parse:
           type: literal
           return: "graceb_sk2[mark]"
+          generated: true
       -
         value: link_damage
         display: false
         parse:
           type: literal
           return: link_damage
+          generated: true
       -
         value: lrdead
         display: false
         parse:
           type: literal
           return: lrdead
+          generated: true
       -
         value: s2_dot_heal
         display: false
         parse:
           type: literal
           return: s2_dot_heal
+          generated: true
       -
         value: "wscoot_t[extra_atk]"
         display: false
         parse:
           type: literal
           return: "wscoot_t[extra_atk]"
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: GE
+          generated: true
   _count:
     type: number
     description: count
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _target:
     type: string
     description: target
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useCurTriggerCnt:
     type: boolean
     description: use Cur Trigger Cnt
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

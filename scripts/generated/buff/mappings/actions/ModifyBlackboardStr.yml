@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: lastPos
+          generated: true
   _checkFromBlackboardValue:
     type: boolean
     description: check From Blackboard Value
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _fromBlackboardKeys:
     type: string
     description: from Blackboard Keys
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: currentPos
+          generated: true
   _value:
     type: string
     description: value
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true

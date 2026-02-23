@@ -10,534 +10,623 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: Attack
         display: false
         parse:
           type: literal
           return: Attack
+          generated: true
       -
         value: AttractSelector
         display: false
         parse:
           type: literal
           return: AttractSelector
+          generated: true
       -
         value: BindPrts
         display: false
         parse:
           type: literal
           return: BindPrts
+          generated: true
       -
         value: Blink
         display: false
         parse:
           type: literal
           return: Blink
+          generated: true
       -
         value: BossSelect
         display: false
         parse:
           type: literal
           return: BossSelect
+          generated: true
       -
         value: BossSelecter
         display: false
         parse:
           type: literal
           return: BossSelecter
+          generated: true
       -
         value: BossSelector
         display: false
         parse:
           type: literal
           return: BossSelector
+          generated: true
       -
         value: CheckChar
         display: false
         parse:
           type: literal
           return: CheckChar
+          generated: true
       -
         value: Clear
         display: false
         parse:
           type: literal
           return: Clear
+          generated: true
       -
         value: ConvertToPark
         display: false
         parse:
           type: literal
           return: ConvertToPark
+          generated: true
       -
         value: DamageAmy
         display: false
         parse:
           type: literal
           return: DamageAmy
+          generated: true
       -
         value: DamageShareSelect
         display: false
         parse:
           type: literal
           return: DamageShareSelect
+          generated: true
       -
         value: ExtraSelect
         display: false
         parse:
           type: literal
           return: ExtraSelect
+          generated: true
       -
         value: FindMcnist
         display: false
         parse:
           type: literal
           return: FindMcnist
+          generated: true
       -
         value: FindWangw
         display: false
         parse:
           type: literal
           return: FindWangw
+          generated: true
       -
         value: FountainKillSelector
         display: false
         parse:
           type: literal
           return: FountainKillSelector
+          generated: true
       -
         value: GasSelect
         display: false
         parse:
           type: literal
           return: GasSelect
+          generated: true
       -
         value: Heal
         display: false
         parse:
           type: literal
           return: Heal
+          generated: true
       -
         value: HealS1
         display: false
         parse:
           type: literal
           return: HealS1
+          generated: true
       -
         value: JustSelector
         display: false
         parse:
           type: literal
           return: JustSelector
+          generated: true
       -
         value: Line
         display: false
         parse:
           type: literal
           return: Line
+          generated: true
       -
         value: MagnetMark
         display: false
         parse:
           type: literal
           return: MagnetMark
+          generated: true
       -
         value: MarkStunAttack_S1
         display: false
         parse:
           type: literal
           return: MarkStunAttack_S1
+          generated: true
       -
         value: MarkStunAttack_S2
         display: false
         parse:
           type: literal
           return: MarkStunAttack_S2
+          generated: true
       -
         value: MaxHpSelector
         display: false
         parse:
           type: literal
           return: MaxHpSelector
+          generated: true
       -
         value: Mirror
         display: false
         parse:
           type: literal
           return: Mirror
+          generated: true
       -
         value: Passive
         display: false
         parse:
           type: literal
           return: Passive
+          generated: true
       -
         value: Phase2_S1_Effector
         display: false
         parse:
           type: literal
           return: Phase2_S1_Effector
+          generated: true
       -
         value: RandomFinder
         display: false
         parse:
           type: literal
           return: RandomFinder
+          generated: true
       -
         value: Range
         display: false
         parse:
           type: literal
           return: Range
+          generated: true
       -
         value: Range2
         display: false
         parse:
           type: literal
           return: Range2
+          generated: true
       -
         value: Reborn
         display: false
         parse:
           type: literal
           return: Reborn
+          generated: true
       -
         value: RebornSummon
         display: false
         parse:
           type: literal
           return: RebornSummon
+          generated: true
       -
         value: RotateAttack
         display: false
         parse:
           type: literal
           return: RotateAttack
+          generated: true
       -
         value: S2
         display: false
         parse:
           type: literal
           return: S2
+          generated: true
       -
         value: S2Attack
         display: false
         parse:
           type: literal
           return: S2Attack
+          generated: true
       -
         value: S3AtkSelector
         display: false
         parse:
           type: literal
           return: S3AtkSelector
+          generated: true
       -
         value: S3DefSelector
         display: false
         parse:
           type: literal
           return: S3DefSelector
+          generated: true
       -
         value: S3HpSelector
         display: false
         parse:
           type: literal
           return: S3HpSelector
+          generated: true
       -
         value: S3_Attack
         display: false
         parse:
           type: literal
           return: S3_Attack
+          generated: true
       -
         value: Sacrifice
         display: false
         parse:
           type: literal
           return: Sacrifice
+          generated: true
       -
         value: SealDebuff
         display: false
         parse:
           type: literal
           return: SealDebuff
+          generated: true
       -
         value: SelectBase
         display: false
         parse:
           type: literal
           return: SelectBase
+          generated: true
       -
         value: SelectBossAmiya
         display: false
         parse:
           type: literal
           return: SelectBossAmiya
+          generated: true
       -
         value: SelectCharacter
         display: false
         parse:
           type: literal
           return: SelectCharacter
+          generated: true
       -
         value: SelectChildSingle
         display: false
         parse:
           type: literal
           return: SelectChildSingle
+          generated: true
       -
         value: SelectChld
         display: false
         parse:
           type: literal
           return: SelectChld
+          generated: true
       -
         value: SelectCore
         display: false
         parse:
           type: literal
           return: SelectCore
+          generated: true
       -
         value: SelectEnemy
         display: false
         parse:
           type: literal
           return: SelectEnemy
+          generated: true
       -
         value: SelectEntlecWithoutHitRange
         display: false
         parse:
           type: literal
           return: SelectEntlecWithoutHitRange
+          generated: true
       -
         value: SelectGun
         display: false
         parse:
           type: literal
           return: SelectGun
+          generated: true
       -
         value: SelectMcreep
         display: false
         parse:
           type: literal
           return: SelectMcreep
+          generated: true
       -
         value: SelectNearestCanon
         display: false
         parse:
           type: literal
           return: SelectNearestCanon
+          generated: true
       -
         value: SelectNearestMcreep
         display: false
         parse:
           type: literal
           return: SelectNearestMcreep
+          generated: true
       -
         value: SelectOtherPckstp
         display: false
         parse:
           type: literal
           return: SelectOtherPckstp
+          generated: true
       -
         value: SelectOthers
         display: false
         parse:
           type: literal
           return: SelectOthers
+          generated: true
       -
         value: SelectP1
         display: false
         parse:
           type: literal
           return: SelectP1
+          generated: true
       -
         value: SelectSkzjkl
         display: false
         parse:
           type: literal
           return: SelectSkzjkl
+          generated: true
       -
         value: SelectSkzth
         display: false
         parse:
           type: literal
           return: SelectSkzth
+          generated: true
       -
         value: SelectVg
         display: false
         parse:
           type: literal
           return: SelectVg
+          generated: true
       -
         value: SelectYmgpck
         display: false
         parse:
           type: literal
           return: SelectYmgpck
+          generated: true
       -
         value: Skill
         display: false
         parse:
           type: literal
           return: Skill
+          generated: true
       -
         value: Strong
         display: false
         parse:
           type: literal
           return: Strong
+          generated: true
       -
         value: Stun
         display: false
         parse:
           type: literal
           return: Stun
+          generated: true
       -
         value: SummonSpilot
         display: false
         parse:
           type: literal
           return: SummonSpilot
+          generated: true
       -
         value: T1Selector
         display: false
         parse:
           type: literal
           return: T1Selector
+          generated: true
       -
         value: TraitHealRange
         display: false
         parse:
           type: literal
           return: TraitHealRange
+          generated: true
       -
         value: TwinSelector
         display: false
         parse:
           type: literal
           return: TwinSelector
+          generated: true
       -
         value: UseLifeSteal
         display: false
         parse:
           type: literal
           return: UseLifeSteal
+          generated: true
       -
         value: Water
         display: false
         parse:
           type: literal
           return: Water
+          generated: true
       -
         value: act3bossrush_team3
         display: false
         parse:
           type: literal
           return: act3bossrush_team3
+          generated: true
       -
         value: amiya3_skill1
         display: false
         parse:
           type: literal
           return: amiya3_skill1
+          generated: true
       -
         value: charge_gunctrl
         display: false
         parse:
           type: literal
           return: charge_gunctrl
+          generated: true
       -
         value: detectExi
         display: false
         parse:
           type: literal
           return: detectExi
+          generated: true
       -
         value: frozenAura
         display: false
         parse:
           type: literal
           return: frozenAura
+          generated: true
       -
         value: global_range
         display: false
         parse:
           type: literal
           return: global_range
+          generated: true
       -
         value: halfIdle_select_enemy_with_lowest_HP
         display: false
         parse:
           type: literal
           return: halfIdle_select_enemy_with_lowest_HP
+          generated: true
       -
         value: lin_t_1_s_3_selector
         display: false
         parse:
           type: literal
           return: lin_t_1_s_3_selector
+          generated: true
       -
         value: miner_level3
         display: false
         parse:
           type: literal
           return: miner_level3
+          generated: true
       -
         value: papyrs_s_2
         display: false
         parse:
           type: literal
           return: papyrs_s_2
+          generated: true
       -
         value: pray
         display: false
         parse:
           type: literal
           return: pray
+          generated: true
       -
         value: "racing_catcher[char]"
         display: false
         parse:
           type: literal
           return: "racing_catcher[char]"
+          generated: true
       -
         value: shield_s1
         display: false
         parse:
           type: literal
           return: shield_s1
+          generated: true
       -
         value: sktok_stmbot
         display: false
         parse:
           type: literal
           return: sktok_stmbot
+          generated: true
       -
         value: sword_split
         display: false
         parse:
           type: literal
           return: sword_split
+          generated: true
       -
         value: talr_s_2
         display: false
         parse:
           type: literal
           return: talr_s_2
+          generated: true
       -
         value: wtrman_trigger
         display: false
         parse:
           type: literal
           return: wtrman_trigger
+          generated: true
   _actionFailedIfNoTarget:
     type: boolean
     description: action Failed If No Target
@@ -548,12 +637,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _buff:
     type: object
     description: buff
@@ -564,6 +655,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -574,12 +666,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _excludeTargetType:
     type: string
     description: exclude Target Type
@@ -590,18 +684,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -612,12 +709,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -628,12 +727,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -644,24 +745,28 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -672,21 +777,25 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

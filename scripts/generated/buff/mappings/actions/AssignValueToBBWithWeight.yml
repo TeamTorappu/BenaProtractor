@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _maxWeight:
     type: number
     description: max Weight
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 100
+          generated: true
   _useNum2:
     type: boolean
     description: use Num2
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _weightNum:
     type: number
     description: weight Num
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: 20
+          generated: true
   _weightNum2:
     type: number
     description: weight Num2
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: 70
+          generated: true
   _weightNum2Key:
     type: string
     description: weight Num2 Key
@@ -60,3 +65,4 @@ fields:
         parse:
           type: literal
           return: value_2
+          generated: true

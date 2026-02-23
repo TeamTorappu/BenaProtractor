@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _failNodes:
     type: array | null
     description: fail Nodes
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _succeedNodes:
     type: array | null
     description: succeed Nodes
@@ -30,3 +32,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _buffs:
     type: array
     description: buffs
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _enemyKey:
     type: string
     description: enemy Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: enemy_2101_dyspll
+          generated: true
   _managedByScheduler:
     type: boolean
     description: managed By Scheduler
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _motionMode:
     type: string
     description: motion Mode
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: FLY
+          generated: true
   _randomOffsetBound:
     type: number
     description: random Offset Bound
@@ -60,6 +65,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _source:
     type: string
     description: source
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _summonCount:
     type: number
     description: summon Count
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _surroundTilesOptions:
     type: object
     description: surround Tiles Options
@@ -90,6 +98,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _trapKey:
     type: string
     description: trap Key
@@ -100,6 +109,7 @@ fields:
         parse:
           type: literal
           return: trap_226_dychss
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -110,6 +120,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _waitTime:
     type: number
     description: wait Time
@@ -120,3 +131,4 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true

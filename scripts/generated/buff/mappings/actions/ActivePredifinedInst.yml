@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: deck_default_hidden
+          generated: true
   _instAlias:
     type: string
     description: inst Alias
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true

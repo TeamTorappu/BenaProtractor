@@ -10,24 +10,28 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: check_tag
         display: false
         parse:
           type: literal
           return: check_tag
+          generated: true
       -
         value: food_tag
         display: false
         parse:
           type: literal
           return: food_tag
+          generated: true
       -
         value: tag
         display: false
         parse:
           type: literal
           return: tag
+          generated: true
   _filterTag:
     type: null | string
     description: filter Tag
@@ -38,150 +42,175 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: FORTRESS_TRAP_SP
         display: false
         parse:
           type: literal
           return: FORTRESS_TRAP_SP
+          generated: true
       -
         value: HalfIdleTrap
         display: false
         parse:
           type: literal
           return: HalfIdleTrap
+          generated: true
       -
         value: LHHeSeries
         display: false
         parse:
           type: literal
           return: LHHeSeries
+          generated: true
       -
         value: Landscape
         display: false
         parse:
           type: literal
           return: Landscape
+          generated: true
       -
         value: SANDBOX_DISABLE_IN_RUSH
         display: false
         parse:
           type: literal
           return: SANDBOX_DISABLE_IN_RUSH
+          generated: true
       -
         value: SANDBOX_RES
         display: false
         parse:
           type: literal
           return: SANDBOX_RES
+          generated: true
       -
         value: TAG_TRAP_ERADIO
         display: false
         parse:
           type: literal
           return: TAG_TRAP_ERADIO
+          generated: true
       -
         value: TAG_TRAP_WPNSTS
         display: false
         parse:
           type: literal
           return: TAG_TRAP_WPNSTS
+          generated: true
       -
         value: TRFOOD
         display: false
         parse:
           type: literal
           return: TRFOOD
+          generated: true
       -
         value: TRFOOD_BUFF
         display: false
         parse:
           type: literal
           return: TRFOOD_BUFF
+          generated: true
       -
         value: collapsal
         display: false
         parse:
           type: literal
           return: collapsal
+          generated: true
       -
         value: drone
         display: false
         parse:
           type: literal
           return: drone
+          generated: true
       -
         value: infection
         display: false
         parse:
           type: literal
           return: infection
+          generated: true
       -
         value: lhplt
         display: false
         parse:
           type: literal
           return: lhplt
+          generated: true
       -
         value: machine
         display: false
         parse:
           type: literal
           return: machine
+          generated: true
       -
         value: mutant
         display: false
         parse:
           type: literal
           return: mutant
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: rogue_4_skhbox
         display: false
         parse:
           type: literal
           return: rogue_4_skhbox
+          generated: true
       -
         value: sail_boat_buildable
         display: false
         parse:
           type: literal
           return: sail_boat_buildable
+          generated: true
       -
         value: sarkaz
         display: false
         parse:
           type: literal
           return: sarkaz
+          generated: true
       -
         value: seamonster
         display: false
         parse:
           type: literal
           return: seamonster
+          generated: true
       -
         value: tower
         display: false
         parse:
           type: literal
           return: tower
+          generated: true
       -
         value: wildanimal
         display: false
         parse:
           type: literal
           return: wildanimal
+          generated: true
       -
         value: winfire
         display: false
         parse:
           type: literal
           return: winfire
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -192,27 +221,32 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

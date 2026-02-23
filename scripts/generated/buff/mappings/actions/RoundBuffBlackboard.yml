@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffKey:
     type: null | string
     description: buff Key
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: "rdoc_t2[shield]"
         display: false
         parse:
           type: literal
           return: "rdoc_t2[shield]"
+          generated: true
   _roundType:
     type: string
     description: round Type
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: Floor
+          generated: true
       -
         value: Round
         display: false
         parse:
           type: literal
           return: Round
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -52,3 +57,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

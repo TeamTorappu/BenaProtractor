@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["sargonShip"]"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["steadShip"]"
         display: false
@@ -32,6 +34,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[]"
         display: false
@@ -41,6 +44,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   AutoChessAssignGatheredAttributeToBlackboard:
     type: array
     values:
@@ -53,3 +57,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _maxDeckStackCntKey:
     type: string
     description: max Deck Stack Cnt Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: max_deck_stack_cnt
+          generated: true
   _maxDeployCnt:
     type: number
     description: max Deploy Cnt
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _maxDeployCntKey:
     type: string
     description: max Deploy Cnt Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: max_deploy_cnt
+          generated: true
   _refreshTargetTokenOrHost:
     type: boolean
     description: refresh Target Token Or Host
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

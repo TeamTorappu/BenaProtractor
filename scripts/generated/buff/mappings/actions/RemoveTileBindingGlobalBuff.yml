@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: Apoptosis
+          generated: true
   _abilitySource:
     type: string
     description: ability Source
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _globalBuffKey:
     type: string
     description: global Buff Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: "[g]rogue_4_apoptosis"
+          generated: true
   _globalBuffPrefabKey:
     type: string
     description: global Buff Prefab Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: "rogue_4_apoptosis[random_tile]"
+          generated: true
   _selectorTarget:
     type: string
     description: selector Target
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: TARGET
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: GT
+          generated: true
   _enemyId:
     type: string
     description: enemy Id
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: enemy_1542_wdslm
+          generated: true
   _limitAmount:
     type: number
     description: limit Amount
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _limitAmountKey:
     type: null
     description: limit Amount Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

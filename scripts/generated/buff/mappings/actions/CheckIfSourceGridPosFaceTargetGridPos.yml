@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: BACK
+          generated: true
       -
         value: FRONT
         display: false
         parse:
           type: literal
           return: FRONT
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
   _faceType:
     type: string
     description: face Type
@@ -32,12 +35,14 @@ fields:
         parse:
           type: literal
           return: BACK
+          generated: true
       -
         value: FRONT
         display: false
         parse:
           type: literal
           return: FRONT
+          generated: true
   _source:
     type: string
     description: source
@@ -48,18 +53,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
   _target:
     type: string
     description: target
@@ -70,6 +78,7 @@ fields:
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
   _targetColOffset:
     type: number
     description: target Col Offset
@@ -80,3 +89,4 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true

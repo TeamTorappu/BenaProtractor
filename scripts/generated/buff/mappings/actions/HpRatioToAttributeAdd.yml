@@ -10,30 +10,35 @@ fields:
         parse:
           type: literal
           return: ATK
+          generated: true
       -
         value: ATTACK_SPEED
         display: false
         parse:
           type: literal
           return: ATTACK_SPEED
+          generated: true
       -
         value: DEF
         display: false
         parse:
           type: literal
           return: DEF
+          generated: true
       -
         value: MAGIC_RESISTANCE
         display: false
         parse:
           type: literal
           return: MAGIC_RESISTANCE
+          generated: true
       -
         value: SP_RECOVERY_PER_SEC
         display: false
         parse:
           type: literal
           return: SP_RECOVERY_PER_SEC
+          generated: true
   _hpRatioSource:
     type: string
     description: hp Ratio Source
@@ -44,12 +49,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _maxHpRatio:
     type: number
     description: max Hp Ratio
@@ -60,6 +67,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _minHpRatio:
     type: number
     description: min Hp Ratio
@@ -70,6 +78,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _overrideSource:
     type: boolean
     description: override Source
@@ -80,9 +89,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

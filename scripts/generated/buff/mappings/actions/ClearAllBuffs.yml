@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _retainedBuffsWhenClear:
     type: array
     description: retained Buffs When Clear
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -36,9 +39,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

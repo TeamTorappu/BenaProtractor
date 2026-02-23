@@ -10,30 +10,35 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _rhsType:
     type: string
     description: rhs Type
@@ -44,27 +49,32 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: PROJECTILE_SOURCE
         display: false
         parse:
           type: literal
           return: PROJECTILE_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

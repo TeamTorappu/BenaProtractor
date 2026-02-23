@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _ev:
     type: string
     description: ev
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: ON_HIT_OBJECT
+          generated: true
   _mountPoint:
     type: string
     description: mount Point
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: MUZZLE
+          generated: true
   _overwriteActions:
     type: boolean
     description: overwrite Actions
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _projectileKey:
     type: string
     description: projectile Key
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: projectile_spblls
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -70,3 +76,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

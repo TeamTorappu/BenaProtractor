@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _checkReachable:
     type: boolean
     description: check Reachable
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _filterType:
     type: string
     description: filter Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: NEAREST_TO_TARGET
+          generated: true
   _positionListKey:
     type: string
     description: position List Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: map_position_list
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

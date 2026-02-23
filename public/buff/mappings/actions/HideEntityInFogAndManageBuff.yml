@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffToNPC:
     type: object
     description: buff To N P C
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffToTrap:
     type: object
     description: buff To Trap
@@ -30,6 +32,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _enemyNotShowBuff:
     type: string
     description: enemy Not Show Buff
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: "[g]sh_enemy"
+          generated: true
   _filterTag:
     type: string
     description: filter Tag
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: SANDBOX_RES
+          generated: true
   _hideTrapFilterTag:
     type: string
     description: hide Trap Filter Tag
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: SANDBOX_HIDETRAP
+          generated: true
   _npcFilterTag:
     type: string
     description: npc Filter Tag
@@ -70,3 +76,4 @@ fields:
         parse:
           type: literal
           return: SANDBOX_NPC
+          generated: true

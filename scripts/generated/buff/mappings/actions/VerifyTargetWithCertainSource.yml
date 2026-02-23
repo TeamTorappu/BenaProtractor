@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: ENEMY
+          generated: true
   _target:
     type: string
     description: target
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -30,3 +32,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

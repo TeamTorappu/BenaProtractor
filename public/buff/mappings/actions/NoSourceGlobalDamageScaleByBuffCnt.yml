@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF
+          generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: trap_tbasnc_boss_periodic_damage
+          generated: true
   _damageKey:
     type: string
     description: damage Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: damage
+          generated: true
   _damageType:
     type: string
     description: damage Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: PURE
+          generated: true
   _damageWithoutModify:
     type: boolean
     description: damage Without Modify
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _ignoreForSp:
     type: boolean
     description: ignore For Sp
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _isEnvDamage:
     type: boolean
     description: is Env Damage
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _noSourceDamage:
     type: boolean
     description: no Source Damage
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -100,3 +109,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

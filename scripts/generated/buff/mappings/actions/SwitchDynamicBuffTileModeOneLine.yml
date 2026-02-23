@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: Building
         display: false
         parse:
           type: literal
           return: Building
+          generated: true
   _blackboardKey:
     type: null | string
     description: blackboard Key
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: "prtrop_s[tile_storage]"
+          generated: true
   _direction:
     type: string
     description: direction
@@ -46,6 +50,7 @@ fields:
         parse:
           type: literal
           return: LEFT
+          generated: true
   _dontSwitchModeOnlyAssignTileCntToAbilityBb:
     type: boolean
     description: dont Switch Mode Only Assign Tile Cnt To Ability Bb
@@ -56,12 +61,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _exceptCurrentTile:
     type: boolean
     description: except Current Tile
@@ -72,6 +79,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _modeIndex:
     type: number
     description: mode Index
@@ -82,12 +90,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
   _modeIndexDeltaWhenFinalTile:
     type: number
     description: mode Index Delta When Final Tile
@@ -98,6 +108,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -108,6 +119,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _switchOneTileEachTime:
     type: boolean
     description: switch One Tile Each Time
@@ -118,6 +130,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _tileIndexKey:
     type: null
     description: tile Index Key
@@ -128,6 +141,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _updateDirectionBeforeApply:
     type: boolean
     description: update Direction Before Apply
@@ -138,6 +152,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _useCurrentTileDirection:
     type: boolean
     description: use Current Tile Direction
@@ -148,6 +163,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _useLocationFromBBAsCurrentTile:
     type: boolean
     description: use Location From B B As Current Tile
@@ -158,9 +174,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

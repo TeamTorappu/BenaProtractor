@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _professionCategory:
     type: string
     description: profession Category
@@ -20,15 +21,18 @@ fields:
         parse:
           type: literal
           return: CASTER
+          generated: true
       -
         value: MEDIC
         display: false
         parse:
           type: literal
           return: MEDIC
+          generated: true
       -
         value: TANK
         display: false
         parse:
           type: literal
           return: TANK
+          generated: true

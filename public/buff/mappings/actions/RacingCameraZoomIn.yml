@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 0.10000000149011612
+          generated: true
   _zoomDuration:
     type: number
     description: zoom Duration
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: 0.5
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _key:
     type: string
     description: key
@@ -26,36 +28,42 @@ fields:
         parse:
           type: literal
           return: nasti_nstbld_m3456_exist
+          generated: true
       -
         value: nasti_nstbld_m3_build_lock
         display: false
         parse:
           type: literal
           return: nasti_nstbld_m3_build_lock
+          generated: true
       -
         value: nearl2_t_1
         display: false
         parse:
           type: literal
           return: nearl2_t_1
+          generated: true
       -
         value: "slent2_e_003_t2[mark]"
         display: false
         parse:
           type: literal
           return: "slent2_e_003_t2[mark]"
+          generated: true
       -
         value: "svrash_e_002_t[aura]"
         display: false
         parse:
           type: literal
           return: "svrash_e_002_t[aura]"
+          generated: true
       -
         value: "svrash_e_002_t[self]"
         display: false
         parse:
           type: literal
           return: "svrash_e_002_t[self]"
+          generated: true
   _readBuffKeyFromBlackboard:
     type: boolean
     description: read Buff Key From Blackboard
@@ -66,6 +74,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _selectTargetHostOrToken:
     type: boolean
     description: select Target Host Or Token
@@ -76,12 +85,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -92,12 +103,14 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _target:
     type: string
     description: target
@@ -108,3 +121,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

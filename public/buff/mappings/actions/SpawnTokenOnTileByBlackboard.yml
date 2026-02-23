@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _dirBlackboard:
     type: string
     description: dir Blackboard
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: direction
+          generated: true
   _excludeTileInBlackboard:
     type: boolean
     description: exclude Tile In Blackboard
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _onlySpawnOnNoCharacterTile:
     type: boolean
     description: only Spawn On No Character Tile
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: 0-1
+          generated: true
   _tokenToSpawn:
     type: object
     description: token To Spawn
@@ -60,6 +65,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _validTileBlackboard:
     type: null
     description: valid Tile Blackboard
@@ -70,3 +76,4 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true

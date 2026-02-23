@@ -10,9 +10,11 @@ fields:
         parse:
           type: literal
           return: LOSE
+          generated: true
       -
         value: WIN
         display: false
         parse:
           type: literal
           return: WIN
+          generated: true

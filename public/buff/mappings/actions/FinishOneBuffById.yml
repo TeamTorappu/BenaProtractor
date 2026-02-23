@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: enemy_spnwiz_ghost_mark
+          generated: true
       -
         value: "enemy_windoc_fear_hot[damage_resistance]"
         display: false
         parse:
           type: literal
           return: "enemy_windoc_fear_hot[damage_resistance]"
+          generated: true
       -
         value: "vigil_wolf_t_1_enhance[holder]"
         display: false
         parse:
           type: literal
           return: "vigil_wolf_t_1_enhance[holder]"
+          generated: true
   _checkBuffFinished:
     type: boolean
     description: check Buff Finished
@@ -32,12 +35,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _loadFromBlackboard:
     type: boolean
     description: load From Blackboard
@@ -48,6 +53,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -58,9 +64,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true

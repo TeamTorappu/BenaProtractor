@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _defaultMaxStackCnt:
     type: number
     description: default Max Stack Cnt
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _maxStackCntKey:
     type: string
     description: max Stack Cnt Key
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: max_stack_cnt
+          generated: true

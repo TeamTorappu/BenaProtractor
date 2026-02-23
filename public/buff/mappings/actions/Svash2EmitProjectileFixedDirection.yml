@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffData:
     type: array
     description: buff Data
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _ev:
     type: string
     description: ev
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: ON_HIT_OBJECT
+          generated: true
   _filterType:
     type: string
     description: filter Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
   _overwriteActions:
     type: boolean
     description: overwrite Actions
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _rangeIdProjectileSize:
     type: string
     description: range Id Projectile Size
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: emit_count
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _startPositionType:
     type: string
     description: start Position Type
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -90,3 +98,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

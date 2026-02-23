@@ -10,48 +10,56 @@ fields:
         parse:
           type: literal
           return: btauntcard_taunt
+          generated: true
       -
         value: btauntcard_undeployable
         display: false
         parse:
           type: literal
           return: btauntcard_undeployable
+          generated: true
       -
         value: cdabyss_modify_status_default_add_level
         display: false
         parse:
           type: literal
           return: cdabyss_modify_status_default_add_level
+          generated: true
       -
         value: llstone_card_durance
         display: false
         parse:
           type: literal
           return: llstone_card_durance
+          generated: true
       -
         value: mlyss_t_2
         display: false
         parse:
           type: literal
           return: mlyss_t_2
+          generated: true
       -
         value: mlyss_wtrman_disturb
         display: false
         parse:
           type: literal
           return: mlyss_wtrman_disturb
+          generated: true
       -
         value: mlyss_wtrman_undeployable
         display: false
         parse:
           type: literal
           return: mlyss_wtrman_undeployable
+          generated: true
       -
         value: trap_supspta_add_max_profession_level
         display: false
         parse:
           type: literal
           return: trap_supspta_add_max_profession_level
+          generated: true
   _removeFromAllCard:
     type: boolean
     description: remove From All Card
@@ -62,12 +70,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _target:
     type: string
     description: target
@@ -78,9 +88,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

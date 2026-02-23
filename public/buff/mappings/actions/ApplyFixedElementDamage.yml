@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _damageScaleKey:
     type: null | string
     description: damage Scale Key
@@ -26,18 +28,21 @@ fields:
         parse:
           type: literal
           return: damage_scale
+          generated: true
       -
         value: ep_damage_ratio_token
         display: false
         parse:
           type: literal
           return: ep_damage_ratio_token
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _damageValueKey:
     type: string
     description: damage Value Key
@@ -48,18 +53,21 @@ fields:
         parse:
           type: literal
           return: cached_atk
+          generated: true
       -
         value: damage_value
         display: false
         parse:
           type: literal
           return: damage_value
+          generated: true
       -
         value: ep_damage_fixed
         display: false
         parse:
           type: literal
           return: ep_damage_fixed
+          generated: true
   _elementType:
     type: string
     description: element Type
@@ -70,12 +78,14 @@ fields:
         parse:
           type: literal
           return: FIRE
+          generated: true
       -
         value: SANITY
         display: false
         parse:
           type: literal
           return: SANITY
+          generated: true
   _isEnvDamage:
     type: boolean
     description: is Env Damage
@@ -86,12 +96,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -102,12 +114,14 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -118,9 +132,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true

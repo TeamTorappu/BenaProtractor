@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: NONE
+          generated: true
   _attackType:
     type: string
     description: attack Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF
+          generated: true
   _buffCnt:
     type: string
     description: buff Cnt
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: cnt
+          generated: true
   _buffMaxCnt:
     type: string
     description: buff Max Cnt
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: max_cnt
+          generated: true
   _damageScaleKey:
     type: string
     description: damage Scale Key
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: atk_scale_2
+          generated: true
   _damageType:
     type: string
     description: damage Type
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: MAGICAL
+          generated: true
   _forceDisplayDamageNum:
     type: boolean
     description: force Display Damage Num
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _modifierKey:
     type: string
     description: modifier Key
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _useDynamicAttackType:
     type: boolean
     description: use Dynamic Attack Type
@@ -90,3 +98,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

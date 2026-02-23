@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: total_dmg
+          generated: true
   _resultKey:
     type: string
     description: result Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: sp
+          generated: true
   _stride:
     type: number
     description: stride
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 100
+          generated: true
   _strideKey:
     type: string
     description: stride Key
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: trigger_dmg
+          generated: true

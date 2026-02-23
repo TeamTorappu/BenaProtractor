@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"row":0,"col":15}"
         display: false
@@ -23,3 +24,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

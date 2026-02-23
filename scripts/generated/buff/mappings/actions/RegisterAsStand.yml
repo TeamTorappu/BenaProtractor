@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: standRegisterList
+          generated: true
   _source:
     type: string
     description: source
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _standAbilityName:
     type: string
     description: stand Ability Name
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: standRegisterList
+          generated: true
   hostId:
     type: string
     description: host Id
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: enemy_1542_wdslm
+          generated: true
   useIdToFindHost:
     type: boolean
     description: use Id To Find Host
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _excludeBuffKey:
     type: null | string
     description: exclude Buff Key
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: "necras_t_4[dragon]"
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _excludeByBuffKey:
     type: boolean
     description: exclude By Buff Key
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -68,12 +75,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -84,12 +93,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _onlyToFirstTarget:
     type: boolean
     description: only To First Target
@@ -100,12 +111,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -116,12 +129,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -132,3 +147,4 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true

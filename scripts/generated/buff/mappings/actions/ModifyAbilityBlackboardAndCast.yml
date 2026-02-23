@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: Poison
+          generated: true
   _blackboardKeys:
     type: string
     description: blackboard Keys
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: damage
+          generated: true
   _logStackCountToDynamicVar:
     type: boolean
     description: log Stack Count To Dynamic Var
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _scaledByBuffGroupStackCount:
     type: boolean
     description: scaled By Buff Group Stack Count
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

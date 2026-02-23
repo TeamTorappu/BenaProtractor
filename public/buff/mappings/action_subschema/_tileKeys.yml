@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CheckTargetRootTile:
     type: array
     values:
@@ -26,6 +27,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[]"
         display: false
@@ -35,6 +37,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   TriggerTileInRange:
     type: array
     values:
@@ -47,3 +50,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

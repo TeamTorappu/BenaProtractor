@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _buffs:
     type: array
     description: buffs
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _hasSource:
     type: boolean
     description: has Source
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: 0-1
+          generated: true
   _side:
     type: string
     description: side
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: ALLY
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -60,3 +65,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

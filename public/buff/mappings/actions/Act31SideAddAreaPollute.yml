@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 5
+          generated: true
   _needCheckTile:
     type: boolean
     description: need Check Tile
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _rangeRadius:
     type: number
     description: range Radius
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useSnapshotTile:
     type: boolean
     description: use Snapshot Tile
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

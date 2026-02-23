@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _noSource:
     type: boolean
     description: no Source
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sideMask:
     type: string
     description: side Mask
@@ -68,9 +75,11 @@ fields:
         parse:
           type: literal
           return: ALLY
+          generated: true
       -
         value: ENEMY
         display: false
         parse:
           type: literal
           return: ENEMY
+          generated: true

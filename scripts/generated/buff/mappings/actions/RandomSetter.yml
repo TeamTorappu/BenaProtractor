@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetKey:
     type: string
     description: target Key
@@ -26,15 +28,18 @@ fields:
         parse:
           type: literal
           return: add_value
+          generated: true
       -
         value: heal_atk_scale
         display: false
         parse:
           type: literal
           return: heal_atk_scale
+          generated: true
       -
         value: sp
         display: false
         parse:
           type: literal
           return: sp
+          generated: true

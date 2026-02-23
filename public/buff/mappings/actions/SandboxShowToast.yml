@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: 2
+          generated: true
       -
         value: 4
         display: false
         parse:
           type: literal
           return: 4
+          generated: true
   _target:
     type: string
     description: target
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _toastKey:
     type: string
     description: toast Key
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: ACT36SIDE_BOSS_ANGRY
         display: false
         parse:
           type: literal
           return: ACT36SIDE_BOSS_ANGRY
+          generated: true
   _useNameAsParmInMap:
     type: boolean
     description: use Name As Parm In Map
@@ -52,6 +57,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useStringTableKey:
     type: boolean
     description: use String Table Key
@@ -62,9 +68,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

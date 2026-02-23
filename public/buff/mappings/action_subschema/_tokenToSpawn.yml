@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"uniEquipIds":[],"showSpIllust":false,"masterInfos":null,"inst":{"characterKey":"trap_055_tileblock","level":0,"phase":"PHASE_0","favorPoint":0,"potentialRank":0},"skillIndex":-1,"mainSkillLvl":1,"skinId":null,"tmplId":null,"overrideSkillBlackboard":null}"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"uniEquipIds":[],"showSpIllust":false,"masterInfos":null,"inst":{"characterKey":"trap_055_tileblock","level":1,"phase":"PHASE_0","favorPoint":0,"potentialRank":0},"skillIndex":0,"mainSkillLvl":1,"skinId":null,"tmplId":null,"overrideSkillBlackboard":null}"
         display: false
@@ -32,6 +34,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"uniEquipIds":[],"showSpIllust":false,"masterInfos":null,"inst":{"characterKey":"trap_777_giacan","level":1,"phase":"PHASE_0","favorPoint":0,"potentialRank":0},"skillIndex":0,"mainSkillLvl":1,"skinId":null,"tmplId":null,"overrideSkillBlackboard":null}"
         display: false
@@ -41,6 +44,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"uniEquipIds":[],"showSpIllust":false,"masterInfos":null,"inst":{"characterKey":null,"level":0,"phase":"PHASE_0","favorPoint":0,"potentialRank":0},"skillIndex":0,"mainSkillLvl":1,"skinId":null,"tmplId":null,"overrideSkillBlackboard":null}"
         display: false
@@ -50,6 +54,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   SpawnTokenOnRangeTile:
     type: object
     values:
@@ -62,6 +67,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"uniEquipIds":[],"showSpIllust":false,"masterInfos":[],"inst":{"characterKey":"trap_226_dychss","level":1,"phase":"PHASE_0","favorPoint":0,"potentialRank":0},"skillIndex":-1,"mainSkillLvl":1,"skinId":null,"tmplId":null,"overrideSkillBlackboard":null}"
         display: false
@@ -71,6 +77,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"uniEquipIds":[],"showSpIllust":false,"masterInfos":[],"inst":{"characterKey":"trap_258_rgcssm","level":1,"phase":"PHASE_0","favorPoint":0,"potentialRank":0},"skillIndex":0,"mainSkillLvl":1,"skinId":null,"tmplId":null,"overrideSkillBlackboard":null}"
         display: false
@@ -80,6 +87,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"uniEquipIds":[],"showSpIllust":false,"masterInfos":null,"inst":{"characterKey":"trap_055_tileblock","level":0,"phase":"PHASE_0","favorPoint":0,"potentialRank":0},"skillIndex":-1,"mainSkillLvl":1,"skinId":null,"tmplId":null,"overrideSkillBlackboard":null}"
         display: false
@@ -89,6 +97,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   SpawnTokenOnTargetTileWithCondition:
     type: object
     values:
@@ -101,6 +110,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   SpawnTokenOnTileByBlackboard:
     type: object
     values:
@@ -113,6 +123,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   DywqgsSpawnTokenOnExceptCharacterSurroundedTiles:
     type: object
     values:
@@ -125,6 +136,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   SpawnTokenUseAbilitySelector:
     type: object
     values:
@@ -137,3 +149,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

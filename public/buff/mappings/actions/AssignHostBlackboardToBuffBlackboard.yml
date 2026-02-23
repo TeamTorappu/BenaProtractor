@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _fromBlackboardKey:
     type: string
     description: from Blackboard Key
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: atk
+          generated: true
       -
         value: max_token_cnt
         display: false
         parse:
           type: literal
           return: max_token_cnt
+          generated: true
   _hostBuffKey:
     type: string
     description: host Buff Key
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: "monstr_t_1[born_charge]"
+          generated: true
       -
         value: "necras_t_1[withdraw]"
         display: false
         parse:
           type: literal
           return: "necras_t_1[withdraw]"
+          generated: true
   _hostTargetType:
     type: string
     description: host Target Type
@@ -52,6 +57,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _toBlackboardKey:
     type: string
     description: to Blackboard Key
@@ -62,9 +68,11 @@ fields:
         parse:
           type: literal
           return: atk
+          generated: true
       -
         value: max_token_cnt
         display: false
         parse:
           type: literal
           return: max_token_cnt
+          generated: true

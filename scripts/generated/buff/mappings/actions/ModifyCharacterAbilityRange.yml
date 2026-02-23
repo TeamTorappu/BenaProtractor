@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: act1autochess_gar_abflag
+          generated: true
       -
         value: equip
         display: false
         parse:
           type: literal
           return: equip
+          generated: true
       -
         value: stun
         display: false
         parse:
           type: literal
           return: stun
+          generated: true
   _rangeId:
     type: null
     description: range Id
@@ -32,6 +35,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _source:
     type: string
     description: source
@@ -42,6 +46,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _target:
     type: string
     description: target
@@ -52,3 +57,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

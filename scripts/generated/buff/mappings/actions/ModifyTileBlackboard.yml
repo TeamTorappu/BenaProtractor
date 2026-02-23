@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _blackboardKey:
     type: string
     description: blackboard Key
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MAIN_TARGET
         display: false
         parse:
           type: literal
           return: MAIN_TARGET
+          generated: true
   _useTargetRoottile:
     type: boolean
     description: use Target Roottile
@@ -52,6 +57,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _value:
     type: number
     description: value
@@ -62,12 +68,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
   _valueKey:
     type: null
     description: value Key
@@ -78,6 +86,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _valueStr:
     type: null | string
     description: value Str
@@ -88,33 +97,39 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: plot_lhhe
         display: false
         parse:
           type: literal
           return: plot_lhhe
+          generated: true
       -
         value: plot_lhmagd
         display: false
         parse:
           type: literal
           return: plot_lhmagd
+          generated: true
       -
         value: plot_lhphe
         display: false
         parse:
           type: literal
           return: plot_lhphe
+          generated: true
       -
         value: plot_lhsht
         display: false
         parse:
           type: literal
           return: plot_lhsht
+          generated: true
       -
         value: plot_lhtwer
         display: false
         parse:
           type: literal
           return: plot_lhtwer
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: endCol
+          generated: true
   _evnSysKey:
     type: string
     description: evn Sys Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: env_020_ro4dlc2_boss5
+          generated: true
   _intervalKey:
     type: string
     description: interval Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: interval
+          generated: true
   _startColKey:
     type: string
     description: start Col Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: startCol
+          generated: true
   _target:
     type: string
     description: target
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

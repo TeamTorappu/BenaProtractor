@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: can_select_num
+          generated: true
   _cardType:
     type: string
     description: card Type
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: NULL
+          generated: true
       -
         value: PENDING
         display: false
         parse:
           type: literal
           return: PENDING
+          generated: true
   _discardUnselected:
     type: boolean
     description: discard Unselected
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _goldNumWhenSellCard:
     type: string
     description: gold Num When Sell Card
@@ -46,6 +50,7 @@ fields:
         parse:
           type: literal
           return: sell_card_gold
+          generated: true
   _profession:
     type: array | null
     description: profession
@@ -56,6 +61,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _putInPendingIfHandFull:
     type: boolean
     description: put In Pending If Hand Full
@@ -66,6 +72,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _rangeNumKey:
     type: string
     description: range Num Key
@@ -76,6 +83,7 @@ fields:
         parse:
           type: literal
           return: range_num
+          generated: true
   _selectCardType:
     type: string
     description: select Card Type
@@ -86,12 +94,14 @@ fields:
         parse:
           type: literal
           return: NULL
+          generated: true
       -
         value: SELL
         display: false
         parse:
           type: literal
           return: SELL
+          generated: true
   _specificCardKeys:
     type: array
     description: specific Card Keys
@@ -102,3 +112,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

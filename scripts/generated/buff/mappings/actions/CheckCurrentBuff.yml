@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: "halfidle_damage_scale[mark]"
+          generated: true
   _buffSource:
     type: string
     description: buff Source
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _checkBuffSource:
     type: boolean
     description: check Buff Source
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

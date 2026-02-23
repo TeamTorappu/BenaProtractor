@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _alwaysCountAsKilled:
     type: boolean
     description: always Count As Killed
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _buffToEnemy:
     type: null | object
     description: buff To Enemy
@@ -36,6 +39,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _enemyKey:
     type: string
     description: enemy Key
@@ -46,12 +50,14 @@ fields:
         parse:
           type: literal
           return: enemy_2087_skzdwy
+          generated: true
       -
         value: enemy_2088_skzdwz
         display: false
         parse:
           type: literal
           return: enemy_2088_skzdwz
+          generated: true
   _motionMode:
     type: string
     description: motion Mode
@@ -62,6 +68,7 @@ fields:
         parse:
           type: literal
           return: FLY
+          generated: true
   _source:
     type: string
     description: source
@@ -72,6 +79,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -82,3 +90,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: BUFF
+          generated: true
       -
         value: NORMAL
         display: false
         parse:
           type: literal
           return: NORMAL
+          generated: true
   _baseDamageKey:
     type: null | string
     description: base Damage Key
@@ -26,18 +28,21 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: baseDamage
         display: false
         parse:
           type: literal
           return: baseDamage
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _damageKey:
     type: string
     description: damage Key
@@ -48,12 +53,14 @@ fields:
         parse:
           type: literal
           return: addOnDamage
+          generated: true
       -
         value: hp_ratio
         display: false
         parse:
           type: literal
           return: hp_ratio
+          generated: true
   _damageType:
     type: string
     description: damage Type
@@ -64,18 +71,21 @@ fields:
         parse:
           type: literal
           return: MAGICAL
+          generated: true
       -
         value: PHYSICAL
         display: false
         parse:
           type: literal
           return: PHYSICAL
+          generated: true
       -
         value: PURE
         display: false
         parse:
           type: literal
           return: PURE
+          generated: true
   _durationToIncreaseKey:
     type: string
     description: duration To Increase Key
@@ -86,30 +96,35 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: addOnDuration
         display: false
         parse:
           type: literal
           return: addOnDuration
+          generated: true
       -
         value: damage_duration
         display: false
         parse:
           type: literal
           return: damage_duration
+          generated: true
       -
         value: duration
         display: false
         parse:
           type: literal
           return: duration
+          generated: true
       -
         value: duration_bleed
         display: false
         parse:
           type: literal
           return: duration_bleed
+          generated: true
   _elementDamageType:
     type: string
     description: element Damage Type
@@ -120,12 +135,14 @@ fields:
         parse:
           type: literal
           return: FIRE
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
   _ignoreForSp:
     type: boolean
     description: ignore For Sp
@@ -136,12 +153,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isEnvDamage:
     type: boolean
     description: is Env Damage
@@ -152,12 +171,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isIncreasingToCap:
     type: boolean
     description: is Increasing To Cap
@@ -168,12 +189,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isRatioToMaxHp:
     type: boolean
     description: is Ratio To Max Hp
@@ -184,12 +207,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _skipModifierEvent:
     type: boolean
     description: skip Modifier Event
@@ -200,9 +225,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

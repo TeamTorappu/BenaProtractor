@@ -10,30 +10,35 @@ fields:
         parse:
           type: literal
           return: _
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: cnt_resource
         display: false
         parse:
           type: literal
           return: cnt_resource
+          generated: true
       -
         value: cnt_resource_gras_bonus
         display: false
         parse:
           type: literal
           return: cnt_resource_gras_bonus
+          generated: true
       -
         value: cnt_resource_park_bonus
         display: false
         parse:
           type: literal
           return: cnt_resource_park_bonus
+          generated: true
   _poolKeyBB:
     type: string
     description: pool Key B B
@@ -44,45 +49,53 @@ fields:
         parse:
           type: literal
           return: bonus_drop_pool
+          generated: true
       -
         value: default_pool
         display: false
         parse:
           type: literal
           return: default_pool
+          generated: true
       -
         value: extra_pool
         display: false
         parse:
           type: literal
           return: extra_pool
+          generated: true
       -
         value: pool_key_trap_skill_trigger
         display: false
         parse:
           type: literal
           return: pool_key_trap_skill_trigger
+          generated: true
       -
         value: resource
         display: false
         parse:
           type: literal
           return: resource
+          generated: true
       -
         value: resource_gras_bonus
         display: false
         parse:
           type: literal
           return: resource_gras_bonus
+          generated: true
       -
         value: resource_park_bonus
         display: false
         parse:
           type: literal
           return: resource_park_bonus
+          generated: true
       -
         value: resource_pool
         display: false
         parse:
           type: literal
           return: resource_pool
+          generated: true

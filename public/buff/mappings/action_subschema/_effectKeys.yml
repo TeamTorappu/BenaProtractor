@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   GainToken:
     type: array
     values:
@@ -26,6 +27,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["enemy_trcerb_common_die_02"]"
         display: false
@@ -35,6 +37,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[]"
         display: false
@@ -44,3 +47,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

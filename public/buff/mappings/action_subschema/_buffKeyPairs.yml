@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"blockerBuffKey":"highland_block_mark","blockeeBuffKey":"highland_block_mark"}]"
         display: false
@@ -23,3 +24,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

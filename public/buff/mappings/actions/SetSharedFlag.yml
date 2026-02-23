@@ -10,15 +10,18 @@ fields:
         parse:
           type: literal
           return: DAMAGE_CAN_HURT_SLEEPING_ENTITY
+          generated: true
       -
         value: DAMAGE_IS_UNDEADABLE_THIS_TIME
         display: false
         parse:
           type: literal
           return: DAMAGE_IS_UNDEADABLE_THIS_TIME
+          generated: true
       -
         value: HEAL_CAN_GENERAL_SHIELD
         display: false
         parse:
           type: literal
           return: HEAL_CAN_GENERAL_SHIELD
+          generated: true

@@ -10,3 +10,4 @@ fields:
         parse:
           type: literal
           return: enemy_shpkg_skill_02_white_die_01
+          generated: true

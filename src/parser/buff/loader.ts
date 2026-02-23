@@ -1,15 +1,11 @@
 import { loadPublicYAML } from "@/composables/usePublic";
 
-const pending = new Map<string, Promise<any>>();
-
-function load(path: string): Promise<any> {
-    const full = `buff/mappings/${path}`;
-    if (!pending.has(full))
-        pending.set(
-            full,
-            loadPublicYAML(full).catch(() => null),
-        );
-    return pending.get(full)!;
+async function load(path: string): Promise<any> {
+    try {
+        return await loadPublicYAML(`buff/mappings/${path}`);
+    } catch {
+        return null;
+    }
 }
 
 export const loadIndex = () => load("index.yml");

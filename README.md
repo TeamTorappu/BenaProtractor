@@ -19,3 +19,6 @@ pnpm tauri icon
 git submodule add https://github.com/Kengxxiao/ArknightsGameData.git include/stb
 git submodule update --init --recursive
 ```
+
+## 编辑
+根据git日志观察有哪些新增, 移除`generated`, 实现`fn`, 填充`public/buff/...`

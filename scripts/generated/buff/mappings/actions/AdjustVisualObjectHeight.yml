@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _newHeight:
     type: number
     description: new Height
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: -0.4000000059604645
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

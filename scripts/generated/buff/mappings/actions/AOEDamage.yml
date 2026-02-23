@@ -10,36 +10,42 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: SelectTarget
         display: false
         parse:
           type: literal
           return: SelectTarget
+          generated: true
       -
         value: aoe_selector
         display: false
         parse:
           type: literal
           return: aoe_selector
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: s3_selector
         display: false
         parse:
           type: literal
           return: s3_selector
+          generated: true
       -
         value: selector_s2
         display: false
         parse:
           type: literal
           return: selector_s2
+          generated: true
   _attackType:
     type: string
     description: attack Type
@@ -50,18 +56,21 @@ fields:
         parse:
           type: literal
           return: BUFF
+          generated: true
       -
         value: NORMAL
         display: false
         parse:
           type: literal
           return: NORMAL
+          generated: true
       -
         value: SPLASH
         display: false
         parse:
           type: literal
           return: SPLASH
+          generated: true
   _buffs:
     type: array | null
     description: buffs
@@ -72,6 +81,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _checkTargetAlive:
     type: boolean
     description: check Target Alive
@@ -82,12 +92,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _createEffect:
     type: boolean
     description: create Effect
@@ -98,12 +110,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _damageKey:
     type: string
     description: damage Key
@@ -114,48 +128,56 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: blast_damage
         display: false
         parse:
           type: literal
           return: blast_damage
+          generated: true
       -
         value: boom_value_ally
         display: false
         parse:
           type: literal
           return: boom_value_ally
+          generated: true
       -
         value: damage
         display: false
         parse:
           type: literal
           return: damage
+          generated: true
       -
         value: magic_damage
         display: false
         parse:
           type: literal
           return: magic_damage
+          generated: true
       -
         value: reborn_magic_damage
         display: false
         parse:
           type: literal
           return: reborn_magic_damage
+          generated: true
       -
         value: small_bomb_damage
         display: false
         parse:
           type: literal
           return: small_bomb_damage
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
   _damageScale:
     type: null | string
     description: damage Scale
@@ -166,102 +188,119 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: 1.0
         display: false
         parse:
           type: literal
           return: 1.0
+          generated: true
       -
         value: aoe_atk_scale
         display: false
         parse:
           type: literal
           return: aoe_atk_scale
+          generated: true
       -
         value: aoe_damage_scale
         display: false
         parse:
           type: literal
           return: aoe_damage_scale
+          generated: true
       -
         value: aoe_scale
         display: false
         parse:
           type: literal
           return: aoe_scale
+          generated: true
       -
         value: atk_scale
         display: false
         parse:
           type: literal
           return: atk_scale
+          generated: true
       -
         value: atk_scale_2
         display: false
         parse:
           type: literal
           return: atk_scale_2
+          generated: true
       -
         value: atk_scale_AOE
         display: false
         parse:
           type: literal
           return: atk_scale_AOE
+          generated: true
       -
         value: bomb_atk_scale
         display: false
         parse:
           type: literal
           return: bomb_atk_scale
+          generated: true
       -
         value: boom_damage_scale
         display: false
         parse:
           type: literal
           return: boom_damage_scale
+          generated: true
       -
         value: boom_scale
         display: false
         parse:
           type: literal
           return: boom_scale
+          generated: true
       -
         value: combat_atk_scale
         display: false
         parse:
           type: literal
           return: combat_atk_scale
+          generated: true
       -
         value: critical_damage_scale
         display: false
         parse:
           type: literal
           return: critical_damage_scale
+          generated: true
       -
         value: damage_by_atk_scale
         display: false
         parse:
           type: literal
           return: damage_by_atk_scale
+          generated: true
       -
         value: damage_scale
         display: false
         parse:
           type: literal
           return: damage_scale
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: spash_atk_scale
         display: false
         parse:
           type: literal
           return: spash_atk_scale
+          generated: true
   _damageType:
     type: string
     description: damage Type
@@ -272,18 +311,21 @@ fields:
         parse:
           type: literal
           return: MAGICAL
+          generated: true
       -
         value: PHYSICAL
         display: false
         parse:
           type: literal
           return: PHYSICAL
+          generated: true
       -
         value: PURE
         display: false
         parse:
           type: literal
           return: PURE
+          generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -294,12 +336,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterType:
     type: string
     description: filter Type
@@ -310,6 +354,7 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
   _hitEffectKey:
     type: null | string
     description: hit Effect Key
@@ -320,108 +365,126 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: accast_skill_hit
         display: false
         parse:
           type: literal
           return: accast_skill_hit
+          generated: true
       -
         value: enemy_acloon_skill_hit
         display: false
         parse:
           type: literal
           return: enemy_acloon_skill_hit
+          generated: true
       -
         value: enemy_eltrsm_phase_1_emp_hit
         display: false
         parse:
           type: literal
           return: enemy_eltrsm_phase_1_emp_hit
+          generated: true
       -
         value: enemy_flmgd_skill_hit
         display: false
         parse:
           type: literal
           return: enemy_flmgd_skill_hit
+          generated: true
       -
         value: enemy_flmspr_hit_01
         display: false
         parse:
           type: literal
           return: enemy_flmspr_hit_01
+          generated: true
       -
         value: enemy_lrnazg_attack_hit_01
         display: false
         parse:
           type: literal
           return: enemy_lrnazg_attack_hit_01
+          generated: true
       -
         value: enemy_ltntpt_attack_ap_hit_01
         display: false
         parse:
           type: literal
           return: enemy_ltntpt_attack_ap_hit_01
+          generated: true
       -
         value: enemy_ltntpt_attack_hit_01
         display: false
         parse:
           type: literal
           return: enemy_ltntpt_attack_hit_01
+          generated: true
       -
         value: enemy_mmkabi_hit_02
         display: false
         parse:
           type: literal
           return: enemy_mmkabi_hit_02
+          generated: true
       -
         value: enemy_wdrrl_skill_hit_01
         display: false
         parse:
           type: literal
           return: enemy_wdrrl_skill_hit_01
+          generated: true
       -
         value: enemy_xbsmi_range_die_hit
         display: false
         parse:
           type: literal
           return: enemy_xbsmi_range_die_hit
+          generated: true
       -
         value: judge_skill_02_hit_01
         display: false
         parse:
           type: literal
           return: judge_skill_02_hit_01
+          generated: true
       -
         value: narant_skill_03_hit_04
         display: false
         parse:
           type: literal
           return: narant_skill_03_hit_04
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: odda_common_hit_01
         display: false
         parse:
           type: literal
           return: odda_common_hit_01
+          generated: true
       -
         value: skzjs_start_hit
         display: false
         parse:
           type: literal
           return: skzjs_start_hit
+          generated: true
       -
         value: trap_skzth_hit_01
         display: false
         parse:
           type: literal
           return: trap_skzth_hit_01
+          generated: true
   _hitEffectUseSourceFaceTo:
     type: boolean
     description: hit Effect Use Source Face To
@@ -432,6 +495,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isNoSourceDamage:
     type: boolean
     description: is No Source Damage
@@ -442,12 +506,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _maxTargetCountKey:
     type: string
     description: max Target Count Key
@@ -458,6 +524,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _modifierKey:
     type: string
     description: modifier Key
@@ -468,6 +535,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _radius:
     type: number
     description: radius
@@ -478,84 +546,98 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.6000000238418579
         display: false
         parse:
           type: literal
           return: 0.6000000238418579
+          generated: true
       -
         value: 0.800000011920929
         display: false
         parse:
           type: literal
           return: 0.800000011920929
+          generated: true
       -
         value: 0.8999999761581421
         display: false
         parse:
           type: literal
           return: 0.8999999761581421
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 1.100000023841858
         display: false
         parse:
           type: literal
           return: 1.100000023841858
+          generated: true
       -
         value: 1.25
         display: false
         parse:
           type: literal
           return: 1.25
+          generated: true
       -
         value: 1.2999999523162842
         display: false
         parse:
           type: literal
           return: 1.2999999523162842
+          generated: true
       -
         value: 1.5
         display: false
         parse:
           type: literal
           return: 1.5
+          generated: true
       -
         value: 10
         display: false
         parse:
           type: literal
           return: 10
+          generated: true
       -
         value: 2
         display: false
         parse:
           type: literal
           return: 2
+          generated: true
       -
         value: 3
         display: false
         parse:
           type: literal
           return: 3
+          generated: true
       -
         value: 3.0999999046325684
         display: false
         parse:
           type: literal
           return: 3.0999999046325684
+          generated: true
       -
         value: 99
         display: false
         parse:
           type: literal
           return: 99
+          generated: true
   _rangeId:
     type: null | string
     description: range Id
@@ -566,36 +648,42 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: x-1
         display: false
         parse:
           type: literal
           return: x-1
+          generated: true
       -
         value: x-4
         display: false
         parse:
           type: literal
           return: x-4
+          generated: true
       -
         value: x-5
         display: false
         parse:
           type: literal
           return: x-5
+          generated: true
       -
         value: x-6
         display: false
         parse:
           type: literal
           return: x-6
+          generated: true
   _sourceApplyWay:
     type: string
     description: source Apply Way
@@ -606,24 +694,28 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: MELEE
         display: false
         parse:
           type: literal
           return: MELEE
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: RANGED
         display: false
         parse:
           type: literal
           return: RANGED
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -634,12 +726,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -650,6 +744,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -660,18 +755,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
   _useAbilitySelector:
     type: boolean
     description: use Ability Selector
@@ -682,12 +780,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useAbilitySourceSide:
     type: boolean
     description: use Ability Source Side
@@ -698,12 +798,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useDamageFromBB:
     type: boolean
     description: use Damage From B B
@@ -714,12 +816,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useRadius:
     type: boolean
     description: use Radius
@@ -730,9 +834,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

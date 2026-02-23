@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _duration:
     type: number
     description: duration
@@ -26,30 +28,35 @@ fields:
         parse:
           type: literal
           return: 0.20000000298023224
+          generated: true
       -
         value: 0.5
         display: false
         parse:
           type: literal
           return: 0.5
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 3
         display: false
         parse:
           type: literal
           return: 3
+          generated: true
       -
         value: 5
         display: false
         parse:
           type: literal
           return: 5
+          generated: true
   _randomness:
     type: number
     description: randomness
@@ -60,6 +67,7 @@ fields:
         parse:
           type: literal
           return: 0.15000000596046448
+          generated: true
   _strength:
     type: object
     description: strength
@@ -70,6 +78,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _vibrato:
     type: number
     description: vibrato
@@ -80,9 +89,11 @@ fields:
         parse:
           type: literal
           return: 15
+          generated: true
       -
         value: 25
         display: false
         parse:
           type: literal
           return: 25
+          generated: true

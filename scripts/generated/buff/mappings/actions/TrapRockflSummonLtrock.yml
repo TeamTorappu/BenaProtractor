@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _endPosOffsetAlongDirection:
     type: number
     description: end Pos Offset Along Direction
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 0.5
+          generated: true
   _enemyKey:
     type: string
     description: enemy Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: enemy_1343_ltrock
+          generated: true
   _midPosOffsetAlongDirection:
     type: number
     description: mid Pos Offset Along Direction
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: 0.20000000298023224
+          generated: true
   _motionMode:
     type: string
     description: motion Mode
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: WALK
+          generated: true
   _source:
     type: string
     description: source
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -70,3 +76,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

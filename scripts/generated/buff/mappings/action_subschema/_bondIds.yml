@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["kjeragShip"]"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["lateranoShip"]"
         display: false
@@ -32,6 +34,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["raidShip"]"
         display: false
@@ -41,6 +44,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["sargonShip"]"
         display: false
@@ -50,6 +54,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["skillfulShip"]"
         display: false
@@ -59,6 +64,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["steadShip"]"
         display: false
@@ -68,6 +74,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["victoriaShip"]"
         display: false
@@ -77,6 +84,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["yanShip"]"
         display: false
@@ -86,3 +94,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

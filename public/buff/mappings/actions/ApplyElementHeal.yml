@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _isCont:
     type: boolean
     description: is Cont
@@ -32,6 +35,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _maxEpHeal:
     type: boolean
     description: max Ep Heal
@@ -42,9 +46,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

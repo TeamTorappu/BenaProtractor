@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _cardBuffKey:
     type: null | string
     description: card Buff Key
@@ -26,18 +28,21 @@ fields:
         parse:
           type: literal
           return: "fang2_t_1[card]"
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: rogue_3_relic_book_9
         display: false
         parse:
           type: literal
           return: rogue_3_relic_book_9
+          generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -48,6 +53,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _exceptOwner:
     type: boolean
     description: except Owner
@@ -58,6 +64,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _exceptTokenAndTrap:
     type: boolean
     description: except Token And Trap
@@ -68,12 +75,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -84,6 +93,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -94,12 +104,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -110,24 +122,28 @@ fields:
         parse:
           type: literal
           return: ALL_THE_TIME
+          generated: true
       -
         value: HOLD_BY_BUFF
         display: false
         parse:
           type: literal
           return: HOLD_BY_BUFF
+          generated: true
       -
         value: IMMEDIATELY
         display: false
         parse:
           type: literal
           return: IMMEDIATELY
+          generated: true
       -
         value: UNTIL_NEXT_SPAWN_DECK_TRIGGER_ONCE
         display: false
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN_DECK_TRIGGER_ONCE
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -138,3 +154,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: dist
+          generated: true
       -
         value: max_dist
         display: false
         parse:
           type: literal
           return: max_dist
+          generated: true
   _buffTarget:
     type: string
     description: buff Target
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _buffkey:
     type: string
     description: buffkey
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: mpctrl_car_stage
+          generated: true
   _target:
     type: string
     description: target
@@ -46,3 +50,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

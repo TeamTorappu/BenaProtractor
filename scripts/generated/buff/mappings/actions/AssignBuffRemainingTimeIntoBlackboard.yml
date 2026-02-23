@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: hsgma2_s_3
+          generated: true
       -
         value: trap_xdmac2_s
         display: false
         parse:
           type: literal
           return: trap_xdmac2_s
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -36,3 +39,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

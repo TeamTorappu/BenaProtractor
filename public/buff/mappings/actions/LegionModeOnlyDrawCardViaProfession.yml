@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _drawCardFromUsedAndPending:
     type: boolean
     description: draw Card From Used And Pending
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _professions:
     type: array
     description: professions
@@ -42,6 +46,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _randomDrawCard:
     type: boolean
     description: random Draw Card
@@ -52,9 +57,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _cardBuffKey:
     type: null
     description: card Buff Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _createCardBuff:
     type: boolean
     description: create Card Buff
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _createDeckBuff:
     type: boolean
     description: create Deck Buff
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _deckBuff:
     type: object
     description: deck Buff
@@ -50,6 +54,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN
+          generated: true
   _selectors:
     type: array
     description: selectors
@@ -100,6 +109,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -110,6 +120,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useTokenAsSouurceCard:
     type: boolean
     description: use Token As Souurce Card
@@ -120,3 +131,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

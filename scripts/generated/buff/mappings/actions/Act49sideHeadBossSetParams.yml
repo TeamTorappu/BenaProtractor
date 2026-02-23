@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: doom
+          generated: true
   _dotAttackAtkScaleKey:
     type: string
     description: dot Attack Atk Scale Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: dot_attack_atk_scale
+          generated: true
   _dotAttackDurationKey:
     type: string
     description: dot Attack Duration Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: dot_attack_duration
+          generated: true
   _dotAttackEleAtkScaleKey:
     type: string
     description: dot Attack Ele Atk Scale Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: dot_attack_ele_atk_scale
+          generated: true
   _dotAttackTriggerIntervalKey:
     type: string
     description: dot Attack Trigger Interval Key
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: dot_attack_trigger_interval
+          generated: true
   _mainAttackAtkScaleKey:
     type: string
     description: main Attack Atk Scale Key
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: main_attack_atk_scale
+          generated: true
   _mainAttackEleAtkScaleKey:
     type: string
     description: main Attack Ele Atk Scale Key
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: main_attack_ele_atk_scale
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -80,3 +87,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

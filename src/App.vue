@@ -19,26 +19,50 @@
         <n-layout-content content-style="display: flex; height: 100%; padding: 12px; gap: 12px;">
 
           <div class="w-72 flex-shrink-0 flex flex-col h-full">
-            <n-card title="Buff 列表" size="small" class="h-full flex flex-col overflow-hidden"
-              :segmented="{ content: true }">
-              <template #header-extra>
-                <n-badge :value="filteredKeys.length" color="#18a058" />
+            <n-card size="small" class="h-full flex flex-col overflow-hidden" :segmented="{ content: true }">
+              <template #header>
+                <n-tabs v-model:value="activeTab" size="small" class="flex-grow" type="segment" animated>
+                  <n-tab-pane name="buff" tab="Buff" />
+                  <n-tab-pane name="rogue" tab="Rogue" />
+                </n-tabs>
               </template>
-              <div class="mb-3">
+              <template #header-extra>
+                <n-badge :value="activeTab === 'buff' ? filteredKeys.length : filteredRogueItems.length" color="#18a058" />
+              </template>
+              <div v-if="activeTab === 'buff'" class="flex-grow overflow-hidden">
                 <n-input v-model:value="searchQuery" placeholder="搜索 Buff..." clearable>
                   <template #prefix><n-icon>
                       <Search />
                     </n-icon></template>
                 </n-input>
-              </div>
-              <div class="flex-grow overflow-hidden">
-                <n-virtual-list :items="filteredKeys" :item-size="34" class="h-full">
+                <n-virtual-list :items="filteredKeys" :item-size="34" class="h-full" :scrollbar-props="{ trigger: 'none' }">
                   <template #default="{ item }">
                     <div
                       :class="['px-3 py-1.5 my-0.5 rounded cursor-pointer transition-colors',
-                        selectedKey === item.key ? 'bg-blue-500/20 text-blue-500' : 'hover:bg-gray-100 dark:hover:bg-gray-800']"
+                        selectedKey === item.key && activeTab === 'buff' ? 'bg-blue-500/20 text-blue-500' : 'hover:bg-gray-100 dark:hover:bg-gray-800']"
                       @click="selectKey(item.key)">
                       {{ item.label }}
+                    </div>
+                  </template>
+                </n-virtual-list>
+              </div>
+              <div v-if="activeTab === 'rogue'" class="flex-grow overflow-hidden flex flex-col gap-3">
+                <div class="space-y-2 flex-shrink-0">
+                  <n-select v-model:value="rogueFilterSeason" placeholder="选择期" clearable :options="rogueSeasonOptions" size="small" />
+                  <n-select v-model:value="rogueFilterType" placeholder="选择类别" clearable :options="rogueTypeOptions" size="small" />
+                  <n-input v-model:value="rogueSearchQuery" placeholder="搜索..." clearable size="small">
+                    <template #prefix><n-icon>
+                        <Search />
+                      </n-icon></template>
+                  </n-input>
+                </div>
+                <n-virtual-list :items="filteredRogueItems" :item-size="34" class="flex-grow overflow-hidden" :scrollbar-props="{ trigger: 'none' }">
+                  <template #default="{ item }">
+                    <div
+                      :class="['px-3 py-1.5 my-0.5 rounded cursor-pointer transition-colors',
+                        selectedRogueId === item.id && activeTab === 'rogue' ? 'bg-blue-500/20 text-blue-500' : 'hover:bg-gray-100 dark:hover:bg-gray-800']"
+                      @click="selectRogue(item.id)">
+                      {{ item.parsedName }}
                     </div>
                   </template>
                 </n-virtual-list>
@@ -49,14 +73,13 @@
           <div class="flex-grow min-w-0 h-full">
             <n-card title="数据结构" size="small" class="h-full overflow-hidden" :segmented="{ content: true }">
               <template #header-extra>
-                <n-switch v-model:value="showAll" size="small" @update:value="refreshTree">
+                <n-switch v-if="selectedKey" v-model:value="showAll" size="small" @update:value="refreshTree">
                   <template #checked>全部</template>
                   <template #unchecked>精简</template>
                 </n-switch>
               </template>
               <div class="h-full overflow-auto">
-                <n-tree :data="treeData" block-line selectable expand-on-click
-                  @update:selected-keys="handleSelectNode" />
+                <n-tree :data="treeData" block-line selectable expand-on-click @update:selected-keys="1" />
               </div>
             </n-card>
           </div>
@@ -96,6 +119,9 @@ import {
   NIcon,
   NVirtualList,
   NBadge,
+  NTabs,
+  NTabPane,
+  NSelect,
   darkTheme,
   type TreeOption
 } from 'naive-ui'
@@ -103,9 +129,14 @@ import { LogoGithub, Search } from '@vicons/carbon'
 import hljs from 'highlight.js/lib/core'
 import json from 'highlight.js/lib/languages/json'
 import { loadPublicJSON } from '@/composables/usePublic'
+import { buildRogueObjects, loadRogueSeasons, type RogueItem } from '@/composables/useRogue'
 import { parseBuffsToTree } from '@/parser/buff';
+import { parseRogueToTree } from '@/parser/rogue'
+import { computedAsync } from '@vueuse/core'
 
 hljs.registerLanguage('json', json)
+
+const activeTab = ref<'buff' | 'rogue'>('buff')
 
 const isDark = ref(false)
 const theme = computed(() => (isDark.value ? darkTheme : null))
@@ -122,12 +153,48 @@ loadPublicJSON('gamedata/battle/buff_template_data.json')
     allBuffdata.value = {}
   })
 
+
+const rogueItems = ref<RogueItem[]>([])
+buildRogueObjects()
+  .then((items) => {
+    rogueItems.value = items
+  })
+  .catch(() => {
+    rogueItems.value = []
+  })
+
 const searchQuery = ref('')
+const selectedRogueId = ref<string | null>(null)
+
+const rogueSearchQuery = ref('')
+const rogueFilterSeason = ref<string | null>(null)
+const rogueFilterType = ref<string | null>(null)
+
+const rogueSeasonOptions = computedAsync(async () => {
+  const seasons = await loadRogueSeasons()
+  return Object.entries(seasons).map(([key, name]) => ({ label: name, value: key }));
+})
+
+const rogueTypeOptions = computed(() => {
+  const types = new Set(rogueItems.value.map(item => item.type))
+  return Array.from(types).map(t => ({ label: t, value: t }))
+})
+
+const filteredRogueItems = computed(() => {
+  return rogueItems.value.filter(item => {
+    const matchSeason = !rogueFilterSeason.value || item.data.season === rogueFilterSeason.value
+    const matchType = !rogueFilterType.value || item.type === rogueFilterType.value
+    const matchSearch = !rogueSearchQuery.value || 
+      item.id.includes(rogueSearchQuery.value) || 
+      item.name.includes(rogueSearchQuery.value)
+    return matchSeason && matchType && matchSearch
+  })
+})
 
 const treeData = ref<TreeOption[]>([])
 
 const codeContent = ref('')
-const isJsonEmpty = computed(() => !codeContent.value || codeContent.value.trim() === '{}' )
+const isJsonEmpty = computed(() => !codeContent.value || codeContent.value.trim() === '{}')
 
 const showAll = ref(false)
 
@@ -149,19 +216,28 @@ const selectKey = async (key: string) => {
   console.log(treeData.value)
 }
 
-const refreshTree = async () => {
-  if (!selectedKey.value) return
-  const obj = allBuffdata.value ? allBuffdata.value[selectedKey.value] : undefined
-  treeData.value = await parseBuffsToTree(obj, showAll.value)
-}
-
-
-
-const handleSelectNode = (keys: Array<string | number>) => {
-  if (keys.length > 0) {
-    console.log('Selected:', keys[0])
+const selectRogue = async (id: string) => {
+  selectedRogueId.value = id
+  const rogueItem = rogueItems.value.find(item => item.id === id)
+  if (rogueItem) {
+    codeContent.value = JSON.stringify(rogueItem.data.itemData, null, 2)
+    treeData.value = await parseRogueToTree(rogueItem.data.itemData, showAll.value)
   }
 }
+
+const refreshTree = async () => {
+  if (activeTab.value === 'buff' && selectedKey.value) {
+    const obj = allBuffdata.value ? allBuffdata.value[selectedKey.value] : undefined
+    treeData.value = await parseBuffsToTree(obj, showAll.value)
+  } else if (activeTab.value === 'rogue' && selectedRogueId.value) {
+    const rogueItem = rogueItems.value.find(item => item.id === selectedRogueId.value)
+    if (rogueItem) {
+      treeData.value = await parseRogueToTree(rogueItem.data.itemData, showAll.value)
+    }
+  }
+}
+
+
 
 </script>
 <style scoped></style>

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _assignTargetTokenOrHost:
     type: boolean
     description: assign Target Token Or Host
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _bbKey:
     type: null | string
     description: bb Key
@@ -42,18 +46,21 @@ fields:
         parse:
           type: literal
           return: currentPos
+          generated: true
       -
         value: current_position
         display: false
         parse:
           type: literal
           return: current_position
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _colKey:
     type: null | string
     description: col Key
@@ -64,12 +71,14 @@ fields:
         parse:
           type: literal
           return: col
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _rowKey:
     type: null | string
     description: row Key
@@ -80,12 +89,14 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: row
         display: false
         parse:
           type: literal
           return: row
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -96,15 +107,18 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

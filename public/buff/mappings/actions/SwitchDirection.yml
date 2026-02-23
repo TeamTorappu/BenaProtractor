@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: UP
+          generated: true
   _downNodes:
     type: array
     description: down Nodes
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _leftNodes:
     type: array
     description: left Nodes
@@ -30,6 +32,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _rightNodes:
     type: array
     description: right Nodes
@@ -40,6 +43,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _source:
     type: string
     description: source
@@ -50,12 +54,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _upNodes:
     type: array
     description: up Nodes
@@ -66,6 +72,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _useCustomDirection:
     type: boolean
     description: use Custom Direction
@@ -76,3 +83,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

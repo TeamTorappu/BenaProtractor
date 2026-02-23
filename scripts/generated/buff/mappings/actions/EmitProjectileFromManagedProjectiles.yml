@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.10000000149011612
         display: false
         parse:
           type: literal
           return: 0.10000000149011612
+          generated: true
   _addBbKeyForEachProjectile:
     type: null | string
     description: add Bb Key For Each Projectile
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: hit_interval
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _addBbValue:
     type: number
     description: add Bb Value
@@ -42,12 +46,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.30000001192092896
         display: false
         parse:
           type: literal
           return: 0.30000001192092896
+          generated: true
   _copyBb:
     type: boolean
     description: copy Bb
@@ -58,12 +64,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _projectileKey:
     type: null | string
     description: projectile Key
@@ -74,12 +82,14 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: projectile_chr_lemuen_s3
         display: false
         parse:
           type: literal
           return: projectile_chr_lemuen_s3
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -90,6 +100,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useProjectileAsSource:
     type: boolean
     description: use Projectile As Source
@@ -100,9 +111,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

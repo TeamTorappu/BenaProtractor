@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: MELEE
         display: false
         parse:
           type: literal
           return: MELEE
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
   _attackType:
     type: string
     description: attack Type
@@ -32,18 +35,21 @@ fields:
         parse:
           type: literal
           return: BUFF
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: NORMAL
         display: false
         parse:
           type: literal
           return: NORMAL
+          generated: true
   _damageType:
     type: string
     description: damage Type
@@ -54,12 +60,14 @@ fields:
         parse:
           type: literal
           return: MAGICAL
+          generated: true
       -
         value: PURE
         display: false
         parse:
           type: literal
           return: PURE
+          generated: true
   _getMaxHpFromTarget:
     type: boolean
     description: get Max Hp From Target
@@ -70,12 +78,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _ignoreForSp:
     type: boolean
     description: ignore For Sp
@@ -86,12 +96,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isUndeadable:
     type: boolean
     description: is Undeadable
@@ -102,12 +114,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _multiplierKey:
     type: string
     description: multiplier Key
@@ -118,6 +132,7 @@ fields:
         parse:
           type: literal
           return: cnt
+          generated: true
   _multiplyByKey:
     type: boolean
     description: multiply By Key
@@ -128,12 +143,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _noSourceDamage:
     type: boolean
     description: no Source Damage
@@ -144,12 +161,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _skipModifierEvent:
     type: boolean
     description: skip Modifier Event
@@ -160,12 +179,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -176,21 +197,25 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

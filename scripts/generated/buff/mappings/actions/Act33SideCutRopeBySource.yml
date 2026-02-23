@@ -10,3 +10,4 @@ fields:
         parse:
           type: literal
           return: PROJECTILE_SOURCE
+          generated: true

@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _checkBuildableType:
     type: boolean
     description: check Buildable Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _options:
     type: object
     description: options
@@ -30,6 +32,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _sourceType:
     type: string
     description: source Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _spawnedTokenSideType:
     type: string
     description: spawned Token Side Type
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: ALLY
+          generated: true
   _specifierSideType:
     type: boolean
     description: specifier Side Type
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _tileBlackList:
     type: string
     description: tile Black List
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: tile_start|tile_end|tile_telin|tile_telout
+          generated: true
   _tileBlackListKey:
     type: string
     description: tile Black List Key
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _tileEffect:
     type: null
     description: tile Effect
@@ -100,6 +109,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _tileFromBlackboard:
     type: boolean
     description: tile From Blackboard
@@ -110,6 +120,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _tokenToSpawn:
     type: object
     description: token To Spawn
@@ -120,3 +131,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

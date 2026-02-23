@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sharedFlags:
     type: string
     description: shared Flags
@@ -26,15 +28,18 @@ fields:
         parse:
           type: literal
           return: DAMAGE_WITHOUT_MODIFY
+          generated: true
       -
         value: INSTANT_KILL_LIKE_DAMAGE
         display: false
         parse:
           type: literal
           return: INSTANT_KILL_LIKE_DAMAGE
+          generated: true
       -
         value: IS_ENVIRONMENT_DAMAGE
         display: false
         parse:
           type: literal
           return: IS_ENVIRONMENT_DAMAGE
+          generated: true

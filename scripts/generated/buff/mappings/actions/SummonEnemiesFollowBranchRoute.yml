@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _buffToEnemy:
     type: object
     description: buff To Enemy
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _disableBornTweenColor:
     type: boolean
     description: disable Born Tween Color
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _managedByScheduler:
     type: boolean
     description: managed By Scheduler
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _overrideEnemyKey:
     type: string
     description: override Enemy Key
@@ -68,24 +75,28 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: enemy_2132_dyfake
         display: false
         parse:
           type: literal
           return: enemy_2132_dyfake
+          generated: true
       -
         value: enemy_9014_acstma
         display: false
         parse:
           type: literal
           return: enemy_9014_acstma
+          generated: true
       -
         value: enemy_9015_acstmb
         display: false
         parse:
           type: literal
           return: enemy_9015_acstmb
+          generated: true
   _setHostUid:
     type: boolean
     description: set Host Uid
@@ -96,12 +107,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _summonAllRoute:
     type: boolean
     description: summon All Route
@@ -112,12 +125,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -128,9 +143,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

@@ -10,3 +10,4 @@ fields:
         parse:
           type: literal
           return: MAIN_BUFF
+          generated: true

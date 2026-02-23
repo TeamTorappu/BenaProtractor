@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _cardKey:
     type: string
     description: card Key
@@ -20,15 +21,18 @@ fields:
         parse:
           type: literal
           return: trap_255_pckzhn
+          generated: true
       -
         value: trap_790_dytswd
         display: false
         parse:
           type: literal
           return: trap_790_dytswd
+          generated: true
       -
         value: trap_791_dytfre
         display: false
         parse:
           type: literal
           return: trap_791_dytfre
+          generated: true

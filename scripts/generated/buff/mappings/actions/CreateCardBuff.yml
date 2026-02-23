@@ -10,36 +10,42 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: PassengerStorage
         display: false
         parse:
           type: literal
           return: PassengerStorage
+          generated: true
       -
         value: eagle_valid
         display: false
         parse:
           type: literal
           return: eagle_valid
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: "prosts_t_1[raw_born]"
         display: false
         parse:
           type: literal
           return: "prosts_t_1[raw_born]"
+          generated: true
       -
         value: respawn_buff
         display: false
         parse:
           type: literal
           return: respawn_buff
+          generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -50,6 +56,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -60,6 +67,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -70,12 +78,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -86,24 +96,28 @@ fields:
         parse:
           type: literal
           return: ALL_THE_TIME
+          generated: true
       -
         value: HOLD_BY_BUFF
         display: false
         parse:
           type: literal
           return: HOLD_BY_BUFF
+          generated: true
       -
         value: IMMEDIATELY
         display: false
         parse:
           type: literal
           return: IMMEDIATELY
+          generated: true
       -
         value: UNTIL_NEXT_SPAWN
         display: false
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN
+          generated: true
   _target:
     type: string
     description: target
@@ -114,24 +128,28 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -142,9 +160,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

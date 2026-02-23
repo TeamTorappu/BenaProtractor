@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: day_count
+          generated: true
   _isMainMap:
     type: boolean
     description: is Main Map
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

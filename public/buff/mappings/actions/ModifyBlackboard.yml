@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _blackboardKeys:
     type: string
     description: blackboard Keys
@@ -26,156 +28,182 @@ fields:
         parse:
           type: literal
           return: atk_scale_init
+          generated: true
       -
         value: attack_speed
         display: false
         parse:
           type: literal
           return: attack_speed
+          generated: true
       -
         value: cache_current_stack
         display: false
         parse:
           type: literal
           return: cache_current_stack
+          generated: true
       -
         value: cache_enemy_count
         display: false
         parse:
           type: literal
           return: cache_enemy_count
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: cur_index
         display: false
         parse:
           type: literal
           return: cur_index
+          generated: true
       -
         value: damage_scale
         display: false
         parse:
           type: literal
           return: damage_scale
+          generated: true
       -
         value: damage_value
         display: false
         parse:
           type: literal
           return: damage_value
+          generated: true
       -
         value: divided_value
         display: false
         parse:
           type: literal
           return: divided_value
+          generated: true
       -
         value: drop_count
         display: false
         parse:
           type: literal
           return: drop_count
+          generated: true
       -
         value: height_delta_each
         display: false
         parse:
           type: literal
           return: height_delta_each
+          generated: true
       -
         value: hit_count
         display: false
         parse:
           type: literal
           return: hit_count
+          generated: true
       -
         value: hp
         display: false
         parse:
           type: literal
           return: hp
+          generated: true
       -
         value: init_delta
         display: false
         parse:
           type: literal
           return: init_delta
+          generated: true
       -
         value: one
         display: false
         parse:
           type: literal
           return: one
+          generated: true
       -
         value: prob
         display: false
         parse:
           type: literal
           return: prob
+          generated: true
       -
         value: prob_cache
         display: false
         parse:
           type: literal
           return: prob_cache
+          generated: true
       -
         value: re_height_delta_each
         display: false
         parse:
           type: literal
           return: re_height_delta_each
+          generated: true
       -
         value: re_init_delta
         display: false
         parse:
           type: literal
           return: re_init_delta
+          generated: true
       -
         value: recover_height_delta
         display: false
         parse:
           type: literal
           return: recover_height_delta
+          generated: true
       -
         value: "shining_e_002_t[aura][lowland].def"
         display: false
         parse:
           type: literal
           return: "shining_e_002_t[aura][lowland].def"
+          generated: true
       -
         value: switch_tile_index
         display: false
         parse:
           type: literal
           return: switch_tile_index
+          generated: true
       -
         value: total_damage
         display: false
         parse:
           type: literal
           return: total_damage
+          generated: true
       -
         value: triggered_cnt
         display: false
         parse:
           type: literal
           return: triggered_cnt
+          generated: true
       -
         value: triggered_cnt_add
         display: false
         parse:
           type: literal
           return: triggered_cnt_add
+          generated: true
       -
         value: zero_mark
         display: false
         parse:
           type: literal
           return: zero_mark
+          generated: true
   _checkFromBlackboardValue:
     type: boolean
     description: check From Blackboard Value
@@ -186,6 +214,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _fromBlackboardKeys:
     type: null | string
     description: from Blackboard Keys
@@ -196,90 +225,105 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: add
         display: false
         parse:
           type: literal
           return: add
+          generated: true
       -
         value: atk_scale_add
         display: false
         parse:
           type: literal
           return: atk_scale_add
+          generated: true
       -
         value: attack_speed_add
         display: false
         parse:
           type: literal
           return: attack_speed_add
+          generated: true
       -
         value: cnt_add
         display: false
         parse:
           type: literal
           return: cnt_add
+          generated: true
       -
         value: current_stack
         display: false
         parse:
           type: literal
           return: current_stack
+          generated: true
       -
         value: damage_scale_aura
         display: false
         parse:
           type: literal
           return: damage_scale_aura
+          generated: true
       -
         value: def_lowland
         display: false
         parse:
           type: literal
           return: def_lowland
+          generated: true
       -
         value: dynamic
         display: false
         parse:
           type: literal
           return: dynamic
+          generated: true
       -
         value: enemy_count
         display: false
         parse:
           type: literal
           return: enemy_count
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: prob
         display: false
         parse:
           type: literal
           return: prob
+          generated: true
       -
         value: prob_cache
         display: false
         parse:
           type: literal
           return: prob_cache
+          generated: true
       -
         value: triggered_cnt_add
         display: false
         parse:
           type: literal
           return: triggered_cnt_add
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
   _value:
     type: number
     description: value
@@ -290,39 +334,46 @@ fields:
         parse:
           type: literal
           return: -0.0020000000949949026
+          generated: true
       -
         value: -0.4099999964237213
         display: false
         parse:
           type: literal
           return: -0.4099999964237213
+          generated: true
       -
         value: 0
         display: false
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.0020000000949949026
         display: false
         parse:
           type: literal
           return: 0.0020000000949949026
+          generated: true
       -
         value: 0.4099999964237213
         display: false
         parse:
           type: literal
           return: 0.4099999964237213
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 100
         display: false
         parse:
           type: literal
           return: 100
+          generated: true

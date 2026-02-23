@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _baseOnHostAtk:
     type: boolean
     description: base On Host Atk
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _buffKey:
     type: null | string
     description: buff Key
@@ -36,24 +39,28 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: "enemy_dsuply_2_t[attr_buff]"
         display: false
         parse:
           type: literal
           return: "enemy_dsuply_2_t[attr_buff]"
+          generated: true
       -
         value: "enemy_dsuply_t[attr_buff]"
         display: false
         parse:
           type: literal
           return: "enemy_dsuply_t[attr_buff]"
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _buffSourceType:
     type: string
     description: buff Source Type
@@ -64,12 +71,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _elementDamageType:
     type: string
     description: element Damage Type
@@ -80,30 +89,35 @@ fields:
         parse:
           type: literal
           return: DARK
+          generated: true
       -
         value: FIRE
         display: false
         parse:
           type: literal
           return: FIRE
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: SANITY
         display: false
         parse:
           type: literal
           return: SANITY
+          generated: true
       -
         value: WATER
         display: false
         parse:
           type: literal
           return: WATER
+          generated: true
   _epDamageScale:
     type: string
     description: ep Damage Scale
@@ -114,18 +128,21 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: ep_damage_ratio
         display: false
         parse:
           type: literal
           return: ep_damage_ratio
+          generated: true
       -
         value: ep_damage_ratio_talent
         display: false
         parse:
           type: literal
           return: ep_damage_ratio_talent
+          generated: true
   _fixedEpDamage:
     type: number
     description: fixed Ep Damage
@@ -136,12 +153,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1000
         display: false
         parse:
           type: literal
           return: 1000
+          generated: true
   _fixedEpDamageKey:
     type: null | string
     description: fixed Ep Damage Key
@@ -152,96 +171,112 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: calculated_damage
         display: false
         parse:
           type: literal
           return: calculated_damage
+          generated: true
       -
         value: current_damage
         display: false
         parse:
           type: literal
           return: current_damage
+          generated: true
       -
         value: dark
         display: false
         parse:
           type: literal
           return: dark
+          generated: true
       -
         value: dark_damage_value
         display: false
         parse:
           type: literal
           return: dark_damage_value
+          generated: true
       -
         value: element_damage
         display: false
         parse:
           type: literal
           return: element_damage
+          generated: true
       -
         value: element_value
         display: false
         parse:
           type: literal
           return: element_value
+          generated: true
       -
         value: ep_damage
         display: false
         parse:
           type: literal
           return: ep_damage
+          generated: true
       -
         value: ep_damage_value
         display: false
         parse:
           type: literal
           return: ep_damage_value
+          generated: true
       -
         value: ep_dark_damage
         display: false
         parse:
           type: literal
           return: ep_dark_damage
+          generated: true
       -
         value: ep_value
         display: false
         parse:
           type: literal
           return: ep_value
+          generated: true
       -
         value: fire_damage
         display: false
         parse:
           type: literal
           return: fire_damage
+          generated: true
       -
         value: last_damage
         display: false
         parse:
           type: literal
           return: last_damage
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: revert_dark_damage
         display: false
         parse:
           type: literal
           return: revert_dark_damage
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
   _fixedEpDamageScale:
     type: string
     description: fixed Ep Damage Scale
@@ -252,18 +287,21 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: ep_damage_ratio
         display: false
         parse:
           type: literal
           return: ep_damage_ratio
+          generated: true
       -
         value: ep_damage_scale
         display: false
         parse:
           type: literal
           return: ep_damage_scale
+          generated: true
   _forceUseProjectileCachedAtk:
     type: boolean
     description: force Use Projectile Cached Atk
@@ -274,6 +312,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isEnvElementDamage:
     type: boolean
     description: is Env Element Damage
@@ -284,12 +323,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isFixedEpDamage:
     type: boolean
     description: is Fixed Ep Damage
@@ -300,12 +341,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _loadElementTypeFromBb:
     type: boolean
     description: load Element Type From Bb
@@ -316,12 +359,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _multiplyWithBuffValidStackCnt:
     type: boolean
     description: multiply With Buff Valid Stack Cnt
@@ -332,12 +377,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _noSource:
     type: boolean
     description: no Source
@@ -348,12 +395,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -364,24 +413,28 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -392,15 +445,18 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

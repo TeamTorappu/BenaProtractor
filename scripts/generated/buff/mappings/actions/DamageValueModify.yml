@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: NONE
+          generated: true
   _damageMask:
     type: string
     description: damage Mask
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: PHYSICAL_AND_MAGICAL
+          generated: true
   _filterApplyWay:
     type: boolean
     description: filter Apply Way
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterDamageType:
     type: boolean
     description: filter Damage Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

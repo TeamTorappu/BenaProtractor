@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: DEFAULT
+          generated: true
       -
         value: NIGHT
         display: false
         parse:
           type: literal
           return: NIGHT
+          generated: true
   _buildableChange:
     type: boolean
     description: buildable Change
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _buildableType:
     type: string
     description: buildable Type
@@ -42,6 +46,7 @@ fields:
         parse:
           type: literal
           return: NONE
+          generated: true
   _nightMode:
     type: boolean
     description: night Mode
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -68,30 +75,35 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: 0-1
         display: false
         parse:
           type: literal
           return: 0-1
+          generated: true
       -
         value: 1-2
         display: false
         parse:
           type: literal
           return: 1-2
+          generated: true
       -
         value: 3-6
         display: false
         parse:
           type: literal
           return: 3-6
+          generated: true
       -
         value: b-2
         display: false
         parse:
           type: literal
           return: b-2
+          generated: true
   _restoreTileOptions:
     type: boolean
     description: restore Tile Options
@@ -102,12 +114,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -118,3 +132,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

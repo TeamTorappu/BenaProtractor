@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffCnt:
     type: number
     description: buff Cnt
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _buffCntKey:
     type: string
     description: buff Cnt Key
@@ -30,12 +32,14 @@ fields:
         parse:
           type: literal
           return: golden_equip_cnt
+          generated: true
       -
         value: normal_equip_cnt
         display: false
         parse:
           type: literal
           return: normal_equip_cnt
+          generated: true
   _buffOwner:
     type: string
     description: buff Owner
@@ -46,6 +50,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -56,3 +61,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 3
         display: false
         parse:
           type: literal
           return: 3
+          generated: true
   _addCountBBKey:
     type: null | string
     description: add Count B B Key
@@ -26,60 +28,70 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: add_count
         display: false
         parse:
           type: literal
           return: add_count
+          generated: true
       -
         value: add_stack
         display: false
         parse:
           type: literal
           return: add_stack
+          generated: true
       -
         value: ally_ammo
         display: false
         parse:
           type: literal
           return: ally_ammo
+          generated: true
       -
         value: ex_add_count
         display: false
         parse:
           type: literal
           return: ex_add_count
+          generated: true
       -
         value: none
         display: false
         parse:
           type: literal
           return: none
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: real_ammo_percent
         display: false
         parse:
           type: literal
           return: real_ammo_percent
+          generated: true
       -
         value: recover_each_cnt
         display: false
         parse:
           type: literal
           return: recover_each_cnt
+          generated: true
       -
         value: self_ammo
         display: false
         parse:
           type: literal
           return: self_ammo
+          generated: true
   _addCountUsePercent:
     type: boolean
     description: add Count Use Percent
@@ -90,12 +102,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _consumeCount:
     type: number
     description: consume Count
@@ -106,6 +120,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _consumeCountBBKey:
     type: null
     description: consume Count B B Key
@@ -116,6 +131,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _consumeEventCount:
     type: boolean
     description: consume Event Count
@@ -126,6 +142,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _discardRemainingCount:
     type: boolean
     description: discard Remaining Count
@@ -136,6 +153,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _discardSoft:
     type: boolean
     description: discard Soft
@@ -146,6 +164,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _modifyMaxCount:
     type: boolean
     description: modify Max Count
@@ -156,12 +175,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _recoverCount:
     type: number
     description: recover Count
@@ -172,12 +193,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
   _recoverCountBBKey:
     type: null | string
     description: recover Count B B Key
@@ -188,48 +211,56 @@ fields:
         parse:
           type: literal
           return: ammo
+          generated: true
       -
         value: ammo_percent
         display: false
         parse:
           type: literal
           return: ammo_percent
+          generated: true
       -
         value: ammo_recover
         display: false
         parse:
           type: literal
           return: ammo_recover
+          generated: true
       -
         value: charge
         display: false
         parse:
           type: literal
           return: charge
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: recover_cnt
         display: false
         parse:
           type: literal
           return: recover_cnt
+          generated: true
       -
         value: recover_count
         display: false
         parse:
           type: literal
           return: recover_count
+          generated: true
       -
         value: recover_each_cnt
         display: false
         parse:
           type: literal
           return: recover_each_cnt
+          generated: true
   _recoverCountUsePercent:
     type: boolean
     description: recover Count Use Percent
@@ -240,12 +271,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _recoverEventCount:
     type: boolean
     description: recover Event Count
@@ -256,12 +289,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _recoverSkipLimitCheck:
     type: boolean
     description: recover Skip Limit Check
@@ -272,12 +307,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _restoreMaxCount:
     type: boolean
     description: restore Max Count
@@ -288,12 +325,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -304,12 +343,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _triggerConsumeEvent:
     type: boolean
     description: trigger Consume Event
@@ -320,6 +361,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useEvtRetAsReturnValue:
     type: boolean
     description: use Evt Ret As Return Value
@@ -330,9 +372,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

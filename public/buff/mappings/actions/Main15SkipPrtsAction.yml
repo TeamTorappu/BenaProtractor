@@ -10,3 +10,4 @@ fields:
         parse:
           type: literal
           return: MOVE_AND_DRAG_SOURCE
+          generated: true

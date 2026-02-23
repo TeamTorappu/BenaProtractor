@@ -1,0 +1,1096 @@
+add:
+  type: number
+  description: add
+  icon:
+addition@cost:
+  type: number
+  description: addition@cost
+  icon:
+ammo_add_ratio:
+  type: number
+  description: ammo_add_ratio
+  icon:
+ammo_max_ratio:
+  type: number
+  description: ammo_max_ratio
+  icon:
+atk:
+  type: number
+  description: atk
+  icon:
+atk_extra:
+  type: number
+  description: atk_extra
+  icon:
+atk_scale:
+  type: number
+  description: atk_scale
+  icon:
+attack_speed:
+  type: number
+  description: attack_speed
+  icon:
+base_force_level:
+  type: number
+  description: base_force_level
+  icon:
+blacklist:
+  type: number
+  description: blacklist
+  icon:
+block_cnt:
+  type: number
+  description: block_cnt
+  icon:
+born_hp_ratio:
+  type: number
+  description: born_hp_ratio
+  icon:
+buildable_type:
+  type: number
+  description: buildable_type
+  icon:
+certain_inspiration:
+  type: number
+  description: certain_inspiration
+  icon:
+change:
+  type: number
+  description: change
+  icon:
+char_id_list:
+  type: number
+  description: char_id_list
+  icon:
+char_list:
+  type: number
+  description: char_list
+  icon:
+choice_id:
+  type: number
+  description: choice_id
+  icon:
+choices:
+  type: number
+  description: choices
+  icon:
+cnt:
+  type: number
+  description: cnt
+  icon:
+cold:
+  type: number
+  description: cold
+  icon:
+compare:
+  type: number
+  description: compare
+  icon:
+condition:
+  type: number
+  description: condition
+  icon:
+condition_count:
+  type: number
+  description: condition_count
+  icon:
+condition_fragments_total_weight:
+  type: number
+  description: condition_fragments_total_weight
+  icon:
+condition_id:
+  type: number
+  description: condition_id
+  icon:
+condition_key:
+  type: number
+  description: condition_key
+  icon:
+condition_value:
+  type: number
+  description: condition_value
+  icon:
+cost:
+  type: number
+  description: cost
+  icon:
+cost_max_hp:
+  type: number
+  description: cost_max_hp
+  icon:
+cost_stun:
+  type: number
+  description: cost_stun
+  icon:
+cost_value:
+  type: number
+  description: cost_value
+  icon:
+count:
+  type: number
+  description: count
+  icon:
+count_extra:
+  type: number
+  description: count_extra
+  icon:
+counts:
+  type: number
+  description: counts
+  icon:
+damage:
+  type: number
+  description: damage
+  icon:
+damage_hitrate_magical:
+  type: number
+  description: damage_hitrate_magical
+  icon:
+damage_hitrate_physical:
+  type: number
+  description: damage_hitrate_physical
+  icon:
+damage_resistance:
+  type: number
+  description: damage_resistance
+  icon:
+damage_resistance[sanity_high].damage_resistance:
+  type: number
+  description: damage_resistance[sanity_high].damage_resistance
+  icon:
+damage_resistance[sanity_low].damage_resistance:
+  type: number
+  description: damage_resistance[sanity_low].damage_resistance
+  icon:
+damage_resistance_factor:
+  type: number
+  description: damage_resistance_factor
+  icon:
+damage_scale:
+  type: number
+  description: damage_scale
+  icon:
+damage_scale_base:
+  type: number
+  description: damage_scale_base
+  icon:
+damage_scale_factor:
+  type: number
+  description: damage_scale_factor
+  icon:
+damage_value1:
+  type: number
+  description: damage_value1
+  icon:
+damage_value2:
+  type: number
+  description: damage_value2
+  icon:
+def:
+  type: number
+  description: def
+  icon:
+def_down[stack].def:
+  type: number
+  description: def_down[stack].def
+  icon:
+def_extra:
+  type: number
+  description: def_extra
+  icon:
+def_penetrate:
+  type: number
+  description: def_penetrate
+  icon:
+delta:
+  type: number
+  description: delta
+  icon:
+direction:
+  type: number
+  description: direction
+  icon:
+divine_type:
+  type: number
+  description: divine_type
+  icon:
+division:
+  type: number
+  description: division
+  icon:
+divisor:
+  type: number
+  description: divisor
+  icon:
+dont_occupy_deploy_cnt:
+  type: number
+  description: dont_occupy_deploy_cnt
+  icon:
+down_layer:
+  type: number
+  description: down_layer
+  icon:
+drop_event_index:
+  type: number
+  description: drop_event_index
+  icon:
+drop_zone_id:
+  type: number
+  description: drop_zone_id
+  icon:
+duration:
+  type: number
+  description: duration
+  icon:
+dynamicability:
+  type: number
+  description: dynamicability
+  icon:
+each_atk:
+  type: number
+  description: each_atk
+  icon:
+effect:
+  type: number
+  description: effect
+  icon:
+enemy_key:
+  type: number
+  description: enemy_key
+  icon:
+ep_damage_resistance:
+  type: number
+  description: ep_damage_resistance
+  icon:
+ep_damage_scale:
+  type: number
+  description: ep_damage_scale
+  icon:
+event_args:
+  type: number
+  description: event_args
+  icon:
+event_id:
+  type: number
+  description: event_id
+  icon:
+event_key:
+  type: number
+  description: event_key
+  icon:
+exped_type:
+  type: number
+  description: exped_type
+  icon:
+extend_duration:
+  type: number
+  description: extend_duration
+  icon:
+extra_cond_lucky_level_drawn:
+  type: number
+  description: extra_cond_lucky_level_drawn
+  icon:
+fear:
+  type: number
+  description: fear
+  icon:
+filter_operator:
+  type: number
+  description: filter_operator
+  icon:
+force:
+  type: number
+  description: force
+  icon:
+freeze:
+  type: number
+  description: freeze
+  icon:
+from:
+  type: number
+  description: from
+  icon:
+gain:
+  type: number
+  description: gain
+  icon:
+gen_zone_id:
+  type: number
+  description: gen_zone_id
+  icon:
+heal_scale:
+  type: number
+  description: heal_scale
+  icon:
+heal_value:
+  type: number
+  description: heal_value
+  icon:
+high_max:
+  type: number
+  description: high_max
+  icon:
+high_min:
+  type: number
+  description: high_min
+  icon:
+hp:
+  type: number
+  description: hp
+  icon:
+hp_ratio:
+  type: number
+  description: hp_ratio
+  icon:
+hp_recovery_per_sec:
+  type: number
+  description: hp_recovery_per_sec
+  icon:
+hp_recovery_per_sec_by_max_hp_ratio:
+  type: number
+  description: hp_recovery_per_sec_by_max_hp_ratio
+  icon:
+id:
+  type: number
+  description: id
+  icon:
+id1:
+  type: number
+  description: id1
+  icon:
+id2:
+  type: number
+  description: id2
+  icon:
+id_a:
+  type: number
+  description: id_a
+  icon:
+id_b:
+  type: number
+  description: id_b
+  icon:
+ids:
+  type: number
+  description: ids
+  icon:
+init:
+  type: number
+  description: init
+  icon:
+inspiration:
+  type: number
+  description: inspiration
+  icon:
+int:
+  type: number
+  description: int
+  icon:
+interval:
+  type: number
+  description: interval
+  icon:
+is_drawn:
+  type: number
+  description: is_drawn
+  icon:
+is_success:
+  type: number
+  description: is_success
+  icon:
+key:
+  type: number
+  description: key
+  icon:
+level:
+  type: number
+  description: level
+  icon:
+levitate_duration:
+  type: number
+  description: levitate_duration
+  icon:
+life_point:
+  type: number
+  description: life_point
+  icon:
+limit:
+  type: number
+  description: limit
+  icon:
+limit_cost:
+  type: number
+  description: limit_cost
+  icon:
+limit_max:
+  type: number
+  description: limit_max
+  icon:
+low_max:
+  type: number
+  description: low_max
+  icon:
+low_min:
+  type: number
+  description: low_min
+  icon:
+lower_bound@cost:
+  type: number
+  description: lower_bound@cost
+  icon:
+lower_bound@respawn_time:
+  type: number
+  description: lower_bound@respawn_time
+  icon:
+lucky_level:
+  type: number
+  description: lucky_level
+  icon:
+magic_resist_penetrate:
+  type: number
+  description: magic_resist_penetrate
+  icon:
+magic_resistance:
+  type: number
+  description: magic_resistance
+  icon:
+mapping:
+  type: number
+  description: mapping
+  icon:
+mask:
+  type: number
+  description: mask
+  icon:
+mass_level:
+  type: number
+  description: mass_level
+  icon:
+max:
+  type: number
+  description: max
+  icon:
+max_add_on_scale:
+  type: number
+  description: max_add_on_scale
+  icon:
+max_atk:
+  type: number
+  description: max_atk
+  icon:
+max_attack_speed:
+  type: number
+  description: max_attack_speed
+  icon:
+max_cost:
+  type: number
+  description: max_cost
+  icon:
+max_cost_ceil:
+  type: number
+  description: max_cost_ceil
+  icon:
+max_deploy_count:
+  type: number
+  description: max_deploy_count
+  icon:
+max_dist:
+  type: number
+  description: max_dist
+  icon:
+max_es_ratio:
+  type: number
+  description: max_es_ratio
+  icon:
+max_hp:
+  type: number
+  description: max_hp
+  icon:
+max_hp_extra:
+  type: number
+  description: max_hp_extra
+  icon:
+max_hp_ratio:
+  type: number
+  description: max_hp_ratio
+  icon:
+max_in_layer:
+  type: number
+  description: max_in_layer
+  icon:
+max_len:
+  type: number
+  description: max_len
+  icon:
+max_stack_cnt:
+  type: number
+  description: max_stack_cnt
+  icon:
+max_stack_cnt_override:
+  type: number
+  description: max_stack_cnt_override
+  icon:
+max_stack_count:
+  type: number
+  description: max_stack_count
+  icon:
+max_valid_stack_cnt:
+  type: number
+  description: max_valid_stack_cnt
+  icon:
+max_value:
+  type: number
+  description: max_value
+  icon:
+mid_max:
+  type: number
+  description: mid_max
+  icon:
+mid_min:
+  type: number
+  description: mid_min
+  icon:
+min:
+  type: number
+  description: min
+  icon:
+min_add_on_scale:
+  type: number
+  description: min_add_on_scale
+  icon:
+min_atk:
+  type: number
+  description: min_atk
+  icon:
+min_attack_speed:
+  type: number
+  description: min_attack_speed
+  icon:
+min_dist:
+  type: number
+  description: min_dist
+  icon:
+min_hp_ratio:
+  type: number
+  description: min_hp_ratio
+  icon:
+min_value:
+  type: number
+  description: min_value
+  icon:
+move_speed:
+  type: number
+  description: move_speed
+  icon:
+move_type:
+  type: number
+  description: move_type
+  icon:
+multiplier:
+  type: number
+  description: multiplier
+  icon:
+multiplier@atk:
+  type: number
+  description: multiplier@atk
+  icon:
+multiplier@block_cnt:
+  type: number
+  description: multiplier@block_cnt
+  icon:
+multiplier@cost:
+  type: number
+  description: multiplier@cost
+  icon:
+multiplier@def:
+  type: number
+  description: multiplier@def
+  icon:
+multiplier@magic_resistance:
+  type: number
+  description: multiplier@magic_resistance
+  icon:
+multiplier@max_hp:
+  type: number
+  description: multiplier@max_hp
+  icon:
+node:
+  type: number
+  description: node
+  icon:
+node_sky:
+  type: number
+  description: node_sky
+  icon:
+node_type:
+  type: number
+  description: node_type
+  icon:
+one_minus_status_resistance:
+  type: number
+  description: one_minus_status_resistance
+  icon:
+only:
+  type: number
+  description: only
+  icon:
+override_key:
+  type: number
+  description: override_key
+  icon:
+pa:
+  type: number
+  description: pa
+  icon:
+pb:
+  type: number
+  description: pb
+  icon:
+per_a:
+  type: number
+  description: per_a
+  icon:
+per_b:
+  type: number
+  description: per_b
+  icon:
+per_lucky_level_drawn:
+  type: number
+  description: per_lucky_level_drawn
+  icon:
+per_zone:
+  type: number
+  description: per_zone
+  icon:
+perfect:
+  type: number
+  description: perfect
+  icon:
+pool:
+  type: number
+  description: pool
+  icon:
+pool1:
+  type: number
+  description: pool1
+  icon:
+pool2:
+  type: number
+  description: pool2
+  icon:
+pool3:
+  type: number
+  description: pool3
+  icon:
+pool_id:
+  type: number
+  description: pool_id
+  icon:
+portal:
+  type: number
+  description: portal
+  icon:
+portal_only:
+  type: number
+  description: portal_only
+  icon:
+"portal_only ":
+  type: number
+  description: "portal_only "
+  icon:
+pr:
+  type: number
+  description: pr
+  icon:
+prob:
+  type: number
+  description: prob
+  icon:
+prob_add:
+  type: number
+  description: prob_add
+  icon:
+prob_max:
+  type: number
+  description: prob_max
+  icon:
+profession:
+  type: number
+  description: profession
+  icon:
+range_id:
+  type: number
+  description: range_id
+  icon:
+range_radius:
+  type: number
+  description: range_radius
+  icon:
+rarity:
+  type: number
+  description: rarity
+  icon:
+rate:
+  type: number
+  description: rate
+  icon:
+ratio:
+  type: number
+  description: ratio
+  icon:
+reliance_relics:
+  type: number
+  description: reliance_relics
+  icon:
+remaining_respawn_time:
+  type: number
+  description: remaining_respawn_time
+  icon:
+respawn_time:
+  type: number
+  description: respawn_time
+  icon:
+respawn_time_addition:
+  type: number
+  description: respawn_time_addition
+  icon:
+respawn_time_factor:
+  type: number
+  description: respawn_time_factor
+  icon:
+rewards:
+  type: number
+  description: rewards
+  icon:
+rogue_2_atk_up[king_suit].atk:
+  type: number
+  description: rogue_2_atk_up[king_suit].atk
+  icon:
+rogue_2_atk_up[king_suit][bonus].atk:
+  type: number
+  description: rogue_2_atk_up[king_suit][bonus].atk
+  icon:
+rogue_3_blackfog[enemy].attack_speed:
+  type: number
+  description: rogue_3_blackfog[enemy].attack_speed
+  icon:
+rogue_3_relic_book_3[cost].cost:
+  type: number
+  description: rogue_3_relic_book_3[cost].cost
+  icon:
+rogue_4_maxhp_up[lordoffiends_suit].max_hp:
+  type: number
+  description: rogue_4_maxhp_up[lordoffiends_suit].max_hp
+  icon:
+rogue_4_maxhp_up[lordoffiends_suit][bonus].max_hp:
+  type: number
+  description: rogue_4_maxhp_up[lordoffiends_suit][bonus].max_hp
+  icon:
+rogue_5_character_random_sp_modify[gain].sp:
+  type: number
+  description: rogue_5_character_random_sp_modify[gain].sp
+  icon:
+rogue_5_character_random_sp_modify[lose].sp:
+  type: number
+  description: rogue_5_character_random_sp_modify[lose].sp
+  icon:
+rogue_5_damage_after_max_cost[damage].damage_value:
+  type: number
+  description: rogue_5_damage_after_max_cost[damage].damage_value
+  icon:
+rogue_5_damage_after_max_cost[damage].interval:
+  type: number
+  description: rogue_5_damage_after_max_cost[damage].interval
+  icon:
+rogue_5_damage_after_max_cost[damage].stun:
+  type: number
+  description: rogue_5_damage_after_max_cost[damage].stun
+  icon:
+rogue_5_enemy_speed_random_change[down].move_speed:
+  type: number
+  description: rogue_5_enemy_speed_random_change[down].move_speed
+  icon:
+rogue_5_enemy_speed_random_change[up].move_speed:
+  type: number
+  description: rogue_5_enemy_speed_random_change[up].move_speed
+  icon:
+roguelike_final_scale_layer_first:
+  type: number
+  description: roguelike_final_scale_layer_first
+  icon:
+rule_bonus:
+  type: number
+  description: rule_bonus
+  icon:
+rule_lucky_level_all:
+  type: number
+  description: rule_lucky_level_all
+  icon:
+scale:
+  type: number
+  description: scale
+  icon:
+scene_id:
+  type: number
+  description: scene_id
+  icon:
+scene_ids:
+  type: number
+  description: scene_ids
+  icon:
+selector:
+  type: number
+  description: selector
+  icon:
+selector.boss_option:
+  type: number
+  description: selector.boss_option
+  icon:
+selector.buildable:
+  type: number
+  description: selector.buildable
+  icon:
+selector.char:
+  type: number
+  description: selector.char
+  icon:
+selector.enemy:
+  type: number
+  description: selector.enemy
+  icon:
+selector.enemy_exclude:
+  type: number
+  description: selector.enemy_exclude
+  icon:
+selector.enemy_level_type:
+  type: number
+  description: selector.enemy_level_type
+  icon:
+selector.profession:
+  type: number
+  description: selector.profession
+  icon:
+selector.side:
+  type: number
+  description: selector.side
+  icon:
+"selector.side ":
+  type: number
+  description: "selector.side "
+  icon:
+selector.sub_profession:
+  type: number
+  description: selector.sub_profession
+  icon:
+selector.tag:
+  type: number
+  description: selector.tag
+  icon:
+sequence_select:
+  type: number
+  description: sequence_select
+  icon:
+shield_value:
+  type: number
+  description: shield_value
+  icon:
+silence:
+  type: number
+  description: silence
+  icon:
+skill:
+  type: number
+  description: skill
+  icon:
+skill_name:
+  type: number
+  description: skill_name
+  icon:
+sluggish:
+  type: number
+  description: sluggish
+  icon:
+sp:
+  type: number
+  description: sp
+  icon:
+sp_recover_ratio:
+  type: number
+  description: sp_recover_ratio
+  icon:
+sp_recovery_per_sec:
+  type: number
+  description: sp_recovery_per_sec
+  icon:
+sp_value:
+  type: number
+  description: sp_value
+  icon:
+squad_limit:
+  type: number
+  description: squad_limit
+  icon:
+src:
+  type: number
+  description: src
+  icon:
+stack_by_res:
+  type: number
+  description: stack_by_res
+  icon:
+stack_by_res_cnt:
+  type: number
+  description: stack_by_res_cnt
+  icon:
+status_resistance[limit]:
+  type: number
+  description: status_resistance[limit]
+  icon:
+step:
+  type: number
+  description: step
+  icon:
+stun:
+  type: number
+  description: stun
+  icon:
+sub_profession:
+  type: number
+  description: sub_profession
+  icon:
+sub_type:
+  type: number
+  description: sub_type
+  icon:
+suffix:
+  type: number
+  description: suffix
+  icon:
+tag:
+  type: number
+  description: tag
+  icon:
+target:
+  type: number
+  description: target
+  icon:
+tile:
+  type: number
+  description: tile
+  icon:
+to:
+  type: number
+  description: to
+  icon:
+token_key:
+  type: number
+  description: token_key
+  icon:
+trader_return:
+  type: number
+  description: trader_return
+  icon:
+trig_cnt:
+  type: number
+  description: trig_cnt
+  icon:
+trig_layer:
+  type: number
+  description: trig_layer
+  icon:
+trig_type:
+  type: number
+  description: trig_type
+  icon:
+type:
+  type: number
+  description: type
+  icon:
+uniq_id:
+  type: number
+  description: uniq_id
+  icon:
+unmovable_duration:
+  type: number
+  description: unmovable_duration
+  icon:
+up:
+  type: number
+  description: up
+  icon:
+up_layer:
+  type: number
+  description: up_layer
+  icon:
+upper_bound@cost:
+  type: number
+  description: upper_bound@cost
+  icon:
+upper_bound@respawn_time:
+  type: number
+  description: upper_bound@respawn_time
+  icon:
+validator.roguelike_event_type:
+  type: number
+  description: validator.roguelike_event_type
+  icon:
+"validator.roguelike_event_type ":
+  type: number
+  description: "validator.roguelike_event_type "
+  icon:
+validator.roguelike_sky_zone_event_type:
+  type: number
+  description: validator.roguelike_sky_zone_event_type
+  icon:
+value:
+  type: number
+  description: value
+  icon:
+weak[limit]:
+  type: number
+  description: weak[limit]
+  icon:
+weight:
+  type: number
+  description: weight
+  icon:
+weights:
+  type: number
+  description: weights
+  icon:
+withdraw_cost_recover_ratio:
+  type: number
+  description: withdraw_cost_recover_ratio
+  icon:
+zone:
+  type: number
+  description: zone
+  icon:
+zone_from:
+  type: number
+  description: zone_from
+  icon:
+zone_id:
+  type: number
+  description: zone_id
+  icon:
+zone_id_from:
+  type: number
+  description: zone_id_from
+  icon:
+zone_id_to:
+  type: number
+  description: zone_id_to
+  icon:
+zone_list:
+  type: number
+  description: zone_list
+  icon:
+zone_type:
+  type: number
+  description: zone_type
+  icon:
+zone_type_current:
+  type: number
+  description: zone_type_current
+  icon:

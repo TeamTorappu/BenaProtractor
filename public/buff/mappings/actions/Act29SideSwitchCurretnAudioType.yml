@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: env_008_act29side_audio_type_switcher
+          generated: true
   _isFirstTime:
     type: boolean
     description: is First Time
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isTriggeredByBoss:
     type: boolean
     description: is Triggered By Boss
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _muteAudio:
     type: boolean
     description: mute Audio
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _switchToOposite:
     type: boolean
     description: switch To Oposite
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _typeKey:
     type: string
     description: type Key
@@ -60,3 +65,4 @@ fields:
         parse:
           type: literal
           return: type
+          generated: true

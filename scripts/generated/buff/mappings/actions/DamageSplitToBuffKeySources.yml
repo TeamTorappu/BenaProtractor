@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: NORMAL
+          generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: "act1autochess_bond_eff_stead[cnt]"
+          generated: true
       -
         value: "mark_bbrain[damage_split_target]"
         display: false
         parse:
           type: literal
           return: "mark_bbrain[damage_split_target]"
+          generated: true
   _hitEffectKey:
     type: string
     description: hit Effect Key
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: bond_shield_buff_hit
+          generated: true
       -
         value: enemy_bbrain_characteristic_hit_02
         display: false
         parse:
           type: literal
           return: enemy_bbrain_characteristic_hit_02
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -52,3 +57,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

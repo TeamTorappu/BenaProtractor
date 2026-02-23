@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: sniper_level
+          generated: true
       -
         value: sniper_profession_cnt
         display: false
         parse:
           type: literal
           return: sniper_profession_cnt
+          generated: true
       -
         value: tank_buff_cnt
         display: false
         parse:
           type: literal
           return: tank_buff_cnt
+          generated: true
   _queryProfessionCategory:
     type: string
     description: query Profession Category
@@ -32,12 +35,14 @@ fields:
         parse:
           type: literal
           return: SNIPER
+          generated: true
       -
         value: TANK
         display: false
         parse:
           type: literal
           return: TANK
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -48,3 +53,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

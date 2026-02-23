@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: DoFarm
+          generated: true
       -
         value: HighlandTileBuff
         display: false
         parse:
           type: literal
           return: HighlandTileBuff
+          generated: true
   _exceptTargetRootTile:
     type: boolean
     description: except Target Root Tile
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -42,6 +46,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -52,18 +57,21 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: 1-1
         display: false
         parse:
           type: literal
           return: 1-1
+          generated: true
       -
         value: x-5
         display: false
         parse:
           type: literal
           return: x-5
+          generated: true
   _rangeIdKey:
     type: string
     description: range Id Key
@@ -74,18 +82,21 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: born_range_id
         display: false
         parse:
           type: literal
           return: born_range_id
+          generated: true
       -
         value: none
         display: false
         parse:
           type: literal
           return: none
+          generated: true
   _returnWhetherCreateNewTileListener:
     type: boolean
     description: return Whether Create New Tile Listener
@@ -96,12 +107,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -112,12 +125,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
   _useHostAsOwner:
     type: boolean
     description: use Host As Owner
@@ -128,12 +143,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useTargetRootTile:
     type: boolean
     description: use Target Root Tile
@@ -144,3 +161,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

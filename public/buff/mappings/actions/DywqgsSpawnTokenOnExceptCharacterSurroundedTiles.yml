@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _options:
     type: object
     description: options
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _rangeId:
     type: string
     description: range Id
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: x-5
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _spawnCnt:
     type: number
     description: spawn Cnt
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _spawnOnRandomTiles:
     type: boolean
     description: spawn On Random Tiles
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _tokenToSpawn:
     type: object
     description: token To Spawn
@@ -70,3 +76,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

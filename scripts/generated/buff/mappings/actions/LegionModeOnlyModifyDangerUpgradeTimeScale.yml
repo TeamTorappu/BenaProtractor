@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: multi
+          generated: true
   _useBb:
     type: boolean
     description: use Bb
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _value:
     type: number
     description: value
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true

@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _modifierTargetType:
     type: string
     description: modifier Target Type
@@ -20,9 +21,11 @@ fields:
         parse:
           type: literal
           return: HP
+          generated: true
       -
         value: LIFE_POINT
         display: false
         parse:
           type: literal
           return: LIFE_POINT
+          generated: true

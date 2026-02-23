@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: GE
+          generated: true
   _count:
     type: number
     description: count
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 3
+          generated: true
   _dontShowWarnning:
     type: boolean
     description: dont Show Warnning
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _cardState:
     type: string
     description: card State
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: RESPAWNING
+          generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _ignoreNullOwner:
     type: boolean
     description: ignore Null Owner
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN
+          generated: true
   _randomCard:
     type: boolean
     description: random Card
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -90,3 +98,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

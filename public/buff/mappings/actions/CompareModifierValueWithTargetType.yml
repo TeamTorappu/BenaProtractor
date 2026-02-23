@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: GE
+          generated: true
       -
         value: LE
         display: false
         parse:
           type: literal
           return: LE
+          generated: true
       -
         value: LT
         display: false
         parse:
           type: literal
           return: LT
+          generated: true
   _ignoreEs:
     type: boolean
     description: ignore Es
@@ -32,6 +35,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _modifierTarget:
     type: string
     description: modifier Target
@@ -42,6 +46,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _ratio:
     type: number
     description: ratio
@@ -52,6 +57,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -62,6 +68,7 @@ fields:
         parse:
           type: literal
           return: HP
+          generated: true
   _useMaxRatio:
     type: boolean
     description: use Max Ratio
@@ -72,3 +79,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

@@ -10,126 +10,147 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: DoFarm
         display: false
         parse:
           type: literal
           return: DoFarm
+          generated: true
       -
         value: Fire
         display: false
         parse:
           type: literal
           return: Fire
+          generated: true
       -
         value: InstantSpawn
         display: false
         parse:
           type: literal
           return: InstantSpawn
+          generated: true
       -
         value: Mark
         display: false
         parse:
           type: literal
           return: Mark
+          generated: true
       -
         value: MultiAttack
         display: false
         parse:
           type: literal
           return: MultiAttack
+          generated: true
       -
         value: RandomGold
         display: false
         parse:
           type: literal
           return: RandomGold
+          generated: true
       -
         value: S1_Burst
         display: false
         parse:
           type: literal
           return: S1_Burst
+          generated: true
       -
         value: S2_Burst
         display: false
         parse:
           type: literal
           return: S2_Burst
+          generated: true
       -
         value: Token
         display: false
         parse:
           type: literal
           return: Token
+          generated: true
       -
         value: TryUpgradeToken
         display: false
         parse:
           type: literal
           return: TryUpgradeToken
+          generated: true
       -
         value: blacksteel_energy
         display: false
         parse:
           type: literal
           return: blacksteel_energy
+          generated: true
       -
         value: linkAttack
         display: false
         parse:
           type: literal
           return: linkAttack
+          generated: true
       -
         value: portlexi_shoot_projectile
         display: false
         parse:
           type: literal
           return: portlexi_shoot_projectile
+          generated: true
       -
         value: s1_l
         display: false
         parse:
           type: literal
           return: s1_l
+          generated: true
       -
         value: s1_m
         display: false
         parse:
           type: literal
           return: s1_m
+          generated: true
       -
         value: s1_r
         display: false
         parse:
           type: literal
           return: s1_r
+          generated: true
       -
         value: skchr_mberry_1
         display: false
         parse:
           type: literal
           return: skchr_mberry_1
+          generated: true
       -
         value: thunder
         display: false
         parse:
           type: literal
           return: thunder
+          generated: true
       -
         value: towerAura
         display: false
         parse:
           type: literal
           return: towerAura
+          generated: true
   _abilityOwnerType:
     type: string
     description: ability Owner Type
@@ -140,12 +161,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _assignString:
     type: boolean
     description: assign String
@@ -156,12 +179,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _blackboardKeys:
     type: string
     description: blackboard Keys
@@ -172,168 +197,196 @@ fields:
         parse:
           type: literal
           return: atk
+          generated: true
       -
         value: atk_scale
         display: false
         parse:
           type: literal
           return: atk_scale
+          generated: true
       -
         value: "atk_scale[bigAttack2]"
         display: false
         parse:
           type: literal
           return: "atk_scale[bigAttack2]"
+          generated: true
       -
         value: blacksteel_energy
         display: false
         parse:
           type: literal
           return: blacksteel_energy
+          generated: true
       -
         value: block_cnt
         display: false
         parse:
           type: literal
           return: block_cnt
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: cooldown
         display: false
         parse:
           type: literal
           return: cooldown
+          generated: true
       -
         value: current_value
         display: false
         parse:
           type: literal
           return: current_value
+          generated: true
       -
         value: damage_scale
         display: false
         parse:
           type: literal
           return: damage_scale
+          generated: true
       -
         value: def
         display: false
         parse:
           type: literal
           return: def
+          generated: true
       -
         value: default_radius
         display: false
         parse:
           type: literal
           return: default_radius
+          generated: true
       -
         value: display_hunter_bullet_flag
         display: false
         parse:
           type: literal
           return: display_hunter_bullet_flag
+          generated: true
       -
         value: dynamic_spd
         display: false
         parse:
           type: literal
           return: dynamic_spd
+          generated: true
       -
         value: ep_heal_ratio
         display: false
         parse:
           type: literal
           return: ep_heal_ratio
+          generated: true
       -
         value: extra_cnt
         display: false
         parse:
           type: literal
           return: extra_cnt
+          generated: true
       -
         value: extra_extend_scale
         display: false
         parse:
           type: literal
           return: extra_extend_scale
+          generated: true
       -
         value: final_radius
         display: false
         parse:
           type: literal
           return: final_radius
+          generated: true
       -
         value: force
         display: false
         parse:
           type: literal
           return: force
+          generated: true
       -
         value: max_cnt
         display: false
         parse:
           type: literal
           return: max_cnt
+          generated: true
       -
         value: max_hp
         display: false
         parse:
           type: literal
           return: max_hp
+          generated: true
       -
         value: next_projectile_key
         display: false
         parse:
           type: literal
           return: next_projectile_key
+          generated: true
       -
         value: projectile_delay_time
         display: false
         parse:
           type: literal
           return: projectile_delay_time
+          generated: true
       -
         value: projectile_index
         display: false
         parse:
           type: literal
           return: projectile_index
+          generated: true
       -
         value: projectile_life_time
         display: false
         parse:
           type: literal
           return: projectile_life_time
+          generated: true
       -
         value: s_duration
         display: false
         parse:
           type: literal
           return: s_duration
+          generated: true
       -
         value: times
         display: false
         parse:
           type: literal
           return: times
+          generated: true
       -
         value: tower_type
         display: false
         parse:
           type: literal
           return: tower_type
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
   _buffKey:
     type: null | string
     description: buff Key
@@ -344,18 +397,21 @@ fields:
         parse:
           type: literal
           return: enemy_pope_param_storage
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: "ymgscm_c[sync_attack_time]"
         display: false
         parse:
           type: literal
           return: "ymgscm_c[sync_attack_time]"
+          generated: true
   _fromBlackboardKeys:
     type: null | string
     description: from Blackboard Keys
@@ -366,198 +422,231 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: atk
         display: false
         parse:
           type: literal
           return: atk
+          generated: true
       -
         value: atk_scale
         display: false
         parse:
           type: literal
           return: atk_scale
+          generated: true
       -
         value: "atk_scale[bigAttack2]"
         display: false
         parse:
           type: literal
           return: "atk_scale[bigAttack2]"
+          generated: true
       -
         value: block_cnt
         display: false
         parse:
           type: literal
           return: block_cnt
+          generated: true
       -
         value: build_cnt
         display: false
         parse:
           type: literal
           return: build_cnt
+          generated: true
       -
         value: current_sp
         display: false
         parse:
           type: literal
           return: current_sp
+          generated: true
       -
         value: current_value
         display: false
         parse:
           type: literal
           return: current_value
+          generated: true
       -
         value: def
         display: false
         parse:
           type: literal
           return: def
+          generated: true
       -
         value: default_atk_scale
         display: false
         parse:
           type: literal
           return: default_atk_scale
+          generated: true
       -
         value: default_cnt
         display: false
         parse:
           type: literal
           return: default_cnt
+          generated: true
       -
         value: default_projectile_key
         display: false
         parse:
           type: literal
           return: default_projectile_key
+          generated: true
       -
         value: default_rotate_spd
         display: false
         parse:
           type: literal
           return: default_rotate_spd
+          generated: true
       -
         value: dynamic_spd
         display: false
         parse:
           type: literal
           return: dynamic_spd
+          generated: true
       -
         value: ep_heal_ratio
         display: false
         parse:
           type: literal
           return: ep_heal_ratio
+          generated: true
       -
         value: extra_cnt
         display: false
         parse:
           type: literal
           return: extra_cnt
+          generated: true
       -
         value: extra_extend_scale
         display: false
         parse:
           type: literal
           return: extra_extend_scale
+          generated: true
       -
         value: force
         display: false
         parse:
           type: literal
           return: force
+          generated: true
       -
         value: hit_duration
         display: false
         parse:
           type: literal
           return: hit_duration
+          generated: true
       -
         value: inside_radius
         display: false
         parse:
           type: literal
           return: inside_radius
+          generated: true
       -
         value: max_hp
         display: false
         parse:
           type: literal
           return: max_hp
+          generated: true
       -
         value: new_atk_scale
         display: false
         parse:
           type: literal
           return: new_atk_scale
+          generated: true
       -
         value: next_projectile_key
         display: false
         parse:
           type: literal
           return: next_projectile_key
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: origin_damage_scale
         display: false
         parse:
           type: literal
           return: origin_damage_scale
+          generated: true
       -
         value: outside_radius
         display: false
         parse:
           type: literal
           return: outside_radius
+          generated: true
       -
         value: projectile_delay_time
         display: false
         parse:
           type: literal
           return: projectile_delay_time
+          generated: true
       -
         value: projectile_life_time
         display: false
         parse:
           type: literal
           return: projectile_life_time
+          generated: true
       -
         value: s_duration
         display: false
         parse:
           type: literal
           return: s_duration
+          generated: true
       -
         value: talent_cool_down
         display: false
         parse:
           type: literal
           return: talent_cool_down
+          generated: true
       -
         value: times
         display: false
         parse:
           type: literal
           return: times
+          generated: true
       -
         value: tower_type
         display: false
         parse:
           type: literal
           return: tower_type
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
   _fromBuffBlackboard:
     type: boolean
     description: from Buff Blackboard
@@ -568,12 +657,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isUpdateSelector:
     type: boolean
     description: is Update Selector
@@ -584,12 +675,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _stringValue:
     type: null
     description: string Value
@@ -600,6 +693,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _useOtherAbility:
     type: boolean
     description: use Other Ability
@@ -610,12 +704,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useSnapshotAbility:
     type: boolean
     description: use Snapshot Ability
@@ -626,6 +722,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _value:
     type: number
     description: value
@@ -636,18 +733,21 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 10
         display: false
         parse:
           type: literal
           return: 10
+          generated: true
   fromAbilityBlackBoard:
     type: boolean
     description: from Ability Black Board
@@ -658,9 +758,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

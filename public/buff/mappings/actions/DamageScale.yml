@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: RANGED
         display: false
         parse:
           type: literal
           return: RANGED
+          generated: true
   _cachedDeltaValueToBBKey:
     type: string
     description: cached Delta Value To B B Key
@@ -32,42 +35,49 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: cached_damage
         display: false
         parse:
           type: literal
           return: cached_damage
+          generated: true
       -
         value: dark_damage
         display: false
         parse:
           type: literal
           return: dark_damage
+          generated: true
       -
         value: delta_damage
         display: false
         parse:
           type: literal
           return: delta_damage
+          generated: true
       -
         value: hp_total
         display: false
         parse:
           type: literal
           return: hp_total
+          generated: true
       -
         value: postpone_damage
         display: false
         parse:
           type: literal
           return: postpone_damage
+          generated: true
       -
         value: share_value
         display: false
         parse:
           type: literal
           return: share_value
+          generated: true
   _customKey:
     type: string
     description: custom Key
@@ -78,30 +88,35 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: damage_resistance
         display: false
         parse:
           type: literal
           return: damage_resistance
+          generated: true
       -
         value: damage_scale
         display: false
         parse:
           type: literal
           return: damage_scale
+          generated: true
       -
         value: damage_share
         display: false
         parse:
           type: literal
           return: damage_share
+          generated: true
       -
         value: real_damage_scale
         display: false
         parse:
           type: literal
           return: real_damage_scale
+          generated: true
   _damageMask:
     type: string
     description: damage Mask
@@ -112,48 +127,56 @@ fields:
         parse:
           type: literal
           return: ANY_ATTACK
+          generated: true
       -
         value: ANY_ATTACK_EXCEPT_ELEMENT
         display: false
         parse:
           type: literal
           return: ANY_ATTACK_EXCEPT_ELEMENT
+          generated: true
       -
         value: ELEMENT
         display: false
         parse:
           type: literal
           return: ELEMENT
+          generated: true
       -
         value: MAGICAL
         display: false
         parse:
           type: literal
           return: MAGICAL
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: PHYSICAL
         display: false
         parse:
           type: literal
           return: PHYSICAL
+          generated: true
       -
         value: PHYSICAL_AND_MAGICAL
         display: false
         parse:
           type: literal
           return: PHYSICAL_AND_MAGICAL
+          generated: true
       -
         value: PURE
         display: false
         parse:
           type: literal
           return: PURE
+          generated: true
   _filterApplyWay:
     type: boolean
     description: filter Apply Way
@@ -164,12 +187,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterDamageType:
     type: boolean
     description: filter Damage Type
@@ -180,12 +205,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isOneMinus:
     type: boolean
     description: is One Minus
@@ -196,12 +223,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isStackable:
     type: boolean
     description: is Stackable
@@ -212,12 +241,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isValidStackCnt:
     type: boolean
     description: is Valid Stack Cnt
@@ -228,9 +259,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

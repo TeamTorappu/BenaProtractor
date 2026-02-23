@@ -10,36 +10,42 @@ fields:
         parse:
           type: literal
           return: atk_scale
+          generated: true
       -
         value: damage_resistance_scale
         display: false
         parse:
           type: literal
           return: damage_resistance_scale
+          generated: true
       -
         value: heal_scale
         display: false
         parse:
           type: literal
           return: heal_scale
+          generated: true
       -
         value: interval
         display: false
         parse:
           type: literal
           return: interval
+          generated: true
       -
         value: levitate_duration
         display: false
         parse:
           type: literal
           return: levitate_duration
+          generated: true
       -
         value: tower_type
         display: false
         parse:
           type: literal
           return: tower_type
+          generated: true
   _targetBlackboardKey:
     type: string
     description: target Blackboard Key
@@ -50,36 +56,42 @@ fields:
         parse:
           type: literal
           return: atk_scale
+          generated: true
       -
         value: damage_resistance_scale
         display: false
         parse:
           type: literal
           return: damage_resistance_scale
+          generated: true
       -
         value: heal_scale
         display: false
         parse:
           type: literal
           return: heal_scale
+          generated: true
       -
         value: interval
         display: false
         parse:
           type: literal
           return: interval
+          generated: true
       -
         value: levitate_duration
         display: false
         parse:
           type: literal
           return: levitate_duration
+          generated: true
       -
         value: tower_type
         display: false
         parse:
           type: literal
           return: tower_type
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -90,9 +102,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true

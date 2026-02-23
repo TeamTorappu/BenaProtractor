@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 1.5
+          generated: true
   _minScale:
     type: number
     description: min Scale
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 0.800000011920929
+          generated: true
   _mountPointType:
     type: string
     description: mount Point Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: UI
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: NONE
+          generated: true
   _filterApplyWay:
     type: boolean
     description: filter Apply Way
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

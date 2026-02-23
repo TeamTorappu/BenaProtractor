@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _failNodes:
     type: array | null
     description: fail Nodes
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _isAnd:
     type: boolean
     description: is And
@@ -30,12 +32,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _succeedNodes:
     type: array | null
     description: succeed Nodes
@@ -46,3 +50,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

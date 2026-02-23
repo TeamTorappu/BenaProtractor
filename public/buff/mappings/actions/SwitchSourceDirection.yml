@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _leftNodes:
     type: array
     description: left Nodes
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _rightNodes:
     type: array
     description: right Nodes
@@ -30,6 +32,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _upNodes:
     type: array
     description: up Nodes
@@ -50,3 +54,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

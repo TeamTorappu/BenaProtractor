@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _maxTarget:
     type: number
     description: max Target
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _skillKey:
     type: string
     description: skill Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: Lasso
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

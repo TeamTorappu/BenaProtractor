@@ -10,30 +10,35 @@ fields:
         parse:
           type: literal
           return: bonus_cnt
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: cnt_battle_item
         display: false
         parse:
           type: literal
           return: cnt_battle_item
+          generated: true
       -
         value: cnt_battle_item_gras_bonus
         display: false
         parse:
           type: literal
           return: cnt_battle_item_gras_bonus
+          generated: true
       -
         value: cnt_battle_item_park_bonus
         display: false
         parse:
           type: literal
           return: cnt_battle_item_park_bonus
+          generated: true
   _poolKeyBB:
     type: string
     description: pool Key B B
@@ -44,27 +49,32 @@ fields:
         parse:
           type: literal
           return: battle_item
+          generated: true
       -
         value: battle_item_gras_bonus
         display: false
         parse:
           type: literal
           return: battle_item_gras_bonus
+          generated: true
       -
         value: battle_item_park_bonus
         display: false
         parse:
           type: literal
           return: battle_item_park_bonus
+          generated: true
       -
         value: equip_pool
         display: false
         parse:
           type: literal
           return: equip_pool
+          generated: true
       -
         value: key
         display: false
         parse:
           type: literal
           return: key
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: RangeToLight
         display: false
         parse:
           type: literal
           return: RangeToLight
+          generated: true
   _envSystemKey:
     type: string
     description: env System Key
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: env_004_fog
+          generated: true
   _rangeId:
     type: null | string
     description: range Id
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: 0-1
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -52,6 +57,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useProjectileRootTile:
     type: boolean
     description: use Projectile Root Tile
@@ -62,6 +68,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useRangeId:
     type: boolean
     description: use Range Id
@@ -72,12 +79,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useSourceRootTile:
     type: boolean
     description: use Source Root Tile
@@ -88,3 +97,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

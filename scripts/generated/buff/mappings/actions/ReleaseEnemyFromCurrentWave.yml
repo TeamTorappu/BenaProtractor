@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _trackEnemyAtNextWave:
     type: boolean
     description: track Enemy At Next Wave
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _trackEnemyAtSpecificWave:
     type: boolean
     description: track Enemy At Specific Wave
@@ -42,12 +46,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _trackEnemyAtWaveDelta:
     type: number
     description: track Enemy At Wave Delta
@@ -58,3 +64,4 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true

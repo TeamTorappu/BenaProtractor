@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _constDirection:
     type: string
     description: const Direction
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: UP
+          generated: true
   _createEffectHoldBySource:
     type: boolean
     description: create Effect Hold By Source
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _effectKey:
     type: string
     description: effect Key
@@ -40,18 +43,21 @@ fields:
         parse:
           type: literal
           return: thorn2_skill_hit
+          generated: true
       -
         value: tinman_skill_01_hit_01
         display: false
         parse:
           type: literal
           return: tinman_skill_01_hit_01
+          generated: true
       -
         value: tinman_skill_02_hit_01
         display: false
         parse:
           type: literal
           return: tinman_skill_02_hit_01
+          generated: true
   _manualSetPlaybackSpeed:
     type: boolean
     description: manual Set Playback Speed
@@ -62,6 +68,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _playbackSpeed:
     type: number
     description: playback Speed
@@ -72,6 +79,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -82,6 +90,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -92,6 +101,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useAttackPlaybackSpeed:
     type: boolean
     description: use Attack Playback Speed
@@ -102,6 +112,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useConstDirection:
     type: boolean
     description: use Const Direction
@@ -112,6 +123,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useSourceFaceVactor:
     type: boolean
     description: use Source Face Vactor
@@ -122,6 +134,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useSourceToTargetDirection:
     type: boolean
     description: use Source To Target Direction
@@ -132,3 +145,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

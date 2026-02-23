@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _sourceBBKey:
     type: string
     description: source B B Key
@@ -20,18 +21,21 @@ fields:
         parse:
           type: literal
           return: monstr_hp_ratio
+          generated: true
       -
         value: ulpia_hp_ratio
         display: false
         parse:
           type: literal
           return: ulpia_hp_ratio
+          generated: true
       -
         value: ulpia_t1_cnt
         display: false
         parse:
           type: literal
           return: ulpia_t1_cnt
+          generated: true
   _targetBBKey:
     type: string
     description: target B B Key
@@ -42,15 +46,18 @@ fields:
         parse:
           type: literal
           return: monstr_hp_ratio
+          generated: true
       -
         value: ulpia_hp_ratio
         display: false
         parse:
           type: literal
           return: ulpia_hp_ratio
+          generated: true
       -
         value: ulpia_t1_cnt
         display: false
         parse:
           type: literal
           return: ulpia_t1_cnt
+          generated: true

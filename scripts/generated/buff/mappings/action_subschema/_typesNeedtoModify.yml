@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["MAX_HP","ATK","DEF","MAGIC_RESISTANCE","BLOCK_CNT","BASE_ATTACK_TIME"]"
         display: false
@@ -23,3 +24,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: MELEE
+          generated: true
   _atkScaleVar:
     type: string
     description: atk Scale Var
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: atk_scale
+          generated: true
   _checkBuildableType:
     type: boolean
     description: check Buildable Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _defaultAtkScale:
     type: number
     description: default Atk Scale
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _ignoreCancelReasonMask:
     type: string
     description: ignore Cancel Reason Mask
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: NONE
+          generated: true
   _ignoreForSp:
     type: boolean
     description: ignore For Sp
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _modifierKey:
     type: null
     description: modifier Key
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: x-5
+          generated: true
   _skipModifierEvent:
     type: boolean
     description: skip Modifier Event
@@ -100,6 +109,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -110,6 +120,7 @@ fields:
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
   _splitScale:
     type: number
     description: split Scale
@@ -120,6 +131,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _splitScaleKey:
     type: string
     description: split Scale Key
@@ -130,6 +142,7 @@ fields:
         parse:
           type: literal
           return: split_scale
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -140,6 +153,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -150,3 +164,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

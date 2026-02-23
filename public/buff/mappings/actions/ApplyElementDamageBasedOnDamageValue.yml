@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: ELEMENT
+          generated: true
       -
         value: MAGICAL
         display: false
         parse:
           type: literal
           return: MAGICAL
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
   _elementType:
     type: string
     description: element Type
@@ -32,18 +35,21 @@ fields:
         parse:
           type: literal
           return: DARK
+          generated: true
       -
         value: FIRE
         display: false
         parse:
           type: literal
           return: FIRE
+          generated: true
       -
         value: SANITY
         display: false
         parse:
           type: literal
           return: SANITY
+          generated: true
   _filterDamageType:
     type: boolean
     description: filter Damage Type
@@ -54,12 +60,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -70,24 +78,28 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -98,9 +110,11 @@ fields:
         parse:
           type: literal
           return: MAIN_TARGET
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true

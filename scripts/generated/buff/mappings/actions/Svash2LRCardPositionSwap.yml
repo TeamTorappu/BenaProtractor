@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: cnt
+          generated: true
   _deckBuff:
     type: object
     description: deck Buff
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _emitPredefinedLocationReached:
     type: boolean
     description: emit Predefined Location Reached
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _minCostReduceKey:
     type: string
     description: min Cost Reduce Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: cost_reduce_max
+          generated: true
   _rightSelector:
     type: object
     description: right Selector
@@ -50,6 +54,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _selector:
     type: object
     description: selector
@@ -60,6 +65,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _sourceType:
     type: string
     description: source Type
@@ -70,3 +76,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

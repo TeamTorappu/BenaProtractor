@@ -10,3 +10,4 @@ fields:
         parse:
           type: literal
           return: env_008_act29side_audio_type_switcher
+          generated: true

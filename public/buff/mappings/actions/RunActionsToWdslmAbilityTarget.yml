@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: standRegisterList
+          generated: true
   _actionTargetType:
     type: string
     description: action Target Type
@@ -20,24 +21,28 @@ fields:
         parse:
           type: literal
           return: HOST
+          generated: true
       -
         value: SELF_WITH_HOST_AS_SOURCE
         display: false
         parse:
           type: literal
           return: SELF_WITH_HOST_AS_SOURCE
+          generated: true
       -
         value: STANDS
         display: false
         parse:
           type: literal
           return: STANDS
+          generated: true
       -
         value: STANDS_EXCEPT_SELF
         display: false
         parse:
           type: literal
           return: STANDS_EXCEPT_SELF
+          generated: true
   _actionsToTarget:
     type: array
     description: actions To Target
@@ -48,6 +53,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _sourceType:
     type: string
     description: source Type
@@ -58,3 +64,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

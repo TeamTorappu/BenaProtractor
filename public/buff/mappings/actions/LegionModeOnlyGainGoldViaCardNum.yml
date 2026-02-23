@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: NULL
+          generated: true
   _goldPerCount:
     type: number
     description: gold Per Count
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true

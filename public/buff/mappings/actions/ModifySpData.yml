@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: sp_origin
         display: false
         parse:
           type: literal
           return: sp_origin
+          generated: true
   _onlyUpdateSpCost:
     type: boolean
     description: only Update Sp Cost
@@ -32,12 +35,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _spCostString:
     type: string
     description: sp Cost String
@@ -48,24 +53,28 @@ fields:
         parse:
           type: literal
           return: cost
+          generated: true
       -
         value: mana_max
         display: false
         parse:
           type: literal
           return: mana_max
+          generated: true
       -
         value: sp_origin
         display: false
         parse:
           type: literal
           return: sp_origin
+          generated: true
       -
         value: sp_zero
         display: false
         parse:
           type: literal
           return: sp_zero
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -76,18 +85,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _updateSkillSpCostMin:
     type: boolean
     description: update Skill Sp Cost Min
@@ -98,3 +110,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

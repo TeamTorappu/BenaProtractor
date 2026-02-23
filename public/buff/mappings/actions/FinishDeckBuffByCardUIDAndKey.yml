@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: card_uid
+          generated: true
   _deckBuff:
     type: object
     description: deck Buff
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _deckBuffKey:
     type: string
     description: deck Buff Key
@@ -30,24 +32,28 @@ fields:
         parse:
           type: literal
           return: deck_common_devour
+          generated: true
       -
         value: dyrnge_deck
         display: false
         parse:
           type: literal
           return: dyrnge_deck
+          generated: true
       -
         value: enemy_mjcdog_deck
         display: false
         parse:
           type: literal
           return: enemy_mjcdog_deck
+          generated: true
       -
         value: nhkodo_deck
         display: false
         parse:
           type: literal
           return: nhkodo_deck
+          generated: true
   _readUIDFromInt:
     type: boolean
     description: read U I D From Int
@@ -58,3 +64,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

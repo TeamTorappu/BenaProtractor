@@ -10,6 +10,7 @@ _CheckIsInPropLikeState:
       args:
         - $input
         - $ctx
+      generated: true
 _FroceFaceFront:
   type: boolean
   description: Froce Face Front
@@ -22,6 +23,7 @@ _FroceFaceFront:
       args:
         - $input
         - $ctx
+      generated: true
 _OffsetKey:
   type: string
   description: Offset Key
@@ -45,6 +47,7 @@ _abilityNames:
     args:
       - $input
       - $ctx
+    generated: true
 _abilityOwner:
   type: string
   description: ability Owner
@@ -80,6 +83,7 @@ _abnormalFlags:
     args:
       - $input
       - $ctx
+    generated: true
 _actionFailedIfNoTarget:
   type: boolean
   description: action Failed If No Target
@@ -92,6 +96,7 @@ _actionFailedIfNoTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _actionIndex:
   type: number
   description: action Index
@@ -104,6 +109,7 @@ _actionIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _actionIndexKey:
   type: string
   description: action Index Key
@@ -131,6 +137,7 @@ _actions:
     args:
       - $input
       - $ctx
+    generated: true
 _actionsToTarget:
   type: array
   description: actions To Target
@@ -142,6 +149,7 @@ _actionsToTarget:
     args:
       - $input
       - $ctx
+    generated: true
 _active:
   type: boolean
   description: active
@@ -154,6 +162,7 @@ _active:
       args:
         - $input
         - $ctx
+      generated: true
 _addBasedOriginValue:
   type: boolean
   description: add Based Origin Value
@@ -166,6 +175,7 @@ _addBasedOriginValue:
       args:
         - $input
         - $ctx
+      generated: true
 _addBbDefaultValue:
   type: number
   description: add Bb Default Value
@@ -178,6 +188,7 @@ _addBbDefaultValue:
       args:
         - $input
         - $ctx
+      generated: true
 _addBbKeyForEachProjectile:
   type: null | string
   description: add Bb Key For Each Projectile
@@ -194,6 +205,7 @@ _addBbValue:
       args:
         - $input
         - $ctx
+      generated: true
 _addBlackboardKey:
   type: null | string
   description: add Blackboard Key
@@ -210,6 +222,7 @@ _addBuffToEnemy:
       args:
         - $input
         - $ctx
+      generated: true
 _addBuffToTarget:
   type: boolean
   description: add Buff To Target
@@ -222,6 +235,7 @@ _addBuffToTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _addBuffsSource:
   type: string
   description: add Buffs Source
@@ -238,6 +252,7 @@ _addCardBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _addCnt:
   type: number
   description: add Cnt
@@ -250,6 +265,7 @@ _addCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _addCount:
   type: number
   description: add Count
@@ -262,6 +278,7 @@ _addCount:
       args:
         - $input
         - $ctx
+      generated: true
 _addCountBBKey:
   type: null | string
   description: add Count B B Key
@@ -278,6 +295,7 @@ _addCountUsePercent:
       args:
         - $input
         - $ctx
+      generated: true
 _addIntoRuntimeRoute:
   type: boolean
   description: add Into Runtime Route
@@ -290,6 +308,7 @@ _addIntoRuntimeRoute:
       args:
         - $input
         - $ctx
+      generated: true
 _addKey:
   type: string
   description: add Key
@@ -306,6 +325,7 @@ _addNoSourceBuffImmediately:
       args:
         - $input
         - $ctx
+      generated: true
 _addParamKey:
   type: null | string
   description: add Param Key
@@ -322,6 +342,7 @@ _addPolluteV:
       args:
         - $input
         - $ctx
+      generated: true
 _addSharedBlackboardValueIfExists:
   type: boolean
   description: add Shared Blackboard Value If Exists
@@ -334,6 +355,7 @@ _addSharedBlackboardValueIfExists:
       args:
         - $input
         - $ctx
+      generated: true
 _addString:
   type: boolean
   description: add String
@@ -346,6 +368,7 @@ _addString:
       args:
         - $input
         - $ctx
+      generated: true
 _addValue:
   type: number
   description: add Value
@@ -358,6 +381,7 @@ _addValue:
       args:
         - $input
         - $ctx
+      generated: true
 _addition:
   type: number
   description: addition
@@ -370,6 +394,7 @@ _addition:
       args:
         - $input
         - $ctx
+      generated: true
 _additionKey:
   type: null | string
   description: addition Key
@@ -386,6 +411,7 @@ _additionValue:
       args:
         - $input
         - $ctx
+      generated: true
 _additionVolume:
   type: number
   description: addition Volume
@@ -398,6 +424,7 @@ _additionVolume:
       args:
         - $input
         - $ctx
+      generated: true
 _additionalBuff:
   type: array
   description: additional Buff
@@ -409,6 +436,7 @@ _additionalBuff:
     args:
       - $input
       - $ctx
+    generated: true
 _additionalExtraBondCntKey:
   type: string
   description: additional Extra Bond Cnt Key
@@ -437,6 +465,7 @@ _allMustMatch:
       args:
         - $input
         - $ctx
+      generated: true
 _allTilesExceptRootTile:
   type: boolean
   description: all Tiles Except Root Tile
@@ -449,6 +478,7 @@ _allTilesExceptRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _allowNegativeDynamicVar:
   type: boolean
   description: allow Negative Dynamic Var
@@ -461,6 +491,7 @@ _allowNegativeDynamicVar:
       args:
         - $input
         - $ctx
+      generated: true
 _allowNoSource:
   type: boolean
   description: allow No Source
@@ -473,6 +504,7 @@ _allowNoSource:
       args:
         - $input
         - $ctx
+      generated: true
 _allowNoSourceDamage:
   type: boolean
   description: allow No Source Damage
@@ -485,6 +517,7 @@ _allowNoSourceDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _allowedBuildableType:
   type: string
   description: allowed Buildable Type
@@ -501,6 +534,7 @@ _alsoClearNullSource:
       args:
         - $input
         - $ctx
+      generated: true
 _alsoRemoveDurableBuff:
   type: boolean
   description: also Remove Durable Buff
@@ -513,6 +547,7 @@ _alsoRemoveDurableBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _alwaysAssign:
   type: boolean
   description: always Assign
@@ -525,6 +560,7 @@ _alwaysAssign:
       args:
         - $input
         - $ctx
+      generated: true
 _alwaysCountAsKilled:
   type: boolean
   description: always Count As Killed
@@ -537,6 +573,7 @@ _alwaysCountAsKilled:
       args:
         - $input
         - $ctx
+      generated: true
 _alwaysIncudeCurAtkTarget:
   type: boolean
   description: always Incude Cur Atk Target
@@ -549,6 +586,7 @@ _alwaysIncudeCurAtkTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _alwaysShowEnemyHp:
   type: boolean
   description: always Show Enemy Hp
@@ -561,6 +599,7 @@ _alwaysShowEnemyHp:
       args:
         - $input
         - $ctx
+      generated: true
 _angle:
   type: number
   description: angle
@@ -573,6 +612,7 @@ _angle:
       args:
         - $input
         - $ctx
+      generated: true
 _angleKey:
   type: string
   description: angle Key
@@ -593,6 +633,7 @@ _anotherBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _anotherKeyToCompare:
   type: null | string
   description: another Key To Compare
@@ -609,6 +650,7 @@ _applyForceDirectly:
       args:
         - $input
         - $ctx
+      generated: true
 _applyWay:
   type: string
   description: apply Way
@@ -637,6 +679,7 @@ _assignAllPlayerIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _assignAsInt:
   type: boolean
   description: assign As Int
@@ -649,6 +692,7 @@ _assignAsInt:
       args:
         - $input
         - $ctx
+      generated: true
 _assignAsKey:
   type: boolean
   description: assign As Key
@@ -661,6 +705,7 @@ _assignAsKey:
       args:
         - $input
         - $ctx
+      generated: true
 _assignAsString:
   type: boolean
   description: assign As String
@@ -673,6 +718,7 @@ _assignAsString:
       args:
         - $input
         - $ctx
+      generated: true
 _assignBBKey:
   type: string
   description: assign B B Key
@@ -688,6 +734,7 @@ _assignBBKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _assignBlackboardKey:
   type: string
   description: assign Blackboard Key
@@ -704,6 +751,7 @@ _assignCastedTimesToBb:
       args:
         - $input
         - $ctx
+      generated: true
 _assignChangedCountToBb:
   type: boolean
   description: assign Changed Count To Bb
@@ -716,6 +764,7 @@ _assignChangedCountToBb:
       args:
         - $input
         - $ctx
+      generated: true
 _assignCombatAbility:
   type: boolean
   description: assign Combat Ability
@@ -728,6 +777,7 @@ _assignCombatAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _assignCurrentMaxBond:
   type: boolean
   description: assign Current Max Bond
@@ -740,6 +790,7 @@ _assignCurrentMaxBond:
       args:
         - $input
         - $ctx
+      generated: true
 _assignFirstBuff:
   type: boolean
   description: assign First Buff
@@ -752,6 +803,7 @@ _assignFirstBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _assignHostOrToken:
   type: boolean
   description: assign Host Or Token
@@ -764,6 +816,7 @@ _assignHostOrToken:
       args:
         - $input
         - $ctx
+      generated: true
 _assignKey:
   type: string
   description: assign Key
@@ -780,6 +833,7 @@ _assignMaxCount:
       args:
         - $input
         - $ctx
+      generated: true
 _assignOldValueKey:
   type: null | string
   description: assign Old Value Key
@@ -796,6 +850,7 @@ _assignPVRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _assignRealDamageToBB:
   type: boolean
   description: assign Real Damage To B B
@@ -808,6 +863,7 @@ _assignRealDamageToBB:
       args:
         - $input
         - $ctx
+      generated: true
 _assignRealDelta:
   type: boolean
   description: assign Real Delta
@@ -820,6 +876,7 @@ _assignRealDelta:
       args:
         - $input
         - $ctx
+      generated: true
 _assignStealMaxValue:
   type: boolean
   description: assign Steal Max Value
@@ -832,6 +889,7 @@ _assignStealMaxValue:
       args:
         - $input
         - $ctx
+      generated: true
 _assignStrValue:
   type: boolean
   description: assign Str Value
@@ -844,6 +902,7 @@ _assignStrValue:
       args:
         - $input
         - $ctx
+      generated: true
 _assignString:
   type: boolean
   description: assign String
@@ -856,6 +915,7 @@ _assignString:
       args:
         - $input
         - $ctx
+      generated: true
 _assignTargetTokenOrHost:
   type: boolean
   description: assign Target Token Or Host
@@ -868,6 +928,7 @@ _assignTargetTokenOrHost:
       args:
         - $input
         - $ctx
+      generated: true
 _assignTileBBAfterSummon:
   type: boolean
   description: assign Tile B B After Summon
@@ -880,6 +941,7 @@ _assignTileBBAfterSummon:
       args:
         - $input
         - $ctx
+      generated: true
 _assignTilePV:
   type: boolean
   description: assign Tile P V
@@ -892,6 +954,7 @@ _assignTilePV:
       args:
         - $input
         - $ctx
+      generated: true
 _assignToBB:
   type: boolean
   description: assign To B B
@@ -904,6 +967,7 @@ _assignToBB:
       args:
         - $input
         - $ctx
+      generated: true
 _assignValueWithoutCalculate:
   type: boolean
   description: assign Value Without Calculate
@@ -916,6 +980,7 @@ _assignValueWithoutCalculate:
       args:
         - $input
         - $ctx
+      generated: true
 _assignedBlackboardKey:
   type: string
   description: assigned Blackboard Key
@@ -948,6 +1013,7 @@ _atkValue:
       args:
         - $input
         - $ctx
+      generated: true
 _attachToSourceHost:
   type: boolean
   description: attach To Source Host
@@ -960,6 +1026,7 @@ _attachToSourceHost:
       args:
         - $input
         - $ctx
+      generated: true
 _attackSpeedValue:
   type: number
   description: attack Speed Value
@@ -972,6 +1039,7 @@ _attackSpeedValue:
       args:
         - $input
         - $ctx
+      generated: true
 _attackTimeBlackboardKey:
   type: string
   description: attack Time Blackboard Key
@@ -987,6 +1055,7 @@ _attackTriggerNodes:
     args:
       - $input
       - $ctx
+    generated: true
 _attackType:
   type: string
   description: attack Type
@@ -1010,6 +1079,7 @@ _attributeTypes:
     args:
       - $input
       - $ctx
+    generated: true
 _audioSignal:
   type: string
   description: audio Signal
@@ -1034,6 +1104,7 @@ _autoRange:
       args:
         - $input
         - $ctx
+      generated: true
 _avoidHighland:
   type: boolean
   description: avoid Highland
@@ -1046,6 +1117,7 @@ _avoidHighland:
       args:
         - $input
         - $ctx
+      generated: true
 _avoidObstacleLike:
   type: boolean
   description: avoid Obstacle Like
@@ -1058,6 +1130,7 @@ _avoidObstacleLike:
       args:
         - $input
         - $ctx
+      generated: true
 _backToFront:
   type: boolean
   description: back To Front
@@ -1070,6 +1143,7 @@ _backToFront:
       args:
         - $input
         - $ctx
+      generated: true
 _backward:
   type: boolean
   description: backward
@@ -1082,6 +1156,7 @@ _backward:
       args:
         - $input
         - $ctx
+      generated: true
 _baseDamageKey:
   type: null | string
   description: base Damage Key
@@ -1098,6 +1173,7 @@ _baseOnEnemyHostAtk:
       args:
         - $input
         - $ctx
+      generated: true
 _baseOnHostAtk:
   type: boolean
   description: base On Host Atk
@@ -1110,6 +1186,7 @@ _baseOnHostAtk:
       args:
         - $input
         - $ctx
+      generated: true
 _bbKey:
   type: null | string
   description: bb Key
@@ -1125,6 +1202,7 @@ _beginPosition:
     args:
       - $input
       - $ctx
+    generated: true
 _blackBoardKey:
   type: string
   description: black Board Key
@@ -1144,6 +1222,7 @@ _blackboardKey:
     args:
       - $input
       - $ctx
+    generated: true
 _blackboardKeyInAbility:
   type: string
   description: blackboard Key In Ability
@@ -1172,6 +1251,7 @@ _blockAngle:
       args:
         - $input
         - $ctx
+      generated: true
 _blockCnt:
   type: number
   description: block Cnt
@@ -1184,6 +1264,7 @@ _blockCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _blockGameFinish:
   type: boolean
   description: block Game Finish
@@ -1196,6 +1277,7 @@ _blockGameFinish:
       args:
         - $input
         - $ctx
+      generated: true
 _blockMode:
   type: string
   description: block Mode
@@ -1212,6 +1294,7 @@ _blockThisHpSet:
       args:
         - $input
         - $ctx
+      generated: true
 _blockerKey:
   type: string
   description: blocker Key
@@ -1235,6 +1318,7 @@ _bondIds:
     args:
       - $input
       - $ctx
+    generated: true
 _branchId:
   type: null | string
   description: branch Id
@@ -1250,6 +1334,7 @@ _buff:
     args:
       - $input
       - $ctx
+    generated: true
 _buffAsSource:
   type: boolean
   description: buff As Source
@@ -1262,6 +1347,7 @@ _buffAsSource:
       args:
         - $input
         - $ctx
+      generated: true
 _buffAttributeType:
   type: string
   description: buff Attribute Type
@@ -1285,6 +1371,7 @@ _buffData:
     args:
       - $input
       - $ctx
+    generated: true
 _buffDataList:
   type: array
   description: buff Data List
@@ -1296,6 +1383,7 @@ _buffDataList:
     args:
       - $input
       - $ctx
+    generated: true
 _buffKey:
   type: null | string
   description: buff Key
@@ -1315,6 +1403,7 @@ _buffKeyPairs:
     args:
       - $input
       - $ctx
+    generated: true
 _buffKeys:
   type: array
   description: buff Keys
@@ -1326,6 +1415,7 @@ _buffKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _buffMaxCnt:
   type: string
   description: buff Max Cnt
@@ -1349,6 +1439,7 @@ _buffPair:
     args:
       - $input
       - $ctx
+    generated: true
 _buffSource:
   type: string
   description: buff Source
@@ -1376,6 +1467,7 @@ _buffToEnemy:
     args:
       - $input
       - $ctx
+    generated: true
 _buffToEnemySourceType:
   type: string
   description: buff To Enemy Source Type
@@ -1391,6 +1483,7 @@ _buffToKillCharacter:
     args:
       - $input
       - $ctx
+    generated: true
 _buffToNPC:
   type: object
   description: buff To N P C
@@ -1402,6 +1495,7 @@ _buffToNPC:
     args:
       - $input
       - $ctx
+    generated: true
 _buffToToken:
   type: array | null
   description: buff To Token
@@ -1413,6 +1507,7 @@ _buffToToken:
     args:
       - $input
       - $ctx
+    generated: true
 _buffToTraceTarget:
   type: object
   description: buff To Trace Target
@@ -1424,6 +1519,7 @@ _buffToTraceTarget:
     args:
       - $input
       - $ctx
+    generated: true
 _buffToTrap:
   type: object
   description: buff To Trap
@@ -1435,6 +1531,7 @@ _buffToTrap:
     args:
       - $input
       - $ctx
+    generated: true
 _buffType:
   type: string
   description: buff Type
@@ -1451,6 +1548,7 @@ _buffWithWeight:
       args:
         - $input
         - $ctx
+      generated: true
 _buffkey:
   type: string
   description: buffkey
@@ -1466,6 +1564,7 @@ _buffs:
     args:
       - $input
       - $ctx
+    generated: true
 _buffsUseTargetAsSource:
   type: array
   description: buffs Use Target As Source
@@ -1477,6 +1576,7 @@ _buffsUseTargetAsSource:
     args:
       - $input
       - $ctx
+    generated: true
 _buildableChange:
   type: boolean
   description: buildable Change
@@ -1489,6 +1589,7 @@ _buildableChange:
       args:
         - $input
         - $ctx
+      generated: true
 _buildableMask:
   type: string
   description: buildable Mask
@@ -1509,6 +1610,7 @@ _byPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _cacheAtkToActions:
   type: boolean
   description: cache Atk To Actions
@@ -1521,6 +1623,7 @@ _cacheAtkToActions:
       args:
         - $input
         - $ctx
+      generated: true
 _cacheLogKey:
   type: boolean
   description: cache Log Key
@@ -1533,6 +1636,7 @@ _cacheLogKey:
       args:
         - $input
         - $ctx
+      generated: true
 _cachedAtkKey:
   type: string
   description: cached Atk Key
@@ -1557,6 +1661,7 @@ _calculateCollidePosToBB:
       args:
         - $input
         - $ctx
+      generated: true
 _cameraFollowSpeedFactor:
   type: number
   description: camera Follow Speed Factor
@@ -1569,6 +1674,7 @@ _cameraFollowSpeedFactor:
       args:
         - $input
         - $ctx
+      generated: true
 _canGeneralShield:
   type: boolean
   description: can General Shield
@@ -1581,6 +1687,7 @@ _canGeneralShield:
       args:
         - $input
         - $ctx
+      generated: true
 _canRespawnInPlace:
   type: boolean
   description: can Respawn In Place
@@ -1593,6 +1700,7 @@ _canRespawnInPlace:
       args:
         - $input
         - $ctx
+      generated: true
 _canSelectNumKey:
   type: string
   description: can Select Num Key
@@ -1609,6 +1717,7 @@ _cancelIfAtkScaleZero:
       args:
         - $input
         - $ctx
+      generated: true
 _cardBuffEffectPlugin:
   type: null
   description: card Buff Effect Plugin
@@ -1657,6 +1766,7 @@ _castDirectly:
       args:
         - $input
         - $ctx
+      generated: true
 _category:
   type: string
   description: category
@@ -1673,6 +1783,7 @@ _ceilingDamageToInt:
       args:
         - $input
         - $ctx
+      generated: true
 _centerPosKey:
   type: string
   description: center Pos Key
@@ -1689,6 +1800,7 @@ _changeSpawnCertainPos:
       args:
         - $input
         - $ctx
+      generated: true
 _changeTileShadowState:
   type: boolean
   description: change Tile Shadow State
@@ -1701,6 +1813,7 @@ _changeTileShadowState:
       args:
         - $input
         - $ctx
+      generated: true
 _channel:
   type: string
   description: channel
@@ -1732,6 +1845,7 @@ _characterKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _characterType:
   type: string
   description: character Type
@@ -1748,6 +1862,7 @@ _chargeValue:
       args:
         - $input
         - $ctx
+      generated: true
 _checkAbilityIsReady:
   type: boolean
   description: check Ability Is Ready
@@ -1760,6 +1875,7 @@ _checkAbilityIsReady:
       args:
         - $input
         - $ctx
+      generated: true
 _checkAllSamePlayerIndex:
   type: boolean
   description: check All Same Player Index
@@ -1772,6 +1888,7 @@ _checkAllSamePlayerIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _checkApplyWay:
   type: boolean
   description: check Apply Way
@@ -1784,6 +1901,7 @@ _checkApplyWay:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBeforeTrigger:
   type: boolean
   description: check Before Trigger
@@ -1796,6 +1914,7 @@ _checkBeforeTrigger:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBlockedBySource:
   type: boolean
   description: check Blocked By Source
@@ -1808,6 +1927,7 @@ _checkBlockedBySource:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBlockedBySourceToken:
   type: boolean
   description: check Blocked By Source Token
@@ -1820,6 +1940,7 @@ _checkBlockedBySourceToken:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBlockedCount:
   type: boolean
   description: check Blocked Count
@@ -1832,6 +1953,7 @@ _checkBlockedCount:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBuffFinished:
   type: boolean
   description: check Buff Finished
@@ -1844,6 +1966,7 @@ _checkBuffFinished:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBuffSource:
   type: boolean
   description: check Buff Source
@@ -1856,6 +1979,7 @@ _checkBuffSource:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBuildCnt:
   type: number
   description: check Build Cnt
@@ -1868,6 +1992,7 @@ _checkBuildCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBuildMode:
   type: boolean
   description: check Build Mode
@@ -1880,6 +2005,7 @@ _checkBuildMode:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBuildableMask:
   type: boolean
   description: check Buildable Mask
@@ -1892,6 +2018,7 @@ _checkBuildableMask:
       args:
         - $input
         - $ctx
+      generated: true
 _checkBuildableType:
   type: boolean
   description: check Buildable Type
@@ -1904,6 +2031,7 @@ _checkBuildableType:
       args:
         - $input
         - $ctx
+      generated: true
 _checkCanUseAblityFlag:
   type: boolean
   description: check Can Use Ablity Flag
@@ -1916,6 +2044,7 @@ _checkCanUseAblityFlag:
       args:
         - $input
         - $ctx
+      generated: true
 _checkCertainPosition:
   type: boolean
   description: check Certain Position
@@ -1928,6 +2057,7 @@ _checkCertainPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _checkCharIdBeforeSummon:
   type: boolean
   description: check Char Id Before Summon
@@ -1940,6 +2070,7 @@ _checkCharIdBeforeSummon:
       args:
         - $input
         - $ctx
+      generated: true
 _checkContainsBuff:
   type: boolean
   description: check Contains Buff
@@ -1952,6 +2083,7 @@ _checkContainsBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _checkCurModeIndex:
   type: number
   description: check Cur Mode Index
@@ -1964,6 +2096,7 @@ _checkCurModeIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _checkDiffWithOldStoreCnt:
   type: boolean
   description: check Diff With Old Store Cnt
@@ -1976,6 +2109,7 @@ _checkDiffWithOldStoreCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _checkFinishCnt:
   type: number
   description: check Finish Cnt
@@ -1988,6 +2122,7 @@ _checkFinishCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _checkFromBlackboardValue:
   type: boolean
   description: check From Blackboard Value
@@ -2000,6 +2135,7 @@ _checkFromBlackboardValue:
       args:
         - $input
         - $ctx
+      generated: true
 _checkFromUnoverridableBuffCount:
   type: boolean
   description: check From Unoverridable Buff Count
@@ -2012,6 +2148,7 @@ _checkFromUnoverridableBuffCount:
       args:
         - $input
         - $ctx
+      generated: true
 _checkFull:
   type: boolean
   description: check Full
@@ -2024,6 +2161,7 @@ _checkFull:
       args:
         - $input
         - $ctx
+      generated: true
 _checkGiantTrapAllLocateTiles:
   type: boolean
   description: check Giant Trap All Locate Tiles
@@ -2036,6 +2174,7 @@ _checkGiantTrapAllLocateTiles:
       args:
         - $input
         - $ctx
+      generated: true
 _checkHasScource:
   type: boolean
   description: check Has Scource
@@ -2048,6 +2187,7 @@ _checkHasScource:
       args:
         - $input
         - $ctx
+      generated: true
 _checkHasSp:
   type: number
   description: check Has Sp
@@ -2060,6 +2200,7 @@ _checkHasSp:
       args:
         - $input
         - $ctx
+      generated: true
 _checkHasTraceTarget:
   type: boolean
   description: check Has Trace Target
@@ -2072,6 +2213,7 @@ _checkHasTraceTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _checkHasTraceTargetNow:
   type: boolean
   description: check Has Trace Target Now
@@ -2084,6 +2226,7 @@ _checkHasTraceTargetNow:
       args:
         - $input
         - $ctx
+      generated: true
 _checkId:
   type: boolean
   description: check Id
@@ -2096,6 +2239,7 @@ _checkId:
       args:
         - $input
         - $ctx
+      generated: true
 _checkInArcCircle:
   type: boolean
   description: check In Arc Circle
@@ -2108,6 +2252,7 @@ _checkInArcCircle:
       args:
         - $input
         - $ctx
+      generated: true
 _checkKey:
   type: string
   description: check Key
@@ -2124,6 +2269,7 @@ _checkModes:
       args:
         - $input
         - $ctx
+      generated: true
 _checkMotionMode:
   type: string
   description: check Motion Mode
@@ -2140,6 +2286,7 @@ _checkNodeType:
       args:
         - $input
         - $ctx
+      generated: true
 _checkOriginCondition:
   type: boolean
   description: check Origin Condition
@@ -2152,6 +2299,7 @@ _checkOriginCondition:
       args:
         - $input
         - $ctx
+      generated: true
 _checkPassableMask:
   type: boolean
   description: check Passable Mask
@@ -2164,6 +2312,7 @@ _checkPassableMask:
       args:
         - $input
         - $ctx
+      generated: true
 _checkPointIndex:
   type: number
   description: check Point Index
@@ -2176,6 +2325,7 @@ _checkPointIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _checkProfessionCategories:
   type: boolean
   description: check Profession Categories
@@ -2188,6 +2338,7 @@ _checkProfessionCategories:
       args:
         - $input
         - $ctx
+      generated: true
 _checkRadius:
   type: boolean
   description: check Radius
@@ -2200,6 +2351,7 @@ _checkRadius:
       args:
         - $input
         - $ctx
+      generated: true
 _checkReachable:
   type: boolean
   description: check Reachable
@@ -2212,6 +2364,7 @@ _checkReachable:
       args:
         - $input
         - $ctx
+      generated: true
 _checkRecoveryType:
   type: boolean
   description: check Recovery Type
@@ -2224,6 +2377,7 @@ _checkRecoveryType:
       args:
         - $input
         - $ctx
+      generated: true
 _checkRemainTime:
   type: number
   description: check Remain Time
@@ -2236,6 +2390,7 @@ _checkRemainTime:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSeasonType:
   type: boolean
   description: check Season Type
@@ -2248,6 +2403,7 @@ _checkSeasonType:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSkillActive:
   type: boolean
   description: check Skill Active
@@ -2260,6 +2416,7 @@ _checkSkillActive:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSkillReady:
   type: boolean
   description: check Skill Ready
@@ -2272,6 +2429,7 @@ _checkSkillReady:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSnapshotBuff:
   type: boolean
   description: check Snapshot Buff
@@ -2284,6 +2442,7 @@ _checkSnapshotBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSourceBehindTile:
   type: boolean
   description: check Source Behind Tile
@@ -2296,6 +2455,7 @@ _checkSourceBehindTile:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSourceHost:
   type: boolean
   description: check Source Host
@@ -2308,6 +2468,7 @@ _checkSourceHost:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSourceUid:
   type: boolean
   description: check Source Uid
@@ -2320,6 +2481,7 @@ _checkSourceUid:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSrcCastable:
   type: boolean
   description: check Src Castable
@@ -2332,6 +2494,7 @@ _checkSrcCastable:
       args:
         - $input
         - $ctx
+      generated: true
 _checkSubProfession:
   type: boolean
   description: check Sub Profession
@@ -2344,6 +2507,7 @@ _checkSubProfession:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTargetAlive:
   type: boolean
   description: check Target Alive
@@ -2356,6 +2520,7 @@ _checkTargetAlive:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTargetFree:
   type: boolean
   description: check Target Free
@@ -2368,6 +2533,7 @@ _checkTargetFree:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTargetHost:
   type: boolean
   description: check Target Host
@@ -2380,6 +2546,7 @@ _checkTargetHost:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTargetInRangeId:
   type: null | string
   description: check Target In Range Id
@@ -2396,6 +2563,7 @@ _checkTargetIsFromDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTargetTopBuiltInTile:
   type: boolean
   description: check Target Top Built In Tile
@@ -2408,6 +2576,7 @@ _checkTargetTopBuiltInTile:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTargetUnitType:
   type: boolean
   description: check Target Unit Type
@@ -2420,6 +2589,7 @@ _checkTargetUnitType:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTileBBBeforeSummon:
   type: boolean
   description: check Tile B B Before Summon
@@ -2432,6 +2602,7 @@ _checkTileBBBeforeSummon:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTileKey:
   type: boolean
   description: check Tile Key
@@ -2444,6 +2615,7 @@ _checkTileKey:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTileKeys:
   type: array | null
   description: check Tile Keys
@@ -2455,6 +2627,7 @@ _checkTileKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _checkTileReachable:
   type: boolean
   description: check Tile Reachable
@@ -2467,6 +2640,7 @@ _checkTileReachable:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTime:
   type: number
   description: check Time
@@ -2479,6 +2653,7 @@ _checkTime:
       args:
         - $input
         - $ctx
+      generated: true
 _checkTimeKey:
   type: string
   description: check Time Key
@@ -2495,6 +2670,7 @@ _checkTokenMaxDeployCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _checkType:
   type: string
   description: check Type
@@ -2510,6 +2686,7 @@ _checkTypes:
     args:
       - $input
       - $ctx
+    generated: true
 _checkValue:
   type: number
   description: check Value
@@ -2522,6 +2699,7 @@ _checkValue:
       args:
         - $input
         - $ctx
+      generated: true
 _checkValueKey:
   type: string
   description: check Value Key
@@ -2538,6 +2716,7 @@ _checkWeatherType:
       args:
         - $input
         - $ctx
+      generated: true
 _checkpointTypes:
   type: array
   description: checkpoint Types
@@ -2549,6 +2728,7 @@ _checkpointTypes:
     args:
       - $input
       - $ctx
+    generated: true
 _chooseMostCharSurroud:
   type: boolean
   description: choose Most Char Surroud
@@ -2561,6 +2741,7 @@ _chooseMostCharSurroud:
       args:
         - $input
         - $ctx
+      generated: true
 _chooseMostEnemySurroud:
   type: boolean
   description: choose Most Enemy Surroud
@@ -2573,6 +2754,7 @@ _chooseMostEnemySurroud:
       args:
         - $input
         - $ctx
+      generated: true
 _chooseSource:
   type: boolean
   description: choose Source
@@ -2585,6 +2767,7 @@ _chooseSource:
       args:
         - $input
         - $ctx
+      generated: true
 _clearBlackboard:
   type: boolean
   description: clear Blackboard
@@ -2597,6 +2780,7 @@ _clearBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _clearPalsyingBuffBeforeTrigger:
   type: boolean
   description: clear Palsying Buff Before Trigger
@@ -2609,6 +2793,7 @@ _clearPalsyingBuffBeforeTrigger:
       args:
         - $input
         - $ctx
+      generated: true
 _clearRouteBeforeInsert:
   type: boolean
   description: clear Route Before Insert
@@ -2621,6 +2806,7 @@ _clearRouteBeforeInsert:
       args:
         - $input
         - $ctx
+      generated: true
 _clearS1SnowTileList:
   type: boolean
   description: clear S1 Snow Tile List
@@ -2633,6 +2819,7 @@ _clearS1SnowTileList:
       args:
         - $input
         - $ctx
+      generated: true
 _clearanceForceKey:
   type: string
   description: clearance Force Key
@@ -2649,6 +2836,7 @@ _clockWise:
       args:
         - $input
         - $ctx
+      generated: true
 _cnt:
   type: number
   description: cnt
@@ -2661,6 +2849,7 @@ _cnt:
       args:
         - $input
         - $ctx
+      generated: true
 _cntKey:
   type: string
   description: cnt Key
@@ -2704,6 +2893,7 @@ _conditionNode:
     args:
       - $input
       - $ctx
+    generated: true
 _conditionsNode:
   type: array
   description: conditions Node
@@ -2715,6 +2905,7 @@ _conditionsNode:
     args:
       - $input
       - $ctx
+    generated: true
 _considerManiShip:
   type: boolean
   description: consider Mani Ship
@@ -2727,6 +2918,7 @@ _considerManiShip:
       args:
         - $input
         - $ctx
+      generated: true
 _considerReborn:
   type: boolean
   description: consider Reborn
@@ -2739,6 +2931,7 @@ _considerReborn:
       args:
         - $input
         - $ctx
+      generated: true
 _considerUnhurtable:
   type: boolean
   description: consider Unhurtable
@@ -2751,6 +2944,7 @@ _considerUnhurtable:
       args:
         - $input
         - $ctx
+      generated: true
 _constDirection:
   type: string
   description: const Direction
@@ -2767,6 +2961,7 @@ _consumeCount:
       args:
         - $input
         - $ctx
+      generated: true
 _consumeCountBBKey:
   type: null
   description: consume Count B B Key
@@ -2783,6 +2978,7 @@ _consumeEventCount:
       args:
         - $input
         - $ctx
+      generated: true
 _convertToInt:
   type: boolean
   description: convert To Int
@@ -2795,6 +2991,7 @@ _convertToInt:
       args:
         - $input
         - $ctx
+      generated: true
 _coolDownKey:
   type: string
   description: cool Down Key
@@ -2811,6 +3008,7 @@ _copyBb:
       args:
         - $input
         - $ctx
+      generated: true
 _copyByRatio:
   type: boolean
   description: copy By Ratio
@@ -2823,6 +3021,7 @@ _copyByRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _copyFromKey:
   type: null | string
   description: copy From Key
@@ -2839,6 +3038,7 @@ _copyToSharedBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _costAddLocked:
   type: boolean
   description: cost Add Locked
@@ -2851,6 +3051,7 @@ _costAddLocked:
       args:
         - $input
         - $ctx
+      generated: true
 _costAddLockedBB:
   type: null
   description: cost Add Locked B B
@@ -2867,6 +3068,7 @@ _costIncreaseTime:
       args:
         - $input
         - $ctx
+      generated: true
 _count:
   type: number
   description: count
@@ -2879,6 +3081,7 @@ _count:
       args:
         - $input
         - $ctx
+      generated: true
 _countBB:
   type: string
   description: count B B
@@ -2899,6 +3102,7 @@ _countInHostIfToken:
       args:
         - $input
         - $ctx
+      generated: true
 _countKey:
   type: string
   description: count Key
@@ -2915,6 +3119,7 @@ _createBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _createBuffToTraceTarget:
   type: boolean
   description: create Buff To Trace Target
@@ -2927,6 +3132,7 @@ _createBuffToTraceTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _createCardBuff:
   type: boolean
   description: create Card Buff
@@ -2939,6 +3145,7 @@ _createCardBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _createDeckBuff:
   type: boolean
   description: create Deck Buff
@@ -2951,6 +3158,7 @@ _createDeckBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _createEffect:
   type: boolean
   description: create Effect
@@ -2963,6 +3171,7 @@ _createEffect:
       args:
         - $input
         - $ctx
+      generated: true
 _createEffectHoldBySource:
   type: boolean
   description: create Effect Hold By Source
@@ -2975,6 +3184,7 @@ _createEffectHoldBySource:
       args:
         - $input
         - $ctx
+      generated: true
 _createEffectOnTokenTile:
   type: boolean
   description: create Effect On Token Tile
@@ -2987,6 +3197,7 @@ _createEffectOnTokenTile:
       args:
         - $input
         - $ctx
+      generated: true
 _createOnTargetHost:
   type: boolean
   description: create On Target Host
@@ -2999,6 +3210,7 @@ _createOnTargetHost:
       args:
         - $input
         - $ctx
+      generated: true
 _customKey:
   type: string
   description: custom Key
@@ -3027,6 +3239,7 @@ _damageNoLessThanValueBasedOnSourceAtk:
       args:
         - $input
         - $ctx
+      generated: true
 _damageScale:
   type: null | string
   description: damage Scale
@@ -3067,6 +3280,7 @@ _damageWithoutModify:
       args:
         - $input
         - $ctx
+      generated: true
 _dangerLevelKey:
   type: string
   description: danger Level Key
@@ -3082,6 +3296,7 @@ _datas:
     args:
       - $input
       - $ctx
+    generated: true
 _dealWithAuraAbility:
   type: boolean
   description: deal With Aura Ability
@@ -3094,6 +3309,7 @@ _dealWithAuraAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _dealWithGlobalAuraAbility:
   type: boolean
   description: deal With Global Aura Ability
@@ -3106,6 +3322,7 @@ _dealWithGlobalAuraAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _decBbKey:
   type: string
   description: dec Bb Key
@@ -3122,6 +3339,7 @@ _decCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _decCntIfStack:
   type: boolean
   description: dec Cnt If Stack
@@ -3134,6 +3352,7 @@ _decCntIfStack:
       args:
         - $input
         - $ctx
+      generated: true
 _decCntKey:
   type: null | string
   description: dec Cnt Key
@@ -3149,6 +3368,7 @@ _deckBuff:
     args:
       - $input
       - $ctx
+    generated: true
 _deckBuffKey:
   type: string
   description: deck Buff Key
@@ -3164,6 +3384,7 @@ _deckSelector:
     args:
       - $input
       - $ctx
+    generated: true
 _decreaseForceLevelWhenNotInDirection:
   type: number
   description: decrease Force Level When Not In Direction
@@ -3176,6 +3397,7 @@ _decreaseForceLevelWhenNotInDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _defValue:
   type: number
   description: def Value
@@ -3188,6 +3410,7 @@ _defValue:
       args:
         - $input
         - $ctx
+      generated: true
 _defaultAdditionalExtraBondCnt:
   type: number
   description: default Additional Extra Bond Cnt
@@ -3200,6 +3423,7 @@ _defaultAdditionalExtraBondCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _defaultAtkScale:
   type: number
   description: default Atk Scale
@@ -3212,6 +3436,7 @@ _defaultAtkScale:
       args:
         - $input
         - $ctx
+      generated: true
 _defaultForceLevel:
   type: number
   description: default Force Level
@@ -3224,6 +3449,7 @@ _defaultForceLevel:
       args:
         - $input
         - $ctx
+      generated: true
 _defaultKey:
   type: string
   description: default Key
@@ -3240,6 +3466,7 @@ _defaultMaxStackCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _defaultPosKey:
   type: string
   description: default Pos Key
@@ -3255,6 +3482,7 @@ _defaultSettings:
     args:
       - $input
       - $ctx
+    generated: true
 _defaultToRandom:
   type: boolean
   description: default To Random
@@ -3267,6 +3495,7 @@ _defaultToRandom:
       args:
         - $input
         - $ctx
+      generated: true
 _defaultTransformOffset:
   type: object
   description: default Transform Offset
@@ -3278,6 +3507,7 @@ _defaultTransformOffset:
     args:
       - $input
       - $ctx
+    generated: true
 _defaultValue:
   type: number | string
   description: default Value
@@ -3293,6 +3523,7 @@ _degreeRanges:
     args:
       - $input
       - $ctx
+    generated: true
 _delayTime:
   type: number
   description: delay Time
@@ -3305,6 +3536,7 @@ _delayTime:
       args:
         - $input
         - $ctx
+      generated: true
 _delayToFinishLevel:
   type: number
   description: delay To Finish Level
@@ -3317,6 +3549,7 @@ _delayToFinishLevel:
       args:
         - $input
         - $ctx
+      generated: true
 _delayToKillAll:
   type: number
   description: delay To Kill All
@@ -3329,6 +3562,7 @@ _delayToKillAll:
       args:
         - $input
         - $ctx
+      generated: true
 _deltaCostIncreaseTime:
   type: number
   description: delta Cost Increase Time
@@ -3341,6 +3575,7 @@ _deltaCostIncreaseTime:
       args:
         - $input
         - $ctx
+      generated: true
 _derviedBuffKey:
   type: null | string
   description: dervied Buff Key
@@ -3357,6 +3592,7 @@ _descriptionUseStringTableKey:
       args:
         - $input
         - $ctx
+      generated: true
 _detailType:
   type: string
   description: detail Type
@@ -3373,6 +3609,7 @@ _devideDamageFromAbilityCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _difficultyMode:
   type: string
   description: difficulty Mode
@@ -3393,6 +3630,7 @@ _directByInputTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _direction:
   type: string
   description: direction
@@ -3417,6 +3655,7 @@ _disableBornTweenColor:
       args:
         - $input
         - $ctx
+      generated: true
 _disableCurrentStillPull:
   type: boolean
   description: disable Current Still Pull
@@ -3429,6 +3668,7 @@ _disableCurrentStillPull:
       args:
         - $input
         - $ctx
+      generated: true
 _disabled:
   type: boolean
   description: disabled
@@ -3441,6 +3681,7 @@ _disabled:
       args:
         - $input
         - $ctx
+      generated: true
 _discardRemainingCount:
   type: boolean
   description: discard Remaining Count
@@ -3453,6 +3694,7 @@ _discardRemainingCount:
       args:
         - $input
         - $ctx
+      generated: true
 _discardSoft:
   type: boolean
   description: discard Soft
@@ -3465,6 +3707,7 @@ _discardSoft:
       args:
         - $input
         - $ctx
+      generated: true
 _discardUnselected:
   type: boolean
   description: discard Unselected
@@ -3477,6 +3720,7 @@ _discardUnselected:
       args:
         - $input
         - $ctx
+      generated: true
 _distance:
   type: number
   description: distance
@@ -3489,6 +3733,7 @@ _distance:
       args:
         - $input
         - $ctx
+      generated: true
 _distanceCustomKey:
   type: null
   description: distance Custom Key
@@ -3509,6 +3754,7 @@ _doClear:
       args:
         - $input
         - $ctx
+      generated: true
 _doNextWhenSuccess:
   type: boolean
   description: do Next When Success
@@ -3521,6 +3767,7 @@ _doNextWhenSuccess:
       args:
         - $input
         - $ctx
+      generated: true
 _doNotCheckSource:
   type: boolean
   description: do Not Check Source
@@ -3533,6 +3780,7 @@ _doNotCheckSource:
       args:
         - $input
         - $ctx
+      generated: true
 _dontBlockWave:
   type: boolean
   description: dont Block Wave
@@ -3545,6 +3793,7 @@ _dontBlockWave:
       args:
         - $input
         - $ctx
+      generated: true
 _dontChangeFaceByDirection:
   type: boolean
   description: dont Change Face By Direction
@@ -3557,6 +3806,7 @@ _dontChangeFaceByDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _dontCheckButRecordDirectionToBb:
   type: boolean
   description: dont Check But Record Direction To Bb
@@ -3569,6 +3819,7 @@ _dontCheckButRecordDirectionToBb:
       args:
         - $input
         - $ctx
+      generated: true
 _dontCheckSpType:
   type: boolean
   description: dont Check Sp Type
@@ -3581,6 +3832,7 @@ _dontCheckSpType:
       args:
         - $input
         - $ctx
+      generated: true
 _dontConsumeWhenUndeadable:
   type: boolean
   description: dont Consume When Undeadable
@@ -3593,6 +3845,7 @@ _dontConsumeWhenUndeadable:
       args:
         - $input
         - $ctx
+      generated: true
 _dontLimitMaxWithdrawCost:
   type: boolean
   description: dont Limit Max Withdraw Cost
@@ -3605,6 +3858,7 @@ _dontLimitMaxWithdrawCost:
       args:
         - $input
         - $ctx
+      generated: true
 _dontShowSpUI:
   type: boolean
   description: dont Show Sp U I
@@ -3617,6 +3871,7 @@ _dontShowSpUI:
       args:
         - $input
         - $ctx
+      generated: true
 _dontShowWarnning:
   type: boolean
   description: dont Show Warnning
@@ -3629,6 +3884,7 @@ _dontShowWarnning:
       args:
         - $input
         - $ctx
+      generated: true
 _dontSwitchModeOnlyAssignTileCntToAbilityBb:
   type: boolean
   description: dont Switch Mode Only Assign Tile Cnt To Ability Bb
@@ -3641,6 +3897,7 @@ _dontSwitchModeOnlyAssignTileCntToAbilityBb:
       args:
         - $input
         - $ctx
+      generated: true
 _doomCountDownKey:
   type: string
   description: doom Count Down Key
@@ -3672,6 +3929,7 @@ _downNodes:
     args:
       - $input
       - $ctx
+    generated: true
 _drawCardFromUsedAndPending:
   type: boolean
   description: draw Card From Used And Pending
@@ -3684,6 +3942,7 @@ _drawCardFromUsedAndPending:
       args:
         - $input
         - $ctx
+      generated: true
 _duration:
   type: number
   description: duration
@@ -3696,6 +3955,7 @@ _duration:
       args:
         - $input
         - $ctx
+      generated: true
 _durationKey:
   type: string
   description: duration Key
@@ -3723,6 +3983,7 @@ _effectKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _effectTime:
   type: number
   description: effect Time
@@ -3735,6 +3996,7 @@ _effectTime:
       args:
         - $input
         - $ctx
+      generated: true
 _elementDamageType:
   type: string
   description: element Damage Type
@@ -3755,6 +4017,7 @@ _emitAttackFinishOnly:
       args:
         - $input
         - $ctx
+      generated: true
 _emitCount:
   type: number
   description: emit Count
@@ -3767,6 +4030,7 @@ _emitCount:
       args:
         - $input
         - $ctx
+      generated: true
 _emitOnRootTile:
   type: boolean
   description: emit On Root Tile
@@ -3779,6 +4043,7 @@ _emitOnRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _emitPredefinedLocationReached:
   type: boolean
   description: emit Predefined Location Reached
@@ -3791,6 +4056,7 @@ _emitPredefinedLocationReached:
       args:
         - $input
         - $ctx
+      generated: true
 _emitSourceOnCalculateDamage:
   type: boolean
   description: emit Source On Calculate Damage
@@ -3803,6 +4069,7 @@ _emitSourceOnCalculateDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _enable:
   type: boolean
   description: enable
@@ -3815,6 +4082,7 @@ _enable:
       args:
         - $input
         - $ctx
+      generated: true
 _enableMaxStackCount:
   type: boolean
   description: enable Max Stack Count
@@ -3827,6 +4095,7 @@ _enableMaxStackCount:
       args:
         - $input
         - $ctx
+      generated: true
 _enabled:
   type: boolean
   description: enabled
@@ -3839,6 +4108,7 @@ _enabled:
       args:
         - $input
         - $ctx
+      generated: true
 _endColKey:
   type: string
   description: end Col Key
@@ -3855,6 +4125,7 @@ _endPosOffsetAlongDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _endPosition:
   type: object
   description: end Position
@@ -3866,6 +4137,7 @@ _endPosition:
     args:
       - $input
       - $ctx
+    generated: true
 _endTime:
   type: number
   description: end Time
@@ -3878,6 +4150,7 @@ _endTime:
       args:
         - $input
         - $ctx
+      generated: true
 _enemy:
   type: string
   description: enemy
@@ -3921,6 +4194,7 @@ _enemyKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _enemyNotShowBuff:
   type: string
   description: enemy Not Show Buff
@@ -3937,6 +4211,7 @@ _ensureCurCostNotExceedMax:
       args:
         - $input
         - $ctx
+      generated: true
 _entity:
   type: string
   description: entity
@@ -3969,6 +4244,7 @@ _epRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _epType:
   type: string
   description: ep Type
@@ -3985,6 +4261,7 @@ _equalIfBothNull:
       args:
         - $input
         - $ctx
+      generated: true
 _equipChessId:
   type: null | string
   description: equip Chess Id
@@ -4021,6 +4298,7 @@ _exceptCurrentTile:
       args:
         - $input
         - $ctx
+      generated: true
 _exceptDisappearedEnemy:
   type: boolean
   description: except Disappeared Enemy
@@ -4033,6 +4311,7 @@ _exceptDisappearedEnemy:
       args:
         - $input
         - $ctx
+      generated: true
 _exceptOwner:
   type: boolean
   description: except Owner
@@ -4045,6 +4324,7 @@ _exceptOwner:
       args:
         - $input
         - $ctx
+      generated: true
 _exceptTargetRootTile:
   type: boolean
   description: except Target Root Tile
@@ -4057,6 +4337,7 @@ _exceptTargetRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _exceptThisOffset:
   type: boolean
   description: except This Offset
@@ -4069,6 +4350,7 @@ _exceptThisOffset:
       args:
         - $input
         - $ctx
+      generated: true
 _exceptTokenAndTrap:
   type: boolean
   description: except Token And Trap
@@ -4081,6 +4363,7 @@ _exceptTokenAndTrap:
       args:
         - $input
         - $ctx
+      generated: true
 _exclude:
   type: boolean
   description: exclude
@@ -4093,6 +4376,7 @@ _exclude:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeBuffKey:
   type: null | string
   description: exclude Buff Key
@@ -4109,6 +4393,7 @@ _excludeByBuffKey:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeCardBuffKey:
   type: null
   description: exclude Card Buff Key
@@ -4125,6 +4410,7 @@ _excludeCurAtkTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeFilter:
   type: boolean
   description: exclude Filter
@@ -4137,6 +4423,7 @@ _excludeFilter:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeFromBattle:
   type: boolean
   description: exclude From Battle
@@ -4149,6 +4436,7 @@ _excludeFromBattle:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeIds:
   type: array
   description: exclude Ids
@@ -4160,6 +4448,7 @@ _excludeIds:
     args:
       - $input
       - $ctx
+    generated: true
 _excludeInTriggerAll:
   type: boolean
   description: exclude In Trigger All
@@ -4172,6 +4461,7 @@ _excludeInTriggerAll:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeLinkGems:
   type: boolean
   description: exclude Link Gems
@@ -4184,6 +4474,7 @@ _excludeLinkGems:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeOwner:
   type: boolean
   description: exclude Owner
@@ -4196,6 +4487,7 @@ _excludeOwner:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeRootTile:
   type: boolean
   description: exclude Root Tile
@@ -4208,6 +4500,7 @@ _excludeRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeSource:
   type: boolean
   description: exclude Source
@@ -4220,6 +4513,7 @@ _excludeSource:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeSpecificTarget:
   type: boolean
   description: exclude Specific Target
@@ -4232,6 +4526,7 @@ _excludeSpecificTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeTarget:
   type: boolean
   description: exclude Target
@@ -4244,6 +4539,7 @@ _excludeTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeTargetType:
   type: string
   description: exclude Target Type
@@ -4260,6 +4556,7 @@ _excludeThisBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeTileInBlackboard:
   type: boolean
   description: exclude Tile In Blackboard
@@ -4272,6 +4569,7 @@ _excludeTileInBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeToken:
   type: boolean
   description: exclude Token
@@ -4284,6 +4582,7 @@ _excludeToken:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeTrap:
   type: boolean
   description: exclude Trap
@@ -4296,6 +4595,7 @@ _excludeTrap:
       args:
         - $input
         - $ctx
+      generated: true
 _excludeTrapAndToken:
   type: boolean
   description: exclude Trap And Token
@@ -4308,6 +4608,7 @@ _excludeTrapAndToken:
       args:
         - $input
         - $ctx
+      generated: true
 _excludedBuffIds:
   type: array | null
   description: excluded Buff Ids
@@ -4319,6 +4620,7 @@ _excludedBuffIds:
     args:
       - $input
       - $ctx
+    generated: true
 _exclusive:
   type: boolean
   description: exclusive
@@ -4331,6 +4633,7 @@ _exclusive:
       args:
         - $input
         - $ctx
+      generated: true
 _expKey:
   type: null | string
   description: exp Key
@@ -4351,6 +4654,7 @@ _expand:
       args:
         - $input
         - $ctx
+      generated: true
 _expectToken:
   type: boolean
   description: expect Token
@@ -4363,6 +4667,7 @@ _expectToken:
       args:
         - $input
         - $ctx
+      generated: true
 _extendTimeKey:
   type: string
   description: extend Time Key
@@ -4383,6 +4688,7 @@ _extraBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _extraCheckOnlyUseOnceList:
   type: boolean
   description: extra Check Only Use Once List
@@ -4395,6 +4701,7 @@ _extraCheckOnlyUseOnceList:
       args:
         - $input
         - $ctx
+      generated: true
 _extraDurationKey:
   type: string
   description: extra Duration Key
@@ -4427,6 +4734,7 @@ _failIfTargetGridIsRoot:
       args:
         - $input
         - $ctx
+      generated: true
 _failNodes:
   type: array | null
   description: fail Nodes
@@ -4438,6 +4746,7 @@ _failNodes:
     args:
       - $input
       - $ctx
+    generated: true
 _failWhenOneFail:
   type: boolean
   description: fail When One Fail
@@ -4450,6 +4759,7 @@ _failWhenOneFail:
       args:
         - $input
         - $ctx
+      generated: true
 _familyGroupMask:
   type: string
   description: family Group Mask
@@ -4470,6 +4780,7 @@ _filterActionInstead:
       args:
         - $input
         - $ctx
+      generated: true
 _filterAlias:
   type: boolean
   description: filter Alias
@@ -4482,6 +4793,7 @@ _filterAlias:
       args:
         - $input
         - $ctx
+      generated: true
 _filterAliasFixed:
   type: boolean
   description: filter Alias Fixed
@@ -4494,6 +4806,7 @@ _filterAliasFixed:
       args:
         - $input
         - $ctx
+      generated: true
 _filterAllSides:
   type: boolean
   description: filter All Sides
@@ -4506,6 +4819,7 @@ _filterAllSides:
       args:
         - $input
         - $ctx
+      generated: true
 _filterAllUnit:
   type: boolean
   description: filter All Unit
@@ -4518,6 +4832,7 @@ _filterAllUnit:
       args:
         - $input
         - $ctx
+      generated: true
 _filterApplyWay:
   type: boolean
   description: filter Apply Way
@@ -4530,6 +4845,7 @@ _filterApplyWay:
       args:
         - $input
         - $ctx
+      generated: true
 _filterAttackType:
   type: boolean
   description: filter Attack Type
@@ -4542,6 +4858,7 @@ _filterAttackType:
       args:
         - $input
         - $ctx
+      generated: true
 _filterBuffSource:
   type: boolean
   description: filter Buff Source
@@ -4554,6 +4871,7 @@ _filterBuffSource:
       args:
         - $input
         - $ctx
+      generated: true
 _filterByBondIds:
   type: array
   description: filter By Bond Ids
@@ -4565,6 +4883,7 @@ _filterByBondIds:
     args:
       - $input
       - $ctx
+    generated: true
 _filterByBuildableType:
   type: boolean
   description: filter By Buildable Type
@@ -4577,6 +4896,7 @@ _filterByBuildableType:
       args:
         - $input
         - $ctx
+      generated: true
 _filterByGroupId:
   type: boolean
   description: filter By Group Id
@@ -4589,6 +4909,7 @@ _filterByGroupId:
       args:
         - $input
         - $ctx
+      generated: true
 _filterByMinSp:
   type: boolean
   description: filter By Min Sp
@@ -4601,6 +4922,7 @@ _filterByMinSp:
       args:
         - $input
         - $ctx
+      generated: true
 _filterBySourceId:
   type: boolean
   description: filter By Source Id
@@ -4613,6 +4935,7 @@ _filterBySourceId:
       args:
         - $input
         - $ctx
+      generated: true
 _filterCount:
   type: boolean
   description: filter Count
@@ -4625,6 +4948,7 @@ _filterCount:
       args:
         - $input
         - $ctx
+      generated: true
 _filterDamageType:
   type: boolean
   description: filter Damage Type
@@ -4637,6 +4961,7 @@ _filterDamageType:
       args:
         - $input
         - $ctx
+      generated: true
 _filterEPType:
   type: boolean
   description: filter E P Type
@@ -4649,6 +4974,7 @@ _filterEPType:
       args:
         - $input
         - $ctx
+      generated: true
 _filterElementType:
   type: boolean
   description: filter Element Type
@@ -4661,6 +4987,7 @@ _filterElementType:
       args:
         - $input
         - $ctx
+      generated: true
 _filterGroupId:
   type: null | string
   description: filter Group Id
@@ -4680,6 +5007,7 @@ _filterIds:
     args:
       - $input
       - $ctx
+    generated: true
 _filterIsInHand:
   type: boolean
   description: filter Is In Hand
@@ -4692,6 +5020,7 @@ _filterIsInHand:
       args:
         - $input
         - $ctx
+      generated: true
 _filterMinCost:
   type: boolean
   description: filter Min Cost
@@ -4704,6 +5033,7 @@ _filterMinCost:
       args:
         - $input
         - $ctx
+      generated: true
 _filterModifierCancelled:
   type: boolean
   description: filter Modifier Cancelled
@@ -4716,6 +5046,7 @@ _filterModifierCancelled:
       args:
         - $input
         - $ctx
+      generated: true
 _filterModifierSource:
   type: boolean
   description: filter Modifier Source
@@ -4728,6 +5059,7 @@ _filterModifierSource:
       args:
         - $input
         - $ctx
+      generated: true
 _filterNoneApplyWay:
   type: boolean
   description: filter None Apply Way
@@ -4740,6 +5072,7 @@ _filterNoneApplyWay:
       args:
         - $input
         - $ctx
+      generated: true
 _filterPredefine:
   type: boolean
   description: filter Predefine
@@ -4752,6 +5085,7 @@ _filterPredefine:
       args:
         - $input
         - $ctx
+      generated: true
 _filterProfessionMask:
   type: boolean
   description: filter Profession Mask
@@ -4764,6 +5098,7 @@ _filterProfessionMask:
       args:
         - $input
         - $ctx
+      generated: true
 _filterProjectileKey:
   type: string
   description: filter Projectile Key
@@ -4780,6 +5115,7 @@ _filterSharedMask:
       args:
         - $input
         - $ctx
+      generated: true
 _filterTag:
   type: null | string
   description: filter Tag
@@ -4795,6 +5131,7 @@ _filterTags:
     args:
       - $input
       - $ctx
+    generated: true
 _filterTargets:
   type: boolean
   description: filter Targets
@@ -4807,6 +5144,7 @@ _filterTargets:
       args:
         - $input
         - $ctx
+      generated: true
 _filterTokenMode:
   type: boolean
   description: filter Token Mode
@@ -4819,6 +5157,7 @@ _filterTokenMode:
       args:
         - $input
         - $ctx
+      generated: true
 _filterTokenOrHostCard:
   type: boolean
   description: filter Token Or Host Card
@@ -4831,6 +5170,7 @@ _filterTokenOrHostCard:
       args:
         - $input
         - $ctx
+      generated: true
 _filterType:
   type: string
   description: filter Type
@@ -4847,6 +5187,7 @@ _finalAbs:
       args:
         - $input
         - $ctx
+      generated: true
 _finalCeil:
   type: boolean
   description: final Ceil
@@ -4859,6 +5200,7 @@ _finalCeil:
       args:
         - $input
         - $ctx
+      generated: true
 _finalFloor:
   type: boolean
   description: final Floor
@@ -4871,6 +5213,7 @@ _finalFloor:
       args:
         - $input
         - $ctx
+      generated: true
 _finalRound:
   type: boolean
   description: final Round
@@ -4883,6 +5226,7 @@ _finalRound:
       args:
         - $input
         - $ctx
+      generated: true
 _findAllCard:
   type: boolean
   description: find All Card
@@ -4895,6 +5239,7 @@ _findAllCard:
       args:
         - $input
         - $ctx
+      generated: true
 _findNearestPassableTile:
   type: boolean
   description: find Nearest Passable Tile
@@ -4907,6 +5252,7 @@ _findNearestPassableTile:
       args:
         - $input
         - $ctx
+      generated: true
 _finishDerivedBuffIfNoParent:
   type: boolean
   description: finish Derived Buff If No Parent
@@ -4919,6 +5265,7 @@ _finishDerivedBuffIfNoParent:
       args:
         - $input
         - $ctx
+      generated: true
 _finishDerivedBuffIfParentFinish:
   type: boolean
   description: finish Derived Buff If Parent Finish
@@ -4931,6 +5278,7 @@ _finishDerivedBuffIfParentFinish:
       args:
         - $input
         - $ctx
+      generated: true
 _finishHostBuff:
   type: boolean
   description: finish Host Buff
@@ -4943,6 +5291,7 @@ _finishHostBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _finishReason:
   type: string
   description: finish Reason
@@ -4967,6 +5316,7 @@ _fixValue:
       args:
         - $input
         - $ctx
+      generated: true
 _fixedEpDamage:
   type: number
   description: fixed Ep Damage
@@ -4979,6 +5329,7 @@ _fixedEpDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _fixedEpDamageKey:
   type: null | string
   description: fixed Ep Damage Key
@@ -4999,6 +5350,7 @@ _fixedValue:
       args:
         - $input
         - $ctx
+      generated: true
 _flagBuff:
   type: object
   description: flag Buff
@@ -5010,6 +5362,7 @@ _flagBuff:
     args:
       - $input
       - $ctx
+    generated: true
 _floorTargetCnt:
   type: number
   description: floor Target Cnt
@@ -5022,6 +5375,7 @@ _floorTargetCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _floorTargetCntKey:
   type: string
   description: floor Target Cnt Key
@@ -5037,6 +5391,7 @@ _forbiddenIds:
     args:
       - $input
       - $ctx
+    generated: true
 _force:
   type: boolean | number
   description: force
@@ -5053,6 +5408,7 @@ _forceDisplayDamageNum:
       args:
         - $input
         - $ctx
+      generated: true
 _forceFindTargetBySkillSelector:
   type: boolean
   description: force Find Target By Skill Selector
@@ -5065,6 +5421,7 @@ _forceFindTargetBySkillSelector:
       args:
         - $input
         - $ctx
+      generated: true
 _forceFlag:
   type: boolean
   description: force Flag
@@ -5077,6 +5434,7 @@ _forceFlag:
       args:
         - $input
         - $ctx
+      generated: true
 _forceKey:
   type: string
   description: force Key
@@ -5097,6 +5455,7 @@ _forceNext:
       args:
         - $input
         - $ctx
+      generated: true
 _forceRespawnInPlace:
   type: boolean
   description: force Respawn In Place
@@ -5109,6 +5468,7 @@ _forceRespawnInPlace:
       args:
         - $input
         - $ctx
+      generated: true
 _forceSetDisappear:
   type: boolean
   description: force Set Disappear
@@ -5121,6 +5481,7 @@ _forceSetDisappear:
       args:
         - $input
         - $ctx
+      generated: true
 _forceSpawn:
   type: boolean
   description: force Spawn
@@ -5133,6 +5494,7 @@ _forceSpawn:
       args:
         - $input
         - $ctx
+      generated: true
 _forceToDisplayNegativeNumber:
   type: boolean
   description: force To Display Negative Number
@@ -5145,6 +5507,7 @@ _forceToDisplayNegativeNumber:
       args:
         - $input
         - $ctx
+      generated: true
 _forceToDisplayNumber:
   type: boolean
   description: force To Display Number
@@ -5157,6 +5520,7 @@ _forceToDisplayNumber:
       args:
         - $input
         - $ctx
+      generated: true
 _forceToMapPosition:
   type: boolean
   description: force To Map Position
@@ -5169,6 +5533,7 @@ _forceToMapPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _forceTrigger:
   type: boolean
   description: force Trigger
@@ -5181,6 +5546,7 @@ _forceTrigger:
       args:
         - $input
         - $ctx
+      generated: true
 _forceUseCharacterAttack:
   type: boolean
   description: force Use Character Attack
@@ -5193,6 +5559,7 @@ _forceUseCharacterAttack:
       args:
         - $input
         - $ctx
+      generated: true
 _forceUseProjectileCachedAtk:
   type: boolean
   description: force Use Projectile Cached Atk
@@ -5205,6 +5572,7 @@ _forceUseProjectileCachedAtk:
       args:
         - $input
         - $ctx
+      generated: true
 _formulaItemType:
   type: string
   description: formula Item Type
@@ -5225,6 +5593,7 @@ _freely:
       args:
         - $input
         - $ctx
+      generated: true
 _frictionFactor:
   type: number
   description: friction Factor
@@ -5237,6 +5606,7 @@ _frictionFactor:
       args:
         - $input
         - $ctx
+      generated: true
 _fromBlackboardKey:
   type: null | string
   description: from Blackboard Key
@@ -5257,6 +5627,7 @@ _fromBuffBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _fromCurrentPos:
   type: boolean
   description: from Current Pos
@@ -5269,6 +5640,7 @@ _fromCurrentPos:
       args:
         - $input
         - $ctx
+      generated: true
 _fromOwnerBlackBoard:
   type: boolean
   description: from Owner Black Board
@@ -5281,6 +5653,7 @@ _fromOwnerBlackBoard:
       args:
         - $input
         - $ctx
+      generated: true
 _gainExpTargetOptions:
   type: object
   description: gain Exp Target Options
@@ -5292,6 +5665,7 @@ _gainExpTargetOptions:
     args:
       - $input
       - $ctx
+    generated: true
 _gainToCardType:
   type: string
   description: gain To Card Type
@@ -5320,6 +5694,7 @@ _getAtkFromTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _getAtkTargetType:
   type: string
   description: get Atk Target Type
@@ -5336,6 +5711,7 @@ _getAttrFromTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _getCachedAtkFromBlackboard:
   type: boolean
   description: get Cached Atk From Blackboard
@@ -5348,6 +5724,7 @@ _getCachedAtkFromBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _getMax:
   type: boolean
   description: get Max
@@ -5360,6 +5737,7 @@ _getMax:
       args:
         - $input
         - $ctx
+      generated: true
 _getMaxHpFromTarget:
   type: boolean
   description: get Max Hp From Target
@@ -5372,6 +5750,7 @@ _getMaxHpFromTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _getPlayerSideFromActionTargetType:
   type: boolean
   description: get Player Side From Action Target Type
@@ -5384,6 +5763,7 @@ _getPlayerSideFromActionTargetType:
       args:
         - $input
         - $ctx
+      generated: true
 _getPlayerSideSource:
   type: boolean
   description: get Player Side Source
@@ -5396,6 +5776,7 @@ _getPlayerSideSource:
       args:
         - $input
         - $ctx
+      generated: true
 _getPosViaBB:
   type: boolean
   description: get Pos Via B B
@@ -5408,6 +5789,7 @@ _getPosViaBB:
       args:
         - $input
         - $ctx
+      generated: true
 _getStackCountFromFirstBuff:
   type: boolean
   description: get Stack Count From First Buff
@@ -5420,6 +5802,7 @@ _getStackCountFromFirstBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _globalBuffKey:
   type: string
   description: global Buff Key
@@ -5440,6 +5823,7 @@ _globalRange:
       args:
         - $input
         - $ctx
+      generated: true
 _globalblackboardKey:
   type: string
   description: globalblackboard Key
@@ -5456,6 +5840,7 @@ _goldNum:
       args:
         - $input
         - $ctx
+      generated: true
 _goldNumKey:
   type: string
   description: gold Num Key
@@ -5476,6 +5861,7 @@ _goldPerBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _goldPerBuffKey:
   type: string
   description: gold Per Buff Key
@@ -5492,6 +5878,7 @@ _goldPerCount:
       args:
         - $input
         - $ctx
+      generated: true
 _gridColKey:
   type: null | string
   description: grid Col Key
@@ -5511,6 +5898,7 @@ _grids:
     args:
       - $input
       - $ctx
+    generated: true
 _groupTag:
   type: string
   description: group Tag
@@ -5531,6 +5919,7 @@ _hasBuffToEnemySource:
       args:
         - $input
         - $ctx
+      generated: true
 _hasCertainEnemy:
   type: boolean
   description: has Certain Enemy
@@ -5543,6 +5932,7 @@ _hasCertainEnemy:
       args:
         - $input
         - $ctx
+      generated: true
 _hasCharacter:
   type: boolean
   description: has Character
@@ -5555,6 +5945,7 @@ _hasCharacter:
       args:
         - $input
         - $ctx
+      generated: true
 _hasSource:
   type: boolean
   description: has Source
@@ -5567,6 +5958,7 @@ _hasSource:
       args:
         - $input
         - $ctx
+      generated: true
 _healAbilityName:
   type: string
   description: heal Ability Name
@@ -5583,6 +5975,7 @@ _healByRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _healEffectKey:
   type: null | string
   description: heal Effect Key
@@ -5627,6 +6020,7 @@ _hide:
       args:
         - $input
         - $ctx
+      generated: true
 _hideTrapFilterTag:
   type: string
   description: hide Trap Filter Tag
@@ -5651,6 +6045,7 @@ _hitEffectUseSourceFaceTo:
       args:
         - $input
         - $ctx
+      generated: true
 _holdIt:
   type: boolean
   description: hold It
@@ -5663,6 +6058,7 @@ _holdIt:
       args:
         - $input
         - $ctx
+      generated: true
 _hookEffectKeyFromSourceProjectile:
   type: boolean
   description: hook Effect Key From Source Projectile
@@ -5675,6 +6071,7 @@ _hookEffectKeyFromSourceProjectile:
       args:
         - $input
         - $ctx
+      generated: true
 _hookStartPoint:
   type: boolean
   description: hook Start Point
@@ -5687,6 +6084,7 @@ _hookStartPoint:
       args:
         - $input
         - $ctx
+      generated: true
 _host:
   type: string
   description: host
@@ -5723,6 +6121,7 @@ _hpRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _hpRatioEachTime:
   type: number
   description: hp Ratio Each Time
@@ -5735,6 +6134,7 @@ _hpRatioEachTime:
       args:
         - $input
         - $ctx
+      generated: true
 _hpRatioSource:
   type: string
   description: hp Ratio Source
@@ -5750,6 +6150,7 @@ _hpValue:
     args:
       - $input
       - $ctx
+    generated: true
 _huntBuffKey:
   type: string
   description: hunt Buff Key
@@ -5774,6 +6175,7 @@ _ignore:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreAdvancedBuildableMask:
   type: boolean
   description: ignore Advanced Buildable Mask
@@ -5786,6 +6188,7 @@ _ignoreAdvancedBuildableMask:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreCancelReasonMask:
   type: string
   description: ignore Cancel Reason Mask
@@ -5802,6 +6205,7 @@ _ignoreCheckSomeTiles:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreDeckBuffKey:
   type: string
   description: ignore Deck Buff Key
@@ -5818,6 +6222,7 @@ _ignoreEs:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreForSp:
   type: boolean
   description: ignore For Sp
@@ -5830,6 +6235,7 @@ _ignoreForSp:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreHealFree:
   type: boolean
   description: ignore Heal Free
@@ -5842,6 +6248,7 @@ _ignoreHealFree:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreIsSelected:
   type: boolean
   description: ignore Is Selected
@@ -5854,6 +6261,7 @@ _ignoreIsSelected:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreMissEndPoint:
   type: boolean
   description: ignore Miss End Point
@@ -5866,6 +6274,7 @@ _ignoreMissEndPoint:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreMissFlag:
   type: string
   description: ignore Miss Flag
@@ -5886,6 +6295,7 @@ _ignoreNullOwner:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreOffset:
   type: boolean
   description: ignore Offset
@@ -5898,6 +6308,7 @@ _ignoreOffset:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreOwner:
   type: boolean
   description: ignore Owner
@@ -5910,6 +6321,7 @@ _ignoreOwner:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreSourceType:
   type: boolean
   description: ignore Source Type
@@ -5922,6 +6334,7 @@ _ignoreSourceType:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreTargetType:
   type: boolean
   description: ignore Target Type
@@ -5934,6 +6347,7 @@ _ignoreTargetType:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreToken:
   type: boolean
   description: ignore Token
@@ -5946,6 +6360,7 @@ _ignoreToken:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreTrap:
   type: boolean
   description: ignore Trap
@@ -5958,6 +6373,7 @@ _ignoreTrap:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoreUnstoppable:
   type: boolean
   description: ignore Unstoppable
@@ -5970,6 +6386,7 @@ _ignoreUnstoppable:
       args:
         - $input
         - $ctx
+      generated: true
 _ignoredAdvancedBuildMask:
   type: string
   description: ignored Advanced Build Mask
@@ -5986,6 +6403,7 @@ _ignoredOffset:
       args:
         - $input
         - $ctx
+      generated: true
 _includeFace:
   type: boolean
   description: include Face
@@ -5998,6 +6416,7 @@ _includeFace:
       args:
         - $input
         - $ctx
+      generated: true
 _includedBuffIds:
   type: array | null
   description: included Buff Ids
@@ -6009,6 +6428,7 @@ _includedBuffIds:
     args:
       - $input
       - $ctx
+    generated: true
 _index:
   type: number
   description: index
@@ -6021,6 +6441,7 @@ _index:
       args:
         - $input
         - $ctx
+      generated: true
 _indexBbKey:
   type: null | string
   description: index Bb Key
@@ -6045,6 +6466,7 @@ _inherateSourceProjectileFromParentBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _inputKey:
   type: string
   description: input Key
@@ -6061,6 +6483,7 @@ _insertIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _instAlias:
   type: string
   description: inst Alias
@@ -6077,6 +6500,7 @@ _instant:
       args:
         - $input
         - $ctx
+      generated: true
 _instantKillLikeDamage:
   type: boolean
   description: instant Kill Like Damage
@@ -6089,6 +6513,7 @@ _instantKillLikeDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _interruptCurAbility:
   type: boolean
   description: interrupt Cur Ability
@@ -6101,6 +6526,7 @@ _interruptCurAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _interruptCurAbilityUnlessItIsExpectedAbility:
   type: boolean
   description: interrupt Cur Ability Unless It Is Expected Ability
@@ -6113,6 +6539,7 @@ _interruptCurAbilityUnlessItIsExpectedAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _interruptSkillSelf:
   type: boolean
   description: interrupt Skill Self
@@ -6125,6 +6552,7 @@ _interruptSkillSelf:
       args:
         - $input
         - $ctx
+      generated: true
 _interval:
   type: number
   description: interval
@@ -6137,6 +6565,7 @@ _interval:
       args:
         - $input
         - $ctx
+      generated: true
 _intervalCacheKey:
   type: string
   description: interval Cache Key
@@ -6157,6 +6586,7 @@ _isAND:
       args:
         - $input
         - $ctx
+      generated: true
 _isActivate:
   type: boolean
   description: is Activate
@@ -6169,6 +6599,7 @@ _isActivate:
       args:
         - $input
         - $ctx
+      generated: true
 _isActive:
   type: boolean
   description: is Active
@@ -6181,6 +6612,7 @@ _isActive:
       args:
         - $input
         - $ctx
+      generated: true
 _isAdd:
   type: boolean
   description: is Add
@@ -6193,6 +6625,7 @@ _isAdd:
       args:
         - $input
         - $ctx
+      generated: true
 _isAllyGainGrade:
   type: boolean
   description: is Ally Gain Grade
@@ -6205,6 +6638,7 @@ _isAllyGainGrade:
       args:
         - $input
         - $ctx
+      generated: true
 _isAnd:
   type: boolean
   description: is And
@@ -6217,6 +6651,7 @@ _isAnd:
       args:
         - $input
         - $ctx
+      generated: true
 _isAppearDialog:
   type: boolean
   description: is Appear Dialog
@@ -6229,6 +6664,7 @@ _isAppearDialog:
       args:
         - $input
         - $ctx
+      generated: true
 _isAura:
   type: boolean
   description: is Aura
@@ -6241,6 +6677,7 @@ _isAura:
       args:
         - $input
         - $ctx
+      generated: true
 _isAutoSkill:
   type: boolean
   description: is Auto Skill
@@ -6253,6 +6690,7 @@ _isAutoSkill:
       args:
         - $input
         - $ctx
+      generated: true
 _isBan:
   type: boolean
   description: is Ban
@@ -6265,6 +6703,7 @@ _isBan:
       args:
         - $input
         - $ctx
+      generated: true
 _isCheckEndPoint:
   type: boolean
   description: is Check End Point
@@ -6277,6 +6716,7 @@ _isCheckEndPoint:
       args:
         - $input
         - $ctx
+      generated: true
 _isCircleRange:
   type: boolean
   description: is Circle Range
@@ -6289,6 +6729,7 @@ _isCircleRange:
       args:
         - $input
         - $ctx
+      generated: true
 _isCollideGainGrade:
   type: boolean
   description: is Collide Gain Grade
@@ -6301,6 +6742,7 @@ _isCollideGainGrade:
       args:
         - $input
         - $ctx
+      generated: true
 _isCont:
   type: boolean
   description: is Cont
@@ -6313,6 +6755,7 @@ _isCont:
       args:
         - $input
         - $ctx
+      generated: true
 _isDelete:
   type: boolean
   description: is Delete
@@ -6325,6 +6768,7 @@ _isDelete:
       args:
         - $input
         - $ctx
+      generated: true
 _isDelta:
   type: boolean
   description: is Delta
@@ -6337,6 +6781,7 @@ _isDelta:
       args:
         - $input
         - $ctx
+      generated: true
 _isDerivedBuff:
   type: boolean
   description: is Derived Buff
@@ -6349,6 +6794,7 @@ _isDerivedBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _isDisableOverrideBuff:
   type: boolean
   description: is Disable Override Buff
@@ -6361,6 +6807,7 @@ _isDisableOverrideBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _isDisappear:
   type: boolean
   description: is Disappear
@@ -6373,6 +6820,7 @@ _isDisappear:
       args:
         - $input
         - $ctx
+      generated: true
 _isEnable:
   type: boolean
   description: is Enable
@@ -6385,6 +6833,7 @@ _isEnable:
       args:
         - $input
         - $ctx
+      generated: true
 _isEnemy:
   type: boolean
   description: is Enemy
@@ -6397,6 +6846,7 @@ _isEnemy:
       args:
         - $input
         - $ctx
+      generated: true
 _isEnemyGainGrade:
   type: boolean
   description: is Enemy Gain Grade
@@ -6409,6 +6859,7 @@ _isEnemyGainGrade:
       args:
         - $input
         - $ctx
+      generated: true
 _isEnvDamage:
   type: boolean
   description: is Env Damage
@@ -6421,6 +6872,7 @@ _isEnvDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _isEnvElementDamage:
   type: boolean
   description: is Env Element Damage
@@ -6433,6 +6885,7 @@ _isEnvElementDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _isExclude:
   type: boolean
   description: is Exclude
@@ -6445,6 +6898,7 @@ _isExclude:
       args:
         - $input
         - $ctx
+      generated: true
 _isFallDownGainGrade:
   type: boolean
   description: is Fall Down Gain Grade
@@ -6457,6 +6911,7 @@ _isFallDownGainGrade:
       args:
         - $input
         - $ctx
+      generated: true
 _isFinalScale:
   type: boolean
   description: is Final Scale
@@ -6469,6 +6924,7 @@ _isFinalScale:
       args:
         - $input
         - $ctx
+      generated: true
 _isFinish:
   type: boolean
   description: is Finish
@@ -6481,6 +6937,7 @@ _isFinish:
       args:
         - $input
         - $ctx
+      generated: true
 _isFirstOnTheLeft:
   type: boolean
   description: is First On The Left
@@ -6493,6 +6950,7 @@ _isFirstOnTheLeft:
       args:
         - $input
         - $ctx
+      generated: true
 _isFirstOnTheRight:
   type: boolean
   description: is First On The Right
@@ -6505,6 +6963,7 @@ _isFirstOnTheRight:
       args:
         - $input
         - $ctx
+      generated: true
 _isFirstTime:
   type: boolean
   description: is First Time
@@ -6517,6 +6976,7 @@ _isFirstTime:
       args:
         - $input
         - $ctx
+      generated: true
 _isFixedEpDamage:
   type: boolean
   description: is Fixed Ep Damage
@@ -6529,6 +6989,7 @@ _isFixedEpDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _isFloat:
   type: boolean
   description: is Float
@@ -6541,6 +7002,7 @@ _isFloat:
       args:
         - $input
         - $ctx
+      generated: true
 _isForce:
   type: boolean
   description: is Force
@@ -6553,6 +7015,7 @@ _isForce:
       args:
         - $input
         - $ctx
+      generated: true
 _isHpRatio:
   type: boolean
   description: is Hp Ratio
@@ -6565,6 +7028,7 @@ _isHpRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _isIncreasingToCap:
   type: boolean
   description: is Increasing To Cap
@@ -6577,6 +7041,7 @@ _isIncreasingToCap:
       args:
         - $input
         - $ctx
+      generated: true
 _isInit:
   type: boolean
   description: is Init
@@ -6589,6 +7054,7 @@ _isInit:
       args:
         - $input
         - $ctx
+      generated: true
 _isInversed:
   type: boolean
   description: is Inversed
@@ -6601,6 +7067,7 @@ _isInversed:
       args:
         - $input
         - $ctx
+      generated: true
 _isLikeObstacle:
   type: boolean
   description: is Like Obstacle
@@ -6613,6 +7080,7 @@ _isLikeObstacle:
       args:
         - $input
         - $ctx
+      generated: true
 _isLimitAppend:
   type: boolean
   description: is Limit Append
@@ -6625,6 +7093,7 @@ _isLimitAppend:
       args:
         - $input
         - $ctx
+      generated: true
 _isLimitValue:
   type: boolean
   description: is Limit Value
@@ -6637,6 +7106,7 @@ _isLimitValue:
       args:
         - $input
         - $ctx
+      generated: true
 _isLoop:
   type: boolean
   description: is Loop
@@ -6649,6 +7119,7 @@ _isLoop:
       args:
         - $input
         - $ctx
+      generated: true
 _isMainMap:
   type: boolean
   description: is Main Map
@@ -6661,6 +7132,7 @@ _isMainMap:
       args:
         - $input
         - $ctx
+      generated: true
 _isMinis:
   type: boolean
   description: is Minis
@@ -6673,6 +7145,7 @@ _isMinis:
       args:
         - $input
         - $ctx
+      generated: true
 _isMins:
   type: boolean
   description: is Mins
@@ -6685,6 +7158,7 @@ _isMins:
       args:
         - $input
         - $ctx
+      generated: true
 _isMinus:
   type: boolean
   description: is Minus
@@ -6697,6 +7171,7 @@ _isMinus:
       args:
         - $input
         - $ctx
+      generated: true
 _isMulOtherwiseDiv:
   type: boolean
   description: is Mul Otherwise Div
@@ -6709,6 +7184,7 @@ _isMulOtherwiseDiv:
       args:
         - $input
         - $ctx
+      generated: true
 _isNoSource:
   type: boolean
   description: is No Source
@@ -6721,6 +7197,7 @@ _isNoSource:
       args:
         - $input
         - $ctx
+      generated: true
 _isNoSourceDamage:
   type: boolean
   description: is No Source Damage
@@ -6733,6 +7210,7 @@ _isNoSourceDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _isNotChangeableValue:
   type: boolean
   description: is Not Changeable Value
@@ -6745,6 +7223,7 @@ _isNotChangeableValue:
       args:
         - $input
         - $ctx
+      generated: true
 _isNotChoosedState:
   type: boolean
   description: is Not Choosed State
@@ -6757,6 +7236,7 @@ _isNotChoosedState:
       args:
         - $input
         - $ctx
+      generated: true
 _isObstacleLike:
   type: boolean
   description: is Obstacle Like
@@ -6769,6 +7249,7 @@ _isObstacleLike:
       args:
         - $input
         - $ctx
+      generated: true
 _isOneMinus:
   type: boolean
   description: is One Minus
@@ -6781,6 +7262,7 @@ _isOneMinus:
       args:
         - $input
         - $ctx
+      generated: true
 _isOverlapTakeEffect:
   type: boolean
   description: is Overlap Take Effect
@@ -6793,6 +7275,7 @@ _isOverlapTakeEffect:
       args:
         - $input
         - $ctx
+      generated: true
 _isOverwrite:
   type: boolean
   description: is Overwrite
@@ -6805,6 +7288,7 @@ _isOverwrite:
       args:
         - $input
         - $ctx
+      generated: true
 _isPolluted:
   type: boolean
   description: is Polluted
@@ -6817,6 +7301,7 @@ _isPolluted:
       args:
         - $input
         - $ctx
+      generated: true
 _isRatio:
   type: boolean
   description: is Ratio
@@ -6829,6 +7314,7 @@ _isRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _isRatioToMaxHp:
   type: boolean
   description: is Ratio To Max Hp
@@ -6841,6 +7327,7 @@ _isRatioToMaxHp:
       args:
         - $input
         - $ctx
+      generated: true
 _isReachExit:
   type: boolean
   description: is Reach Exit
@@ -6853,6 +7340,7 @@ _isReachExit:
       args:
         - $input
         - $ctx
+      generated: true
 _isRemove:
   type: boolean
   description: is Remove
@@ -6865,6 +7353,7 @@ _isRemove:
       args:
         - $input
         - $ctx
+      generated: true
 _isReset:
   type: boolean
   description: is Reset
@@ -6877,6 +7366,7 @@ _isReset:
       args:
         - $input
         - $ctx
+      generated: true
 _isReverse:
   type: boolean
   description: is Reverse
@@ -6889,6 +7379,7 @@ _isReverse:
       args:
         - $input
         - $ctx
+      generated: true
 _isReverseRanking:
   type: boolean
   description: is Reverse Ranking
@@ -6901,6 +7392,7 @@ _isReverseRanking:
       args:
         - $input
         - $ctx
+      generated: true
 _isS1RelatedOperate:
   type: boolean
   description: is S1 Related Operate
@@ -6913,6 +7405,7 @@ _isS1RelatedOperate:
       args:
         - $input
         - $ctx
+      generated: true
 _isS2RelatedOperate:
   type: boolean
   description: is S2 Related Operate
@@ -6925,6 +7418,7 @@ _isS2RelatedOperate:
       args:
         - $input
         - $ctx
+      generated: true
 _isS3RelatedOperate:
   type: boolean
   description: is S3 Related Operate
@@ -6937,6 +7431,7 @@ _isS3RelatedOperate:
       args:
         - $input
         - $ctx
+      generated: true
 _isSelf:
   type: boolean
   description: is Self
@@ -6949,6 +7444,7 @@ _isSelf:
       args:
         - $input
         - $ctx
+      generated: true
 _isShooting:
   type: boolean
   description: is Shooting
@@ -6961,6 +7457,7 @@ _isShooting:
       args:
         - $input
         - $ctx
+      generated: true
 _isShow:
   type: boolean
   description: is Show
@@ -6973,6 +7470,7 @@ _isShow:
       args:
         - $input
         - $ctx
+      generated: true
 _isSkillCountDown:
   type: boolean
   description: is Skill Count Down
@@ -6985,6 +7483,7 @@ _isSkillCountDown:
       args:
         - $input
         - $ctx
+      generated: true
 _isSkipEvent:
   type: boolean
   description: is Skip Event
@@ -6997,6 +7496,7 @@ _isSkipEvent:
       args:
         - $input
         - $ctx
+      generated: true
 _isStackable:
   type: boolean
   description: is Stackable
@@ -7009,6 +7509,7 @@ _isStackable:
       args:
         - $input
         - $ctx
+      generated: true
 _isStringBB:
   type: boolean
   description: is String B B
@@ -7021,6 +7522,7 @@ _isStringBB:
       args:
         - $input
         - $ctx
+      generated: true
 _isStringKey:
   type: boolean
   description: is String Key
@@ -7033,6 +7535,7 @@ _isStringKey:
       args:
         - $input
         - $ctx
+      generated: true
 _isSub:
   type: boolean
   description: is Sub
@@ -7045,6 +7548,7 @@ _isSub:
       args:
         - $input
         - $ctx
+      generated: true
 _isTriggerSpecificTiles:
   type: boolean
   description: is Trigger Specific Tiles
@@ -7057,6 +7561,7 @@ _isTriggerSpecificTiles:
       args:
         - $input
         - $ctx
+      generated: true
 _isTriggeredByBoss:
   type: boolean
   description: is Triggered By Boss
@@ -7069,6 +7574,7 @@ _isTriggeredByBoss:
       args:
         - $input
         - $ctx
+      generated: true
 _isTwoEntriesOnly:
   type: boolean
   description: is Two Entries Only
@@ -7081,6 +7587,7 @@ _isTwoEntriesOnly:
       args:
         - $input
         - $ctx
+      generated: true
 _isUndeadable:
   type: boolean
   description: is Undeadable
@@ -7093,6 +7600,7 @@ _isUndeadable:
       args:
         - $input
         - $ctx
+      generated: true
 _isUnset:
   type: boolean
   description: is Unset
@@ -7105,6 +7613,7 @@ _isUnset:
       args:
         - $input
         - $ctx
+      generated: true
 _isUpForce:
   type: boolean
   description: is Up Force
@@ -7117,6 +7626,7 @@ _isUpForce:
       args:
         - $input
         - $ctx
+      generated: true
 _isUpdateSelector:
   type: boolean
   description: is Update Selector
@@ -7129,6 +7639,7 @@ _isUpdateSelector:
       args:
         - $input
         - $ctx
+      generated: true
 _isValidStackCnt:
   type: boolean
   description: is Valid Stack Cnt
@@ -7141,6 +7652,7 @@ _isValidStackCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _judgeType:
   type: string
   description: judge Type
@@ -7157,6 +7669,7 @@ _keepCurrentAdvancedBuildableMask:
       args:
         - $input
         - $ctx
+      generated: true
 _keepCurrentBuildableType:
   type: boolean
   description: keep Current Buildable Type
@@ -7169,6 +7682,7 @@ _keepCurrentBuildableType:
       args:
         - $input
         - $ctx
+      generated: true
 _keepCurrentObstacleLike:
   type: boolean
   description: keep Current Obstacle Like
@@ -7181,6 +7695,7 @@ _keepCurrentObstacleLike:
       args:
         - $input
         - $ctx
+      generated: true
 _keepCurrentPassableMask:
   type: boolean
   description: keep Current Passable Mask
@@ -7193,6 +7708,7 @@ _keepCurrentPassableMask:
       args:
         - $input
         - $ctx
+      generated: true
 _keepPassedTime:
   type: boolean
   description: keep Passed Time
@@ -7205,6 +7721,7 @@ _keepPassedTime:
       args:
         - $input
         - $ctx
+      generated: true
 _key:
   type: null | string
   description: key
@@ -7220,6 +7737,7 @@ _keyMappingList:
     args:
       - $input
       - $ctx
+    generated: true
 _keyToCompare:
   type: string
   description: key To Compare
@@ -7239,6 +7757,7 @@ _keys:
     args:
       - $input
       - $ctx
+    generated: true
 _killLocatedIfNotBuildable:
   type: boolean
   description: kill Located If Not Buildable
@@ -7251,6 +7770,7 @@ _killLocatedIfNotBuildable:
       args:
         - $input
         - $ctx
+      generated: true
 _killSource:
   type: boolean
   description: kill Source
@@ -7263,6 +7783,7 @@ _killSource:
       args:
         - $input
         - $ctx
+      generated: true
 _lastTime:
   type: number
   description: last Time
@@ -7275,6 +7796,7 @@ _lastTime:
       args:
         - $input
         - $ctx
+      generated: true
 _leftBlackboardKey:
   type: string
   description: left Blackboard Key
@@ -7290,6 +7812,7 @@ _leftNodes:
     args:
       - $input
       - $ctx
+    generated: true
 _levelCapacityKey:
   type: string
   description: level Capacity Key
@@ -7306,6 +7829,7 @@ _levelCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _levelProgressKey:
   type: string
   description: level Progress Key
@@ -7322,6 +7846,7 @@ _levelToCompare:
       args:
         - $input
         - $ctx
+      generated: true
 _lhsType:
   type: string
   description: lhs Type
@@ -7346,6 +7871,7 @@ _limitAmount:
       args:
         - $input
         - $ctx
+      generated: true
 _limitAmountKey:
   type: null
   description: limit Amount Key
@@ -7362,6 +7888,7 @@ _limitCount:
       args:
         - $input
         - $ctx
+      generated: true
 _limitMaxTarget:
   type: boolean
   description: limit Max Target
@@ -7374,6 +7901,7 @@ _limitMaxTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _limitValue:
   type: number
   description: limit Value
@@ -7386,6 +7914,7 @@ _limitValue:
       args:
         - $input
         - $ctx
+      generated: true
 _limitValueKey:
   type: null | string
   description: limit Value Key
@@ -7402,6 +7931,7 @@ _loadAbilityFromBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _loadCurModeBbKey:
   type: string
   description: load Cur Mode Bb Key
@@ -7418,6 +7948,7 @@ _loadElementTypeFromBb:
       args:
         - $input
         - $ctx
+      generated: true
 _loadFromBlackboard:
   type: boolean
   description: load From Blackboard
@@ -7430,6 +7961,7 @@ _loadFromBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _loadIdFromBb:
   type: boolean
   description: load Id From Bb
@@ -7442,6 +7974,7 @@ _loadIdFromBb:
       args:
         - $input
         - $ctx
+      generated: true
 _loadKeyFromBlackBoard:
   type: boolean
   description: load Key From Black Board
@@ -7454,6 +7987,7 @@ _loadKeyFromBlackBoard:
       args:
         - $input
         - $ctx
+      generated: true
 _loadModeFromBlackboard:
   type: boolean
   description: load Mode From Blackboard
@@ -7466,6 +8000,7 @@ _loadModeFromBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _loadTileFromCharacterSharedData:
   type: boolean
   description: load Tile From Character Shared Data
@@ -7478,6 +8013,7 @@ _loadTileFromCharacterSharedData:
       args:
         - $input
         - $ctx
+      generated: true
 _locatedColBBKey:
   type: string
   description: located Col B B Key
@@ -7498,6 +8034,7 @@ _lockColor:
       args:
         - $input
         - $ctx
+      generated: true
 _logStackCountToDynamicVar:
   type: boolean
   description: log Stack Count To Dynamic Var
@@ -7510,6 +8047,7 @@ _logStackCountToDynamicVar:
       args:
         - $input
         - $ctx
+      generated: true
 _logType:
   type: string
   description: log Type
@@ -7525,6 +8063,7 @@ _loopBody:
     args:
       - $input
       - $ctx
+    generated: true
 _loopCnt:
   type: number
   description: loop Cnt
@@ -7537,6 +8076,7 @@ _loopCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _loopCntKey:
   type: null | string
   description: loop Cnt Key
@@ -7553,6 +8093,7 @@ _magicResistanceValue:
       args:
         - $input
         - $ctx
+      generated: true
 _magnetSpeed:
   type: number
   description: magnet Speed
@@ -7565,6 +8106,7 @@ _magnetSpeed:
       args:
         - $input
         - $ctx
+      generated: true
 _mainActionType:
   type: string
   description: main Action Type
@@ -7589,6 +8131,7 @@ _mainBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _managedByScheduler:
   type: boolean
   description: managed By Scheduler
@@ -7601,6 +8144,7 @@ _managedByScheduler:
       args:
         - $input
         - $ctx
+      generated: true
 _manualSetPlaybackSpeed:
   type: boolean
   description: manual Set Playback Speed
@@ -7613,6 +8157,7 @@ _manualSetPlaybackSpeed:
       args:
         - $input
         - $ctx
+      generated: true
 _manuallyChangeCardState:
   type: string
   description: manually Change Card State
@@ -7629,6 +8174,7 @@ _manuallySpecifyInsertIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _manuallySpecifyReassignIndex:
   type: boolean
   description: manually Specify Reassign Index
@@ -7641,6 +8187,7 @@ _manuallySpecifyReassignIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _mapTags:
   type: array
   description: map Tags
@@ -7652,6 +8199,7 @@ _mapTags:
     args:
       - $input
       - $ctx
+    generated: true
 _markCurrentPassengers:
   type: boolean
   description: mark Current Passengers
@@ -7664,6 +8212,7 @@ _markCurrentPassengers:
       args:
         - $input
         - $ctx
+      generated: true
 _markEnemyKilled:
   type: boolean
   description: mark Enemy Killed
@@ -7676,6 +8225,7 @@ _markEnemyKilled:
       args:
         - $input
         - $ctx
+      generated: true
 _markInBlackboard:
   type: boolean
   description: mark In Blackboard
@@ -7688,6 +8238,7 @@ _markInBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _markInView:
   type: boolean
   description: mark In View
@@ -7700,6 +8251,7 @@ _markInView:
       args:
         - $input
         - $ctx
+      generated: true
 _markOldTilePos:
   type: boolean
   description: mark Old Tile Pos
@@ -7712,6 +8264,7 @@ _markOldTilePos:
       args:
         - $input
         - $ctx
+      generated: true
 _markReachExit:
   type: boolean
   description: mark Reach Exit
@@ -7724,6 +8277,7 @@ _markReachExit:
       args:
         - $input
         - $ctx
+      generated: true
 _maxAddOnScaleKey:
   type: string
   description: max Add On Scale Key
@@ -7740,6 +8294,7 @@ _maxCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _maxCount:
   type: number
   description: max Count
@@ -7752,6 +8307,7 @@ _maxCount:
       args:
         - $input
         - $ctx
+      generated: true
 _maxCountKey:
   type: string
   description: max Count Key
@@ -7768,6 +8324,7 @@ _maxDeckStackCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _maxDeckStackCntKey:
   type: string
   description: max Deck Stack Cnt Key
@@ -7784,6 +8341,7 @@ _maxDegree:
       args:
         - $input
         - $ctx
+      generated: true
 _maxDeployCnt:
   type: number
   description: max Deploy Cnt
@@ -7796,6 +8354,7 @@ _maxDeployCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _maxDeployCntKey:
   type: string
   description: max Deploy Cnt Key
@@ -7812,6 +8371,7 @@ _maxDist:
       args:
         - $input
         - $ctx
+      generated: true
 _maxEpHeal:
   type: boolean
   description: max Ep Heal
@@ -7824,6 +8384,7 @@ _maxEpHeal:
       args:
         - $input
         - $ctx
+      generated: true
 _maxEsRatio:
   type: number
   description: max Es Ratio
@@ -7836,6 +8397,7 @@ _maxEsRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _maxHpRatio:
   type: number
   description: max Hp Ratio
@@ -7848,6 +8410,7 @@ _maxHpRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _maxHpValue:
   type: number
   description: max Hp Value
@@ -7860,6 +8423,7 @@ _maxHpValue:
       args:
         - $input
         - $ctx
+      generated: true
 _maxNum:
   type: number
   description: max Num
@@ -7872,6 +8436,7 @@ _maxNum:
       args:
         - $input
         - $ctx
+      generated: true
 _maxPercentageString:
   type: string
   description: max Percentage String
@@ -7888,6 +8453,7 @@ _maxScale:
       args:
         - $input
         - $ctx
+      generated: true
 _maxStackCntKey:
   type: string
   description: max Stack Cnt Key
@@ -7904,6 +8470,7 @@ _maxTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _maxTargetCountKey:
   type: string
   description: max Target Count Key
@@ -7924,6 +8491,7 @@ _maxTileCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _maxTileNum:
   type: number
   description: max Tile Num
@@ -7936,6 +8504,7 @@ _maxTileNum:
       args:
         - $input
         - $ctx
+      generated: true
 _maxTraceDist:
   type: number
   description: max Trace Dist
@@ -7948,6 +8517,7 @@ _maxTraceDist:
       args:
         - $input
         - $ctx
+      generated: true
 _maxVal:
   type: number
   description: max Val
@@ -7960,6 +8530,7 @@ _maxVal:
       args:
         - $input
         - $ctx
+      generated: true
 _maxValKey:
   type: string
   description: max Val Key
@@ -7976,6 +8547,7 @@ _maxValidEnemyCount:
       args:
         - $input
         - $ctx
+      generated: true
 _maxValue:
   type: number
   description: max Value
@@ -7988,6 +8560,7 @@ _maxValue:
       args:
         - $input
         - $ctx
+      generated: true
 _maxValueKey:
   type: null | string
   description: max Value Key
@@ -8004,6 +8577,7 @@ _maxWeight:
       args:
         - $input
         - $ctx
+      generated: true
 _meanwhileNearestTileToTarget:
   type: boolean
   description: meanwhile Nearest Tile To Target
@@ -8016,6 +8590,7 @@ _meanwhileNearestTileToTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _midPosOffsetAlongDirection:
   type: number
   description: mid Pos Offset Along Direction
@@ -8028,6 +8603,7 @@ _midPosOffsetAlongDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _minAddOnScaleKey:
   type: string
   description: min Add On Scale Key
@@ -8048,6 +8624,7 @@ _minDist:
       args:
         - $input
         - $ctx
+      generated: true
 _minHpKey:
   type: null | string
   description: min Hp Key
@@ -8064,6 +8641,7 @@ _minHpRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _minScale:
   type: number
   description: min Scale
@@ -8076,6 +8654,7 @@ _minScale:
       args:
         - $input
         - $ctx
+      generated: true
 _minTriggerDistance:
   type: number
   description: min Trigger Distance
@@ -8088,6 +8667,7 @@ _minTriggerDistance:
       args:
         - $input
         - $ctx
+      generated: true
 _minValueKey:
   type: null | string
   description: min Value Key
@@ -8112,6 +8692,7 @@ _modeIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _modeIndexDeltaWhenFinalTile:
   type: number
   description: mode Index Delta When Final Tile
@@ -8124,6 +8705,7 @@ _modeIndexDeltaWhenFinalTile:
       args:
         - $input
         - $ctx
+      generated: true
 _modes:
   type: array
   description: modes
@@ -8135,6 +8717,7 @@ _modes:
     args:
       - $input
       - $ctx
+    generated: true
 _modifierKey:
   type: null | string
   description: modifier Key
@@ -8159,6 +8742,7 @@ _modifyByRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _modifyByRatioBasedOnCurSP:
   type: boolean
   description: modify By Ratio Based On Cur S P
@@ -8171,6 +8755,7 @@ _modifyByRatioBasedOnCurSP:
       args:
         - $input
         - $ctx
+      generated: true
 _modifyCurrentMode:
   type: boolean
   description: modify Current Mode
@@ -8183,6 +8768,7 @@ _modifyCurrentMode:
       args:
         - $input
         - $ctx
+      generated: true
 _modifyMaxCount:
   type: boolean
   description: modify Max Count
@@ -8195,6 +8781,7 @@ _modifyMaxCount:
       args:
         - $input
         - $ctx
+      generated: true
 _modifyRatio:
   type: number
   description: modify Ratio
@@ -8207,6 +8794,7 @@ _modifyRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _modifyValue:
   type: number
   description: modify Value
@@ -8219,6 +8807,7 @@ _modifyValue:
       args:
         - $input
         - $ctx
+      generated: true
 _motionMask:
   type: string
   description: motion Mask
@@ -8242,6 +8831,7 @@ _mountPointGroup:
     args:
       - $input
       - $ctx
+    generated: true
 _mountPointType:
   type: string
   description: mount Point Type
@@ -8258,6 +8848,7 @@ _multiplierByKey:
       args:
         - $input
         - $ctx
+      generated: true
 _multiplierKey:
   type: string
   description: multiplier Key
@@ -8274,6 +8865,7 @@ _multiplyByKey:
       args:
         - $input
         - $ctx
+      generated: true
 _multiplyParamKey:
   type: null | string
   description: multiply Param Key
@@ -8290,6 +8882,7 @@ _multiplyWithBuffValidStackCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _muteAudio:
   type: boolean
   description: mute Audio
@@ -8302,6 +8895,7 @@ _muteAudio:
       args:
         - $input
         - $ctx
+      generated: true
 _name:
   type: string
   description: name
@@ -8318,6 +8912,7 @@ _needAreaPV:
       args:
         - $input
         - $ctx
+      generated: true
 _needCheckCount:
   type: boolean
   description: need Check Count
@@ -8330,6 +8925,7 @@ _needCheckCount:
       args:
         - $input
         - $ctx
+      generated: true
 _needCheckTile:
   type: boolean
   description: need Check Tile
@@ -8342,6 +8938,7 @@ _needCheckTile:
       args:
         - $input
         - $ctx
+      generated: true
 _needKeepStatus:
   type: boolean
   description: need Keep Status
@@ -8354,6 +8951,7 @@ _needKeepStatus:
       args:
         - $input
         - $ctx
+      generated: true
 _needLog:
   type: boolean
   description: need Log
@@ -8366,6 +8964,7 @@ _needLog:
       args:
         - $input
         - $ctx
+      generated: true
 _needMax:
   type: boolean
   description: need Max
@@ -8378,6 +8977,7 @@ _needMax:
       args:
         - $input
         - $ctx
+      generated: true
 _needOffset:
   type: boolean
   description: need Offset
@@ -8390,6 +8990,7 @@ _needOffset:
       args:
         - $input
         - $ctx
+      generated: true
 _needSourceStateRunning:
   type: boolean
   description: need Source State Running
@@ -8402,6 +9003,7 @@ _needSourceStateRunning:
       args:
         - $input
         - $ctx
+      generated: true
 _needStopAffect:
   type: boolean
   description: need Stop Affect
@@ -8414,6 +9016,7 @@ _needStopAffect:
       args:
         - $input
         - $ctx
+      generated: true
 _newColor:
   type: object
   description: new Color
@@ -8425,6 +9028,7 @@ _newColor:
     args:
       - $input
       - $ctx
+    generated: true
 _newHeight:
   type: number
   description: new Height
@@ -8437,6 +9041,7 @@ _newHeight:
       args:
         - $input
         - $ctx
+      generated: true
 _newPeriod:
   type: number
   description: new Period
@@ -8449,6 +9054,7 @@ _newPeriod:
       args:
         - $input
         - $ctx
+      generated: true
 _newRouteStartPointAsTargetPosition:
   type: boolean
   description: new Route Start Point As Target Position
@@ -8461,6 +9067,7 @@ _newRouteStartPointAsTargetPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _nextWaveStride:
   type: number
   description: next Wave Stride
@@ -8473,6 +9080,7 @@ _nextWaveStride:
       args:
         - $input
         - $ctx
+      generated: true
 _nightMode:
   type: boolean
   description: night Mode
@@ -8485,6 +9093,7 @@ _nightMode:
       args:
         - $input
         - $ctx
+      generated: true
 _noEndPosition:
   type: boolean
   description: no End Position
@@ -8497,6 +9106,7 @@ _noEndPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _noOverlap:
   type: boolean
   description: no Overlap
@@ -8509,6 +9119,7 @@ _noOverlap:
       args:
         - $input
         - $ctx
+      generated: true
 _noReason:
   type: boolean
   description: no Reason
@@ -8521,6 +9132,7 @@ _noReason:
       args:
         - $input
         - $ctx
+      generated: true
 _noSource:
   type: boolean
   description: no Source
@@ -8533,6 +9145,7 @@ _noSource:
       args:
         - $input
         - $ctx
+      generated: true
 _noSourceBuff:
   type: object
   description: no Source Buff
@@ -8544,6 +9157,7 @@ _noSourceBuff:
     args:
       - $input
       - $ctx
+    generated: true
 _noSourceDamage:
   type: boolean
   description: no Source Damage
@@ -8556,6 +9170,7 @@ _noSourceDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _noVarShowWarning:
   type: boolean
   description: no Var Show Warning
@@ -8568,6 +9183,7 @@ _noVarShowWarning:
       args:
         - $input
         - $ctx
+      generated: true
 _nodes:
   type: array
   description: nodes
@@ -8579,6 +9195,7 @@ _nodes:
     args:
       - $input
       - $ctx
+    generated: true
 _notInterruptAbilityIfCasting:
   type: boolean
   description: not Interrupt Ability If Casting
@@ -8591,6 +9208,7 @@ _notInterruptAbilityIfCasting:
       args:
         - $input
         - $ctx
+      generated: true
 _notRepeatInOneLoop:
   type: boolean
   description: not Repeat In One Loop
@@ -8603,6 +9221,7 @@ _notRepeatInOneLoop:
       args:
         - $input
         - $ctx
+      generated: true
 _npcFilterTag:
   type: string
   description: npc Filter Tag
@@ -8618,6 +9237,7 @@ _offset:
     args:
       - $input
       - $ctx
+    generated: true
 _offsetKey:
   type: string
   description: offset Key
@@ -8642,6 +9262,7 @@ _onlyChangeFace:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyCheckWhetherHaveShieldWhenEnteringBattle:
   type: boolean
   description: only Check Whether Have Shield When Entering Battle
@@ -8654,6 +9275,7 @@ _onlyCheckWhetherHaveShieldWhenEnteringBattle:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyGoldenEquip:
   type: boolean
   description: only Golden Equip
@@ -8666,6 +9288,7 @@ _onlyGoldenEquip:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyInHand:
   type: boolean
   description: only In Hand
@@ -8678,6 +9301,7 @@ _onlyInHand:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyOwner:
   type: boolean
   description: only Owner
@@ -8690,6 +9314,7 @@ _onlyOwner:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyResetCD:
   type: boolean
   description: only Reset C D
@@ -8702,6 +9327,7 @@ _onlyResetCD:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyRootTile:
   type: boolean
   description: only Root Tile
@@ -8714,6 +9340,7 @@ _onlyRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _onlySpawnOnNoCharacterTile:
   type: boolean
   description: only Spawn On No Character Tile
@@ -8726,6 +9353,7 @@ _onlySpawnOnNoCharacterTile:
       args:
         - $input
         - $ctx
+      generated: true
 _onlySummonOneInTheSamePlace:
   type: boolean
   description: only Summon One In The Same Place
@@ -8738,6 +9366,7 @@ _onlySummonOneInTheSamePlace:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyToFirstTarget:
   type: boolean
   description: only To First Target
@@ -8750,6 +9379,7 @@ _onlyToFirstTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyToTarget:
   type: boolean
   description: only To Target
@@ -8762,6 +9392,7 @@ _onlyToTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyTokenAndTrap:
   type: boolean
   description: only Token And Trap
@@ -8774,6 +9405,7 @@ _onlyTokenAndTrap:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyUpdateSpCost:
   type: boolean
   description: only Update Sp Cost
@@ -8786,6 +9418,7 @@ _onlyUpdateSpCost:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyUseOnce:
   type: boolean
   description: only Use Once
@@ -8798,6 +9431,7 @@ _onlyUseOnce:
       args:
         - $input
         - $ctx
+      generated: true
 _onlyUseSourceOnCalculateDamage:
   type: boolean
   description: only Use Source On Calculate Damage
@@ -8810,6 +9444,7 @@ _onlyUseSourceOnCalculateDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _operation:
   type: string
   description: operation
@@ -8825,6 +9460,7 @@ _options:
     args:
       - $input
       - $ctx
+    generated: true
 _otherwiseActions:
   type: array | null
   description: otherwise Actions
@@ -8836,6 +9472,7 @@ _otherwiseActions:
     args:
       - $input
       - $ctx
+    generated: true
 _outputKey:
   type: string
   description: output Key
@@ -8860,6 +9497,7 @@ _overrideSource:
       args:
         - $input
         - $ctx
+      generated: true
 _overwrite:
   type: boolean
   description: overwrite
@@ -8872,6 +9510,7 @@ _overwrite:
       args:
         - $input
         - $ctx
+      generated: true
 _overwriteActions:
   type: boolean
   description: overwrite Actions
@@ -8884,6 +9523,7 @@ _overwriteActions:
       args:
         - $input
         - $ctx
+      generated: true
 _overwriteAtkScale:
   type: boolean
   description: overwrite Atk Scale
@@ -8896,6 +9536,7 @@ _overwriteAtkScale:
       args:
         - $input
         - $ctx
+      generated: true
 _overwriteBlackboard:
   type: boolean
   description: overwrite Blackboard
@@ -8908,6 +9549,7 @@ _overwriteBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _overwriteBuffs:
   type: boolean
   description: overwrite Buffs
@@ -8920,6 +9562,7 @@ _overwriteBuffs:
       args:
         - $input
         - $ctx
+      generated: true
 _owner:
   type: string
   description: owner
@@ -8964,6 +9607,7 @@ _playbackSpeed:
       args:
         - $input
         - $ctx
+      generated: true
 _playerSide:
   type: string
   description: player Side
@@ -9008,6 +9652,7 @@ _priority:
       args:
         - $input
         - $ctx
+      generated: true
 _probKey:
   type: string
   description: prob Key
@@ -9027,6 +9672,7 @@ _profession:
     args:
       - $input
       - $ctx
+    generated: true
 _professionCategory:
   type: string
   description: profession Category
@@ -9050,6 +9696,7 @@ _professions:
     args:
       - $input
       - $ctx
+    generated: true
 _projectileKey:
   type: null | string
   description: projectile Key
@@ -9066,6 +9713,7 @@ _putInPendingIfHandFull:
       args:
         - $input
         - $ctx
+      generated: true
 _queryProfessionCategory:
   type: string
   description: query Profession Category
@@ -9086,6 +9734,7 @@ _radius:
       args:
         - $input
         - $ctx
+      generated: true
 _radiusBbKey:
   type: string
   description: radius Bb Key
@@ -9102,6 +9751,7 @@ _randomCard:
       args:
         - $input
         - $ctx
+      generated: true
 _randomDelayRange:
   type: number
   description: random Delay Range
@@ -9114,6 +9764,7 @@ _randomDelayRange:
       args:
         - $input
         - $ctx
+      generated: true
 _randomDirection:
   type: boolean
   description: random Direction
@@ -9126,6 +9777,7 @@ _randomDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _randomDrawCard:
   type: boolean
   description: random Draw Card
@@ -9138,6 +9790,7 @@ _randomDrawCard:
       args:
         - $input
         - $ctx
+      generated: true
 _randomOffset:
   type: boolean | number
   description: random Offset
@@ -9153,6 +9806,7 @@ _randomOffsetBound:
     args:
       - $input
       - $ctx
+    generated: true
 _randomOffsetInnerRange:
   type: number
   description: random Offset Inner Range
@@ -9165,6 +9819,7 @@ _randomOffsetInnerRange:
       args:
         - $input
         - $ctx
+      generated: true
 _randomOneDeckCard:
   type: boolean
   description: random One Deck Card
@@ -9177,6 +9832,7 @@ _randomOneDeckCard:
       args:
         - $input
         - $ctx
+      generated: true
 _randomStart:
   type: boolean
   description: random Start
@@ -9189,6 +9845,7 @@ _randomStart:
       args:
         - $input
         - $ctx
+      generated: true
 _randomTarget:
   type: boolean
   description: random Target
@@ -9201,6 +9858,7 @@ _randomTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _randomizeReachOffset:
   type: boolean
   description: randomize Reach Offset
@@ -9213,6 +9871,7 @@ _randomizeReachOffset:
       args:
         - $input
         - $ctx
+      generated: true
 _randomness:
   type: number
   description: randomness
@@ -9225,6 +9884,7 @@ _randomness:
       args:
         - $input
         - $ctx
+      generated: true
 _rangeId:
   type: null | string
   description: range Id
@@ -9249,6 +9909,7 @@ _rangeModeIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _rangeNumKey:
   type: string
   description: range Num Key
@@ -9265,6 +9926,7 @@ _rangeRadius:
       args:
         - $input
         - $ctx
+      generated: true
 _rangeRadiusKey:
   type: string
   description: range Radius Key
@@ -9285,6 +9947,7 @@ _ranking:
       args:
         - $input
         - $ctx
+      generated: true
 _rarity:
   type: string
   description: rarity
@@ -9301,6 +9964,7 @@ _ratio:
       args:
         - $input
         - $ctx
+      generated: true
 _reachOffset:
   type: object
   description: reach Offset
@@ -9312,6 +9976,7 @@ _reachOffset:
     args:
       - $input
       - $ctx
+    generated: true
 _readBuffKeyFromBlackboard:
   type: boolean
   description: read Buff Key From Blackboard
@@ -9324,6 +9989,7 @@ _readBuffKeyFromBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _readProfessionFromBlackboard:
   type: boolean
   description: read Profession From Blackboard
@@ -9336,6 +10002,7 @@ _readProfessionFromBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _readUIDFromInt:
   type: boolean
   description: read U I D From Int
@@ -9348,6 +10015,7 @@ _readUIDFromInt:
       args:
         - $input
         - $ctx
+      generated: true
 _reason:
   type: string
   description: reason
@@ -9368,6 +10036,7 @@ _reassignIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _rechargeTiming:
   type: string
   description: recharge Timing
@@ -9388,6 +10057,7 @@ _recordRespawnToSharedData:
       args:
         - $input
         - $ctx
+      generated: true
 _recordType:
   type: string
   description: record Type
@@ -9404,6 +10074,7 @@ _recoverCount:
       args:
         - $input
         - $ctx
+      generated: true
 _recoverCountBBKey:
   type: null | string
   description: recover Count B B Key
@@ -9420,6 +10091,7 @@ _recoverCountUsePercent:
       args:
         - $input
         - $ctx
+      generated: true
 _recoverEventCount:
   type: boolean
   description: recover Event Count
@@ -9432,6 +10104,7 @@ _recoverEventCount:
       args:
         - $input
         - $ctx
+      generated: true
 _recoverSkipLimitCheck:
   type: boolean
   description: recover Skip Limit Check
@@ -9444,6 +10117,7 @@ _recoverSkipLimitCheck:
       args:
         - $input
         - $ctx
+      generated: true
 _recoveryType:
   type: string
   description: recovery Type
@@ -9460,6 +10134,7 @@ _refresh:
       args:
         - $input
         - $ctx
+      generated: true
 _refreshRemainingCnt:
   type: boolean
   description: refresh Remaining Cnt
@@ -9472,6 +10147,7 @@ _refreshRemainingCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _refreshTargetTokenOrHost:
   type: boolean
   description: refresh Target Token Or Host
@@ -9484,6 +10160,7 @@ _refreshTargetTokenOrHost:
       args:
         - $input
         - $ctx
+      generated: true
 _refreshTokenCardCooldown:
   type: boolean
   description: refresh Token Card Cooldown
@@ -9496,6 +10173,7 @@ _refreshTokenCardCooldown:
       args:
         - $input
         - $ctx
+      generated: true
 _releaseDiscardBeforeFind:
   type: boolean
   description: release Discard Before Find
@@ -9508,6 +10186,7 @@ _releaseDiscardBeforeFind:
       args:
         - $input
         - $ctx
+      generated: true
 _releaseFromBlocker:
   type: boolean
   description: release From Blocker
@@ -9520,6 +10199,7 @@ _releaseFromBlocker:
       args:
         - $input
         - $ctx
+      generated: true
 _releaseLastOnly:
   type: boolean
   description: release Last Only
@@ -9532,6 +10212,7 @@ _releaseLastOnly:
       args:
         - $input
         - $ctx
+      generated: true
 _releaseMarkedOnly:
   type: boolean
   description: release Marked Only
@@ -9544,6 +10225,7 @@ _releaseMarkedOnly:
       args:
         - $input
         - $ctx
+      generated: true
 _releaseOnProjectileCurrentPos:
   type: boolean
   description: release On Projectile Current Pos
@@ -9556,6 +10238,7 @@ _releaseOnProjectileCurrentPos:
       args:
         - $input
         - $ctx
+      generated: true
 _releaseOnProjectileTracePos:
   type: boolean
   description: release On Projectile Trace Pos
@@ -9568,6 +10251,7 @@ _releaseOnProjectileTracePos:
       args:
         - $input
         - $ctx
+      generated: true
 _removeExcludeTargetBeforeShrink:
   type: boolean
   description: remove Exclude Target Before Shrink
@@ -9580,6 +10264,7 @@ _removeExcludeTargetBeforeShrink:
       args:
         - $input
         - $ctx
+      generated: true
 _removeFromAllCard:
   type: boolean
   description: remove From All Card
@@ -9592,6 +10277,7 @@ _removeFromAllCard:
       args:
         - $input
         - $ctx
+      generated: true
 _removeTileListener:
   type: boolean
   description: remove Tile Listener
@@ -9604,6 +10290,7 @@ _removeTileListener:
       args:
         - $input
         - $ctx
+      generated: true
 _rendererCurModeIndex:
   type: boolean
   description: renderer Cur Mode Index
@@ -9616,6 +10303,7 @@ _rendererCurModeIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _rendererIndex:
   type: number
   description: renderer Index
@@ -9628,6 +10316,7 @@ _rendererIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _rendererIndexList:
   type: array
   description: renderer Index List
@@ -9639,6 +10328,7 @@ _rendererIndexList:
     args:
       - $input
       - $ctx
+    generated: true
 _replaceAnimPairs:
   type: array
   description: replace Anim Pairs
@@ -9650,6 +10340,7 @@ _replaceAnimPairs:
     args:
       - $input
       - $ctx
+    generated: true
 _requireCharacterNotOn:
   type: boolean
   description: require Character Not On
@@ -9662,6 +10353,7 @@ _requireCharacterNotOn:
       args:
         - $input
         - $ctx
+      generated: true
 _reset:
   type: boolean
   description: reset
@@ -9674,6 +10366,7 @@ _reset:
       args:
         - $input
         - $ctx
+      generated: true
 _resetAbilityCooldown:
   type: boolean
   description: reset Ability Cooldown
@@ -9686,6 +10379,7 @@ _resetAbilityCooldown:
       args:
         - $input
         - $ctx
+      generated: true
 _resetAbilityCooldownIgnoreAffecting:
   type: boolean
   description: reset Ability Cooldown Ignore Affecting
@@ -9698,6 +10392,7 @@ _resetAbilityCooldownIgnoreAffecting:
       args:
         - $input
         - $ctx
+      generated: true
 _resetAndClearCD:
   type: boolean
   description: reset And Clear C D
@@ -9710,6 +10405,7 @@ _resetAndClearCD:
       args:
         - $input
         - $ctx
+      generated: true
 _resetCD:
   type: boolean
   description: reset C D
@@ -9722,6 +10418,7 @@ _resetCD:
       args:
         - $input
         - $ctx
+      generated: true
 _resetCooldown:
   type: boolean
   description: reset Cooldown
@@ -9734,6 +10431,7 @@ _resetCooldown:
       args:
         - $input
         - $ctx
+      generated: true
 _resetSelector:
   type: boolean
   description: reset Selector
@@ -9746,6 +10444,7 @@ _resetSelector:
       args:
         - $input
         - $ctx
+      generated: true
 _resetTilesInRangeList:
   type: boolean
   description: reset Tiles In Range List
@@ -9758,6 +10457,7 @@ _resetTilesInRangeList:
       args:
         - $input
         - $ctx
+      generated: true
 _resetToDefault:
   type: boolean
   description: reset To Default
@@ -9770,6 +10470,7 @@ _resetToDefault:
       args:
         - $input
         - $ctx
+      generated: true
 _resetToOne:
   type: boolean
   description: reset To One
@@ -9782,6 +10483,7 @@ _resetToOne:
       args:
         - $input
         - $ctx
+      generated: true
 _respawnBBKey:
   type: string
   description: respawn B B Key
@@ -9797,6 +10499,7 @@ _respawnBlackboardKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _respawnInPlaceBBKey:
   type: string
   description: respawn In Place B B Key
@@ -9813,6 +10516,7 @@ _respawnInSameTile:
       args:
         - $input
         - $ctx
+      generated: true
 _respawnSameToken:
   type: boolean
   description: respawn Same Token
@@ -9825,6 +10529,7 @@ _respawnSameToken:
       args:
         - $input
         - $ctx
+      generated: true
 _restartFSM:
   type: boolean
   description: restart F S M
@@ -9837,6 +10542,7 @@ _restartFSM:
       args:
         - $input
         - $ctx
+      generated: true
 _restoreDefault:
   type: boolean
   description: restore Default
@@ -9849,6 +10555,7 @@ _restoreDefault:
       args:
         - $input
         - $ctx
+      generated: true
 _restoreFrictionFactor:
   type: boolean
   description: restore Friction Factor
@@ -9861,6 +10568,7 @@ _restoreFrictionFactor:
       args:
         - $input
         - $ctx
+      generated: true
 _restoreMaxCount:
   type: boolean
   description: restore Max Count
@@ -9873,6 +10581,7 @@ _restoreMaxCount:
       args:
         - $input
         - $ctx
+      generated: true
 _restoreTileOptions:
   type: boolean
   description: restore Tile Options
@@ -9885,6 +10594,7 @@ _restoreTileOptions:
       args:
         - $input
         - $ctx
+      generated: true
 _resultIfInRallyPointMode:
   type: boolean
   description: result If In Rally Point Mode
@@ -9897,6 +10607,7 @@ _resultIfInRallyPointMode:
       args:
         - $input
         - $ctx
+      generated: true
 _resultKey:
   type: string
   description: result Key
@@ -9912,6 +10623,7 @@ _retainedBuffsWhenClear:
     args:
       - $input
       - $ctx
+    generated: true
 _returnWhetherCreateNewTileListener:
   type: boolean
   description: return Whether Create New Tile Listener
@@ -9924,6 +10636,7 @@ _returnWhetherCreateNewTileListener:
       args:
         - $input
         - $ctx
+      generated: true
 _reverseDistance:
   type: boolean
   description: reverse Distance
@@ -9936,6 +10649,7 @@ _reverseDistance:
       args:
         - $input
         - $ctx
+      generated: true
 _reverseOrdert:
   type: boolean
   description: reverse Ordert
@@ -9948,6 +10662,7 @@ _reverseOrdert:
       args:
         - $input
         - $ctx
+      generated: true
 _rewriteBlackboardKey:
   type: null | string
   description: rewrite Blackboard Key
@@ -9971,6 +10686,7 @@ _rightNodes:
     args:
       - $input
       - $ctx
+    generated: true
 _rightSelector:
   type: object
   description: right Selector
@@ -9982,6 +10698,7 @@ _rightSelector:
     args:
       - $input
       - $ctx
+    generated: true
 _rightValue:
   type: number
   description: right Value
@@ -9994,6 +10711,7 @@ _rightValue:
       args:
         - $input
         - $ctx
+      generated: true
 _rotateBuildDirection:
   type: boolean
   description: rotate Build Direction
@@ -10006,6 +10724,7 @@ _rotateBuildDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _roundType:
   type: string
   description: round Type
@@ -10046,6 +10765,7 @@ _scale:
       args:
         - $input
         - $ctx
+      generated: true
 _scaleKey:
   type: null | string
   description: scale Key
@@ -10066,6 +10786,7 @@ _scaleUpIfUnderHpRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _scaleUpKeys:
   type: array
   description: scale Up Keys
@@ -10077,6 +10798,7 @@ _scaleUpKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _scaleValue:
   type: number
   description: scale Value
@@ -10089,6 +10811,7 @@ _scaleValue:
       args:
         - $input
         - $ctx
+      generated: true
 _scaleVar:
   type: string
   description: scale Var
@@ -10105,6 +10828,7 @@ _scaledByBuffGroupStackCount:
       args:
         - $input
         - $ctx
+      generated: true
 _score:
   type: number | string
   description: score
@@ -10129,6 +10853,7 @@ _screenWidthRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _screenheightRatio:
   type: number
   description: screenheight Ratio
@@ -10141,6 +10866,7 @@ _screenheightRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _seType:
   type: string
   description: se Type
@@ -10157,6 +10883,7 @@ _searchPassengersStatus:
       args:
         - $input
         - $ctx
+      generated: true
 _secondGridColKey:
   type: string
   description: second Grid Col Key
@@ -10185,6 +10912,7 @@ _selectTargetHostOrToken:
       args:
         - $input
         - $ctx
+      generated: true
 _selectTheNearestTileToSource:
   type: boolean
   description: select The Nearest Tile To Source
@@ -10197,6 +10925,7 @@ _selectTheNearestTileToSource:
       args:
         - $input
         - $ctx
+      generated: true
 _selectTileInSnapshot:
   type: boolean
   description: select Tile In Snapshot
@@ -10209,6 +10938,7 @@ _selectTileInSnapshot:
       args:
         - $input
         - $ctx
+      generated: true
 _selector:
   type: object
   description: selector
@@ -10220,6 +10950,7 @@ _selector:
     args:
       - $input
       - $ctx
+    generated: true
 _selectorTarget:
   type: string
   description: selector Target
@@ -10235,6 +10966,7 @@ _selectors:
     args:
       - $input
       - $ctx
+    generated: true
 _setActive:
   type: boolean
   description: set Active
@@ -10247,6 +10979,7 @@ _setActive:
       args:
         - $input
         - $ctx
+      generated: true
 _setCollideTileToBB:
   type: boolean
   description: set Collide Tile To B B
@@ -10259,6 +10992,7 @@ _setCollideTileToBB:
       args:
         - $input
         - $ctx
+      generated: true
 _setColorDirectly:
   type: boolean
   description: set Color Directly
@@ -10271,6 +11005,7 @@ _setColorDirectly:
       args:
         - $input
         - $ctx
+      generated: true
 _setCurrentHp:
   type: boolean
   description: set Current Hp
@@ -10283,6 +11018,7 @@ _setCurrentHp:
       args:
         - $input
         - $ctx
+      generated: true
 _setDirectByBB:
   type: boolean
   description: set Direct By B B
@@ -10295,6 +11031,7 @@ _setDirectByBB:
       args:
         - $input
         - $ctx
+      generated: true
 _setHostUid:
   type: boolean
   description: set Host Uid
@@ -10307,6 +11044,7 @@ _setHostUid:
       args:
         - $input
         - $ctx
+      generated: true
 _setPause:
   type: boolean
   description: set Pause
@@ -10319,6 +11057,7 @@ _setPause:
       args:
         - $input
         - $ctx
+      generated: true
 _setSearchPassengersStatus:
   type: boolean
   description: set Search Passengers Status
@@ -10331,6 +11070,7 @@ _setSearchPassengersStatus:
       args:
         - $input
         - $ctx
+      generated: true
 _setSharedFlag:
   type: boolean
   description: set Shared Flag
@@ -10343,6 +11083,7 @@ _setSharedFlag:
       args:
         - $input
         - $ctx
+      generated: true
 _sharedFlag:
   type: string
   description: shared Flag
@@ -10371,6 +11112,7 @@ _shieldByAnotherSource:
       args:
         - $input
         - $ctx
+      generated: true
 _shieldSource:
   type: string
   description: shield Source
@@ -10387,6 +11129,7 @@ _showDamageNumber:
       args:
         - $input
         - $ctx
+      generated: true
 _showOverrideWarning:
   type: boolean
   description: show Override Warning
@@ -10399,6 +11142,7 @@ _showOverrideWarning:
       args:
         - $input
         - $ctx
+      generated: true
 _showShieldUI:
   type: boolean
   description: show Shield U I
@@ -10411,6 +11155,7 @@ _showShieldUI:
       args:
         - $input
         - $ctx
+      generated: true
 _showType:
   type: string
   description: show Type
@@ -10443,6 +11188,7 @@ _skillIndex:
       args:
         - $input
         - $ctx
+      generated: true
 _skillKey:
   type: string
   description: skill Key
@@ -10475,6 +11221,7 @@ _skipCheckPoint:
       args:
         - $input
         - $ctx
+      generated: true
 _skipClearCharacterIfExists:
   type: boolean
   description: skip Clear Character If Exists
@@ -10487,6 +11234,7 @@ _skipClearCharacterIfExists:
       args:
         - $input
         - $ctx
+      generated: true
 _skipDisappearCheckpoint:
   type: boolean
   description: skip Disappear Checkpoint
@@ -10499,6 +11247,7 @@ _skipDisappearCheckpoint:
       args:
         - $input
         - $ctx
+      generated: true
 _skipInEPBreakRecoveryCheck:
   type: boolean
   description: skip In E P Break Recovery Check
@@ -10511,6 +11260,7 @@ _skipInEPBreakRecoveryCheck:
       args:
         - $input
         - $ctx
+      generated: true
 _skipModifierEvent:
   type: boolean
   description: skip Modifier Event
@@ -10523,6 +11273,7 @@ _skipModifierEvent:
       args:
         - $input
         - $ctx
+      generated: true
 _skipReborn:
   type: boolean
   description: skip Reborn
@@ -10535,6 +11286,7 @@ _skipReborn:
       args:
         - $input
         - $ctx
+      generated: true
 _skipSourceEvent:
   type: boolean
   description: skip Source Event
@@ -10547,6 +11299,7 @@ _skipSourceEvent:
       args:
         - $input
         - $ctx
+      generated: true
 _skipUnitCheck:
   type: boolean
   description: skip Unit Check
@@ -10559,6 +11312,7 @@ _skipUnitCheck:
       args:
         - $input
         - $ctx
+      generated: true
 _slapShotForceKey:
   type: string
   description: slap Shot Force Key
@@ -10594,6 +11348,7 @@ _sourceBBKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _sourceBlackboardKey:
   type: string
   description: source Blackboard Key
@@ -10618,6 +11373,7 @@ _sourceMode:
       args:
         - $input
         - $ctx
+      generated: true
 _sourcePosType:
   type: string
   description: source Pos Type
@@ -10658,6 +11414,7 @@ _spRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _spShowBuffKey:
   type: null | string
   description: sp Show Buff Key
@@ -10682,6 +11439,7 @@ _spawnCertainOffsetX:
       args:
         - $input
         - $ctx
+      generated: true
 _spawnCertainOffsetY:
   type: number
   description: spawn Certain Offset Y
@@ -10694,6 +11452,7 @@ _spawnCertainOffsetY:
       args:
         - $input
         - $ctx
+      generated: true
 _spawnCnt:
   type: number
   description: spawn Cnt
@@ -10706,6 +11465,7 @@ _spawnCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _spawnOffset:
   type: number
   description: spawn Offset
@@ -10718,6 +11478,7 @@ _spawnOffset:
       args:
         - $input
         - $ctx
+      generated: true
 _spawnOnHostRootTile:
   type: boolean
   description: spawn On Host Root Tile
@@ -10730,6 +11491,7 @@ _spawnOnHostRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _spawnOnRandomTiles:
   type: boolean
   description: spawn On Random Tiles
@@ -10742,6 +11504,7 @@ _spawnOnRandomTiles:
       args:
         - $input
         - $ctx
+      generated: true
 _spawnOnTarget:
   type: boolean
   description: spawn On Target
@@ -10754,6 +11517,7 @@ _spawnOnTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _spawnTokenFromCards:
   type: boolean
   description: spawn Token From Cards
@@ -10766,6 +11530,7 @@ _spawnTokenFromCards:
       args:
         - $input
         - $ctx
+      generated: true
 _spawnTokenKey:
   type: null | string
   description: spawn Token Key
@@ -10790,6 +11555,7 @@ _specificBuffBB:
       args:
         - $input
         - $ctx
+      generated: true
 _specificCardKeys:
   type: array
   description: specific Card Keys
@@ -10801,6 +11567,7 @@ _specificCardKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _specifierPlayerSideType:
   type: boolean
   description: specifier Player Side Type
@@ -10813,6 +11580,7 @@ _specifierPlayerSideType:
       args:
         - $input
         - $ctx
+      generated: true
 _specifierSideType:
   type: boolean
   description: specifier Side Type
@@ -10825,6 +11593,7 @@ _specifierSideType:
       args:
         - $input
         - $ctx
+      generated: true
 _specifyBlockEffect:
   type: null | string
   description: specify Block Effect
@@ -10845,6 +11614,7 @@ _specifyBuildType:
       args:
         - $input
         - $ctx
+      generated: true
 _specifyByGridColumn:
   type: boolean
   description: specify By Grid Column
@@ -10857,6 +11627,7 @@ _specifyByGridColumn:
       args:
         - $input
         - $ctx
+      generated: true
 _specifyProfessionCategory:
   type: boolean
   description: specify Profession Category
@@ -10869,6 +11640,7 @@ _specifyProfessionCategory:
       args:
         - $input
         - $ctx
+      generated: true
 _specifyTileType:
   type: boolean
   description: specify Tile Type
@@ -10881,6 +11653,7 @@ _specifyTileType:
       args:
         - $input
         - $ctx
+      generated: true
 _speedLevel:
   type: string
   description: speed Level
@@ -10897,6 +11670,7 @@ _spiltTokenKey:
       args:
         - $input
         - $ctx
+      generated: true
 _splitScale:
   type: number
   description: split Scale
@@ -10909,6 +11683,7 @@ _splitScale:
       args:
         - $input
         - $ctx
+      generated: true
 _splitScaleKey:
   type: string
   description: split Scale Key
@@ -10925,6 +11700,7 @@ _stackCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _stackCntKey:
   type: string
   description: stack Cnt Key
@@ -10941,6 +11717,7 @@ _stackCount:
       args:
         - $input
         - $ctx
+      generated: true
 _stackCountKey:
   type: null | string
   description: stack Count Key
@@ -10957,6 +11734,7 @@ _stackCountPeeling:
       args:
         - $input
         - $ctx
+      generated: true
 _standAbilityName:
   type: string
   description: stand Ability Name
@@ -10977,6 +11755,7 @@ _startHpRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _startPointTarget:
   type: string
   description: start Point Target
@@ -11001,6 +11780,7 @@ _stopAffect:
       args:
         - $input
         - $ctx
+      generated: true
 _stopSummonIfHostDead:
   type: boolean
   description: stop Summon If Host Dead
@@ -11013,6 +11793,7 @@ _stopSummonIfHostDead:
       args:
         - $input
         - $ctx
+      generated: true
 _stopTraceWhenNoTarget:
   type: boolean
   description: stop Trace When No Target
@@ -11025,6 +11806,7 @@ _stopTraceWhenNoTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _stopWhenPreviousSucceed:
   type: boolean
   description: stop When Previous Succeed
@@ -11037,6 +11819,7 @@ _stopWhenPreviousSucceed:
       args:
         - $input
         - $ctx
+      generated: true
 _strength:
   type: object
   description: strength
@@ -11048,6 +11831,7 @@ _strength:
     args:
       - $input
       - $ctx
+    generated: true
 _stride:
   type: number
   description: stride
@@ -11060,6 +11844,7 @@ _stride:
       args:
         - $input
         - $ctx
+      generated: true
 _strideKey:
   type: string
   description: stride Key
@@ -11083,6 +11868,7 @@ _succeedNodes:
     args:
       - $input
       - $ctx
+    generated: true
 _summonAllRoute:
   type: boolean
   description: summon All Route
@@ -11095,6 +11881,7 @@ _summonAllRoute:
       args:
         - $input
         - $ctx
+      generated: true
 _summonCnt:
   type: number
   description: summon Cnt
@@ -11107,6 +11894,7 @@ _summonCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _summonCount:
   type: number
   description: summon Count
@@ -11119,6 +11907,7 @@ _summonCount:
       args:
         - $input
         - $ctx
+      generated: true
 _summonNums:
   type: number
   description: summon Nums
@@ -11131,6 +11920,7 @@ _summonNums:
       args:
         - $input
         - $ctx
+      generated: true
 _summonNumsKeys:
   type: string
   description: summon Nums Keys
@@ -11147,6 +11937,7 @@ _summonOnNearestPassableTile:
       args:
         - $input
         - $ctx
+      generated: true
 _surroundTilesOptions:
   type: object
   description: surround Tiles Options
@@ -11158,6 +11949,7 @@ _surroundTilesOptions:
     args:
       - $input
       - $ctx
+    generated: true
 _switchOneTileEachTime:
   type: boolean
   description: switch One Tile Each Time
@@ -11170,6 +11962,7 @@ _switchOneTileEachTime:
       args:
         - $input
         - $ctx
+      generated: true
 _switchOutFromSkillState:
   type: boolean
   description: switch Out From Skill State
@@ -11182,6 +11975,7 @@ _switchOutFromSkillState:
       args:
         - $input
         - $ctx
+      generated: true
 _switchState:
   type: boolean
   description: switch State
@@ -11194,6 +11988,7 @@ _switchState:
       args:
         - $input
         - $ctx
+      generated: true
 _switchToDeadState:
   type: boolean
   description: switch To Dead State
@@ -11206,6 +12001,7 @@ _switchToDeadState:
       args:
         - $input
         - $ctx
+      generated: true
 _switchToOposite:
   type: boolean
   description: switch To Oposite
@@ -11218,6 +12014,7 @@ _switchToOposite:
       args:
         - $input
         - $ctx
+      generated: true
 _syncAbilityName:
   type: string
   description: sync Ability Name
@@ -11254,6 +12051,7 @@ _targetAsStart:
       args:
         - $input
         - $ctx
+      generated: true
 _targetBBKey:
   type: string
   description: target B B Key
@@ -11269,6 +12067,7 @@ _targetBBKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _targetBlackboardKey:
   type: string
   description: target Blackboard Key
@@ -11293,6 +12092,7 @@ _targetColOffset:
       args:
         - $input
         - $ctx
+      generated: true
 _targetHeightType:
   type: string
   description: target Height Type
@@ -11324,6 +12124,7 @@ _targetOptions:
     args:
       - $input
       - $ctx
+    generated: true
 _targetPosFromBB:
   type: boolean
   description: target Pos From B B
@@ -11336,6 +12137,7 @@ _targetPosFromBB:
       args:
         - $input
         - $ctx
+      generated: true
 _targetPosType:
   type: string
   description: target Pos Type
@@ -11356,6 +12158,7 @@ _targetToSource:
       args:
         - $input
         - $ctx
+      generated: true
 _targetType:
   type: string
   description: target Type
@@ -11372,6 +12175,7 @@ _temporaryEscapeShadowState:
       args:
         - $input
         - $ctx
+      generated: true
 _tileBBKey:
   type: string
   description: tile B B Key
@@ -11400,6 +12204,7 @@ _tileFromBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _tileFromSnapshot:
   type: boolean
   description: tile From Snapshot
@@ -11412,6 +12217,7 @@ _tileFromSnapshot:
       args:
         - $input
         - $ctx
+      generated: true
 _tileHoldEffect:
   type: boolean
   description: tile Hold Effect
@@ -11424,6 +12230,7 @@ _tileHoldEffect:
       args:
         - $input
         - $ctx
+      generated: true
 _tileIndexKey:
   type: null
   description: tile Index Key
@@ -11439,6 +12246,7 @@ _tileKey:
     args:
       - $input
       - $ctx
+    generated: true
 _tileKeyCol:
   type: string
   description: tile Key Col
@@ -11458,6 +12266,7 @@ _tileKeys:
     args:
       - $input
       - $ctx
+    generated: true
 _tileSelectorAbilityName:
   type: string
   description: tile Selector Ability Name
@@ -11478,6 +12287,7 @@ _time:
       args:
         - $input
         - $ctx
+      generated: true
 _timelineKey:
   type: string
   description: timeline Key
@@ -11498,6 +12308,7 @@ _toMapPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _toNextCheckpoint:
   type: boolean
   description: to Next Checkpoint
@@ -11510,6 +12321,7 @@ _toNextCheckpoint:
       args:
         - $input
         - $ctx
+      generated: true
 _toShadow:
   type: boolean
   description: to Shadow
@@ -11522,6 +12334,7 @@ _toShadow:
       args:
         - $input
         - $ctx
+      generated: true
 _toastKey:
   type: string
   description: toast Key
@@ -11561,6 +12374,7 @@ _tokenModes:
     args:
       - $input
       - $ctx
+    generated: true
 _tokenToSpawn:
   type: object
   description: token To Spawn
@@ -11572,6 +12386,7 @@ _tokenToSpawn:
     args:
       - $input
       - $ctx
+    generated: true
 _tokenType:
   type: string
   description: token Type
@@ -11588,6 +12403,7 @@ _traceFarthestTile:
       args:
         - $input
         - $ctx
+      generated: true
 _traceTileInstead:
   type: boolean
   description: trace Tile Instead
@@ -11600,6 +12416,7 @@ _traceTileInstead:
       args:
         - $input
         - $ctx
+      generated: true
 _trackAllManagedEnemiesAtNextWave:
   type: boolean
   description: track All Managed Enemies At Next Wave
@@ -11612,6 +12429,7 @@ _trackAllManagedEnemiesAtNextWave:
       args:
         - $input
         - $ctx
+      generated: true
 _trackEnemyAtNextWave:
   type: boolean
   description: track Enemy At Next Wave
@@ -11624,6 +12442,7 @@ _trackEnemyAtNextWave:
       args:
         - $input
         - $ctx
+      generated: true
 _trackEnemyAtSpecificWave:
   type: boolean
   description: track Enemy At Specific Wave
@@ -11636,6 +12455,7 @@ _trackEnemyAtSpecificWave:
       args:
         - $input
         - $ctx
+      generated: true
 _trackEnemyAtWaveDelta:
   type: number
   description: track Enemy At Wave Delta
@@ -11648,6 +12468,7 @@ _trackEnemyAtWaveDelta:
       args:
         - $input
         - $ctx
+      generated: true
 _trackSourceAtNextWave:
   type: boolean
   description: track Source At Next Wave
@@ -11660,6 +12481,7 @@ _trackSourceAtNextWave:
       args:
         - $input
         - $ctx
+      generated: true
 _trackSourceAtWaveDelta:
   type: number
   description: track Source At Wave Delta
@@ -11672,6 +12494,7 @@ _trackSourceAtWaveDelta:
       args:
         - $input
         - $ctx
+      generated: true
 _trapId:
   type: string
   description: trap Id
@@ -11692,6 +12515,7 @@ _triggerAllBuffs:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerConsumeEvent:
   type: boolean
   description: trigger Consume Event
@@ -11704,6 +12528,7 @@ _triggerConsumeEvent:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerDerivedBuffs:
   type: boolean
   description: trigger Derived Buffs
@@ -11716,6 +12541,7 @@ _triggerDerivedBuffs:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerEnergyBuffAbility:
   type: boolean
   description: trigger Energy Buff Ability
@@ -11728,6 +12554,7 @@ _triggerEnergyBuffAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerHostAbility:
   type: boolean
   description: trigger Host Ability
@@ -11740,6 +12567,7 @@ _triggerHostAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerOnCalculateDamage:
   type: boolean
   description: trigger On Calculate Damage
@@ -11752,6 +12580,7 @@ _triggerOnCalculateDamage:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerProjectileToTileOnceAbilityBySubSelector:
   type: boolean
   description: trigger Projectile To Tile Once Ability By Sub Selector
@@ -11764,6 +12593,7 @@ _triggerProjectileToTileOnceAbilityBySubSelector:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerS1SnowForward:
   type: boolean
   description: trigger S1 Snow Forward
@@ -11776,6 +12606,7 @@ _triggerS1SnowForward:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerS2SnowOutward:
   type: boolean
   description: trigger S2 Snow Outward
@@ -11788,6 +12619,7 @@ _triggerS2SnowOutward:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerStealAttrAbility:
   type: boolean
   description: trigger Steal Attr Ability
@@ -11800,6 +12632,7 @@ _triggerStealAttrAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerWithBlackboard:
   type: boolean
   description: trigger With Blackboard
@@ -11812,6 +12645,7 @@ _triggerWithBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _triggerWithEvent:
   type: boolean
   description: trigger With Event
@@ -11824,6 +12658,7 @@ _triggerWithEvent:
       args:
         - $input
         - $ctx
+      generated: true
 _tryAddBuffIfModified:
   type: boolean
   description: try Add Buff If Modified
@@ -11836,6 +12671,7 @@ _tryAddBuffIfModified:
       args:
         - $input
         - $ctx
+      generated: true
 _tryAddBuffImmediately:
   type: boolean
   description: try Add Buff Immediately
@@ -11848,6 +12684,7 @@ _tryAddBuffImmediately:
       args:
         - $input
         - $ctx
+      generated: true
 _tryCastDirectlyWhenNoTarget:
   type: boolean
   description: try Cast Directly When No Target
@@ -11860,6 +12697,7 @@ _tryCastDirectlyWhenNoTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _tryCreateTokenEndTile:
   type: boolean
   description: try Create Token End Tile
@@ -11872,6 +12710,7 @@ _tryCreateTokenEndTile:
       args:
         - $input
         - $ctx
+      generated: true
 _trySummonOutsideWhenInObstacle:
   type: boolean
   description: try Summon Outside When In Obstacle
@@ -11884,6 +12723,7 @@ _trySummonOutsideWhenInObstacle:
       args:
         - $input
         - $ctx
+      generated: true
 _type:
   type: string
   description: type
@@ -11903,6 +12743,7 @@ _typesNeedtoModify:
     args:
       - $input
       - $ctx
+    generated: true
 _typesNeedtoUseRatio:
   type: array
   description: types Needto Use Ratio
@@ -11914,6 +12755,7 @@ _typesNeedtoUseRatio:
     args:
       - $input
       - $ctx
+    generated: true
 _uidKey:
   type: string
   description: uid Key
@@ -11930,6 +12772,7 @@ _unharmful:
       args:
         - $input
         - $ctx
+      generated: true
 _unitId:
   type: string
   description: unit Id
@@ -11950,6 +12793,7 @@ _unlock:
       args:
         - $input
         - $ctx
+      generated: true
 _unset:
   type: boolean
   description: unset
@@ -11962,6 +12806,7 @@ _unset:
       args:
         - $input
         - $ctx
+      generated: true
 _upNodes:
   type: array
   description: up Nodes
@@ -11973,6 +12818,7 @@ _upNodes:
     args:
       - $input
       - $ctx
+    generated: true
 _updateDirectionBeforeApply:
   type: boolean
   description: update Direction Before Apply
@@ -11985,6 +12831,7 @@ _updateDirectionBeforeApply:
       args:
         - $input
         - $ctx
+      generated: true
 _updateOldTileVal:
   type: boolean
   description: update Old Tile Val
@@ -11997,6 +12844,7 @@ _updateOldTileVal:
       args:
         - $input
         - $ctx
+      generated: true
 _updateOverrideMap:
   type: boolean
   description: update Override Map
@@ -12009,6 +12857,7 @@ _updateOverrideMap:
       args:
         - $input
         - $ctx
+      generated: true
 _updateSkillAbilitySelector:
   type: boolean
   description: update Skill Ability Selector
@@ -12021,6 +12870,7 @@ _updateSkillAbilitySelector:
       args:
         - $input
         - $ctx
+      generated: true
 _updateSkillSpCostMin:
   type: boolean
   description: update Skill Sp Cost Min
@@ -12033,6 +12883,7 @@ _updateSkillSpCostMin:
       args:
         - $input
         - $ctx
+      generated: true
 _upgradeMaps:
   type: array
   description: upgrade Maps
@@ -12044,6 +12895,7 @@ _upgradeMaps:
     args:
       - $input
       - $ctx
+    generated: true
 _upgradeTrapId:
   type: string
   description: upgrade Trap Id
@@ -12063,6 +12915,7 @@ _upgradedBuff:
     args:
       - $input
       - $ctx
+    generated: true
 _useAbilityBlackboard:
   type: boolean
   description: use Ability Blackboard
@@ -12075,6 +12928,7 @@ _useAbilityBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _useAbilityFromOther:
   type: boolean
   description: use Ability From Other
@@ -12087,6 +12941,7 @@ _useAbilityFromOther:
       args:
         - $input
         - $ctx
+      generated: true
 _useAbilitySelector:
   type: boolean
   description: use Ability Selector
@@ -12099,6 +12954,7 @@ _useAbilitySelector:
       args:
         - $input
         - $ctx
+      generated: true
 _useAbilitySourceSide:
   type: boolean
   description: use Ability Source Side
@@ -12111,6 +12967,7 @@ _useAbilitySourceSide:
       args:
         - $input
         - $ctx
+      generated: true
 _useAbilityTileSelector:
   type: boolean
   description: use Ability Tile Selector
@@ -12123,6 +12980,7 @@ _useAbilityTileSelector:
       args:
         - $input
         - $ctx
+      generated: true
 _useAnimSpeed:
   type: boolean
   description: use Anim Speed
@@ -12135,6 +12993,7 @@ _useAnimSpeed:
       args:
         - $input
         - $ctx
+      generated: true
 _useAnotherColEnd:
   type: boolean
   description: use Another Col End
@@ -12147,6 +13006,7 @@ _useAnotherColEnd:
       args:
         - $input
         - $ctx
+      generated: true
 _useArea:
   type: boolean
   description: use Area
@@ -12159,6 +13019,7 @@ _useArea:
       args:
         - $input
         - $ctx
+      generated: true
 _useAttackPlaybackSpeed:
   type: boolean
   description: use Attack Playback Speed
@@ -12171,6 +13032,7 @@ _useAttackPlaybackSpeed:
       args:
         - $input
         - $ctx
+      generated: true
 _useAttackRange:
   type: boolean
   description: use Attack Range
@@ -12183,6 +13045,7 @@ _useAttackRange:
       args:
         - $input
         - $ctx
+      generated: true
 _useAttackRangeTilesDirectly:
   type: boolean
   description: use Attack Range Tiles Directly
@@ -12195,6 +13058,7 @@ _useAttackRangeTilesDirectly:
       args:
         - $input
         - $ctx
+      generated: true
 _useBb:
   type: boolean
   description: use Bb
@@ -12207,6 +13071,7 @@ _useBb:
       args:
         - $input
         - $ctx
+      generated: true
 _useBbPosAsCenterPos:
   type: boolean
   description: use Bb Pos As Center Pos
@@ -12219,6 +13084,7 @@ _useBbPosAsCenterPos:
       args:
         - $input
         - $ctx
+      generated: true
 _useBlackboard:
   type: boolean
   description: use Blackboard
@@ -12231,6 +13097,7 @@ _useBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _useBlackboardCardUidAsOwner:
   type: boolean
   description: use Blackboard Card Uid As Owner
@@ -12243,6 +13110,7 @@ _useBlackboardCardUidAsOwner:
       args:
         - $input
         - $ctx
+      generated: true
 _useBlackboardId:
   type: boolean
   description: use Blackboard Id
@@ -12255,6 +13123,7 @@ _useBlackboardId:
       args:
         - $input
         - $ctx
+      generated: true
 _useBuffAbility:
   type: boolean
   description: use Buff Ability
@@ -12267,6 +13136,7 @@ _useBuffAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _useBuffBlackboard:
   type: boolean
   description: use Buff Blackboard
@@ -12279,6 +13149,7 @@ _useBuffBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _useCardBuffKey:
   type: boolean
   description: use Card Buff Key
@@ -12291,6 +13162,7 @@ _useCardBuffKey:
       args:
         - $input
         - $ctx
+      generated: true
 _useCardSnapshot:
   type: boolean
   description: use Card Snapshot
@@ -12303,6 +13175,7 @@ _useCardSnapshot:
       args:
         - $input
         - $ctx
+      generated: true
 _useCastResult:
   type: boolean
   description: use Cast Result
@@ -12315,6 +13188,7 @@ _useCastResult:
       args:
         - $input
         - $ctx
+      generated: true
 _useCircle:
   type: boolean
   description: use Circle
@@ -12327,6 +13201,7 @@ _useCircle:
       args:
         - $input
         - $ctx
+      generated: true
 _useConstDirection:
   type: boolean
   description: use Const Direction
@@ -12339,6 +13214,7 @@ _useConstDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _useConstLocationKey:
   type: boolean
   description: use Const Location Key
@@ -12351,6 +13227,7 @@ _useConstLocationKey:
       args:
         - $input
         - $ctx
+      generated: true
 _useCurBuffBBWhenDoAddition:
   type: boolean
   description: use Cur Buff B B When Do Addition
@@ -12363,6 +13240,7 @@ _useCurBuffBBWhenDoAddition:
       args:
         - $input
         - $ctx
+      generated: true
 _useCurTriggerCnt:
   type: boolean
   description: use Cur Trigger Cnt
@@ -12375,6 +13253,7 @@ _useCurTriggerCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _useCurrentAbility:
   type: boolean
   description: use Current Ability
@@ -12387,6 +13266,7 @@ _useCurrentAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _useCurrentModeRange:
   type: boolean
   description: use Current Mode Range
@@ -12399,6 +13279,7 @@ _useCurrentModeRange:
       args:
         - $input
         - $ctx
+      generated: true
 _useCurrentModeRangeId:
   type: boolean
   description: use Current Mode Range Id
@@ -12411,6 +13292,7 @@ _useCurrentModeRangeId:
       args:
         - $input
         - $ctx
+      generated: true
 _useCurrentTileDirection:
   type: boolean
   description: use Current Tile Direction
@@ -12423,6 +13305,7 @@ _useCurrentTileDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _useCustomDirection:
   type: boolean
   description: use Custom Direction
@@ -12435,6 +13318,7 @@ _useCustomDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _useDamageFromBB:
   type: boolean
   description: use Damage From B B
@@ -12447,6 +13331,7 @@ _useDamageFromBB:
       args:
         - $input
         - $ctx
+      generated: true
 _useDirectionFromBlackboard:
   type: boolean
   description: use Direction From Blackboard
@@ -12459,6 +13344,7 @@ _useDirectionFromBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _useDynamicAttackType:
   type: boolean
   description: use Dynamic Attack Type
@@ -12471,6 +13357,7 @@ _useDynamicAttackType:
       args:
         - $input
         - $ctx
+      generated: true
 _useDynamicVar:
   type: boolean
   description: use Dynamic Var
@@ -12483,6 +13370,7 @@ _useDynamicVar:
       args:
         - $input
         - $ctx
+      generated: true
 _useEvtRetAsReturnValue:
   type: boolean
   description: use Evt Ret As Return Value
@@ -12495,6 +13383,7 @@ _useEvtRetAsReturnValue:
       args:
         - $input
         - $ctx
+      generated: true
 _useFirstActiveAbility:
   type: boolean
   description: use First Active Ability
@@ -12507,6 +13396,7 @@ _useFirstActiveAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _useFirstDerivedBuff:
   type: boolean
   description: use First Derived Buff
@@ -12519,6 +13409,7 @@ _useFirstDerivedBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _useFixedValue:
   type: boolean
   description: use Fixed Value
@@ -12531,6 +13422,7 @@ _useFixedValue:
       args:
         - $input
         - $ctx
+      generated: true
 _useFloat:
   type: boolean
   description: use Float
@@ -12543,6 +13435,7 @@ _useFloat:
       args:
         - $input
         - $ctx
+      generated: true
 _useGlobalPos:
   type: boolean
   description: use Global Pos
@@ -12555,6 +13448,7 @@ _useGlobalPos:
       args:
         - $input
         - $ctx
+      generated: true
 _useGlobalRange:
   type: boolean
   description: use Global Range
@@ -12567,6 +13461,7 @@ _useGlobalRange:
       args:
         - $input
         - $ctx
+      generated: true
 _useHostAsOwner:
   type: boolean
   description: use Host As Owner
@@ -12579,6 +13474,7 @@ _useHostAsOwner:
       args:
         - $input
         - $ctx
+      generated: true
 _useHostAsTarget:
   type: boolean
   description: use Host As Target
@@ -12591,6 +13487,7 @@ _useHostAsTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _useInProjectile:
   type: boolean
   description: use In Projectile
@@ -12603,6 +13500,7 @@ _useInProjectile:
       args:
         - $input
         - $ctx
+      generated: true
 _useInputTargetAsHealTarget:
   type: boolean
   description: use Input Target As Heal Target
@@ -12615,6 +13513,7 @@ _useInputTargetAsHealTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _useLocalUnharmfulFlag:
   type: boolean
   description: use Local Unharmful Flag
@@ -12627,6 +13526,7 @@ _useLocalUnharmfulFlag:
       args:
         - $input
         - $ctx
+      generated: true
 _useLocationFromBBAsCurrentTile:
   type: boolean
   description: use Location From B B As Current Tile
@@ -12639,6 +13539,7 @@ _useLocationFromBBAsCurrentTile:
       args:
         - $input
         - $ctx
+      generated: true
 _useMapPosition:
   type: boolean
   description: use Map Position
@@ -12651,6 +13552,7 @@ _useMapPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _useMappingList:
   type: boolean
   description: use Mapping List
@@ -12663,6 +13565,7 @@ _useMappingList:
       args:
         - $input
         - $ctx
+      generated: true
 _useMaxRatio:
   type: boolean
   description: use Max Ratio
@@ -12675,6 +13578,7 @@ _useMaxRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _useMinHpRatio:
   type: boolean
   description: use Min Hp Ratio
@@ -12687,6 +13591,7 @@ _useMinHpRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _useMountPointGroup:
   type: boolean
   description: use Mount Point Group
@@ -12699,6 +13604,7 @@ _useMountPointGroup:
       args:
         - $input
         - $ctx
+      generated: true
 _useNameAsParmInMap:
   type: boolean
   description: use Name As Parm In Map
@@ -12711,6 +13617,7 @@ _useNameAsParmInMap:
       args:
         - $input
         - $ctx
+      generated: true
 _useNewPeriod:
   type: boolean
   description: use New Period
@@ -12723,6 +13630,7 @@ _useNewPeriod:
       args:
         - $input
         - $ctx
+      generated: true
 _useNewRouteBeforeBlink:
   type: boolean
   description: use New Route Before Blink
@@ -12735,6 +13643,7 @@ _useNewRouteBeforeBlink:
       args:
         - $input
         - $ctx
+      generated: true
 _useNum2:
   type: boolean
   description: use Num2
@@ -12747,6 +13656,7 @@ _useNum2:
       args:
         - $input
         - $ctx
+      generated: true
 _useOffsetForEach:
   type: boolean
   description: use Offset For Each
@@ -12759,6 +13669,7 @@ _useOffsetForEach:
       args:
         - $input
         - $ctx
+      generated: true
 _useOffsetInBB:
   type: boolean
   description: use Offset In B B
@@ -12771,6 +13682,7 @@ _useOffsetInBB:
       args:
         - $input
         - $ctx
+      generated: true
 _useOneAsMinCnt:
   type: boolean
   description: use One As Min Cnt
@@ -12783,6 +13695,7 @@ _useOneAsMinCnt:
       args:
         - $input
         - $ctx
+      generated: true
 _useOriginalCooldown:
   type: boolean
   description: use Original Cooldown
@@ -12795,6 +13708,7 @@ _useOriginalCooldown:
       args:
         - $input
         - $ctx
+      generated: true
 _useOtherAbility:
   type: boolean
   description: use Other Ability
@@ -12807,6 +13721,7 @@ _useOtherAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _useOwnerHost:
   type: boolean
   description: use Owner Host
@@ -12819,6 +13734,7 @@ _useOwnerHost:
       args:
         - $input
         - $ctx
+      generated: true
 _useOwnerRootTile:
   type: boolean
   description: use Owner Root Tile
@@ -12831,6 +13747,7 @@ _useOwnerRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _useProjectileAsSource:
   type: boolean
   description: use Projectile As Source
@@ -12843,6 +13760,7 @@ _useProjectileAsSource:
       args:
         - $input
         - $ctx
+      generated: true
 _useProjectileAsTarget:
   type: boolean
   description: use Projectile As Target
@@ -12855,6 +13773,7 @@ _useProjectileAsTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _useProjectilePos:
   type: boolean
   description: use Projectile Pos
@@ -12867,6 +13786,7 @@ _useProjectilePos:
       args:
         - $input
         - $ctx
+      generated: true
 _useProjectileRootTile:
   type: boolean
   description: use Projectile Root Tile
@@ -12879,6 +13799,7 @@ _useProjectileRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _useProjectileTraceTargetMapPos:
   type: boolean
   description: use Projectile Trace Target Map Pos
@@ -12891,6 +13812,7 @@ _useProjectileTraceTargetMapPos:
       args:
         - $input
         - $ctx
+      generated: true
 _useRadius:
   type: boolean
   description: use Radius
@@ -12903,6 +13825,7 @@ _useRadius:
       args:
         - $input
         - $ctx
+      generated: true
 _useRandomDelay:
   type: boolean
   description: use Random Delay
@@ -12915,6 +13838,7 @@ _useRandomDelay:
       args:
         - $input
         - $ctx
+      generated: true
 _useRandomEnemy:
   type: boolean
   description: use Random Enemy
@@ -12927,6 +13851,7 @@ _useRandomEnemy:
       args:
         - $input
         - $ctx
+      generated: true
 _useRangeId:
   type: boolean
   description: use Range Id
@@ -12939,6 +13864,7 @@ _useRangeId:
       args:
         - $input
         - $ctx
+      generated: true
 _useRangeRadius:
   type: boolean
   description: use Range Radius
@@ -12951,6 +13877,7 @@ _useRangeRadius:
       args:
         - $input
         - $ctx
+      generated: true
 _useRangeToShow:
   type: boolean
   description: use Range To Show
@@ -12963,6 +13890,7 @@ _useRangeToShow:
       args:
         - $input
         - $ctx
+      generated: true
 _useRatio:
   type: boolean
   description: use Ratio
@@ -12975,6 +13903,7 @@ _useRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _useRemainder:
   type: boolean
   description: use Remainder
@@ -12987,6 +13916,7 @@ _useRemainder:
       args:
         - $input
         - $ctx
+      generated: true
 _useRouteEndPosition:
   type: boolean
   description: use Route End Position
@@ -12999,6 +13929,7 @@ _useRouteEndPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _useRowAndColOnBlackboard:
   type: boolean
   description: use Row And Col On Blackboard
@@ -13011,6 +13942,7 @@ _useRowAndColOnBlackboard:
       args:
         - $input
         - $ctx
+      generated: true
 _useSearchName:
   type: boolean
   description: use Search Name
@@ -13023,6 +13955,7 @@ _useSearchName:
       args:
         - $input
         - $ctx
+      generated: true
 _useSelectorPosition:
   type: boolean
   description: use Selector Position
@@ -13035,6 +13968,7 @@ _useSelectorPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _useSkipInsteadOfSetToZero:
   type: boolean
   description: use Skip Instead Of Set To Zero
@@ -13047,6 +13981,7 @@ _useSkipInsteadOfSetToZero:
       args:
         - $input
         - $ctx
+      generated: true
 _useSnapshotAbility:
   type: boolean
   description: use Snapshot Ability
@@ -13059,6 +13994,7 @@ _useSnapshotAbility:
       args:
         - $input
         - $ctx
+      generated: true
 _useSnapshotAbilityAsTarget:
   type: boolean
   description: use Snapshot Ability As Target
@@ -13071,6 +14007,7 @@ _useSnapshotAbilityAsTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _useSnapshotAbilityWhenFromBuff:
   type: boolean
   description: use Snapshot Ability When From Buff
@@ -13083,6 +14020,7 @@ _useSnapshotAbilityWhenFromBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _useSnapshotBuff:
   type: boolean
   description: use Snapshot Buff
@@ -13095,6 +14033,7 @@ _useSnapshotBuff:
       args:
         - $input
         - $ctx
+      generated: true
 _useSnapshotTile:
   type: boolean
   description: use Snapshot Tile
@@ -13107,6 +14046,7 @@ _useSnapshotTile:
       args:
         - $input
         - $ctx
+      generated: true
 _useSource:
   type: boolean
   description: use Source
@@ -13119,6 +14059,7 @@ _useSource:
       args:
         - $input
         - $ctx
+      generated: true
 _useSourceDirection:
   type: boolean
   description: use Source Direction
@@ -13131,6 +14072,7 @@ _useSourceDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _useSourceEndPosition:
   type: boolean
   description: use Source End Position
@@ -13143,6 +14085,7 @@ _useSourceEndPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _useSourceFaceVactor:
   type: boolean
   description: use Source Face Vactor
@@ -13155,6 +14098,7 @@ _useSourceFaceVactor:
       args:
         - $input
         - $ctx
+      generated: true
 _useSourceFaceVector:
   type: boolean
   description: use Source Face Vector
@@ -13167,6 +14111,7 @@ _useSourceFaceVector:
       args:
         - $input
         - $ctx
+      generated: true
 _useSourceHost:
   type: boolean
   description: use Source Host
@@ -13179,6 +14124,7 @@ _useSourceHost:
       args:
         - $input
         - $ctx
+      generated: true
 _useSourceHpRatio:
   type: boolean
   description: use Source Hp Ratio
@@ -13191,6 +14137,7 @@ _useSourceHpRatio:
       args:
         - $input
         - $ctx
+      generated: true
 _useSourceRootTile:
   type: boolean
   description: use Source Root Tile
@@ -13203,6 +14150,7 @@ _useSourceRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _useSourceToTargetDirection:
   type: boolean
   description: use Source To Target Direction
@@ -13215,6 +14163,7 @@ _useSourceToTargetDirection:
       args:
         - $input
         - $ctx
+      generated: true
 _useSpecialBuffSource:
   type: boolean
   description: use Special Buff Source
@@ -13227,6 +14176,7 @@ _useSpecialBuffSource:
       args:
         - $input
         - $ctx
+      generated: true
 _useSpecialHost:
   type: boolean
   description: use Special Host
@@ -13239,6 +14189,7 @@ _useSpecialHost:
       args:
         - $input
         - $ctx
+      generated: true
 _useSpecifiedCardUid:
   type: boolean
   description: use Specified Card Uid
@@ -13251,6 +14202,7 @@ _useSpecifiedCardUid:
       args:
         - $input
         - $ctx
+      generated: true
 _useSpecifiedModeRangeId:
   type: boolean
   description: use Specified Mode Range Id
@@ -13263,6 +14215,7 @@ _useSpecifiedModeRangeId:
       args:
         - $input
         - $ctx
+      generated: true
 _useSpecifyBuffSource:
   type: boolean
   description: use Specify Buff Source
@@ -13275,6 +14228,7 @@ _useSpecifyBuffSource:
       args:
         - $input
         - $ctx
+      generated: true
 _useStringTableKey:
   type: boolean
   description: use String Table Key
@@ -13287,6 +14241,7 @@ _useStringTableKey:
       args:
         - $input
         - $ctx
+      generated: true
 _useStringUid:
   type: boolean
   description: use String Uid
@@ -13299,6 +14254,7 @@ _useStringUid:
       args:
         - $input
         - $ctx
+      generated: true
 _useSwitchResult:
   type: boolean
   description: use Switch Result
@@ -13311,6 +14267,7 @@ _useSwitchResult:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetAbilitySelector:
   type: boolean
   description: use Target Ability Selector
@@ -13323,6 +14280,7 @@ _useTargetAbilitySelector:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetAsEffectSource:
   type: boolean
   description: use Target As Effect Source
@@ -13335,6 +14293,7 @@ _useTargetAsEffectSource:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetAsStartPoint:
   type: boolean
   description: use Target As Start Point
@@ -13347,6 +14306,7 @@ _useTargetAsStartPoint:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetDescription:
   type: boolean
   description: use Target Description
@@ -13359,6 +14319,7 @@ _useTargetDescription:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetDirect:
   type: boolean
   description: use Target Direct
@@ -13371,6 +14332,7 @@ _useTargetDirect:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetHost:
   type: boolean
   description: use Target Host
@@ -13383,6 +14345,7 @@ _useTargetHost:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetId:
   type: boolean
   description: use Target Id
@@ -13395,6 +14358,7 @@ _useTargetId:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetName:
   type: boolean
   description: use Target Name
@@ -13407,6 +14371,7 @@ _useTargetName:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetOldTile:
   type: boolean
   description: use Target Old Tile
@@ -13419,6 +14384,7 @@ _useTargetOldTile:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetPosition:
   type: boolean
   description: use Target Position
@@ -13431,6 +14397,7 @@ _useTargetPosition:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetRangeInsteadOfSource:
   type: boolean
   description: use Target Range Instead Of Source
@@ -13443,6 +14410,7 @@ _useTargetRangeInsteadOfSource:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetRootTile:
   type: boolean
   description: use Target Root Tile
@@ -13455,6 +14423,7 @@ _useTargetRootTile:
       args:
         - $input
         - $ctx
+      generated: true
 _useTargetRoottile:
   type: boolean
   description: use Target Roottile
@@ -13467,6 +14436,7 @@ _useTargetRoottile:
       args:
         - $input
         - $ctx
+      generated: true
 _useTileAsTarget:
   type: boolean
   description: use Tile As Target
@@ -13479,6 +14449,7 @@ _useTileAsTarget:
       args:
         - $input
         - $ctx
+      generated: true
 _useTileInSnapShot:
   type: boolean
   description: use Tile In Snap Shot
@@ -13491,6 +14462,7 @@ _useTileInSnapShot:
       args:
         - $input
         - $ctx
+      generated: true
 _useTokenAsSourceCard:
   type: boolean
   description: use Token As Source Card
@@ -13503,6 +14475,7 @@ _useTokenAsSourceCard:
       args:
         - $input
         - $ctx
+      generated: true
 _useTokenAsSouurceCard:
   type: boolean
   description: use Token As Souurce Card
@@ -13515,6 +14488,7 @@ _useTokenAsSouurceCard:
       args:
         - $input
         - $ctx
+      generated: true
 _useTokenKeyDirectly:
   type: boolean
   description: use Token Key Directly
@@ -13527,6 +14501,7 @@ _useTokenKeyDirectly:
       args:
         - $input
         - $ctx
+      generated: true
 _useTraitBBToAdd:
   type: boolean
   description: use Trait B B To Add
@@ -13539,6 +14514,7 @@ _useTraitBBToAdd:
       args:
         - $input
         - $ctx
+      generated: true
 _useUid:
   type: boolean
   description: use Uid
@@ -13551,6 +14527,7 @@ _useUid:
       args:
         - $input
         - $ctx
+      generated: true
 _useValidStackCount:
   type: boolean
   description: use Valid Stack Count
@@ -13563,6 +14540,7 @@ _useValidStackCount:
       args:
         - $input
         - $ctx
+      generated: true
 _useValueKey:
   type: boolean
   description: use Value Key
@@ -13575,6 +14553,7 @@ _useValueKey:
       args:
         - $input
         - $ctx
+      generated: true
 _validSource:
   type: string
   description: valid Source
@@ -13607,6 +14586,7 @@ _valueFP:
       args:
         - $input
         - $ctx
+      generated: true
 _valueKey:
   type: null | string
   description: value Key
@@ -13627,6 +14607,7 @@ _valueToAssign:
       args:
         - $input
         - $ctx
+      generated: true
 _valueToCompare:
   type: number
   description: value To Compare
@@ -13639,6 +14620,7 @@ _valueToCompare:
       args:
         - $input
         - $ctx
+      generated: true
 _valueToCompareKey:
   type: string
   description: value To Compare Key
@@ -13659,6 +14641,7 @@ _velocity:
       args:
         - $input
         - $ctx
+      generated: true
 _verifyBeforeCreate:
   type: boolean
   description: verify Before Create
@@ -13671,6 +14654,7 @@ _verifyBeforeCreate:
       args:
         - $input
         - $ctx
+      generated: true
 _viaHostBuffStackCount:
   type: boolean
   description: via Host Buff Stack Count
@@ -13683,6 +14667,7 @@ _viaHostBuffStackCount:
       args:
         - $input
         - $ctx
+      generated: true
 _viaStandsCount:
   type: boolean
   description: via Stands Count
@@ -13695,6 +14680,7 @@ _viaStandsCount:
       args:
         - $input
         - $ctx
+      generated: true
 _vibrato:
   type: number
   description: vibrato
@@ -13707,6 +14693,7 @@ _vibrato:
       args:
         - $input
         - $ctx
+      generated: true
 _waitFirstPeriod:
   type: boolean
   description: wait First Period
@@ -13719,6 +14706,7 @@ _waitFirstPeriod:
       args:
         - $input
         - $ctx
+      generated: true
 _waitTime:
   type: number
   description: wait Time
@@ -13731,6 +14719,7 @@ _waitTime:
       args:
         - $input
         - $ctx
+      generated: true
 _weightNum:
   type: number
   description: weight Num
@@ -13743,6 +14732,7 @@ _weightNum:
       args:
         - $input
         - $ctx
+      generated: true
 _weightNum2:
   type: number
   description: weight Num2
@@ -13755,6 +14745,7 @@ _weightNum2:
       args:
         - $input
         - $ctx
+      generated: true
 _weightNum2Key:
   type: string
   description: weight Num2 Key
@@ -13771,6 +14762,7 @@ _wholeTraceInstead:
       args:
         - $input
         - $ctx
+      generated: true
 _withdrawIfRallyPoint:
   type: boolean
   description: withdraw If Rally Point
@@ -13783,6 +14775,7 @@ _withdrawIfRallyPoint:
       args:
         - $input
         - $ctx
+      generated: true
 _withdrawSource:
   type: boolean
   description: withdraw Source
@@ -13795,6 +14788,7 @@ _withdrawSource:
       args:
         - $input
         - $ctx
+      generated: true
 _withoutSwitchToBlinkState:
   type: boolean
   description: without Switch To Blink State
@@ -13807,6 +14801,7 @@ _withoutSwitchToBlinkState:
       args:
         - $input
         - $ctx
+      generated: true
 _writeModifyValueToBB:
   type: boolean
   description: write Modify Value To B B
@@ -13819,6 +14814,7 @@ _writeModifyValueToBB:
       args:
         - $input
         - $ctx
+      generated: true
 _writeToBBKey:
   type: null | string
   description: write To B B Key
@@ -13839,6 +14835,7 @@ _zoomDuration:
       args:
         - $input
         - $ctx
+      generated: true
 color:
   type: object
   description: color
@@ -13850,6 +14847,7 @@ color:
     args:
       - $input
       - $ctx
+    generated: true
 direction:
   type: string
   description: direction
@@ -13866,6 +14864,7 @@ disableCameraMoveDirectly:
       args:
         - $input
         - $ctx
+      generated: true
 filterMapLayer:
   type: boolean
   description: filter Map Layer
@@ -13878,6 +14877,7 @@ filterMapLayer:
       args:
         - $input
         - $ctx
+      generated: true
 filterSourcePlayerSide:
   type: boolean
   description: filter Source Player Side
@@ -13890,6 +14890,7 @@ filterSourcePlayerSide:
       args:
         - $input
         - $ctx
+      generated: true
 filterTargetPlayerSide:
   type: boolean
   description: filter Target Player Side
@@ -13902,6 +14903,7 @@ filterTargetPlayerSide:
       args:
         - $input
         - $ctx
+      generated: true
 fromAbilityBlackBoard:
   type: boolean
   description: from Ability Black Board
@@ -13914,6 +14916,7 @@ fromAbilityBlackBoard:
       args:
         - $input
         - $ctx
+      generated: true
 gameStage:
   type: string
   description: game Stage
@@ -13934,6 +14937,7 @@ isAND:
       args:
         - $input
         - $ctx
+      generated: true
 isMin:
   type: boolean
   description: is Min
@@ -13946,6 +14950,7 @@ isMin:
       args:
         - $input
         - $ctx
+      generated: true
 isSet:
   type: boolean
   description: is Set
@@ -13958,6 +14963,7 @@ isSet:
       args:
         - $input
         - $ctx
+      generated: true
 originalMaxCount:
   type: boolean
   description: original Max Count
@@ -13970,6 +14976,7 @@ originalMaxCount:
       args:
         - $input
         - $ctx
+      generated: true
 useIdToFindHost:
   type: boolean
   description: use Id To Find Host
@@ -13982,3 +14989,4 @@ useIdToFindHost:
       args:
         - $input
         - $ctx
+      generated: true

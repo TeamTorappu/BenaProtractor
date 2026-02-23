@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _modes:
     type: array
     description: modes
@@ -26,3 +28,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: rosmon_token_s3_mark
         display: false
         parse:
           type: literal
           return: rosmon_token_s3_mark
+          generated: true
   _checkContainsBuff:
     type: boolean
     description: check Contains Buff
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _checkModes:
     type: boolean
     description: check Modes
@@ -42,12 +46,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _modes:
     type: array
     description: modes
@@ -58,3 +64,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

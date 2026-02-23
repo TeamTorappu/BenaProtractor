@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 3
+          generated: true
   _toastTypeRL05:
     type: string
     description: toast Type R L05
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: GOLD_STEAL
+          generated: true

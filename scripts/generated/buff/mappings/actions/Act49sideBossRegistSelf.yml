@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: head
+          generated: true
       -
         value: left_hand
         display: false
         parse:
           type: literal
           return: left_hand
+          generated: true
       -
         value: tail
         display: false
         parse:
           type: literal
           return: tail
+          generated: true
   _partNameKey:
     type: string
     description: part Name Key
@@ -32,6 +35,7 @@ fields:
         parse:
           type: literal
           return: part_name
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -42,3 +46,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

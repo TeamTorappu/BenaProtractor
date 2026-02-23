@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceId:
     type: string
     description: source Id
@@ -26,48 +28,56 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: trap_102_mhwrbg
         display: false
         parse:
           type: literal
           return: trap_102_mhwrbg
+          generated: true
       -
         value: trap_138_winstone
         display: false
         parse:
           type: literal
           return: trap_138_winstone
+          generated: true
       -
         value: trap_173_slfrut
         display: false
         parse:
           type: literal
           return: trap_173_slfrut
+          generated: true
       -
         value: trap_174_smfrut
         display: false
         parse:
           type: literal
           return: trap_174_smfrut
+          generated: true
       -
         value: trap_175_frfrut
         display: false
         parse:
           type: literal
           return: trap_175_frfrut
+          generated: true
       -
         value: trap_176_frutwn
         display: false
         parse:
           type: literal
           return: trap_176_frutwn
+          generated: true
       -
         value: trap_177_tentcl
         display: false
         parse:
           type: literal
           return: trap_177_tentcl
+          generated: true
   _target:
     type: string
     description: target
@@ -78,12 +88,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _useBlackboardId:
     type: boolean
     description: use Blackboard Id
@@ -94,9 +106,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

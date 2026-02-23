@@ -6,585 +6,683 @@ values:
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: COOPERATE_PLAYER_REVIVE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: HALF_IDLE_GAIN_EQUIP
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: HALF_IDLE_GAIN_TRAP
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ABILITY_CAST_ON_TARGET
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ABILITY_FINISH
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ABILITY_INTERRUPTED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ABILITY_SPELL_ON
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ABILITY_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ABNORMAL_FLAG_DIRTY
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_AFTER_ATTACK
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_AFTER_CALCULATE_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_AFTER_OUTPUT_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_AFTER_OUTPUT_ELEMENT_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_AFTER_OUTPUT_HEAL
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_APPLIED_MODIFIER
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_APPLYING_MODIFIER
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_APPLYING_SKIPPED_MODIFIER
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_AUTO_CHESS_MODE_CHANGED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_ABILITY_SPELL_ON
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_APPEAR
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_APPLYING_MODIFIER
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_ATTACK
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_DIRECTION_CHANGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_DISAPPEAR
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_EP_BREAK_FINISH
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_EP_BREAK_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_EXIT_LEVITATE_STATE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_EXIT_UNBALANCED_STATE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_FALLDOWN
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_TARGET_APPLY_MODIFIER
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_TRY_SET_EP_ZERO
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEFORE_TRY_SET_HP_ZERO
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BEING_CALCULATE_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BLOCK_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BOSS_WAVE_WILL_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BUFF_DISABLE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BUFF_ENABLE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BUFF_FINISH
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BUFF_LATE_ENABLE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BUFF_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_BUFF_TRIGGER
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_CALCULATE_CACHED_PROJECTILE_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_CALCULATE_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_COLLIDE_WITH_HIGHLAND
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_DIRECTION_CHANGED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_END_PULLING
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ENTER_LEVITATE_STATE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ENTER_MAGICCIRCUIT
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ENTER_UNBALANCED_STATE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ENTITY_WILL_OVERLAP
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_EP_BREAK_FINISH
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_EP_BREAK_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_ES_OVER_ZERO
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_EVADE_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_GAME_OVER
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_HALF_IDLE_KAWA_CLEANED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_HALF_IDLE_KAWA_POLLUTED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_HALF_IDLE_TRAP_CHECK_UPGRADE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_LEAVE_MAGICCIRCUIT
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_LEGION_MODE_DANGER_LEVEL_REFRESH
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_LEGION_MODE_DRAW_CARD
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_MAKE_ENEMY_UNBALANCED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_MOTION_MODE_CHANGED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OTHER_BUFF_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OTHER_RESISTABLE_BUFF_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OUTPUT_ATK_OR_HEAL
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OUTPUT_ATK_OR_HEAL_EACH_SPELL
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OUTPUT_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OUTPUT_MODIFIER
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_BEFORE_DEAD
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_BLOCKEE_CHANGED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_BLOCK_MODE_CHANGED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_BORN
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_DYING
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_FINISH
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_HP_FULL
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_KILLED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_KILLED_BY_MAIN_TARGET
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_LOCATE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_OVERLAPPED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_POST_BORN
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_REACH_EXIT
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_OWNER_ROOT_TILE_CHANGED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_PALSY_OVERFLOW
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_POST_TRY_SET_HP_ZERO
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_SANDBOX_OWNER_RES_CHANGED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_SKILL_CAST_SUCCEED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_SKILL_FINISH
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_SKILL_RETRIGGERED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_SKILL_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_STAGE_END
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_TAKE_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_TAKE_EP_DAMAGE
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_TARGET_KILLED
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_TOGGLE_SKILL_START
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_TRIGGER_PALSY
     display: false
     parse:
       type: literal
       return: true
+      generated: true
   -
     value: ON_UNIT_SWITCH_MODE
     display: false
     parse:
       type: literal
       return: true
+      generated: true

@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _checkBuildableType:
     type: boolean
     description: check Buildable Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _createEffectOnTokenTile:
     type: boolean
     description: create Effect On Token Tile
@@ -30,12 +32,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _forceSpawn:
     type: boolean
     description: force Spawn
@@ -46,6 +50,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _ignoreAdvancedBuildableMask:
     type: boolean
     description: ignore Advanced Buildable Mask
@@ -56,6 +61,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _ignoreSourceType:
     type: boolean
     description: ignore Source Type
@@ -66,12 +72,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _ignoreTargetType:
     type: boolean
     description: ignore Target Type
@@ -82,6 +90,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _loadTileFromCharacterSharedData:
     type: boolean
     description: load Tile From Character Shared Data
@@ -92,6 +101,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _locatedColBBKey:
     type: string
     description: located Col B B Key
@@ -102,6 +112,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _locatedRowBBKey:
     type: string
     description: located Row B B Key
@@ -112,6 +123,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _playerSide:
     type: string
     description: player Side
@@ -122,6 +134,7 @@ fields:
         parse:
           type: literal
           return: DEFAULT
+          generated: true
   _refreshTokenCardCooldown:
     type: boolean
     description: refresh Token Card Cooldown
@@ -132,6 +145,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _respawnSameToken:
     type: boolean
     description: respawn Same Token
@@ -142,12 +156,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -158,18 +174,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _spawnTokenFromCards:
     type: boolean
     description: spawn Token From Cards
@@ -180,12 +199,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _spawnTokenKey:
     type: null | string
     description: spawn Token Key
@@ -196,18 +217,21 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: token_10015_dusk_drgn
         display: false
         parse:
           type: literal
           return: token_10015_dusk_drgn
+          generated: true
       -
         value: trap_287_baizi
         display: false
         parse:
           type: literal
           return: trap_287_baizi
+          generated: true
   _spawnedTokenSideType:
     type: string
     description: spawned Token Side Type
@@ -218,12 +242,14 @@ fields:
         parse:
           type: literal
           return: ENEMY
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
   _specifierPlayerSideType:
     type: boolean
     description: specifier Player Side Type
@@ -234,6 +260,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _specifierSideType:
     type: boolean
     description: specifier Side Type
@@ -244,12 +271,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -260,18 +289,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MAIN_TARGET
         display: false
         parse:
           type: literal
           return: MAIN_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _tileEffect:
     type: null | string
     description: tile Effect
@@ -282,18 +314,21 @@ fields:
         parse:
           type: literal
           return: enemy_cswrtr_skill_02_range
+          generated: true
       -
         value: enemy_xbrok_range_1
         display: false
         parse:
           type: literal
           return: enemy_xbrok_range_1
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _tileFromBlackboard:
     type: boolean
     description: tile From Blackboard
@@ -304,6 +339,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _tileFromSnapshot:
     type: boolean
     description: tile From Snapshot
@@ -314,6 +350,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _tokenToSpawn:
     type: object
     description: token To Spawn
@@ -324,6 +361,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _useTokenKeyDirectly:
     type: boolean
     description: use Token Key Directly
@@ -334,9 +372,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

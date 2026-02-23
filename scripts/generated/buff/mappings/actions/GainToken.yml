@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _extraAudioKey:
     type: null | string
     description: extra Audio Key
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: act36side_gain
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _extraLogKey:
     type: null | string
     description: extra Log Key
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: act36side_gain
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _getPlayerSideFromActionTargetType:
     type: boolean
     description: get Player Side From Action Target Type
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _rechargeTiming:
     type: string
     description: recharge Timing
@@ -68,6 +75,7 @@ fields:
         parse:
           type: literal
           return: NORMAL
+          generated: true
   _spiltTokenKey:
     type: boolean
     description: spilt Token Key
@@ -78,6 +86,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -88,15 +97,18 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

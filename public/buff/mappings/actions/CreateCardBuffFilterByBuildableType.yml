@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: MELEE
+          generated: true
   _cardBuffKey:
     type: null
     description: card Buff Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _expectToken:
     type: boolean
     description: expect Token
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN_SYNC_WITH_BUFF
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -80,3 +87,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

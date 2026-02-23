@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _additionalBuff:
     type: array
     description: additional Buff
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffSource:
     type: string
     description: buff Source
@@ -30,12 +32,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _checkMotionMode:
     type: string
     description: check Motion Mode
@@ -46,6 +50,7 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
   _delayTime:
     type: number
     description: delay Time
@@ -56,6 +61,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _dontBlockWave:
     type: boolean
     description: dont Block Wave
@@ -66,6 +72,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _enemyKey:
     type: null | string
     description: enemy Key
@@ -76,18 +83,21 @@ fields:
         parse:
           type: literal
           return: enemy_1436_dsdivi
+          generated: true
       -
         value: enemy_1436_dsdivi_2
         display: false
         parse:
           type: literal
           return: enemy_1436_dsdivi_2
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _ignoreOffset:
     type: boolean
     description: ignore Offset
@@ -98,12 +108,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _managedByScheduler:
     type: boolean
     description: managed By Scheduler
@@ -114,12 +126,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _noSourceBuff:
     type: object
     description: no Source Buff
@@ -130,6 +144,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _offset:
     type: object
     description: offset
@@ -140,6 +155,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _offsetXKey:
     type: null | string
     description: offset X Key
@@ -150,12 +166,14 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: offset_x
         display: false
         parse:
           type: literal
           return: offset_x
+          generated: true
   _offsetYKey:
     type: null | string
     description: offset Y Key
@@ -166,12 +184,14 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: offset_y
         display: false
         parse:
           type: literal
           return: offset_y
+          generated: true
   _onlySummonOneInTheSamePlace:
     type: boolean
     description: only Summon One In The Same Place
@@ -182,6 +202,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _passableMask:
     type: string
     description: passable Mask
@@ -192,12 +213,14 @@ fields:
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: WALK_ONLY
         display: false
         parse:
           type: literal
           return: WALK_ONLY
+          generated: true
   _randomDelayRange:
     type: number
     description: random Delay Range
@@ -208,6 +231,7 @@ fields:
         parse:
           type: literal
           return: 0.5
+          generated: true
   _randomOffsetBound:
     type: number
     description: random Offset Bound
@@ -218,6 +242,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _skipCheckPoint:
     type: boolean
     description: skip Check Point
@@ -228,6 +253,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _source:
     type: string
     description: source
@@ -238,6 +264,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _spawnOnHostRootTile:
     type: boolean
     description: spawn On Host Root Tile
@@ -248,6 +275,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _stopSummonIfHostDead:
     type: boolean
     description: stop Summon If Host Dead
@@ -258,6 +286,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _summonCount:
     type: number
     description: summon Count
@@ -268,6 +297,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -278,6 +308,7 @@ fields:
         parse:
           type: literal
           return: TARGET
+          generated: true
   _trySummonOutsideWhenInObstacle:
     type: boolean
     description: try Summon Outside When In Obstacle
@@ -288,6 +319,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -298,12 +330,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useLocalUnharmfulFlag:
     type: boolean
     description: use Local Unharmful Flag
@@ -314,12 +348,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useMapPosition:
     type: boolean
     description: use Map Position
@@ -330,12 +366,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useOffsetForEach:
     type: boolean
     description: use Offset For Each
@@ -346,12 +384,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useOffsetInBB:
     type: boolean
     description: use Offset In B B
@@ -362,12 +402,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useRandomDelay:
     type: boolean
     description: use Random Delay
@@ -378,6 +420,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useTargetPosition:
     type: boolean
     description: use Target Position
@@ -388,3 +431,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

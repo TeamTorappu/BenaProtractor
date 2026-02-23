@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: RANGED
+          generated: true
   _effectKey:
     type: string
     description: effect Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: trap_aegiret_01_buff_01
+          generated: true
   _holdIt:
     type: boolean
     description: hold It
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: x-5
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _specifyBuildType:
     type: boolean
     description: specify Build Type
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _useAttackRange:
     type: boolean
     description: use Attack Range
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _verifyBeforeCreate:
     type: boolean
     description: verify Before Create
@@ -80,3 +87,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

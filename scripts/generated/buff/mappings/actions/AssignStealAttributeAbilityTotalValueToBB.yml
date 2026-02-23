@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: StealAtk
+          generated: true
       -
         value: StealDef
         display: false
         parse:
           type: literal
           return: StealDef
+          generated: true
       -
         value: StealHp
         display: false
         parse:
           type: literal
           return: StealHp
+          generated: true
   _assignStealMaxValue:
     type: boolean
     description: assign Steal Max Value
@@ -32,12 +35,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -48,12 +53,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _useFirstActiveAbility:
     type: boolean
     description: use First Active Ability
@@ -64,3 +71,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _tileType:
     type: string
     description: tile Type
@@ -20,21 +21,25 @@ fields:
         parse:
           type: literal
           return: Carp
+          generated: true
       -
         value: Empty
         display: false
         parse:
           type: literal
           return: Empty
+          generated: true
       -
         value: None
         display: false
         parse:
           type: literal
           return: None
+          generated: true
       -
         value: Pure
         display: false
         parse:
           type: literal
           return: Pure
+          generated: true

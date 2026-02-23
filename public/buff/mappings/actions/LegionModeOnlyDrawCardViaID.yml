@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: PENDING
+          generated: true
       -
         value: USED
         display: false
         parse:
           type: literal
           return: USED
+          generated: true
   _id:
     type: string
     description: id
@@ -26,3 +28,4 @@ fields:
         parse:
           type: literal
           return: trap_737_merchaa
+          generated: true

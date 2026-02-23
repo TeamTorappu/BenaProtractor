@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _buffNameOfBlackboard:
     type: null | string
     description: buff Name Of Blackboard
@@ -26,18 +28,21 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: "syskad_t[hpsave]"
         display: false
         parse:
           type: literal
           return: "syskad_t[hpsave]"
+          generated: true
   _saveType:
     type: string
     description: save Type
@@ -48,12 +53,14 @@ fields:
         parse:
           type: literal
           return: HP
+          generated: true
       -
         value: LOST_HP
         display: false
         parse:
           type: literal
           return: LOST_HP
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -64,9 +71,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true

@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: MELEE
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: RANGED
         display: false
         parse:
           type: literal
           return: RANGED
+          generated: true
   _attackType:
     type: string
     description: attack Type
@@ -32,6 +35,7 @@ fields:
         parse:
           type: literal
           return: BUFF
+          generated: true
   _damageScaleKey:
     type: string
     description: damage Scale Key
@@ -42,12 +46,14 @@ fields:
         parse:
           type: literal
           return: atk_scale
+          generated: true
       -
         value: atk_scale_init
         display: false
         parse:
           type: literal
           return: atk_scale_init
+          generated: true
   _damageType:
     type: string
     description: damage Type
@@ -58,12 +64,14 @@ fields:
         parse:
           type: literal
           return: MAGICAL
+          generated: true
       -
         value: PHYSICAL
         display: false
         parse:
           type: literal
           return: PHYSICAL
+          generated: true
   _modifierKey:
     type: string
     description: modifier Key
@@ -74,6 +82,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _useDynamicAttackType:
     type: boolean
     description: use Dynamic Attack Type
@@ -84,3 +93,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

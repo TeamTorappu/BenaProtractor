@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _markEnemyKilled:
     type: boolean
     description: mark Enemy Killed
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sideType:
     type: string
     description: side Type
@@ -42,12 +46,14 @@ fields:
         parse:
           type: literal
           return: ALLY
+          generated: true
       -
         value: ENEMY
         display: false
         parse:
           type: literal
           return: ENEMY
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -58,3 +64,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

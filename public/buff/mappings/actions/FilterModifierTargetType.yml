@@ -10,15 +10,18 @@ fields:
         parse:
           type: literal
           return: EP
+          generated: true
       -
         value: HP
         display: false
         parse:
           type: literal
           return: HP
+          generated: true
       -
         value: SP
         display: false
         parse:
           type: literal
           return: SP
+          generated: true

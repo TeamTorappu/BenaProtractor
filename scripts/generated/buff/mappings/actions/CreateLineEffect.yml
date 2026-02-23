@@ -10,72 +10,84 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: enemy_acloon_skill_loop_1_line
         display: false
         parse:
           type: literal
           return: enemy_acloon_skill_loop_1_line
+          generated: true
       -
         value: enemy_acstmk_attack_line
         display: false
         parse:
           type: literal
           return: enemy_acstmk_attack_line
+          generated: true
       -
         value: enemy_cjfish_line
         display: false
         parse:
           type: literal
           return: enemy_cjfish_line
+          generated: true
       -
         value: enemy_icecage_line_01
         display: false
         parse:
           type: literal
           return: enemy_icecage_line_01
+          generated: true
       -
         value: enemy_sgactr_p2_absorb_line_01
         display: false
         parse:
           type: literal
           return: enemy_sgactr_p2_absorb_line_01
+          generated: true
       -
         value: enemy_sgactr_p2_absorb_line_02
         display: false
         parse:
           type: literal
           return: enemy_sgactr_p2_absorb_line_02
+          generated: true
       -
         value: etlchi_skill_03_line_01
         display: false
         parse:
           type: literal
           return: etlchi_skill_03_line_01
+          generated: true
       -
         value: lemuen_skill_02_trail_01
         display: false
         parse:
           type: literal
           return: lemuen_skill_02_trail_01
+          generated: true
       -
         value: logos_skill2_line_01
         display: false
         parse:
           type: literal
           return: logos_skill2_line_01
+          generated: true
       -
         value: titi_skill_03_line_01
         display: false
         parse:
           type: literal
           return: titi_skill_03_line_01
+          generated: true
       -
         value: trap_cdsoul_line
         display: false
         parse:
           type: literal
           return: trap_cdsoul_line
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -86,12 +98,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -102,12 +116,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _useAttackPlaybackSpeed:
     type: boolean
     description: use Attack Playback Speed
@@ -118,6 +134,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useHostAsTarget:
     type: boolean
     description: use Host As Target
@@ -128,12 +145,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useSourceFaceVactor:
     type: boolean
     description: use Source Face Vactor
@@ -144,6 +163,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useTargetAsEffectSource:
     type: boolean
     description: use Target As Effect Source
@@ -154,9 +174,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

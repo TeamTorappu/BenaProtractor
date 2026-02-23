@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: Blink
+          generated: true
       -
         value: DoomSelector
         display: false
         parse:
           type: literal
           return: DoomSelector
+          generated: true
   _audioSignal:
     type: string
     description: audio Signal
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: tile_pollute
         display: false
         parse:
           type: literal
           return: tile_pollute
+          generated: true
   _modeIndex:
     type: number
     description: mode Index
@@ -42,6 +46,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _operation:
     type: string
     description: operation
@@ -52,6 +57,7 @@ fields:
         parse:
           type: literal
           return: INDEX
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -62,6 +68,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -72,3 +79,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

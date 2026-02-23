@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _loopBody:
     type: array
     description: loop Body
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _loopCnt:
     type: number
     description: loop Cnt
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _loopCntKey:
     type: null | string
     description: loop Cnt Key
@@ -40,12 +43,14 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: times
         display: false
         parse:
           type: literal
           return: times
+          generated: true
   _stopWhenPreviousSucceed:
     type: boolean
     description: stop When Previous Succeed
@@ -56,12 +61,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useMappingList:
     type: boolean
     description: use Mapping List
@@ -72,9 +79,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

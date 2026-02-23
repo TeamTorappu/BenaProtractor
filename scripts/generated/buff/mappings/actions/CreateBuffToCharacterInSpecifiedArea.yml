@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _ignoreToken:
     type: boolean
     description: ignore Token
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _ignoreTrap:
     type: boolean
     description: ignore Trap
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -46,12 +50,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isExclude:
     type: boolean
     description: is Exclude
@@ -62,6 +68,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _specifyByGridColumn:
     type: boolean
     description: specify By Grid Column
@@ -72,9 +79,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

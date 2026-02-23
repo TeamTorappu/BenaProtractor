@@ -10,15 +10,18 @@ fields:
         parse:
           type: literal
           return: GE
+          generated: true
       -
         value: GT
         display: false
         parse:
           type: literal
           return: GT
+          generated: true
       -
         value: LT
         display: false
         parse:
           type: literal
           return: LT
+          generated: true

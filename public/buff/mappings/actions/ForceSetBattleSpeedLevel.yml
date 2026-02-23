@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _speedLevel:
     type: string
     description: speed Level
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: FAST
+          generated: true

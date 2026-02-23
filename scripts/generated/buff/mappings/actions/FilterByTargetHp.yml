@@ -10,24 +10,28 @@ fields:
         parse:
           type: literal
           return: EQUALS
+          generated: true
       -
         value: GT
         display: false
         parse:
           type: literal
           return: GT
+          generated: true
       -
         value: LE
         display: false
         parse:
           type: literal
           return: LE
+          generated: true
       -
         value: LT
         display: false
         parse:
           type: literal
           return: LT
+          generated: true
   _hpValue:
     type: object
     description: hp Value
@@ -38,6 +42,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -48,21 +53,25 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

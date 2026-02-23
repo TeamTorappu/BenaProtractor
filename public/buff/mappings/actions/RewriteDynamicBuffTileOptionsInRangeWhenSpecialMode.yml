@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: WOODRD_HOLE
+          generated: true
   _buildableType:
     type: string
     description: buildable Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: MELEE
+          generated: true
   _exclude:
     type: boolean
     description: exclude
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isObstacleLike:
     type: boolean
     description: is Obstacle Like
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _keepCurrentAdvancedBuildableMask:
     type: boolean
     description: keep Current Advanced Buildable Mask
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _keepCurrentBuildableType:
     type: boolean
     description: keep Current Buildable Type
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _keepCurrentObstacleLike:
     type: boolean
     description: keep Current Obstacle Like
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _keepCurrentPassableMask:
     type: boolean
     description: keep Current Passable Mask
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _killLocatedIfNotBuildable:
     type: boolean
     description: kill Located If Not Buildable
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _modes:
     type: array
     description: modes
@@ -100,6 +109,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _passableMask:
     type: string
     description: passable Mask
@@ -110,6 +120,7 @@ fields:
         parse:
           type: literal
           return: FLY_ONLY
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -120,6 +131,7 @@ fields:
         parse:
           type: literal
           return: x-5
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -130,3 +142,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

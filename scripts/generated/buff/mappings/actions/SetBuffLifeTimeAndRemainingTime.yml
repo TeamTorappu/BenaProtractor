@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: MAIN_BUFF
+          generated: true
   _lifeTimeKey:
     type: string
     description: life Time Key
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: new_duration
+          generated: true

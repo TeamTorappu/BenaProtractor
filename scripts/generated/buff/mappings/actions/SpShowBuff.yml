@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: USE_BLACKBOARD_DELTA_AS_ADDTION
         display: false
         parse:
           type: literal
           return: USE_BLACKBOARD_DELTA_AS_ADDTION
+          generated: true
       -
         value: USE_BLACKBOARD_DELTA_AS_RATIO
         display: false
         parse:
           type: literal
           return: USE_BLACKBOARD_DELTA_AS_RATIO
+          generated: true
   _isSelf:
     type: boolean
     description: is Self
@@ -32,6 +35,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _isSkillCountDown:
     type: boolean
     description: is Skill Count Down
@@ -42,12 +46,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _spShowBuffKey:
     type: null | string
     description: sp Show Buff Key
@@ -58,42 +64,49 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: enemy_ristar_hit_counter
         display: false
         parse:
           type: literal
           return: enemy_ristar_hit_counter
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: "oblvns_s_2[fever_eff]"
         display: false
         parse:
           type: literal
           return: "oblvns_s_2[fever_eff]"
+          generated: true
       -
         value: trap_xdmac1_s
         display: false
         parse:
           type: literal
           return: trap_xdmac1_s
+          generated: true
       -
         value: trap_xdmac2_s
         display: false
         parse:
           type: literal
           return: trap_xdmac2_s
+          generated: true
       -
         value: trap_xdmac3_s
         display: false
         parse:
           type: literal
           return: trap_xdmac3_s
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -104,9 +117,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

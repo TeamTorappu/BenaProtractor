@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: S2Ability
+          generated: true
       -
         value: S2MultiMeleeAttack
         display: false
         parse:
           type: literal
           return: S2MultiMeleeAttack
+          generated: true
   _extendTimeKey:
     type: string
     description: extend Time Key
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: duration
+          generated: true
       -
         value: s2_extend_time
         display: false
         parse:
           type: literal
           return: s2_extend_time
+          generated: true
   _keepPassedTime:
     type: boolean
     description: keep Passed Time
@@ -42,6 +46,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _waitFirstPeriod:
     type: boolean
     description: wait First Period
@@ -68,3 +75,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

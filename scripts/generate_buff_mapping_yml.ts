@@ -233,6 +233,7 @@ for (const field of baseKeys) {
                 parse: {
                     type: "literal",
                     return: value,
+                    generated: true,
                 },
             }));
     }
@@ -247,6 +248,7 @@ indexDoc.templateKey = {
             type: "fn",
             name: "parseTemplateKey",
             args: ["$input", "$ctx"],
+            generated: true,
         },
     },
 };
@@ -265,6 +267,7 @@ const eventListDoc = {
             parse: {
                 type: "literal",
                 return: true,
+                generated: true,
             },
         })),
 };
@@ -289,6 +292,7 @@ for (const field of actionFieldKeys) {
             type: "fn",
             name: detectParseFn(field),
             args: ["$input", "$ctx"],
+            generated: true,
         };
     } else {
         actionKeysFieldDoc.values = Array.from(stat.values)
@@ -299,6 +303,7 @@ for (const field of actionFieldKeys) {
                 parse: {
                     type: "literal",
                     return: value,
+                    generated: true,
                 },
             }));
     }
@@ -326,6 +331,7 @@ for (const field of actionFieldKeys) {
             type: "fn",
             name: detectParseFn(field),
             args: ["$input", "$ctx"],
+            generated: true,
         };
     }
     if (typeString === "boolean") {
@@ -335,6 +341,7 @@ for (const field of actionFieldKeys) {
                 type: "fn",
                 name: "parseBoolean",
                 args: ["$input", "$ctx"],
+                generated: true,
             },
         };
     } else if (typeString === "number") {
@@ -344,6 +351,7 @@ for (const field of actionFieldKeys) {
                 type: "fn",
                 name: "parseNumber",
                 args: ["$input", "$ctx"],
+                generated: true,
             },
         };
     }
@@ -387,6 +395,7 @@ for (const actionType of actionTypes) {
                 type: "fn",
                 name: detectParseFn(field, actionType),
                 args: ["$input", "$ctx"],
+                generated: true,
             };
         } else {
             fieldDoc.values = Array.from(stat.values)
@@ -397,6 +406,7 @@ for (const actionType of actionTypes) {
                     parse: {
                         type: "literal",
                         return: value,
+                        generated: true,
                     },
                 }));
         }
@@ -440,6 +450,7 @@ for (const fieldName of allComplexFields) {
                             type: "fn",
                             name: fnName,
                             args: ["$input", "$ctx"],
+                            generated: true,
                         },
                     })),
             };
@@ -459,6 +470,7 @@ for (const fieldName of allComplexFields) {
                     type: "fn",
                     name: baseFnName,
                     args: ["$input", "$ctx"],
+                    generated: true,
                 },
             }));
     }

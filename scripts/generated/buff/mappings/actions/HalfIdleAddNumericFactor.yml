@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: Exp
+          generated: true
       -
         value: ExpBook
         display: false
         parse:
           type: literal
           return: ExpBook
+          generated: true
   _calcType:
     type: string
     description: calc Type
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: MUL
+          generated: true
   _key:
     type: string
     description: key
@@ -36,18 +39,21 @@ fields:
         parse:
           type: literal
           return: exp_book_gain_burst
+          generated: true
       -
         value: exp_gain_burst
         display: false
         parse:
           type: literal
           return: exp_gain_burst
+          generated: true
       -
         value: "exp_gain_burst[support]"
         display: false
         parse:
           type: literal
           return: "exp_gain_burst[support]"
+          generated: true
   _validSource:
     type: string
     description: valid Source
@@ -58,12 +64,14 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: ENEMY
         display: false
         parse:
           type: literal
           return: ENEMY
+          generated: true
   _valueKey:
     type: string
     description: value Key
@@ -74,3 +82,4 @@ fields:
         parse:
           type: literal
           return: scale
+          generated: true

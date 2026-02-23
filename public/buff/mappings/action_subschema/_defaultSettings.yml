@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"advanced_interval","val":0.20000000298023224,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"alive","val":0,"valStr":null,"overrideIfExists":false},{"key":"one","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -32,6 +34,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"anim_duration","val":1.600000023841858,"valStr":null,"overrideIfExists":false},{"key":"duration","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -41,6 +44,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"atk","val":0,"valStr":null,"overrideIfExists":false},{"key":"def","val":0,"valStr":null,"overrideIfExists":false},{"key":"attack_speed","val":0,"valStr":null,"overrideIfExists":false},{"key":"max_hp","val":0,"valStr":null,"overrideIfExists":false},{"key":"hp_recovery_per_sec","val":0,"valStr":null,"overrideIfExists":false},{"key":"sp_recovery_per_sec","val":0,"valStr":null,"overrideIfExists":false},{"key":"max_stack","val":200,"valStr":null,"overrideIfExists":true}]"
         display: false
@@ -50,6 +54,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"atk_scale","val":0,"valStr":null,"overrideIfExists":false},{"key":"tri_cnt","val":0,"valStr":null,"overrideIfExists":false},{"key":"one","val":1,"valStr":null,"overrideIfExists":false},{"key":"adanced_interval","val":0.10000000149011612,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -59,6 +64,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"attack_time","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -68,6 +74,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"card_anim","val":0,"valStr":"plugin_common_buff_refresh_once","overrideIfExists":false}]"
         display: false
@@ -77,6 +84,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"cnt","val":0,"valStr":null,"overrideIfExists":false},{"key":"one","val":1,"valStr":null,"overrideIfExists":false},{"key":"all_cnt","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -86,6 +94,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"cold","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -95,6 +104,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"cost_check","val":0,"valStr":null,"overrideIfExists":false},{"key":"tmp","val":0,"valStr":null,"overrideIfExists":false},{"key":"one","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -104,6 +114,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"dynamic","val":0,"valStr":null,"overrideIfExists":false},{"key":"max_hp","val":0,"valStr":null,"overrideIfExists":false},{"key":"hp_ratio","val":0,"valStr":null,"overrideIfExists":false},{"key":"zero","val":0,"valStr":null,"overrideIfExists":false},{"key":"value","val":0,"valStr":null,"overrideIfExists":false},{"key":"card_anim","val":0,"valStr":"svash2_card_skill_02_buff_once","overrideIfExists":false},{"key":"cnt","val":1,"valStr":null,"overrideIfExists":false},{"key":"shield","val":0,"valStr":null,"overrideIfExists":false},{"key":"effect","val":0,"valStr":"svash2_skill_01_shieldHit_01","overrideIfExists":false}]"
         display: false
@@ -113,6 +124,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"first","val":0.6000000238418579,"valStr":null,"overrideIfExists":true},{"key":"next","val":0.4000000059604645,"valStr":null,"overrideIfExists":true}]"
         display: false
@@ -122,6 +134,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"first","val":1,"valStr":null,"overrideIfExists":false},{"key":"next","val":0.4000000059604645,"valStr":null,"overrideIfExists":false},{"key":"interval","val":0.10000000149011612,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -131,6 +144,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"force","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -140,6 +154,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"interval","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -149,6 +164,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"loop_cnt","val":1,"valStr":null,"overrideIfExists":false},{"key":"zero","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -158,6 +174,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"mag_tag_on","val":0,"valStr":null,"overrideIfExists":false},{"key":"one","val":1,"valStr":null,"overrideIfExists":false},{"key":"zero","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -167,6 +184,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"move_speed_per_add","val":0,"valStr":null,"overrideIfExists":false},{"key":"zero","val":0,"valStr":null,"overrideIfExists":true},{"key":"cur_time","val":0,"valStr":null,"overrideIfExists":false},{"key":"one","val":1,"valStr":null,"overrideIfExists":false},{"key":"speed_atk_valid","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -176,6 +194,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"one","val":1,"valStr":null,"overrideIfExists":false},{"key":"damage_scale_minus_one","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -185,6 +204,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"one","val":1,"valStr":null,"overrideIfExists":false},{"key":"lock","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -194,6 +214,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"one","val":1,"valStr":null,"overrideIfExists":false},{"key":"projectile","val":0,"valStr":"projectile_chr_mantra_s3_2","overrideIfExists":false},{"key":"in_trigger","val":0,"valStr":null,"overrideIfExists":false},{"key":"time","val":0,"valStr":null,"overrideIfExists":false},{"key":"zero","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -203,6 +224,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"pass_time","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -212,6 +234,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"projectile","val":0,"valStr":"projectile_chr_svash2_s3_bird","overrideIfExists":false}]"
         display: false
@@ -221,6 +244,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"projectile","val":0,"valStr":"projectile_chr_svash2_s3_bird_self","overrideIfExists":false}]"
         display: false
@@ -230,6 +254,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"remain","val":0,"valStr":"","overrideIfExists":false},{"key":"all_cnt","val":0,"valStr":null,"overrideIfExists":false},{"key":"per_active","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -239,6 +264,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"remain","val":0,"valStr":"","overrideIfExists":false},{"key":"interval_projectile_trigger","val":0.5,"valStr":null,"overrideIfExists":false},{"key":"mantra_s_3[enemy_trigger].interval","val":0.10000000149011612,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -248,6 +274,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"sleep","val":0.30000001192092896,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -257,6 +284,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"sleep_time","val":0,"valStr":null,"overrideIfExists":false},{"key":"interval","val":0.03400000184774399,"valStr":null,"overrideIfExists":false},{"key":"sleep_signal","val":0,"valStr":null,"overrideIfExists":false},{"key":"sleep_end_signal","val":0,"valStr":null,"overrideIfExists":false},{"key":"zero","val":0,"valStr":null,"overrideIfExists":false},{"key":"one","val":1,"valStr":null,"overrideIfExists":false},{"key":"time_scale_ratio","val":1,"valStr":null,"overrideIfExists":false},{"key":"min_atk_scale","val":1,"valStr":null,"overrideIfExists":false},{"key":"max_atk_scale","val":2,"valStr":null,"overrideIfExists":false},{"key":"sleep","val":5,"valStr":null,"overrideIfExists":false},{"key":"final_atk_scale","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -266,6 +294,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"sp","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -275,6 +304,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"sp","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -284,6 +314,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"succeed","val":0,"valStr":null,"overrideIfExists":false},{"key":"one","val":1,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -293,6 +324,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"time","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -302,6 +334,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"trigger_by_palsy_stack_cnt_overflow","val":0,"valStr":"trigger_by_palsy_stack_cnt_overflow","overrideIfExists":false},{"key":"interval_projectile_trigger","val":-1,"valStr":null,"overrideIfExists":true}]"
         display: false
@@ -311,6 +344,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"true_snow_slash","val":0,"valStr":"","overrideIfExists":false}]"
         display: false
@@ -320,6 +354,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"two","val":2,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -329,6 +364,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"value","val":0,"valStr":null,"overrideIfExists":false},{"key":"interval","val":0.10000000149011612,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -338,6 +374,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"key":"zero","val":0,"valStr":null,"overrideIfExists":false},{"key":"cnt","val":1,"valStr":null,"overrideIfExists":false},{"key":"inf","val":100,"valStr":null,"overrideIfExists":false},{"key":"cost","val":2,"valStr":null,"overrideIfExists":false},{"key":"svash2_s_2[cost].value","val":0,"valStr":null,"overrideIfExists":false},{"key":"svash2_s_2[cost].cnt","val":0,"valStr":null,"overrideIfExists":false}]"
         display: false
@@ -347,3 +384,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

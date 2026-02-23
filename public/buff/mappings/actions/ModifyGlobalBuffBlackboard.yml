@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _blackboardKey:
     type: string
     description: blackboard Key
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _globalBuffKey:
     type: string
     description: global Buff Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: rogue_2_relic_fight_131
+          generated: true
   _maxValKey:
     type: string
     description: max Val Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: max_stack_cnt
+          generated: true
   _tryAddBuffIfModified:
     type: boolean
     description: try Add Buff If Modified
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

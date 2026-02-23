@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _modeIndex:
     type: number
     description: mode Index
@@ -26,60 +28,70 @@ fields:
         parse:
           type: literal
           return: -1
+          generated: true
       -
         value: 0
         display: false
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 2
         display: false
         parse:
           type: literal
           return: 2
+          generated: true
       -
         value: 3
         display: false
         parse:
           type: literal
           return: 3
+          generated: true
       -
         value: 4
         display: false
         parse:
           type: literal
           return: 4
+          generated: true
       -
         value: 5
         display: false
         parse:
           type: literal
           return: 5
+          generated: true
       -
         value: 6
         display: false
         parse:
           type: literal
           return: 6
+          generated: true
       -
         value: 7
         display: false
         parse:
           type: literal
           return: 7
+          generated: true
       -
         value: 8
         display: false
         parse:
           type: literal
           return: 8
+          generated: true
   _restartFSM:
     type: boolean
     description: restart F S M
@@ -90,12 +102,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _restoreDefault:
     type: boolean
     description: restore Default
@@ -106,12 +120,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -122,21 +138,25 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

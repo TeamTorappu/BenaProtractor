@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: env_004_fog
+          generated: true
   _globalRange:
     type: boolean
     description: global Range
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _markInView:
     type: boolean
     description: mark In View
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _markOldTilePos:
     type: boolean
     description: mark Old Tile Pos
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _rangeId:
     type: null | string
     description: range Id
@@ -68,30 +75,35 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: 0-1
         display: false
         parse:
           type: literal
           return: 0-1
+          generated: true
       -
         value: 4-3
         display: false
         parse:
           type: literal
           return: 4-3
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: x-1
         display: false
         parse:
           type: literal
           return: x-1
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -102,3 +114,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _checkInArcCircle:
     type: boolean
     description: check In Arc Circle
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _count:
     type: number
     description: count
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
   _degreeRanges:
     type: array | null
     description: degree Ranges
@@ -52,6 +57,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -62,12 +68,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -78,12 +86,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -94,12 +104,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _limitCount:
     type: boolean
     description: limit Count
@@ -110,12 +122,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _postFilter:
     type: string
     description: post Filter
@@ -126,12 +140,14 @@ fields:
         parse:
           type: literal
           return: DIST_TO_SOURCE_ASC
+          generated: true
       -
         value: HATRED_DES
         display: false
         parse:
           type: literal
           return: HATRED_DES
+          generated: true
   _rangeRadius:
     type: number
     description: range Radius
@@ -142,60 +158,70 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.5
         display: false
         parse:
           type: literal
           return: 0.5
+          generated: true
       -
         value: 0.6000000238418579
         display: false
         parse:
           type: literal
           return: 0.6000000238418579
+          generated: true
       -
         value: 1.2000000476837158
         display: false
         parse:
           type: literal
           return: 1.2000000476837158
+          generated: true
       -
         value: 1.350000023841858
         display: false
         parse:
           type: literal
           return: 1.350000023841858
+          generated: true
       -
         value: 1.5
         display: false
         parse:
           type: literal
           return: 1.5
+          generated: true
       -
         value: 1.7000000476837158
         display: false
         parse:
           type: literal
           return: 1.7000000476837158
+          generated: true
       -
         value: 1.7999999523162842
         display: false
         parse:
           type: literal
           return: 1.7999999523162842
+          generated: true
       -
         value: 2
         display: false
         parse:
           type: literal
           return: 2
+          generated: true
       -
         value: 4
         display: false
         parse:
           type: literal
           return: 4
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -206,12 +232,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _specifyBuffSource:
     type: string
     description: specify Buff Source
@@ -222,6 +250,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -232,6 +261,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -242,12 +272,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _useSpecifyBuffSource:
     type: boolean
     description: use Specify Buff Source
@@ -258,3 +290,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

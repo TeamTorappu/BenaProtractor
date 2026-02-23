@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: mul_exclusive
+          generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: HOLD_BY_BUFF
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -60,3 +65,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

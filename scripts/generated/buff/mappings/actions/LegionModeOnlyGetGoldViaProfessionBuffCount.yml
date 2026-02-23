@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 10
+          generated: true
   _goldPerBuffKey:
     type: string
     description: gold Per Buff Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: gold_per_buff
+          generated: true
   _loadFromBlackboard:
     type: boolean
     description: load From Blackboard
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

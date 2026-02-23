@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterTokenMode:
     type: boolean
     description: filter Token Mode
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _healByRatio:
     type: boolean
     description: heal By Ratio
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _ignoreHealFree:
     type: boolean
     description: ignore Heal Free
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _sourceTarget:
     type: string
     description: source Target
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _tokenModes:
     type: array
     description: token Modes
@@ -60,3 +65,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

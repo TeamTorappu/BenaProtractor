@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: DEFAULT
+          generated: true
   _ignoreAdvancedBuildableMask:
     type: boolean
     description: ignore Advanced Buildable Mask
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _buffs:
     type: array
     description: buffs
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _freely:
     type: boolean
     description: freely
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _getPosViaBB:
     type: boolean
     description: get Pos Via B B
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _target:
     type: string
     description: target
@@ -68,3 +75,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: env_036_act1vhalfidle_lhhe
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: lhtown
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

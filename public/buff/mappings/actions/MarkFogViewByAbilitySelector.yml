@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: TresureTileSelector
+          generated: true
   _envSystemKey:
     type: string
     description: env System Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: env_004_fog
+          generated: true
   _markInView:
     type: boolean
     description: mark In View
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

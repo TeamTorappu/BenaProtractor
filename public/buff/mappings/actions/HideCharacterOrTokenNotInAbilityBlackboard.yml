@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: PassengerStorage
+          generated: true
   _infoType:
     type: string
     description: info Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: UNIQUE_ID
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: oblvns_t_1
+          generated: true
   _getMax:
     type: boolean
     description: get Max
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

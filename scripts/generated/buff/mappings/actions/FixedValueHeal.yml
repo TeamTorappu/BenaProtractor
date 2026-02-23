@@ -10,24 +10,28 @@ fields:
         parse:
           type: literal
           return: caused_damage
+          generated: true
       -
         value: fixed_heal_value
         display: false
         parse:
           type: literal
           return: fixed_heal_value
+          generated: true
       -
         value: heal_value
         display: false
         parse:
           type: literal
           return: heal_value
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
   _ignoreHealFree:
     type: boolean
     description: ignore Heal Free
@@ -38,12 +42,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -54,18 +60,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -76,15 +85,18 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

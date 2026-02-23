@@ -10,15 +10,18 @@ fields:
         parse:
           type: literal
           return: min_atk_scale
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: projectile_min_atk_scale
         display: false
         parse:
           type: literal
           return: projectile_min_atk_scale
+          generated: true

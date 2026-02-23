@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _key:
     type: string
     description: key
@@ -20,18 +21,21 @@ fields:
         parse:
           type: literal
           return: coop_boat_kill_drone
+          generated: true
       -
         value: coop_boat_through_block
         display: false
         parse:
           type: literal
           return: coop_boat_through_block
+          generated: true
       -
         value: mcnrsh_s_hit
         display: false
         parse:
           type: literal
           return: mcnrsh_s_hit
+          generated: true
   _loadKeyFromBlackBoard:
     type: boolean
     description: load Key From Black Board
@@ -42,6 +46,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _logType:
     type: string
     description: log Type
@@ -52,3 +57,4 @@ fields:
         parse:
           type: literal
           return: SIMPLE
+          generated: true

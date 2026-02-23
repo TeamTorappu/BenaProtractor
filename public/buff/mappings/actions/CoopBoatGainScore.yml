@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _score:
     type: number
     description: score
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _scoreKey:
     type: string
     description: score Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: score
+          generated: true
   isMin:
     type: boolean
     description: is Min
@@ -40,9 +43,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

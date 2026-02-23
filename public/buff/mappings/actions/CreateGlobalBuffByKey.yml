@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: "enemy_nstmon[clear_ground]"
+          generated: true
   _globalBuffPrefabKey:
     type: string
     description: global Buff Prefab Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: "enemy_nstmon[clear_ground]"
+          generated: true
   _tryAddBuffImmediately:
     type: boolean
     description: try Add Buff Immediately
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

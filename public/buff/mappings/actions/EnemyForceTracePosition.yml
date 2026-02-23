@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _createBuffToTraceTarget:
     type: boolean
     description: create Buff To Trace Target
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _endPosOffsetAlongDirection:
     type: number
     description: end Pos Offset Along Direction
@@ -36,18 +39,21 @@ fields:
         parse:
           type: literal
           return: -1
+          generated: true
       -
         value: 0
         display: false
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.5
         display: false
         parse:
           type: literal
           return: 0.5
+          generated: true
   _maxTraceDist:
     type: number
     description: max Trace Dist
@@ -58,12 +64,14 @@ fields:
         parse:
           type: literal
           return: -1
+          generated: true
       -
         value: 1000000
         display: false
         parse:
           type: literal
           return: 1000000
+          generated: true
   _randomOffset:
     type: boolean
     description: random Offset
@@ -74,12 +82,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _reachOffset:
     type: object
     description: reach Offset
@@ -90,6 +100,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _source:
     type: string
     description: source
@@ -100,24 +111,28 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _stopTraceWhenNoTarget:
     type: boolean
     description: stop Trace When No Target
@@ -128,12 +143,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _target:
     type: string
     description: target
@@ -144,18 +161,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _traceFarthestTile:
     type: boolean
     description: trace Farthest Tile
@@ -166,12 +186,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useSelectorPosition:
     type: boolean
     description: use Selector Position
@@ -182,9 +204,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

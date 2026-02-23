@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _maxEsRatio:
     type: number
     description: max Es Ratio
@@ -20,30 +21,35 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 10
         display: false
         parse:
           type: literal
           return: 10
+          generated: true
       -
         value: 100
         display: false
         parse:
           type: literal
           return: 100
+          generated: true
       -
         value: 99999
         display: false
         parse:
           type: literal
           return: 99999
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -54,3 +60,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

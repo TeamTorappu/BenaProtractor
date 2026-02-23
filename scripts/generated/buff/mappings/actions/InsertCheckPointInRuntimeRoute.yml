@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _checkReachable:
     type: boolean
     description: check Reachable
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _clearRouteBeforeInsert:
     type: boolean
     description: clear Route Before Insert
@@ -42,12 +46,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _insertIndex:
     type: number
     description: insert Index
@@ -58,6 +64,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _manuallySpecifyInsertIndex:
     type: boolean
     description: manually Specify Insert Index
@@ -68,6 +75,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _manuallySpecifyReassignIndex:
     type: boolean
     description: manually Specify Reassign Index
@@ -78,6 +86,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _randomizeReachOffset:
     type: boolean
     description: randomize Reach Offset
@@ -88,12 +97,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _reachOffset:
     type: object
     description: reach Offset
@@ -104,6 +115,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _reassignIndex:
     type: number
     description: reassign Index
@@ -114,6 +126,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _source:
     type: string
     description: source
@@ -124,24 +137,28 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _target:
     type: string
     description: target
@@ -152,18 +169,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _time:
     type: number
     description: time
@@ -174,24 +194,28 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1000000
         display: false
         parse:
           type: literal
           return: 1000000
+          generated: true
       -
         value: 30
         display: false
         parse:
           type: literal
           return: 30
+          generated: true
       -
         value: 99999
         display: false
         parse:
           type: literal
           return: 99999
+          generated: true
   _toMapPosition:
     type: boolean
     description: to Map Position
@@ -202,12 +226,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _type:
     type: string
     description: type
@@ -218,9 +244,11 @@ fields:
         parse:
           type: literal
           return: MOVE
+          generated: true
       -
         value: WAIT_FOR_SECONDS
         display: false
         parse:
           type: literal
           return: WAIT_FOR_SECONDS
+          generated: true

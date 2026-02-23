@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _excludeTrapAndToken:
     type: boolean
     description: exclude Trap And Token
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterByGroupId:
     type: boolean
     description: filter By Group Id
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterGroupId:
     type: null | string
     description: filter Group Id
@@ -68,12 +75,14 @@ fields:
         parse:
           type: literal
           return: glasgow
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _globalRange:
     type: boolean
     description: global Range
@@ -84,6 +93,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -94,12 +104,14 @@ fields:
         parse:
           type: literal
           return: x-4
+          generated: true
       -
         value: x-5
         display: false
         parse:
           type: literal
           return: x-5
+          generated: true
   _rangeRadius:
     type: number
     description: range Radius
@@ -110,6 +122,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -120,9 +133,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

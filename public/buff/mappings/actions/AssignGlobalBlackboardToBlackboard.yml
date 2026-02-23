@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _blackboardKey:
     type: string
     description: blackboard Key
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _channel:
     type: string
     description: channel
@@ -36,24 +39,28 @@ fields:
         parse:
           type: literal
           return: AUTOCHESS
+          generated: true
       -
         value: CHARACTER
         display: false
         parse:
           type: literal
           return: CHARACTER
+          generated: true
       -
         value: ENEMY
         display: false
         parse:
           type: literal
           return: ENEMY
+          generated: true
       -
         value: LEVEL
         display: false
         parse:
           type: literal
           return: LEVEL
+          generated: true
   _globalblackboardKey:
     type: string
     description: globalblackboard Key
@@ -64,63 +71,74 @@ fields:
         parse:
           type: literal
           return: band28_buff_respawn_cnt
+          generated: true
       -
         value: dead_lhbelt_cnt
         display: false
         parse:
           type: literal
           return: dead_lhbelt_cnt
+          generated: true
       -
         value: enemy_cjdoor_col
         display: false
         parse:
           type: literal
           return: enemy_cjdoor_col
+          generated: true
       -
         value: enemy_cjdoor_row
         display: false
         parse:
           type: literal
           return: enemy_cjdoor_row
+          generated: true
       -
         value: enemy_death_cnt
         display: false
         parse:
           type: literal
           return: enemy_death_cnt
+          generated: true
       -
         value: halfIdle_trap_born_cnt
         display: false
         parse:
           type: literal
           return: halfIdle_trap_born_cnt
+          generated: true
       -
         value: "irene_e_004[card_uid]"
         display: false
         parse:
           type: literal
           return: "irene_e_004[card_uid]"
+          generated: true
       -
         value: "irene_e_004[col]"
         display: false
         parse:
           type: literal
           return: "irene_e_004[col]"
+          generated: true
       -
         value: "irene_e_004[direction]"
         display: false
         parse:
           type: literal
           return: "irene_e_004[direction]"
+          generated: true
       -
         value: "irene_e_004[row]"
         display: false
         parse:
           type: literal
           return: "irene_e_004[row]"
+          generated: true
       -
         value: "poca_e_003_t[cnt]"
         display: false
         parse:
           type: literal
           return: "poca_e_003_t[cnt]"
+          generated: true

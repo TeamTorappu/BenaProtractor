@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _checkTargetTopBuiltInTile:
     type: boolean
     description: check Target Top Built In Tile
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _checkTileKey:
     type: boolean
     description: check Tile Key
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _enemyKeys:
     type: array | null
     description: enemy Keys
@@ -52,6 +57,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _hasCertainEnemy:
     type: boolean
     description: has Certain Enemy
@@ -62,12 +68,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _hasCharacter:
     type: boolean
     description: has Character
@@ -78,12 +86,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -94,12 +104,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _tileKeys:
     type: array | null
     description: tile Keys
@@ -110,3 +122,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

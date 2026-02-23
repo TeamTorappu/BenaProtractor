@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _allMustMatch:
     type: boolean
     description: all Must Match
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _buffType:
     type: string
     description: buff Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: MAIN_BUFF
+          generated: true

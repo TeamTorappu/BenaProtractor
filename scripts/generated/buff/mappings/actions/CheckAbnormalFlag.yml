@@ -10,90 +10,105 @@ fields:
         parse:
           type: literal
           return: CAMOUFLAGE
+          generated: true
       -
         value: COLD
         display: false
         parse:
           type: literal
           return: COLD
+          generated: true
       -
         value: ELEMENT_FREE_ALL
         display: false
         parse:
           type: literal
           return: ELEMENT_FREE_ALL
+          generated: true
       -
         value: FROZEN
         display: false
         parse:
           type: literal
           return: FROZEN
+          generated: true
       -
         value: HEAL_FREE
         display: false
         parse:
           type: literal
           return: HEAL_FREE
+          generated: true
       -
         value: INVINCIBLE
         display: false
         parse:
           type: literal
           return: INVINCIBLE
+          generated: true
       -
         value: INVISIBLE
         display: false
         parse:
           type: literal
           return: INVISIBLE
+          generated: true
       -
         value: LEVITATE
         display: false
         parse:
           type: literal
           return: LEVITATE
+          generated: true
       -
         value: PALSY
         display: false
         parse:
           type: literal
           return: PALSY
+          generated: true
       -
         value: PALSYING
         display: false
         parse:
           type: literal
           return: PALSYING
+          generated: true
       -
         value: SILENCED
         display: false
         parse:
           type: literal
           return: SILENCED
+          generated: true
       -
         value: SKILL_NOT_ACTIVATABLE
         display: false
         parse:
           type: literal
           return: SKILL_NOT_ACTIVATABLE
+          generated: true
       -
         value: SP_RECOVER_STOPPED
         display: false
         parse:
           type: literal
           return: SP_RECOVER_STOPPED
+          generated: true
       -
         value: STUNNED
         display: false
         parse:
           type: literal
           return: STUNNED
+          generated: true
       -
         value: UNMOVABLE
         display: false
         parse:
           type: literal
           return: UNMOVABLE
+          generated: true
   _abnormalFlagKey:
     type: string
     description: abnormal Flag Key
@@ -104,6 +119,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _isUnset:
     type: boolean
     description: is Unset
@@ -114,12 +130,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -130,33 +148,39 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

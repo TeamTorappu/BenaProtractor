@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_creep","tile_creepf"]"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_dygmny_1","tile_dygmny_2","tile_dygmny_3"]"
         display: false
@@ -32,6 +34,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_end"]"
         display: false
@@ -41,6 +44,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_passable_wall","tile_passable_wall_forbidden"]"
         display: false
@@ -50,6 +54,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_road","tile_floor"]"
         display: false
@@ -59,6 +64,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_sandrope","tile_sandrope_2"]"
         display: false
@@ -68,6 +74,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_stairs"]"
         display: false
@@ -77,6 +84,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_volcano"]"
         display: false
@@ -86,6 +94,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["tile_woodrd"]"
         display: false
@@ -95,3 +104,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

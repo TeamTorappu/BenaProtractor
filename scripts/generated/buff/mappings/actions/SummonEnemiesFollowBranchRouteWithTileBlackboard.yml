@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _actionIndexKey:
     type: string
     description: action Index Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: action_index_rgdysm_summon
+          generated: true
   _alwaysCountAsKilled:
     type: boolean
     description: always Count As Killed
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _buffToEnemy:
     type: object
     description: buff To Enemy
@@ -40,6 +43,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _disableBornTweenColor:
     type: boolean
     description: disable Born Tween Color
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _managedByScheduler:
     type: boolean
     description: managed By Scheduler
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _overrideEnemyKey:
     type: string
     description: override Enemy Key
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _source:
     type: string
     description: source
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _summonNums:
     type: number
     description: summon Nums
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _summonNumsKeys:
     type: string
     description: summon Nums Keys
@@ -100,6 +109,7 @@ fields:
         parse:
           type: literal
           return: cnt
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -110,3 +120,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

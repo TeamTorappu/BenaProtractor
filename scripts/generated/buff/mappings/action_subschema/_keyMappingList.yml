@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "[{"mapping":[{"source":"spine1","target":"index"},{"source":"mv1","target":"move_speed"}]},{"mapping":[{"source":"spine2","target":"index"},{"source":"mv2","target":"move_speed"}]},{"mapping":[{"source":"spine3","target":"index"},{"source":"mv3","target":"move_speed"}]},{"mapping":[{"source":"spine4","target":"index"},{"source":"mv4","target":"move_speed"}]},{"mapping":[{"source":"spine5","target":"index"},{"source":"mv5","target":"move_speed"}]},{"mapping":[{"source":"spine6","target":"index"},{"source":"mv6","target":"move_speed"}]},{"mapping":[{"source":"spine7","target":"index"},{"source":"mv7","target":"move_speed"}]},{"mapping":[{"source":"spine8","target":"index"},{"source":"mv8","target":"move_speed"}]},{"mapping":[{"source":"spine9","target":"index"},{"source":"mv9","target":"move_speed"}]},{"mapping":[{"source":"spine10","target":"index"},{"source":"mv10","target":"move_speed"}]},{"mapping":[{"source":"spine11","target":"index"},{"source":"mv11","target":"move_speed"}]}]"
         display: false
@@ -23,3 +24,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

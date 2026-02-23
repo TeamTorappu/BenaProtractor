@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: RANGED
         display: false
         parse:
           type: literal
           return: RANGED
+          generated: true
   _checkApplyWay:
     type: boolean
     description: check Apply Way
@@ -32,12 +35,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _checkTargetAlive:
     type: boolean
     description: check Target Alive
@@ -48,12 +53,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _checkTargetFree:
     type: boolean
     description: check Target Free
@@ -64,12 +71,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _checkTargetUnitType:
     type: boolean
     description: check Target Unit Type
@@ -80,12 +89,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _motionMask:
     type: string
     description: motion Mask
@@ -96,18 +107,21 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: FLY_ONLY
         display: false
         parse:
           type: literal
           return: FLY_ONLY
+          generated: true
       -
         value: WALK_ONLY
         display: false
         parse:
           type: literal
           return: WALK_ONLY
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -118,36 +132,42 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _unitType:
     type: string
     description: unit Type
@@ -158,3 +178,4 @@ fields:
         parse:
           type: literal
           return: ENEMY
+          generated: true

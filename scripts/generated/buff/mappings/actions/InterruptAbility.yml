@@ -10,126 +10,147 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: Aura
         display: false
         parse:
           type: literal
           return: Aura
+          generated: true
       -
         value: BirdAura
         display: false
         parse:
           type: literal
           return: BirdAura
+          generated: true
       -
         value: BirdAura_Self
         display: false
         parse:
           type: literal
           return: BirdAura_Self
+          generated: true
       -
         value: CloseAttack
         display: false
         parse:
           type: literal
           return: CloseAttack
+          generated: true
       -
         value: CollapseWarning
         display: false
         parse:
           type: literal
           return: CollapseWarning
+          generated: true
       -
         value: FountainAlarm
         display: false
         parse:
           type: literal
           return: FountainAlarm
+          generated: true
       -
         value: FountainHint
         display: false
         parse:
           type: literal
           return: FountainHint
+          generated: true
       -
         value: FourDirAttackForRistar
         display: false
         parse:
           type: literal
           return: FourDirAttackForRistar
+          generated: true
       -
         value: GlobalSleepAura
         display: false
         parse:
           type: literal
           return: GlobalSleepAura
+          generated: true
       -
         value: GlobalUnique
         display: false
         parse:
           type: literal
           return: GlobalUnique
+          generated: true
       -
         value: Hint
         display: false
         parse:
           type: literal
           return: Hint
+          generated: true
       -
         value: InvisibleAura
         display: false
         parse:
           type: literal
           return: InvisibleAura
+          generated: true
       -
         value: JckshdBuff
         display: false
         parse:
           type: literal
           return: JckshdBuff
+          generated: true
       -
         value: JckshdBuffS3
         display: false
         parse:
           type: literal
           return: JckshdBuffS3
+          generated: true
       -
         value: PetrifiedRay
         display: false
         parse:
           type: literal
           return: PetrifiedRay
+          generated: true
       -
         value: ProjectileAura
         display: false
         parse:
           type: literal
           return: ProjectileAura
+          generated: true
       -
         value: RandomGold
         display: false
         parse:
           type: literal
           return: RandomGold
+          generated: true
       -
         value: SubRay
         display: false
         parse:
           type: literal
           return: SubRay
+          generated: true
       -
         value: TraceTarget
         display: false
         parse:
           type: literal
           return: TraceTarget
+          generated: true
       -
         value: laser
         display: false
         parse:
           type: literal
           return: laser
+          generated: true
   _emitAttackFinishOnly:
     type: boolean
     description: emit Attack Finish Only
@@ -140,12 +161,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _loadFromBlackboard:
     type: boolean
     description: load From Blackboard
@@ -156,12 +179,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -172,12 +197,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _stopAffect:
     type: boolean
     description: stop Affect
@@ -188,12 +215,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useBlackboardCardUidAsOwner:
     type: boolean
     description: use Blackboard Card Uid As Owner
@@ -204,6 +233,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useCurrentAbility:
     type: boolean
     description: use Current Ability
@@ -214,9 +244,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

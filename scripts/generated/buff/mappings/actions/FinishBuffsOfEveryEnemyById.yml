@@ -10,36 +10,42 @@ fields:
         parse:
           type: literal
           return: "angel2_t_1[target][mark]"
+          generated: true
       -
         value: "blaze2_s_2[on_tile]"
         display: false
         parse:
           type: literal
           return: "blaze2_s_2[on_tile]"
+          generated: true
       -
         value: "dsbish_p2_t_2[atk]"
         display: false
         parse:
           type: literal
           return: "dsbish_p2_t_2[atk]"
+          generated: true
       -
         value: "sbell2_t1[enemy_enter]"
         display: false
         parse:
           type: literal
           return: "sbell2_t1[enemy_enter]"
+          generated: true
       -
         value: "sbell2_t1[enemy_leave]"
         display: false
         parse:
           type: literal
           return: "sbell2_t1[enemy_leave]"
+          generated: true
       -
         value: "sbell2_t1[s2_dot]"
         display: false
         parse:
           type: literal
           return: "sbell2_t1[s2_dot]"
+          generated: true
   _checkBuffSource:
     type: boolean
     description: check Buff Source
@@ -50,12 +56,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _decCntIfStack:
     type: boolean
     description: dec Cnt If Stack
@@ -66,6 +74,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _loadFromBlackboard:
     type: boolean
     description: load From Blackboard
@@ -76,6 +85,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _source:
     type: string
     description: source
@@ -86,6 +96,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _updateOverrideMap:
     type: boolean
     description: update Override Map
@@ -96,3 +107,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

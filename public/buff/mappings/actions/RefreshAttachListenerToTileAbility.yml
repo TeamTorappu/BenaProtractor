@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: DoFarm
+          generated: true
       -
         value: EnemyListener
         display: false
         parse:
           type: literal
           return: EnemyListener
+          generated: true
   _checkCanUseAblityFlag:
     type: boolean
     description: check Can Use Ablity Flag
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _syncAbilityName:
     type: string
     description: sync Ability Name
@@ -46,9 +50,11 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: DoFarm
         display: false
         parse:
           type: literal
           return: DoFarm
+          generated: true

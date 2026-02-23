@@ -38,6 +38,36 @@ function isActionNode(v: unknown): v is Record<string, unknown> {
 
 /* ────────────────── parse config 执行 ────────────────── */
 
+/** 判断 parse 配置是否为脚本自动生成的默认值 */
+function isGenerated(parse: any): boolean {
+	return parse?.generated === true
+}
+
+/**
+ * 根据优先级规则选择 parse 配置。
+ * 子文件(fDef) > 主文件(fKeys) > 模板(fTpl)
+ * 例外：若子文件 parse 为 generated 而主文件有手动改动，使用主文件的。
+ */
+function resolveParse(defParse: any, keysParse: any, tplParse: any): any {
+	if (defParse) {
+		if (isGenerated(defParse) && keysParse && !isGenerated(keysParse))
+			return keysParse
+		return defParse
+	}
+	return keysParse ?? tplParse
+}
+
+/** 对 values 匹配条目应用同样的优先级逻辑 */
+function resolveMatch(
+	defMatch: ReturnType<typeof matchInValues>,
+	keysMatch: ReturnType<typeof matchInValues>,
+): ReturnType<typeof matchInValues> {
+	if (defMatch && keysMatch
+		&& isGenerated(defMatch.parse) && !isGenerated(keysMatch.parse))
+		return keysMatch
+	return defMatch ?? keysMatch
+}
+
 async function applyParse(
 	value: unknown,
 	parse: { type: string; return?: unknown; name?: string; args?: string[] },
@@ -156,7 +186,7 @@ async function buildAction(
 		const fdesc = fDef?.description ?? fKeys?.description ?? fTpl?.description ?? humanize(key)
 
 		/* ─ schema + parse：优先使用声明式节点函数 ─ */
-		const schemaParse = fDef?.parse ?? fTpl?.parse
+		const schemaParse = resolveParse(fDef?.parse, fKeys?.parse, fTpl?.parse)
 		if (schemaParse?.type === 'fn' && schemaParse.name && value !== null && typeof value === 'object') {
 			const fn = fnMap.get(schemaParse.name)
 			if (fn) {
@@ -196,8 +226,9 @@ async function buildAction(
 		}
 
 		/* ─ 标量：三级优先匹配值 ─ */
-		const match = matchInValues(fDef?.values, value)
-			?? matchInValues(fKeys?.values, value)
+		const defMatch = matchInValues(fDef?.values, value)
+		const keysMatch = matchInValues(fKeys?.values, value)
+		const match = resolveMatch(defMatch, keysMatch)
 
 		const visible = match
 			? match.display !== false

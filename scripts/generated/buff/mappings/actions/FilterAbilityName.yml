@@ -10,72 +10,84 @@ fields:
         parse:
           type: literal
           return: Attack
+          generated: true
       -
         value: BigAttack
         display: false
         parse:
           type: literal
           return: BigAttack
+          generated: true
       -
         value: DoubleAttack
         display: false
         parse:
           type: literal
           return: DoubleAttack
+          generated: true
       -
         value: Funnel_s2
         display: false
         parse:
           type: literal
           return: Funnel_s2
+          generated: true
       -
         value: S3Attack
         display: false
         parse:
           type: literal
           return: S3Attack
+          generated: true
       -
         value: Special
         display: false
         parse:
           type: literal
           return: Special
+          generated: true
       -
         value: pray
         display: false
         parse:
           type: literal
           return: pray
+          generated: true
       -
         value: skchr_mberry_1
         display: false
         parse:
           type: literal
           return: skchr_mberry_1
+          generated: true
       -
         value: syncAttackP1
         display: false
         parse:
           type: literal
           return: syncAttackP1
+          generated: true
       -
         value: syncAttackP2
         display: false
         parse:
           type: literal
           return: syncAttackP2
+          generated: true
       -
         value: syncAttackWithSummon
         display: false
         parse:
           type: literal
           return: syncAttackWithSummon
+          generated: true
       -
         value: wtrman_melee_Attack
         display: false
         parse:
           type: literal
           return: wtrman_melee_Attack
+          generated: true
   _useSearchName:
     type: boolean
     description: use Search Name
@@ -86,9 +98,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

@@ -10,3 +10,4 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true

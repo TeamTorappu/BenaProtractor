@@ -10,66 +10,77 @@ fields:
         parse:
           type: literal
           return: FALLDOWN
+          generated: true
       -
         value: HP_ZERO
         display: false
         parse:
           type: literal
           return: HP_ZERO
+          generated: true
       -
         value: HP_ZERO_WITH_NO_SOURCE
         display: false
         parse:
           type: literal
           return: HP_ZERO_WITH_NO_SOURCE
+          generated: true
       -
         value: MOVE_LIKE_RESPAWN_SELF
         display: false
         parse:
           type: literal
           return: MOVE_LIKE_RESPAWN_SELF
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: OTHER
         display: false
         parse:
           type: literal
           return: OTHER
+          generated: true
       -
         value: REACH_EXIT
         display: false
         parse:
           type: literal
           return: REACH_EXIT
+          generated: true
       -
         value: REPLACED
         display: false
         parse:
           type: literal
           return: REPLACED
+          generated: true
       -
         value: RESPAWN_SELF
         display: false
         parse:
           type: literal
           return: RESPAWN_SELF
+          generated: true
       -
         value: SILENT_WITHDRAW
         display: false
         parse:
           type: literal
           return: SILENT_WITHDRAW
+          generated: true
       -
         value: WITHDRAW
         display: false
         parse:
           type: literal
           return: WITHDRAW
+          generated: true
   _source:
     type: string
     description: source
@@ -80,9 +91,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

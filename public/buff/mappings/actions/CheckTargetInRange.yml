@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _checkRadius:
     type: boolean
     description: check Radius
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -42,12 +46,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: x-4
         display: false
         parse:
           type: literal
           return: x-4
+          generated: true
   _rangeRadius:
     type: number
     description: range Radius
@@ -58,6 +64,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _soureceType:
     type: string
     description: sourece Type
@@ -68,18 +75,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -90,15 +100,18 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

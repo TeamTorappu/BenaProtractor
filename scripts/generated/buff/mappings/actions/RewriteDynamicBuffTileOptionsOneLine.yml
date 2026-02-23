@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: "prtrop_s[tile_storage]"
+          generated: true
   _direction:
     type: string
     description: direction
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: LEFT
+          generated: true
   _exceptCurrentTile:
     type: boolean
     description: except Current Tile
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _isObstacleLike:
     type: boolean
     description: is Obstacle Like
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _keepCurrentObstacleLike:
     type: boolean
     description: keep Current Obstacle Like
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useCurrentTileDirection:
     type: boolean
     description: use Current Tile Direction
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _useLocationFromBBAsCurrentTile:
     type: boolean
     description: use Location From B B As Current Tile
@@ -80,3 +87,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: ModifySp
+          generated: true
   _checkCanUseAblityFlag:
     type: boolean
     description: check Can Use Ablity Flag
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

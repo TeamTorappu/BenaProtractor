@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: trap_755_cdsoul
+          generated: true
   _cardKey:
     type: string
     description: card Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: cdsoul_cnt
+          generated: true
   _cardLibraryType:
     type: string
     description: card Library Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: USING
+          generated: true
   _onlyInHand:
     type: boolean
     description: only In Hand
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

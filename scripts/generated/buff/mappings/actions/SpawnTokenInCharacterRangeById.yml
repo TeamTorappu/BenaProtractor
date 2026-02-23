@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _hostType:
     type: string
     description: host Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _maxTileCnt:
     type: number
     description: max Tile Cnt
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _targetCategory:
     type: string
     description: target Category
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: DEFAULT
+          generated: true
   _targetMotion:
     type: string
     description: target Motion
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: WALK_ONLY
+          generated: true
   _targetSide:
     type: string
     description: target Side
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: ENEMY
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _tokenId:
     type: string
     description: token Id
@@ -80,3 +87,4 @@ fields:
         parse:
           type: literal
           return: token_10012_rosmon_shield
+          generated: true

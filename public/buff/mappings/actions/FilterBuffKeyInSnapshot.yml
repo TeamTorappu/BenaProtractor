@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: mizuki_t_1
+          generated: true
       -
         value: "mlyss_e_003[lv3][sp]"
         display: false
         parse:
           type: literal
           return: "mlyss_e_003[lv3][sp]"
+          generated: true
   _mainBuff:
     type: boolean
     description: main Buff
@@ -26,3 +28,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

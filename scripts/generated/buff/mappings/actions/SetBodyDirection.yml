@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: E_NUM
+          generated: true
       -
         value: LEFT
         display: false
         parse:
           type: literal
           return: LEFT
+          generated: true
       -
         value: RIGHT
         display: false
         parse:
           type: literal
           return: RIGHT
+          generated: true
   _directionKey:
     type: string
     description: direction Key
@@ -32,12 +35,14 @@ fields:
         parse:
           type: literal
           return: direction
+          generated: true
       -
         value: old_direction
         display: false
         parse:
           type: literal
           return: old_direction
+          generated: true
   _directionSourceType:
     type: string
     description: direction Source Type
@@ -48,12 +53,14 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _force:
     type: boolean
     description: force
@@ -64,12 +71,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _includeFace:
     type: boolean
     description: include Face
@@ -80,12 +89,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _onlyChangeFace:
     type: boolean
     description: only Change Face
@@ -96,12 +107,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -112,12 +125,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _useDirectionFromBlackboard:
     type: boolean
     description: use Direction From Blackboard
@@ -128,12 +143,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useSourceDirection:
     type: boolean
     description: use Source Direction
@@ -144,9 +161,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

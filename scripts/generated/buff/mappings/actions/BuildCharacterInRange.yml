@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buildableType:
     type: string
     description: buildable Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: MELEE
+          generated: true
   _grids:
     type: array
     description: grids
@@ -30,6 +32,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _ignoreDeckBuffKey:
     type: string
     description: ignore Deck Buff Key
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: "act6bossrush_build_char_in_range[deck]"
+          generated: true
   _professionMask:
     type: string
     description: profession Mask
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER"
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -60,3 +65,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

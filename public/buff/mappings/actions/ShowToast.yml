@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _lastTime:
     type: number
     description: last Time
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 5
+          generated: true
   _priority:
     type: number
     description: priority
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _seType:
     type: string
     description: se Type
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: DEFAULT
+          generated: true
   _target:
     type: string
     description: target
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _toastKey:
     type: string
     description: toast Key
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _toastType:
     type: string
     description: toast Type
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: ENEMY
+          generated: true
   _useTargetDescription:
     type: boolean
     description: use Target Description
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useTargetId:
     type: boolean
     description: use Target Id
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _useTargetName:
     type: boolean
     description: use Target Name
@@ -100,3 +109,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

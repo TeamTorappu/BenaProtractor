@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffOwner:
     type: string
     description: buff Owner
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useStringUid:
     type: boolean
     description: use String Uid
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

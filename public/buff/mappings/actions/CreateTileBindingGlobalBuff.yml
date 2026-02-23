@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: Apoptosis
+          generated: true
       -
         value: BlackFog
         display: false
         parse:
           type: literal
           return: BlackFog
+          generated: true
   _abilitySource:
     type: string
     description: ability Source
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _globalBuffKey:
     type: string
     description: global Buff Key
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: "[g]rogue_3_blackfog"
+          generated: true
       -
         value: "[g]rogue_4_apoptosis"
         display: false
         parse:
           type: literal
           return: "[g]rogue_4_apoptosis"
+          generated: true
   _globalBuffPrefabKey:
     type: string
     description: global Buff Prefab Key
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: "rogue_3_blackfog[random_tile]"
+          generated: true
       -
         value: "rogue_4_apoptosis[random_tile]"
         display: false
         parse:
           type: literal
           return: "rogue_4_apoptosis[random_tile]"
+          generated: true
   _selectorTarget:
     type: string
     description: selector Target
@@ -68,3 +75,4 @@ fields:
         parse:
           type: literal
           return: TARGET
+          generated: true

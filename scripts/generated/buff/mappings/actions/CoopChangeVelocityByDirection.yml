@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _velocity:
     type: number
     description: velocity
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true

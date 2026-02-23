@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -20,24 +21,28 @@ fields:
         parse:
           type: literal
           return: enemy_ristar_boss_buff
+          generated: true
       -
         value: "mark_bbrain[damage_split_target]"
         display: false
         parse:
           type: literal
           return: "mark_bbrain[damage_split_target]"
+          generated: true
       -
         value: "yato2_s1[3rd]"
         display: false
         parse:
           type: literal
           return: "yato2_s1[3rd]"
+          generated: true
       -
         value: yato2_s1_atk_checker
         display: false
         parse:
           type: literal
           return: yato2_s1_atk_checker
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -48,18 +53,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -70,9 +78,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true

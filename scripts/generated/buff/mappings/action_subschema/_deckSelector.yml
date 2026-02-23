@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CreateCardBuffByDeckSequenceOrder:
     type: object
     values:
@@ -26,6 +27,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CreateCardBuffWithDeckSelector:
     type: object
     values:
@@ -38,6 +40,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CreateDeckBuffWithDeckSelector:
     type: object
     values:
@@ -50,3 +53,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

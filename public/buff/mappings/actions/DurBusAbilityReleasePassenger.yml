@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: GetEnmey
+          generated: true
   _releaseLastOnly:
     type: boolean
     description: release Last Only
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _releaseMarkedOnly:
     type: boolean
     description: release Marked Only
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _releaseOnProjectileCurrentPos:
     type: boolean
     description: release On Projectile Current Pos
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _releaseOnProjectileTracePos:
     type: boolean
     description: release On Projectile Trace Pos
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -60,3 +65,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

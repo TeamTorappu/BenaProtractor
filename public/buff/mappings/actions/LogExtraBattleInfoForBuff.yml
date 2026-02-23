@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: EXISTING_TIME
+          generated: true
   _key:
     type: string
     description: key
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: enemy_1265_durcar
+          generated: true

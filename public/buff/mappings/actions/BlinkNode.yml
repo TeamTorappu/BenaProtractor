@@ -10,24 +10,28 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: hand_blink
         display: false
         parse:
           type: literal
           return: hand_blink
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: skzjkl_stage_2
         display: false
         parse:
           type: literal
           return: skzjkl_stage_2
+          generated: true
   _distanceCustomKey:
     type: null
     description: distance Custom Key
@@ -38,6 +42,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _failIfTargetGridIsRoot:
     type: boolean
     description: fail If Target Grid Is Root
@@ -48,6 +53,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _forceSetDisappear:
     type: boolean
     description: force Set Disappear
@@ -58,6 +64,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _forceToMapPosition:
     type: boolean
     description: force To Map Position
@@ -68,12 +75,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _newRouteStartPointAsTargetPosition:
     type: boolean
     description: new Route Start Point As Target Position
@@ -84,12 +93,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _skipDisappearCheckpoint:
     type: boolean
     description: skip Disappear Checkpoint
@@ -100,12 +111,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _toMapPosition:
     type: boolean
     description: to Map Position
@@ -116,12 +129,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _toNextCheckpoint:
     type: boolean
     description: to Next Checkpoint
@@ -132,6 +147,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useAnimSpeed:
     type: boolean
     description: use Anim Speed
@@ -142,12 +158,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useNewRouteBeforeBlink:
     type: boolean
     description: use New Route Before Blink
@@ -158,12 +176,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useRowAndColOnBlackboard:
     type: boolean
     description: use Row And Col On Blackboard
@@ -174,6 +194,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _withoutSwitchToBlinkState:
     type: boolean
     description: without Switch To Blink State
@@ -184,9 +205,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

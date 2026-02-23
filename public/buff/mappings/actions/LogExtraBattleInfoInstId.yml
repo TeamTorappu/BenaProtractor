@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: rogue_first_step
+          generated: true
   _target:
     type: string
     description: target
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

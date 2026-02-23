@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _checkTileKeys:
     type: array | null
     description: check Tile Keys
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _countBbKey:
     type: string
     description: count Bb Key
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: count
+          generated: true
   _decBbKey:
     type: string
     description: dec Bb Key
@@ -40,12 +43,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: boom_dec_num
         display: false
         parse:
           type: literal
           return: boom_dec_num
+          generated: true
   _effectKeyOnTile:
     type: string
     description: effect Key On Tile
@@ -56,6 +61,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _modeIndex:
     type: number
     description: mode Index
@@ -66,6 +72,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _operation:
     type: string
     description: operation
@@ -76,18 +83,21 @@ fields:
         parse:
           type: literal
           return: DEC_INDEX
+          generated: true
       -
         value: FLIP_BOOL
         display: false
         parse:
           type: literal
           return: FLIP_BOOL
+          generated: true
       -
         value: INDEX
         display: false
         parse:
           type: literal
           return: INDEX
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -98,12 +108,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: x-5
         display: false
         parse:
           type: literal
           return: x-5
+          generated: true
   _rangeRadius:
     type: number
     description: range Radius
@@ -114,12 +126,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 10
         display: false
         parse:
           type: literal
           return: 10
+          generated: true
   _rangeRadiusKey:
     type: string
     description: range Radius Key
@@ -130,12 +144,14 @@ fields:
         parse:
           type: literal
           return: range_radius
+          generated: true
       -
         value: range_radius_current
         display: false
         parse:
           type: literal
           return: range_radius_current
+          generated: true
   _requireCharacterNotOn:
     type: boolean
     description: require Character Not On
@@ -146,12 +162,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -162,12 +180,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
+          generated: true
   _useRangeRadius:
     type: boolean
     description: use Range Radius
@@ -178,9 +198,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

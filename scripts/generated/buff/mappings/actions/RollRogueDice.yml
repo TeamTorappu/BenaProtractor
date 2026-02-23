@@ -10,15 +10,18 @@ fields:
         parse:
           type: literal
           return: 12
+          generated: true
       -
         value: 6
         display: false
         parse:
           type: literal
           return: 6
+          generated: true
       -
         value: 8
         display: false
         parse:
           type: literal
           return: 8
+          generated: true

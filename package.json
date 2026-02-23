@@ -12,7 +12,8 @@
     "tauri:build": "tauri build",
     "tauri:bundle": "tauri bundle",
     "copy-json": "tsx scripts/json_bundle.ts",
-    "buff:mappings": "tsx scripts/generate_buff_mapping_yml.ts"
+    "buff:mappings": "tsx scripts/generate_buff_mapping_yml.ts",
+    "rogue:mappings": "tsx scripts/generate_rogue_mapping_yml.ts"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",

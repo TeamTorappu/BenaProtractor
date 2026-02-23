@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: DEEP_SEA
+          generated: true
   _buildableType:
     type: string
     description: buildable Type
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: MELEE
+          generated: true
   _checkBuildableMask:
     type: boolean
     description: check Buildable Mask
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _checkBuildableType:
     type: boolean
     description: check Buildable Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _equipChessId:
     type: null | string
     description: equip Chess Id
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
   _equipChessIdBlackboardKey:
     type: string
     description: equip Chess Id Blackboard Key
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: equip_chess_id
+          generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -46,6 +50,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _target:
     type: string
     description: target
@@ -56,3 +61,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

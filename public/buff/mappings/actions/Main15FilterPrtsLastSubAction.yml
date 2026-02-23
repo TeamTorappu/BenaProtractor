@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: FOLLOW_BOSS
+          generated: true
   _filterActionInstead:
     type: boolean
     description: filter Action Instead
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _mainActionType:
     type: string
     description: main Action Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: MOVE_AND_SPAWNENEMY
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: HIGHLAND
+          generated: true
       -
         value: LOWLAND
         display: false
         parse:
           type: literal
           return: LOWLAND
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -26,3 +28,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

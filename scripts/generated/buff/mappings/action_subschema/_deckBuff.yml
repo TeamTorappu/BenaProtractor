@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"NONE","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":null,"loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CreateDeckBuff:
     type: object
     values:
@@ -35,6 +37,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"NONE","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[{"attributeType":"MAX_DEPLOY_COUNT","formulaItem":"ADDITION","value":1,"loadFromBlackboard":false,"fetchBaseValueFromSourceEntity":false}]},"buffKey":"deploycnt_minus","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -44,6 +47,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"TAUNT","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"btauntcard_taunt","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -53,6 +57,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"UNDEPLOYABLE","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"btauntcard_undeployable","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -62,6 +67,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"UNDEPLOYABLE","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"mlyss_wtrman_undeployable","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -71,6 +77,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"UNDEPLOYABLE","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"trap_dydfst_stage_battle[decl_buff]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -80,6 +87,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"UNDEPLOYABLE","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"enemy_wdslm[undeployable]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -89,6 +97,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"WTRMAN_DISTURB","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"mlyss_wtrman_undeployable","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -98,6 +107,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   LegionModeOnlyCreateCardBuffToOneCardByCost:
     type: object
     values:
@@ -110,6 +120,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"CHOSEN_ONE","lifeType":"UNTIL_NEXT_SPAWN","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"legion_trap_card_effect","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -119,6 +130,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"CHOSEN_ONE","lifeType":"UNTIL_NEXT_SPAWN","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[{"attributeType":"ATK","formulaItem":"MULTIPLIER","value":0,"loadFromBlackboard":true,"fetchBaseValueFromSourceEntity":false}]},"buffKey":"legion_trap_godcha_deck_t[atk]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"STACK","maxStackCnt":99,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_768_godch_buff","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -128,6 +140,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   Svash2LRCardPositionSwap:
     type: object
     values:
@@ -140,6 +153,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CreateDeckBuffWithSelectOrder:
     type: object
     values:
@@ -152,6 +166,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"NONE","lifeType":"UNTIL_NEXT_SPAWN","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":true,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":"svash2_card_skill_02_buff_once","ignoreSpecialBuild":true,"buff":{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"svash2_s_2[build]","loadFromDB":false,"isDurableBuff":true,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"svash2_s_2[build]","disableOverride":false,"overrideKey":"svash2_s_2[build]","overrideType":"STACK","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"INFINITY","triggerCnt":1,"triggerInterval":0.10000000149011612,"waitFirstTriggerInterval":true,"firstTriggerInterval":0.10000000149011612,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -161,6 +176,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CreateDeckCardBuffsWithSelectOrderList:
     type: object
     values:
@@ -173,6 +189,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CreateDeckBuffWithDeckSelector:
     type: object
     values:
@@ -185,6 +202,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CreateDeckBuffByCnt:
     type: object
     values:
@@ -197,6 +215,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"RL5_RELIC_CARDG","lifeType":"ALL_THE_TIME","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[{"attributeType":"DEF","formulaItem":"MULTIPLIER","value":0,"loadFromBlackboard":true,"fetchBaseValueFromSourceEntity":false},{"attributeType":"MAX_HP","formulaItem":"MULTIPLIER","value":0,"loadFromBlackboard":true,"fetchBaseValueFromSourceEntity":false},{"attributeType":"BLOCK_CNT","formulaItem":"ADDITION","value":0,"loadFromBlackboard":true,"fetchBaseValueFromSourceEntity":false}]},"buffKey":"rogue_5_deck_buff_attri_up_right[buff]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"rogue_5_deck_buff_attri_up_right[buff]","disableOverride":false,"overrideKey":null,"overrideType":"UNIQUE","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -206,6 +225,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"RL5_RELIC_CARDG","lifeType":"UNTIL_NEXT_SPAWN","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"rogue_5_deck_buff_left_add[next_char]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"rogue_5_deck_buff_left_add[next_char]","disableOverride":false,"overrideKey":null,"overrideType":"UNIQUE","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -215,6 +235,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"cardEffectType":"RL5_RELIC_CARDG","lifeType":"UNTIL_NEXT_SPAWN","affectInHand":false,"affectOutOfHand":false,"wontSpawnWhenRallyPointSwitch":false,"showToastWhenAffect":false,"cardAnimWhenDeckbuffAdd":null,"ignoreSpecialBuild":false,"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"rogue_5_deck_buff_right_add[next_char]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"rogue_5_deck_buff_right_add[next_char]","disableOverride":false,"overrideKey":null,"overrideType":"UNIQUE","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}}"
         display: false
@@ -224,3 +245,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffOwner:
     type: string
     description: buff Owner
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isDisableOverrideBuff:
     type: boolean
     description: is Disable Override Buff
@@ -68,12 +75,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _stackCnt:
     type: number
     description: stack Cnt
@@ -84,24 +93,28 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 15
         display: false
         parse:
           type: literal
           return: 15
+          generated: true
       -
         value: 80
         display: false
         parse:
           type: literal
           return: 80
+          generated: true
   _stackCntKey:
     type: string
     description: stack Cnt Key
@@ -112,123 +125,144 @@ fields:
         parse:
           type: literal
           return: additional_token_cnt
+          generated: true
       -
         value: buffStackCount
         display: false
         parse:
           type: literal
           return: buffStackCount
+          generated: true
       -
         value: buff_cnt
         display: false
         parse:
           type: literal
           return: buff_cnt
+          generated: true
       -
         value: casted_times
         display: false
         parse:
           type: literal
           return: casted_times
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: damage_cnt
         display: false
         parse:
           type: literal
           return: damage_cnt
+          generated: true
       -
         value: dynamic
         display: false
         parse:
           type: literal
           return: dynamic
+          generated: true
       -
         value: gen_num
         display: false
         parse:
           type: literal
           return: gen_num
+          generated: true
       -
         value: init_cnt
         display: false
         parse:
           type: literal
           return: init_cnt
+          generated: true
       -
         value: initial_buff_cnt
         display: false
         parse:
           type: literal
           return: initial_buff_cnt
+          generated: true
       -
         value: mark_buff_count
         display: false
         parse:
           type: literal
           return: mark_buff_count
+          generated: true
       -
         value: max_cnt
         display: false
         parse:
           type: literal
           return: max_cnt
+          generated: true
       -
         value: max_stack_cnt
         display: false
         parse:
           type: literal
           return: max_stack_cnt
+          generated: true
       -
         value: professionCnt
         display: false
         parse:
           type: literal
           return: professionCnt
+          generated: true
       -
         value: real_init_stack_cnt
         display: false
         parse:
           type: literal
           return: real_init_stack_cnt
+          generated: true
       -
         value: stack
         display: false
         parse:
           type: literal
           return: stack
+          generated: true
       -
         value: stack_cnt
         display: false
         parse:
           type: literal
           return: stack_cnt
+          generated: true
       -
         value: stack_cnt_dif
         display: false
         parse:
           type: literal
           return: stack_cnt_dif
+          generated: true
       -
         value: stack_layer
         display: false
         parse:
           type: literal
           return: stack_layer
+          generated: true
       -
         value: ulpia_t1_cnt
         display: false
         parse:
           type: literal
           return: ulpia_t1_cnt
+          generated: true
       -
         value: upgrade_cnt
         display: false
         parse:
           type: literal
           return: upgrade_cnt
+          generated: true

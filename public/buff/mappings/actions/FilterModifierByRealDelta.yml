@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: GT
+          generated: true
       -
         value: LT
         display: false
         parse:
           type: literal
           return: LT
+          generated: true
   _modifierTargetType:
     type: string
     description: modifier Target Type
@@ -26,27 +28,32 @@ fields:
         parse:
           type: literal
           return: COST
+          generated: true
       -
         value: EP
         display: false
         parse:
           type: literal
           return: EP
+          generated: true
       -
         value: HP
         display: false
         parse:
           type: literal
           return: HP
+          generated: true
       -
         value: LIFE_POINT
         display: false
         parse:
           type: literal
           return: LIFE_POINT
+          generated: true
       -
         value: SP
         display: false
         parse:
           type: literal
           return: SP
+          generated: true

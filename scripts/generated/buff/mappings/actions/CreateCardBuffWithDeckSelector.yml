@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: "makiri_s_2[cost]"
+          generated: true
   _deckSelector:
     type: object
     description: deck Selector
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN
+          generated: true
   _source:
     type: string
     description: source
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -80,3 +87,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

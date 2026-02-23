@@ -10,3 +10,4 @@ fields:
         parse:
           type: literal
           return: env_020_ro4dlc2_boss5
+          generated: true

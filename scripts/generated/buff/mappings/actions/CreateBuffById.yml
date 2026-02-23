@@ -10,168 +10,196 @@ fields:
         parse:
           type: literal
           return: "attr_down[atk]"
+          generated: true
       -
         value: c2e_cold
         display: false
         parse:
           type: literal
           return: c2e_cold
+          generated: true
       -
         value: c2e_freeze
         display: false
         parse:
           type: literal
           return: c2e_freeze
+          generated: true
       -
         value: "c2e_freeze[holder]"
         display: false
         parse:
           type: literal
           return: "c2e_freeze[holder]"
+          generated: true
       -
         value: "damage_resistance[inf]"
         display: false
         parse:
           type: literal
           return: "damage_resistance[inf]"
+          generated: true
       -
         value: disarmed_and_cant_use_skill
         display: false
         parse:
           type: literal
           return: disarmed_and_cant_use_skill
+          generated: true
       -
         value: disarmed_combat
         display: false
         parse:
           type: literal
           return: disarmed_combat
+          generated: true
       -
         value: dragon_fire
         display: false
         parse:
           type: literal
           return: dragon_fire
+          generated: true
       -
         value: "dragon_fire[damage]"
         display: false
         parse:
           type: literal
           return: "dragon_fire[damage]"
+          generated: true
       -
         value: e2c_cold
         display: false
         parse:
           type: literal
           return: e2c_cold
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: "palsy[stack]"
         display: false
         parse:
           type: literal
           return: "palsy[stack]"
+          generated: true
       -
         value: palsy_trigger
         display: false
         parse:
           type: literal
           return: palsy_trigger
+          generated: true
       -
         value: palsying
         display: false
         parse:
           type: literal
           return: palsying
+          generated: true
       -
         value: "peak_performance[inf]"
         display: false
         parse:
           type: literal
           return: "peak_performance[inf]"
+          generated: true
       -
         value: purify
         display: false
         parse:
           type: literal
           return: purify
+          generated: true
       -
         value: resistable_abnormal_flag_anti
         display: false
         parse:
           type: literal
           return: resistable_abnormal_flag_anti
+          generated: true
       -
         value: silence
         display: false
         parse:
           type: literal
           return: silence
+          generated: true
       -
         value: sleep
         display: false
         parse:
           type: literal
           return: sleep
+          generated: true
       -
         value: sluggish
         display: false
         parse:
           type: literal
           return: sluggish
+          generated: true
       -
         value: status_resistable_anti
         display: false
         parse:
           type: literal
           return: status_resistable_anti
+          generated: true
       -
         value: "status_resistance[inf]"
         display: false
         parse:
           type: literal
           return: "status_resistance[inf]"
+          generated: true
       -
         value: "status_resistance[limit]"
         display: false
         parse:
           type: literal
           return: "status_resistance[limit]"
+          generated: true
       -
         value: stun
         display: false
         parse:
           type: literal
           return: stun
+          generated: true
       -
         value: "weak[ep][inf]"
         display: false
         parse:
           type: literal
           return: "weak[ep][inf]"
+          generated: true
       -
         value: "weak[inf]"
         display: false
         parse:
           type: literal
           return: "weak[inf]"
+          generated: true
       -
         value: "weak[limit]"
         display: false
         parse:
           type: literal
           return: "weak[limit]"
+          generated: true
       -
         value: "weak[magic][inf]"
         display: false
         parse:
           type: literal
           return: "weak[magic][inf]"
+          generated: true
   _buffOwner:
     type: string
     description: buff Owner
@@ -182,24 +210,28 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -210,12 +242,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -226,12 +260,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _loadFromBlackboard:
     type: boolean
     description: load From Blackboard
@@ -242,9 +278,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

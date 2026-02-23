@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _count:
     type: number
     description: count
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _deckSelector:
     type: object
     description: deck Selector
@@ -30,6 +32,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN
+          generated: true
   _selectOrder:
     type: string
     description: select Order
@@ -80,6 +87,7 @@ fields:
         parse:
           type: literal
           return: FROM_RIGHT
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -90,6 +98,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useTokenAsSourceCard:
     type: boolean
     description: use Token As Source Card
@@ -100,3 +109,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

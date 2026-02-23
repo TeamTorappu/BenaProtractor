@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _colKey:
     type: string
     description: col Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: col
+          generated: true
   _radius:
     type: number
     description: radius
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _radiusBbKey:
     type: string
     description: radius Bb Key
@@ -40,12 +43,14 @@ fields:
         parse:
           type: literal
           return: radius
+          generated: true
       -
         value: range_radius
         display: false
         parse:
           type: literal
           return: range_radius
+          generated: true
   _rowKey:
     type: string
     description: row Key
@@ -56,6 +61,7 @@ fields:
         parse:
           type: literal
           return: row
+          generated: true
   _source:
     type: string
     description: source
@@ -66,6 +72,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _target:
     type: string
     description: target
@@ -76,9 +83,11 @@ fields:
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true

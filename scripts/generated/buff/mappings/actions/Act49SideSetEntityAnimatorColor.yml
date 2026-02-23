@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   color:
     type: object
     description: color
@@ -20,3 +21,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

@@ -10,15 +10,18 @@ fields:
         parse:
           type: literal
           return: decay
+          generated: true
       -
         value: existing_time
         display: false
         parse:
           type: literal
           return: existing_time
+          generated: true
       -
         value: stun
         display: false
         parse:
           type: literal
           return: stun
+          generated: true

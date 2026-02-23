@@ -10,54 +10,63 @@ fields:
         parse:
           type: literal
           return: char_4186_tmoris
+          generated: true
       -
         value: enemy_1580_mnchrn
         display: false
         parse:
           type: literal
           return: enemy_1580_mnchrn
+          generated: true
       -
         value: enemy_4046_muobst
         display: false
         parse:
           type: literal
           return: enemy_4046_muobst
+          generated: true
       -
         value: token_10050_monstr_prosts
         display: false
         parse:
           type: literal
           return: token_10050_monstr_prosts
+          generated: true
       -
         value: token_10055_phatm2_mndclv
         display: false
         parse:
           type: literal
           return: token_10055_phatm2_mndclv
+          generated: true
       -
         value: trap_1513_lhshop
         display: false
         parse:
           type: literal
           return: trap_1513_lhshop
+          generated: true
       -
         value: trap_1517_lhcol
         display: false
         parse:
           type: literal
           return: trap_1517_lhcol
+          generated: true
       -
         value: trap_156_dsshell
         display: false
         parse:
           type: literal
           return: trap_156_dsshell
+          generated: true
       -
         value: trap_778_giatow
         display: false
         parse:
           type: literal
           return: trap_778_giatow
+          generated: true
   _filterIds:
     type: array | null
     description: filter Ids
@@ -68,6 +77,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _isUnset:
     type: boolean
     description: is Unset
@@ -78,12 +88,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -94,15 +106,18 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MAIN_TARGET
         display: false
         parse:
           type: literal
           return: MAIN_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _rangeId:
     type: string
     description: range Id
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: 0-1
+          generated: true
       -
         value: x-5
         display: false
         parse:
           type: literal
           return: x-5
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -42,6 +46,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _tileKeys:
     type: array | null
     description: tile Keys
@@ -52,3 +57,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

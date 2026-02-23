@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: STOLEN
+          generated: true
   _owner:
     type: string
     description: owner
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _type:
     type: string
     description: type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: ENEMY
+          generated: true

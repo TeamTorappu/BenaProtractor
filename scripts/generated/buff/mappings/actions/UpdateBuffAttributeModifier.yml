@@ -10,30 +10,35 @@ fields:
         parse:
           type: literal
           return: ATK
+          generated: true
       -
         value: DEF
         display: false
         parse:
           type: literal
           return: DEF
+          generated: true
       -
         value: DEF_PENETRATE
         display: false
         parse:
           type: literal
           return: DEF_PENETRATE
+          generated: true
       -
         value: EP_RECOVERY_PER_SEC
         display: false
         parse:
           type: literal
           return: EP_RECOVERY_PER_SEC
+          generated: true
       -
         value: MOVE_SPEED
         display: false
         parse:
           type: literal
           return: MOVE_SPEED
+          generated: true
   _formulaType:
     type: string
     description: formula Type
@@ -44,12 +49,14 @@ fields:
         parse:
           type: literal
           return: ADDITION
+          generated: true
       -
         value: MULTIPLIER
         display: false
         parse:
           type: literal
           return: MULTIPLIER
+          generated: true
   _useBlackboard:
     type: boolean
     description: use Blackboard
@@ -60,12 +67,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _value:
     type: number
     description: value
@@ -76,3 +85,4 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _sourcePosType:
     type: string
     description: source Pos Type
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetPosType:
     type: string
     description: target Pos Type
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _upgradeTrapId:
     type: string
     description: upgrade Trap Id
@@ -52,30 +57,35 @@ fields:
         parse:
           type: literal
           return: trap_1501_lhpark
+          generated: true
       -
         value: trap_1508_lhmine
         display: false
         parse:
           type: literal
           return: trap_1508_lhmine
+          generated: true
       -
         value: trap_1515_lhfacp
         display: false
         parse:
           type: literal
           return: trap_1515_lhfacp
+          generated: true
       -
         value: trap_1519_lhrift
         display: false
         parse:
           type: literal
           return: trap_1519_lhrift
+          generated: true
       -
         value: trap_1520_lhcolb
         display: false
         parse:
           type: literal
           return: trap_1520_lhcolb
+          generated: true
   _upgradeTrapKey:
     type: null | string
     description: upgrade Trap Key
@@ -86,15 +96,18 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: token_id
         display: false
         parse:
           type: literal
           return: token_id
+          generated: true
       -
         value: upgrade_trap_id
         display: false
         parse:
           type: literal
           return: upgrade_trap_id
+          generated: true

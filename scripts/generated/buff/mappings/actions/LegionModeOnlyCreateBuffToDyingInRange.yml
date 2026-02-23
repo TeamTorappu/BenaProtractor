@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _maxNum:
     type: number
     description: max Num
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -40,3 +43,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

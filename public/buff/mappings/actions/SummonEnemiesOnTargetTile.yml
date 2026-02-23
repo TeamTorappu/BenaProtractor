@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _buffToEnemy:
     type: null | object
     description: buff To Enemy
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _checkMotionMode:
     type: string
     description: check Motion Mode
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
   _delayTime:
     type: number
     description: delay Time
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _enemyKey:
     type: null
     description: enemy Key
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _excludeRootTile:
     type: boolean
     description: exclude Root Tile
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _managedByScheduler:
     type: boolean
     description: managed By Scheduler
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _randomOffsetBound:
     type: object
     description: random Offset Bound
@@ -80,6 +87,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _selectTileInSnapshot:
     type: boolean
     description: select Tile In Snapshot
@@ -90,12 +98,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _source:
     type: string
     description: source
@@ -106,12 +116,14 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _summonCount:
     type: number
     description: summon Count
@@ -122,6 +134,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _unharmful:
     type: boolean
     description: unharmful
@@ -132,6 +145,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _useProjectileTraceTargetMapPos:
     type: boolean
     description: use Projectile Trace Target Map Pos
@@ -142,3 +156,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

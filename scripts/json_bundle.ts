@@ -31,7 +31,8 @@ async function jsonBundle(tasks: CopyTask[]) {
         try {
             await copyFile(task.from, task.to);
         } catch (error) {
-            logger.error(`✗ Failed to copy ${task.from}:`, error);
+            logger.error(`✗ Failed to copy ${task.from}`);
+            logger.error(error);
             throw error;
         }
     }

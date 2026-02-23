@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 10
         display: false
         parse:
           type: literal
           return: 10
+          generated: true
   _goldNumKey:
     type: string
     description: gold Num Key
@@ -32,48 +35,56 @@ fields:
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: current_price_half
         display: false
         parse:
           type: literal
           return: current_price_half
+          generated: true
       -
         value: double_cdsoul_cnt
         display: false
         parse:
           type: literal
           return: double_cdsoul_cnt
+          generated: true
       -
         value: finish_gold
         display: false
         parse:
           type: literal
           return: finish_gold
+          generated: true
       -
         value: get_gold
         display: false
         parse:
           type: literal
           return: get_gold
+          generated: true
       -
         value: gold
         display: false
         parse:
           type: literal
           return: gold
+          generated: true
       -
         value: gold_cnt
         display: false
         parse:
           type: literal
           return: gold_cnt
+          generated: true
       -
         value: gold_num
         display: false
         parse:
           type: literal
           return: gold_num
+          generated: true
   _loadFromBlackboard:
     type: boolean
     description: load From Blackboard
@@ -84,9 +95,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

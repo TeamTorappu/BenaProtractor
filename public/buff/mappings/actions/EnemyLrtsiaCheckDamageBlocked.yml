@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: ProjectileShieldP1_core
+          generated: true
   _angleKey:
     type: string
     description: angle Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: block_angle
+          generated: true
   _blockAngle:
     type: number
     description: block Angle
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _clockWise:
     type: boolean
     description: clock Wise
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _source:
     type: string
     description: source
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _target:
     type: string
     description: target
@@ -60,3 +65,4 @@ fields:
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true

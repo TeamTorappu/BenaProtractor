@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
   _branchId:
     type: string
     description: branch Id
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _fromCurrentPos:
     type: boolean
     description: from Current Pos
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _overridePreviewEffect:
     type: string
     description: override Preview Effect
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
   _showType:
     type: string
     description: show Type
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: FROM_BRANCH
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -60,3 +65,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

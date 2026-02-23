@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 2
+          generated: true
   _intervalKey:
     type: string
     description: interval Key
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: summon_interval
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

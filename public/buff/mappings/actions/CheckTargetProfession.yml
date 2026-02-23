@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _profession:
     type: array
     description: profession
@@ -26,6 +28,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _readProfessionFromBlackboard:
     type: boolean
     description: read Profession From Blackboard
@@ -36,6 +39,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _subProfessions:
     type: null | string
     description: sub Professions
@@ -46,18 +50,21 @@ fields:
         parse:
           type: literal
           return: craftsman
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: stalker
         display: false
         parse:
           type: literal
           return: stalker
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -68,27 +75,32 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MAIN_TARGET
         display: false
         parse:
           type: literal
           return: MAIN_TARGET
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true

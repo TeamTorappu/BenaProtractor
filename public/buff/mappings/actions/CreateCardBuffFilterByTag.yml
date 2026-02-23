@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: null
+          generated: true
   _enableMaxStackCount:
     type: boolean
     description: enable Max Stack Count
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -30,12 +32,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isRatio:
     type: boolean
     description: is Ratio
@@ -46,6 +50,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _lifeType:
     type: string
     description: life Type
@@ -56,12 +61,14 @@ fields:
         parse:
           type: literal
           return: HOLD_BY_BUFF
+          generated: true
       -
         value: UNTIL_NEXT_SPAWN
         display: false
         parse:
           type: literal
           return: UNTIL_NEXT_SPAWN
+          generated: true
   _tag:
     type: string
     description: tag
@@ -72,6 +79,7 @@ fields:
         parse:
           type: literal
           return: kazimierz
+          generated: true
   _useCardBuffKey:
     type: boolean
     description: use Card Buff Key
@@ -82,3 +90,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

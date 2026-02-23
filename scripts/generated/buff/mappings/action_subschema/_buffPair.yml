@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"nearl2_s_2[shield][common]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"nearl2_s_2[shield]","disableOverride":false,"overrideKey":"","overrideType":"STACK","maxStackCnt":-1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[{"key":"max_stack_cnt","value":-1,"valueStr":""},{"key":"max_valid_stack_cnt","value":-1,"valueStr":""}]},"useBlackboard":true,"count":0,"peeling":-4}"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"vigil_wolf_s_3[damage]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"vigil_wolf_s_3[damage]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"useBlackboard":true,"count":0,"peeling":0}"
         display: false
@@ -32,6 +34,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[{"attributeType":"ATK","formulaItem":"MULTIPLIER","value":0,"loadFromBlackboard":true,"fetchBaseValueFromSourceEntity":false}]},"buffKey":"phatom_s_2[atk]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"phatom_s_2[atk]","disableOverride":false,"overrideKey":null,"overrideType":"STACK","maxStackCnt":-1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[{"key":"max_stack_cnt","value":80,"valueStr":null}]},"useBlackboard":true,"count":0,"peeling":0}"
         display: false
@@ -41,6 +44,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":null,"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"damage_block_once","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"damage_block_once","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"halo_skill_01_buff","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"useBlackboard":true,"count":0,"peeling":0}"
         display: false
@@ -50,6 +54,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":null,"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"damage_block_once","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"damage_block_once","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"nian_buff_01_start","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"useBlackboard":true,"count":0,"peeling":0}"
         display: false
@@ -59,6 +64,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":null,"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"mudrok_t_1[shield_b]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"mudrok_t_1[shield_b]","disableOverride":false,"overrideKey":null,"overrideType":"STACK","maxStackCnt":-1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"mudrok_buff_02_start","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"useBlackboard":true,"count":0,"peeling":-2}"
         display: false
@@ -68,6 +74,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":null,"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"sidero_t_1[stack]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"sidero_t_1[stack]","disableOverride":false,"overrideKey":null,"overrideType":"STACK","maxStackCnt":-1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[{"key":"max_stack_cnt","value":-1,"valueStr":null}]},"useBlackboard":true,"count":0,"peeling":0}"
         display: false
@@ -77,6 +84,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"enemy_windoc_fear_hot[damage_resistance]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"enemy_windoc_damage_resistance","disableOverride":true,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"useBlackboard":true,"count":0,"peeling":0}"
         display: false
@@ -86,6 +94,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"mudrok_e_002_t_1[shield_b]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"mudrok_e_002_t_1[shield_b]","disableOverride":false,"overrideKey":null,"overrideType":"STACK","maxStackCnt":-1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"mudrok_buff_02_start","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"useBlackboard":true,"count":0,"peeling":-2}"
         display: false
@@ -95,6 +104,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"buff":{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"nian_e_002_t_2[block]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"nian_e_002_t_2[block]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"nian_buff_01_start","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"useBlackboard":true,"count":0,"peeling":0}"
         display: false
@@ -104,3 +114,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

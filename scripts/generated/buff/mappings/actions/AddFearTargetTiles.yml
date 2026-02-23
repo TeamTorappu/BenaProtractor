@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 45
+          generated: true
   _rangeRadius:
     type: number
     description: range Radius
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 10
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -40,3 +43,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

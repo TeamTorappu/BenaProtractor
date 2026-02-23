@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"x":0.05000000074505806,"y":0.15000000596046448,"z":0}"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "{"x":0.10000000149011612,"y":0.10000000149011612,"z":0}"
         display: false
@@ -32,3 +34,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

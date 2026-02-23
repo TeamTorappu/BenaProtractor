@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _source:
     type: string
     description: source
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _sourceMode:
     type: number
     description: source Mode
@@ -30,12 +32,14 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 3
         display: false
         parse:
           type: literal
           return: 3
+          generated: true
   _target:
     type: string
     description: target
@@ -46,12 +50,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _useCurrentModeRangeId:
     type: boolean
     description: use Current Mode Range Id
@@ -62,6 +68,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _useSpecifiedModeRangeId:
     type: boolean
     description: use Specified Mode Range Id
@@ -72,3 +79,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

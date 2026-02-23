@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _costIncreaseTime:
     type: number
     description: cost Increase Time
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: 999999
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: SOURCE
+          generated: true

@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _compareType:
     type: string
     description: compare Type
@@ -20,3 +21,4 @@ fields:
         parse:
           type: literal
           return: GE
+          generated: true

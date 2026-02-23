@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: SnowAccumulation
+          generated: true
   _clearS1SnowTileList:
     type: boolean
     description: clear S1 Snow Tile List
@@ -20,12 +21,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isS1RelatedOperate:
     type: boolean
     description: is S1 Related Operate
@@ -36,12 +39,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isS2RelatedOperate:
     type: boolean
     description: is S2 Related Operate
@@ -52,6 +57,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _isS3RelatedOperate:
     type: boolean
     description: is S3 Related Operate
@@ -62,12 +68,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _ownerType:
     type: string
     description: owner Type
@@ -78,6 +86,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _resetTilesInRangeList:
     type: boolean
     description: reset Tiles In Range List
@@ -88,12 +97,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _triggerS1SnowForward:
     type: boolean
     description: trigger S1 Snow Forward
@@ -104,12 +115,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _triggerS2SnowOutward:
     type: boolean
     description: trigger S2 Snow Outward
@@ -120,6 +133,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _tryCreateTokenEndTile:
     type: boolean
     description: try Create Token End Tile
@@ -130,3 +144,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

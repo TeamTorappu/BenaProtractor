@@ -10,48 +10,56 @@ fields:
         parse:
           type: literal
           return: -1
+          generated: true
       -
         value: -2
         display: false
         parse:
           type: literal
           return: -2
+          generated: true
       -
         value: -3
         display: false
         parse:
           type: literal
           return: -3
+          generated: true
       -
         value: 0
         display: false
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 1000
         display: false
         parse:
           type: literal
           return: 1000
+          generated: true
       -
         value: 2
         display: false
         parse:
           type: literal
           return: 2
+          generated: true
       -
         value: 5
         display: false
         parse:
           type: literal
           return: 5
+          generated: true
   _additionKey:
     type: null | string
     description: addition Key
@@ -62,108 +70,126 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: add_damage
         display: false
         parse:
           type: literal
           return: add_damage
+          generated: true
       -
         value: add_tile
         display: false
         parse:
           type: literal
           return: add_tile
+          generated: true
       -
         value: atk_add
         display: false
         parse:
           type: literal
           return: atk_add
+          generated: true
       -
         value: boss_add
         display: false
         parse:
           type: literal
           return: boss_add
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: fly_duration
         display: false
         parse:
           type: literal
           return: fly_duration
+          generated: true
       -
         value: hp_ratio
         display: false
         parse:
           type: literal
           return: hp_ratio
+          generated: true
       -
         value: level_add
         display: false
         parse:
           type: literal
           return: level_add
+          generated: true
       -
         value: move_speed_add
         display: false
         parse:
           type: literal
           return: move_speed_add
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: range_radius_add
         display: false
         parse:
           type: literal
           return: range_radius_add
+          generated: true
       -
         value: speed_add
         display: false
         parse:
           type: literal
           return: speed_add
+          generated: true
       -
         value: stun
         display: false
         parse:
           type: literal
           return: stun
+          generated: true
       -
         value: stun_duration_add
         display: false
         parse:
           type: literal
           return: stun_duration_add
+          generated: true
       -
         value: timer_addition
         display: false
         parse:
           type: literal
           return: timer_addition
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
       -
         value: value_origin
         display: false
         parse:
           type: literal
           return: value_origin
+          generated: true
   _blackboardKey:
     type: string
     description: blackboard Key
@@ -174,6 +200,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _isFloat:
     type: boolean
     description: is Float
@@ -184,9 +211,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

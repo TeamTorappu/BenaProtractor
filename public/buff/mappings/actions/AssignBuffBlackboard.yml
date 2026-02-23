@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _assignString:
     type: boolean
     description: assign String
@@ -26,12 +28,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _blackboardKey:
     type: string
     description: blackboard Key
@@ -42,6 +46,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffKey:
     type: string
     description: buff Key
@@ -52,510 +57,595 @@ fields:
         parse:
           type: literal
           return: ParamStorage
+          generated: true
       -
         value: "[g]rogue_4_special_hand[time]"
         display: false
         parse:
           type: literal
           return: "[g]rogue_4_special_hand[time]"
+          generated: true
       -
         value: achunt_equalize
         display: false
         parse:
           type: literal
           return: achunt_equalize
+          generated: true
       -
         value: act36side_enemy_global_buff
         display: false
         parse:
           type: literal
           return: act36side_enemy_global_buff
+          generated: true
       -
         value: "agoat2_s_2[shield]"
         display: false
         parse:
           type: literal
           return: "agoat2_s_2[shield]"
+          generated: true
       -
         value: "angel2_s_1[switch_mode]"
         display: false
         parse:
           type: literal
           return: "angel2_s_1[switch_mode]"
+          generated: true
       -
         value: "catsld_t_1[core]"
         display: false
         parse:
           type: literal
           return: "catsld_t_1[core]"
+          generated: true
       -
         value: "cetsyr_s_3[cal_hp_ratio]"
         display: false
         parse:
           type: literal
           return: "cetsyr_s_3[cal_hp_ratio]"
+          generated: true
       -
         value: "chen3_s2[kill_info]"
         display: false
         parse:
           type: literal
           return: "chen3_s2[kill_info]"
+          generated: true
       -
         value: "cnnon_a[effect_manager]"
         display: false
         parse:
           type: literal
           return: "cnnon_a[effect_manager]"
+          generated: true
       -
         value: "cosgia_t_1[vfx]"
         display: false
         parse:
           type: literal
           return: "cosgia_t_1[vfx]"
+          generated: true
       -
         value: dagda_talent_1
         display: false
         parse:
           type: literal
           return: dagda_talent_1
+          generated: true
       -
         value: "duelcdt_s[game_config]"
         display: false
         parse:
           type: literal
           return: "duelcdt_s[game_config]"
+          generated: true
       -
         value: enemy_arcthf_damage
         display: false
         parse:
           type: literal
           return: enemy_arcthf_damage
+          generated: true
       -
         value: enemy_bqthie_passive_flying
         display: false
         parse:
           type: literal
           return: enemy_bqthie_passive_flying
+          generated: true
       -
         value: enemy_carrier_summon_drones
         display: false
         parse:
           type: literal
           return: enemy_carrier_summon_drones
+          generated: true
       -
         value: "enemy_common[devour_holder]"
         display: false
         parse:
           type: literal
           return: "enemy_common[devour_holder]"
+          generated: true
       -
         value: enemy_crane_durbus
         display: false
         parse:
           type: literal
           return: enemy_crane_durbus
+          generated: true
       -
         value: enemy_dyjsww_direction_buff
         display: false
         parse:
           type: literal
           return: enemy_dyjsww_direction_buff
+          generated: true
       -
         value: enemy_eltrsm_p3_passive
         display: false
         parse:
           type: literal
           return: enemy_eltrsm_p3_passive
+          generated: true
       -
         value: "enemy_eltswd_passive[aoe]"
         display: false
         parse:
           type: literal
           return: "enemy_eltswd_passive[aoe]"
+          generated: true
       -
         value: "enemy_ftxjl[growth_eff]"
         display: false
         parse:
           type: literal
           return: "enemy_ftxjl[growth_eff]"
+          generated: true
       -
         value: "enemy_lrboom[triggerTile]"
         display: false
         parse:
           type: literal
           return: "enemy_lrboom[triggerTile]"
+          generated: true
       -
         value: "enemy_lrmm[stormCtrl]"
         display: false
         parse:
           type: literal
           return: "enemy_lrmm[stormCtrl]"
+          generated: true
       -
         value: "enemy_lrrook[dmgCore]"
         display: false
         parse:
           type: literal
           return: "enemy_lrrook[dmgCore]"
+          generated: true
       -
         value: "enemy_lrwzrd[atk_boost]"
         display: false
         parse:
           type: literal
           return: "enemy_lrwzrd[atk_boost]"
+          generated: true
       -
         value: enemy_mjcbln_value
         display: false
         parse:
           type: literal
           return: enemy_mjcbln_value
+          generated: true
       -
         value: enemy_mukfub_rage_logic
         display: false
         parse:
           type: literal
           return: enemy_mukfub_rage_logic
+          generated: true
       -
         value: "enemy_nsblon[move]"
         display: false
         parse:
           type: literal
           return: "enemy_nsblon[move]"
+          generated: true
       -
         value: "enemy_nstmom[skill_counter]"
         display: false
         parse:
           type: literal
           return: "enemy_nstmom[skill_counter]"
+          generated: true
       -
         value: enemy_pope_param_storage
         display: false
         parse:
           type: literal
           return: enemy_pope_param_storage
+          generated: true
       -
         value: enemy_shpkg_shield_checker
         display: false
         parse:
           type: literal
           return: enemy_shpkg_shield_checker
+          generated: true
       -
         value: "enemy_suisho[ready]"
         display: false
         parse:
           type: literal
           return: "enemy_suisho[ready]"
+          generated: true
       -
         value: "enemy_suiwei[ready]"
         display: false
         parse:
           type: literal
           return: "enemy_suiwei[ready]"
+          generated: true
       -
         value: "enemy_suiyzh[claws_ready]"
         display: false
         parse:
           type: literal
           return: "enemy_suiyzh[claws_ready]"
+          generated: true
       -
         value: "enemy_suizzh[claws_ready]"
         display: false
         parse:
           type: literal
           return: "enemy_suizzh[claws_ready]"
+          generated: true
       -
         value: enemy_tjgdly_dive_cd
         display: false
         parse:
           type: literal
           return: enemy_tjgdly_dive_cd
+          generated: true
       -
         value: enemy_trcerb_position_check
         display: false
         parse:
           type: literal
           return: enemy_trcerb_position_check
+          generated: true
       -
         value: enemy_trcerb_strong
         display: false
         parse:
           type: literal
           return: enemy_trcerb_strong
+          generated: true
       -
         value: enemy_trwlpl_food
         display: false
         parse:
           type: literal
           return: enemy_trwlpl_food
+          generated: true
       -
         value: enemy_vtmstr_equip_avaliable
         display: false
         parse:
           type: literal
           return: enemy_vtmstr_equip_avaliable
+          generated: true
       -
         value: excu2_t_1
         display: false
         parse:
           type: literal
           return: excu2_t_1
+          generated: true
       -
         value: excu2_trait
         display: false
         parse:
           type: literal
           return: excu2_trait
+          generated: true
       -
         value: "f12yin_e_003_t[evade_mark_checker]"
         display: false
         parse:
           type: literal
           return: "f12yin_e_003_t[evade_mark_checker]"
+          generated: true
       -
         value: gamecity_score
         display: false
         parse:
           type: literal
           return: gamecity_score
+          generated: true
       -
         value: haini_t_1
         display: false
         parse:
           type: literal
           return: haini_t_1
+          generated: true
       -
         value: halfIdle_lhblod_dmg_counter
         display: false
         parse:
           type: literal
           return: halfIdle_lhblod_dmg_counter
+          generated: true
       -
         value: halfIdle_lhsht_buff_s1
         display: false
         parse:
           type: literal
           return: halfIdle_lhsht_buff_s1
+          generated: true
       -
         value: haruka_t_1
         display: false
         parse:
           type: literal
           return: haruka_t_1
+          generated: true
       -
         value: "hlchgr_t[attribute_storage]"
         display: false
         parse:
           type: literal
           return: "hlchgr_t[attribute_storage]"
+          generated: true
       -
         value: "hlsttu_t[shield]"
         display: false
         parse:
           type: literal
           return: "hlsttu_t[shield]"
+          generated: true
       -
         value: "humus_t_1[effect]"
         display: false
         parse:
           type: literal
           return: "humus_t_1[effect]"
+          generated: true
       -
         value: "jesca2_jckshd_dir_ctrl[self]"
         display: false
         parse:
           type: literal
           return: "jesca2_jckshd_dir_ctrl[self]"
+          generated: true
       -
         value: judge_t_1
         display: false
         parse:
           type: literal
           return: judge_t_1
+          generated: true
       -
         value: "judge_t_1[effect]"
         display: false
         parse:
           type: literal
           return: "judge_t_1[effect]"
+          generated: true
       -
         value: "legion_mode_damage_resistance[danger_level]"
         display: false
         parse:
           type: literal
           return: "legion_mode_damage_resistance[danger_level]"
+          generated: true
       -
         value: marcil_t
         display: false
         parse:
           type: literal
           return: marcil_t
+          generated: true
       -
         value: "mlynar_t_1[atkscale]"
         display: false
         parse:
           type: literal
           return: "mlynar_t_1[atkscale]"
+          generated: true
       -
         value: "mortis_standin[switch]"
         display: false
         parse:
           type: literal
           return: "mortis_standin[switch]"
+          generated: true
       -
         value: "mortis_t1[dark_shield]"
         display: false
         parse:
           type: literal
           return: "mortis_t1[dark_shield]"
+          generated: true
       -
         value: mpctrl_boss_stage
         display: false
         parse:
           type: literal
           return: mpctrl_boss_stage
+          generated: true
       -
         value: mpctrl_car_stage
         display: false
         parse:
           type: literal
           return: mpctrl_car_stage
+          generated: true
       -
         value: mpctrl_kill_stage
         display: false
         parse:
           type: literal
           return: mpctrl_kill_stage
+          generated: true
       -
         value: mpctrl_stage_start
         display: false
         parse:
           type: literal
           return: mpctrl_stage_start
+          generated: true
       -
         value: "oblvns_s_3[fever_undead]"
         display: false
         parse:
           type: literal
           return: "oblvns_s_3[fever_undead]"
+          generated: true
       -
         value: "parrot_fly[frozen]"
         display: false
         parse:
           type: literal
           return: "parrot_fly[frozen]"
+          generated: true
       -
         value: sandbox_inherit_status
         display: false
         parse:
           type: literal
           return: sandbox_inherit_status
+          generated: true
       -
         value: "skybx_s_2[switch_mode]"
         display: false
         parse:
           type: literal
           return: "skybx_s_2[switch_mode]"
+          generated: true
       -
         value: "skzhg_m0_t[aura]"
         display: false
         parse:
           type: literal
           return: "skzhg_m0_t[aura]"
+          generated: true
       -
         value: "skzlwy_t[buff_listener]"
         display: false
         parse:
           type: literal
           return: "skzlwy_t[buff_listener]"
+          generated: true
       -
         value: svash2_s_3
         display: false
         parse:
           type: literal
           return: svash2_s_3
+          generated: true
       -
         value: "swire2_e_004_t[rogue_max_stack]"
         display: false
         parse:
           type: literal
           return: "swire2_e_004_t[rogue_max_stack]"
+          generated: true
       -
         value: "swire2_e_004_t[sp_add_atk]"
         display: false
         parse:
           type: literal
           return: "swire2_e_004_t[sp_add_atk]"
+          generated: true
       -
         value: swire2_e_004_tr
         display: false
         parse:
           type: literal
           return: swire2_e_004_tr
+          generated: true
       -
         value: swire2_t_1
         display: false
         parse:
           type: literal
           return: swire2_t_1
+          generated: true
       -
         value: "tile_quicksand[trigger_falldown]"
         display: false
         parse:
           type: literal
           return: "tile_quicksand[trigger_falldown]"
+          generated: true
       -
         value: token_phatm2_encdool_kill
         display: false
         parse:
           type: literal
           return: token_phatm2_encdool_kill
+          generated: true
       -
         value: trap_ftshad_passive
         display: false
         parse:
           type: literal
           return: trap_ftshad_passive
+          generated: true
       -
         value: trap_pirene_drunk_full
         display: false
         parse:
           type: literal
           return: trap_pirene_drunk_full
+          generated: true
       -
         value: trap_pirene_init
         display: false
         parse:
           type: literal
           return: trap_pirene_init
+          generated: true
       -
         value: "trap_portlent[record_damage]"
         display: false
         parse:
           type: literal
           return: "trap_portlent[record_damage]"
+          generated: true
       -
         value: trap_trpot_mark
         display: false
         parse:
           type: literal
           return: trap_trpot_mark
+          generated: true
       -
         value: "varkis_s2[effect]"
         display: false
         parse:
           type: literal
           return: "varkis_s2[effect]"
+          generated: true
       -
         value: "varkis_s2[shield_core]"
         display: false
         parse:
           type: literal
           return: "varkis_s2[shield_core]"
+          generated: true
       -
         value: "yu_t_2[heal]"
         display: false
         parse:
           type: literal
           return: "yu_t_2[heal]"
+          generated: true
   _buffKeyAssignFrom:
     type: null | string
     description: buff Key Assign From
@@ -566,30 +656,35 @@ fields:
         parse:
           type: literal
           return: excu2_e_trait
+          generated: true
       -
         value: "f12yin_e_003_t[evade_mark_checker]"
         display: false
         parse:
           type: literal
           return: "f12yin_e_003_t[evade_mark_checker]"
+          generated: true
       -
         value: haruka_t_1
         display: false
         parse:
           type: literal
           return: haruka_t_1
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: swire2_e_004_tr
         display: false
         parse:
           type: literal
           return: swire2_e_004_tr
+          generated: true
   _defaultValue:
     type: number
     description: default Value
@@ -600,12 +695,14 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -616,18 +713,21 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _valueKey:
     type: null | string
     description: value Key
@@ -638,393 +738,459 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: 0
         display: false
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: action_index
         display: false
         parse:
           type: literal
           return: action_index
+          generated: true
       -
         value: atk_add
         display: false
         parse:
           type: literal
           return: atk_add
+          generated: true
       -
         value: atk_reset
         display: false
         parse:
           type: literal
           return: atk_reset
+          generated: true
       -
         value: atk_scale_base
         display: false
         parse:
           type: literal
           return: atk_scale_base
+          generated: true
       -
         value: basic_success
         display: false
         parse:
           type: literal
           return: basic_success
+          generated: true
       -
         value: cached_atk
         display: false
         parse:
           type: literal
           return: cached_atk
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: curr_value
         display: false
         parse:
           type: literal
           return: curr_value
+          generated: true
       -
         value: damage_resistance
         display: false
         parse:
           type: literal
           return: damage_resistance
+          generated: true
       -
         value: damage_resistance_advance
         display: false
         parse:
           type: literal
           return: damage_resistance_advance
+          generated: true
       -
         value: damage_resistance_origin
         display: false
         parse:
           type: literal
           return: damage_resistance_origin
+          generated: true
       -
         value: delta_time
         display: false
         parse:
           type: literal
           return: delta_time
+          generated: true
       -
         value: direction
         display: false
         parse:
           type: literal
           return: direction
+          generated: true
       -
         value: disable_trigger_tile
         display: false
         parse:
           type: literal
           return: disable_trigger_tile
+          generated: true
       -
         value: divide_value
         display: false
         parse:
           type: literal
           return: divide_value
+          generated: true
       -
         value: dynamic
         display: false
         parse:
           type: literal
           return: dynamic
+          generated: true
       -
         value: effect_ratio
         display: false
         parse:
           type: literal
           return: effect_ratio
+          generated: true
       -
         value: enemy_key
         display: false
         parse:
           type: literal
           return: enemy_key
+          generated: true
       -
         value: enemy_key_b
         display: false
         parse:
           type: literal
           return: enemy_key_b
+          generated: true
       -
         value: enemy_key_c
         display: false
         parse:
           type: literal
           return: enemy_key_c
+          generated: true
       -
         value: enemy_key_temp
         display: false
         parse:
           type: literal
           return: enemy_key_temp
+          generated: true
       -
         value: fake_dynamic
         display: false
         parse:
           type: literal
           return: fake_dynamic
+          generated: true
       -
         value: hp
         display: false
         parse:
           type: literal
           return: hp
+          generated: true
       -
         value: hp_cur
         display: false
         parse:
           type: literal
           return: hp_cur
+          generated: true
       -
         value: hp_ratio
         display: false
         parse:
           type: literal
           return: hp_ratio
+          generated: true
       -
         value: init_shield
         display: false
         parse:
           type: literal
           return: init_shield
+          generated: true
       -
         value: lrboom_count
         display: false
         parse:
           type: literal
           return: lrboom_count
+          generated: true
       -
         value: mark
         display: false
         parse:
           type: literal
           return: mark
+          generated: true
       -
         value: mark_value
         display: false
         parse:
           type: literal
           return: mark_value
+          generated: true
       -
         value: max_stack_cnt
         display: false
         parse:
           type: literal
           return: max_stack_cnt
+          generated: true
       -
         value: max_stack_cnt_override
         display: false
         parse:
           type: literal
           return: max_stack_cnt_override
+          generated: true
       -
         value: move_speed_add
         display: false
         parse:
           type: literal
           return: move_speed_add
+          generated: true
       -
         value: new_damage_scale
         display: false
         parse:
           type: literal
           return: new_damage_scale
+          generated: true
       -
         value: new_uid
         display: false
         parse:
           type: literal
           return: new_uid
+          generated: true
       -
         value: none
         display: false
         parse:
           type: literal
           return: none
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: old_direction
         display: false
         parse:
           type: literal
           return: old_direction
+          generated: true
       -
         value: one
         display: false
         parse:
           type: literal
           return: one
+          generated: true
       -
         value: origin_damage_scale
         display: false
         parse:
           type: literal
           return: origin_damage_scale
+          generated: true
       -
         value: original_ratio
         display: false
         parse:
           type: literal
           return: original_ratio
+          generated: true
       -
         value: other_shield
         display: false
         parse:
           type: literal
           return: other_shield
+          generated: true
       -
         value: overwrite_ratio
         display: false
         parse:
           type: literal
           return: overwrite_ratio
+          generated: true
       -
         value: prob_cache
         display: false
         parse:
           type: literal
           return: prob_cache
+          generated: true
       -
         value: range_radius
         display: false
         parse:
           type: literal
           return: range_radius
+          generated: true
       -
         value: record_cur_hp
         display: false
         parse:
           type: literal
           return: record_cur_hp
+          generated: true
       -
         value: record_cur_maxhp
         display: false
         parse:
           type: literal
           return: record_cur_maxhp
+          generated: true
       -
         value: rect_index
         display: false
         parse:
           type: literal
           return: rect_index
+          generated: true
       -
         value: reset
         display: false
         parse:
           type: literal
           return: reset
+          generated: true
       -
         value: reset_damage
         display: false
         parse:
           type: literal
           return: reset_damage
+          generated: true
       -
         value: shield_scale
         display: false
         parse:
           type: literal
           return: shield_scale
+          generated: true
       -
         value: skill_trait_value
         display: false
         parse:
           type: literal
           return: skill_trait_value
+          generated: true
       -
         value: start_run
         display: false
         parse:
           type: literal
           return: start_run
+          generated: true
       -
         value: talent@prob
         display: false
         parse:
           type: literal
           return: talent@prob
+          generated: true
       -
         value: talent_normal_prob
         display: false
         parse:
           type: literal
           return: talent_normal_prob
+          generated: true
       -
         value: tile_col_begin_stage_1
         display: false
         parse:
           type: literal
           return: tile_col_begin_stage_1
+          generated: true
       -
         value: tile_col_begin_stage_2
         display: false
         parse:
           type: literal
           return: tile_col_begin_stage_2
+          generated: true
       -
         value: tile_col_end_stage_1
         display: false
         parse:
           type: literal
           return: tile_col_end_stage_1
+          generated: true
       -
         value: tile_col_end_stage_2
         display: false
         parse:
           type: literal
           return: tile_col_end_stage_2
+          generated: true
       -
         value: times
         display: false
         parse:
           type: literal
           return: times
+          generated: true
       -
         value: tmp_value
         display: false
         parse:
           type: literal
           return: tmp_value
+          generated: true
       -
         value: trait_value_cache
         display: false
         parse:
           type: literal
           return: trait_value_cache
+          generated: true
       -
         value: "trigger_cnt[equip]"
         display: false
         parse:
           type: literal
           return: "trigger_cnt[equip]"
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
       -
         value: zero
         display: false
         parse:
           type: literal
           return: zero
+          generated: true

@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _deckBuff:
     type: object
     description: deck Buff
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _exceptTokenAndTrap:
     type: boolean
     description: except Token And Trap
@@ -30,6 +32,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _filterIsInHand:
     type: boolean
     description: filter Is In Hand
@@ -50,6 +54,7 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true
   _onlyToTarget:
     type: boolean
     description: only To Target
@@ -60,6 +65,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _onlyTokenAndTrap:
     type: boolean
     description: only Token And Trap
@@ -70,6 +76,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _reverseOrdert:
     type: boolean
     description: reverse Ordert
@@ -80,12 +87,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _target:
     type: string
     description: target
@@ -96,3 +105,4 @@ fields:
         parse:
           type: literal
           return: TARGET
+          generated: true

@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: GetChar
+          generated: true
       -
         value: Skill1
         display: false
         parse:
           type: literal
           return: Skill1
+          generated: true
   _assignedBlackboardKey:
     type: string
     description: assigned Blackboard Key
@@ -26,36 +28,42 @@ fields:
         parse:
           type: literal
           return: attack_speed
+          generated: true
       -
         value: cooldown
         display: false
         parse:
           type: literal
           return: cooldown
+          generated: true
       -
         value: first_trigger_interval
         display: false
         parse:
           type: literal
           return: first_trigger_interval
+          generated: true
       -
         value: move_speed
         display: false
         parse:
           type: literal
           return: move_speed
+          generated: true
       -
         value: stun
         display: false
         parse:
           type: literal
           return: stun
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
   _blackboardKeyInAbility:
     type: string
     description: blackboard Key In Ability
@@ -66,36 +74,42 @@ fields:
         parse:
           type: literal
           return: attack_speed
+          generated: true
       -
         value: cooldown
         display: false
         parse:
           type: literal
           return: cooldown
+          generated: true
       -
         value: first_trigger_interval
         display: false
         parse:
           type: literal
           return: first_trigger_interval
+          generated: true
       -
         value: move_speed
         display: false
         parse:
           type: literal
           return: move_speed
+          generated: true
       -
         value: stun
         display: false
         parse:
           type: literal
           return: stun
+          generated: true
       -
         value: value
         display: false
         parse:
           type: literal
           return: value
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -106,6 +120,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _useTargetHost:
     type: boolean
     description: use Target Host
@@ -116,3 +131,4 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true

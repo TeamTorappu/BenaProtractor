@@ -14,6 +14,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["FROZEN","STUNNED"]"
         display: false
@@ -23,6 +24,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["FROZEN"]"
         display: false
@@ -32,6 +34,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["INVINCIBLE","TARGET_FREE","INVISIBLE"]"
         display: false
@@ -41,6 +44,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["LEVITATE","FORCE_LEVITATE"]"
         display: false
@@ -50,6 +54,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["LEVITATE"]"
         display: false
@@ -59,6 +64,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["STUNNED","FROZEN","COLD","FEARED","ATTRACTED"]"
         display: false
@@ -68,6 +74,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["STUNNED","FROZEN","LEVITATE"]"
         display: false
@@ -77,6 +84,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["STUNNED","FROZEN","UNMOVABLE"]"
         display: false
@@ -86,6 +94,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["STUNNED","FROZEN"]"
         display: false
@@ -95,6 +104,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["STUNNED","LEVITATE","FROZEN","UNMOVABLE","FEARED"]"
         display: false
@@ -104,6 +114,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["STUNNED","LEVITATE","FROZEN"]"
         display: false
@@ -113,6 +124,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["STUNNED","UNMOVABLE"]"
         display: false
@@ -122,6 +134,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["TARGET_FREE","ALLY_TARGET_FREE","INVINCIBLE"]"
         display: false
@@ -131,6 +144,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["TARGET_FREE","INVINCIBLE","INVISIBLE"]"
         display: false
@@ -140,6 +154,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
       -
         value: "["TARGET_FREE","INVINCIBLE"]"
         display: false
@@ -149,6 +164,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CheckAndBlockBuffByAbnormalFlags:
     type: array
     values:
@@ -161,6 +177,7 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true
   CheckBuffAbnormalFlags:
     type: array
     values:
@@ -173,3 +190,4 @@ actions:
           args:
             - $input
             - $ctx
+          generated: true

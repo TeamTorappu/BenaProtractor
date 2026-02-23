@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _buffSource:
     type: string
     description: buff Source
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _cardUidKey:
     type: string
     description: card Uid Key
@@ -30,9 +32,11 @@ fields:
         parse:
           type: literal
           return: build_uid
+          generated: true
       -
         value: new_uid
         display: false
         parse:
           type: literal
           return: new_uid
+          generated: true

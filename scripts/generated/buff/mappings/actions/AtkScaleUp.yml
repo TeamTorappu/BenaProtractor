@@ -10,24 +10,28 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: MELEE
         display: false
         parse:
           type: literal
           return: MELEE
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
       -
         value: RANGED
         display: false
         parse:
           type: literal
           return: RANGED
+          generated: true
   _atkScaleKey:
     type: string
     description: atk Scale Key
@@ -38,84 +42,98 @@ fields:
         parse:
           type: literal
           return: atk
+          generated: true
       -
         value: atk_scale
         display: false
         parse:
           type: literal
           return: atk_scale
+          generated: true
       -
         value: "atk_scale[skill_up]"
         display: false
         parse:
           type: literal
           return: "atk_scale[skill_up]"
+          generated: true
       -
         value: atk_scale_1
         display: false
         parse:
           type: literal
           return: atk_scale_1
+          generated: true
       -
         value: atk_scale_2
         display: false
         parse:
           type: literal
           return: atk_scale_2
+          generated: true
       -
         value: atk_scale_now
         display: false
         parse:
           type: literal
           return: atk_scale_now
+          generated: true
       -
         value: atk_scale_splash
         display: false
         parse:
           type: literal
           return: atk_scale_splash
+          generated: true
       -
         value: e_002_atk_scale
         display: false
         parse:
           type: literal
           return: e_002_atk_scale
+          generated: true
       -
         value: enemy_atk_scale
         display: false
         parse:
           type: literal
           return: enemy_atk_scale
+          generated: true
       -
         value: last_atk_bonus
         display: false
         parse:
           type: literal
           return: last_atk_bonus
+          generated: true
       -
         value: scale_up
         display: false
         parse:
           type: literal
           return: scale_up
+          generated: true
       -
         value: sheltr_atk_scale
         display: false
         parse:
           type: literal
           return: sheltr_atk_scale
+          generated: true
       -
         value: "snhunt_t[atk_scale]"
         display: false
         parse:
           type: literal
           return: "snhunt_t[atk_scale]"
+          generated: true
       -
         value: talent_atk_scale
         display: false
         parse:
           type: literal
           return: talent_atk_scale
+          generated: true
   _cancelIfAtkScaleZero:
     type: boolean
     description: cancel If Atk Scale Zero
@@ -126,12 +144,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _defaultValue:
     type: number
     description: default Value
@@ -142,6 +162,7 @@ fields:
         parse:
           type: literal
           return: 1
+          generated: true
   _filterApplyWay:
     type: boolean
     description: filter Apply Way
@@ -152,12 +173,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterNoneApplyWay:
     type: boolean
     description: filter None Apply Way
@@ -168,12 +191,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterProjectileKey:
     type: string
     description: filter Projectile Key
@@ -184,9 +209,11 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: projectile_enemy_dirctr_s3
         display: false
         parse:
           type: literal
           return: projectile_enemy_dirctr_s3
+          generated: true

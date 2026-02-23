@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: trap_286_tjgsd
+          generated: true
   _excludeFromBattle:
     type: boolean
     description: exclude From Battle
@@ -20,6 +21,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _playerSide:
     type: string
     description: player Side
@@ -30,3 +32,4 @@ fields:
         parse:
           type: literal
           return: DEFAULT
+          generated: true

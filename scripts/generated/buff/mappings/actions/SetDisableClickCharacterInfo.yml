@@ -10,12 +10,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _reasonMask:
     type: string
     description: reason Mask
@@ -26,6 +28,7 @@ fields:
         parse:
           type: literal
           return: OWNER_SETTING
+          generated: true
   _target:
     type: string
     description: target
@@ -36,3 +39,4 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true

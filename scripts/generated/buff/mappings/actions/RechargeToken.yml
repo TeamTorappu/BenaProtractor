@@ -10,24 +10,28 @@ fields:
         parse:
           type: literal
           return: ammo_cnt
+          generated: true
       -
         value: charge_cnt
         display: false
         parse:
           type: literal
           return: charge_cnt
+          generated: true
       -
         value: cnt
         display: false
         parse:
           type: literal
           return: cnt
+          generated: true
       -
         value: recharge_cnt
         display: false
         parse:
           type: literal
           return: recharge_cnt
+          generated: true
   _rechargeTiming:
     type: string
     description: recharge Timing
@@ -38,12 +42,14 @@ fields:
         parse:
           type: literal
           return: NORMAL
+          generated: true
       -
         value: ON_FINISH
         display: false
         parse:
           type: literal
           return: ON_FINISH
+          generated: true
   _refreshRemainingCnt:
     type: boolean
     description: refresh Remaining Cnt
@@ -54,9 +60,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

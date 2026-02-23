@@ -10,6 +10,7 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
   _deckBuff:
     type: object
     description: deck Buff
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _deckSelector:
     type: object
     description: deck Selector
@@ -30,6 +32,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _selectOrder:
     type: string
     description: select Order
@@ -40,6 +43,7 @@ fields:
         parse:
           type: literal
           return: NEXT_TO_LEFT
+          generated: true
   _useTokenAsSouurceCard:
     type: boolean
     description: use Token As Souurce Card
@@ -50,3 +54,4 @@ fields:
         parse:
           type: literal
           return: true
+          generated: true

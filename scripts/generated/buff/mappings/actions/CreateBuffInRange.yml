@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: MELEE
         display: false
         parse:
           type: literal
           return: MELEE
+          generated: true
       -
         value: NONE
         display: false
         parse:
           type: literal
           return: NONE
+          generated: true
   _alwaysIncudeCurAtkTarget:
     type: boolean
     description: always Incude Cur Atk Target
@@ -32,6 +35,7 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
   _buffs:
     type: array
     description: buffs
@@ -42,6 +46,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _checkGiantTrapAllLocateTiles:
     type: boolean
     description: check Giant Trap All Locate Tiles
@@ -52,12 +57,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _excludeCurAtkTarget:
     type: boolean
     description: exclude Cur Atk Target
@@ -68,12 +75,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _excludeTarget:
     type: boolean
     description: exclude Target
@@ -84,12 +93,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterByBuildableType:
     type: boolean
     description: filter By Buildable Type
@@ -100,12 +111,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterTargets:
     type: boolean
     description: filter Targets
@@ -116,12 +129,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _filterType:
     type: string
     description: filter Type
@@ -132,12 +147,14 @@ fields:
         parse:
           type: literal
           return: ALL
+          generated: true
       -
         value: HATRED_DES
         display: false
         parse:
           type: literal
           return: HATRED_DES
+          generated: true
   _finishDerivedBuffIfParentFinish:
     type: boolean
     description: finish Derived Buff If Parent Finish
@@ -148,12 +165,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _isDerivedBuff:
     type: boolean
     description: is Derived Buff
@@ -164,12 +183,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _limitMaxTarget:
     type: boolean
     description: limit Max Target
@@ -180,12 +201,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _maxTargetKey:
     type: string
     description: max Target Key
@@ -196,6 +219,7 @@ fields:
         parse:
           type: literal
           return: max_target
+          generated: true
   _radius:
     type: number
     description: radius
@@ -206,60 +230,70 @@ fields:
         parse:
           type: literal
           return: 0
+          generated: true
       -
         value: 0.20000000298023224
         display: false
         parse:
           type: literal
           return: 0.20000000298023224
+          generated: true
       -
         value: 0.30000001192092896
         display: false
         parse:
           type: literal
           return: 0.30000001192092896
+          generated: true
       -
         value: 1
         display: false
         parse:
           type: literal
           return: 1
+          generated: true
       -
         value: 1.100000023841858
         display: false
         parse:
           type: literal
           return: 1.100000023841858
+          generated: true
       -
         value: 1.5
         display: false
         parse:
           type: literal
           return: 1.5
+          generated: true
       -
         value: 10
         display: false
         parse:
           type: literal
           return: 10
+          generated: true
       -
         value: 100
         display: false
         parse:
           type: literal
           return: 100
+          generated: true
       -
         value: 2
         display: false
         parse:
           type: literal
           return: 2
+          generated: true
       -
         value: 5
         display: false
         parse:
           type: literal
           return: 5
+          generated: true
   _randomTarget:
     type: boolean
     description: random Target
@@ -270,12 +304,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _rangeId:
     type: null | string
     description: range Id
@@ -286,72 +322,84 @@ fields:
         parse:
           type: literal
           return: ""
+          generated: true
       -
         value: 0-1
         display: false
         parse:
           type: literal
           return: 0-1
+          generated: true
       -
         value: 1-1
         display: false
         parse:
           type: literal
           return: 1-1
+          generated: true
       -
         value: 2-2
         display: false
         parse:
           type: literal
           return: 2-2
+          generated: true
       -
         value: 2-4
         display: false
         parse:
           type: literal
           return: 2-4
+          generated: true
       -
         value: 5-1
         display: false
         parse:
           type: literal
           return: 5-1
+          generated: true
       -
         value: b-2
         display: false
         parse:
           type: literal
           return: b-2
+          generated: true
       -
         value: null
         display: false
         parse:
           type: literal
           return: null
+          generated: true
       -
         value: x-1
         display: false
         parse:
           type: literal
           return: x-1
+          generated: true
       -
         value: x-2
         display: false
         parse:
           type: literal
           return: x-2
+          generated: true
       -
         value: x-4
         display: false
         parse:
           type: literal
           return: x-4
+          generated: true
       -
         value: x-5
         display: false
         parse:
           type: literal
           return: x-5
+          generated: true
   _rangeModeIndex:
     type: number
     description: range Mode Index
@@ -362,6 +410,7 @@ fields:
         parse:
           type: literal
           return: -1
+          generated: true
   _rangeTargetSideType:
     type: string
     description: range Target Side Type
@@ -372,12 +421,14 @@ fields:
         parse:
           type: literal
           return: ALLY
+          generated: true
       -
         value: ENEMY
         display: false
         parse:
           type: literal
           return: ENEMY
+          generated: true
   _removeExcludeTargetBeforeShrink:
     type: boolean
     description: remove Exclude Target Before Shrink
@@ -388,12 +439,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _sourceType:
     type: string
     description: source Type
@@ -404,12 +457,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
+          generated: true
   _targetOptions:
     type: object
     description: target Options
@@ -420,6 +475,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _targetType:
     type: string
     description: target Type
@@ -430,12 +486,14 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
   _useAttackRange:
     type: boolean
     description: use Attack Range
@@ -446,12 +504,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useCurrentModeRange:
     type: boolean
     description: use Current Mode Range
@@ -462,12 +522,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useGlobalRange:
     type: boolean
     description: use Global Range
@@ -478,12 +540,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useRadius:
     type: boolean
     description: use Radius
@@ -494,12 +558,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useRangeToShow:
     type: boolean
     description: use Range To Show
@@ -510,12 +576,14 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true
   _useTargetRangeInsteadOfSource:
     type: boolean
     description: use Target Range Instead Of Source
@@ -526,9 +594,11 @@ fields:
         parse:
           type: literal
           return: false
+          generated: true
       -
         value: true
         display: false
         parse:
           type: literal
           return: true
+          generated: true

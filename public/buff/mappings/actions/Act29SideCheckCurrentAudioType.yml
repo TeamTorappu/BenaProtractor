@@ -10,18 +10,21 @@ fields:
         parse:
           type: literal
           return: Depressed
+          generated: true
       -
         value: Enthusiastic
         display: false
         parse:
           type: literal
           return: Enthusiastic
+          generated: true
       -
         value: None
         display: false
         parse:
           type: literal
           return: None
+          generated: true
   _evnSysKey:
     type: string
     description: evn Sys Key
@@ -32,3 +35,4 @@ fields:
         parse:
           type: literal
           return: env_008_act29side_audio_type_switcher
+          generated: true

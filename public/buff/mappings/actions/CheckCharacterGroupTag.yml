@@ -10,42 +10,49 @@ fields:
         parse:
           type: literal
           return: abyssal
+          generated: true
       -
         value: kazimierz
         display: false
         parse:
           type: literal
           return: kazimierz
+          generated: true
       -
         value: laterano
         display: false
         parse:
           type: literal
           return: laterano
+          generated: true
       -
         value: mujica
         display: false
         parse:
           type: literal
           return: mujica
+          generated: true
       -
         value: rhine
         display: false
         parse:
           type: literal
           return: rhine
+          generated: true
       -
         value: student
         display: false
         parse:
           type: literal
           return: student
+          generated: true
       -
         value: sui
         display: false
         parse:
           type: literal
           return: sui
+          generated: true
   _targetType:
     type: string
     description: target Type
@@ -56,27 +63,32 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
       -
         value: MAIN_TARGET
         display: false
         parse:
           type: literal
           return: MAIN_TARGET
+          generated: true
       -
         value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
+          generated: true
       -
         value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
+          generated: true
       -
         value: TARGET
         display: false
         parse:
           type: literal
           return: TARGET
+          generated: true
