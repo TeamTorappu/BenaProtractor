@@ -49,7 +49,8 @@ class Protractor:
         self.display_area.configure(yscrollcommand=self.display_area_scrollbar_y.set)
         self.display_area_scrollbar_x.pack(fill="x",side="bottom")
         self.display_area_scrollbar_y.pack(fill="y",side="right")
-        self.display_area.bind('<ButtonRelease-1>',self.display_area_copy)
+        # 翻译用的便捷复制
+        #self.display_area.bind('<ButtonRelease-1>',self.display_area_copy)
         self.display_area.pack(fill="both",expand=True)
         self.displaying = ""
         # 默认行高

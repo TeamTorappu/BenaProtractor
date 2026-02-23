@@ -382,9 +382,9 @@ class AnneNode:
             else:
                 formula += " ÷ " + node["_dividedParamKey"]
         if node["_addParamKey"] != None and node["_addParamKey"] != "": # 加法运算
-            formula += " × " + node["_addParamKey"]
+            formula += " + " + node["_addParamKey"]
         if node["_minusParamKey"] != None and node["_minusParamKey"] != "": # 减法运算
-            formula += " × " + node["_minusParamKey"]
+            formula += " - " + node["_minusParamKey"]
         # 上下限
         if node["_minValueKey"] != None and node["_minValueKey"] != "": # 下限
             if node["_maxValueKey"] != None and node["_maxValueKey"] != "":
@@ -830,7 +830,7 @@ class AnneRelic:
     # 敌方攻击力最终下降
     def gbn_enemy_atk_down(self,blackboard):
         power = to_hundred_percent(blackboard["atk"],False,True)
-        return {"main" : f"常规全局Buff - 敌方防御力×{power}"}
+        return {"main" : f"常规全局Buff - 敌方攻击力×{power}"}
 
 ANNE_NODE = AnneNode()
 ANNE_RELIC = AnneRelic()
