@@ -30,7 +30,7 @@
         <n-layout-content content-style="display: flex; height: 100%; padding: 12px; gap: 12px;">
 
           <div class="w-72 flex-shrink-0 flex flex-col h-full">
-            <n-card size="small" class="h-full flex flex-col overflow-hidden" :segmented="{ content: true }">
+            <n-card size="small" class="h-full flex flex-col overflow-hidden min-h-0" :segmented="{ content: true }">
               <template #header>
                 <n-tabs v-model:value="activeTab" size="small" class="flex-grow" type="segment" animated>
                   <n-tab-pane name="buff" tab="Buff" />
@@ -40,13 +40,13 @@
               <template #header-extra>
                 <n-badge :value="activeTab === 'buff' ? filteredKeys.length : filteredRogueItems.length" color="#18a058" />
               </template>
-              <div v-if="activeTab === 'buff'" class="flex-grow overflow-hidden">
+              <div v-if="activeTab === 'buff'" class="flex-grow overflow-hidden min-h-0">
                 <n-input v-model:value="searchQuery" placeholder="搜索 Buff..." clearable>
                   <template #prefix><n-icon>
                       <Search />
                     </n-icon></template>
                 </n-input>
-                <n-virtual-list :items="filteredKeys" :item-size="34" class="h-full" :scrollbar-props="{ trigger: 'none' }">
+                <n-virtual-list :items="filteredKeys" :item-size="34" class="h-full" >
                   <template #default="{ item }">
                     <div
                       :class="['px-3 py-1.5 my-0.5 rounded cursor-pointer transition-colors',
@@ -57,7 +57,7 @@
                   </template>
                 </n-virtual-list>
               </div>
-              <div v-if="activeTab === 'rogue'" class="flex-grow overflow-hidden flex flex-col gap-3">
+              <div v-if="activeTab === 'rogue'" class="flex-grow overflow-hidden min-h-0 flex flex-col gap-3">
                 <div class="space-y-2 flex-shrink-0">
                   <n-select v-model:value="rogueFilterSeason" placeholder="选择期" clearable :options="rogueSeasonOptions" size="small" />
                   <n-select v-model:value="rogueFilterType" placeholder="选择类别" clearable :options="rogueTypeOptions" size="small" />
@@ -67,7 +67,7 @@
                       </n-icon></template>
                   </n-input>
                 </div>
-                <n-virtual-list :items="filteredRogueItems" :item-size="34" class="flex-grow overflow-hidden" :scrollbar-props="{ trigger: 'none' }">
+                <n-virtual-list :items="filteredRogueItems" :item-size="34" class="flex-grow overflow-hidden h-full" >
                   <template #default="{ item }">
                     <div
                       :class="['px-3 py-1.5 my-0.5 rounded cursor-pointer transition-colors',
@@ -82,7 +82,7 @@
           </div>
 
           <div class="flex-grow min-w-0 h-full">
-            <n-card title="数据结构" size="small" class="h-full overflow-hidden" :segmented="{ content: true }">
+            <n-card title="数据结构" size="small" class="h-full overflow-hidden min-h-0" :segmented="{ content: true }">
               <template #header-extra>
                 {{ selectedKey }}
                 <n-switch v-if="selectedKey" v-model:value="showAll" size="small" @update:value="refreshTree">
@@ -90,8 +90,8 @@
                   <template #unchecked>精简</template>
                 </n-switch>
               </template>
-              <div class="h-full overflow-auto">
-                <n-tree :data="treeData" block-line selectable expand-on-click @update:selected-keys="1" />
+              <div class="h-full overflow-auto min-h-full">
+                <n-tree class="h-full" :data="treeData" block-line selectable expand-on-click @update:selected-keys="1"  virtual-scroll />
               </div>
             </n-card>
           </div>

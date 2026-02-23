@@ -20,9 +20,9 @@ fields:
           generated: true
   _buffKey:
     type: null | string
-    description: buff Key
+    description: Buff Key
     default:
-      display: false
+      display: true
       parse:
         type: template
         return: "终止Buff: {0}"

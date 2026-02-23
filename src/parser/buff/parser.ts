@@ -1,6 +1,7 @@
 import type { TreeOption } from 'naive-ui'
 import {
 	loadIndex,
+	loadEventList,
 	loadActionNodes,
 	loadActionKeysTemplate,
 	loadActionKeys,
@@ -44,17 +45,16 @@ function isGenerated(parse: any): boolean {
 }
 
 /**
- * 根据优先级规则选择 parse 配置。
- * 子文件(fDef) > 主文件(fKeys) > 模板(fTpl)
- * 例外：若子文件 parse 为 generated 而主文件有手动改动，使用主文件的。
+ * 根据优先级规则选择 parse 配置（fn > schema）。
+ *
+ * 手动配置始终优先于自动生成的配置，无论来源层级：
+ *   手动 def > 手动 keys > 手动 tpl > generated def > generated keys > generated tpl
  */
 function resolveParse(defParse: any, keysParse: any, tplParse: any): any {
-	if (defParse) {
-		if (isGenerated(defParse) && keysParse && !isGenerated(keysParse))
-			return keysParse
-		return defParse
-	}
-	return keysParse ?? tplParse
+	if (defParse && !isGenerated(defParse)) return defParse
+	if (keysParse && !isGenerated(keysParse)) return keysParse
+	if (tplParse && !isGenerated(tplParse)) return tplParse
+	return defParse ?? keysParse ?? tplParse
 }
 
 /** 对 values 匹配条目应用同样的优先级逻辑 */
@@ -78,9 +78,11 @@ async function applyParse(
 
 	if (parse.type === 'template' && parse.return) {
 		const template = String(parse.return)
-		const args = (parse.args ?? []).map(a =>
-			a === '$input' ? String(value) : a === '$ctx' ? String(ctx) : a,
-		)
+		const args = (parse.args ?? []).map((a: any) => {
+			if (a === '$input') return String(value)
+			if (a === '$ctx') return String(ctx)
+			return String(a)
+		})
 		return template.replace(/\{(\d+)\}/g, (_, idx) => args[Number(idx)] ?? '')
 	}
 
@@ -94,6 +96,42 @@ async function applyParse(
 		}
 	}
 	return fmt(value)
+}
+
+/**
+ * 尝试用 fn parse 处理一个字段。
+ * 返回 TreeOption 或 null（调用方应走 fallback）。
+ */
+async function tryFnParse(
+	key: string,
+	value: unknown,
+	desc: string,
+	parse: any,
+	showAll: boolean,
+	action?: Record<string, unknown>,
+): Promise<TreeOption | null> {
+	if (!parse || parse.type !== 'fn' || !parse.name)
+		return null
+	if (value === null || typeof value !== 'object')
+		return null
+
+	const fn = fnMap.get(parse.name)
+	if (!fn) return null
+
+	const pctx: ParseCtx = {
+		showAll,
+		baseKey: key,
+		action,
+		buildAction: (a, k, p) => buildAction(a, k, showAll, p),
+		buildNested: (v, k, l) => buildNested(v, k, l, showAll),
+	}
+	const node = await fn(value, pctx) as TreeOption
+	return {
+		key,
+		label: node.label ? `${desc}: ${node.label}` : desc,
+		children: node.children,
+		isLeaf: node.isLeaf ?? !node.children,
+	}
 }
 
 /* ────────────────── value 匹配 ────────────────── */
@@ -146,9 +184,25 @@ async function buildNested(
 				children.push(leaf(ck, `[${i}]: ${fmt(item)}`))
 		}
 	} else if (value && typeof value === 'object') {
+		/* 子节点同样遵循主 parser 的引用规则（fn > schema） */
+		const [keys, tpl] = await Promise.all([
+			loadActionKeys(),
+			loadActionKeysTemplate(),
+		])
+
 		for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
 			const ck = `${baseKey}/${k}`
-			const d = humanize(k)
+			const fKeys = keys?.[k]
+			const fTpl = tpl?.[k]
+			const d = fKeys?.description ?? fTpl?.description ?? humanize(k)
+
+			const parse = resolveParse(undefined, fKeys?.parse, fTpl?.parse)
+			const fnNode = await tryFnParse(ck, v, d, parse, showAll)
+			if (fnNode) {
+				children.push(fnNode)
+				continue
+			}
+
 			if (isActionNode(v))
 				children.push(await buildAction(v, ck, showAll, d))
 			else if (v && typeof v === 'object')
@@ -199,27 +253,12 @@ async function buildAction(
 		const fTpl = tpl?.[key]
 		const fdesc = fDef?.description ?? fKeys?.description ?? fTpl?.description ?? humanize(key)
 
-		/* ─ schema + parse：优先使用声明式节点函数 ─ */
+		/* ─ fn > schema：优先使用声明式节点函数 ─ */
 		const schemaParse = resolveParse(fDef?.parse, fKeys?.parse, fTpl?.parse)
-		if (schemaParse?.type === 'fn' && schemaParse.name && value !== null && typeof value === 'object') {
-			const fn = fnMap.get(schemaParse.name)
-			if (fn) {
-				const pctx: ParseCtx = {
-					showAll,
-					baseKey: ck,
-					action,
-					buildAction: (a, k, p) => buildAction(a, k, showAll, p),
-					buildNested: (v, k, l) => buildNested(v, k, l, showAll),
-				}
-				const node = await fn(value, pctx) as import('naive-ui').TreeOption
-				children.push({
-					key: ck,
-					label: node.label ? `${fdesc}: ${node.label}` : fdesc,
-					children: node.children,
-					isLeaf: node.isLeaf ?? !node.children,
-				})
-				continue
-			}
+		const fnNode = await tryFnParse(ck, value, fdesc, schemaParse, showAll, action)
+		if (fnNode) {
+			children.push(fnNode)
+			continue
 		}
 
 		/* ─ 复杂嵌套（fallback） ─ */
@@ -249,15 +288,20 @@ async function buildAction(
 
 		const visible = match
 			? match.display !== false
-			: fTpl?.default?.display !== false
+			: (fDef?.default?.display ?? fKeys?.default?.display ?? fTpl?.default?.display) !== false
 
 		let displayText: string
-		if (match)
+		if (match) {
 			displayText = await applyParse(value, match.parse, action)
-		else if (fTpl?.default?.parse)
+		} else if (fDef?.default?.parse) {
+			displayText = await applyParse(value, fDef.default.parse, action)
+		} else if (fKeys?.default?.parse) {
+			displayText = await applyParse(value, fKeys.default.parse, action)
+		} else if (fTpl?.default?.parse) {
 			displayText = await applyParse(value, fTpl.default.parse, action)
-		else
+		} else {
 			displayText = fmt(value)
+		}
 
 		if (visible || showAll)
 			children.push(leaf(ck, `${fdesc}: ${displayText}`, visible))
@@ -275,15 +319,21 @@ async function buildEvents(
 	showAll: boolean,
 ): Promise<TreeOption> {
 	const children: TreeOption[] = []
+	const eventList = await loadEventList()
 
 	for (const [event, actions] of Object.entries(record)) {
 		const ek = `${baseKey}/${event}`
+		const eventMatch = matchInValues(eventList?.values, event)
+		let eventLabel = event
+		if (eventMatch?.parse)
+			eventLabel = await applyParse(event, eventMatch.parse, {})
+
 		const actionNodes = await Promise.all(
 			(actions as Record<string, unknown>[]).map((a, i) =>
 				buildAction(a, `${ek}/${i}`, showAll, `[${i}]`),
 			).filter(Boolean),
 		)
-		children.push({ key: ek, label: event, children: actionNodes })
+		children.push({ key: ek, label: eventLabel, children: actionNodes })
 	}
 
 	return { key: baseKey, label: '事件 → 动作', children }

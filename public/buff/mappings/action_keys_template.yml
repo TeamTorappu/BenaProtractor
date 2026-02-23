@@ -432,7 +432,7 @@ _additionalBuff:
   schema: action_subschema/_additionalBuff.yml
   parse:
     type: fn
-    name: parseArrayDefault
+    name: parsebuffArray
     args:
       - $input
       - $ctx
@@ -1330,11 +1330,10 @@ _buff:
   schema: action_subschema/_buff.yml
   parse:
     type: fn
-    name: parseObjectDefault
+    name: parsebuff
     args:
       - $input
       - $ctx
-    generated: true
 _buffAsSource:
   type: boolean
   description: buff As Source
@@ -1367,7 +1366,7 @@ _buffData:
   schema: action_subschema/_buffData.yml
   parse:
     type: fn
-    name: parseArrayDefault
+    name: parsebuffArray
     args:
       - $input
       - $ctx
@@ -1560,11 +1559,10 @@ _buffs:
   schema: action_subschema/_buffs.yml
   parse:
     type: fn
-    name: parseArrayDefault
+    name: parsebuffArray
     args:
       - $input
       - $ctx
-    generated: true
 _buffsUseTargetAsSource:
   type: array
   description: buffs Use Target As Source
@@ -5358,7 +5356,7 @@ _flagBuff:
   schema: action_subschema/_flagBuff.yml
   parse:
     type: fn
-    name: parseObjectDefault
+    name: parsebuff
     args:
       - $input
       - $ctx
@@ -9148,12 +9146,12 @@ _noSource:
       generated: true
 _noSourceBuff:
   type: object
-  description: no Source Buff
+  description: 无来源 Buff
   icon: null
   schema: action_subschema/_noSourceBuff.yml
   parse:
     type: fn
-    name: parseObjectDefault
+    name: parsebuff
     args:
       - $input
       - $ctx
@@ -12911,7 +12909,7 @@ _upgradedBuff:
   schema: action_subschema/_upgradedBuff.yml
   parse:
     type: fn
-    name: parseObjectDefault
+    name: parsebuff
     args:
       - $input
       - $ctx

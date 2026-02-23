@@ -282,11 +282,10 @@ values:
       generated: true
   -
     value: ON_BUFF_START
-    display: false
+    display: true
     parse:
-      type: BUFF开始时
-      return: true
-      generated: true
+      type: literal
+      return: BUFF开始时
   -
     value: ON_BUFF_TRIGGER
     display: false
