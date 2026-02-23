@@ -303,11 +303,13 @@ export async function parsebuff($input: any, $ctx: ParseCtx): Promise<TreeOption
 	/* 摘要节点（始终可见） */
 	const descChild: TreeOption = { key: `${$ctx.baseKey}/desc`, label: description, isLeaf: true }
 
-	/* 递归展开原始属性，全部标记为 display: false */
-	const rawTree = await $ctx.buildNested($input, `${$ctx.baseKey}/raw`, '原始属性')
-	const rawChildren = (rawTree.children ?? [rawTree]).map(markHidden)
+	const children: TreeOption[] = [descChild]
+	if ($ctx.showAll) {
+		const rawTree = await $ctx.buildNested($input, `${$ctx.baseKey}/raw`, '原始属性')
+		children.push(...(rawTree.children ?? [rawTree]).map(markHidden))
+	}
 
-	return { key: $ctx.baseKey, label: buffKey || 'buff', children: [descChild, ...rawChildren] }
+	return { key: $ctx.baseKey, label: buffKey || 'buff', children }
 }
 
 fnMap.set('parsebuff', parsebuff)

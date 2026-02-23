@@ -84,14 +84,33 @@
           <div class="flex-grow min-w-0 h-full">
             <n-card title="数据结构" size="small" class="h-full overflow-hidden min-h-0" :segmented="{ content: true }">
               <template #header-extra>
-                {{ selectedKey }}
-                <n-switch v-if="selectedKey" v-model:value="showAll" size="small" @update:value="refreshTree">
-                  <template #checked>全部</template>
-                  <template #unchecked>精简</template>
-                </n-switch>
+                <div class="flex items-center gap-2">
+                  <n-button
+                    size="small"
+                    :disabled="!treeData.length"
+                    @click="toggleExpandAll"
+                  >
+                    {{ expandAllTree ? '全部折叠' : '全部展开' }}
+                  </n-button>
+                  {{ selectedKey }}
+                  <n-switch v-if="selectedKey" v-model:value="showAll" size="small" @update:value="refreshTree">
+                    <template #checked>全部</template>
+                    <template #unchecked>精简</template>
+                  </n-switch>
+                </div>
               </template>
               <div class="h-full overflow-auto min-h-full">
-                <n-tree class="h-full" :data="treeData" block-line selectable expand-on-click @update:selected-keys="1"  virtual-scroll />
+                <n-tree
+                  class="h-full"
+                  :data="treeData"
+                  :expanded-keys="expandedKeys"
+                  block-line
+                  selectable
+                  expand-on-click
+                  @update:expanded-keys="expandedKeys = $event"
+                  @update:selected-keys="1"
+                  virtual-scroll
+                />
               </div>
             </n-card>
           </div>
@@ -131,6 +150,7 @@ import {
   NIcon,
   NVirtualList,
   NBadge,
+  NButton,
   NTabs,
   NTabPane,
   NSelect,
@@ -204,6 +224,8 @@ const filteredRogueItems = computed(() => {
 })
 
 const treeData = ref<TreeOption[]>([])
+const expandedKeys = ref<Array<string | number>>([])
+const expandAllTree = ref(false)
 
 const codeContent = ref('')
 const isJsonEmpty = computed(() => !codeContent.value || codeContent.value.trim() === '{}')
@@ -225,6 +247,7 @@ const selectKey = async (key: string) => {
   const obj = allBuffdata.value ? allBuffdata.value[key] : undefined
   codeContent.value = obj ? JSON.stringify(obj, null, 2) : '{}'
   treeData.value = await parseBuffsToTree(obj, showAll.value)
+  updateExpandedKeys()
   console.log(treeData.value)
 }
 
@@ -234,6 +257,7 @@ const selectRogue = async (id: string) => {
   if (rogueItem) {
     codeContent.value = JSON.stringify(rogueItem.data.itemData, null, 2)
     treeData.value = await parseRogueToTree(rogueItem.data.itemData, showAll.value)
+    updateExpandedKeys()
   }
 }
 
@@ -241,12 +265,43 @@ const refreshTree = async () => {
   if (activeTab.value === 'buff' && selectedKey.value) {
     const obj = allBuffdata.value ? allBuffdata.value[selectedKey.value] : undefined
     treeData.value = await parseBuffsToTree(obj, showAll.value)
+    updateExpandedKeys()
   } else if (activeTab.value === 'rogue' && selectedRogueId.value) {
     const rogueItem = rogueItems.value.find(item => item.id === selectedRogueId.value)
     if (rogueItem) {
       treeData.value = await parseRogueToTree(rogueItem.data.itemData, showAll.value)
+      updateExpandedKeys()
     }
   }
+}
+
+const collectTreeKeys = (nodes: TreeOption[]): Array<string | number> => {
+  const keys: Array<string | number> = []
+  const walk = (items: TreeOption[]) => {
+    items.forEach((item) => {
+      if (item.key !== undefined) {
+        keys.push(item.key)
+      }
+      if (item.children && item.children.length) {
+        walk(item.children as TreeOption[])
+      }
+    })
+  }
+  walk(nodes)
+  return keys
+}
+
+const updateExpandedKeys = () => {
+  if (expandAllTree.value) {
+    expandedKeys.value = collectTreeKeys(treeData.value)
+  } else {
+    expandedKeys.value = []
+  }
+}
+
+const toggleExpandAll = () => {
+  expandAllTree.value = !expandAllTree.value
+  updateExpandedKeys()
 }
 
 
