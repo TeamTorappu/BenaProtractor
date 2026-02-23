@@ -20,7 +20,7 @@ Act27sideModifyTileCachedSideType:
   description: Act27side Modify Tile Cached Side Type
   icon: null
 Act29SideCheckCurrentAudioType:
-  description: 崔林特尔梅之金(Act29Side) - 检查当前音乐类型
+  description: 崔林特尔梅之金(Act29Side) - 检查当前变奏类型
   icon: null
 Act29SideSwitchCurretnAudioType:
   description: Act29 Side Switch Curretn Audio Type
