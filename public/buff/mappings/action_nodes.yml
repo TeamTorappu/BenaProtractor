@@ -20,7 +20,7 @@ Act27sideModifyTileCachedSideType:
   description: Act27side Modify Tile Cached Side Type
   icon: null
 Act29SideCheckCurrentAudioType:
-  description: Act29 Side Check Current Audio Type
+  description: 崔林特尔梅之金(Act29Side) - 检查当前音乐类型
   icon: null
 Act29SideSwitchCurretnAudioType:
   description: Act29 Side Switch Curretn Audio Type
@@ -1124,7 +1124,7 @@ CopyHealth:
   description: Copy Health
   icon: null
 CreateBuff:
-  description: Create Buff
+  description: 创建 Buff
   icon: null
 CreateBuffById:
   description: Create Buff By Id
@@ -1631,7 +1631,7 @@ FinishBuff:
   description: Finish Buff
   icon: null
 FinishBuffsById:
-  description: Finish Buffs By Id
+  description: 根据ID结束Buffs
   icon: null
 FinishBuffsByIdByBuffSource:
   description: Finish Buffs By Id By Buff Source

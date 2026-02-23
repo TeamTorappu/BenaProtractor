@@ -76,6 +76,14 @@ async function applyParse(
 	if (parse.type === 'literal')
 		return fmt(parse.return ?? value)
 
+	if (parse.type === 'template' && parse.return) {
+		const template = String(parse.return)
+		const args = (parse.args ?? []).map(a =>
+			a === '$input' ? String(value) : a === '$ctx' ? String(ctx) : a,
+		)
+		return template.replace(/\{(\d+)\}/g, (_, idx) => args[Number(idx)] ?? '')
+	}
+
 	if (parse.type === 'fn' && parse.name) {
 		const fn = fnMap.get(parse.name)
 		if (fn) {
@@ -281,7 +289,6 @@ async function buildEvents(
 	return { key: baseKey, label: '事件 → 动作', children }
 }
 
-
 /**
  * 将一条 buff JSON 解析为 naive-ui TreeOption[] 树结构。
  *
@@ -339,3 +346,4 @@ export async function parseBuffsToTree(
 
 	return result
 }
+

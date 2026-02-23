@@ -284,7 +284,7 @@ values:
     value: ON_BUFF_START
     display: false
     parse:
-      type: literal
+      type: BUFF开始时
       return: true
       generated: true
   -
