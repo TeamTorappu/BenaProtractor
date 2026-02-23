@@ -10,7 +10,18 @@
               <LogoGithub />
             </n-icon>
           </a>
-          <n-switch v-model:value="isDark" :rail-style="railStyle" />
+          <n-switch v-model:value="isDark" :rail-style="railStyle" >
+            <template #checked>
+              <n-icon size="16">
+                <Moon />
+              </n-icon>
+            </template>
+            <template #unchecked>
+              <n-icon size="16">
+                <Sun />
+              </n-icon>
+            </template>
+          </n-switch>
         </div>
       </n-layout-header>
 
@@ -125,7 +136,7 @@ import {
   darkTheme,
   type TreeOption
 } from 'naive-ui'
-import { LogoGithub, Search } from '@vicons/carbon'
+import { LogoGithub, Search, Moon, Sun } from '@vicons/carbon'
 import hljs from 'highlight.js/lib/core'
 import json from 'highlight.js/lib/languages/json'
 import { loadPublicJSON } from '@/composables/usePublic'
