@@ -1,0 +1,54 @@
+actionType: Act31SideAssignAreaPolluteValueToBB
+fields:
+  _assignPVRatio:
+    type: boolean
+    description: assign P V Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _assignTilePV:
+    type: boolean
+    description: assign Tile P V
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _polluteVKey:
+    type: string
+    description: pollute V Key
+    values:
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

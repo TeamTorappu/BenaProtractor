@@ -1,0 +1,54 @@
+actionType: ModifyCharacterAbilityRange
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: act1autochess_gar_abflag
+        display: false
+        parse:
+          type: literal
+          return: act1autochess_gar_abflag
+      -
+        value: equip
+        display: false
+        parse:
+          type: literal
+          return: equip
+      -
+        value: stun
+        display: false
+        parse:
+          type: literal
+          return: stun
+  _rangeId:
+    type: null
+    description: range Id
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,160 @@
+actionType: IfTarget
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _checkApplyWay:
+    type: boolean
+    description: check Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkTargetAlive:
+    type: boolean
+    description: check Target Alive
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkTargetFree:
+    type: boolean
+    description: check Target Free
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkTargetUnitType:
+    type: boolean
+    description: check Target Unit Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _motionMask:
+    type: string
+    description: motion Mask
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: FLY_ONLY
+        display: false
+        parse:
+          type: literal
+          return: FLY_ONLY
+      -
+        value: WALK_ONLY
+        display: false
+        parse:
+          type: literal
+          return: WALK_ONLY
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _unitType:
+    type: string
+    description: unit Type
+    values:
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY

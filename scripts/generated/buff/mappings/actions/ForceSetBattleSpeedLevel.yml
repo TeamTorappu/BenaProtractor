@@ -1,0 +1,22 @@
+actionType: ForceSetBattleSpeedLevel
+fields:
+  _setPause:
+    type: boolean
+    description: set Pause
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _speedLevel:
+    type: string
+    description: speed Level
+    values:
+      -
+        value: FAST
+        display: false
+        parse:
+          type: literal
+          return: FAST

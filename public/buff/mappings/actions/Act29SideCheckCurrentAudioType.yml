@@ -1,0 +1,34 @@
+actionType: Act29SideCheckCurrentAudioType
+fields:
+  _audioType:
+    type: string
+    description: audio Type
+    values:
+      -
+        value: Depressed
+        display: false
+        parse:
+          type: literal
+          return: Depressed
+      -
+        value: Enthusiastic
+        display: false
+        parse:
+          type: literal
+          return: Enthusiastic
+      -
+        value: None
+        display: false
+        parse:
+          type: literal
+          return: None
+  _evnSysKey:
+    type: string
+    description: evn Sys Key
+    values:
+      -
+        value: env_008_act29side_audio_type_switcher
+        display: false
+        parse:
+          type: literal
+          return: env_008_act29side_audio_type_switcher

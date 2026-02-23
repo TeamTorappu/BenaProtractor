@@ -1,0 +1,60 @@
+actionType: RunActionsToWdslmAbilityTarget
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: standRegisterList
+        display: false
+        parse:
+          type: literal
+          return: standRegisterList
+  _actionTargetType:
+    type: string
+    description: action Target Type
+    values:
+      -
+        value: HOST
+        display: false
+        parse:
+          type: literal
+          return: HOST
+      -
+        value: SELF_WITH_HOST_AS_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SELF_WITH_HOST_AS_SOURCE
+      -
+        value: STANDS
+        display: false
+        parse:
+          type: literal
+          return: STANDS
+      -
+        value: STANDS_EXCEPT_SELF
+        display: false
+        parse:
+          type: literal
+          return: STANDS_EXCEPT_SELF
+  _actionsToTarget:
+    type: array
+    description: actions To Target
+    schema: action_subschema/_actionsToTarget.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

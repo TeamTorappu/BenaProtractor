@@ -1,0 +1,32 @@
+actionType: CheckCurrentBuff
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "halfidle_damage_scale[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "halfidle_damage_scale[mark]"
+  _buffSource:
+    type: string
+    description: buff Source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _checkBuffSource:
+    type: boolean
+    description: check Buff Source
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,56 @@
+actionType: InterruptCharacterAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: Anim
+        display: false
+        parse:
+          type: literal
+          return: Anim
+      -
+        value: AnimInvert
+        display: false
+        parse:
+          type: literal
+          return: AnimInvert
+      -
+        value: bena_skill
+        display: false
+        parse:
+          type: literal
+          return: bena_skill
+  _charFrom:
+    type: string
+    description: char From
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _needStopAffect:
+    type: boolean
+    description: need Stop Affect
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

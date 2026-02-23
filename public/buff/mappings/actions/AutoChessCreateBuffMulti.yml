@@ -1,0 +1,58 @@
+actionType: AutoChessCreateBuffMulti
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffCnt:
+    type: number
+    description: buff Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _buffCntKey:
+    type: string
+    description: buff Cnt Key
+    values:
+      -
+        value: golden_equip_cnt
+        display: false
+        parse:
+          type: literal
+          return: golden_equip_cnt
+      -
+        value: normal_equip_cnt
+        display: false
+        parse:
+          type: literal
+          return: normal_equip_cnt
+  _buffOwner:
+    type: string
+    description: buff Owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

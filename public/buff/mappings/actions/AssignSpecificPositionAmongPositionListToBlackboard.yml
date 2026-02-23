@@ -1,0 +1,52 @@
+actionType: AssignSpecificPositionAmongPositionListToBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _checkReachable:
+    type: boolean
+    description: check Reachable
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterType:
+    type: string
+    description: filter Type
+    values:
+      -
+        value: NEAREST_TO_TARGET
+        display: false
+        parse:
+          type: literal
+          return: NEAREST_TO_TARGET
+  _positionListKey:
+    type: string
+    description: position List Key
+    values:
+      -
+        value: map_position_list
+        display: false
+        parse:
+          type: literal
+          return: map_position_list
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

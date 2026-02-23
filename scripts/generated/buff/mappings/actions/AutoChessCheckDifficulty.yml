@@ -1,0 +1,12 @@
+actionType: AutoChessCheckDifficulty
+fields:
+  _difficultyMode:
+    type: string
+    description: difficulty Mode
+    values:
+      -
+        value: FUNNY
+        display: false
+        parse:
+          type: literal
+          return: FUNNY

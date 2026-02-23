@@ -1,0 +1,278 @@
+actionType: NoSourceDamage
+fields:
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+      -
+        value: SPLASH
+        display: false
+        parse:
+          type: literal
+          return: SPLASH
+  _damageKey:
+    type: string
+    description: damage Key
+    values:
+      -
+        value: bleeding_damage
+        display: false
+        parse:
+          type: literal
+          return: bleeding_damage
+      -
+        value: cached_atk
+        display: false
+        parse:
+          type: literal
+          return: cached_atk
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+      -
+        value: ep_fire_damage
+        display: false
+        parse:
+          type: literal
+          return: ep_fire_damage
+      -
+        value: ep_sanity_damage
+        display: false
+        parse:
+          type: literal
+          return: ep_sanity_damage
+      -
+        value: ep_water_damage
+        display: false
+        parse:
+          type: literal
+          return: ep_water_damage
+      -
+        value: final_damage
+        display: false
+        parse:
+          type: literal
+          return: final_damage
+      -
+        value: first_damage
+        display: false
+        parse:
+          type: literal
+          return: first_damage
+      -
+        value: hp_loss
+        display: false
+        parse:
+          type: literal
+          return: hp_loss
+      -
+        value: kill_damage
+        display: false
+        parse:
+          type: literal
+          return: kill_damage
+      -
+        value: poison_damage
+        display: false
+        parse:
+          type: literal
+          return: poison_damage
+      -
+        value: pure_damage
+        display: false
+        parse:
+          type: literal
+          return: pure_damage
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: ELEMENT
+        display: false
+        parse:
+          type: literal
+          return: ELEMENT
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _damageWithoutModify:
+    type: boolean
+    description: damage Without Modify
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ignoreCancelReasonMask:
+    type: string
+    description: ignore Cancel Reason Mask
+    values:
+      -
+        value: "MISS, BLOCKED, BLOCKED_WITH_DAMAGE_NUMBER"
+        display: false
+        parse:
+          type: literal
+          return: "MISS, BLOCKED, BLOCKED_WITH_DAMAGE_NUMBER"
+      -
+        value: "MISS, BLOCKED, BLOCKED_WITH_DAMAGE_NUMBER, HIT_FAILED"
+        display: false
+        parse:
+          type: literal
+          return: "MISS, BLOCKED, BLOCKED_WITH_DAMAGE_NUMBER, HIT_FAILED"
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _ignoreForSp:
+    type: boolean
+    description: ignore For Sp
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _instantKillLikeDamage:
+    type: boolean
+    description: instant Kill Like Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isEnvDamage:
+    type: boolean
+    description: is Env Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isNotChangeableValue:
+    type: boolean
+    description: is Not Changeable Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isUndeadable:
+    type: boolean
+    description: is Undeadable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _multiplierByKey:
+    type: boolean
+    description: multiplier By Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _multiplierKey:
+    type: string
+    description: multiplier Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt

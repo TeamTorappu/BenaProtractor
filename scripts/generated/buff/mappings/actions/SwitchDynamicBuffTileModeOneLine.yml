@@ -1,0 +1,166 @@
+actionType: SwitchDynamicBuffTileModeOneLine
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: Building
+        display: false
+        parse:
+          type: literal
+          return: Building
+  _blackboardKey:
+    type: null | string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "prtrop_s[tile_storage]"
+        display: false
+        parse:
+          type: literal
+          return: "prtrop_s[tile_storage]"
+  _direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: LEFT
+        display: false
+        parse:
+          type: literal
+          return: LEFT
+  _dontSwitchModeOnlyAssignTileCntToAbilityBb:
+    type: boolean
+    description: dont Switch Mode Only Assign Tile Cnt To Ability Bb
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _exceptCurrentTile:
+    type: boolean
+    description: except Current Tile
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modeIndex:
+    type: number
+    description: mode Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _modeIndexDeltaWhenFinalTile:
+    type: number
+    description: mode Index Delta When Final Tile
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _switchOneTileEachTime:
+    type: boolean
+    description: switch One Tile Each Time
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _tileIndexKey:
+    type: null
+    description: tile Index Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _updateDirectionBeforeApply:
+    type: boolean
+    description: update Direction Before Apply
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useCurrentTileDirection:
+    type: boolean
+    description: use Current Tile Direction
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useLocationFromBBAsCurrentTile:
+    type: boolean
+    description: use Location From B B As Current Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,142 @@
+actionType: SwitchMode
+fields:
+  _loadModeFromBlackboard:
+    type: boolean
+    description: load Mode From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modeIndex:
+    type: number
+    description: mode Index
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+      -
+        value: 4
+        display: false
+        parse:
+          type: literal
+          return: 4
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+      -
+        value: 6
+        display: false
+        parse:
+          type: literal
+          return: 6
+      -
+        value: 7
+        display: false
+        parse:
+          type: literal
+          return: 7
+      -
+        value: 8
+        display: false
+        parse:
+          type: literal
+          return: 8
+  _restartFSM:
+    type: boolean
+    description: restart F S M
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _restoreDefault:
+    type: boolean
+    description: restore Default
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

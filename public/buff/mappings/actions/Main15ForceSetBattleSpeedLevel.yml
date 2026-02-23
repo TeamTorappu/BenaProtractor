@@ -1,0 +1,18 @@
+actionType: Main15ForceSetBattleSpeedLevel
+fields:
+  _enable:
+    type: boolean
+    description: enable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,72 @@
+actionType: ModifierScaleUp
+fields:
+  _scaleKey:
+    type: null | string
+    description: scale Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: atk_up
+        display: false
+        parse:
+          type: literal
+          return: atk_up
+      -
+        value: creep_heal_scale
+        display: false
+        parse:
+          type: literal
+          return: creep_heal_scale
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: damage_scale_ratio
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_ratio
+      -
+        value: ep_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_scale
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+      -
+        value: heal_scale_2
+        display: false
+        parse:
+          type: literal
+          return: heal_scale_2
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: sp_scale_up
+        display: false
+        parse:
+          type: literal
+          return: sp_scale_up
+      -
+        value: trait_scale
+        display: false
+        parse:
+          type: literal
+          return: trait_scale

@@ -1,0 +1,32 @@
+actionType: CreateDeckBuffWithDeckSelector
+fields:
+  _actionSource:
+    type: string
+    description: action Source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _deckBuff:
+    type: object
+    description: deck Buff
+    schema: action_subschema/_deckBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _deckSelector:
+    type: object
+    description: deck Selector
+    schema: action_subschema/_deckSelector.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx

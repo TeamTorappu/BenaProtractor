@@ -1,0 +1,120 @@
+actionType: ModifyTileBlackboard
+fields:
+  _assignStrValue:
+    type: boolean
+    description: assign Str Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+  _useTargetRoottile:
+    type: boolean
+    description: use Target Roottile
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _valueKey:
+    type: null
+    description: value Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _valueStr:
+    type: null | string
+    description: value Str
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: plot_lhhe
+        display: false
+        parse:
+          type: literal
+          return: plot_lhhe
+      -
+        value: plot_lhmagd
+        display: false
+        parse:
+          type: literal
+          return: plot_lhmagd
+      -
+        value: plot_lhphe
+        display: false
+        parse:
+          type: literal
+          return: plot_lhphe
+      -
+        value: plot_lhsht
+        display: false
+        parse:
+          type: literal
+          return: plot_lhsht
+      -
+        value: plot_lhtwer
+        display: false
+        parse:
+          type: literal
+          return: plot_lhtwer

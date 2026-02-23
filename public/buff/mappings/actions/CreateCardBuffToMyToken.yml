@@ -1,0 +1,116 @@
+actionType: CreateCardBuffToMyToken
+fields:
+  _cardBuffKey:
+    type: null | string
+    description: card Buff Key
+    values:
+      -
+        value: alanna_e_002_trait_cost_reduce
+        display: false
+        parse:
+          type: literal
+          return: alanna_e_002_trait_cost_reduce
+      -
+        value: nasti_first_token_cost_dec
+        display: false
+        parse:
+          type: literal
+          return: nasti_first_token_cost_dec
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: ALL_THE_TIME
+        display: false
+        parse:
+          type: literal
+          return: ALL_THE_TIME
+      -
+        value: HOLD_BY_BUFF
+        display: false
+        parse:
+          type: literal
+          return: HOLD_BY_BUFF
+      -
+        value: IMMEDIATELY
+        display: false
+        parse:
+          type: literal
+          return: IMMEDIATELY
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

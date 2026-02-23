@@ -1,0 +1,72 @@
+actionType: HalfIdleCheckHasCertainTargetUseAbilitySelector
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: CheckUpgrade
+        display: false
+        parse:
+          type: literal
+          return: CheckUpgrade
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _floorTargetCnt:
+    type: number
+    description: floor Target Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _floorTargetCntKey:
+    type: string
+    description: floor Target Cnt Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

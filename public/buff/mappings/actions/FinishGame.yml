@@ -1,0 +1,18 @@
+actionType: FinishGame
+fields:
+  _gameResult:
+    type: string
+    description: game Result
+    values:
+      -
+        value: LOSE
+        display: false
+        parse:
+          type: literal
+          return: LOSE
+      -
+        value: WIN
+        display: false
+        parse:
+          type: literal
+          return: WIN

@@ -1,0 +1,54 @@
+actionType: EmitProjectileOnSourceRootTile
+fields:
+  _actions:
+    type: array | null
+    description: actions
+    schema: action_subschema/_actions.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _ev:
+    type: string
+    description: ev
+    values:
+      -
+        value: ON_HIT_OBJECT
+        display: false
+        parse:
+          type: literal
+          return: ON_HIT_OBJECT
+      -
+        value: ON_HIT_TILE
+        display: false
+        parse:
+          type: literal
+          return: ON_HIT_TILE
+  _overwriteActions:
+    type: boolean
+    description: overwrite Actions
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE

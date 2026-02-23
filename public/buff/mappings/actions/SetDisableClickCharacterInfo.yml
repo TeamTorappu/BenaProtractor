@@ -1,0 +1,38 @@
+actionType: SetDisableClickCharacterInfo
+fields:
+  _enabled:
+    type: boolean
+    description: enabled
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _reasonMask:
+    type: string
+    description: reason Mask
+    values:
+      -
+        value: OWNER_SETTING
+        display: false
+        parse:
+          type: literal
+          return: OWNER_SETTING
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

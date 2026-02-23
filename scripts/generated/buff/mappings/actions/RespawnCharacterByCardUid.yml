@@ -1,0 +1,32 @@
+actionType: RespawnCharacterByCardUid
+fields:
+  _ignoreAdvancedBuildableMask:
+    type: boolean
+    description: ignore Advanced Buildable Mask
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _uidKey:
+    type: string
+    description: uid Key
+    values:
+      -
+        value: card_uid
+        display: false
+        parse:
+          type: literal
+          return: card_uid

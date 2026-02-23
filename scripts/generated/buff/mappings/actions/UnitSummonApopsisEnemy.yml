@@ -1,0 +1,84 @@
+actionType: UnitSummonApopsisEnemy
+fields:
+  _addBuffToEnemy:
+    type: boolean
+    description: add Buff To Enemy
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _buffToEnemy:
+    type: null | object
+    description: buff To Enemy
+    schema: action_subschema/_buffToEnemy.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _enemyKey:
+    type: string
+    description: enemy Key
+    values:
+      -
+        value: enemy_2087_skzdwy
+        display: false
+        parse:
+          type: literal
+          return: enemy_2087_skzdwy
+      -
+        value: enemy_2088_skzdwz
+        display: false
+        parse:
+          type: literal
+          return: enemy_2088_skzdwz
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: FLY
+        display: false
+        parse:
+          type: literal
+          return: FLY
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

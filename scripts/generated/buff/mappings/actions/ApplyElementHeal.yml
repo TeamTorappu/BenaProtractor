@@ -1,0 +1,50 @@
+actionType: ApplyElementHeal
+fields:
+  _healTarget:
+    type: string
+    description: heal Target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _isCont:
+    type: boolean
+    description: is Cont
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _maxEpHeal:
+    type: boolean
+    description: max Ep Heal
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

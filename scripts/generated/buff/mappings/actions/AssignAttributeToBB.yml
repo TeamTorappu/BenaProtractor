@@ -1,0 +1,258 @@
+actionType: AssignAttributeToBB
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ABILITY_RANGE_FORWARD_EXTEND
+        display: false
+        parse:
+          type: literal
+          return: ABILITY_RANGE_FORWARD_EXTEND
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: ATTACK_SPEED
+        display: false
+        parse:
+          type: literal
+          return: ATTACK_SPEED
+      -
+        value: BLOCK_CNT
+        display: false
+        parse:
+          type: literal
+          return: BLOCK_CNT
+      -
+        value: COST
+        display: false
+        parse:
+          type: literal
+          return: COST
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+      -
+        value: MAGIC_RESISTANCE
+        display: false
+        parse:
+          type: literal
+          return: MAGIC_RESISTANCE
+      -
+        value: MASS_LEVEL
+        display: false
+        parse:
+          type: literal
+          return: MASS_LEVEL
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+      -
+        value: MOVE_SPEED
+        display: false
+        parse:
+          type: literal
+          return: MOVE_SPEED
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _scaleVar:
+    type: string
+    description: scale Var
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: bleed_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: bleed_atk_scale
+      -
+        value: born_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: born_hp_ratio
+      -
+        value: curr_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: curr_atk_scale
+      -
+        value: damage_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_atk_scale
+      -
+        value: def_scale
+        display: false
+        parse:
+          type: literal
+          return: def_scale
+      -
+        value: heal_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_atk_scale
+      -
+        value: higher_effect_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: higher_effect_hp_ratio
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: kill_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: kill_hp_ratio
+      -
+        value: magic_resistance_scale
+        display: false
+        parse:
+          type: literal
+          return: magic_resistance_scale
+      -
+        value: max_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: max_hp_ratio
+      -
+        value: max_scale
+        display: false
+        parse:
+          type: literal
+          return: max_scale
+      -
+        value: real_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: real_atk_scale
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+      -
+        value: scale_invalid
+        display: false
+        parse:
+          type: literal
+          return: scale_invalid
+      -
+        value: shield_each_hp_rate
+        display: false
+        parse:
+          type: literal
+          return: shield_each_hp_rate
+      -
+        value: shield_max_hp_rate
+        display: false
+        parse:
+          type: literal
+          return: shield_max_hp_rate
+      -
+        value: shield_max_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: shield_max_hp_ratio
+      -
+        value: shield_ratio
+        display: false
+        parse:
+          type: literal
+          return: shield_ratio
+      -
+        value: shield_scale
+        display: false
+        parse:
+          type: literal
+          return: shield_scale
+      -
+        value: shield_scale_max
+        display: false
+        parse:
+          type: literal
+          return: shield_scale_max
+      -
+        value: xxx
+        display: false
+        parse:
+          type: literal
+          return: xxx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

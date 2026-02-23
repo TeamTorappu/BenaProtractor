@@ -1,0 +1,22 @@
+actionType: AutochessFilterByCurrentCoin
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+  _valueToCompare:
+    type: number
+    description: value To Compare
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0

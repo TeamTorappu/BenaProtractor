@@ -1,0 +1,52 @@
+actionType: FilterModifierByRealDelta
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _modifierTargetType:
+    type: string
+    description: modifier Target Type
+    values:
+      -
+        value: COST
+        display: false
+        parse:
+          type: literal
+          return: COST
+      -
+        value: EP
+        display: false
+        parse:
+          type: literal
+          return: EP
+      -
+        value: HP
+        display: false
+        parse:
+          type: literal
+          return: HP
+      -
+        value: LIFE_POINT
+        display: false
+        parse:
+          type: literal
+          return: LIFE_POINT
+      -
+        value: SP
+        display: false
+        parse:
+          type: literal
+          return: SP

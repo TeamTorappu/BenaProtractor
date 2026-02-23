@@ -1,0 +1,84 @@
+actionType: FilterByGlobalBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _channel:
+    type: string
+    description: channel
+    values:
+      -
+        value: AUTOCHESS
+        display: false
+        parse:
+          type: literal
+          return: AUTOCHESS
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+      -
+        value: LEVEL
+        display: false
+        parse:
+          type: literal
+          return: LEVEL
+      -
+        value: ROGUELIKE
+        display: false
+        parse:
+          type: literal
+          return: ROGUELIKE
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: EQUALS
+        display: false
+        parse:
+          type: literal
+          return: EQUALS
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _valueToCompare:
+    type: number
+    description: value To Compare
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1

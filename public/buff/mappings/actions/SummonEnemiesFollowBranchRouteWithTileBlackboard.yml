@@ -1,0 +1,112 @@
+actionType: SummonEnemiesFollowBranchRouteWithTileBlackboard
+fields:
+  _actionIndex:
+    type: number
+    description: action Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _actionIndexKey:
+    type: string
+    description: action Index Key
+    values:
+      -
+        value: action_index_rgdysm_summon
+        display: false
+        parse:
+          type: literal
+          return: action_index_rgdysm_summon
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _buffToEnemy:
+    type: object
+    description: buff To Enemy
+    schema: action_subschema/_buffToEnemy.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _disableBornTweenColor:
+    type: boolean
+    description: disable Born Tween Color
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _overrideEnemyKey:
+    type: string
+    description: override Enemy Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _summonNums:
+    type: number
+    description: summon Nums
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _summonNumsKeys:
+    type: string
+    description: summon Nums Keys
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

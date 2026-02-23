@@ -1,0 +1,22 @@
+actionType: DamageSplit
+fields:
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

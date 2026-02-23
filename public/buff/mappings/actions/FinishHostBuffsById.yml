@@ -1,0 +1,52 @@
+actionType: FinishHostBuffsById
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "rogue_3_hostAtkUp[refCounter]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_3_hostAtkUp[refCounter]"
+  _decCntIfStack:
+    type: boolean
+    description: dec Cnt If Stack
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _updateOverrideMap:
+    type: boolean
+    description: update Override Map
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

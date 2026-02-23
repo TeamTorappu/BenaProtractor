@@ -1,0 +1,92 @@
+actionType: FilterByTargetAttribute
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: BLOCK_CNT
+        display: false
+        parse:
+          type: literal
+          return: BLOCK_CNT
+      -
+        value: MASS_LEVEL
+        display: false
+        parse:
+          type: literal
+          return: MASS_LEVEL
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useFloat:
+    type: boolean
+    description: use Float
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _valueFP:
+    type: number
+    description: value F P
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0

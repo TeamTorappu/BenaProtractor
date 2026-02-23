@@ -1,0 +1,40 @@
+actionType: CheckIfDamageHasSharedFlags
+fields:
+  _isUnset:
+    type: boolean
+    description: is Unset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sharedFlags:
+    type: string
+    description: shared Flags
+    values:
+      -
+        value: DAMAGE_WITHOUT_MODIFY
+        display: false
+        parse:
+          type: literal
+          return: DAMAGE_WITHOUT_MODIFY
+      -
+        value: INSTANT_KILL_LIKE_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: INSTANT_KILL_LIKE_DAMAGE
+      -
+        value: IS_ENVIRONMENT_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: IS_ENVIRONMENT_DAMAGE

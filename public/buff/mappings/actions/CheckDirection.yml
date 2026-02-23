@@ -1,0 +1,68 @@
+actionType: CheckDirection
+fields:
+  _judgeType:
+    type: string
+    description: judge Type
+    values:
+      -
+        value: EQUAL
+        display: false
+        parse:
+          type: literal
+          return: EQUAL
+      -
+        value: FACE_TARGET
+        display: false
+        parse:
+          type: literal
+          return: FACE_TARGET
+      -
+        value: OPPOSITE
+        display: false
+        parse:
+          type: literal
+          return: OPPOSITE
+      -
+        value: VERTICAL
+        display: false
+        parse:
+          type: literal
+          return: VERTICAL
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE

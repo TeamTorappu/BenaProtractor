@@ -1,0 +1,396 @@
+actionType: AddAbilityBlackboard
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: AuraElement
+        display: false
+        parse:
+          type: literal
+          return: AuraElement
+      -
+        value: AuraS0
+        display: false
+        parse:
+          type: literal
+          return: AuraS0
+      -
+        value: AuraS1
+        display: false
+        parse:
+          type: literal
+          return: AuraS1
+      -
+        value: AuraS2
+        display: false
+        parse:
+          type: literal
+          return: AuraS2
+      -
+        value: AuraS3
+        display: false
+        parse:
+          type: literal
+          return: AuraS3
+      -
+        value: AuraS4
+        display: false
+        parse:
+          type: literal
+          return: AuraS4
+      -
+        value: Building
+        display: false
+        parse:
+          type: literal
+          return: Building
+      -
+        value: S2MultiMeleeAttack
+        display: false
+        parse:
+          type: literal
+          return: S2MultiMeleeAttack
+      -
+        value: aoe
+        display: false
+        parse:
+          type: literal
+          return: aoe
+      -
+        value: blacksteel_energy
+        display: false
+        parse:
+          type: literal
+          return: blacksteel_energy
+      -
+        value: summon
+        display: false
+        parse:
+          type: literal
+          return: summon
+      -
+        value: summon2
+        display: false
+        parse:
+          type: literal
+          return: summon2
+  _abilityOwnerType:
+    type: string
+    description: ability Owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _addBlackboardKey:
+    type: string
+    description: add Blackboard Key
+    values:
+      -
+        value: add_cnt
+        display: false
+        parse:
+          type: literal
+          return: add_cnt
+      -
+        value: add_count
+        display: false
+        parse:
+          type: literal
+          return: add_count
+      -
+        value: atk_s0
+        display: false
+        parse:
+          type: literal
+          return: atk_s0
+      -
+        value: atk_s1
+        display: false
+        parse:
+          type: literal
+          return: atk_s1
+      -
+        value: atk_s2
+        display: false
+        parse:
+          type: literal
+          return: atk_s2
+      -
+        value: atk_s3
+        display: false
+        parse:
+          type: literal
+          return: atk_s3
+      -
+        value: atk_s4
+        display: false
+        parse:
+          type: literal
+          return: atk_s4
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+      -
+        value: base_damage
+        display: false
+        parse:
+          type: literal
+          return: base_damage
+      -
+        value: base_damage_pure
+        display: false
+        parse:
+          type: literal
+          return: base_damage_pure
+      -
+        value: dec_count
+        display: false
+        parse:
+          type: literal
+          return: dec_count
+      -
+        value: energy
+        display: false
+        parse:
+          type: literal
+          return: energy
+      -
+        value: extra_skill_time
+        display: false
+        parse:
+          type: literal
+          return: extra_skill_time
+      -
+        value: freeze_add
+        display: false
+        parse:
+          type: literal
+          return: freeze_add
+      -
+        value: max_hp_s1
+        display: false
+        parse:
+          type: literal
+          return: max_hp_s1
+      -
+        value: max_hp_s2
+        display: false
+        parse:
+          type: literal
+          return: max_hp_s2
+      -
+        value: max_hp_s3
+        display: false
+        parse:
+          type: literal
+          return: max_hp_s3
+      -
+        value: max_hp_s4
+        display: false
+        parse:
+          type: literal
+          return: max_hp_s4
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: s2_times_add_one
+        display: false
+        parse:
+          type: literal
+          return: s2_times_add_one
+      -
+        value: shrink_factor
+        display: false
+        parse:
+          type: literal
+          return: shrink_factor
+  _blackboardKeys:
+    type: string
+    description: blackboard Keys
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+      -
+        value: blacksteel_energy
+        display: false
+        parse:
+          type: literal
+          return: blacksteel_energy
+      -
+        value: current_damage
+        display: false
+        parse:
+          type: literal
+          return: current_damage
+      -
+        value: current_damage_pure
+        display: false
+        parse:
+          type: literal
+          return: current_damage_pure
+      -
+        value: freeze
+        display: false
+        parse:
+          type: literal
+          return: freeze
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: shrink_factor
+        display: false
+        parse:
+          type: literal
+          return: shrink_factor
+      -
+        value: skill_time
+        display: false
+        parse:
+          type: literal
+          return: skill_time
+      -
+        value: summon_cnt
+        display: false
+        parse:
+          type: literal
+          return: summon_cnt
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+  _fromOwnerBlackBoard:
+    type: boolean
+    description: from Owner Black Board
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isLimitValue:
+    type: boolean
+    description: is Limit Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isMinus:
+    type: boolean
+    description: is Minus
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isUpdateSelector:
+    type: boolean
+    description: is Update Selector
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _limitValue:
+    type: number
+    description: limit Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _limitValueKey:
+    type: null | string
+    description: limit Value Key
+    values:
+      -
+        value: freeze_max
+        display: false
+        parse:
+          type: literal
+          return: freeze_max
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null

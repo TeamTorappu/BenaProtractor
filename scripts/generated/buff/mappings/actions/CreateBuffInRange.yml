@@ -1,0 +1,534 @@
+actionType: CreateBuffInRange
+fields:
+  _allowedBuildableType:
+    type: string
+    description: allowed Buildable Type
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _alwaysIncudeCurAtkTarget:
+    type: boolean
+    description: always Incude Cur Atk Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _checkGiantTrapAllLocateTiles:
+    type: boolean
+    description: check Giant Trap All Locate Tiles
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludeCurAtkTarget:
+    type: boolean
+    description: exclude Cur Atk Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterByBuildableType:
+    type: boolean
+    description: filter By Buildable Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterTargets:
+    type: boolean
+    description: filter Targets
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterType:
+    type: string
+    description: filter Type
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: HATRED_DES
+        display: false
+        parse:
+          type: literal
+          return: HATRED_DES
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _limitMaxTarget:
+    type: boolean
+    description: limit Max Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _maxTargetKey:
+    type: string
+    description: max Target Key
+    values:
+      -
+        value: max_target
+        display: false
+        parse:
+          type: literal
+          return: max_target
+  _radius:
+    type: number
+    description: radius
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.20000000298023224
+        display: false
+        parse:
+          type: literal
+          return: 0.20000000298023224
+      -
+        value: 0.30000001192092896
+        display: false
+        parse:
+          type: literal
+          return: 0.30000001192092896
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 1.100000023841858
+        display: false
+        parse:
+          type: literal
+          return: 1.100000023841858
+      -
+        value: 1.5
+        display: false
+        parse:
+          type: literal
+          return: 1.5
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+      -
+        value: 100
+        display: false
+        parse:
+          type: literal
+          return: 100
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+  _randomTarget:
+    type: boolean
+    description: random Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _rangeId:
+    type: null | string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+      -
+        value: 1-1
+        display: false
+        parse:
+          type: literal
+          return: 1-1
+      -
+        value: 2-2
+        display: false
+        parse:
+          type: literal
+          return: 2-2
+      -
+        value: 2-4
+        display: false
+        parse:
+          type: literal
+          return: 2-4
+      -
+        value: 5-1
+        display: false
+        parse:
+          type: literal
+          return: 5-1
+      -
+        value: b-2
+        display: false
+        parse:
+          type: literal
+          return: b-2
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: x-1
+        display: false
+        parse:
+          type: literal
+          return: x-1
+      -
+        value: x-2
+        display: false
+        parse:
+          type: literal
+          return: x-2
+      -
+        value: x-4
+        display: false
+        parse:
+          type: literal
+          return: x-4
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _rangeModeIndex:
+    type: number
+    description: range Mode Index
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+  _rangeTargetSideType:
+    type: string
+    description: range Target Side Type
+    values:
+      -
+        value: ALLY
+        display: false
+        parse:
+          type: literal
+          return: ALLY
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+  _removeExcludeTargetBeforeShrink:
+    type: boolean
+    description: remove Exclude Target Before Shrink
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useAttackRange:
+    type: boolean
+    description: use Attack Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useCurrentModeRange:
+    type: boolean
+    description: use Current Mode Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useGlobalRange:
+    type: boolean
+    description: use Global Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useRadius:
+    type: boolean
+    description: use Radius
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useRangeToShow:
+    type: boolean
+    description: use Range To Show
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useTargetRangeInsteadOfSource:
+    type: boolean
+    description: use Target Range Instead Of Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

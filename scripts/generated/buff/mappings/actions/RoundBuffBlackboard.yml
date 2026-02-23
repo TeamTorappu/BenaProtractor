@@ -1,0 +1,54 @@
+actionType: RoundBuffBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffKey:
+    type: null | string
+    description: buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: "rdoc_t2[shield]"
+        display: false
+        parse:
+          type: literal
+          return: "rdoc_t2[shield]"
+  _roundType:
+    type: string
+    description: round Type
+    values:
+      -
+        value: Floor
+        display: false
+        parse:
+          type: literal
+          return: Floor
+      -
+        value: Round
+        display: false
+        parse:
+          type: literal
+          return: Round
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

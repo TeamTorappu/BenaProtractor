@@ -1,0 +1,176 @@
+actionType: DamageViaCurHpRatio
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _atkScaleKey:
+    type: string
+    description: atk Scale Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+  _ceilingDamageToInt:
+    type: boolean
+    description: ceiling Damage To Int
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _damageNoLessThanValueBasedOnSourceAtk:
+    type: boolean
+    description: damage No Less Than Value Based On Source Atk
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _ignoreForSp:
+    type: boolean
+    description: ignore For Sp
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isUndeadable:
+    type: boolean
+    description: is Undeadable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modifierKey:
+    type: string
+    description: modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _skipModifierEvent:
+    type: boolean
+    description: skip Modifier Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _triggerOnCalculateDamage:
+    type: boolean
+    description: trigger On Calculate Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

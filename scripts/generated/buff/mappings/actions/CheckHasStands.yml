@@ -1,0 +1,22 @@
+actionType: CheckHasStands
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: standRegisterList
+        display: false
+        parse:
+          type: literal
+          return: standRegisterList
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

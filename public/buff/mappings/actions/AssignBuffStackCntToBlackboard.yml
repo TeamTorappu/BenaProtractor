@@ -1,0 +1,42 @@
+actionType: AssignBuffStackCntToBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "halfIdle_lhside_count[counter]"
+        display: false
+        parse:
+          type: literal
+          return: "halfIdle_lhside_count[counter]"
+  _buffOwner:
+    type: string
+    description: buff Owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _buffToAssignKey:
+    type: string
+    description: buff To Assign Key
+    values:
+      -
+        value: halfIdle_lhside_skill
+        display: false
+        parse:
+          type: literal
+          return: halfIdle_lhside_skill

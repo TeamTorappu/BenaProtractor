@@ -1,0 +1,192 @@
+actionType: BlackboardAdd
+fields:
+  _addition:
+    type: number
+    description: addition
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: -2
+        display: false
+        parse:
+          type: literal
+          return: -2
+      -
+        value: -3
+        display: false
+        parse:
+          type: literal
+          return: -3
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 1000
+        display: false
+        parse:
+          type: literal
+          return: 1000
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+  _additionKey:
+    type: null | string
+    description: addition Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: add_damage
+        display: false
+        parse:
+          type: literal
+          return: add_damage
+      -
+        value: add_tile
+        display: false
+        parse:
+          type: literal
+          return: add_tile
+      -
+        value: atk_add
+        display: false
+        parse:
+          type: literal
+          return: atk_add
+      -
+        value: boss_add
+        display: false
+        parse:
+          type: literal
+          return: boss_add
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: fly_duration
+        display: false
+        parse:
+          type: literal
+          return: fly_duration
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: level_add
+        display: false
+        parse:
+          type: literal
+          return: level_add
+      -
+        value: move_speed_add
+        display: false
+        parse:
+          type: literal
+          return: move_speed_add
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: range_radius_add
+        display: false
+        parse:
+          type: literal
+          return: range_radius_add
+      -
+        value: speed_add
+        display: false
+        parse:
+          type: literal
+          return: speed_add
+      -
+        value: stun
+        display: false
+        parse:
+          type: literal
+          return: stun
+      -
+        value: stun_duration_add
+        display: false
+        parse:
+          type: literal
+          return: stun_duration_add
+      -
+        value: timer_addition
+        display: false
+        parse:
+          type: literal
+          return: timer_addition
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+      -
+        value: value_origin
+        display: false
+        parse:
+          type: literal
+          return: value_origin
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _isFloat:
+    type: boolean
+    description: is Float
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

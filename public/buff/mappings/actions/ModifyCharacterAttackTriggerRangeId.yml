@@ -1,0 +1,74 @@
+actionType: ModifyCharacterAttackTriggerRangeId
+fields:
+  _modes:
+    type: array
+    description: modes
+    schema: action_subschema/_modes.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _sourceMode:
+    type: number
+    description: source Mode
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useCurrentModeRangeId:
+    type: boolean
+    description: use Current Mode Range Id
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useSpecifiedModeRangeId:
+    type: boolean
+    description: use Specified Mode Range Id
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

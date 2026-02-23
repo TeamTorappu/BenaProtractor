@@ -1,0 +1,22 @@
+actionType: AssignEnemyLifePointReduceToBB
+fields:
+  _targetBlackboardKey:
+    type: string
+    description: target Blackboard Key
+    values:
+      -
+        value: value_life
+        display: false
+        parse:
+          type: literal
+          return: value_life
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

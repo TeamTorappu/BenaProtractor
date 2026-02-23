@@ -1,0 +1,22 @@
+actionType: HalfIdleModifyLevelCapacityWhiteList
+fields:
+  _isAdd:
+    type: boolean
+    description: is Add
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

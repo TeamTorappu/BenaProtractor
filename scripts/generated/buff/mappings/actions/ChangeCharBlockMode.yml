@@ -1,0 +1,56 @@
+actionType: ChangeCharBlockMode
+fields:
+  _blockMode:
+    type: string
+    description: block Mode
+    values:
+      -
+        value: E_NUM
+        display: false
+        parse:
+          type: literal
+          return: E_NUM
+      -
+        value: FLY
+        display: false
+        parse:
+          type: literal
+          return: FLY
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+  _resetToDefault:
+    type: boolean
+    description: reset To Default
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

@@ -1,0 +1,72 @@
+actionType: TrapRockflSummonLtrock
+fields:
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _endPosOffsetAlongDirection:
+    type: number
+    description: end Pos Offset Along Direction
+    values:
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+  _enemyKey:
+    type: string
+    description: enemy Key
+    values:
+      -
+        value: enemy_1343_ltrock
+        display: false
+        parse:
+          type: literal
+          return: enemy_1343_ltrock
+  _midPosOffsetAlongDirection:
+    type: number
+    description: mid Pos Offset Along Direction
+    values:
+      -
+        value: 0.20000000298023224
+        display: false
+        parse:
+          type: literal
+          return: 0.20000000298023224
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

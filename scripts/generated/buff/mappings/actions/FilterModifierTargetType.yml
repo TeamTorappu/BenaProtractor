@@ -1,0 +1,24 @@
+actionType: FilterModifierTargetType
+fields:
+  _modifierTargetType:
+    type: string
+    description: modifier Target Type
+    values:
+      -
+        value: EP
+        display: false
+        parse:
+          type: literal
+          return: EP
+      -
+        value: HP
+        display: false
+        parse:
+          type: literal
+          return: HP
+      -
+        value: SP
+        display: false
+        parse:
+          type: literal
+          return: SP

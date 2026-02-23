@@ -1,0 +1,18 @@
+actionType: ForceCharacterAnimatorFaceFront
+fields:
+  _FroceFaceFront:
+    type: boolean
+    description: Froce Face Front
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

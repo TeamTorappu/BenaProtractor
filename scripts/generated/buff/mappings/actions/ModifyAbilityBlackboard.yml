@@ -1,0 +1,666 @@
+actionType: ModifyAbilityBlackboard
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: DoFarm
+        display: false
+        parse:
+          type: literal
+          return: DoFarm
+      -
+        value: Fire
+        display: false
+        parse:
+          type: literal
+          return: Fire
+      -
+        value: InstantSpawn
+        display: false
+        parse:
+          type: literal
+          return: InstantSpawn
+      -
+        value: Mark
+        display: false
+        parse:
+          type: literal
+          return: Mark
+      -
+        value: MultiAttack
+        display: false
+        parse:
+          type: literal
+          return: MultiAttack
+      -
+        value: RandomGold
+        display: false
+        parse:
+          type: literal
+          return: RandomGold
+      -
+        value: S1_Burst
+        display: false
+        parse:
+          type: literal
+          return: S1_Burst
+      -
+        value: S2_Burst
+        display: false
+        parse:
+          type: literal
+          return: S2_Burst
+      -
+        value: Token
+        display: false
+        parse:
+          type: literal
+          return: Token
+      -
+        value: TryUpgradeToken
+        display: false
+        parse:
+          type: literal
+          return: TryUpgradeToken
+      -
+        value: blacksteel_energy
+        display: false
+        parse:
+          type: literal
+          return: blacksteel_energy
+      -
+        value: linkAttack
+        display: false
+        parse:
+          type: literal
+          return: linkAttack
+      -
+        value: portlexi_shoot_projectile
+        display: false
+        parse:
+          type: literal
+          return: portlexi_shoot_projectile
+      -
+        value: s1_l
+        display: false
+        parse:
+          type: literal
+          return: s1_l
+      -
+        value: s1_m
+        display: false
+        parse:
+          type: literal
+          return: s1_m
+      -
+        value: s1_r
+        display: false
+        parse:
+          type: literal
+          return: s1_r
+      -
+        value: skchr_mberry_1
+        display: false
+        parse:
+          type: literal
+          return: skchr_mberry_1
+      -
+        value: thunder
+        display: false
+        parse:
+          type: literal
+          return: thunder
+      -
+        value: towerAura
+        display: false
+        parse:
+          type: literal
+          return: towerAura
+  _abilityOwnerType:
+    type: string
+    description: ability Owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _assignString:
+    type: boolean
+    description: assign String
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _blackboardKeys:
+    type: string
+    description: blackboard Keys
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: "atk_scale[bigAttack2]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[bigAttack2]"
+      -
+        value: blacksteel_energy
+        display: false
+        parse:
+          type: literal
+          return: blacksteel_energy
+      -
+        value: block_cnt
+        display: false
+        parse:
+          type: literal
+          return: block_cnt
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cooldown
+        display: false
+        parse:
+          type: literal
+          return: cooldown
+      -
+        value: current_value
+        display: false
+        parse:
+          type: literal
+          return: current_value
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: def
+        display: false
+        parse:
+          type: literal
+          return: def
+      -
+        value: default_radius
+        display: false
+        parse:
+          type: literal
+          return: default_radius
+      -
+        value: display_hunter_bullet_flag
+        display: false
+        parse:
+          type: literal
+          return: display_hunter_bullet_flag
+      -
+        value: dynamic_spd
+        display: false
+        parse:
+          type: literal
+          return: dynamic_spd
+      -
+        value: ep_heal_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_heal_ratio
+      -
+        value: extra_cnt
+        display: false
+        parse:
+          type: literal
+          return: extra_cnt
+      -
+        value: extra_extend_scale
+        display: false
+        parse:
+          type: literal
+          return: extra_extend_scale
+      -
+        value: final_radius
+        display: false
+        parse:
+          type: literal
+          return: final_radius
+      -
+        value: force
+        display: false
+        parse:
+          type: literal
+          return: force
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp
+      -
+        value: next_projectile_key
+        display: false
+        parse:
+          type: literal
+          return: next_projectile_key
+      -
+        value: projectile_delay_time
+        display: false
+        parse:
+          type: literal
+          return: projectile_delay_time
+      -
+        value: projectile_index
+        display: false
+        parse:
+          type: literal
+          return: projectile_index
+      -
+        value: projectile_life_time
+        display: false
+        parse:
+          type: literal
+          return: projectile_life_time
+      -
+        value: s_duration
+        display: false
+        parse:
+          type: literal
+          return: s_duration
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+      -
+        value: tower_type
+        display: false
+        parse:
+          type: literal
+          return: tower_type
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _buffKey:
+    type: null | string
+    description: buff Key
+    values:
+      -
+        value: enemy_pope_param_storage
+        display: false
+        parse:
+          type: literal
+          return: enemy_pope_param_storage
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: "ymgscm_c[sync_attack_time]"
+        display: false
+        parse:
+          type: literal
+          return: "ymgscm_c[sync_attack_time]"
+  _fromBlackboardKeys:
+    type: null | string
+    description: from Blackboard Keys
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: "atk_scale[bigAttack2]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[bigAttack2]"
+      -
+        value: block_cnt
+        display: false
+        parse:
+          type: literal
+          return: block_cnt
+      -
+        value: build_cnt
+        display: false
+        parse:
+          type: literal
+          return: build_cnt
+      -
+        value: current_sp
+        display: false
+        parse:
+          type: literal
+          return: current_sp
+      -
+        value: current_value
+        display: false
+        parse:
+          type: literal
+          return: current_value
+      -
+        value: def
+        display: false
+        parse:
+          type: literal
+          return: def
+      -
+        value: default_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: default_atk_scale
+      -
+        value: default_cnt
+        display: false
+        parse:
+          type: literal
+          return: default_cnt
+      -
+        value: default_projectile_key
+        display: false
+        parse:
+          type: literal
+          return: default_projectile_key
+      -
+        value: default_rotate_spd
+        display: false
+        parse:
+          type: literal
+          return: default_rotate_spd
+      -
+        value: dynamic_spd
+        display: false
+        parse:
+          type: literal
+          return: dynamic_spd
+      -
+        value: ep_heal_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_heal_ratio
+      -
+        value: extra_cnt
+        display: false
+        parse:
+          type: literal
+          return: extra_cnt
+      -
+        value: extra_extend_scale
+        display: false
+        parse:
+          type: literal
+          return: extra_extend_scale
+      -
+        value: force
+        display: false
+        parse:
+          type: literal
+          return: force
+      -
+        value: hit_duration
+        display: false
+        parse:
+          type: literal
+          return: hit_duration
+      -
+        value: inside_radius
+        display: false
+        parse:
+          type: literal
+          return: inside_radius
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp
+      -
+        value: new_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: new_atk_scale
+      -
+        value: next_projectile_key
+        display: false
+        parse:
+          type: literal
+          return: next_projectile_key
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: origin_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: origin_damage_scale
+      -
+        value: outside_radius
+        display: false
+        parse:
+          type: literal
+          return: outside_radius
+      -
+        value: projectile_delay_time
+        display: false
+        parse:
+          type: literal
+          return: projectile_delay_time
+      -
+        value: projectile_life_time
+        display: false
+        parse:
+          type: literal
+          return: projectile_life_time
+      -
+        value: s_duration
+        display: false
+        parse:
+          type: literal
+          return: s_duration
+      -
+        value: talent_cool_down
+        display: false
+        parse:
+          type: literal
+          return: talent_cool_down
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+      -
+        value: tower_type
+        display: false
+        parse:
+          type: literal
+          return: tower_type
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _fromBuffBlackboard:
+    type: boolean
+    description: from Buff Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isUpdateSelector:
+    type: boolean
+    description: is Update Selector
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _stringValue:
+    type: null
+    description: string Value
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _useOtherAbility:
+    type: boolean
+    description: use Other Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useSnapshotAbility:
+    type: boolean
+    description: use Snapshot Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+  fromAbilityBlackBoard:
+    type: boolean
+    description: from Ability Black Board
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

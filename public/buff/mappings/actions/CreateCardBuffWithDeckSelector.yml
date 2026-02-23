@@ -1,0 +1,82 @@
+actionType: CreateCardBuffWithDeckSelector
+fields:
+  _cardBuffKey:
+    type: string
+    description: card Buff Key
+    values:
+      -
+        value: "makiri_s_2[cost]"
+        display: false
+        parse:
+          type: literal
+          return: "makiri_s_2[cost]"
+  _deckSelector:
+    type: object
+    description: deck Selector
+    schema: action_subschema/_deckSelector.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

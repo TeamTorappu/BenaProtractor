@@ -1,0 +1,92 @@
+actionType: FixedValueElementHeal
+fields:
+  _ignoreHealFree:
+    type: boolean
+    description: ignore Heal Free
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isCont:
+    type: boolean
+    description: is Cont
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _scaleUpKeys:
+    type: array
+    description: scale Up Keys
+    schema: action_subschema/_scaleUpKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _valueKey:
+    type: null | string
+    description: value Key
+    values:
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: heal_ep
+        display: false
+        parse:
+          type: literal
+          return: heal_ep
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null

@@ -1,0 +1,34 @@
+field: _mountPointGroup
+type: object
+description: mount Point Group
+actions:
+  EmitProjectileUseAbilitySelector:
+    type: object
+    values:
+      -
+        value: "{"loopType":"RANDOM","mountPoints":["SPECIAL_0","SPECIAL_1","SPECIAL_2","SPECIAL_3","SPECIAL_4","SPECIAL_5"]}"
+        display: false
+        parse:
+          type: fn
+          name: parsemountPointGroup
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"loopType":"RANDOM","mountPoints":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsemountPointGroup
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"loopType":"RANDOM","mountPoints":null}"
+        display: false
+        parse:
+          type: fn
+          name: parsemountPointGroup
+          args:
+            - $input
+            - $ctx

@@ -1,0 +1,22 @@
+actionType: ActivePredifinedInst
+fields:
+  _hiddenCardKey:
+    type: string
+    description: hidden Card Key
+    values:
+      -
+        value: deck_default_hidden
+        display: false
+        parse:
+          type: literal
+          return: deck_default_hidden
+  _instAlias:
+    type: string
+    description: inst Alias
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""

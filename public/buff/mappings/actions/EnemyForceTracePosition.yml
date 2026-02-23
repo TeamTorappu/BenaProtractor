@@ -1,0 +1,190 @@
+actionType: EnemyForceTracePosition
+fields:
+  _buffToTraceTarget:
+    type: object
+    description: buff To Trace Target
+    schema: action_subschema/_buffToTraceTarget.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _createBuffToTraceTarget:
+    type: boolean
+    description: create Buff To Trace Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _endPosOffsetAlongDirection:
+    type: number
+    description: end Pos Offset Along Direction
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+  _maxTraceDist:
+    type: number
+    description: max Trace Dist
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 1000000
+        display: false
+        parse:
+          type: literal
+          return: 1000000
+  _randomOffset:
+    type: boolean
+    description: random Offset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _reachOffset:
+    type: object
+    description: reach Offset
+    schema: action_subschema/_reachOffset.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _stopTraceWhenNoTarget:
+    type: boolean
+    description: stop Trace When No Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _traceFarthestTile:
+    type: boolean
+    description: trace Farthest Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useSelectorPosition:
+    type: boolean
+    description: use Selector Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,148 @@
+actionType: NoSourceDamageNew
+fields:
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+  _damageKey:
+    type: string
+    description: damage Key
+    values:
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _damageWithoutModify:
+    type: boolean
+    description: damage Without Modify
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ignoreCancelReasonMask:
+    type: string
+    description: ignore Cancel Reason Mask
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _ignoreForSp:
+    type: boolean
+    description: ignore For Sp
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _instantKillLikeDamage:
+    type: boolean
+    description: instant Kill Like Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isEnvDamage:
+    type: boolean
+    description: is Env Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isUndeadable:
+    type: boolean
+    description: is Undeadable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _multiplierByKey:
+    type: boolean
+    description: multiplier By Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _multiplierKey:
+    type: string
+    description: multiplier Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt

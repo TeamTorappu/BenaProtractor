@@ -1,0 +1,48 @@
+actionType: SetTilesEnableOverlap
+fields:
+  _allTilesExceptRootTile:
+    type: boolean
+    description: all Tiles Except Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isEnable:
+    type: boolean
+    description: is Enable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _onlyRootTile:
+    type: boolean
+    description: only Root Tile
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

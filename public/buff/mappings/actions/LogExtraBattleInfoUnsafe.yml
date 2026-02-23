@@ -1,0 +1,22 @@
+actionType: LogExtraBattleInfoUnsafe
+fields:
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: ",ro5_enemy_fall_down"
+        display: false
+        parse:
+          type: literal
+          return: ",ro5_enemy_fall_down"
+  _logType:
+    type: string
+    description: log Type
+    values:
+      -
+        value: SIMPLE
+        display: false
+        parse:
+          type: literal
+          return: SIMPLE

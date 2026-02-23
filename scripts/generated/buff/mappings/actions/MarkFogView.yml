@@ -1,0 +1,104 @@
+actionType: MarkFogView
+fields:
+  _envSystemKey:
+    type: string
+    description: env System Key
+    values:
+      -
+        value: env_004_fog
+        display: false
+        parse:
+          type: literal
+          return: env_004_fog
+  _globalRange:
+    type: boolean
+    description: global Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _markInView:
+    type: boolean
+    description: mark In View
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _markOldTilePos:
+    type: boolean
+    description: mark Old Tile Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _rangeId:
+    type: null | string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+      -
+        value: 4-3
+        display: false
+        parse:
+          type: literal
+          return: 4-3
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: x-1
+        display: false
+        parse:
+          type: literal
+          return: x-1
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

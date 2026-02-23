@@ -1,0 +1,40 @@
+actionType: RandomSetter
+fields:
+  _convertToInt:
+    type: boolean
+    description: convert To Int
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetKey:
+    type: string
+    description: target Key
+    values:
+      -
+        value: add_value
+        display: false
+        parse:
+          type: literal
+          return: add_value
+      -
+        value: heal_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_atk_scale
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp

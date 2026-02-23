@@ -1,0 +1,16 @@
+field: _buffToTrap
+type: object
+description: buff To Trap
+actions:
+  HideEntityInFogAndManageBuff:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":["TARGET_FREE"],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"[g]trap_effect","loadFromDB":false,"isDurableBuff":true,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"UNIQUE","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"mapeff_survival_shadow_trap_emit","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToTrap
+          args:
+            - $input
+            - $ctx

@@ -1,0 +1,22 @@
+actionType: HalfIdleCheckNearbyRoad
+fields:
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

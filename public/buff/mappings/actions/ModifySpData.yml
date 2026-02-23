@@ -1,0 +1,100 @@
+actionType: ModifySpData
+fields:
+  _assignOldValueKey:
+    type: null | string
+    description: assign Old Value Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: sp_origin
+        display: false
+        parse:
+          type: literal
+          return: sp_origin
+  _onlyUpdateSpCost:
+    type: boolean
+    description: only Update Sp Cost
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _spCostString:
+    type: string
+    description: sp Cost String
+    values:
+      -
+        value: cost
+        display: false
+        parse:
+          type: literal
+          return: cost
+      -
+        value: mana_max
+        display: false
+        parse:
+          type: literal
+          return: mana_max
+      -
+        value: sp_origin
+        display: false
+        parse:
+          type: literal
+          return: sp_origin
+      -
+        value: sp_zero
+        display: false
+        parse:
+          type: literal
+          return: sp_zero
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _updateSkillSpCostMin:
+    type: boolean
+    description: update Skill Sp Cost Min
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,24 @@
+actionType: AssignBuffExistingTimeIntoBlackboard
+fields:
+  _extraDurationKey:
+    type: string
+    description: extra Duration Key
+    values:
+      -
+        value: decay
+        display: false
+        parse:
+          type: literal
+          return: decay
+      -
+        value: existing_time
+        display: false
+        parse:
+          type: literal
+          return: existing_time
+      -
+        value: stun
+        display: false
+        parse:
+          type: literal
+          return: stun

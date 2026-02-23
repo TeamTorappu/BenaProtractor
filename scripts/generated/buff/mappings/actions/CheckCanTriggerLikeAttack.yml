@@ -1,0 +1,42 @@
+actionType: CheckCanTriggerLikeAttack
+fields:
+  _attackTimeBlackboardKey:
+    type: string
+    description: attack Time Blackboard Key
+    values:
+      -
+        value: attack_time
+        display: false
+        parse:
+          type: literal
+          return: attack_time
+  _attackTriggerNodes:
+    type: array
+    description: attack Trigger Nodes
+    schema: action_subschema/_attackTriggerNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+  _intervalCacheKey:
+    type: string
+    description: interval Cache Key
+    values:
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

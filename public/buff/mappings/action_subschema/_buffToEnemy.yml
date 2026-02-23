@@ -1,0 +1,361 @@
+field: _buffToEnemy
+type: object
+description: buff To Enemy
+actions:
+  SummonEnemiesFollowBranchRoute:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"acduml_t_1[summon][to_enemy]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"acduml_t_1[summon][to_enemy]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"acdumm_t_1[summon][to_enemy]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"acdumm_t_1[summon][to_enemy]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"acstma_s_1[copy_health]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"acstma_s_1[copy_health]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"acstma_s_1[copy_health]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"acstma_s_1[copy_health]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":1.1699999570846558,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"acstmb_s_1[copy_health]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"acstmb_s_1[copy_health]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":1.1699999570846558,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"bgarmn[sync_hp_from_trap]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"trap_bgarmn[sync_hp_from_trap]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":"effect_duration","lifeTime":3,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[{"attributeType":"ATK","formulaItem":"MULTIPLIER","value":0,"loadFromBlackboard":true,"fetchBaseValueFromSourceEntity":false}]},"buffKey":"acstmk_s_2[to_enemy]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"acstmk_s_2[to_enemy]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"acstma_s_1[copy_health]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"acstma_s_1[copy_health]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"enemy_cjtaot_infection[core]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"enemy_cjtaot_infection[core]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":"invalid_duration","lifeTime":1,"triggerLifeType":"LIMITED","triggerCnt":1,"triggerInterval":0.30000001192092896,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"enemy_dycyue_summon_body[time_kill]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"enemy_dycyue_summon_body[time_kill]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"enemy_dycyue_groundLock_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":3,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"trap_outset_mark","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"trap_outset_mark","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"ymgpck_a[summon_control]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"ymgpck_a[summon_control]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":null,"loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":null,"loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":null,"stripBlackboardParamsWithBuffKey":false,"blackboard":null}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+  EnemyDuelSummonEnemies:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":null,"loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+  SummonEnemiesFollowMyRoute:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"dsbish_tr_1[to_enemy]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"dsbish_tr_1[to_enemy]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"enemy_ncrmcr_switch_mode","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"switch_mode_no_restore","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[{"key":"mode","value":1,"valueStr":""}]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[{"attributeType":"MOVE_SPEED","formulaItem":"MULTIPLIER","value":0,"loadFromBlackboard":true,"fetchBaseValueFromSourceEntity":false}]},"buffKey":"dsfull_tr_1[speed_up]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"enemy_dsfull_buff_03","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"enemy_wdarft[summon_fx]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"enemy_wdarft_skill_summon","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":1,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"force_add_wait_point","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"force_add_wait_point","disableOverride":false,"overrideKey":"","overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"pcaptn_m0_s1[summon_effect]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"enemy_pcaptn_summon_start_02","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":"fixed_duration","lifeTime":5,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"skzcan_s1[effect_to_enemy]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"skzcan_skill_start_02","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":"fix_duration","lifeTime":2,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":null,"loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":null,"stripBlackboardParamsWithBuffKey":false,"blackboard":null}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+  UnitSummonApopsisEnemy:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"skzjs_t[suicide]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"skzjs_t[suicide]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":"exist_duration","lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+  HalfIdleSummonRandomEnemyAtTargetMapPos:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"halfIdle_lharen_handle","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"halfIdle_lharen_handle","disableOverride":true,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"halfIdle_lheqp_drop_resource[killed]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"halfIdle_lheqp_drop_resource[killed]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"halfIdle_lhupgd_upgrade_equip","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"halfIdle_lhupgd_upgrade_equip","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"halfIdle_summon_enemy_counter","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"halfIdle_summon_enemy_counter","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+  HalfIdleSummonEnemyAtTargetMapPos:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"halfIdle_enemy_unmovable","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"halfIdle_enemy_unmovable","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"halfIdle_summon_enemy_counter","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"halfIdle_summon_enemy_counter","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"halfIdle_summon_enemy_counter","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"halfIdle_summon_enemy_counter","disableOverride":true,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"halfIdlehalfIdle_enemy_unmovable","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"halfIdle_enemy_unmovable","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":null,"loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"trap_birth_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":"halfidle_trap_summon_enemy","lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+  SummonEnemiesFollowBranchRouteWithTileBlackboard:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":["UNMOVABLE"],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"trap_rgdysm_born_unmove","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0.5,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx
+  SummonEnemiesOnTargetTile:
+    type: object
+    values:
+      -
+        value: "{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":null,"loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parsebuffToEnemy
+          args:
+            - $input
+            - $ctx

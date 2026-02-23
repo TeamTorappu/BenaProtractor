@@ -1,0 +1,72 @@
+actionType: HideEntityInFogAndManageBuff
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffToNPC:
+    type: object
+    description: buff To N P C
+    schema: action_subschema/_buffToNPC.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffToTrap:
+    type: object
+    description: buff To Trap
+    schema: action_subschema/_buffToTrap.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _enemyNotShowBuff:
+    type: string
+    description: enemy Not Show Buff
+    values:
+      -
+        value: "[g]sh_enemy"
+        display: false
+        parse:
+          type: literal
+          return: "[g]sh_enemy"
+  _filterTag:
+    type: string
+    description: filter Tag
+    values:
+      -
+        value: SANDBOX_RES
+        display: false
+        parse:
+          type: literal
+          return: SANDBOX_RES
+  _hideTrapFilterTag:
+    type: string
+    description: hide Trap Filter Tag
+    values:
+      -
+        value: SANDBOX_HIDETRAP
+        display: false
+        parse:
+          type: literal
+          return: SANDBOX_HIDETRAP
+  _npcFilterTag:
+    type: string
+    description: npc Filter Tag
+    values:
+      -
+        value: SANDBOX_NPC
+        display: false
+        parse:
+          type: literal
+          return: SANDBOX_NPC

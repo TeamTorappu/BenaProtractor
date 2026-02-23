@@ -1,0 +1,52 @@
+actionType: RemoveTileBindingGlobalBuff
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: Apoptosis
+        display: false
+        parse:
+          type: literal
+          return: Apoptosis
+  _abilitySource:
+    type: string
+    description: ability Source
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _globalBuffKey:
+    type: string
+    description: global Buff Key
+    values:
+      -
+        value: "[g]rogue_4_apoptosis"
+        display: false
+        parse:
+          type: literal
+          return: "[g]rogue_4_apoptosis"
+  _globalBuffPrefabKey:
+    type: string
+    description: global Buff Prefab Key
+    values:
+      -
+        value: "rogue_4_apoptosis[random_tile]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_4_apoptosis[random_tile]"
+  _selectorTarget:
+    type: string
+    description: selector Target
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

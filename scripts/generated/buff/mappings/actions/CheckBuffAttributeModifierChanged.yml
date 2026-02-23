@@ -1,0 +1,76 @@
+actionType: CheckBuffAttributeModifierChanged
+fields:
+  _buffAttributeType:
+    type: string
+    description: buff Attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+  _formulaType:
+    type: string
+    description: formula Type
+    values:
+      -
+        value: FINAL_ADDITION
+        display: false
+        parse:
+          type: literal
+          return: FINAL_ADDITION
+  _sourceAttributeType:
+    type: string
+    description: source Attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _useFirstDerivedBuff:
+    type: boolean
+    description: use First Derived Buff
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

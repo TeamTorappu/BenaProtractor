@@ -1,0 +1,132 @@
+actionType: ManageSbell2AttachListenerAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: SnowAccumulation
+        display: false
+        parse:
+          type: literal
+          return: SnowAccumulation
+  _clearS1SnowTileList:
+    type: boolean
+    description: clear S1 Snow Tile List
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isS1RelatedOperate:
+    type: boolean
+    description: is S1 Related Operate
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isS2RelatedOperate:
+    type: boolean
+    description: is S2 Related Operate
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isS3RelatedOperate:
+    type: boolean
+    description: is S3 Related Operate
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _resetTilesInRangeList:
+    type: boolean
+    description: reset Tiles In Range List
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _triggerS1SnowForward:
+    type: boolean
+    description: trigger S1 Snow Forward
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _triggerS2SnowOutward:
+    type: boolean
+    description: trigger S2 Snow Outward
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _tryCreateTokenEndTile:
+    type: boolean
+    description: try Create Token End Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

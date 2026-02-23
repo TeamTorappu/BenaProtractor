@@ -1,0 +1,12 @@
+actionType: SetIgnoreMissFlag
+fields:
+  _ignoreMissFlag:
+    type: string
+    description: ignore Miss Flag
+    values:
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL

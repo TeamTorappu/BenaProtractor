@@ -1,0 +1,42 @@
+actionType: CalculateFeverSpShowBuffRemainingProgress
+fields:
+  _feverKey:
+    type: string
+    description: fever Key
+    values:
+      -
+        value: env_033_fever
+        display: false
+        parse:
+          type: literal
+          return: env_033_fever
+  _passedTimeBlackboardKey:
+    type: string
+    description: passed Time Blackboard Key
+    values:
+      -
+        value: pass_time
+        display: false
+        parse:
+          type: literal
+          return: pass_time
+  _targetBlackboardKey:
+    type: string
+    description: target Blackboard Key
+    values:
+      -
+        value: remaining_time_delta
+        display: false
+        parse:
+          type: literal
+          return: remaining_time_delta
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

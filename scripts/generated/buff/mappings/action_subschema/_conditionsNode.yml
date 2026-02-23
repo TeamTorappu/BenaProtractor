@@ -1,0 +1,646 @@
+field: _conditionsNode
+type: object
+description: conditions Node
+actions:
+  IfConditions:
+    type: array
+    values:
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+Act47SideCheckCharacterDeathByMove, Assembly-CSharp","_targetType":"BUFF_OWNER"},{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_SOURCE","_buffKeys":["enemy_nstmom[ray]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp","_abnormalFlag":"FROZEN","_targetType":"BUFF_OWNER","_isUnset":false,"_abnormalFlagKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckEnemyLevelMask, Assembly-CSharp","_targetType":"BUFF_OWNER","_targetLevelMask":"ELITE_AND_NORMAL"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp","_abnormalFlag":"FROZEN","_targetType":"BUFF_OWNER","_isUnset":false,"_abnormalFlagKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp","_abnormalFlag":"INVINCIBLE","_targetType":"BUFF_OWNER","_isUnset":false,"_abnormalFlagKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp","_abnormalFlag":"PALSY","_targetType":"TARGET","_isUnset":false,"_abnormalFlagKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp","_abnormalFlag":"PALSYING","_targetType":"TARGET","_isUnset":false,"_abnormalFlagKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp","_abnormalFlag":"UNMOVABLE","_targetType":"SOURCE","_isUnset":false,"_abnormalFlagKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckEnemyUnbalanced, Assembly-CSharp","_targetType":"BUFF_OWNER"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlags, Assembly-CSharp","_abnormalFlags":["UNMOVABLE"],"_targetType":"BUFF_OWNER"},{"$type":"Torappu.Battle.Action.Nodes+CheckBlocked, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkBlockedBySource":false,"_checkBlockedBySourceToken":false,"_sourceType":"BUFF_SOURCE","_checkBlockedCount":false},{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp","_abnormalFlag":"STUNNED","_targetType":"SOURCE","_isUnset":false,"_abnormalFlagKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalImmune, Assembly-CSharp","_abnormalFlag":"DISARMED_COMBAT","_targetType":"MODIFIER_TARGET","_isUnset":true},{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":true,"_buffKey":"f12yin_e_003_t[evade_mark_checker]","_blackboardKey":"need_disarm","_valueToCompare":0,"_anotherKeyToCompare":null,"_condType":"GT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckBlockMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_blockMode":"FLY"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckBlocked, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkBlockedBySource":false,"_checkBlockedBySourceToken":false,"_sourceType":"BUFF_SOURCE","_checkBlockedCount":false},{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["env_act41side[in_sight]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckBlocked, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkBlockedBySource":false,"_checkBlockedBySourceToken":false,"_sourceType":"BUFF_SOURCE","_checkBlockedCount":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckCharSkillAffecting, Assembly-CSharp","_targetType":"BUFF_SOURCE","_checkTargetHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckCharacterGroupTag, Assembly-CSharp","_targetType":"BUFF_OWNER","_groupTag":"rhine"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["achunt_summonee"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["cairn_s_2[shield]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["enemy_nsblon[move]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["enemy_nsmos[check]","enemy_nsmos[intrace_host]"],"isAND":false,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["enemy_nstmom[ray]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["fxdjj_time_mark"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["immune_shu_blink","immune_yu_blink"],"isAND":false,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false},{"$type":"Torappu.Battle.Action.Nodes+CheckEntityDisappeared, Assembly-CSharp","_targetType":"BUFF_OWNER"},{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlags, Assembly-CSharp","_abnormalFlags":["UNMOVABLE_PRIVATE"],"_targetType":"BUFF_OWNER"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["skagod_dash_keep_speed"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["skagod_walk2dash_driver"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false},{"$type":"Torappu.Battle.Action.Nodes+CheckEntityDisappeared, Assembly-CSharp","_targetType":"BUFF_OWNER"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["skchr_kichi_02[flag_1]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["sluggish[inf]","sluggish"],"isAND":false,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false},{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlags, Assembly-CSharp","_abnormalFlags":["LEVITATE","UNMOVABLE","STUNNED","FROZEN","COLD"],"_targetType":"BUFF_OWNER"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["sluggish[inf]","sluggish"],"isAND":false,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false},{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalFlags, Assembly-CSharp","_abnormalFlags":["LEVITATE","UNMOVABLE"],"_targetType":"BUFF_OWNER"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["status_resistance[inf]","status_resistance[limit]"],"isAND":false,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKeys":["wscoot_cast_skill_1[mark]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_SOURCE","_buffKeys":["cd1punchb_time_mark"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_SOURCE","_buffKeys":["skchr_alanna_2[mark]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":true,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_SOURCE","_buffKeys":["skchr_kichi_02[flag_1]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"BUFF_SOURCE","_buffKeys":["svash2_s_3"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckEnemyIsStayStill, Assembly-CSharp","_target":"BUFF_OWNER"},{"$type":"Torappu.Battle.Action.Nodes+CheckTargetProfession, Assembly-CSharp","_targetType":"BUFF_OWNER","_profession":["TRAP"],"_readProfessionFromBlackboard":false,"_checkSubProfession":false,"_subProfessions":null}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckEntityDisappeared, Assembly-CSharp","_targetType":"BUFF_OWNER"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckFaceLOrR, Assembly-CSharp","_target":"BUFF_SOURCE","_direction":"LEFT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckIfSourceGridPosFaceTargetGridPos, Assembly-CSharp","_source":"BUFF_SOURCE","_target":"BUFF_OWNER","_faceType":"FRONT","_targetColOffset":0,"_faceIfSameCol":"FRONT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckIsFootballEnemy, Assembly-CSharp","_targetType":"BUFF_OWNER"},{"$type":"Torappu.Battle.Action.Nodes+CheckIsTrackTargetEnemy, Assembly-CSharp","_targetType":"BUFF_OWNER"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckMainBuffId, Assembly-CSharp","_idToFilter":"status_resistance[inf]"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckModifierContainsKey, Assembly-CSharp","_customKey":"titi_t_1[passive]"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckModifierContainsKey, Assembly-CSharp","_customKey":"vvana_e_002_trait[damage]"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckUnitAlive, Assembly-CSharp","_ownerType":"BUFF_SOURCE"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckUnitAlive, Assembly-CSharp","_ownerType":"SOURCE"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":0,"_loadCurModeBbKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":1,"_loadCurModeBbKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":2,"_loadCurModeBbKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":3,"_loadCurModeBbKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":4,"_loadCurModeBbKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":5,"_loadCurModeBbKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":2,"_loadCurModeBbKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":3,"_loadCurModeBbKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":4,"_loadCurModeBbKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":3,"_loadCurModeBbKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":4,"_loadCurModeBbKey":""},{"$type":"Torappu.Battle.Action.Nodes+CheckUnitCurrentMode, Assembly-CSharp","_targetType":"BUFF_OWNER","_checkCurModeIndex":5,"_loadCurModeBbKey":""}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterAbilityFamily, Assembly-CSharp","_familyGroupMask":"ATTACK_OR_COMBAT"},{"$type":"Torappu.Battle.Action.Nodes+CheckModifierContainsKey, Assembly-CSharp","_customKey":"blkkgt_s2_dot"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterAbilityFamily, Assembly-CSharp","_familyGroupMask":"ATTACK_OR_COMBAT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterAbilityName, Assembly-CSharp","_abilityName":"Keep","_useSearchName":true}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardStrIsValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_valueKey":"zero_str","_valueKeyToCompare":"new_uid","_checkIsEqual":false,"_useOrdinalIgnoreCase":true}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"cur_count","_valueToCompare":10,"_anotherKeyToCompare":"ammo_cost","_condType":"GE"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"cur_speed","_valueToCompare":0,"_anotherKeyToCompare":"raw_speed","_condType":"LT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"frozen_cache","_valueToCompare":0,"_anotherKeyToCompare":"frozen_cur","_condType":"EQUALS"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"past_time_final","_valueToCompare":210,"_anotherKeyToCompare":null,"_condType":"GE"},{"$type":"Torappu.Battle.Action.Nodes+IfTargetSide, Assembly-CSharp","_sideMask":"ENEMY","_targetType":"BUFF_OWNER"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"remain","_valueToCompare":0,"_anotherKeyToCompare":null,"_condType":"GT"},{"$type":"Torappu.Battle.Action.Nodes+IfTarget, Assembly-CSharp","_targetType":"BUFF_SOURCE","_motionMask":"NONE","_checkTargetAlive":true,"_checkApplyWay":false,"_checkTargetUnitType":false,"_unitType":"ENEMY","_applyWay":"NONE","_checkTargetFree":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"sleep_signal","_valueToCompare":0,"_anotherKeyToCompare":null,"_condType":"GT"},{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"sleep_time","_valueToCompare":0,"_anotherKeyToCompare":null,"_condType":"GT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"speed_max","_valueToCompare":0,"_anotherKeyToCompare":"move_speed","_condType":"GT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"stun_duration","_valueToCompare":0,"_anotherKeyToCompare":"stun_duration_max","_condType":"GE"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_OWNER","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"succeed","_valueToCompare":0,"_anotherKeyToCompare":null,"_condType":"GT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"BUFF_SOURCE","_anotherBuff":true,"_buffKey":"mantra_s_3[self]","_blackboardKey":"all_cnt","_valueToCompare":0,"_anotherKeyToCompare":"max_trigger_cnt","_condType":"LT"},{"$type":"Torappu.Battle.Action.Nodes+IfContainsTargetsInAttackRange, Assembly-CSharp","_sourceType":"BUFF_SOURCE","_targetOptions":{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"INVISIBLE","abnormalCombo":"SLEEPING"}}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp","_targetType":"TARGET","_anotherBuff":false,"_buffKey":null,"_blackboardKey":"prob","_valueToCompare":0,"_anotherKeyToCompare":"prob_min","_condType":"LT"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByBuffStackCount, Assembly-CSharp","_targetType":"BUFF_OWNER","_buffKey":"wscoot_trait[atk][stack]","_stackCount":0,"_stackCountKey":"max_stack_cnt","_stackCountPeeling":0,"_condType":"GE","_checkFromUnoverridableBuffCount":false,"_checkSnapshotBuff":false,"_checkBuffSource":true,"_sourceType":"BUFF_SOURCE","_checkTargetHost":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByExecuteBlackboardValue, Assembly-CSharp","_blackboardKey":"base_attack_time","_valueToCompare":0,"_anotherKeyToCompare":null,"_condType":"LE"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterByTargetSpRatio, Assembly-CSharp","_targetType":"TARGET","_condType":"LT","_spRatio":1},{"$type":"Torappu.Battle.Action.Nodes+FilterByTargetHp, Assembly-CSharp","_targetType":"BUFF_SOURCE","_condType":"GT","_hpValue":{"_serializedValue":0}}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterDamageModifer, Assembly-CSharp","_filterAttackType":false,"_attackTypeFilter":"NONE","_filterDamageType":true,"_damageMask":"MAGICAL","_filterSharedMask":false,"_sharedFlag":"IS_CONTINUOUS","_filterModifierSource":false,"_source":"BUFF_OWNER","_filterBySourceId":false,"_sourceId":null,"_checkHasScource":false,"_isNoSource":false,"_filterModifierCancelled":false},{"$type":"Torappu.Battle.Action.Nodes+IfTargetSide, Assembly-CSharp","_sideMask":"ENEMY","_targetType":"MODIFIER_TARGET"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterId, Assembly-CSharp","_targetType":"MODIFIER_TARGET","_filterId":"char_4179_monstr","_filterIds":null,"_isUnset":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FilterId, Assembly-CSharp","_targetType":"MODIFIER_TARGET","_filterId":"token_10050_monstr_prosts","_filterIds":null,"_isUnset":false},{"$type":"Torappu.Battle.Action.Nodes+FilterId, Assembly-CSharp","_targetType":"MODIFIER_TARGET","_filterId":"char_4179_monstr","_filterIds":null,"_isUnset":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+IfTarget, Assembly-CSharp","_targetType":"BUFF_OWNER","_motionMask":"ALL","_checkTargetAlive":false,"_checkApplyWay":false,"_checkTargetUnitType":true,"_unitType":"CHARACTER","_applyWay":"NONE","_checkTargetFree":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+IfTarget, Assembly-CSharp","_targetType":"BUFF_OWNER","_motionMask":"ALL","_checkTargetAlive":false,"_checkApplyWay":false,"_checkTargetUnitType":true,"_unitType":"ENEMY","_applyWay":"NONE","_checkTargetFree":false},{"$type":"Torappu.Battle.Action.Nodes+CheckAbnormalCombo, Assembly-CSharp","_abnormalCombo":"SLEEPING","_targetType":"BUFF_OWNER","_isUnset":true}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+IsInFever, Assembly-CSharp","_feverKey":"env_033_fever"},{"$type":"Torappu.Battle.Action.Nodes+IsFeverFull, Assembly-CSharp","_feverKey":"env_033_fever"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+TriggerEnemySkill, Assembly-CSharp","_skillName":"Skill2","_checkSkillActive":true,"_checkSkillReady":true,"_ownerType":"BUFF_OWNER","_targetType":"BUFF_OWNER","_interruptCurAbility":false,"_interruptCurAbilityUnlessItIsExpectedAbility":true,"_assignCombatAbility":false,"_forceFindTargetBySkillSelector":false,"_clearPalsyingBuffBeforeTrigger":true,"_tryCastDirectlyWhenNoTarget":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

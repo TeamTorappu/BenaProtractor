@@ -1,0 +1,28 @@
+actionType: StopBall
+fields:
+  _ignoreUnstoppable:
+    type: boolean
+    description: ignore Unstoppable
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

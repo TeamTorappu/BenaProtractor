@@ -1,0 +1,32 @@
+actionType: TriggerTokensAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ModifySp
+        display: false
+        parse:
+          type: literal
+          return: ModifySp
+  _checkCanUseAblityFlag:
+    type: boolean
+    description: check Can Use Ablity Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

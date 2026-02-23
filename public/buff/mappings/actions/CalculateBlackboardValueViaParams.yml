@@ -1,0 +1,4262 @@
+actionType: CalculateBlackboardValueViaParams
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: Building
+        display: false
+        parse:
+          type: literal
+          return: Building
+  _addParamKey:
+    type: null | string
+    description: add Param Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: ability_range_forward_extend
+        display: false
+        parse:
+          type: literal
+          return: ability_range_forward_extend
+      -
+        value: add_dynamic
+        display: false
+        parse:
+          type: literal
+          return: add_dynamic
+      -
+        value: add_num
+        display: false
+        parse:
+          type: literal
+          return: add_num
+      -
+        value: add_on
+        display: false
+        parse:
+          type: literal
+          return: add_on
+      -
+        value: add_sp
+        display: false
+        parse:
+          type: literal
+          return: add_sp
+      -
+        value: add_value
+        display: false
+        parse:
+          type: literal
+          return: add_value
+      -
+        value: additional_shield_amount
+        display: false
+        parse:
+          type: literal
+          return: additional_shield_amount
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: atk_divid
+        display: false
+        parse:
+          type: literal
+          return: atk_divid
+      -
+        value: atk_scale_add
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_add
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+      -
+        value: base
+        display: false
+        parse:
+          type: literal
+          return: base
+      -
+        value: base_ammo_percent
+        display: false
+        parse:
+          type: literal
+          return: base_ammo_percent
+      -
+        value: base_atk
+        display: false
+        parse:
+          type: literal
+          return: base_atk
+      -
+        value: base_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: base_attack_speed
+      -
+        value: base_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: base_damage_scale
+      -
+        value: base_def
+        display: false
+        parse:
+          type: literal
+          return: base_def
+      -
+        value: base_ex_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: base_ex_damage_scale
+      -
+        value: base_max_hp
+        display: false
+        parse:
+          type: literal
+          return: base_max_hp
+      -
+        value: base_prob
+        display: false
+        parse:
+          type: literal
+          return: base_prob
+      -
+        value: base_time
+        display: false
+        parse:
+          type: literal
+          return: base_time
+      -
+        value: basic_add
+        display: false
+        parse:
+          type: literal
+          return: basic_add
+      -
+        value: basic_damage
+        display: false
+        parse:
+          type: literal
+          return: basic_damage
+      -
+        value: born_shield
+        display: false
+        parse:
+          type: literal
+          return: born_shield
+      -
+        value: cnt2
+        display: false
+        parse:
+          type: literal
+          return: cnt2
+      -
+        value: consume_count
+        display: false
+        parse:
+          type: literal
+          return: consume_count
+      -
+        value: cost_cnt_2
+        display: false
+        parse:
+          type: literal
+          return: cost_cnt_2
+      -
+        value: damage_add
+        display: false
+        parse:
+          type: literal
+          return: damage_add
+      -
+        value: damage_scale_add
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_add
+      -
+        value: damage_scale_base
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_base
+      -
+        value: damage_value
+        display: false
+        parse:
+          type: literal
+          return: damage_value
+      -
+        value: def
+        display: false
+        parse:
+          type: literal
+          return: def
+      -
+        value: default_num
+        display: false
+        parse:
+          type: literal
+          return: default_num
+      -
+        value: delta
+        display: false
+        parse:
+          type: literal
+          return: delta
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: dynamic_addon
+        display: false
+        parse:
+          type: literal
+          return: dynamic_addon
+      -
+        value: dynamic_dec_per_time
+        display: false
+        parse:
+          type: literal
+          return: dynamic_dec_per_time
+      -
+        value: dynamic_gems
+        display: false
+        parse:
+          type: literal
+          return: dynamic_gems
+      -
+        value: each_shield
+        display: false
+        parse:
+          type: literal
+          return: each_shield
+      -
+        value: es_value
+        display: false
+        parse:
+          type: literal
+          return: es_value
+      -
+        value: extra_add_sp
+        display: false
+        parse:
+          type: literal
+          return: extra_add_sp
+      -
+        value: first_basic_damage
+        display: false
+        parse:
+          type: literal
+          return: first_basic_damage
+      -
+        value: gold
+        display: false
+        parse:
+          type: literal
+          return: gold
+      -
+        value: init_scale
+        display: false
+        parse:
+          type: literal
+          return: init_scale
+      -
+        value: interval
+        display: false
+        parse:
+          type: literal
+          return: interval
+      -
+        value: interval_revert
+        display: false
+        parse:
+          type: literal
+          return: interval_revert
+      -
+        value: kill_shield
+        display: false
+        parse:
+          type: literal
+          return: kill_shield
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp
+      -
+        value: max_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: max_hp_ratio
+      -
+        value: max_hp_ratio_plus
+        display: false
+        parse:
+          type: literal
+          return: max_hp_ratio_plus
+      -
+        value: minus_num
+        display: false
+        parse:
+          type: literal
+          return: minus_num
+      -
+        value: minus_scale
+        display: false
+        parse:
+          type: literal
+          return: minus_scale
+      -
+        value: negative_existing_time
+        display: false
+        parse:
+          type: literal
+          return: negative_existing_time
+      -
+        value: normal_add
+        display: false
+        parse:
+          type: literal
+          return: normal_add
+      -
+        value: normal_cnt
+        display: false
+        parse:
+          type: literal
+          return: normal_cnt
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: one
+        display: false
+        parse:
+          type: literal
+          return: one
+      -
+        value: other_shield
+        display: false
+        parse:
+          type: literal
+          return: other_shield
+      -
+        value: point_hp
+        display: false
+        parse:
+          type: literal
+          return: point_hp
+      -
+        value: point_ratio
+        display: false
+        parse:
+          type: literal
+          return: point_ratio
+      -
+        value: prob_add
+        display: false
+        parse:
+          type: literal
+          return: prob_add
+      -
+        value: projectile_extend_cur
+        display: false
+        parse:
+          type: literal
+          return: projectile_extend_cur
+      -
+        value: radius_decrease_addon_per_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_decrease_addon_per_tick
+      -
+        value: radius_decrease_cur_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_decrease_cur_tick
+      -
+        value: radius_decrease_per_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_decrease_per_tick
+      -
+        value: radius_increase_addon_per_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_increase_addon_per_tick
+      -
+        value: radius_increase_cur_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_increase_cur_tick
+      -
+        value: radius_increase_per_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_increase_per_tick
+      -
+        value: range_offset
+        display: false
+        parse:
+          type: literal
+          return: range_offset
+      -
+        value: scale_per_second
+        display: false
+        parse:
+          type: literal
+          return: scale_per_second
+      -
+        value: shield_decrease
+        display: false
+        parse:
+          type: literal
+          return: shield_decrease
+      -
+        value: sluggish_addition
+        display: false
+        parse:
+          type: literal
+          return: sluggish_addition
+      -
+        value: source_buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: source_buff_cnt
+      -
+        value: stmbot_count
+        display: false
+        parse:
+          type: literal
+          return: stmbot_count
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+      -
+        value: up_scale
+        display: false
+        parse:
+          type: literal
+          return: up_scale
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _dividedParamKey:
+    type: null | string
+    description: divided Param Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: add_max_atk
+        display: false
+        parse:
+          type: literal
+          return: add_max_atk
+      -
+        value: atk_per_stack
+        display: false
+        parse:
+          type: literal
+          return: atk_per_stack
+      -
+        value: born_duration
+        display: false
+        parse:
+          type: literal
+          return: born_duration
+      -
+        value: cast_duration
+        display: false
+        parse:
+          type: literal
+          return: cast_duration
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: coin_base
+        display: false
+        parse:
+          type: literal
+          return: coin_base
+      -
+        value: damage_scale_factor
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_factor
+      -
+        value: day_stack
+        display: false
+        parse:
+          type: literal
+          return: day_stack
+      -
+        value: decay_time
+        display: false
+        parse:
+          type: literal
+          return: decay_time
+      -
+        value: dev_two
+        display: false
+        parse:
+          type: literal
+          return: dev_two
+      -
+        value: dist_delta
+        display: false
+        parse:
+          type: literal
+          return: dist_delta
+      -
+        value: divide_key
+        display: false
+        parse:
+          type: literal
+          return: divide_key
+      -
+        value: divide_num
+        display: false
+        parse:
+          type: literal
+          return: divide_num
+      -
+        value: divide_value
+        display: false
+        parse:
+          type: literal
+          return: divide_value
+      -
+        value: divided_value
+        display: false
+        parse:
+          type: literal
+          return: divided_value
+      -
+        value: duration
+        display: false
+        parse:
+          type: literal
+          return: duration
+      -
+        value: each_gold_time
+        display: false
+        parse:
+          type: literal
+          return: each_gold_time
+      -
+        value: final_duration
+        display: false
+        parse:
+          type: literal
+          return: final_duration
+      -
+        value: gems
+        display: false
+        parse:
+          type: literal
+          return: gems
+      -
+        value: hp_max
+        display: false
+        parse:
+          type: literal
+          return: hp_max
+      -
+        value: hp_ratio_abs
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio_abs
+      -
+        value: loss_hp_interval
+        display: false
+        parse:
+          type: literal
+          return: loss_hp_interval
+      -
+        value: max_ammo_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_ammo_cnt
+      -
+        value: max_hp_value
+        display: false
+        parse:
+          type: literal
+          return: max_hp_value
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: none
+        display: false
+        parse:
+          type: literal
+          return: none
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: origin_speed
+        display: false
+        parse:
+          type: literal
+          return: origin_speed
+      -
+        value: record_cur_maxhp
+        display: false
+        parse:
+          type: literal
+          return: record_cur_maxhp
+      -
+        value: shield_duration
+        display: false
+        parse:
+          type: literal
+          return: shield_duration
+      -
+        value: shield_max_duration
+        display: false
+        parse:
+          type: literal
+          return: shield_max_duration
+      -
+        value: sleep
+        display: false
+        parse:
+          type: literal
+          return: sleep
+      -
+        value: stack_peel
+        display: false
+        parse:
+          type: literal
+          return: stack_peel
+      -
+        value: three
+        display: false
+        parse:
+          type: literal
+          return: three
+      -
+        value: time
+        display: false
+        parse:
+          type: literal
+          return: time
+  _finalAbs:
+    type: boolean
+    description: final Abs
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _finalCeil:
+    type: boolean
+    description: final Ceil
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _finalFloor:
+    type: boolean
+    description: final Floor
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _finalRound:
+    type: boolean
+    description: final Round
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _inputKey:
+    type: string
+    description: input Key
+    values:
+      -
+        value: ability_range_forward_extend
+        display: false
+        parse:
+          type: literal
+          return: ability_range_forward_extend
+      -
+        value: accumulated_minus_max_hp
+        display: false
+        parse:
+          type: literal
+          return: accumulated_minus_max_hp
+      -
+        value: action_index
+        display: false
+        parse:
+          type: literal
+          return: action_index
+      -
+        value: add
+        display: false
+        parse:
+          type: literal
+          return: add
+      -
+        value: add_atk_ratio
+        display: false
+        parse:
+          type: literal
+          return: add_atk_ratio
+      -
+        value: add_max_atk
+        display: false
+        parse:
+          type: literal
+          return: add_max_atk
+      -
+        value: add_max_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: add_max_hp_ratio
+      -
+        value: add_scale
+        display: false
+        parse:
+          type: literal
+          return: add_scale
+      -
+        value: add_stack
+        display: false
+        parse:
+          type: literal
+          return: add_stack
+      -
+        value: add_value
+        display: false
+        parse:
+          type: literal
+          return: add_value
+      -
+        value: ally_captured_cnt
+        display: false
+        parse:
+          type: literal
+          return: ally_captured_cnt
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: atk_abs
+        display: false
+        parse:
+          type: literal
+          return: atk_abs
+      -
+        value: atk_add
+        display: false
+        parse:
+          type: literal
+          return: atk_add
+      -
+        value: atk_down
+        display: false
+        parse:
+          type: literal
+          return: atk_down
+      -
+        value: atk_each_level
+        display: false
+        parse:
+          type: literal
+          return: atk_each_level
+      -
+        value: atk_extra
+        display: false
+        parse:
+          type: literal
+          return: atk_extra
+      -
+        value: atk_ladder
+        display: false
+        parse:
+          type: literal
+          return: atk_ladder
+      -
+        value: atk_per_consume
+        display: false
+        parse:
+          type: literal
+          return: atk_per_consume
+      -
+        value: atk_per_stack
+        display: false
+        parse:
+          type: literal
+          return: atk_per_stack
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: "atk_scale[gems]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[gems]"
+      -
+        value: atk_scale_cur
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_cur
+      -
+        value: atk_scale_now
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_now
+      -
+        value: atk_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: atk_stack_cnt
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+      -
+        value: attack_speed_per_stack
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_per_stack
+      -
+        value: attack_speed_reduce
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_reduce
+      -
+        value: avg_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: avg_hp_ratio
+      -
+        value: base_cold
+        display: false
+        parse:
+          type: literal
+          return: base_cold
+      -
+        value: base_freeze
+        display: false
+        parse:
+          type: literal
+          return: base_freeze
+      -
+        value: block_cnt
+        display: false
+        parse:
+          type: literal
+          return: block_cnt
+      -
+        value: blocked_cnt
+        display: false
+        parse:
+          type: literal
+          return: blocked_cnt
+      -
+        value: bond_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: bond_stack_cnt
+      -
+        value: born_shield
+        display: false
+        parse:
+          type: literal
+          return: born_shield
+      -
+        value: bound
+        display: false
+        parse:
+          type: literal
+          return: bound
+      -
+        value: buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: buff_cnt
+      -
+        value: build_cnt
+        display: false
+        parse:
+          type: literal
+          return: build_cnt
+      -
+        value: cached_atk
+        display: false
+        parse:
+          type: literal
+          return: cached_atk
+      -
+        value: cached_damage
+        display: false
+        parse:
+          type: literal
+          return: cached_damage
+      -
+        value: caused_damage
+        display: false
+        parse:
+          type: literal
+          return: caused_damage
+      -
+        value: cdsoul_cnt
+        display: false
+        parse:
+          type: literal
+          return: cdsoul_cnt
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cnt1
+        display: false
+        parse:
+          type: literal
+          return: cnt1
+      -
+        value: consumed_cnt
+        display: false
+        parse:
+          type: literal
+          return: consumed_cnt
+      -
+        value: cost
+        display: false
+        parse:
+          type: literal
+          return: cost
+      -
+        value: cost_cnt
+        display: false
+        parse:
+          type: literal
+          return: cost_cnt
+      -
+        value: cost_cnt_1
+        display: false
+        parse:
+          type: literal
+          return: cost_cnt_1
+      -
+        value: cost_cnt_2
+        display: false
+        parse:
+          type: literal
+          return: cost_cnt_2
+      -
+        value: cost_decrease
+        display: false
+        parse:
+          type: literal
+          return: cost_decrease
+      -
+        value: cur_ammo_cnt
+        display: false
+        parse:
+          type: literal
+          return: cur_ammo_cnt
+      -
+        value: cur_cnt
+        display: false
+        parse:
+          type: literal
+          return: cur_cnt
+      -
+        value: cur_sp
+        display: false
+        parse:
+          type: literal
+          return: cur_sp
+      -
+        value: curr_value
+        display: false
+        parse:
+          type: literal
+          return: curr_value
+      -
+        value: current_damage
+        display: false
+        parse:
+          type: literal
+          return: current_damage
+      -
+        value: current_price
+        display: false
+        parse:
+          type: literal
+          return: current_price
+      -
+        value: current_sp
+        display: false
+        parse:
+          type: literal
+          return: current_sp
+      -
+        value: current_speed
+        display: false
+        parse:
+          type: literal
+          return: current_speed
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+      -
+        value: damage_cnt
+        display: false
+        parse:
+          type: literal
+          return: damage_cnt
+      -
+        value: damage_cur
+        display: false
+        parse:
+          type: literal
+          return: damage_cur
+      -
+        value: damage_per_second
+        display: false
+        parse:
+          type: literal
+          return: damage_per_second
+      -
+        value: damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance
+      -
+        value: damage_resistance_pm
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_pm
+      -
+        value: damage_resistance_value
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_value
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: damage_scale_cold
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_cold
+      -
+        value: damage_scale_each_cnt
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_each_cnt
+      -
+        value: damage_scale_m
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_m
+      -
+        value: damage_scale_per_stack
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_per_stack
+      -
+        value: damage_value
+        display: false
+        parse:
+          type: literal
+          return: damage_value
+      -
+        value: danger_level
+        display: false
+        parse:
+          type: literal
+          return: danger_level
+      -
+        value: dark_damage
+        display: false
+        parse:
+          type: literal
+          return: dark_damage
+      -
+        value: day_count
+        display: false
+        parse:
+          type: literal
+          return: day_count
+      -
+        value: decay
+        display: false
+        parse:
+          type: literal
+          return: decay
+      -
+        value: def
+        display: false
+        parse:
+          type: literal
+          return: def
+      -
+        value: def_add
+        display: false
+        parse:
+          type: literal
+          return: def_add
+      -
+        value: def_extra
+        display: false
+        parse:
+          type: literal
+          return: def_extra
+      -
+        value: def_penetrate_each_level
+        display: false
+        parse:
+          type: literal
+          return: def_penetrate_each_level
+      -
+        value: def_per_stack
+        display: false
+        parse:
+          type: literal
+          return: def_per_stack
+      -
+        value: default_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: default_stack_cnt
+      -
+        value: delta_damage
+        display: false
+        parse:
+          type: literal
+          return: delta_damage
+      -
+        value: duration
+        display: false
+        parse:
+          type: literal
+          return: duration
+      -
+        value: duration_time
+        display: false
+        parse:
+          type: literal
+          return: duration_time
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: dynamic_addon
+        display: false
+        parse:
+          type: literal
+          return: dynamic_addon
+      -
+        value: dynamic_dec_per_sec
+        display: false
+        parse:
+          type: literal
+          return: dynamic_dec_per_sec
+      -
+        value: dynamic_main
+        display: false
+        parse:
+          type: literal
+          return: dynamic_main
+      -
+        value: e_atk
+        display: false
+        parse:
+          type: literal
+          return: e_atk
+      -
+        value: e_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: e_attack_speed
+      -
+        value: enemy_count
+        display: false
+        parse:
+          type: literal
+          return: enemy_count
+      -
+        value: enemy_death_cnt_local
+        display: false
+        parse:
+          type: literal
+          return: enemy_death_cnt_local
+      -
+        value: ep_damage_ratio_m
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio_m
+      -
+        value: ep_heal_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_heal_ratio
+      -
+        value: equip_cnt
+        display: false
+        parse:
+          type: literal
+          return: equip_cnt
+      -
+        value: es_value
+        display: false
+        parse:
+          type: literal
+          return: es_value
+      -
+        value: extend_scale
+        display: false
+        parse:
+          type: literal
+          return: extend_scale
+      -
+        value: fake_dynamic
+        display: false
+        parse:
+          type: literal
+          return: fake_dynamic
+      -
+        value: fixed_value_damage
+        display: false
+        parse:
+          type: literal
+          return: fixed_value_damage
+      -
+        value: gained_cnt
+        display: false
+        parse:
+          type: literal
+          return: gained_cnt
+      -
+        value: gems_cnt
+        display: false
+        parse:
+          type: literal
+          return: gems_cnt
+      -
+        value: gold
+        display: false
+        parse:
+          type: literal
+          return: gold
+      -
+        value: gold_cnt
+        display: false
+        parse:
+          type: literal
+          return: gold_cnt
+      -
+        value: halfIdle_trap_born_cnt_local
+        display: false
+        parse:
+          type: literal
+          return: halfIdle_trap_born_cnt_local
+      -
+        value: heal_value
+        display: false
+        parse:
+          type: literal
+          return: heal_value
+      -
+        value: hp_cur
+        display: false
+        parse:
+          type: literal
+          return: hp_cur
+      -
+        value: hp_gems
+        display: false
+        parse:
+          type: literal
+          return: hp_gems
+      -
+        value: hp_one
+        display: false
+        parse:
+          type: literal
+          return: hp_one
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: hp_recovery_per_sec
+        display: false
+        parse:
+          type: literal
+          return: hp_recovery_per_sec
+      -
+        value: inf
+        display: false
+        parse:
+          type: literal
+          return: inf
+      -
+        value: init_atk
+        display: false
+        parse:
+          type: literal
+          return: init_atk
+      -
+        value: init_max_hp
+        display: false
+        parse:
+          type: literal
+          return: init_max_hp
+      -
+        value: init_range_radius
+        display: false
+        parse:
+          type: literal
+          return: init_range_radius
+      -
+        value: init_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: init_stack_cnt
+      -
+        value: input_value
+        display: false
+        parse:
+          type: literal
+          return: input_value
+      -
+        value: integer_one
+        display: false
+        parse:
+          type: literal
+          return: integer_one
+      -
+        value: interval
+        display: false
+        parse:
+          type: literal
+          return: interval
+      -
+        value: interval_projectile_trigger
+        display: false
+        parse:
+          type: literal
+          return: interval_projectile_trigger
+      -
+        value: kill_shield
+        display: false
+        parse:
+          type: literal
+          return: kill_shield
+      -
+        value: last_damage
+        display: false
+        parse:
+          type: literal
+          return: last_damage
+      -
+        value: layer
+        display: false
+        parse:
+          type: literal
+          return: layer
+      -
+        value: loss_hp_interval
+        display: false
+        parse:
+          type: literal
+          return: loss_hp_interval
+      -
+        value: loss_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: loss_hp_ratio
+      -
+        value: mass_level
+        display: false
+        parse:
+          type: literal
+          return: mass_level
+      -
+        value: max_atk_per_sec
+        display: false
+        parse:
+          type: literal
+          return: max_atk_per_sec
+      -
+        value: max_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: max_atk_scale
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: max_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: max_damage_scale
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp
+      -
+        value: max_hp_extra
+        display: false
+        parse:
+          type: literal
+          return: max_hp_extra
+      -
+        value: max_hp_per_stack
+        display: false
+        parse:
+          type: literal
+          return: max_hp_per_stack
+      -
+        value: max_spawn_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_spawn_cnt
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: max_value
+        display: false
+        parse:
+          type: literal
+          return: max_value
+      -
+        value: min_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: min_hp_ratio
+      -
+        value: move_speed
+        display: false
+        parse:
+          type: literal
+          return: move_speed
+      -
+        value: neg_cdsoul_cnt
+        display: false
+        parse:
+          type: literal
+          return: neg_cdsoul_cnt
+      -
+        value: old_duration
+        display: false
+        parse:
+          type: literal
+          return: old_duration
+      -
+        value: one
+        display: false
+        parse:
+          type: literal
+          return: one
+      -
+        value: one_minus_status_resistance
+        display: false
+        parse:
+          type: literal
+          return: one_minus_status_resistance
+      -
+        value: other_shield
+        display: false
+        parse:
+          type: literal
+          return: other_shield
+      -
+        value: owner_buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: owner_buff_cnt
+      -
+        value: past_time_final
+        display: false
+        parse:
+          type: literal
+          return: past_time_final
+      -
+        value: point_hp
+        display: false
+        parse:
+          type: literal
+          return: point_hp
+      -
+        value: point_ratio_hp
+        display: false
+        parse:
+          type: literal
+          return: point_ratio_hp
+      -
+        value: postpone_damage
+        display: false
+        parse:
+          type: literal
+          return: postpone_damage
+      -
+        value: prob
+        display: false
+        parse:
+          type: literal
+          return: prob
+      -
+        value: prob_p
+        display: false
+        parse:
+          type: literal
+          return: prob_p
+      -
+        value: prob_per_stack
+        display: false
+        parse:
+          type: literal
+          return: prob_per_stack
+      -
+        value: prob_temp
+        display: false
+        parse:
+          type: literal
+          return: prob_temp
+      -
+        value: projectile_extend
+        display: false
+        parse:
+          type: literal
+          return: projectile_extend
+      -
+        value: projectile_time_origin
+        display: false
+        parse:
+          type: literal
+          return: projectile_time_origin
+      -
+        value: quicksand_tile_cnt
+        display: false
+        parse:
+          type: literal
+          return: quicksand_tile_cnt
+      -
+        value: radius_decrease_cur_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_decrease_cur_tick
+      -
+        value: radius_increase_cur_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_increase_cur_tick
+      -
+        value: range_addon
+        display: false
+        parse:
+          type: literal
+          return: range_addon
+      -
+        value: range_radius
+        display: false
+        parse:
+          type: literal
+          return: range_radius
+      -
+        value: ratio_checker
+        display: false
+        parse:
+          type: literal
+          return: ratio_checker
+      -
+        value: record_cur_hp
+        display: false
+        parse:
+          type: literal
+          return: record_cur_hp
+      -
+        value: remain_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: remain_hp_ratio
+      -
+        value: remaining_time_delta
+        display: false
+        parse:
+          type: literal
+          return: remaining_time_delta
+      -
+        value: respawn_time
+        display: false
+        parse:
+          type: literal
+          return: respawn_time
+      -
+        value: rogue5_gold_cnt
+        display: false
+        parse:
+          type: literal
+          return: rogue5_gold_cnt
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+      -
+        value: share_value
+        display: false
+        parse:
+          type: literal
+          return: share_value
+      -
+        value: shield_break
+        display: false
+        parse:
+          type: literal
+          return: shield_break
+      -
+        value: shield_value
+        display: false
+        parse:
+          type: literal
+          return: shield_value
+      -
+        value: skill_trait_value
+        display: false
+        parse:
+          type: literal
+          return: skill_trait_value
+      -
+        value: sluggish
+        display: false
+        parse:
+          type: literal
+          return: sluggish
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+      -
+        value: sp_each
+        display: false
+        parse:
+          type: literal
+          return: sp_each
+      -
+        value: sp_each_character
+        display: false
+        parse:
+          type: literal
+          return: sp_each_character
+      -
+        value: sp_each_person
+        display: false
+        parse:
+          type: literal
+          return: sp_each_person
+      -
+        value: sp_recovery_per_sec
+        display: false
+        parse:
+          type: literal
+          return: sp_recovery_per_sec
+      -
+        value: speed_max
+        display: false
+        parse:
+          type: literal
+          return: speed_max
+      -
+        value: stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt
+      -
+        value: start_scale
+        display: false
+        parse:
+          type: literal
+          return: start_scale
+      -
+        value: tank_buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: tank_buff_cnt
+      -
+        value: target_cnt
+        display: false
+        parse:
+          type: literal
+          return: target_cnt
+      -
+        value: target_count
+        display: false
+        parse:
+          type: literal
+          return: target_count
+      -
+        value: target_range
+        display: false
+        parse:
+          type: literal
+          return: target_range
+      -
+        value: target_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: target_stack_cnt
+      -
+        value: temp_max_scale
+        display: false
+        parse:
+          type: literal
+          return: temp_max_scale
+      -
+        value: time_scale_ratio
+        display: false
+        parse:
+          type: literal
+          return: time_scale_ratio
+      -
+        value: time_spend
+        display: false
+        parse:
+          type: literal
+          return: time_spend
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+      -
+        value: total_dist
+        display: false
+        parse:
+          type: literal
+          return: total_dist
+      -
+        value: tri_cnt
+        display: false
+        parse:
+          type: literal
+          return: tri_cnt
+      -
+        value: upgrade_cnt
+        display: false
+        parse:
+          type: literal
+          return: upgrade_cnt
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+      -
+        value: x_0
+        display: false
+        parse:
+          type: literal
+          return: x_0
+      -
+        value: y_0
+        display: false
+        parse:
+          type: literal
+          return: y_0
+      -
+        value: zero
+        display: false
+        parse:
+          type: literal
+          return: zero
+  _maxValueKey:
+    type: null | string
+    description: max Value Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: add_count_max_stack
+        display: false
+        parse:
+          type: literal
+          return: add_count_max_stack
+      -
+        value: add_max_atk
+        display: false
+        parse:
+          type: literal
+          return: add_max_atk
+      -
+        value: atk_mul_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_mul_scale
+      -
+        value: atk_scale_max
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_max
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: damage_max
+        display: false
+        parse:
+          type: literal
+          return: damage_max
+      -
+        value: damage_scale_max
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_max
+      -
+        value: e_max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: e_max_stack_cnt
+      -
+        value: layer_max
+        display: false
+        parse:
+          type: literal
+          return: layer_max
+      -
+        value: limited_dynamic
+        display: false
+        parse:
+          type: literal
+          return: limited_dynamic
+      -
+        value: max
+        display: false
+        parse:
+          type: literal
+          return: max
+      -
+        value: max_atk
+        display: false
+        parse:
+          type: literal
+          return: max_atk
+      -
+        value: max_atk_for_consume
+        display: false
+        parse:
+          type: literal
+          return: max_atk_for_consume
+      -
+        value: max_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: max_atk_scale
+      -
+        value: max_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: max_attack_speed
+      -
+        value: max_buff_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_buff_stack_cnt
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: max_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: max_damage_scale
+      -
+        value: max_radius
+        display: false
+        parse:
+          type: literal
+          return: max_radius
+      -
+        value: max_radius_increase_per_tick
+        display: false
+        parse:
+          type: literal
+          return: max_radius_increase_per_tick
+      -
+        value: max_scale
+        display: false
+        parse:
+          type: literal
+          return: max_scale
+      -
+        value: max_shield
+        display: false
+        parse:
+          type: literal
+          return: max_shield
+      -
+        value: max_shield_amount
+        display: false
+        parse:
+          type: literal
+          return: max_shield_amount
+      -
+        value: max_sp
+        display: false
+        parse:
+          type: literal
+          return: max_sp
+      -
+        value: max_stack
+        display: false
+        parse:
+          type: literal
+          return: max_stack
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: max_value
+        display: false
+        parse:
+          type: literal
+          return: max_value
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: one
+        display: false
+        parse:
+          type: literal
+          return: one
+      -
+        value: prob_max
+        display: false
+        parse:
+          type: literal
+          return: prob_max
+      -
+        value: projectile_extend_max
+        display: false
+        parse:
+          type: literal
+          return: projectile_extend_max
+      -
+        value: remaining_spawn_cnt
+        display: false
+        parse:
+          type: literal
+          return: remaining_spawn_cnt
+      -
+        value: shield_value_max
+        display: false
+        parse:
+          type: literal
+          return: shield_value_max
+  _minValueKey:
+    type: null | string
+    description: min Value Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: cost_max
+        display: false
+        parse:
+          type: literal
+          return: cost_max
+      -
+        value: dynamic_min_value
+        display: false
+        parse:
+          type: literal
+          return: dynamic_min_value
+      -
+        value: layer_min
+        display: false
+        parse:
+          type: literal
+          return: layer_min
+      -
+        value: max_radius_decrease_per_tick
+        display: false
+        parse:
+          type: literal
+          return: max_radius_decrease_per_tick
+      -
+        value: min_cnt
+        display: false
+        parse:
+          type: literal
+          return: min_cnt
+      -
+        value: min_shield
+        display: false
+        parse:
+          type: literal
+          return: min_shield
+      -
+        value: min_shield_value
+        display: false
+        parse:
+          type: literal
+          return: min_shield_value
+      -
+        value: min_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: min_stack_cnt
+      -
+        value: min_value
+        display: false
+        parse:
+          type: literal
+          return: min_value
+      -
+        value: move_speed_min
+        display: false
+        parse:
+          type: literal
+          return: move_speed_min
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: speed_cache
+        display: false
+        parse:
+          type: literal
+          return: speed_cache
+  _minusParamKey:
+    type: null | string
+    description: minus Param Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: anim_duration
+        display: false
+        parse:
+          type: literal
+          return: anim_duration
+      -
+        value: charge_cnt
+        display: false
+        parse:
+          type: literal
+          return: charge_cnt
+      -
+        value: consumed_cache
+        display: false
+        parse:
+          type: literal
+          return: consumed_cache
+      -
+        value: cost
+        display: false
+        parse:
+          type: literal
+          return: cost
+      -
+        value: cur_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: cur_stack_cnt
+      -
+        value: damage_divide_ratio
+        display: false
+        parse:
+          type: literal
+          return: damage_divide_ratio
+      -
+        value: dynamic_dec_per_sec
+        display: false
+        parse:
+          type: literal
+          return: dynamic_dec_per_sec
+      -
+        value: golden_equip_cnt
+        display: false
+        parse:
+          type: literal
+          return: golden_equip_cnt
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: hp_ratio_each_sec
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio_each_sec
+      -
+        value: init_hp
+        display: false
+        parse:
+          type: literal
+          return: init_hp
+      -
+        value: max_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: max_hp_ratio
+      -
+        value: min_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: min_atk_scale
+      -
+        value: minus
+        display: false
+        parse:
+          type: literal
+          return: minus
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: one
+        display: false
+        parse:
+          type: literal
+          return: one
+      -
+        value: ratio_interval
+        display: false
+        parse:
+          type: literal
+          return: ratio_interval
+      -
+        value: remaining_cnt
+        display: false
+        parse:
+          type: literal
+          return: remaining_cnt
+      -
+        value: shield_reduce_each_sec
+        display: false
+        parse:
+          type: literal
+          return: shield_reduce_each_sec
+      -
+        value: spawn_cnt
+        display: false
+        parse:
+          type: literal
+          return: spawn_cnt
+      -
+        value: stack
+        display: false
+        parse:
+          type: literal
+          return: stack
+      -
+        value: stack_layer
+        display: false
+        parse:
+          type: literal
+          return: stack_layer
+      -
+        value: x_1
+        display: false
+        parse:
+          type: literal
+          return: x_1
+      -
+        value: x_2
+        display: false
+        parse:
+          type: literal
+          return: x_2
+      -
+        value: x_3
+        display: false
+        parse:
+          type: literal
+          return: x_3
+      -
+        value: y_1
+        display: false
+        parse:
+          type: literal
+          return: y_1
+      -
+        value: y_2
+        display: false
+        parse:
+          type: literal
+          return: y_2
+      -
+        value: y_3
+        display: false
+        parse:
+          type: literal
+          return: y_3
+  _multiplyParamKey:
+    type: null | string
+    description: multiply Param Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: add_count
+        display: false
+        parse:
+          type: literal
+          return: add_count
+      -
+        value: add_num
+        display: false
+        parse:
+          type: literal
+          return: add_num
+      -
+        value: advanced_interval
+        display: false
+        parse:
+          type: literal
+          return: advanced_interval
+      -
+        value: ammo_percent_per_stack
+        display: false
+        parse:
+          type: literal
+          return: ammo_percent_per_stack
+      -
+        value: atk_per_stack
+        display: false
+        parse:
+          type: literal
+          return: atk_per_stack
+      -
+        value: atk_ratio
+        display: false
+        parse:
+          type: literal
+          return: atk_ratio
+      -
+        value: atk_share
+        display: false
+        parse:
+          type: literal
+          return: atk_share
+      -
+        value: atk_up_per_tank_buff
+        display: false
+        parse:
+          type: literal
+          return: atk_up_per_tank_buff
+      -
+        value: attack_speed_per_stack
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_per_stack
+      -
+        value: block_cnt
+        display: false
+        parse:
+          type: literal
+          return: block_cnt
+      -
+        value: bond_stack
+        display: false
+        parse:
+          type: literal
+          return: bond_stack
+      -
+        value: bond_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: bond_stack_cnt
+      -
+        value: buff_count
+        display: false
+        parse:
+          type: literal
+          return: buff_count
+      -
+        value: buff_counter
+        display: false
+        parse:
+          type: literal
+          return: buff_counter
+      -
+        value: buff_stack
+        display: false
+        parse:
+          type: literal
+          return: buff_stack
+      -
+        value: cached_sniper_level
+        display: false
+        parse:
+          type: literal
+          return: cached_sniper_level
+      -
+        value: caster_cnt
+        display: false
+        parse:
+          type: literal
+          return: caster_cnt
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cnt_factor
+        display: false
+        parse:
+          type: literal
+          return: cnt_factor
+      -
+        value: cost_multi
+        display: false
+        parse:
+          type: literal
+          return: cost_multi
+      -
+        value: cost_reduce_each_cdsoul
+        display: false
+        parse:
+          type: literal
+          return: cost_reduce_each_cdsoul
+      -
+        value: cost_scale
+        display: false
+        parse:
+          type: literal
+          return: cost_scale
+      -
+        value: count
+        display: false
+        parse:
+          type: literal
+          return: count
+      -
+        value: current_block_num
+        display: false
+        parse:
+          type: literal
+          return: current_block_num
+      -
+        value: current_cnt
+        display: false
+        parse:
+          type: literal
+          return: current_cnt
+      -
+        value: current_max_bond_cnt
+        display: false
+        parse:
+          type: literal
+          return: current_max_bond_cnt
+      -
+        value: current_stack
+        display: false
+        parse:
+          type: literal
+          return: current_stack
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+      -
+        value: damage_divide_ratio
+        display: false
+        parse:
+          type: literal
+          return: damage_divide_ratio
+      -
+        value: damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: damage_ratio
+      -
+        value: damage_resistance_cnt
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_cnt
+      -
+        value: damage_resistance_factor
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_factor
+      -
+        value: damage_resistance_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_scale
+      -
+        value: damage_scale_factor
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_factor
+      -
+        value: damage_scale_per
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_per
+      -
+        value: damage_scale_per_stack
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_per_stack
+      -
+        value: danger_cnt
+        display: false
+        parse:
+          type: literal
+          return: danger_cnt
+      -
+        value: dark_damage_mul_factor
+        display: false
+        parse:
+          type: literal
+          return: dark_damage_mul_factor
+      -
+        value: dec_rate
+        display: false
+        parse:
+          type: literal
+          return: dec_rate
+      -
+        value: def_penetrate_ratio
+        display: false
+        parse:
+          type: literal
+          return: def_penetrate_ratio
+      -
+        value: effect_ratio
+        display: false
+        parse:
+          type: literal
+          return: effect_ratio
+      -
+        value: element_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: element_damage_scale
+      -
+        value: element_multiplier
+        display: false
+        parse:
+          type: literal
+          return: element_multiplier
+      -
+        value: ep_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio
+      -
+        value: ex_damage_scale_per_stack
+        display: false
+        parse:
+          type: literal
+          return: ex_damage_scale_per_stack
+      -
+        value: extra_extend_scale
+        display: false
+        parse:
+          type: literal
+          return: extra_extend_scale
+      -
+        value: extra_multi_sp
+        display: false
+        parse:
+          type: literal
+          return: extra_multi_sp
+      -
+        value: first_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: first_damage_ratio
+      -
+        value: gained_cnt
+        display: false
+        parse:
+          type: literal
+          return: gained_cnt
+      -
+        value: gems
+        display: false
+        parse:
+          type: literal
+          return: gems
+      -
+        value: gold_return_rate
+        display: false
+        parse:
+          type: literal
+          return: gold_return_rate
+      -
+        value: heal_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: heal_damage_ratio
+      -
+        value: heal_ratio
+        display: false
+        parse:
+          type: literal
+          return: heal_ratio
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: hp_recovery_per_sec_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_recovery_per_sec_ratio
+      -
+        value: init_shield_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: init_shield_hp_ratio
+      -
+        value: interval
+        display: false
+        parse:
+          type: literal
+          return: interval
+      -
+        value: legion_gold_each_cdsoul
+        display: false
+        parse:
+          type: literal
+          return: legion_gold_each_cdsoul
+      -
+        value: magic_resist_penetrate_ratio
+        display: false
+        parse:
+          type: literal
+          return: magic_resist_penetrate_ratio
+      -
+        value: main
+        display: false
+        parse:
+          type: literal
+          return: main
+      -
+        value: mark_count
+        display: false
+        parse:
+          type: literal
+          return: mark_count
+      -
+        value: max_hp_per_stack
+        display: false
+        parse:
+          type: literal
+          return: max_hp_per_stack
+      -
+        value: max_ratio
+        display: false
+        parse:
+          type: literal
+          return: max_ratio
+      -
+        value: max_talent_up
+        display: false
+        parse:
+          type: literal
+          return: max_talent_up
+      -
+        value: minus_one
+        display: false
+        parse:
+          type: literal
+          return: minus_one
+      -
+        value: mult
+        display: false
+        parse:
+          type: literal
+          return: mult
+      -
+        value: mult_s1
+        display: false
+        parse:
+          type: literal
+          return: mult_s1
+      -
+        value: mult_s2
+        display: false
+        parse:
+          type: literal
+          return: mult_s2
+      -
+        value: mult_s3
+        display: false
+        parse:
+          type: literal
+          return: mult_s3
+      -
+        value: mult_s4
+        display: false
+        parse:
+          type: literal
+          return: mult_s4
+      -
+        value: multi
+        display: false
+        parse:
+          type: literal
+          return: multi
+      -
+        value: multiple
+        display: false
+        parse:
+          type: literal
+          return: multiple
+      -
+        value: multiplier
+        display: false
+        parse:
+          type: literal
+          return: multiplier
+      -
+        value: multiply_value
+        display: false
+        parse:
+          type: literal
+          return: multiply_value
+      -
+        value: new_cnt
+        display: false
+        parse:
+          type: literal
+          return: new_cnt
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: respawn_time_factor
+        display: false
+        parse:
+          type: literal
+          return: respawn_time_factor
+      -
+        value: revert
+        display: false
+        parse:
+          type: literal
+          return: revert
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+      -
+        value: scale_percent
+        display: false
+        parse:
+          type: literal
+          return: scale_percent
+      -
+        value: scale_ratio
+        display: false
+        parse:
+          type: literal
+          return: scale_ratio
+      -
+        value: shield_add_rate
+        display: false
+        parse:
+          type: literal
+          return: shield_add_rate
+      -
+        value: shield_max_rate
+        display: false
+        parse:
+          type: literal
+          return: shield_max_rate
+      -
+        value: shield_scale
+        display: false
+        parse:
+          type: literal
+          return: shield_scale
+      -
+        value: shield_scale_skill
+        display: false
+        parse:
+          type: literal
+          return: shield_scale_skill
+      -
+        value: shield_value
+        display: false
+        parse:
+          type: literal
+          return: shield_value
+      -
+        value: shrink_factor
+        display: false
+        parse:
+          type: literal
+          return: shrink_factor
+      -
+        value: sniper_level
+        display: false
+        parse:
+          type: literal
+          return: sniper_level
+      -
+        value: soul_stack_count
+        display: false
+        parse:
+          type: literal
+          return: soul_stack_count
+      -
+        value: sp_value
+        display: false
+        parse:
+          type: literal
+          return: sp_value
+      -
+        value: stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt
+      -
+        value: stack_layer
+        display: false
+        parse:
+          type: literal
+          return: stack_layer
+      -
+        value: super_scale
+        display: false
+        parse:
+          type: literal
+          return: super_scale
+      -
+        value: talent_mult
+        display: false
+        parse:
+          type: literal
+          return: talent_mult
+      -
+        value: talent_scale
+        display: false
+        parse:
+          type: literal
+          return: talent_scale
+      -
+        value: temp_damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: temp_damage_resistance
+      -
+        value: time_each_tile
+        display: false
+        parse:
+          type: literal
+          return: time_each_tile
+      -
+        value: time_per_stack
+        display: false
+        parse:
+          type: literal
+          return: time_per_stack
+      -
+        value: time_spend
+        display: false
+        parse:
+          type: literal
+          return: time_spend
+      -
+        value: total_ammo
+        display: false
+        parse:
+          type: literal
+          return: total_ammo
+      -
+        value: trait_ratio
+        display: false
+        parse:
+          type: literal
+          return: trait_ratio
+      -
+        value: trigger_interval
+        display: false
+        parse:
+          type: literal
+          return: trigger_interval
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _outputKey:
+    type: string
+    description: output Key
+    values:
+      -
+        value: ability_range_forward_extend
+        display: false
+        parse:
+          type: literal
+          return: ability_range_forward_extend
+      -
+        value: accumulated_minus_max_hp
+        display: false
+        parse:
+          type: literal
+          return: accumulated_minus_max_hp
+      -
+        value: "acfend_t_2[attr][enhanced].attack_speed"
+        display: false
+        parse:
+          type: literal
+          return: "acfend_t_2[attr][enhanced].attack_speed"
+      -
+        value: action_index
+        display: false
+        parse:
+          type: literal
+          return: action_index
+      -
+        value: add
+        display: false
+        parse:
+          type: literal
+          return: add
+      -
+        value: add_dynamic
+        display: false
+        parse:
+          type: literal
+          return: add_dynamic
+      -
+        value: add_sp
+        display: false
+        parse:
+          type: literal
+          return: add_sp
+      -
+        value: add_stack
+        display: false
+        parse:
+          type: literal
+          return: add_stack
+      -
+        value: ally_captured_cnt
+        display: false
+        parse:
+          type: literal
+          return: ally_captured_cnt
+      -
+        value: appear_duration
+        display: false
+        parse:
+          type: literal
+          return: appear_duration
+      -
+        value: archet_priority
+        display: false
+        parse:
+          type: literal
+          return: archet_priority
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: atk_abs
+        display: false
+        parse:
+          type: literal
+          return: atk_abs
+      -
+        value: atk_divid
+        display: false
+        parse:
+          type: literal
+          return: atk_divid
+      -
+        value: atk_each_add
+        display: false
+        parse:
+          type: literal
+          return: atk_each_add
+      -
+        value: atk_final
+        display: false
+        parse:
+          type: literal
+          return: atk_final
+      -
+        value: atk_per_sec
+        display: false
+        parse:
+          type: literal
+          return: atk_per_sec
+      -
+        value: atk_per_stack
+        display: false
+        parse:
+          type: literal
+          return: atk_per_stack
+      -
+        value: atk_s1
+        display: false
+        parse:
+          type: literal
+          return: atk_s1
+      -
+        value: atk_s2
+        display: false
+        parse:
+          type: literal
+          return: atk_s2
+      -
+        value: atk_s3
+        display: false
+        parse:
+          type: literal
+          return: atk_s3
+      -
+        value: atk_s4
+        display: false
+        parse:
+          type: literal
+          return: atk_s4
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: "atk_scale[bigAttack2]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[bigAttack2]"
+      -
+        value: "atk_scale[gems]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[gems]"
+      -
+        value: atk_scale_cur
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_cur
+      -
+        value: atk_scale_now
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_now
+      -
+        value: atk_speed_each_add
+        display: false
+        parse:
+          type: literal
+          return: atk_speed_each_add
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+      -
+        value: attack_speed_reduce
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_reduce
+      -
+        value: avg_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: avg_hp_ratio
+      -
+        value: base_cold
+        display: false
+        parse:
+          type: literal
+          return: base_cold
+      -
+        value: base_freeze
+        display: false
+        parse:
+          type: literal
+          return: base_freeze
+      -
+        value: born_shield
+        display: false
+        parse:
+          type: literal
+          return: born_shield
+      -
+        value: buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: buff_cnt
+      -
+        value: buff_stack
+        display: false
+        parse:
+          type: literal
+          return: buff_stack
+      -
+        value: build_cnt
+        display: false
+        parse:
+          type: literal
+          return: build_cnt
+      -
+        value: calculated_damage
+        display: false
+        parse:
+          type: literal
+          return: calculated_damage
+      -
+        value: caused_damage
+        display: false
+        parse:
+          type: literal
+          return: caused_damage
+      -
+        value: charge_cnt
+        display: false
+        parse:
+          type: literal
+          return: charge_cnt
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cnt3
+        display: false
+        parse:
+          type: literal
+          return: cnt3
+      -
+        value: cnt_factor
+        display: false
+        parse:
+          type: literal
+          return: cnt_factor
+      -
+        value: cold
+        display: false
+        parse:
+          type: literal
+          return: cold
+      -
+        value: compare_limited_dynamic
+        display: false
+        parse:
+          type: literal
+          return: compare_limited_dynamic
+      -
+        value: cost
+        display: false
+        parse:
+          type: literal
+          return: cost
+      -
+        value: cost_check
+        display: false
+        parse:
+          type: literal
+          return: cost_check
+      -
+        value: cost_cnt
+        display: false
+        parse:
+          type: literal
+          return: cost_cnt
+      -
+        value: cost_cnt_2
+        display: false
+        parse:
+          type: literal
+          return: cost_cnt_2
+      -
+        value: cost_reduce
+        display: false
+        parse:
+          type: literal
+          return: cost_reduce
+      -
+        value: count
+        display: false
+        parse:
+          type: literal
+          return: count
+      -
+        value: cur_ammo_ratio
+        display: false
+        parse:
+          type: literal
+          return: cur_ammo_ratio
+      -
+        value: cur_cnt
+        display: false
+        parse:
+          type: literal
+          return: cur_cnt
+      -
+        value: cur_times
+        display: false
+        parse:
+          type: literal
+          return: cur_times
+      -
+        value: curr_value
+        display: false
+        parse:
+          type: literal
+          return: curr_value
+      -
+        value: current_atk
+        display: false
+        parse:
+          type: literal
+          return: current_atk
+      -
+        value: current_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: current_attack_speed
+      -
+        value: current_price_half
+        display: false
+        parse:
+          type: literal
+          return: current_price_half
+      -
+        value: current_sp
+        display: false
+        parse:
+          type: literal
+          return: current_sp
+      -
+        value: current_stack
+        display: false
+        parse:
+          type: literal
+          return: current_stack
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+      -
+        value: damage_cnt
+        display: false
+        parse:
+          type: literal
+          return: damage_cnt
+      -
+        value: damage_cur
+        display: false
+        parse:
+          type: literal
+          return: damage_cur
+      -
+        value: damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance
+      -
+        value: damage_resistance_advance
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_advance
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: damage_scale_cold_new
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_cold_new
+      -
+        value: damage_scale_freeze
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_freeze
+      -
+        value: damage_scale_minus_one
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_minus_one
+      -
+        value: damage_scale_ratio
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_ratio
+      -
+        value: damage_value
+        display: false
+        parse:
+          type: literal
+          return: damage_value
+      -
+        value: def
+        display: false
+        parse:
+          type: literal
+          return: def
+      -
+        value: def_final
+        display: false
+        parse:
+          type: literal
+          return: def_final
+      -
+        value: def_penetrate
+        display: false
+        parse:
+          type: literal
+          return: def_penetrate
+      -
+        value: def_penetrate_fixed
+        display: false
+        parse:
+          type: literal
+          return: def_penetrate_fixed
+      -
+        value: delta
+        display: false
+        parse:
+          type: literal
+          return: delta
+      -
+        value: delta_damage
+        display: false
+        parse:
+          type: literal
+          return: delta_damage
+      -
+        value: delta_hp
+        display: false
+        parse:
+          type: literal
+          return: delta_hp
+      -
+        value: delta_x
+        display: false
+        parse:
+          type: literal
+          return: delta_x
+      -
+        value: delta_y
+        display: false
+        parse:
+          type: literal
+          return: delta_y
+      -
+        value: diff
+        display: false
+        parse:
+          type: literal
+          return: diff
+      -
+        value: divide_value
+        display: false
+        parse:
+          type: literal
+          return: divide_value
+      -
+        value: double_cdsoul_cnt
+        display: false
+        parse:
+          type: literal
+          return: double_cdsoul_cnt
+      -
+        value: duration
+        display: false
+        parse:
+          type: literal
+          return: duration
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: dynamic_addon
+        display: false
+        parse:
+          type: literal
+          return: dynamic_addon
+      -
+        value: dynamic_dec_per_sec
+        display: false
+        parse:
+          type: literal
+          return: dynamic_dec_per_sec
+      -
+        value: dynamic_dec_per_time
+        display: false
+        parse:
+          type: literal
+          return: dynamic_dec_per_time
+      -
+        value: dynamic_gems
+        display: false
+        parse:
+          type: literal
+          return: dynamic_gems
+      -
+        value: dynamic_main
+        display: false
+        parse:
+          type: literal
+          return: dynamic_main
+      -
+        value: dynamic_spd
+        display: false
+        parse:
+          type: literal
+          return: dynamic_spd
+      -
+        value: effect_count
+        display: false
+        parse:
+          type: literal
+          return: effect_count
+      -
+        value: effect_ratio
+        display: false
+        parse:
+          type: literal
+          return: effect_ratio
+      -
+        value: egir_bond_max_hp
+        display: false
+        parse:
+          type: literal
+          return: egir_bond_max_hp
+      -
+        value: ep_damage
+        display: false
+        parse:
+          type: literal
+          return: ep_damage
+      -
+        value: ep_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio
+      -
+        value: ep_heal_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_heal_ratio
+      -
+        value: extend_scale
+        display: false
+        parse:
+          type: literal
+          return: extend_scale
+      -
+        value: fake_dynamic
+        display: false
+        parse:
+          type: literal
+          return: fake_dynamic
+      -
+        value: final_damage
+        display: false
+        parse:
+          type: literal
+          return: final_damage
+      -
+        value: final_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: final_hp_ratio
+      -
+        value: final_scale
+        display: false
+        parse:
+          type: literal
+          return: final_scale
+      -
+        value: first_damage
+        display: false
+        parse:
+          type: literal
+          return: first_damage
+      -
+        value: gained_cnt
+        display: false
+        parse:
+          type: literal
+          return: gained_cnt
+      -
+        value: gold
+        display: false
+        parse:
+          type: literal
+          return: gold
+      -
+        value: "gvial2_t_1[block_add].atk"
+        display: false
+        parse:
+          type: literal
+          return: "gvial2_t_1[block_add].atk"
+      -
+        value: "gvial2_t_1[block_add].def"
+        display: false
+        parse:
+          type: literal
+          return: "gvial2_t_1[block_add].def"
+      -
+        value: heal_value
+        display: false
+        parse:
+          type: literal
+          return: heal_value
+      -
+        value: hp_cur
+        display: false
+        parse:
+          type: literal
+          return: hp_cur
+      -
+        value: hp_gems
+        display: false
+        parse:
+          type: literal
+          return: hp_gems
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: hp_ratio_abs
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio_abs
+      -
+        value: hp_recovery_per_sec
+        display: false
+        parse:
+          type: literal
+          return: hp_recovery_per_sec
+      -
+        value: init_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: init_stack_cnt
+      -
+        value: interval_revert
+        display: false
+        parse:
+          type: literal
+          return: interval_revert
+      -
+        value: kill_shield
+        display: false
+        parse:
+          type: literal
+          return: kill_shield
+      -
+        value: last_damage
+        display: false
+        parse:
+          type: literal
+          return: last_damage
+      -
+        value: layer
+        display: false
+        parse:
+          type: literal
+          return: layer
+      -
+        value: limited_dynamic
+        display: false
+        parse:
+          type: literal
+          return: limited_dynamic
+      -
+        value: loss_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: loss_hp_ratio
+      -
+        value: magic_resist_penetrate
+        display: false
+        parse:
+          type: literal
+          return: magic_resist_penetrate
+      -
+        value: "mantra_s_3[enemy_trigger].interval_projectile_trigger"
+        display: false
+        parse:
+          type: literal
+          return: "mantra_s_3[enemy_trigger].interval_projectile_trigger"
+      -
+        value: max_atk
+        display: false
+        parse:
+          type: literal
+          return: max_atk
+      -
+        value: max_atk_per_sec
+        display: false
+        parse:
+          type: literal
+          return: max_atk_per_sec
+      -
+        value: max_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: max_damage_scale
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp
+      -
+        value: max_hp_final
+        display: false
+        parse:
+          type: literal
+          return: max_hp_final
+      -
+        value: max_hp_per_sec
+        display: false
+        parse:
+          type: literal
+          return: max_hp_per_sec
+      -
+        value: max_hp_ratio_plus
+        display: false
+        parse:
+          type: literal
+          return: max_hp_ratio_plus
+      -
+        value: max_hp_s1
+        display: false
+        parse:
+          type: literal
+          return: max_hp_s1
+      -
+        value: max_hp_s2
+        display: false
+        parse:
+          type: literal
+          return: max_hp_s2
+      -
+        value: max_hp_s3
+        display: false
+        parse:
+          type: literal
+          return: max_hp_s3
+      -
+        value: max_hp_s4
+        display: false
+        parse:
+          type: literal
+          return: max_hp_s4
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: max_target
+        display: false
+        parse:
+          type: literal
+          return: max_target
+      -
+        value: move_speed
+        display: false
+        parse:
+          type: literal
+          return: move_speed
+      -
+        value: move_speed_per_add
+        display: false
+        parse:
+          type: literal
+          return: move_speed_per_add
+      -
+        value: multi
+        display: false
+        parse:
+          type: literal
+          return: multi
+      -
+        value: neg_cdsoul_cnt
+        display: false
+        parse:
+          type: literal
+          return: neg_cdsoul_cnt
+      -
+        value: new_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: new_atk_scale
+      -
+        value: new_cnt
+        display: false
+        parse:
+          type: literal
+          return: new_cnt
+      -
+        value: new_duration
+        display: false
+        parse:
+          type: literal
+          return: new_duration
+      -
+        value: normal_equip_cnt
+        display: false
+        parse:
+          type: literal
+          return: normal_equip_cnt
+      -
+        value: other_shield
+        display: false
+        parse:
+          type: literal
+          return: other_shield
+      -
+        value: past_time_final
+        display: false
+        parse:
+          type: literal
+          return: past_time_final
+      -
+        value: percent
+        display: false
+        parse:
+          type: literal
+          return: percent
+      -
+        value: play_speed
+        display: false
+        parse:
+          type: literal
+          return: play_speed
+      -
+        value: point_hp
+        display: false
+        parse:
+          type: literal
+          return: point_hp
+      -
+        value: point_ratio_hp
+        display: false
+        parse:
+          type: literal
+          return: point_ratio_hp
+      -
+        value: prob
+        display: false
+        parse:
+          type: literal
+          return: prob
+      -
+        value: projectile_delay_time
+        display: false
+        parse:
+          type: literal
+          return: projectile_delay_time
+      -
+        value: projectile_extend_cur
+        display: false
+        parse:
+          type: literal
+          return: projectile_extend_cur
+      -
+        value: radius_decrease_cur_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_decrease_cur_tick
+      -
+        value: radius_increase_cur_tick
+        display: false
+        parse:
+          type: literal
+          return: radius_increase_cur_tick
+      -
+        value: range_addon
+        display: false
+        parse:
+          type: literal
+          return: range_addon
+      -
+        value: range_radius_current
+        display: false
+        parse:
+          type: literal
+          return: range_radius_current
+      -
+        value: ratio
+        display: false
+        parse:
+          type: literal
+          return: ratio
+      -
+        value: ratio_checker
+        display: false
+        parse:
+          type: literal
+          return: ratio_checker
+      -
+        value: real_ammo_percent
+        display: false
+        parse:
+          type: literal
+          return: real_ammo_percent
+      -
+        value: real_atk
+        display: false
+        parse:
+          type: literal
+          return: real_atk
+      -
+        value: real_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: real_attack_speed
+      -
+        value: real_consumed_cnt
+        display: false
+        parse:
+          type: literal
+          return: real_consumed_cnt
+      -
+        value: real_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: real_damage_scale
+      -
+        value: real_def
+        display: false
+        parse:
+          type: literal
+          return: real_def
+      -
+        value: real_ex_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: real_ex_damage_scale
+      -
+        value: real_init_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: real_init_stack_cnt
+      -
+        value: real_max_hp
+        display: false
+        parse:
+          type: literal
+          return: real_max_hp
+      -
+        value: real_prob
+        display: false
+        parse:
+          type: literal
+          return: real_prob
+      -
+        value: remaining_spawn_cnt
+        display: false
+        parse:
+          type: literal
+          return: remaining_spawn_cnt
+      -
+        value: respawn_time
+        display: false
+        parse:
+          type: literal
+          return: respawn_time
+      -
+        value: revert_dark_damage
+        display: false
+        parse:
+          type: literal
+          return: revert_dark_damage
+      -
+        value: revert_remaining_time_delta
+        display: false
+        parse:
+          type: literal
+          return: revert_remaining_time_delta
+      -
+        value: scale_up
+        display: false
+        parse:
+          type: literal
+          return: scale_up
+      -
+        value: shield_reduce_each_sec
+        display: false
+        parse:
+          type: literal
+          return: shield_reduce_each_sec
+      -
+        value: skill_time
+        display: false
+        parse:
+          type: literal
+          return: skill_time
+      -
+        value: skill_trait_value
+        display: false
+        parse:
+          type: literal
+          return: skill_trait_value
+      -
+        value: sluggish
+        display: false
+        parse:
+          type: literal
+          return: sluggish
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+      -
+        value: sp_cal
+        display: false
+        parse:
+          type: literal
+          return: sp_cal
+      -
+        value: sp_move
+        display: false
+        parse:
+          type: literal
+          return: sp_move
+      -
+        value: sp_recovery_per_sec
+        display: false
+        parse:
+          type: literal
+          return: sp_recovery_per_sec
+      -
+        value: speed_max
+        display: false
+        parse:
+          type: literal
+          return: speed_max
+      -
+        value: speed_rate
+        display: false
+        parse:
+          type: literal
+          return: speed_rate
+      -
+        value: stack_cnt_dif
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt_dif
+      -
+        value: succeed
+        display: false
+        parse:
+          type: literal
+          return: succeed
+      -
+        value: "svash2_s_2[cost].cnt"
+        display: false
+        parse:
+          type: literal
+          return: "svash2_s_2[cost].cnt"
+      -
+        value: "svash2_s_2[cost].value"
+        display: false
+        parse:
+          type: literal
+          return: "svash2_s_2[cost].value"
+      -
+        value: target_count
+        display: false
+        parse:
+          type: literal
+          return: target_count
+      -
+        value: target_range
+        display: false
+        parse:
+          type: literal
+          return: target_range
+      -
+        value: target_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: target_stack_cnt
+      -
+        value: temp_max_scale
+        display: false
+        parse:
+          type: literal
+          return: temp_max_scale
+      -
+        value: time_scale_ratio
+        display: false
+        parse:
+          type: literal
+          return: time_scale_ratio
+      -
+        value: time_spend
+        display: false
+        parse:
+          type: literal
+          return: time_spend
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+      -
+        value: tri_cnt
+        display: false
+        parse:
+          type: literal
+          return: tri_cnt
+      -
+        value: upgrade_cnt
+        display: false
+        parse:
+          type: literal
+          return: upgrade_cnt
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _useAbilityBlackboard:
+    type: boolean
+    description: use Ability Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useRemainder:
+    type: boolean
+    description: use Remainder
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,32 @@
+actionType: HalfIdleLhtownTrapNoticeBorn
+fields:
+  _envSystemKey:
+    type: string
+    description: env System Key
+    values:
+      -
+        value: env_036_act1vhalfidle_lhhe
+        display: false
+        parse:
+          type: literal
+          return: env_036_act1vhalfidle_lhhe
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: lhtown
+        display: false
+        parse:
+          type: literal
+          return: lhtown
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

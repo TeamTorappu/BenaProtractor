@@ -1,0 +1,16 @@
+field: _checkTileKeys
+type: object
+description: check Tile Keys
+actions:
+  SwitchDynamicBuffTileModeInRange:
+    type: array
+    values:
+      -
+        value: "["tile_yinyang_road","tile_yinyang_wall"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

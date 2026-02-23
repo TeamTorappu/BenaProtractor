@@ -1,0 +1,54 @@
+actionType: TriggerTileInRange
+fields:
+  _isTriggerSpecificTiles:
+    type: boolean
+    description: is Trigger Specific Tiles
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _tileKeys:
+    type: array | null
+    description: tile Keys
+    schema: action_subschema/_tileKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx

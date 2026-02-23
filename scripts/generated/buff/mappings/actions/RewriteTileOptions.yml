@@ -1,0 +1,212 @@
+actionType: RewriteTileOptions
+fields:
+  _advancedBuildableMask:
+    type: string
+    description: advanced Buildable Mask
+    values:
+      -
+        value: DEEP_SEA
+        display: false
+        parse:
+          type: literal
+          return: DEEP_SEA
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+      -
+        value: ENEMY_FTPRG
+        display: false
+        parse:
+          type: literal
+          return: ENEMY_FTPRG
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: RIDGE_FIELD
+        display: false
+        parse:
+          type: literal
+          return: RIDGE_FIELD
+      -
+        value: WOODRD_HOLE
+        display: false
+        parse:
+          type: literal
+          return: WOODRD_HOLE
+  _buildableType:
+    type: string
+    description: buildable Type
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _isObstacleLike:
+    type: boolean
+    description: is Obstacle Like
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _keepCurrentAdvancedBuildableMask:
+    type: boolean
+    description: keep Current Advanced Buildable Mask
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _keepCurrentBuildableType:
+    type: boolean
+    description: keep Current Buildable Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _keepCurrentObstacleLike:
+    type: boolean
+    description: keep Current Obstacle Like
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _keepCurrentPassableMask:
+    type: boolean
+    description: keep Current Passable Mask
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _killLocatedIfNotBuildable:
+    type: boolean
+    description: kill Located If Not Buildable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _passableMask:
+    type: string
+    description: passable Mask
+    values:
+      -
+        value: FLY_ONLY
+        display: false
+        parse:
+          type: literal
+          return: FLY_ONLY
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _restoreTileOptions:
+    type: boolean
+    description: restore Tile Options
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useOwnerRootTile:
+    type: boolean
+    description: use Owner Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useTargetOldTile:
+    type: boolean
+    description: use Target Old Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

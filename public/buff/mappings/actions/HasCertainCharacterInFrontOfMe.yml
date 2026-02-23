@@ -1,0 +1,32 @@
+actionType: HasCertainCharacterInFrontOfMe
+fields:
+  _characterKey:
+    type: string
+    description: character Key
+    values:
+      -
+        value: trap_032_mound
+        display: false
+        parse:
+          type: literal
+          return: trap_032_mound
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

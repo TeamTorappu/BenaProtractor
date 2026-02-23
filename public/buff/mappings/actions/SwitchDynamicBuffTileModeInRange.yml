@@ -1,0 +1,186 @@
+actionType: SwitchDynamicBuffTileModeInRange
+fields:
+  _assignChangedCountToBb:
+    type: boolean
+    description: assign Changed Count To Bb
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _checkTileKeys:
+    type: array | null
+    description: check Tile Keys
+    schema: action_subschema/_checkTileKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _countBbKey:
+    type: string
+    description: count Bb Key
+    values:
+      -
+        value: count
+        display: false
+        parse:
+          type: literal
+          return: count
+  _decBbKey:
+    type: string
+    description: dec Bb Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: boom_dec_num
+        display: false
+        parse:
+          type: literal
+          return: boom_dec_num
+  _effectKeyOnTile:
+    type: string
+    description: effect Key On Tile
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _modeIndex:
+    type: number
+    description: mode Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _operation:
+    type: string
+    description: operation
+    values:
+      -
+        value: DEC_INDEX
+        display: false
+        parse:
+          type: literal
+          return: DEC_INDEX
+      -
+        value: FLIP_BOOL
+        display: false
+        parse:
+          type: literal
+          return: FLIP_BOOL
+      -
+        value: INDEX
+        display: false
+        parse:
+          type: literal
+          return: INDEX
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _rangeRadius:
+    type: number
+    description: range Radius
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+  _rangeRadiusKey:
+    type: string
+    description: range Radius Key
+    values:
+      -
+        value: range_radius
+        display: false
+        parse:
+          type: literal
+          return: range_radius
+      -
+        value: range_radius_current
+        display: false
+        parse:
+          type: literal
+          return: range_radius_current
+  _requireCharacterNotOn:
+    type: boolean
+    description: require Character Not On
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _useRangeRadius:
+    type: boolean
+    description: use Range Radius
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

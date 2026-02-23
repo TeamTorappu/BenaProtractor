@@ -1,0 +1,22 @@
+actionType: ChangeAnimatorMeshBySandboxKilledBoss
+fields:
+  _enable:
+    type: boolean
+    description: enable
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

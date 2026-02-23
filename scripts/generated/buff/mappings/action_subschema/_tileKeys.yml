@@ -1,0 +1,49 @@
+field: _tileKeys
+type: object
+description: tile Keys
+actions:
+  CheckTileInRange:
+    type: array
+    values:
+      -
+        value: "["tile_hole"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+  CheckTargetRootTile:
+    type: array
+    values:
+      -
+        value: "["tile_reed","tile_reedw"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+  TriggerTileInRange:
+    type: array
+    values:
+      -
+        value: "["tile_woodrd"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

@@ -1,0 +1,25 @@
+field: _degreeRanges
+type: object
+description: degree Ranges
+actions:
+  CreateBuffInCircleRange:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"x":180,"y":360}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

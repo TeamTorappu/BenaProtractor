@@ -1,0 +1,148 @@
+actionType: TriggerAbilityUseSelectorMergeBB
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: AOE
+        display: false
+        parse:
+          type: literal
+          return: AOE
+      -
+        value: AdditionalHeal
+        display: false
+        parse:
+          type: literal
+          return: AdditionalHeal
+      -
+        value: Phase2_T_Effector
+        display: false
+        parse:
+          type: literal
+          return: Phase2_T_Effector
+      -
+        value: PrismAttack
+        display: false
+        parse:
+          type: literal
+          return: PrismAttack
+      -
+        value: S1_Effector
+        display: false
+        parse:
+          type: literal
+          return: S1_Effector
+      -
+        value: S2_Effector
+        display: false
+        parse:
+          type: literal
+          return: S2_Effector
+      -
+        value: TalentBomb
+        display: false
+        parse:
+          type: literal
+          return: TalentBomb
+      -
+        value: UpgradeDragon
+        display: false
+        parse:
+          type: literal
+          return: UpgradeDragon
+  _castDirectly:
+    type: boolean
+    description: cast Directly
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkAbilityIsReady:
+    type: boolean
+    description: check Ability Is Ready
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkSrcCastable:
+    type: boolean
+    description: check Src Castable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

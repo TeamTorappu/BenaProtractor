@@ -1,0 +1,156 @@
+actionType: AddGlobalBlackboard
+fields:
+  _addString:
+    type: boolean
+    description: add String
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _channel:
+    type: string
+    description: channel
+    values:
+      -
+        value: AUTOCHESS
+        display: false
+        parse:
+          type: literal
+          return: AUTOCHESS
+      -
+        value: CHARACTER
+        display: false
+        parse:
+          type: literal
+          return: CHARACTER
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+      -
+        value: LEVEL
+        display: false
+        parse:
+          type: literal
+          return: LEVEL
+      -
+        value: ROGUELIKE
+        display: false
+        parse:
+          type: literal
+          return: ROGUELIKE
+  _overwrite:
+    type: boolean
+    description: overwrite
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _valueBlackboardKey:
+    type: string
+    description: value Blackboard Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: card_uid
+        display: false
+        parse:
+          type: literal
+          return: card_uid
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+      -
+        value: direction
+        display: false
+        parse:
+          type: literal
+          return: direction
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+      -
+        value: unique_id
+        display: false
+        parse:
+          type: literal
+          return: unique_id
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _valueStr:
+    type: null
+    description: value Str
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null

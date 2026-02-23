@@ -1,0 +1,64 @@
+actionType: AttributeModifierWithLevelProgress
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+  _guaranteedPercentageString:
+    type: string
+    description: guaranteed Percentage String
+    values:
+      -
+        value: guaranteed_percentage
+        display: false
+        parse:
+          type: literal
+          return: guaranteed_percentage
+  _isFinalScale:
+    type: boolean
+    description: is Final Scale
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _maxPercentageString:
+    type: string
+    description: max Percentage String
+    values:
+      -
+        value: max_percentage
+        display: false
+        parse:
+          type: literal
+          return: max_percentage
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,22 @@
+actionType: PlayMeshAnimation
+fields:
+  _animation:
+    type: string
+    description: animation
+    values:
+      -
+        value: on
+        display: false
+        parse:
+          type: literal
+          return: on
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

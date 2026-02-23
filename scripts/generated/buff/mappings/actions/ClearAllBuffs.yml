@@ -1,0 +1,44 @@
+actionType: ClearAllBuffs
+fields:
+  _alsoRemoveDurableBuff:
+    type: boolean
+    description: also Remove Durable Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _retainedBuffsWhenClear:
+    type: array
+    description: retained Buffs When Clear
+    schema: action_subschema/_retainedBuffsWhenClear.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

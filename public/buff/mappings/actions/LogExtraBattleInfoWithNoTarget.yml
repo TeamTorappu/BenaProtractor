@@ -1,0 +1,54 @@
+actionType: LogExtraBattleInfoWithNoTarget
+fields:
+  _additionValue:
+    type: number
+    description: addition Value
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: coop_boat_kill_drone
+        display: false
+        parse:
+          type: literal
+          return: coop_boat_kill_drone
+      -
+        value: coop_boat_through_block
+        display: false
+        parse:
+          type: literal
+          return: coop_boat_through_block
+      -
+        value: mcnrsh_s_hit
+        display: false
+        parse:
+          type: literal
+          return: mcnrsh_s_hit
+  _loadKeyFromBlackBoard:
+    type: boolean
+    description: load Key From Black Board
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _logType:
+    type: string
+    description: log Type
+    values:
+      -
+        value: SIMPLE
+        display: false
+        parse:
+          type: literal
+          return: SIMPLE

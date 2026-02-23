@@ -1,0 +1,80 @@
+actionType: CreateBuffToCharacterInSpecifiedArea
+fields:
+  _buffData:
+    type: object
+    description: buff Data
+    schema: action_subschema/_buffData.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _ignoreToken:
+    type: boolean
+    description: ignore Token
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ignoreTrap:
+    type: boolean
+    description: ignore Trap
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isExclude:
+    type: boolean
+    description: is Exclude
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _specifyByGridColumn:
+    type: boolean
+    description: specify By Grid Column
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,146 @@
+actionType: TriggerAttachListenerToTileAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: DoFarm
+        display: false
+        parse:
+          type: literal
+          return: DoFarm
+      -
+        value: HighlandTileBuff
+        display: false
+        parse:
+          type: literal
+          return: HighlandTileBuff
+  _exceptTargetRootTile:
+    type: boolean
+    description: except Target Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 1-1
+        display: false
+        parse:
+          type: literal
+          return: 1-1
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _rangeIdKey:
+    type: string
+    description: range Id Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: born_range_id
+        display: false
+        parse:
+          type: literal
+          return: born_range_id
+      -
+        value: none
+        display: false
+        parse:
+          type: literal
+          return: none
+  _returnWhetherCreateNewTileListener:
+    type: boolean
+    description: return Whether Create New Tile Listener
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+  _useHostAsOwner:
+    type: boolean
+    description: use Host As Owner
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useTargetRootTile:
+    type: boolean
+    description: use Target Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

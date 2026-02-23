@@ -1,0 +1,136 @@
+actionType: AdvancedApplyHeal
+fields:
+  _customModifierKey:
+    type: string
+    description: custom Modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: s2_dot_heal
+        display: false
+        parse:
+          type: literal
+          return: s2_dot_heal
+  _healScaleKey:
+    type: string
+    description: heal Scale Key
+    values:
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+  _scaleUpByBlackboardKey:
+    type: null | string
+    description: scale Up By Blackboard Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: addition_heal_scale
+        display: false
+        parse:
+          type: literal
+          return: addition_heal_scale
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt
+  _scaleUpIfUnderHpRatio:
+    type: boolean
+    description: scale Up If Under Hp Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useDynamicVar:
+    type: boolean
+    description: use Dynamic Var
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useInputTargetAsHealTarget:
+    type: boolean
+    description: use Input Target As Heal Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

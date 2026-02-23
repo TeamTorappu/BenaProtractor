@@ -1,0 +1,154 @@
+actionType: TriggerEnvSystem
+fields:
+  _envKey:
+    type: null | string
+    description: env Key
+    values:
+      -
+        value: env_005_mainline12_sightSystem
+        display: false
+        parse:
+          type: literal
+          return: env_005_mainline12_sightSystem
+      -
+        value: env_006_act25side_extra
+        display: false
+        parse:
+          type: literal
+          return: env_006_act25side_extra
+      -
+        value: env_007_act27side
+        display: false
+        parse:
+          type: literal
+          return: env_007_act27side
+      -
+        value: env_010_cooperate
+        display: false
+        parse:
+          type: literal
+          return: env_010_cooperate
+      -
+        value: env_017_act35side
+        display: false
+        parse:
+          type: literal
+          return: env_017_act35side
+      -
+        value: env_020_act38side
+        display: false
+        parse:
+          type: literal
+          return: env_020_act38side
+      -
+        value: env_040_act48side
+        display: false
+        parse:
+          type: literal
+          return: env_040_act48side
+      -
+        value: env_act42side_level_ctrl
+        display: false
+        parse:
+          type: literal
+          return: env_act42side_level_ctrl
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _eventName:
+    type: null | string
+    description: event Name
+    values:
+      -
+        value: event_on_carnival_finish
+        display: false
+        parse:
+          type: literal
+          return: event_on_carnival_finish
+      -
+        value: event_on_carnival_start
+        display: false
+        parse:
+          type: literal
+          return: event_on_carnival_start
+      -
+        value: event_take_damage_clear
+        display: false
+        parse:
+          type: literal
+          return: event_take_damage_clear
+      -
+        value: in_sleep_state
+        display: false
+        parse:
+          type: literal
+          return: in_sleep_state
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: out_sleep_state
+        display: false
+        parse:
+          type: literal
+          return: out_sleep_state
+      -
+        value: trap_full
+        display: false
+        parse:
+          type: literal
+          return: trap_full
+      -
+        value: trap_not_full
+        display: false
+        parse:
+          type: literal
+          return: trap_not_full
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _triggerWithBlackboard:
+    type: boolean
+    description: trigger With Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _triggerWithEvent:
+    type: boolean
+    description: trigger With Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,22 @@
+actionType: WithdrawAlltheSameExcludeSource
+fields:
+  _skipReborn:
+    type: boolean
+    description: skip Reborn
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

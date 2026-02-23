@@ -1,0 +1,25 @@
+field: _characterKeys
+type: object
+description: character Keys
+actions:
+  CheckTargetRootTile:
+    type: array
+    values:
+      -
+        value: "["trap_047_mandrablock"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

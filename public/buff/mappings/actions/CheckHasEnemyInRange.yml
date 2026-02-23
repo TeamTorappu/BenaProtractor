@@ -1,0 +1,208 @@
+actionType: CheckHasEnemyInRange
+fields:
+  _assignBBKey:
+    type: string
+    description: assign B B Key
+    values:
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _assignToBB:
+    type: boolean
+    description: assign To B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkId:
+    type: boolean
+    description: check Id
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkRadius:
+    type: boolean
+    description: check Radius
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+  _countKey:
+    type: string
+    description: count Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+  _excludeSource:
+    type: boolean
+    description: exclude Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludedBuffIds:
+    type: array | null
+    description: excluded Buff Ids
+    schema: action_subschema/_excludedBuffIds.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _includedBuffIds:
+    type: array | null
+    description: included Buff Ids
+    schema: action_subschema/_includedBuffIds.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _needCheckCount:
+    type: boolean
+    description: need Check Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+  _rangeRadius:
+    type: number
+    description: range Radius
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+  _soureceType:
+    type: string
+    description: sourece Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _useAttackRange:
+    type: boolean
+    description: use Attack Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

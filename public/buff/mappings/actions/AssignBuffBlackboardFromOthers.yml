@@ -1,0 +1,836 @@
+actionType: AssignBuffBlackboardFromOthers
+fields:
+  _blackboardKey:
+    type: null | string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffKey:
+    type: null | string
+    description: buff Key
+    values:
+      -
+        value: ParamStorage
+        display: false
+        parse:
+          type: literal
+          return: ParamStorage
+      -
+        value: act1autochess_gar_event_consume_ammo
+        display: false
+        parse:
+          type: literal
+          return: act1autochess_gar_event_consume_ammo
+      -
+        value: ally_source_direction
+        display: false
+        parse:
+          type: literal
+          return: ally_source_direction
+      -
+        value: "blkkgt_s_2[shield]"
+        display: false
+        parse:
+          type: literal
+          return: "blkkgt_s_2[shield]"
+      -
+        value: "catsld_t_1[core]"
+        display: false
+        parse:
+          type: literal
+          return: "catsld_t_1[core]"
+      -
+        value: char_chilc_s1_compute_cost
+        display: false
+        parse:
+          type: literal
+          return: char_chilc_s1_compute_cost
+      -
+        value: "chen3_s2[kill_info]"
+        display: false
+        parse:
+          type: literal
+          return: "chen3_s2[kill_info]"
+      -
+        value: dagda_talent_1
+        display: false
+        parse:
+          type: literal
+          return: dagda_talent_1
+      -
+        value: "damage_scale[not_block_by_source]"
+        display: false
+        parse:
+          type: literal
+          return: "damage_scale[not_block_by_source]"
+      -
+        value: enemy_arcthf_damage
+        display: false
+        parse:
+          type: literal
+          return: enemy_arcthf_damage
+      -
+        value: enemy_cbrokt_t
+        display: false
+        parse:
+          type: literal
+          return: enemy_cbrokt_t
+      -
+        value: "enemy_cbrush_t[effect]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_cbrush_t[effect]"
+      -
+        value: enemy_dycyue_branch_buff
+        display: false
+        parse:
+          type: literal
+          return: enemy_dycyue_branch_buff
+      -
+        value: enemy_dyjsww_direction_buff
+        display: false
+        parse:
+          type: literal
+          return: enemy_dyjsww_direction_buff
+      -
+        value: "enemy_lrmm[stormCtrl]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_lrmm[stormCtrl]"
+      -
+        value: "enemy_nstmom[skill_counter]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_nstmom[skill_counter]"
+      -
+        value: enemy_pope_param_storage
+        display: false
+        parse:
+          type: literal
+          return: enemy_pope_param_storage
+      -
+        value: "enemy_smcar[hit_count]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_smcar[hit_count]"
+      -
+        value: enemy_smcar_exp
+        display: false
+        parse:
+          type: literal
+          return: enemy_smcar_exp
+      -
+        value: enemy_solzac_hold_fragment
+        display: false
+        parse:
+          type: literal
+          return: enemy_solzac_hold_fragment
+      -
+        value: "enemy_ssttz[buff_during_skill]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ssttz[buff_during_skill]"
+      -
+        value: enemy_ssttz_has_trigger_character
+        display: false
+        parse:
+          type: literal
+          return: enemy_ssttz_has_trigger_character
+      -
+        value: enemy_tjgdly_dive_cd
+        display: false
+        parse:
+          type: literal
+          return: enemy_tjgdly_dive_cd
+      -
+        value: enemy_trwlpl_food
+        display: false
+        parse:
+          type: literal
+          return: enemy_trwlpl_food
+      -
+        value: enemy_vtmstr_equip_avaliable
+        display: false
+        parse:
+          type: literal
+          return: enemy_vtmstr_equip_avaliable
+      -
+        value: enemy_vtmstr_equip_shield
+        display: false
+        parse:
+          type: literal
+          return: enemy_vtmstr_equip_shield
+      -
+        value: "enemy_xdagt_t[undead]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_xdagt_t[undead]"
+      -
+        value: excu2_t_1
+        display: false
+        parse:
+          type: literal
+          return: excu2_t_1
+      -
+        value: excu2_trait
+        display: false
+        parse:
+          type: literal
+          return: excu2_trait
+      -
+        value: gamecity_score
+        display: false
+        parse:
+          type: literal
+          return: gamecity_score
+      -
+        value: "haini_t_1[blackboard]"
+        display: false
+        parse:
+          type: literal
+          return: "haini_t_1[blackboard]"
+      -
+        value: haruka_t_2
+        display: false
+        parse:
+          type: literal
+          return: haruka_t_2
+      -
+        value: "hlsttu_t[shield]"
+        display: false
+        parse:
+          type: literal
+          return: "hlsttu_t[shield]"
+      -
+        value: legion_mode_enemy_boost
+        display: false
+        parse:
+          type: literal
+          return: legion_mode_enemy_boost
+      -
+        value: legion_trap_sniper_blackboard_buff
+        display: false
+        parse:
+          type: literal
+          return: legion_trap_sniper_blackboard_buff
+      -
+        value: mpctrl_boss_stage
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_boss_stage
+      -
+        value: "multi_fortress_p[immunes]"
+        display: false
+        parse:
+          type: literal
+          return: "multi_fortress_p[immunes]"
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: "oblvns_t_1[cnt]"
+        display: false
+        parse:
+          type: literal
+          return: "oblvns_t_1[cnt]"
+      -
+        value: "shu_farm_buff[char]"
+        display: false
+        parse:
+          type: literal
+          return: "shu_farm_buff[char]"
+      -
+        value: shu_s_3
+        display: false
+        parse:
+          type: literal
+          return: shu_s_3
+      -
+        value: skagod_dash_stun_duration
+        display: false
+        parse:
+          type: literal
+          return: skagod_dash_stun_duration
+      -
+        value: skagod_speed_cache
+        display: false
+        parse:
+          type: literal
+          return: skagod_speed_cache
+      -
+        value: "skzth_t[resistance]"
+        display: false
+        parse:
+          type: literal
+          return: "skzth_t[resistance]"
+      -
+        value: "tile_quicksand[init_delta]"
+        display: false
+        parse:
+          type: literal
+          return: "tile_quicksand[init_delta]"
+      -
+        value: "tile_quicksand[trigger_falldown]"
+        display: false
+        parse:
+          type: literal
+          return: "tile_quicksand[trigger_falldown]"
+      -
+        value: "token_radian_tower3_s_3[link_message]"
+        display: false
+        parse:
+          type: literal
+          return: "token_radian_tower3_s_3[link_message]"
+      -
+        value: "trap_lrcore[invincible_ctrl]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_lrcore[invincible_ctrl]"
+      -
+        value: "trap_lrcore[passive_p1]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_lrcore[passive_p1]"
+      -
+        value: "trap_lrsiege[ctrl]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_lrsiege[ctrl]"
+      -
+        value: "trap_portlent[record_damage]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_portlent[record_damage]"
+      -
+        value: trap_trfood_common
+        display: false
+        parse:
+          type: literal
+          return: trap_trfood_common
+      -
+        value: trap_trpot_mark
+        display: false
+        parse:
+          type: literal
+          return: trap_trpot_mark
+      -
+        value: "varkis_s2[shield_core]"
+        display: false
+        parse:
+          type: literal
+          return: "varkis_s2[shield_core]"
+  _filterBuffSource:
+    type: boolean
+    description: filter Buff Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _valueKey:
+    type: null | string
+    description: value Key
+    values:
+      -
+        value: action_index
+        display: false
+        parse:
+          type: literal
+          return: action_index
+      -
+        value: added_pro_max_cnt
+        display: false
+        parse:
+          type: literal
+          return: added_pro_max_cnt
+      -
+        value: ally_source_direction
+        display: false
+        parse:
+          type: literal
+          return: ally_source_direction
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: atk_target_uid
+        display: false
+        parse:
+          type: literal
+          return: atk_target_uid
+      -
+        value: base_exp
+        display: false
+        parse:
+          type: literal
+          return: base_exp
+      -
+        value: branch_id
+        display: false
+        parse:
+          type: literal
+          return: branch_id
+      -
+        value: cached_damage
+        display: false
+        parse:
+          type: literal
+          return: cached_damage
+      -
+        value: cd_normal
+        display: false
+        parse:
+          type: literal
+          return: cd_normal
+      -
+        value: cd_print
+        display: false
+        parse:
+          type: literal
+          return: cd_print
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: consumed_cnt
+        display: false
+        parse:
+          type: literal
+          return: consumed_cnt
+      -
+        value: cur_point
+        display: false
+        parse:
+          type: literal
+          return: cur_point
+      -
+        value: current_atk
+        display: false
+        parse:
+          type: literal
+          return: current_atk
+      -
+        value: current_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: current_attack_speed
+      -
+        value: current_sp_ratio
+        display: false
+        parse:
+          type: literal
+          return: current_sp_ratio
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+      -
+        value: damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: danger_grade
+        display: false
+        parse:
+          type: literal
+          return: danger_grade
+      -
+        value: def
+        display: false
+        parse:
+          type: literal
+          return: def
+      -
+        value: direction
+        display: false
+        parse:
+          type: literal
+          return: direction
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: extend_scale
+        display: false
+        parse:
+          type: literal
+          return: extend_scale
+      -
+        value: front
+        display: false
+        parse:
+          type: literal
+          return: front
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+      -
+        value: hit_count
+        display: false
+        parse:
+          type: literal
+          return: hit_count
+      -
+        value: hp_max
+        display: false
+        parse:
+          type: literal
+          return: hp_max
+      -
+        value: init_range_radius
+        display: false
+        parse:
+          type: literal
+          return: init_range_radius
+      -
+        value: kill_enemy
+        display: false
+        parse:
+          type: literal
+          return: kill_enemy
+      -
+        value: loop_cnt
+        display: false
+        parse:
+          type: literal
+          return: loop_cnt
+      -
+        value: magic_resistance
+        display: false
+        parse:
+          type: literal
+          return: magic_resistance
+      -
+        value: max
+        display: false
+        parse:
+          type: literal
+          return: max
+      -
+        value: max_point
+        display: false
+        parse:
+          type: literal
+          return: max_point
+      -
+        value: mid_cost
+        display: false
+        parse:
+          type: literal
+          return: mid_cost
+      -
+        value: mode
+        display: false
+        parse:
+          type: literal
+          return: mode
+      -
+        value: next_mode
+        display: false
+        parse:
+          type: literal
+          return: next_mode
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: origin_speed
+        display: false
+        parse:
+          type: literal
+          return: origin_speed
+      -
+        value: prob
+        display: false
+        parse:
+          type: literal
+          return: prob
+      -
+        value: prob_cache
+        display: false
+        parse:
+          type: literal
+          return: prob_cache
+      -
+        value: range_radius_current
+        display: false
+        parse:
+          type: literal
+          return: range_radius_current
+      -
+        value: re_init_delta
+        display: false
+        parse:
+          type: literal
+          return: re_init_delta
+      -
+        value: recover_height_delta
+        display: false
+        parse:
+          type: literal
+          return: recover_height_delta
+      -
+        value: rect_index
+        display: false
+        parse:
+          type: literal
+          return: rect_index
+      -
+        value: restart
+        display: false
+        parse:
+          type: literal
+          return: restart
+      -
+        value: shield_cnt
+        display: false
+        parse:
+          type: literal
+          return: shield_cnt
+      -
+        value: shield_ratio_each_trigger
+        display: false
+        parse:
+          type: literal
+          return: shield_ratio_each_trigger
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+      -
+        value: speed_cache
+        display: false
+        parse:
+          type: literal
+          return: speed_cache
+      -
+        value: stun_duration
+        display: false
+        parse:
+          type: literal
+          return: stun_duration
+      -
+        value: target_pos
+        display: false
+        parse:
+          type: literal
+          return: target_pos
+      -
+        value: token_key
+        display: false
+        parse:
+          type: literal
+          return: token_key
+      -
+        value: trap_smfrut_respawn.interval
+        display: false
+        parse:
+          type: literal
+          return: trap_smfrut_respawn.interval
+      -
+        value: trpot_atk
+        display: false
+        parse:
+          type: literal
+          return: trpot_atk
+      -
+        value: trpot_attack_speed_1
+        display: false
+        parse:
+          type: literal
+          return: trpot_attack_speed_1
+      -
+        value: trpot_attack_speed_2
+        display: false
+        parse:
+          type: literal
+          return: trpot_attack_speed_2
+      -
+        value: trpot_duration_1
+        display: false
+        parse:
+          type: literal
+          return: trpot_duration_1
+      -
+        value: trpot_duration_2
+        display: false
+        parse:
+          type: literal
+          return: trpot_duration_2
+      -
+        value: trpot_ep_recovery_per_sec
+        display: false
+        parse:
+          type: literal
+          return: trpot_ep_recovery_per_sec
+      -
+        value: trpot_max_hp
+        display: false
+        parse:
+          type: literal
+          return: trpot_max_hp
+      -
+        value: trpot_sp
+        display: false
+        parse:
+          type: literal
+          return: trpot_sp
+      -
+        value: unlock
+        display: false
+        parse:
+          type: literal
+          return: unlock
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+      -
+        value: vtshld.damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: vtshld.damage_resistance
+      -
+        value: vtshld.damage_scale
+        display: false
+        parse:
+          type: literal
+          return: vtshld.damage_scale
+      -
+        value: vtshld.dynamic
+        display: false
+        parse:
+          type: literal
+          return: vtshld.dynamic
+      -
+        value: vtswd.atk
+        display: false
+        parse:
+          type: literal
+          return: vtswd.atk
+      -
+        value: vtswd.damage_scale
+        display: false
+        parse:
+          type: literal
+          return: vtswd.damage_scale
+      -
+        value: vtswd.dynamic
+        display: false
+        parse:
+          type: literal
+          return: vtswd.dynamic
+      -
+        value: vtwand.damage_scale
+        display: false
+        parse:
+          type: literal
+          return: vtwand.damage_scale
+      -
+        value: vtwand.disarmed_duration
+        display: false
+        parse:
+          type: literal
+          return: vtwand.disarmed_duration
+      -
+        value: vtwand.dynamic
+        display: false
+        parse:
+          type: literal
+          return: vtwand.dynamic

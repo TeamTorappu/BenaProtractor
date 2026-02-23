@@ -1,0 +1,104 @@
+actionType: ModifyAttributeDataRangeOverride
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ATTACK_SPEED
+        display: false
+        parse:
+          type: literal
+          return: ATTACK_SPEED
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+      -
+        value: MOVE_SPEED
+        display: false
+        parse:
+          type: literal
+          return: MOVE_SPEED
+  _doClear:
+    type: boolean
+    description: do Clear
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _maxValueKey:
+    type: null | string
+    description: max Value Key
+    values:
+      -
+        value: hp_origin
+        display: false
+        parse:
+          type: literal
+          return: hp_origin
+      -
+        value: init_max_hp
+        display: false
+        parse:
+          type: literal
+          return: init_max_hp
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _minValueKey:
+    type: string
+    description: min Value Key
+    values:
+      -
+        value: hp_origin
+        display: false
+        parse:
+          type: literal
+          return: hp_origin
+      -
+        value: init_max_hp
+        display: false
+        parse:
+          type: literal
+          return: init_max_hp
+      -
+        value: minValue
+        display: false
+        parse:
+          type: literal
+          return: minValue
+  _refresh:
+    type: boolean
+    description: refresh
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

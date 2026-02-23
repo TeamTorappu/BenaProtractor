@@ -1,0 +1,88 @@
+actionType: FilterDeathReason
+fields:
+  _finishReason:
+    type: string
+    description: finish Reason
+    values:
+      -
+        value: FALLDOWN
+        display: false
+        parse:
+          type: literal
+          return: FALLDOWN
+      -
+        value: HP_ZERO
+        display: false
+        parse:
+          type: literal
+          return: HP_ZERO
+      -
+        value: HP_ZERO_WITH_NO_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: HP_ZERO_WITH_NO_SOURCE
+      -
+        value: MOVE_LIKE_RESPAWN_SELF
+        display: false
+        parse:
+          type: literal
+          return: MOVE_LIKE_RESPAWN_SELF
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: OTHER
+        display: false
+        parse:
+          type: literal
+          return: OTHER
+      -
+        value: REACH_EXIT
+        display: false
+        parse:
+          type: literal
+          return: REACH_EXIT
+      -
+        value: REPLACED
+        display: false
+        parse:
+          type: literal
+          return: REPLACED
+      -
+        value: RESPAWN_SELF
+        display: false
+        parse:
+          type: literal
+          return: RESPAWN_SELF
+      -
+        value: SILENT_WITHDRAW
+        display: false
+        parse:
+          type: literal
+          return: SILENT_WITHDRAW
+      -
+        value: WITHDRAW
+        display: false
+        parse:
+          type: literal
+          return: WITHDRAW
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

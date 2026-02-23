@@ -1,0 +1,152 @@
+actionType: SummonEnemiesAverageOnTilesToTarget
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: passive
+        display: false
+        parse:
+          type: literal
+          return: passive
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _avoidObstacleLike:
+    type: boolean
+    description: avoid Obstacle Like
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkTileReachable:
+    type: boolean
+    description: check Tile Reachable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _enemyKey:
+    type: string
+    description: enemy Key
+    values:
+      -
+        value: enemy_4048_mubarn
+        display: false
+        parse:
+          type: literal
+          return: enemy_4048_mubarn
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+  _randomOffsetBound:
+    type: number
+    description: random Offset Bound
+    schema: action_subschema/_randomOffsetBound.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _randomStart:
+    type: boolean
+    description: random Start
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _spawnOnTarget:
+    type: boolean
+    description: spawn On Target
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _summonCnt:
+    type: number
+    description: summon Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _waitTime:
+    type: number
+    description: wait Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0

@@ -1,0 +1,114 @@
+actionType: SwitchDynamicBuffTileMode
+fields:
+  _decBbKey:
+    type: string
+    description: dec Bb Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: hit_dec_num
+        display: false
+        parse:
+          type: literal
+          return: hit_dec_num
+  _modeIndex:
+    type: number
+    description: mode Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+  _operation:
+    type: string
+    description: operation
+    values:
+      -
+        value: DEC_INDEX
+        display: false
+        parse:
+          type: literal
+          return: DEC_INDEX
+      -
+        value: INDEX
+        display: false
+        parse:
+          type: literal
+          return: INDEX
+  _specifyTileType:
+    type: boolean
+    description: specify Tile Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _tileType:
+    type: string
+    description: tile Type
+    values:
+      -
+        value: REED_TILE
+        display: false
+        parse:
+          type: literal
+          return: REED_TILE
+  _useOwnerRootTile:
+    type: boolean
+    description: use Owner Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useSwitchResult:
+    type: boolean
+    description: use Switch Result
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

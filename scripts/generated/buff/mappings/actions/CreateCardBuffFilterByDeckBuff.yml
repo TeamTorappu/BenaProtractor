@@ -1,0 +1,72 @@
+actionType: CreateCardBuffFilterByDeckBuff
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "supmech_t[flag]"
+        display: false
+        parse:
+          type: literal
+          return: "supmech_t[flag]"
+  _cardBuffKey:
+    type: null
+    description: card Buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: HOLD_BY_BUFF
+        display: false
+        parse:
+          type: literal
+          return: HOLD_BY_BUFF
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,192 @@
+actionType: BlinkNode
+fields:
+  _branchId:
+    type: null | string
+    description: branch Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: hand_blink
+        display: false
+        parse:
+          type: literal
+          return: hand_blink
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: skzjkl_stage_2
+        display: false
+        parse:
+          type: literal
+          return: skzjkl_stage_2
+  _distanceCustomKey:
+    type: null
+    description: distance Custom Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _failIfTargetGridIsRoot:
+    type: boolean
+    description: fail If Target Grid Is Root
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _forceSetDisappear:
+    type: boolean
+    description: force Set Disappear
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _forceToMapPosition:
+    type: boolean
+    description: force To Map Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _newRouteStartPointAsTargetPosition:
+    type: boolean
+    description: new Route Start Point As Target Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _skipDisappearCheckpoint:
+    type: boolean
+    description: skip Disappear Checkpoint
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _toMapPosition:
+    type: boolean
+    description: to Map Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _toNextCheckpoint:
+    type: boolean
+    description: to Next Checkpoint
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useAnimSpeed:
+    type: boolean
+    description: use Anim Speed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useNewRouteBeforeBlink:
+    type: boolean
+    description: use New Route Before Blink
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useRowAndColOnBlackboard:
+    type: boolean
+    description: use Row And Col On Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _withoutSwitchToBlinkState:
+    type: boolean
+    description: without Switch To Blink State
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

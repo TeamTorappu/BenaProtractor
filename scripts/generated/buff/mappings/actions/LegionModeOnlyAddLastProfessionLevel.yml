@@ -1,0 +1,22 @@
+actionType: LegionModeOnlyAddLastProfessionLevel
+fields:
+  _levelCnt:
+    type: number
+    description: level Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

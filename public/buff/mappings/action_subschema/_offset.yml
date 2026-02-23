@@ -1,0 +1,76 @@
+field: _offset
+type: object
+description: offset
+actions:
+  CheckModifierDirectionOffset:
+    type: object
+    values:
+      -
+        value: "{"row":1,"col":0}"
+        display: false
+        parse:
+          type: fn
+          name: parseoffset
+          args:
+            - $input
+            - $ctx
+  SummonEnemiesFollowMyRoute:
+    type: object
+    values:
+      -
+        value: "{"x":-1,"y":0}"
+        display: false
+        parse:
+          type: fn
+          name: parseoffset
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"x":0,"y":0}"
+        display: false
+        parse:
+          type: fn
+          name: parseoffset
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"x":0.10000000149011612,"y":-0.10000000149011612}"
+        display: false
+        parse:
+          type: fn
+          name: parseoffset
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"x":0.5,"y":-0.5}"
+        display: false
+        parse:
+          type: fn
+          name: parseoffset
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"x":1,"y":0}"
+        display: false
+        parse:
+          type: fn
+          name: parseoffset
+          args:
+            - $input
+            - $ctx
+  SummonEnemiesFollowMyRouteWithBuff:
+    type: object
+    values:
+      -
+        value: "{"x":0,"y":0}"
+        display: false
+        parse:
+          type: fn
+          name: parseoffset
+          args:
+            - $input
+            - $ctx

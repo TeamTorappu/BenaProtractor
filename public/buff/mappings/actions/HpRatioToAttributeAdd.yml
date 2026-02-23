@@ -1,0 +1,88 @@
+actionType: HpRatioToAttributeAdd
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: ATTACK_SPEED
+        display: false
+        parse:
+          type: literal
+          return: ATTACK_SPEED
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+      -
+        value: MAGIC_RESISTANCE
+        display: false
+        parse:
+          type: literal
+          return: MAGIC_RESISTANCE
+      -
+        value: SP_RECOVERY_PER_SEC
+        display: false
+        parse:
+          type: literal
+          return: SP_RECOVERY_PER_SEC
+  _hpRatioSource:
+    type: string
+    description: hp Ratio Source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _maxHpRatio:
+    type: number
+    description: max Hp Ratio
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _minHpRatio:
+    type: number
+    description: min Hp Ratio
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _overrideSource:
+    type: boolean
+    description: override Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,44 @@
+actionType: ModifyMaxCost
+fields:
+  _ensureCurCostNotExceedMax:
+    type: boolean
+    description: ensure Cur Cost Not Exceed Max
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isMinus:
+    type: boolean
+    description: is Minus
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE

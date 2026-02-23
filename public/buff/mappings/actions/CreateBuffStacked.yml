@@ -1,0 +1,234 @@
+actionType: CreateBuffStacked
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffOwner:
+    type: string
+    description: buff Owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isDisableOverrideBuff:
+    type: boolean
+    description: is Disable Override Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _stackCnt:
+    type: number
+    description: stack Cnt
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 15
+        display: false
+        parse:
+          type: literal
+          return: 15
+      -
+        value: 80
+        display: false
+        parse:
+          type: literal
+          return: 80
+  _stackCntKey:
+    type: string
+    description: stack Cnt Key
+    values:
+      -
+        value: additional_token_cnt
+        display: false
+        parse:
+          type: literal
+          return: additional_token_cnt
+      -
+        value: buffStackCount
+        display: false
+        parse:
+          type: literal
+          return: buffStackCount
+      -
+        value: buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: buff_cnt
+      -
+        value: casted_times
+        display: false
+        parse:
+          type: literal
+          return: casted_times
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: damage_cnt
+        display: false
+        parse:
+          type: literal
+          return: damage_cnt
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: gen_num
+        display: false
+        parse:
+          type: literal
+          return: gen_num
+      -
+        value: init_cnt
+        display: false
+        parse:
+          type: literal
+          return: init_cnt
+      -
+        value: initial_buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: initial_buff_cnt
+      -
+        value: mark_buff_count
+        display: false
+        parse:
+          type: literal
+          return: mark_buff_count
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: professionCnt
+        display: false
+        parse:
+          type: literal
+          return: professionCnt
+      -
+        value: real_init_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: real_init_stack_cnt
+      -
+        value: stack
+        display: false
+        parse:
+          type: literal
+          return: stack
+      -
+        value: stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt
+      -
+        value: stack_cnt_dif
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt_dif
+      -
+        value: stack_layer
+        display: false
+        parse:
+          type: literal
+          return: stack_layer
+      -
+        value: ulpia_t1_cnt
+        display: false
+        parse:
+          type: literal
+          return: ulpia_t1_cnt
+      -
+        value: upgrade_cnt
+        display: false
+        parse:
+          type: literal
+          return: upgrade_cnt

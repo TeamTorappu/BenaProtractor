@@ -1,0 +1,38 @@
+actionType: FilterCardState
+fields:
+  _cardState:
+    type: string
+    description: card State
+    values:
+      -
+        value: RESPAWNING
+        display: false
+        parse:
+          type: literal
+          return: RESPAWNING
+  _filterTokenOrHostCard:
+    type: boolean
+    description: filter Token Or Host Card
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

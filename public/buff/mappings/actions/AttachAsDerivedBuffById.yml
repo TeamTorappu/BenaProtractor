@@ -1,0 +1,188 @@
+actionType: AttachAsDerivedBuffById
+fields:
+  _attachToSourceHost:
+    type: boolean
+    description: attach To Source Host
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: ascln_t_1
+        display: false
+        parse:
+          type: literal
+          return: ascln_t_1
+      -
+        value: "chen3_s1[buff_holder]"
+        display: false
+        parse:
+          type: literal
+          return: "chen3_s1[buff_holder]"
+      -
+        value: "chen3_s2[target_kill]"
+        display: false
+        parse:
+          type: literal
+          return: "chen3_s2[target_kill]"
+      -
+        value: confes_t_1_blocked
+        display: false
+        parse:
+          type: literal
+          return: confes_t_1_blocked
+      -
+        value: enemy_mcnist_on_reborn
+        display: false
+        parse:
+          type: literal
+          return: enemy_mcnist_on_reborn
+      -
+        value: "enemy_xbtor_damage[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_xbtor_damage[mark]"
+      -
+        value: "haruka_s_3[talent]"
+        display: false
+        parse:
+          type: literal
+          return: "haruka_s_3[talent]"
+      -
+        value: lemuen_passive_mark
+        display: false
+        parse:
+          type: literal
+          return: lemuen_passive_mark
+      -
+        value: lemuen_s_3
+        display: false
+        parse:
+          type: literal
+          return: lemuen_s_3
+      -
+        value: "logos_s_2[focus]"
+        display: false
+        parse:
+          type: literal
+          return: "logos_s_2[focus]"
+      -
+        value: "nasti_nstchr_m2[dec_blood]"
+        display: false
+        parse:
+          type: literal
+          return: "nasti_nstchr_m2[dec_blood]"
+      -
+        value: nymph_t_1
+        display: false
+        parse:
+          type: literal
+          return: nymph_t_1
+      -
+        value: shu_t_1
+        display: false
+        parse:
+          type: literal
+          return: shu_t_1
+      -
+        value: token_phatm2_passive
+        display: false
+        parse:
+          type: literal
+          return: token_phatm2_passive
+      -
+        value: trap_lhrock_self
+        display: false
+        parse:
+          type: literal
+          return: trap_lhrock_self
+      -
+        value: "trap_lhrock_self[lhkawaSide]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_lhrock_self[lhkawaSide]"
+      -
+        value: wang_t_1_spawn
+        display: false
+        parse:
+          type: literal
+          return: wang_t_1_spawn
+      -
+        value: "yato2_s1_atk_check[holder]"
+        display: false
+        parse:
+          type: literal
+          return: "yato2_s1_atk_check[holder]"
+  _finishDerivedBuffIfNoParent:
+    type: boolean
+    description: finish Derived Buff If No Parent
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE

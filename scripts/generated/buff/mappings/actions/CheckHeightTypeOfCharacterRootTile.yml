@@ -1,0 +1,56 @@
+actionType: CheckHeightTypeOfCharacterRootTile
+fields:
+  _heightType:
+    type: string
+    description: height Type
+    values:
+      -
+        value: HIGHLAND
+        display: false
+        parse:
+          type: literal
+          return: HIGHLAND
+      -
+        value: LOWLAND
+        display: false
+        parse:
+          type: literal
+          return: LOWLAND
+  _isUnset:
+    type: boolean
+    description: is Unset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET

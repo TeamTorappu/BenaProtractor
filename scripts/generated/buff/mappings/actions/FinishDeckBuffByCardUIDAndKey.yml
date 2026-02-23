@@ -1,0 +1,60 @@
+actionType: FinishDeckBuffByCardUIDAndKey
+fields:
+  _blackBoardKey:
+    type: string
+    description: black Board Key
+    values:
+      -
+        value: card_uid
+        display: false
+        parse:
+          type: literal
+          return: card_uid
+  _deckBuff:
+    type: object
+    description: deck Buff
+    schema: action_subschema/_deckBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _deckBuffKey:
+    type: string
+    description: deck Buff Key
+    values:
+      -
+        value: deck_common_devour
+        display: false
+        parse:
+          type: literal
+          return: deck_common_devour
+      -
+        value: dyrnge_deck
+        display: false
+        parse:
+          type: literal
+          return: dyrnge_deck
+      -
+        value: enemy_mjcdog_deck
+        display: false
+        parse:
+          type: literal
+          return: enemy_mjcdog_deck
+      -
+        value: nhkodo_deck
+        display: false
+        parse:
+          type: literal
+          return: nhkodo_deck
+  _readUIDFromInt:
+    type: boolean
+    description: read U I D From Int
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

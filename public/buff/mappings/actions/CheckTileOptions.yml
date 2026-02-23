@@ -1,0 +1,22 @@
+actionType: CheckTileOptions
+fields:
+  _advancedBuildableMask:
+    type: string
+    description: advanced Buildable Mask
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+  _ignoreAdvancedBuildableMask:
+    type: boolean
+    description: ignore Advanced Buildable Mask
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

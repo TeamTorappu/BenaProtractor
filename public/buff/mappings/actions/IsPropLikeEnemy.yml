@@ -1,0 +1,22 @@
+actionType: IsPropLikeEnemy
+fields:
+  _CheckIsInPropLikeState:
+    type: boolean
+    description: Check Is In Prop Like State
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET

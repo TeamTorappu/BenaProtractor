@@ -1,0 +1,34 @@
+actionType: RoguelikeShowToastRL04
+fields:
+  _lastTime:
+    type: number
+    description: last Time
+    values:
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+  _toastTypeRL04:
+    type: string
+    description: toast Type R L04
+    values:
+      -
+        value: DISASTER_CONTINUE
+        display: false
+        parse:
+          type: literal
+          return: DISASTER_CONTINUE
+      -
+        value: GOLD_STEAL
+        display: false
+        parse:
+          type: literal
+          return: GOLD_STEAL
+      -
+        value: SKZDD_PREACH
+        display: false
+        parse:
+          type: literal
+          return: SKZDD_PREACH

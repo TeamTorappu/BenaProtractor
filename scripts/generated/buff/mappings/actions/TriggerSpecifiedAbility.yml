@@ -1,0 +1,114 @@
+actionType: TriggerSpecifiedAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: AromaticProjectile
+        display: false
+        parse:
+          type: literal
+          return: AromaticProjectile
+      -
+        value: blacksteel_energy
+        display: false
+        parse:
+          type: literal
+          return: blacksteel_energy
+  _checkCanUseAblityFlag:
+    type: boolean
+    description: check Can Use Ablity Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _triggerEnergyBuffAbility:
+    type: boolean
+    description: trigger Energy Buff Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _triggerProjectileToTileOnceAbilityBySubSelector:
+    type: boolean
+    description: trigger Projectile To Tile Once Ability By Sub Selector
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _triggerStealAttrAbility:
+    type: boolean
+    description: trigger Steal Attr Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

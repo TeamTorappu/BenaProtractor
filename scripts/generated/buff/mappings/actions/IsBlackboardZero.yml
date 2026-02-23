@@ -1,0 +1,244 @@
+actionType: IsBlackboardZero
+fields:
+  _noVarShowWarning:
+    type: boolean
+    description: no Var Show Warning
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _var:
+    type: string
+    description: var
+    values:
+      -
+        value: Boomed
+        display: false
+        parse:
+          type: literal
+          return: Boomed
+      -
+        value: attack@max_cnt
+        display: false
+        parse:
+          type: literal
+          return: attack@max_cnt
+      -
+        value: avoid_dup_trigger_lock
+        display: false
+        parse:
+          type: literal
+          return: avoid_dup_trigger_lock
+      -
+        value: blocked
+        display: false
+        parse:
+          type: literal
+          return: blocked
+      -
+        value: born_duration
+        display: false
+        parse:
+          type: literal
+          return: born_duration
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cnt_added
+        display: false
+        parse:
+          type: literal
+          return: cnt_added
+      -
+        value: cold_twice
+        display: false
+        parse:
+          type: literal
+          return: cold_twice
+      -
+        value: count
+        display: false
+        parse:
+          type: literal
+          return: count
+      -
+        value: create_effect
+        display: false
+        parse:
+          type: literal
+          return: create_effect
+      -
+        value: do_not_trigger_tile
+        display: false
+        parse:
+          type: literal
+          return: do_not_trigger_tile
+      -
+        value: drop_disable
+        display: false
+        parse:
+          type: literal
+          return: drop_disable
+      -
+        value: duration
+        display: false
+        parse:
+          type: literal
+          return: duration
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: ep_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio
+      -
+        value: ep_scale
+        display: false
+        parse:
+          type: literal
+          return: ep_scale
+      -
+        value: equip_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: equip_atk_scale
+      -
+        value: first_snow
+        display: false
+        parse:
+          type: literal
+          return: first_snow
+      -
+        value: food_disable
+        display: false
+        parse:
+          type: literal
+          return: food_disable
+      -
+        value: food_disable_self
+        display: false
+        parse:
+          type: literal
+          return: food_disable_self
+      -
+        value: hlevel_mark
+        display: false
+        parse:
+          type: literal
+          return: hlevel_mark
+      -
+        value: isBossLevel
+        display: false
+        parse:
+          type: literal
+          return: isBossLevel
+      -
+        value: isTriggered
+        display: false
+        parse:
+          type: literal
+          return: isTriggered
+      -
+        value: is_power
+        display: false
+        parse:
+          type: literal
+          return: is_power
+      -
+        value: lock
+        display: false
+        parse:
+          type: literal
+          return: lock
+      -
+        value: mode_1
+        display: false
+        parse:
+          type: literal
+          return: mode_1
+      -
+        value: no_extra
+        display: false
+        parse:
+          type: literal
+          return: no_extra
+      -
+        value: ratio_checker
+        display: false
+        parse:
+          type: literal
+          return: ratio_checker
+      -
+        value: reset_spawn_when_finish
+        display: false
+        parse:
+          type: literal
+          return: reset_spawn_when_finish
+      -
+        value: respawn_time
+        display: false
+        parse:
+          type: literal
+          return: respawn_time
+      -
+        value: skill_finish
+        display: false
+        parse:
+          type: literal
+          return: skill_finish
+      -
+        value: special
+        display: false
+        parse:
+          type: literal
+          return: special
+      -
+        value: step
+        display: false
+        parse:
+          type: literal
+          return: step
+      -
+        value: triggered
+        display: false
+        parse:
+          type: literal
+          return: triggered
+      -
+        value: uni_special
+        display: false
+        parse:
+          type: literal
+          return: uni_special
+      -
+        value: unlock
+        display: false
+        parse:
+          type: literal
+          return: unlock
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value

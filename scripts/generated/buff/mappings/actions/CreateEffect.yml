@@ -1,0 +1,3020 @@
+actionType: CreateEffect
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _constDirection:
+    type: string
+    description: const Direction
+    values:
+      -
+        value: UP
+        display: false
+        parse:
+          type: literal
+          return: UP
+  _createEffectHoldBySource:
+    type: boolean
+    description: create Effect Hold By Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: UI_035_gather
+        display: false
+        parse:
+          type: literal
+          return: UI_035_gather
+      -
+        value: UI_035_retreat
+        display: false
+        parse:
+          type: literal
+          return: UI_035_retreat
+      -
+        value: acfend_skill_03_hit
+        display: false
+        parse:
+          type: literal
+          return: acfend_skill_03_hit
+      -
+        value: akkord_skill_02_range_01
+        display: false
+        parse:
+          type: literal
+          return: akkord_skill_02_range_01
+      -
+        value: amiya3_characteristic_01_hit
+        display: false
+        parse:
+          type: literal
+          return: amiya3_characteristic_01_hit
+      -
+        value: amiya3_skill_01_range
+        display: false
+        parse:
+          type: literal
+          return: amiya3_skill_01_range
+      -
+        value: ascln_skill_02_death_01
+        display: false
+        parse:
+          type: literal
+          return: ascln_skill_02_death_01
+      -
+        value: ascln_skill_03_buff_02
+        display: false
+        parse:
+          type: literal
+          return: ascln_skill_03_buff_02
+      -
+        value: blkngt_skill_02_range
+        display: false
+        parse:
+          type: literal
+          return: blkngt_skill_02_range
+      -
+        value: bond_aegir_eat_01
+        display: false
+        parse:
+          type: literal
+          return: bond_aegir_eat_01
+      -
+        value: bond_charge_battle_01
+        display: false
+        parse:
+          type: literal
+          return: bond_charge_battle_01
+      -
+        value: bond_laterano_reload_01
+        display: false
+        parse:
+          type: literal
+          return: bond_laterano_reload_01
+      -
+        value: branch_talent_01
+        display: false
+        parse:
+          type: literal
+          return: branch_talent_01
+      -
+        value: cetsyr_skill_03_burst_01
+        display: false
+        parse:
+          type: literal
+          return: cetsyr_skill_03_burst_01
+      -
+        value: char_157_dagda_recover_01
+        display: false
+        parse:
+          type: literal
+          return: char_157_dagda_recover_01
+      -
+        value: char_confes_hint
+        display: false
+        parse:
+          type: literal
+          return: char_confes_hint
+      -
+        value: chen3_Shield_buff_02
+        display: false
+        parse:
+          type: literal
+          return: chen3_Shield_buff_02
+      -
+        value: chen3_buff_start_01
+        display: false
+        parse:
+          type: literal
+          return: chen3_buff_start_01
+      -
+        value: chyue_buff_01_hit
+        display: false
+        parse:
+          type: literal
+          return: chyue_buff_01_hit
+      -
+        value: cliff_refresh
+        display: false
+        parse:
+          type: literal
+          return: cliff_refresh
+      -
+        value: common_V040_buff_blood_01
+        display: false
+        parse:
+          type: literal
+          return: common_V040_buff_blood_01
+      -
+        value: common_V049_insect_catch_01
+        display: false
+        parse:
+          type: literal
+          return: common_V049_insect_catch_01
+      -
+        value: common_V049_insect_heal_start_01
+        display: false
+        parse:
+          type: literal
+          return: common_V049_insect_heal_start_01
+      -
+        value: common_V049_insect_roar_01
+        display: false
+        parse:
+          type: literal
+          return: common_V049_insect_roar_01
+      -
+        value: common_V049_insect_roar_02
+        display: false
+        parse:
+          type: literal
+          return: common_V049_insect_roar_02
+      -
+        value: common_V050_hint_2
+        display: false
+        parse:
+          type: literal
+          return: common_V050_hint_2
+      -
+        value: common_V066_hint_special
+        display: false
+        parse:
+          type: literal
+          return: common_V066_hint_special
+      -
+        value: common_bubble_happy
+        display: false
+        parse:
+          type: literal
+          return: common_bubble_happy
+      -
+        value: common_bubble_sad
+        display: false
+        parse:
+          type: literal
+          return: common_bubble_sad
+      -
+        value: common_buff_parry_01
+        display: false
+        parse:
+          type: literal
+          return: common_buff_parry_01
+      -
+        value: common_building_hit_2
+        display: false
+        parse:
+          type: literal
+          return: common_building_hit_2
+      -
+        value: common_building_transform_2
+        display: false
+        parse:
+          type: literal
+          return: common_building_transform_2
+      -
+        value: common_charge_cost_01
+        display: false
+        parse:
+          type: literal
+          return: common_charge_cost_01
+      -
+        value: common_charge_cost_start_01
+        display: false
+        parse:
+          type: literal
+          return: common_charge_cost_start_01
+      -
+        value: common_charge_cost_start_01_white
+        display: false
+        parse:
+          type: literal
+          return: common_charge_cost_start_01_white
+      -
+        value: common_darkdamage_hit
+        display: false
+        parse:
+          type: literal
+          return: common_darkdamage_hit
+      -
+        value: common_firedamage_hit
+        display: false
+        parse:
+          type: literal
+          return: common_firedamage_hit
+      -
+        value: common_heal_hit_01
+        display: false
+        parse:
+          type: literal
+          return: common_heal_hit_01
+      -
+        value: common_magic_hit_01
+        display: false
+        parse:
+          type: literal
+          return: common_magic_hit_01
+      -
+        value: common_multiplayer_teleport_1
+        display: false
+        parse:
+          type: literal
+          return: common_multiplayer_teleport_1
+      -
+        value: common_multiplayer_teleport_2
+        display: false
+        parse:
+          type: literal
+          return: common_multiplayer_teleport_2
+      -
+        value: common_purify_01
+        display: false
+        parse:
+          type: literal
+          return: common_purify_01
+      -
+        value: common_spring_water_hit
+        display: false
+        parse:
+          type: literal
+          return: common_spring_water_hit
+      -
+        value: common_trap_broken
+        display: false
+        parse:
+          type: literal
+          return: common_trap_broken
+      -
+        value: common_trap_intro
+        display: false
+        parse:
+          type: literal
+          return: common_trap_intro
+      -
+        value: common_trap_upgrade_end
+        display: false
+        parse:
+          type: literal
+          return: common_trap_upgrade_end
+      -
+        value: common_waterElementExplosion
+        display: false
+        parse:
+          type: literal
+          return: common_waterElementExplosion
+      -
+        value: dekght_2_skill_01_range
+        display: false
+        parse:
+          type: literal
+          return: dekght_2_skill_01_range
+      -
+        value: dolris_heal_hit_01
+        display: false
+        parse:
+          type: literal
+          return: dolris_heal_hit_01
+      -
+        value: ebnhlz_beidong_hit
+        display: false
+        parse:
+          type: literal
+          return: ebnhlz_beidong_hit
+      -
+        value: enemy_acbunn_switch
+        display: false
+        parse:
+          type: literal
+          return: enemy_acbunn_switch
+      -
+        value: enemy_acdums_switch
+        display: false
+        parse:
+          type: literal
+          return: enemy_acdums_switch
+      -
+        value: enemy_achunt_chain_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_achunt_chain_hit
+      -
+        value: enemy_achunt_skill_1_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_achunt_skill_1_hit
+      -
+        value: enemy_acpupp_henshin
+        display: false
+        parse:
+          type: literal
+          return: enemy_acpupp_henshin
+      -
+        value: enemy_acstmr_explode
+        display: false
+        parse:
+          type: literal
+          return: enemy_acstmr_explode
+      -
+        value: enemy_actoxi_die_2_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_actoxi_die_2_start
+      -
+        value: enemy_actrpa_skill_a_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_actrpa_skill_a_hit
+      -
+        value: enemy_arctxi_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_arctxi_hit_01
+      -
+        value: enemy_balloon_land_01_start_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_balloon_land_01_start_02
+      -
+        value: enemy_balloon_land_01_start_l
+        display: false
+        parse:
+          type: literal
+          return: enemy_balloon_land_01_start_l
+      -
+        value: enemy_balloon_land_01_start_r
+        display: false
+        parse:
+          type: literal
+          return: enemy_balloon_land_01_start_r
+      -
+        value: enemy_balloon_take_off_01_start_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_balloon_take_off_01_start_02
+      -
+        value: enemy_balloon_take_off_01_start_l
+        display: false
+        parse:
+          type: literal
+          return: enemy_balloon_take_off_01_start_l
+      -
+        value: enemy_balloon_take_off_01_start_r
+        display: false
+        parse:
+          type: literal
+          return: enemy_balloon_take_off_01_start_r
+      -
+        value: enemy_bbrain_characteristic_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_bbrain_characteristic_hit
+      -
+        value: enemy_bhrgrd_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_bhrgrd_buff_01
+      -
+        value: enemy_bhrgrd_cost_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_bhrgrd_cost_01
+      -
+        value: enemy_bhrknf_cost_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_bhrknf_cost_01
+      -
+        value: enemy_bldbld_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_bldbld_die_01
+      -
+        value: enemy_blkswb_skill_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_blkswb_skill_01_hit_01
+      -
+        value: enemy_blord_L2_skill_03_goaway_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_blord_L2_skill_03_goaway_01
+      -
+        value: enemy_blwazd_attack_hit_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_blwazd_attack_hit_buff_01
+      -
+        value: enemy_bomscr_die_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_bomscr_die_start
+      -
+        value: enemy_bthtbw_hit_03
+        display: false
+        parse:
+          type: literal
+          return: enemy_bthtbw_hit_03
+      -
+        value: enemy_captan_C2_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_captan_C2_buff_01
+      -
+        value: enemy_cjdoor_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjdoor_buff_01
+      -
+        value: enemy_cjgost_buff_05
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjgost_buff_05
+      -
+        value: enemy_cjstel_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjstel_buff_01
+      -
+        value: enemy_cjtaot_buff_04
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjtaot_buff_04
+      -
+        value: enemy_cjtaot_die_end_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjtaot_die_end_01
+      -
+        value: enemy_cjtaot_die_end_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjtaot_die_end_02
+      -
+        value: enemy_cnvbln_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_cnvbln_hit_01
+      -
+        value: enemy_cnvdnc_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_cnvdnc_hit_01
+      -
+        value: enemy_crzjdg_attack_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_crzjdg_attack_hit_01
+      -
+        value: enemy_csdoll_skill_01_buff_01_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_csdoll_skill_01_buff_01_end
+      -
+        value: enemy_cshost_tokenBreak_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_cshost_tokenBreak_01
+      -
+        value: enemy_dhdcr_awake
+        display: false
+        parse:
+          type: literal
+          return: enemy_dhdcr_awake
+      -
+        value: enemy_dhnzzh_A_attack_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dhnzzh_A_attack_01
+      -
+        value: enemy_dhnzzh_B_born_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dhnzzh_B_born_01
+      -
+        value: enemy_dhnzzh_C_Start_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_dhnzzh_C_Start_02
+      -
+        value: enemy_dhnzzh_C_skill_01_buff_03
+        display: false
+        parse:
+          type: literal
+          return: enemy_dhnzzh_C_skill_01_buff_03
+      -
+        value: enemy_dhnzzh_C_skill_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dhnzzh_C_skill_buff_01
+      -
+        value: enemy_dhtb_attack_1_hit_1
+        display: false
+        parse:
+          type: literal
+          return: enemy_dhtb_attack_1_hit_1
+      -
+        value: enemy_dhtb_attack_2_hit_1
+        display: false
+        parse:
+          type: literal
+          return: enemy_dhtb_attack_2_hit_1
+      -
+        value: enemy_dsbish_C2_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dsbish_C2_buff_01
+      -
+        value: enemy_dsbish_C2_screen
+        display: false
+        parse:
+          type: literal
+          return: enemy_dsbish_C2_screen
+      -
+        value: enemy_dsbish_blood_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dsbish_blood_01
+      -
+        value: enemy_dsbish_call
+        display: false
+        parse:
+          type: literal
+          return: enemy_dsbish_call
+      -
+        value: enemy_dsbish_call_birth
+        display: false
+        parse:
+          type: literal
+          return: enemy_dsbish_call_birth
+      -
+        value: enemy_dsbish_die
+        display: false
+        parse:
+          type: literal
+          return: enemy_dsbish_die
+      -
+        value: enemy_dslily_skill_04_range
+        display: false
+        parse:
+          type: literal
+          return: enemy_dslily_skill_04_range
+      -
+        value: enemy_dslime_heal_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dslime_heal_01
+      -
+        value: enemy_dslntf_buff_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_dslntf_buff_02
+      -
+        value: enemy_dsubrl_attack_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_dsubrl_attack_hit
+      -
+        value: enemy_dthmak_attack_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_dthmak_attack_hit_02
+      -
+        value: enemy_dugago _2_start_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dugago _2_start_01
+      -
+        value: enemy_durcar_buff_recovery_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_durcar_buff_recovery_01
+      -
+        value: enemy_durcar_buff_speedup_range_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_durcar_buff_speedup_range_01
+      -
+        value: enemy_durcar_buff_treat_range_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_durcar_buff_treat_range_01
+      -
+        value: enemy_durcar_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_durcar_hit_01
+      -
+        value: enemy_durokt_2_Die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_durokt_2_Die_01
+      -
+        value: enemy_dusocr_2_attack_01_trail
+        display: false
+        parse:
+          type: literal
+          return: enemy_dusocr_2_attack_01_trail
+      -
+        value: enemy_dusocr_2_attack_01_trail_Die
+        display: false
+        parse:
+          type: literal
+          return: enemy_dusocr_2_attack_01_trail_Die
+      -
+        value: enemy_dyhlgy_skill_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dyhlgy_skill_hit_01
+      -
+        value: enemy_dyjsfg_skill_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dyjsfg_skill_01
+      -
+        value: enemy_dyjsfg_skill_02_range_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_dyjsfg_skill_02_range_02
+      -
+        value: enemy_dylnpp_attack_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dylnpp_attack_hit_01
+      -
+        value: enemy_dypryg_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dypryg_buff_01
+      -
+        value: enemy_dyspll_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dyspll_hit_01
+      -
+        value: enemy_dytmbr_skill_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_dytmbr_skill_buff_01
+      -
+        value: enemy_eltrsm_phase_1_emp
+        display: false
+        parse:
+          type: literal
+          return: enemy_eltrsm_phase_1_emp
+      -
+        value: enemy_flmlod_phase3_die
+        display: false
+        parse:
+          type: literal
+          return: enemy_flmlod_phase3_die
+      -
+        value: enemy_flmspr_explode_1
+        display: false
+        parse:
+          type: literal
+          return: enemy_flmspr_explode_1
+      -
+        value: enemy_frgzac_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_frgzac_die_01
+      -
+        value: enemy_fystone_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_fystone_hit
+      -
+        value: enemy_hummbd_die_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_hummbd_die_02
+      -
+        value: enemy_ictruck_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ictruck_die_01
+      -
+        value: enemy_irccon_ground_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_irccon_ground_end
+      -
+        value: enemy_irccon_ground_range
+        display: false
+        parse:
+          type: literal
+          return: enemy_irccon_ground_range
+      -
+        value: enemy_irrook_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_irrook_hit_01
+      -
+        value: enemy_jakill_skill_01_hit_reborn
+        display: false
+        parse:
+          type: literal
+          return: enemy_jakill_skill_01_hit_reborn
+      -
+        value: enemy_lhship_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_lhship_buff_01
+      -
+        value: enemy_lramiy_attack_01_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_lramiy_attack_01_hit
+      -
+        value: enemy_lrdead_destroy_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_lrdead_destroy_01
+      -
+        value: enemy_lrtsia_skill_01_range_die
+        display: false
+        parse:
+          type: literal
+          return: enemy_lrtsia_skill_01_range_die
+      -
+        value: enemy_lrtsia_skill_02_Revive_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_lrtsia_skill_02_Revive_end
+      -
+        value: enemy_ltmage_attack_hit_1
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltmage_attack_hit_1
+      -
+        value: enemy_ltmage_attack_splash
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltmage_attack_splash
+      -
+        value: enemy_ltnhap_attact_ap_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltnhap_attact_ap_hit_02
+      -
+        value: enemy_ltniak_A_attack_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltniak_A_attack_hit_01
+      -
+        value: enemy_ltniak_B_attack_range_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltniak_B_attack_range_01
+      -
+        value: enemy_ltntpt_attack_ap_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltntpt_attack_ap_hit_02
+      -
+        value: enemy_ltntpt_attack_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltntpt_attack_hit_02
+      -
+        value: enemy_ltrock_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltrock_die_01
+      -
+        value: enemy_ltssch_attack_01_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltssch_attack_01_hit
+      -
+        value: enemy_lysyta_die
+        display: false
+        parse:
+          type: literal
+          return: enemy_lysyta_die
+      -
+        value: enemy_lysytb_die
+        display: false
+        parse:
+          type: literal
+          return: enemy_lysytb_die
+      -
+        value: enemy_lysytc_die
+        display: false
+        parse:
+          type: literal
+          return: enemy_lysytc_die
+      -
+        value: enemy_mandra_c1_skill_02_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mandra_c1_skill_02_hit
+      -
+        value: enemy_manfri_buff_01_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_manfri_buff_01_end
+      -
+        value: enemy_mcndog_A_skill_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mcndog_A_skill_hit_01
+      -
+        value: enemy_mcnist_cross_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mcnist_cross_hit
+      -
+        value: enemy_mcnrhd_skill_shield_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mcnrhd_skill_shield_01
+      -
+        value: enemy_mcnrsh_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mcnrsh_hit_01
+      -
+        value: enemy_mdhmmr_buff_05_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_mdhmmr_buff_05_start
+      -
+        value: enemy_mdrock_skill_buff_05
+        display: false
+        parse:
+          type: literal
+          return: enemy_mdrock_skill_buff_05
+      -
+        value: enemy_mhkryk_attack_B_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mhkryk_attack_B_hit_01
+      -
+        value: enemy_mhprpn_hit_back
+        display: false
+        parse:
+          type: literal
+          return: enemy_mhprpn_hit_back
+      -
+        value: enemy_mhprpn_skill_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_mhprpn_skill_start
+      -
+        value: enemy_mhrhcr_hit_front
+        display: false
+        parse:
+          type: literal
+          return: enemy_mhrhcr_hit_front
+      -
+        value: enemy_mhrors_cut_buff
+        display: false
+        parse:
+          type: literal
+          return: enemy_mhrors_cut_buff
+      -
+        value: enemy_mhtrtl_hit_back
+        display: false
+        parse:
+          type: literal
+          return: enemy_mhtrtl_hit_back
+      -
+        value: enemy_mmamiy_lose_blood_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mmamiy_lose_blood_01
+      -
+        value: enemy_mmjump_buff_01_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_mmjump_buff_01_end
+      -
+        value: enemy_mmkabi_range_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mmkabi_range_01
+      -
+        value: enemy_mmkonm_crush_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mmkonm_crush_01
+      -
+        value: enemy_mnchrn_Revive_end_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnchrn_Revive_end_01
+      -
+        value: enemy_mnchrn_recover_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnchrn_recover_01
+      -
+        value: enemy_mncrer_die_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_mncrer_die_start
+      -
+        value: enemy_mnctur_rush_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnctur_rush_hit
+      -
+        value: enemy_mnctur_stun_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnctur_stun_hit
+      -
+        value: enemy_mpplai_brith_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mpplai_brith_01
+      -
+        value: enemy_mpprss_birth_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mpprss_birth_01
+      -
+        value: enemy_mpprss_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mpprss_die_01
+      -
+        value: enemy_mpprts_C_trail_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mpprts_C_trail_01
+      -
+        value: enemy_mpprts_die_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_mpprts_die_02
+      -
+        value: enemy_mtmoun_skill_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_mtmoun_skill_02
+      -
+        value: enemy_mublow_skill_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mublow_skill_hit_01
+      -
+        value: enemy_muboom_die_start_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_muboom_die_start_02
+      -
+        value: enemy_mufbsa_attack_buff_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_mufbsa_attack_buff_02
+      -
+        value: enemy_mufbsc_attack_buff_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_mufbsc_attack_buff_02
+      -
+        value: enemy_mufbse_attack_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mufbse_attack_buff_01
+      -
+        value: enemy_mukfum_attack_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_mukfum_attack_hit_02
+      -
+        value: enemy_mumole_skill_01_buff
+        display: false
+        parse:
+          type: literal
+          return: enemy_mumole_skill_01_buff
+      -
+        value: enemy_mumole_skill_02_buff
+        display: false
+        parse:
+          type: literal
+          return: enemy_mumole_skill_02_buff
+      -
+        value: enemy_mundr_trail_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mundr_trail_01
+      -
+        value: enemy_murino_attack_hit_front_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_murino_attack_hit_front_01
+      -
+        value: enemy_murtre_skill_start_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_murtre_skill_start_01
+      -
+        value: enemy_murtre_trail_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_murtre_trail_01
+      -
+        value: enemy_muvltr_die_start_ground_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_muvltr_die_start_ground_01
+      -
+        value: enemy_muvltr_die_start_ground_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_muvltr_die_start_ground_02
+      -
+        value: enemy_ncrmcr_skill_02_shield_end_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ncrmcr_skill_02_shield_end_01
+      -
+        value: enemy_ncrmcr_skill_02_start_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ncrmcr_skill_02_start_01
+      -
+        value: enemy_nhapos_attack_range_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_nhapos_attack_range_end
+      -
+        value: enemy_nstmom_attack_01_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_nstmom_attack_01_hit
+      -
+        value: enemy_nstmom_attack_02_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_nstmom_attack_02_hit
+      -
+        value: enemy_nstmom_skill_01_line
+        display: false
+        parse:
+          type: literal
+          return: enemy_nstmom_skill_01_line
+      -
+        value: enemy_paki_skill_01_1
+        display: false
+        parse:
+          type: literal
+          return: enemy_paki_skill_01_1
+      -
+        value: enemy_paki_skill_01_2
+        display: false
+        parse:
+          type: literal
+          return: enemy_paki_skill_01_2
+      -
+        value: enemy_parrot_land
+        display: false
+        parse:
+          type: literal
+          return: enemy_parrot_land
+      -
+        value: enemy_ristar_transform
+        display: false
+        parse:
+          type: literal
+          return: enemy_ristar_transform
+      -
+        value: enemy_rllamb_skill_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_rllamb_skill_01_hit_01
+      -
+        value: enemy_scarab_die_start_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_scarab_die_start_01
+      -
+        value: enemy_sfsui_die_01_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_sfsui_die_01_start
+      -
+        value: enemy_sfsui_start_01_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_sfsui_start_01_start
+      -
+        value: enemy_sfsui_start_01_start_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_sfsui_start_01_start_02
+      -
+        value: enemy_sgrich_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_sgrich_die_01
+      -
+        value: enemy_sheart_skill_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_sheart_skill_01
+      -
+        value: enemy_shpkg_screenWarning_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_shpkg_screenWarning_01
+      -
+        value: enemy_shpkg_skill_02_pink_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_shpkg_skill_02_pink_hit_01
+      -
+        value: enemy_skagod_buff_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_skagod_buff_02
+      -
+        value: enemy_skagod_skill_AB_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_skagod_skill_AB_hit_01
+      -
+        value: enemy_skzamy_A_Blink_End
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzamy_A_Blink_End
+      -
+        value: enemy_skzamy_Revive_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzamy_Revive_end
+      -
+        value: enemy_skzirn_die
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzirn_die
+      -
+        value: enemy_skzirn_die_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzirn_die_hit
+      -
+        value: enemy_skzjkl_BC_Revive_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzjkl_BC_Revive_02
+      -
+        value: enemy_skzjkl_B_Revive_end_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzjkl_B_Revive_end_02
+      -
+        value: enemy_skzjkl_B_Revive_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzjkl_B_Revive_hit_01
+      -
+        value: enemy_skzlwy_skill_02_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzlwy_skill_02_start
+      -
+        value: enemy_skzmst_skill_start_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzmst_skill_start_02
+      -
+        value: enemy_smcar_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_smcar_die_01
+      -
+        value: enemy_smcar_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_smcar_hit_01
+      -
+        value: enemy_smedzi_Move_End_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_smedzi_Move_End_01
+      -
+        value: enemy_smedzi_attack_Die_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_smedzi_attack_Die_02
+      -
+        value: enemy_smlion_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_smlion_hit_01
+      -
+        value: enemy_smlion_skill_01_start_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_smlion_skill_01_start_02
+      -
+        value: enemy_splash_skill01_buff_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_splash_skill01_buff_end
+      -
+        value: enemy_splash_skill01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_splash_skill01_hit_01
+      -
+        value: enemy_spnaxe_heal
+        display: false
+        parse:
+          type: literal
+          return: enemy_spnaxe_heal
+      -
+        value: enemy_sydonq_counter
+        display: false
+        parse:
+          type: literal
+          return: enemy_sydonq_counter
+      -
+        value: enemy_sydonq_counter_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_sydonq_counter_hit
+      -
+        value: enemy_sygirl_c1_die_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_sygirl_c1_die_start
+      -
+        value: enemy_sygirl_c2_die_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_sygirl_c2_die_start
+      -
+        value: enemy_syrott_attack_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_syrott_attack_01
+      -
+        value: enemy_tersia_skill_02_start_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_tersia_skill_02_start_01
+      -
+        value: enemy_thief_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_thief_buff_01
+      -
+        value: enemy_tinker_skill_01_start_03
+        display: false
+        parse:
+          type: literal
+          return: enemy_tinker_skill_01_start_03
+      -
+        value: enemy_trcerb_R_skill_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_trcerb_R_skill_hit_02
+      -
+        value: enemy_trtrsl_dizzystar_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_trtrsl_dizzystar_01
+      -
+        value: enemy_trwlpl_end-vomit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_trwlpl_end-vomit_01
+      -
+        value: enemy_vtshld_buff_birth_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_vtshld_buff_birth_01
+      -
+        value: enemy_wdgyht_skill_end_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_wdgyht_skill_end_01
+      -
+        value: enemy_wdgyht_skill_end_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_wdgyht_skill_end_02
+      -
+        value: enemy_wdgyht_skill_end_03
+        display: false
+        parse:
+          type: literal
+          return: enemy_wdgyht_skill_end_03
+      -
+        value: enemy_wdgyht_skill_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_wdgyht_skill_hit
+      -
+        value: enemy_wdrrl_skill_hit_rangre_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_wdrrl_skill_hit_rangre_01
+      -
+        value: enemy_wilder_die_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_wilder_die_end
+      -
+        value: enemy_winbom_die_01_start
+        display: false
+        parse:
+          type: literal
+          return: enemy_winbom_die_01_start
+      -
+        value: enemy_windoc_skill_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_windoc_skill_01_hit_01
+      -
+        value: enemy_windoc_skill_04_trail_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_windoc_skill_04_trail_01
+      -
+        value: enemy_wintun_attack_1_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_wintun_attack_1_hit
+      -
+        value: enemy_wlfmster_A_Skill_End_buff_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_wlfmster_A_Skill_End_buff_hit
+      -
+        value: enemy_wrkwrk_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_wrkwrk_buff_01
+      -
+        value: enemy_xbdit_henshin
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbdit_henshin
+      -
+        value: enemy_xbpln_end_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbpln_end_01
+      -
+        value: enemy_xbrok_skill_02_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbrok_skill_02_hit
+      -
+        value: enemy_xbsmi_range_die
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbsmi_range_die
+      -
+        value: enemy_xbsmi_range_die_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbsmi_range_die_hit
+      -
+        value: enemy_xdmon_buff_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_xdmon_buff_hit_02
+      -
+        value: enemy_xdmon_skill_01_break_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_xdmon_skill_01_break_01
+      -
+        value: enemy_xdseal_buff_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_xdseal_buff_02
+      -
+        value: enemy_xdseal_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_xdseal_die_01
+      -
+        value: enemy_xdseal_die_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_xdseal_die_02
+      -
+        value: enemy_xi_skill_02_buff_03
+        display: false
+        parse:
+          type: literal
+          return: enemy_xi_skill_02_buff_03
+      -
+        value: enemy_yhhshp_birth_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_yhhshp_birth_01
+      -
+        value: enemy_yhhshp_skill_01_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_yhhshp_skill_01_01
+      -
+        value: enemy_yhhshp_skill_01_01_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_yhhshp_skill_01_01_hit
+      -
+        value: enemy_yhhshp_skill_01_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_yhhshp_skill_01_02
+      -
+        value: enemy_yhhshp_skill_01_02_heal
+        display: false
+        parse:
+          type: literal
+          return: enemy_yhhshp_skill_01_02_heal
+      -
+        value: enemy_ymgscm_revive_loop_end
+        display: false
+        parse:
+          type: literal
+          return: enemy_ymgscm_revive_loop_end
+      -
+        value: enemy_ymgtop_attack_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ymgtop_attack_hit_01
+      -
+        value: excu2_skill_03_aim_hit
+        display: false
+        parse:
+          type: literal
+          return: excu2_skill_03_aim_hit
+      -
+        value: flamtl_flash_01
+        display: false
+        parse:
+          type: literal
+          return: flamtl_flash_01
+      -
+        value: grabds_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: grabds_skill_02_hit_01
+      -
+        value: haruka_skill_02_hit
+        display: false
+        parse:
+          type: literal
+          return: haruka_skill_02_hit
+      -
+        value: haruka_skill_02_hit_range
+        display: false
+        parse:
+          type: literal
+          return: haruka_skill_02_hit_range
+      -
+        value: hodrer_skill_01_buff_01
+        display: false
+        parse:
+          type: literal
+          return: hodrer_skill_01_buff_01
+      -
+        value: hsgma2_skill_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: hsgma2_skill_01_hit_01
+      -
+        value: hsgma2_skill_02_hit_04
+        display: false
+        parse:
+          type: literal
+          return: hsgma2_skill_02_hit_04
+      -
+        value: iris_skill_02_hit_warning
+        display: false
+        parse:
+          type: literal
+          return: iris_skill_02_hit_warning
+      -
+        value: ironmn_beidong_buff
+        display: false
+        parse:
+          type: literal
+          return: ironmn_beidong_buff
+      -
+        value: judge_reboun_hit_01
+        display: false
+        parse:
+          type: literal
+          return: judge_reboun_hit_01
+      -
+        value: judge_skill_02_weapon_hit_01
+        display: false
+        parse:
+          type: literal
+          return: judge_skill_02_weapon_hit_01
+      -
+        value: kaitou_skill_01_hit_02
+        display: false
+        parse:
+          type: literal
+          return: kaitou_skill_01_hit_02
+      -
+        value: lemuen_skill_03_crosshair_01
+        display: false
+        parse:
+          type: literal
+          return: lemuen_skill_03_crosshair_01
+      -
+        value: lemuen_skill_03_start_01
+        display: false
+        parse:
+          type: literal
+          return: lemuen_skill_03_start_01
+      -
+        value: lemuen_skill_03_trail_01
+        display: false
+        parse:
+          type: literal
+          return: lemuen_skill_03_trail_01
+      -
+        value: lheqp_hit_01
+        display: false
+        parse:
+          type: literal
+          return: lheqp_hit_01
+      -
+        value: lhupgd_hit_01
+        display: false
+        parse:
+          type: literal
+          return: lhupgd_hit_01
+      -
+        value: lin_passive_hit_01
+        display: false
+        parse:
+          type: literal
+          return: lin_passive_hit_01
+      -
+        value: lin_passive_range_01
+        display: false
+        parse:
+          type: literal
+          return: lin_passive_range_01
+      -
+        value: lin_passive_range_02
+        display: false
+        parse:
+          type: literal
+          return: lin_passive_range_02
+      -
+        value: ling_buff_03
+        display: false
+        parse:
+          type: literal
+          return: ling_buff_03
+      -
+        value: lmlee_skill_02_debuff_hit
+        display: false
+        parse:
+          type: literal
+          return: lmlee_skill_02_debuff_hit
+      -
+        value: lmlee_skill_03_range_hit
+        display: false
+        parse:
+          type: literal
+          return: lmlee_skill_03_range_hit
+      -
+        value: logos_skill1_hit_03
+        display: false
+        parse:
+          type: literal
+          return: logos_skill1_hit_03
+      -
+        value: lumen_buff_01_hit
+        display: false
+        parse:
+          type: literal
+          return: lumen_buff_01_hit
+      -
+        value: lumen_skill_01_hit
+        display: false
+        parse:
+          type: literal
+          return: lumen_skill_01_hit
+      -
+        value: luton_skill02_hit
+        display: false
+        parse:
+          type: literal
+          return: luton_skill02_hit
+      -
+        value: m2cnt_hit
+        display: false
+        parse:
+          type: literal
+          return: m2cnt_hit
+      -
+        value: mantra_bounce_hit_01
+        display: false
+        parse:
+          type: literal
+          return: mantra_bounce_hit_01
+      -
+        value: map_027_chengfangpao_screen
+        display: false
+        parse:
+          type: literal
+          return: map_027_chengfangpao_screen
+      -
+        value: map_028_chouka_die_money
+        display: false
+        parse:
+          type: literal
+          return: map_028_chouka_die_money
+      -
+        value: map_036_yurenjie_dialogue_annoying
+        display: false
+        parse:
+          type: literal
+          return: map_036_yurenjie_dialogue_annoying
+      -
+        value: map_036_yurenjie_event_red_01
+        display: false
+        parse:
+          type: literal
+          return: map_036_yurenjie_event_red_01
+      -
+        value: map_036_yurenjie_event_yellow_01
+        display: false
+        parse:
+          type: literal
+          return: map_036_yurenjie_event_yellow_01
+      -
+        value: map_036_yurenjie_event_yellow_02
+        display: false
+        parse:
+          type: literal
+          return: map_036_yurenjie_event_yellow_02
+      -
+        value: map_040_experience_trail
+        display: false
+        parse:
+          type: literal
+          return: map_040_experience_trail
+      -
+        value: map_044_chengfangpao_screen
+        display: false
+        parse:
+          type: literal
+          return: map_044_chengfangpao_screen
+      -
+        value: map_T6_enemy_die
+        display: false
+        parse:
+          type: literal
+          return: map_T6_enemy_die
+      -
+        value: map_act1autochess_reinforce_02
+        display: false
+        parse:
+          type: literal
+          return: map_act1autochess_reinforce_02
+      -
+        value: map_bossrush_retreat_02
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_retreat_02
+      -
+        value: mapeff_multiplayer_reborn_01
+        display: false
+        parse:
+          type: literal
+          return: mapeff_multiplayer_reborn_01
+      -
+        value: mapeff_v042_vapour_hit_pink_01
+        display: false
+        parse:
+          type: literal
+          return: mapeff_v042_vapour_hit_pink_01
+      -
+        value: mapeff_v042_vapour_hit_white_01
+        display: false
+        parse:
+          type: literal
+          return: mapeff_v042_vapour_hit_white_01
+      -
+        value: mitm_skill_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: mitm_skill_01_hit_01
+      -
+        value: mlynar_attack_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: mlynar_attack_01_hit_01
+      -
+        value: monstr_skill_03_begin_02
+        display: false
+        parse:
+          type: literal
+          return: monstr_skill_03_begin_02
+      -
+        value: monstr_skill_03_end_02
+        display: false
+        parse:
+          type: literal
+          return: monstr_skill_03_end_02
+      -
+        value: morgan_skill_02_shield_start
+        display: false
+        parse:
+          type: literal
+          return: morgan_skill_02_shield_start
+      -
+        value: mortis_switchout_01
+        display: false
+        parse:
+          type: literal
+          return: mortis_switchout_01
+      -
+        value: mudrok_buff_01_begin
+        display: false
+        parse:
+          type: literal
+          return: mudrok_buff_01_begin
+      -
+        value: narant_skill_03_slash_01
+        display: false
+        parse:
+          type: literal
+          return: narant_skill_03_slash_01
+      -
+        value: nasti_nstbld_1_levelup_01
+        display: false
+        parse:
+          type: literal
+          return: nasti_nstbld_1_levelup_01
+      -
+        value: necras_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: necras_skill_02_hit_01
+      -
+        value: nowell_skill_02_hit_02
+        display: false
+        parse:
+          type: literal
+          return: nowell_skill_02_hit_02
+      -
+        value: odda_attack_hit_01
+        display: false
+        parse:
+          type: literal
+          return: odda_attack_hit_01
+      -
+        value: odda_common_hit_01
+        display: false
+        parse:
+          type: literal
+          return: odda_common_hit_01
+      -
+        value: odda_skill_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: odda_skill_01_hit_01
+      -
+        value: odda_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: odda_skill_02_hit_01
+      -
+        value: pepe_attack_hit_01
+        display: false
+        parse:
+          type: literal
+          return: pepe_attack_hit_01
+      -
+        value: pepe_skill_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: pepe_skill_01_hit_01
+      -
+        value: pepe_skill_01_hit_01_optimize
+        display: false
+        parse:
+          type: literal
+          return: pepe_skill_01_hit_01_optimize
+      -
+        value: peper_buff
+        display: false
+        parse:
+          type: literal
+          return: peper_buff
+      -
+        value: phatm2_skill_02_debuff_hit_01
+        display: false
+        parse:
+          type: literal
+          return: phatm2_skill_02_debuff_hit_01
+      -
+        value: philae_skill_02_start_01
+        display: false
+        parse:
+          type: literal
+          return: philae_skill_02_start_01
+      -
+        value: qanik_skill_02_hit_blow
+        display: false
+        parse:
+          type: literal
+          return: qanik_skill_02_hit_blow
+      -
+        value: qiubai_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: qiubai_skill_02_hit_01
+      -
+        value: radian_merge_equipment_01
+        display: false
+        parse:
+          type: literal
+          return: radian_merge_equipment_01
+      -
+        value: rdoc_skill_01_hit_02
+        display: false
+        parse:
+          type: literal
+          return: rdoc_skill_01_hit_02
+      -
+        value: rdoc_skill_01_start_02
+        display: false
+        parse:
+          type: literal
+          return: rdoc_skill_01_start_02
+      -
+        value: rdoc_skill_01_start_02_02
+        display: false
+        parse:
+          type: literal
+          return: rdoc_skill_01_start_02_02
+      -
+        value: rdoc_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: rdoc_skill_02_hit_01
+      -
+        value: reed2_treat_01
+        display: false
+        parse:
+          type: literal
+          return: reed2_treat_01
+      -
+        value: relic_1_n12_attack_01_range
+        display: false
+        parse:
+          type: literal
+          return: relic_1_n12_attack_01_range
+      -
+        value: relic_1_p50_attack_01_hit
+        display: false
+        parse:
+          type: literal
+          return: relic_1_p50_attack_01_hit
+      -
+        value: relic_1_p52_attack_01_hit
+        display: false
+        parse:
+          type: literal
+          return: relic_1_p52_attack_01_hit
+      -
+        value: relic_1_sp06_attack_01_range
+        display: false
+        parse:
+          type: literal
+          return: relic_1_sp06_attack_01_range
+      -
+        value: relic_1_sp07_attack_01_range
+        display: false
+        parse:
+          type: literal
+          return: relic_1_sp07_attack_01_range
+      -
+        value: rfalcn_attack_01_hit_passive_02
+        display: false
+        parse:
+          type: literal
+          return: rfalcn_attack_01_hit_passive_02
+      -
+        value: rmixer_skill_01_tip_01
+        display: false
+        parse:
+          type: literal
+          return: rmixer_skill_01_tip_01
+      -
+        value: rockr_stun_01
+        display: false
+        parse:
+          type: literal
+          return: rockr_stun_01
+      -
+        value: rockr_stun_02
+        display: false
+        parse:
+          type: literal
+          return: rockr_stun_02
+      -
+        value: rogue_3_relic_fight_30
+        display: false
+        parse:
+          type: literal
+          return: rogue_3_relic_fight_30
+      -
+        value: rogue_4_relic_hand_7
+        display: false
+        parse:
+          type: literal
+          return: rogue_4_relic_hand_7
+      -
+        value: rogue_5_lightning_01_hit
+        display: false
+        parse:
+          type: literal
+          return: rogue_5_lightning_01_hit
+      -
+        value: rogue_5_lightning_01_trail
+        display: false
+        parse:
+          type: literal
+          return: rogue_5_lightning_01_trail
+      -
+        value: saga_skill_02_hit_02
+        display: false
+        parse:
+          type: literal
+          return: saga_skill_02_hit_02
+      -
+        value: saga_skill_03_hit_02
+        display: false
+        parse:
+          type: literal
+          return: saga_skill_03_hit_02
+      -
+        value: sbell2_buff_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: sbell2_buff_01_hit_01
+      -
+        value: sbell2_buff_01_hit_02
+        display: false
+        parse:
+          type: literal
+          return: sbell2_buff_01_hit_02
+      -
+        value: sbell2_revive
+        display: false
+        parse:
+          type: literal
+          return: sbell2_revive
+      -
+        value: sbell2_skill_03_flow
+        display: false
+        parse:
+          type: literal
+          return: sbell2_skill_03_flow
+      -
+        value: sbell2_tile_defrost
+        display: false
+        parse:
+          type: literal
+          return: sbell2_tile_defrost
+      -
+        value: sfsui_ball_idle_01_hit
+        display: false
+        parse:
+          type: literal
+          return: sfsui_ball_idle_01_hit
+      -
+        value: shu_teleport_hit
+        display: false
+        parse:
+          type: literal
+          return: shu_teleport_hit
+      -
+        value: shu_teleport_hit_02
+        display: false
+        parse:
+          type: literal
+          return: shu_teleport_hit_02
+      -
+        value: skadi2_skill_01_hit
+        display: false
+        parse:
+          type: literal
+          return: skadi2_skill_01_hit
+      -
+        value: skadi2_skill_01_hit_02
+        display: false
+        parse:
+          type: literal
+          return: skadi2_skill_01_hit_02
+      -
+        value: skzjs_start
+        display: false
+        parse:
+          type: literal
+          return: skzjs_start
+      -
+        value: svash2_eagle_flyToHand_01
+        display: false
+        parse:
+          type: literal
+          return: svash2_eagle_flyToHand_01
+      -
+        value: svash2_eagle_sit_01
+        display: false
+        parse:
+          type: literal
+          return: svash2_eagle_sit_01
+      -
+        value: svash2_eagle_sit_birth_01
+        display: false
+        parse:
+          type: literal
+          return: svash2_eagle_sit_birth_01
+      -
+        value: svash2_eagle_sit_showAndHide_01
+        display: false
+        parse:
+          type: literal
+          return: svash2_eagle_sit_showAndHide_01
+      -
+        value: takila_attack_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: takila_attack_01_hit_01
+      -
+        value: takila_attack_01_hit_02
+        display: false
+        parse:
+          type: literal
+          return: takila_attack_01_hit_02
+      -
+        value: texas2_skill_03_hit
+        display: false
+        parse:
+          type: literal
+          return: texas2_skill_03_hit
+      -
+        value: tmoris_skill_1_hit_01
+        display: false
+        parse:
+          type: literal
+          return: tmoris_skill_1_hit_01
+      -
+        value: token_10030_mlyss_wtrman_c1_to_c2
+        display: false
+        parse:
+          type: literal
+          return: token_10030_mlyss_wtrman_c1_to_c2
+      -
+        value: token_10030_mlyss_wtrman_c1_to_c3
+        display: false
+        parse:
+          type: literal
+          return: token_10030_mlyss_wtrman_c1_to_c3
+      -
+        value: token_10030_mlyss_wtrman_c2_skill_03_range_01
+        display: false
+        parse:
+          type: literal
+          return: token_10030_mlyss_wtrman_c2_skill_03_range_01
+      -
+        value: token_10030_mlyss_wtrman_c3_to_c0
+        display: false
+        parse:
+          type: literal
+          return: token_10030_mlyss_wtrman_c3_to_c0
+      -
+        value: token_10030_mlyss_wtrman_refresh_01
+        display: false
+        parse:
+          type: literal
+          return: token_10030_mlyss_wtrman_refresh_01
+      -
+        value: token_bstalk_die_02
+        display: false
+        parse:
+          type: literal
+          return: token_bstalk_die_02
+      -
+        value: token_cathy_catsld_shield_01_end
+        display: false
+        parse:
+          type: literal
+          return: token_cathy_catsld_shield_01_end
+      -
+        value: token_encdool_skill_02_range_02
+        display: false
+        parse:
+          type: literal
+          return: token_encdool_skill_02_range_02
+      -
+        value: token_ironmn_pile3_skill_03_hit
+        display: false
+        parse:
+          type: literal
+          return: token_ironmn_pile3_skill_03_hit
+      -
+        value: token_kalts_skill_03_start_08
+        display: false
+        parse:
+          type: literal
+          return: token_kalts_skill_03_start_08
+      -
+        value: token_mitm_trshrb_die_01
+        display: false
+        parse:
+          type: literal
+          return: token_mitm_trshrb_die_01
+      -
+        value: token_mitm_trshrb_waste_01
+        display: false
+        parse:
+          type: literal
+          return: token_mitm_trshrb_waste_01
+      -
+        value: token_monstr_prosts_skill_03_start
+        display: false
+        parse:
+          type: literal
+          return: token_monstr_prosts_skill_03_start
+      -
+        value: token_necras_skeltn1_levelup_01
+        display: false
+        parse:
+          type: literal
+          return: token_necras_skeltn1_levelup_01
+      -
+        value: token_necras_skeltn1_range_01
+        display: false
+        parse:
+          type: literal
+          return: token_necras_skeltn1_range_01
+      -
+        value: token_necras_skeltn2_levelup_01
+        display: false
+        parse:
+          type: literal
+          return: token_necras_skeltn2_levelup_01
+      -
+        value: token_necras_skeltn2_treat_01
+        display: false
+        parse:
+          type: literal
+          return: token_necras_skeltn2_treat_01
+      -
+        value: token_ray_sndbst_buff_end
+        display: false
+        parse:
+          type: literal
+          return: token_ray_sndbst_buff_end
+      -
+        value: token_rosmon_skill_03_range
+        display: false
+        parse:
+          type: literal
+          return: token_rosmon_skill_03_range
+      -
+        value: token_tecno_skill_02_end
+        display: false
+        parse:
+          type: literal
+          return: token_tecno_skill_02_end
+      -
+        value: tomimi_skill_02_hit_02
+        display: false
+        parse:
+          type: literal
+          return: tomimi_skill_02_hit_02
+      -
+        value: trap_134_End_01
+        display: false
+        parse:
+          type: literal
+          return: trap_134_End_01
+      -
+        value: trap_503_xbabla
+        display: false
+        parse:
+          type: literal
+          return: trap_503_xbabla
+      -
+        value: trap_acgarm_buff_02
+        display: false
+        parse:
+          type: literal
+          return: trap_acgarm_buff_02
+      -
+        value: trap_acgarm_buff_04
+        display: false
+        parse:
+          type: literal
+          return: trap_acgarm_buff_04
+      -
+        value: trap_ads_buff_start
+        display: false
+        parse:
+          type: literal
+          return: trap_ads_buff_start
+      -
+        value: trap_arctoll_start
+        display: false
+        parse:
+          type: literal
+          return: trap_arctoll_start
+      -
+        value: trap_bouncy_hit
+        display: false
+        parse:
+          type: literal
+          return: trap_bouncy_hit
+      -
+        value: trap_boxnma_buff_01
+        display: false
+        parse:
+          type: literal
+          return: trap_boxnma_buff_01
+      -
+        value: trap_cd1punch_buff_05
+        display: false
+        parse:
+          type: literal
+          return: trap_cd1punch_buff_05
+      -
+        value: trap_cd1punch_die_start
+        display: false
+        parse:
+          type: literal
+          return: trap_cd1punch_die_start
+      -
+        value: trap_cdcaster_skill_01_range
+        display: false
+        parse:
+          type: literal
+          return: trap_cdcaster_skill_01_range
+      -
+        value: trap_cdcaster_skill_01_range_02
+        display: false
+        parse:
+          type: literal
+          return: trap_cdcaster_skill_01_range_02
+      -
+        value: trap_cdcaster_skill_01_range_03
+        display: false
+        parse:
+          type: literal
+          return: trap_cdcaster_skill_01_range_03
+      -
+        value: trap_cddiff_buff_02
+        display: false
+        parse:
+          type: literal
+          return: trap_cddiff_buff_02
+      -
+        value: trap_cdsoul_buff_hit
+        display: false
+        parse:
+          type: literal
+          return: trap_cdsoul_buff_hit
+      -
+        value: trap_cnnon_destroyed
+        display: false
+        parse:
+          type: literal
+          return: trap_cnnon_destroyed
+      -
+        value: trap_dhtl_built
+        display: false
+        parse:
+          type: literal
+          return: trap_dhtl_built
+      -
+        value: trap_dychss_transform_01
+        display: false
+        parse:
+          type: literal
+          return: trap_dychss_transform_01
+      -
+        value: trap_dydfst_attack_hit_blue
+        display: false
+        parse:
+          type: literal
+          return: trap_dydfst_attack_hit_blue
+      -
+        value: trap_dydfst_attack_hit_purple
+        display: false
+        parse:
+          type: literal
+          return: trap_dydfst_attack_hit_purple
+      -
+        value: trap_dydfst_attack_hit_red
+        display: false
+        parse:
+          type: literal
+          return: trap_dydfst_attack_hit_red
+      -
+        value: trap_dydfst_attack_hit_yellow
+        display: false
+        parse:
+          type: literal
+          return: trap_dydfst_attack_hit_yellow
+      -
+        value: trap_dydfst_attack_trail_yellow
+        display: false
+        parse:
+          type: literal
+          return: trap_dydfst_attack_trail_yellow
+      -
+        value: trap_edd_skill_hit
+        display: false
+        parse:
+          type: literal
+          return: trap_edd_skill_hit
+      -
+        value: trap_gasbotb_hit_01
+        display: false
+        parse:
+          type: literal
+          return: trap_gasbotb_hit_01
+      -
+        value: trap_gasbotb_hit_02
+        display: false
+        parse:
+          type: literal
+          return: trap_gasbotb_hit_02
+      -
+        value: trap_gasbotb_start_01
+        display: false
+        parse:
+          type: literal
+          return: trap_gasbotb_start_01
+      -
+        value: trap_lrcore_absorb_01
+        display: false
+        parse:
+          type: literal
+          return: trap_lrcore_absorb_01
+      -
+        value: trap_ltnova_activited
+        display: false
+        parse:
+          type: literal
+          return: trap_ltnova_activited
+      -
+        value: trap_ltnova_burst_01
+        display: false
+        parse:
+          type: literal
+          return: trap_ltnova_burst_01
+      -
+        value: trap_mjcsdw_idle_01
+        display: false
+        parse:
+          type: literal
+          return: trap_mjcsdw_idle_01
+      -
+        value: trap_mufrprn_die
+        display: false
+        parse:
+          type: literal
+          return: trap_mufrprn_die
+      -
+        value: trap_murbox_01
+        display: false
+        parse:
+          type: literal
+          return: trap_murbox_01
+      -
+        value: trap_muworkg_shengji
+        display: false
+        parse:
+          type: literal
+          return: trap_muworkg_shengji
+      -
+        value: trap_pckstp_hit_01
+        display: false
+        parse:
+          type: literal
+          return: trap_pckstp_hit_01
+      -
+        value: trap_pckzhn_C2_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: trap_pckzhn_C2_skill_02_hit_01
+      -
+        value: trap_pckzhn_C2_skill_02_range_01_D
+        display: false
+        parse:
+          type: literal
+          return: trap_pckzhn_C2_skill_02_range_01_D
+      -
+        value: trap_pckzhn_C2_skill_02_range_01_L
+        display: false
+        parse:
+          type: literal
+          return: trap_pckzhn_C2_skill_02_range_01_L
+      -
+        value: trap_pckzhn_C2_skill_02_range_01_R
+        display: false
+        parse:
+          type: literal
+          return: trap_pckzhn_C2_skill_02_range_01_R
+      -
+        value: trap_pckzhn_C2_skill_02_range_01_U
+        display: false
+        parse:
+          type: literal
+          return: trap_pckzhn_C2_skill_02_range_01_U
+      -
+        value: trap_sglink_start
+        display: false
+        parse:
+          type: literal
+          return: trap_sglink_start
+      -
+        value: trap_skzth_range_01
+        display: false
+        parse:
+          type: literal
+          return: trap_skzth_range_01
+      -
+        value: trap_skztxy_c1_die
+        display: false
+        parse:
+          type: literal
+          return: trap_skztxy_c1_die
+      -
+        value: trap_spawnp_skill_start_01
+        display: false
+        parse:
+          type: literal
+          return: trap_spawnp_skill_start_01
+      -
+        value: trap_stdurk_emoji_02
+        display: false
+        parse:
+          type: literal
+          return: trap_stdurk_emoji_02
+      -
+        value: trap_stdurk_emoji_04
+        display: false
+        parse:
+          type: literal
+          return: trap_stdurk_emoji_04
+      -
+        value: trap_stmpq_end_01
+        display: false
+        parse:
+          type: literal
+          return: trap_stmpq_end_01
+      -
+        value: trap_supctl_attackl_hit_01
+        display: false
+        parse:
+          type: literal
+          return: trap_supctl_attackl_hit_01
+      -
+        value: trap_tnkspk_hit_01
+        display: false
+        parse:
+          type: literal
+          return: trap_tnkspk_hit_01
+      -
+        value: trap_trpot_jili_01
+        display: false
+        parse:
+          type: literal
+          return: trap_trpot_jili_01
+      -
+        value: trap_trpot_jili_02
+        display: false
+        parse:
+          type: literal
+          return: trap_trpot_jili_02
+      -
+        value: trap_xdmac1_start_01
+        display: false
+        parse:
+          type: literal
+          return: trap_xdmac1_start_01
+      -
+        value: tuye_talent_01_end
+        display: false
+        parse:
+          type: literal
+          return: tuye_talent_01_end
+      -
+        value: typhon_skill_03_hit_01
+        display: false
+        parse:
+          type: literal
+          return: typhon_skill_03_hit_01
+      -
+        value: typhon_skill_03_hit_02
+        display: false
+        parse:
+          type: literal
+          return: typhon_skill_03_hit_02
+      -
+        value: ulpia_recover_01
+        display: false
+        parse:
+          type: literal
+          return: ulpia_recover_01
+      -
+        value: uniequip_002_musha_02
+        display: false
+        parse:
+          type: literal
+          return: uniequip_002_musha_02
+      -
+        value: vendla_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: vendla_skill_02_hit_01
+      -
+        value: vigil_token_die
+        display: false
+        parse:
+          type: literal
+          return: vigil_token_die
+      -
+        value: vigil_token_heal
+        display: false
+        parse:
+          type: literal
+          return: vigil_token_heal
+      -
+        value: vigil_token_skill_02_hint
+        display: false
+        parse:
+          type: literal
+          return: vigil_token_skill_02_hint
+      -
+        value: vrdant_skill_02_start_02
+        display: false
+        parse:
+          type: literal
+          return: vrdant_skill_02_start_02
+      -
+        value: whitw2_skill_03_token_hit_01
+        display: false
+        parse:
+          type: literal
+          return: whitw2_skill_03_token_hit_01
+      -
+        value: wisdel_bomb_01_hit
+        display: false
+        parse:
+          type: literal
+          return: wisdel_bomb_01_hit
+      -
+        value: yu_skill3_annex_02
+        display: false
+        parse:
+          type: literal
+          return: yu_skill3_annex_02
+      -
+        value: yu_skill3_range_01_source
+        display: false
+        parse:
+          type: literal
+          return: yu_skill3_range_01_source
+      -
+        value: zumama_equipment_range_01
+        display: false
+        parse:
+          type: literal
+          return: zumama_equipment_range_01
+  _manualSetPlaybackSpeed:
+    type: boolean
+    description: manual Set Playback Speed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _playbackSpeed:
+    type: number
+    description: playback Speed
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useAttackPlaybackSpeed:
+    type: boolean
+    description: use Attack Playback Speed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useConstDirection:
+    type: boolean
+    description: use Const Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useSourceFaceVactor:
+    type: boolean
+    description: use Source Face Vactor
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useSourceToTargetDirection:
+    type: boolean
+    description: use Source To Target Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,74 @@
+actionType: CheckAbnormalImmune
+fields:
+  _abnormalFlag:
+    type: string
+    description: abnormal Flag
+    values:
+      -
+        value: DISARMED_COMBAT
+        display: false
+        parse:
+          type: literal
+          return: DISARMED_COMBAT
+      -
+        value: INVISIBLE
+        display: false
+        parse:
+          type: literal
+          return: INVISIBLE
+      -
+        value: LEVITATE
+        display: false
+        parse:
+          type: literal
+          return: LEVITATE
+      -
+        value: PALSY
+        display: false
+        parse:
+          type: literal
+          return: PALSY
+      -
+        value: UNMOVABLE
+        display: false
+        parse:
+          type: literal
+          return: UNMOVABLE
+  _isUnset:
+    type: boolean
+    description: is Unset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

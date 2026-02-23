@@ -1,0 +1,62 @@
+actionType: BuildCharacterInRange
+fields:
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _buildableType:
+    type: string
+    description: buildable Type
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+  _grids:
+    type: array
+    description: grids
+    schema: action_subschema/_grids.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _ignoreDeckBuffKey:
+    type: string
+    description: ignore Deck Buff Key
+    values:
+      -
+        value: "act6bossrush_build_char_in_range[deck]"
+        display: false
+        parse:
+          type: literal
+          return: "act6bossrush_build_char_in_range[deck]"
+  _professionMask:
+    type: string
+    description: profession Mask
+    values:
+      -
+        value: "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER"
+        display: false
+        parse:
+          type: literal
+          return: "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER"
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

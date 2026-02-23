@@ -1,0 +1,122 @@
+actionType: SpawnTokenOnTargetTileWithCondition
+fields:
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _checkBuildableType:
+    type: boolean
+    description: check Buildable Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _options:
+    type: object
+    description: options
+    schema: action_subschema/_options.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _spawnedTokenSideType:
+    type: string
+    description: spawned Token Side Type
+    values:
+      -
+        value: ALLY
+        display: false
+        parse:
+          type: literal
+          return: ALLY
+  _specifierSideType:
+    type: boolean
+    description: specifier Side Type
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _tileBlackList:
+    type: string
+    description: tile Black List
+    values:
+      -
+        value: tile_start|tile_end|tile_telin|tile_telout
+        display: false
+        parse:
+          type: literal
+          return: tile_start|tile_end|tile_telin|tile_telout
+  _tileBlackListKey:
+    type: string
+    description: tile Black List Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _tileEffect:
+    type: null
+    description: tile Effect
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _tileFromBlackboard:
+    type: boolean
+    description: tile From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _tokenToSpawn:
+    type: object
+    description: token To Spawn
+    schema: action_subschema/_tokenToSpawn.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx

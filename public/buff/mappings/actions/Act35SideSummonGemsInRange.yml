@@ -1,0 +1,100 @@
+actionType: Act35SideSummonGemsInRange
+fields:
+  _envSystemKey:
+    type: string
+    description: env System Key
+    values:
+      -
+        value: env_017_act35side
+        display: false
+        parse:
+          type: literal
+          return: env_017_act35side
+  _gemsType:
+    type: string
+    description: gems Type
+    values:
+      -
+        value: Polluted
+        display: false
+        parse:
+          type: literal
+          return: Polluted
+  _isCircleRange:
+    type: boolean
+    description: is Circle Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _rangeRadius:
+    type: number
+    description: range Radius
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: PROJECTILE_TRACETARGET
+        display: false
+        parse:
+          type: literal
+          return: PROJECTILE_TRACETARGET
+  _useInProjectile:
+    type: boolean
+    description: use In Projectile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: UP
+        display: false
+        parse:
+          type: literal
+          return: UP

@@ -1,0 +1,226 @@
+actionType: UpdateAbilityCoolDown
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: Flame
+        display: false
+        parse:
+          type: literal
+          return: Flame
+      -
+        value: M2Attack
+        display: false
+        parse:
+          type: literal
+          return: M2Attack
+      -
+        value: PetrifiedRay
+        display: false
+        parse:
+          type: literal
+          return: PetrifiedRay
+      -
+        value: PrismAttack
+        display: false
+        parse:
+          type: literal
+          return: PrismAttack
+      -
+        value: S2Ability
+        display: false
+        parse:
+          type: literal
+          return: S2Ability
+      -
+        value: S2MultiMeleeAttack
+        display: false
+        parse:
+          type: literal
+          return: S2MultiMeleeAttack
+      -
+        value: SummonDupilr
+        display: false
+        parse:
+          type: literal
+          return: SummonDupilr
+      -
+        value: fire
+        display: false
+        parse:
+          type: literal
+          return: fire
+      -
+        value: lock
+        display: false
+        parse:
+          type: literal
+          return: lock
+  _coolDownKey:
+    type: string
+    description: cool Down Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: PetrifiedRay_CD
+        display: false
+        parse:
+          type: literal
+          return: PetrifiedRay_CD
+      -
+        value: SummonDupilr_CD
+        display: false
+        parse:
+          type: literal
+          return: SummonDupilr_CD
+      -
+        value: "mandra_ray_p2[cd]"
+        display: false
+        parse:
+          type: literal
+          return: "mandra_ray_p2[cd]"
+      -
+        value: "summon_dupilr_p2[cd]"
+        display: false
+        parse:
+          type: literal
+          return: "summon_dupilr_p2[cd]"
+  _keepPassedTime:
+    type: boolean
+    description: keep Passed Time
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadAbilityFromBlackboard:
+    type: boolean
+    description: load Ability From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _newPeriod:
+    type: number
+    description: new Period
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useAbilityBlackboard:
+    type: boolean
+    description: use Ability Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useNewPeriod:
+    type: boolean
+    description: use New Period
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useOriginalCooldown:
+    type: boolean
+    description: use Original Cooldown
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _waitFirstPeriod:
+    type: boolean
+    description: wait First Period
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

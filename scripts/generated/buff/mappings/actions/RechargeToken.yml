@@ -1,0 +1,62 @@
+actionType: RechargeToken
+fields:
+  _cntKey:
+    type: string
+    description: cnt Key
+    values:
+      -
+        value: ammo_cnt
+        display: false
+        parse:
+          type: literal
+          return: ammo_cnt
+      -
+        value: charge_cnt
+        display: false
+        parse:
+          type: literal
+          return: charge_cnt
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: recharge_cnt
+        display: false
+        parse:
+          type: literal
+          return: recharge_cnt
+  _rechargeTiming:
+    type: string
+    description: recharge Timing
+    values:
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+      -
+        value: ON_FINISH
+        display: false
+        parse:
+          type: literal
+          return: ON_FINISH
+  _refreshRemainingCnt:
+    type: boolean
+    description: refresh Remaining Cnt
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

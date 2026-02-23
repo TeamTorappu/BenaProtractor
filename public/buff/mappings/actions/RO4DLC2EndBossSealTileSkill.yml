@@ -1,0 +1,12 @@
+actionType: RO4DLC2EndBossSealTileSkill
+fields:
+  _evnSysKey:
+    type: string
+    description: evn Sys Key
+    values:
+      -
+        value: env_020_ro4dlc2_boss5
+        display: false
+        parse:
+          type: literal
+          return: env_020_ro4dlc2_boss5

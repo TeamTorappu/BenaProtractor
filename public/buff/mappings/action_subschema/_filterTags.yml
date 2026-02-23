@@ -1,0 +1,16 @@
+field: _filterTags
+type: object
+description: filter Tags
+actions:
+  SetEnemySpecialBlockCondition:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

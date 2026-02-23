@@ -1,0 +1,100 @@
+actionType: ForceSetToTilePosition
+fields:
+  _colKey:
+    type: string
+    description: col Key
+    values:
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+      -
+        value: start_col
+        display: false
+        parse:
+          type: literal
+          return: start_col
+  _disableCurrentStillPull:
+    type: boolean
+    description: disable Current Still Pull
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _findNearestPassableTile:
+    type: boolean
+    description: find Nearest Passable Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _randomOffset:
+    type: number
+    description: random Offset
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+  _randomOffsetInnerRange:
+    type: number
+    description: random Offset Inner Range
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+  _releaseFromBlocker:
+    type: boolean
+    description: release From Blocker
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _rowKey:
+    type: string
+    description: row Key
+    values:
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+      -
+        value: start_row
+        display: false
+        parse:
+          type: literal
+          return: start_row
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

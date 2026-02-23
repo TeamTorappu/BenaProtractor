@@ -1,0 +1,1670 @@
+actionType: TriggerAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+      -
+        value: AOEAttack
+        display: false
+        parse:
+          type: literal
+          return: AOEAttack
+      -
+        value: Activate
+        display: false
+        parse:
+          type: literal
+          return: Activate
+      -
+        value: Active
+        display: false
+        parse:
+          type: literal
+          return: Active
+      -
+        value: ActiveOutset
+        display: false
+        parse:
+          type: literal
+          return: ActiveOutset
+      -
+        value: AddAmmoWrapper
+        display: false
+        parse:
+          type: literal
+          return: AddAmmoWrapper
+      -
+        value: Ally
+        display: false
+        parse:
+          type: literal
+          return: Ally
+      -
+        value: AmiyDoom
+        display: false
+        parse:
+          type: literal
+          return: AmiyDoom
+      -
+        value: AmmoRecover
+        display: false
+        parse:
+          type: literal
+          return: AmmoRecover
+      -
+        value: Anger
+        display: false
+        parse:
+          type: literal
+          return: Anger
+      -
+        value: Anim
+        display: false
+        parse:
+          type: literal
+          return: Anim
+      -
+        value: AnimInvert
+        display: false
+        parse:
+          type: literal
+          return: AnimInvert
+      -
+        value: Animation
+        display: false
+        parse:
+          type: literal
+          return: Animation
+      -
+        value: Aromatic
+        display: false
+        parse:
+          type: literal
+          return: Aromatic
+      -
+        value: Attack
+        display: false
+        parse:
+          type: literal
+          return: Attack
+      -
+        value: AttackS2
+        display: false
+        parse:
+          type: literal
+          return: AttackS2
+      -
+        value: Aura
+        display: false
+        parse:
+          type: literal
+          return: Aura
+      -
+        value: AuraBuff
+        display: false
+        parse:
+          type: literal
+          return: AuraBuff
+      -
+        value: AuraTrigger
+        display: false
+        parse:
+          type: literal
+          return: AuraTrigger
+      -
+        value: BeaconSlowAura
+        display: false
+        parse:
+          type: literal
+          return: BeaconSlowAura
+      -
+        value: BirdAttack
+        display: false
+        parse:
+          type: literal
+          return: BirdAttack
+      -
+        value: BirdAttack_Ally
+        display: false
+        parse:
+          type: literal
+          return: BirdAttack_Ally
+      -
+        value: BirdAura
+        display: false
+        parse:
+          type: literal
+          return: BirdAura
+      -
+        value: BirdAura_Self
+        display: false
+        parse:
+          type: literal
+          return: BirdAura_Self
+      -
+        value: Blink1
+        display: false
+        parse:
+          type: literal
+          return: Blink1
+      -
+        value: Blink2
+        display: false
+        parse:
+          type: literal
+          return: Blink2
+      -
+        value: Bomb
+        display: false
+        parse:
+          type: literal
+          return: Bomb
+      -
+        value: Bonus
+        display: false
+        parse:
+          type: literal
+          return: Bonus
+      -
+        value: Boom
+        display: false
+        parse:
+          type: literal
+          return: Boom
+      -
+        value: BoomStart
+        display: false
+        parse:
+          type: literal
+          return: BoomStart
+      -
+        value: BornAnim
+        display: false
+        parse:
+          type: literal
+          return: BornAnim
+      -
+        value: BornTrigger
+        display: false
+        parse:
+          type: literal
+          return: BornTrigger
+      -
+        value: Bullet
+        display: false
+        parse:
+          type: literal
+          return: Bullet
+      -
+        value: Burst_2_Trigger
+        display: false
+        parse:
+          type: literal
+          return: Burst_2_Trigger
+      -
+        value: ClearSpAction
+        display: false
+        parse:
+          type: literal
+          return: ClearSpAction
+      -
+        value: CloseAttack
+        display: false
+        parse:
+          type: literal
+          return: CloseAttack
+      -
+        value: CloseAttackForRistar
+        display: false
+        parse:
+          type: literal
+          return: CloseAttackForRistar
+      -
+        value: CollapseWarning
+        display: false
+        parse:
+          type: literal
+          return: CollapseWarning
+      -
+        value: CrystalShield
+        display: false
+        parse:
+          type: literal
+          return: CrystalShield
+      -
+        value: DamageFlag
+        display: false
+        parse:
+          type: literal
+          return: DamageFlag
+      -
+        value: DeadBoom
+        display: false
+        parse:
+          type: literal
+          return: DeadBoom
+      -
+        value: DevilAroundS1
+        display: false
+        parse:
+          type: literal
+          return: DevilAroundS1
+      -
+        value: DevilAroundS2
+        display: false
+        parse:
+          type: literal
+          return: DevilAroundS2
+      -
+        value: DevourFireBall
+        display: false
+        parse:
+          type: literal
+          return: DevourFireBall
+      -
+        value: DiceBuff
+        display: false
+        parse:
+          type: literal
+          return: DiceBuff
+      -
+        value: Dig
+        display: false
+        parse:
+          type: literal
+          return: Dig
+      -
+        value: Disable
+        display: false
+        parse:
+          type: literal
+          return: Disable
+      -
+        value: Dizzy
+        display: false
+        parse:
+          type: literal
+          return: Dizzy
+      -
+        value: DoTile
+        display: false
+        parse:
+          type: literal
+          return: DoTile
+      -
+        value: DrakShadow
+        display: false
+        parse:
+          type: literal
+          return: DrakShadow
+      -
+        value: DuplicateLrcconP2TriggeredByHpLoss
+        display: false
+        parse:
+          type: literal
+          return: DuplicateLrcconP2TriggeredByHpLoss
+      -
+        value: Ebb
+        display: false
+        parse:
+          type: literal
+          return: Ebb
+      -
+        value: ElectricShock
+        display: false
+        parse:
+          type: literal
+          return: ElectricShock
+      -
+        value: ElectricShockEmitEffect
+        display: false
+        parse:
+          type: literal
+          return: ElectricShockEmitEffect
+      -
+        value: ElectricShockParticleEffect
+        display: false
+        parse:
+          type: literal
+          return: ElectricShockParticleEffect
+      -
+        value: EmitProjectile
+        display: false
+        parse:
+          type: literal
+          return: EmitProjectile
+      -
+        value: EmitProjectileS3
+        display: false
+        parse:
+          type: literal
+          return: EmitProjectileS3
+      -
+        value: EndAnimation
+        display: false
+        parse:
+          type: literal
+          return: EndAnimation
+      -
+        value: Enemy
+        display: false
+        parse:
+          type: literal
+          return: Enemy
+      -
+        value: EnemyLineAdvanceAll
+        display: false
+        parse:
+          type: literal
+          return: EnemyLineAdvanceAll
+      -
+        value: EnemyListener
+        display: false
+        parse:
+          type: literal
+          return: EnemyListener
+      -
+        value: EquipThunder
+        display: false
+        parse:
+          type: literal
+          return: EquipThunder
+      -
+        value: ExchangeHp
+        display: false
+        parse:
+          type: literal
+          return: ExchangeHp
+      -
+        value: ExtraAbility0
+        display: false
+        parse:
+          type: literal
+          return: ExtraAbility0
+      -
+        value: ExtraAttackMagic
+        display: false
+        parse:
+          type: literal
+          return: ExtraAttackMagic
+      -
+        value: ExtraHeal
+        display: false
+        parse:
+          type: literal
+          return: ExtraHeal
+      -
+        value: FakeAttack
+        display: false
+        parse:
+          type: literal
+          return: FakeAttack
+      -
+        value: FearAura
+        display: false
+        parse:
+          type: literal
+          return: FearAura
+      -
+        value: FeverAura
+        display: false
+        parse:
+          type: literal
+          return: FeverAura
+      -
+        value: FinalAttack
+        display: false
+        parse:
+          type: literal
+          return: FinalAttack
+      -
+        value: Fire
+        display: false
+        parse:
+          type: literal
+          return: Fire
+      -
+        value: FireImmediately
+        display: false
+        parse:
+          type: literal
+          return: FireImmediately
+      -
+        value: FireProjectileToTile
+        display: false
+        parse:
+          type: literal
+          return: FireProjectileToTile
+      -
+        value: FireProtectionEffect
+        display: false
+        parse:
+          type: literal
+          return: FireProtectionEffect
+      -
+        value: FountainAlarm
+        display: false
+        parse:
+          type: literal
+          return: FountainAlarm
+      -
+        value: FountainDamage
+        display: false
+        parse:
+          type: literal
+          return: FountainDamage
+      -
+        value: FountainHint
+        display: false
+        parse:
+          type: literal
+          return: FountainHint
+      -
+        value: FourDirAttackForRistar
+        display: false
+        parse:
+          type: literal
+          return: FourDirAttackForRistar
+      -
+        value: Funnel
+        display: false
+        parse:
+          type: literal
+          return: Funnel
+      -
+        value: Funnel_s2
+        display: false
+        parse:
+          type: literal
+          return: Funnel_s2
+      -
+        value: GainFire
+        display: false
+        parse:
+          type: literal
+          return: GainFire
+      -
+        value: GlobalEff
+        display: false
+        parse:
+          type: literal
+          return: GlobalEff
+      -
+        value: GlobalSleepAura
+        display: false
+        parse:
+          type: literal
+          return: GlobalSleepAura
+      -
+        value: GlobalTeam
+        display: false
+        parse:
+          type: literal
+          return: GlobalTeam
+      -
+        value: GlobalTeamDouble
+        display: false
+        parse:
+          type: literal
+          return: GlobalTeamDouble
+      -
+        value: GlobalTokenAttach
+        display: false
+        parse:
+          type: literal
+          return: GlobalTokenAttach
+      -
+        value: GlobalUnique
+        display: false
+        parse:
+          type: literal
+          return: GlobalUnique
+      -
+        value: Grow
+        display: false
+        parse:
+          type: literal
+          return: Grow
+      -
+        value: Hack
+        display: false
+        parse:
+          type: literal
+          return: Hack
+      -
+        value: HealS2
+        display: false
+        parse:
+          type: literal
+          return: HealS2
+      -
+        value: HeightAura
+        display: false
+        parse:
+          type: literal
+          return: HeightAura
+      -
+        value: HighTide
+        display: false
+        parse:
+          type: literal
+          return: HighTide
+      -
+        value: Hint
+        display: false
+        parse:
+          type: literal
+          return: Hint
+      -
+        value: HitBlockee
+        display: false
+        parse:
+          type: literal
+          return: HitBlockee
+      -
+        value: HoldBody
+        display: false
+        parse:
+          type: literal
+          return: HoldBody
+      -
+        value: IdleAnim
+        display: false
+        parse:
+          type: literal
+          return: IdleAnim
+      -
+        value: InturruptLasso
+        display: false
+        parse:
+          type: literal
+          return: InturruptLasso
+      -
+        value: Invert
+        display: false
+        parse:
+          type: literal
+          return: Invert
+      -
+        value: InvisibleAura
+        display: false
+        parse:
+          type: literal
+          return: InvisibleAura
+      -
+        value: JckshdBuff
+        display: false
+        parse:
+          type: literal
+          return: JckshdBuff
+      -
+        value: JckshdBuffS3
+        display: false
+        parse:
+          type: literal
+          return: JckshdBuffS3
+      -
+        value: KillCjbtow
+        display: false
+        parse:
+          type: literal
+          return: KillCjbtow
+      -
+        value: Launch_End
+        display: false
+        parse:
+          type: literal
+          return: Launch_End
+      -
+        value: LightNext
+        display: false
+        parse:
+          type: literal
+          return: LightNext
+      -
+        value: Lighten
+        display: false
+        parse:
+          type: literal
+          return: Lighten
+      -
+        value: LowTide
+        display: false
+        parse:
+          type: literal
+          return: LowTide
+      -
+        value: M1ReviveEnd
+        display: false
+        parse:
+          type: literal
+          return: M1ReviveEnd
+      -
+        value: M2ReviveEnd
+        display: false
+        parse:
+          type: literal
+          return: M2ReviveEnd
+      -
+        value: M3ReviveEnd
+        display: false
+        parse:
+          type: literal
+          return: M3ReviveEnd
+      -
+        value: MovePlay
+        display: false
+        parse:
+          type: literal
+          return: MovePlay
+      -
+        value: NeutralToAlly
+        display: false
+        parse:
+          type: literal
+          return: NeutralToAlly
+      -
+        value: PassiveDurance
+        display: false
+        parse:
+          type: literal
+          return: PassiveDurance
+      -
+        value: PoisonDamage
+        display: false
+        parse:
+          type: literal
+          return: PoisonDamage
+      -
+        value: ProjectileAura
+        display: false
+        parse:
+          type: literal
+          return: ProjectileAura
+      -
+        value: ProjectileShieldP1
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP1
+      -
+        value: ProjectileShieldP1_1
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP1_1
+      -
+        value: ProjectileShieldP1_5
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP1_5
+      -
+        value: ProjectileShieldP1_core
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP1_core
+      -
+        value: ProjectileShieldP2_1
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP2_1
+      -
+        value: ProjectileShieldP2_1_core
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP2_1_core
+      -
+        value: ProjectileShieldP2_2
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP2_2
+      -
+        value: ProjectileShieldP2_2_core
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP2_2_core
+      -
+        value: PullS3
+        display: false
+        parse:
+          type: literal
+          return: PullS3
+      -
+        value: Purify
+        display: false
+        parse:
+          type: literal
+          return: Purify
+      -
+        value: Rage
+        display: false
+        parse:
+          type: literal
+          return: Rage
+      -
+        value: RandomGold
+        display: false
+        parse:
+          type: literal
+          return: RandomGold
+      -
+        value: RangedAttack
+        display: false
+        parse:
+          type: literal
+          return: RangedAttack
+      -
+        value: Reborn
+        display: false
+        parse:
+          type: literal
+          return: Reborn
+      -
+        value: RebornAnim
+        display: false
+        parse:
+          type: literal
+          return: RebornAnim
+      -
+        value: RemoveUndead
+        display: false
+        parse:
+          type: literal
+          return: RemoveUndead
+      -
+        value: Repair
+        display: false
+        parse:
+          type: literal
+          return: Repair
+      -
+        value: Revive
+        display: false
+        parse:
+          type: literal
+          return: Revive
+      -
+        value: ReviveEnd
+        display: false
+        parse:
+          type: literal
+          return: ReviveEnd
+      -
+        value: RopeTriggerAbility
+        display: false
+        parse:
+          type: literal
+          return: RopeTriggerAbility
+      -
+        value: RunePaper
+        display: false
+        parse:
+          type: literal
+          return: RunePaper
+      -
+        value: S3_Spawn
+        display: false
+        parse:
+          type: literal
+          return: S3_Spawn
+      -
+        value: ScreamAttack
+        display: false
+        parse:
+          type: literal
+          return: ScreamAttack
+      -
+        value: ScreenAttack
+        display: false
+        parse:
+          type: literal
+          return: ScreenAttack
+      -
+        value: ScreenAttackAnimation
+        display: false
+        parse:
+          type: literal
+          return: ScreenAttackAnimation
+      -
+        value: SelfKill
+        display: false
+        parse:
+          type: literal
+          return: SelfKill
+      -
+        value: Shield
+        display: false
+        parse:
+          type: literal
+          return: Shield
+      -
+        value: ShieldUp
+        display: false
+        parse:
+          type: literal
+          return: ShieldUp
+      -
+        value: "Shield[disable]"
+        display: false
+        parse:
+          type: literal
+          return: "Shield[disable]"
+      -
+        value: Shield_2
+        display: false
+        parse:
+          type: literal
+          return: Shield_2
+      -
+        value: Siege2SummonToken
+        display: false
+        parse:
+          type: literal
+          return: Siege2SummonToken
+      -
+        value: Skill
+        display: false
+        parse:
+          type: literal
+          return: Skill
+      -
+        value: SkillAnimation
+        display: false
+        parse:
+          type: literal
+          return: SkillAnimation
+      -
+        value: SkillBeginAnim
+        display: false
+        parse:
+          type: literal
+          return: SkillBeginAnim
+      -
+        value: SkillCoolDown
+        display: false
+        parse:
+          type: literal
+          return: SkillCoolDown
+      -
+        value: SkillEnd
+        display: false
+        parse:
+          type: literal
+          return: SkillEnd
+      -
+        value: SnowAccumulation
+        display: false
+        parse:
+          type: literal
+          return: SnowAccumulation
+      -
+        value: Spawn
+        display: false
+        parse:
+          type: literal
+          return: Spawn
+      -
+        value: SpawnInRange
+        display: false
+        parse:
+          type: literal
+          return: SpawnInRange
+      -
+        value: SpawnLrcconTriggeredByHpLoss
+        display: false
+        parse:
+          type: literal
+          return: SpawnLrcconTriggeredByHpLoss
+      -
+        value: SpawnRebornTiles
+        display: false
+        parse:
+          type: literal
+          return: SpawnRebornTiles
+      -
+        value: SpawnToken
+        display: false
+        parse:
+          type: literal
+          return: SpawnToken
+      -
+        value: SpawnTokenCommon
+        display: false
+        parse:
+          type: literal
+          return: SpawnTokenCommon
+      -
+        value: SpawnTokenS3
+        display: false
+        parse:
+          type: literal
+          return: SpawnTokenS3
+      -
+        value: SpawnTokens
+        display: false
+        parse:
+          type: literal
+          return: SpawnTokens
+      -
+        value: SplashAttack
+        display: false
+        parse:
+          type: literal
+          return: SplashAttack
+      -
+        value: StartBattle
+        display: false
+        parse:
+          type: literal
+          return: StartBattle
+      -
+        value: StartFear
+        display: false
+        parse:
+          type: literal
+          return: StartFear
+      -
+        value: StopCost
+        display: false
+        parse:
+          type: literal
+          return: StopCost
+      -
+        value: StopRushTime
+        display: false
+        parse:
+          type: literal
+          return: StopRushTime
+      -
+        value: Stun
+        display: false
+        parse:
+          type: literal
+          return: Stun
+      -
+        value: StunEnd
+        display: false
+        parse:
+          type: literal
+          return: StunEnd
+      -
+        value: SubAttack
+        display: false
+        parse:
+          type: literal
+          return: SubAttack
+      -
+        value: SubRay
+        display: false
+        parse:
+          type: literal
+          return: SubRay
+      -
+        value: Summon
+        display: false
+        parse:
+          type: literal
+          return: Summon
+      -
+        value: SummonBoss
+        display: false
+        parse:
+          type: literal
+          return: SummonBoss
+      -
+        value: SummonFire
+        display: false
+        parse:
+          type: literal
+          return: SummonFire
+      -
+        value: SummonPunch
+        display: false
+        parse:
+          type: literal
+          return: SummonPunch
+      -
+        value: SummonSpilot
+        display: false
+        parse:
+          type: literal
+          return: SummonSpilot
+      -
+        value: SummonTile
+        display: false
+        parse:
+          type: literal
+          return: SummonTile
+      -
+        value: SummonYmgpck
+        display: false
+        parse:
+          type: literal
+          return: SummonYmgpck
+      -
+        value: SwitchAnimation
+        display: false
+        parse:
+          type: literal
+          return: SwitchAnimation
+      -
+        value: SwitchMode
+        display: false
+        parse:
+          type: literal
+          return: SwitchMode
+      -
+        value: SwitchStateEnd
+        display: false
+        parse:
+          type: literal
+          return: SwitchStateEnd
+      -
+        value: SwitchToMelee
+        display: false
+        parse:
+          type: literal
+          return: SwitchToMelee
+      -
+        value: SwitchToRange
+        display: false
+        parse:
+          type: literal
+          return: SwitchToRange
+      -
+        value: Sword
+        display: false
+        parse:
+          type: literal
+          return: Sword
+      -
+        value: TakeOffDelay
+        display: false
+        parse:
+          type: literal
+          return: TakeOffDelay
+      -
+        value: Thorn
+        display: false
+        parse:
+          type: literal
+          return: Thorn
+      -
+        value: TileListener
+        display: false
+        parse:
+          type: literal
+          return: TileListener
+      -
+        value: TileSpawn
+        display: false
+        parse:
+          type: literal
+          return: TileSpawn
+      -
+        value: TollEnd
+        display: false
+        parse:
+          type: literal
+          return: TollEnd
+      -
+        value: TollEnter
+        display: false
+        parse:
+          type: literal
+          return: TollEnter
+      -
+        value: Trace
+        display: false
+        parse:
+          type: literal
+          return: Trace
+      -
+        value: TraceStorm
+        display: false
+        parse:
+          type: literal
+          return: TraceStorm
+      -
+        value: TraceTarget
+        display: false
+        parse:
+          type: literal
+          return: TraceTarget
+      -
+        value: TraceTargetAbility
+        display: false
+        parse:
+          type: literal
+          return: TraceTargetAbility
+      -
+        value: Transfor
+        display: false
+        parse:
+          type: literal
+          return: Transfor
+      -
+        value: TriggerDevilParticel
+        display: false
+        parse:
+          type: literal
+          return: TriggerDevilParticel
+      -
+        value: TriggerSkill
+        display: false
+        parse:
+          type: literal
+          return: TriggerSkill
+      -
+        value: TurretEnd
+        display: false
+        parse:
+          type: literal
+          return: TurretEnd
+      -
+        value: WakeUp
+        display: false
+        parse:
+          type: literal
+          return: WakeUp
+      -
+        value: WakeUpAnimation
+        display: false
+        parse:
+          type: literal
+          return: WakeUpAnimation
+      -
+        value: WithdrawBoom
+        display: false
+        parse:
+          type: literal
+          return: WithdrawBoom
+      -
+        value: WithdrawInRange
+        display: false
+        parse:
+          type: literal
+          return: WithdrawInRange
+      -
+        value: WolvesDispersed
+        display: false
+        parse:
+          type: literal
+          return: WolvesDispersed
+      -
+        value: add_atk_range
+        display: false
+        parse:
+          type: literal
+          return: add_atk_range
+      -
+        value: anim_trigger
+        display: false
+        parse:
+          type: literal
+          return: anim_trigger
+      -
+        value: arson_trigger
+        display: false
+        parse:
+          type: literal
+          return: arson_trigger
+      -
+        value: attract
+        display: false
+        parse:
+          type: literal
+          return: attract
+      -
+        value: aura
+        display: false
+        parse:
+          type: literal
+          return: aura
+      -
+        value: "bena_trait_ability[switch2normal]"
+        display: false
+        parse:
+          type: literal
+          return: "bena_trait_ability[switch2normal]"
+      -
+        value: draw_special
+        display: false
+        parse:
+          type: literal
+          return: draw_special
+      -
+        value: "dugago_t_ability[fly]"
+        display: false
+        parse:
+          type: literal
+          return: "dugago_t_ability[fly]"
+      -
+        value: emit_burn_field
+        display: false
+        parse:
+          type: literal
+          return: emit_burn_field
+      -
+        value: etlchi_steal_hp
+        display: false
+        parse:
+          type: literal
+          return: etlchi_steal_hp
+      -
+        value: frozenAura
+        display: false
+        parse:
+          type: literal
+          return: frozenAura
+      -
+        value: generateFireBall
+        display: false
+        parse:
+          type: literal
+          return: generateFireBall
+      -
+        value: "ghost2[switch2normal]"
+        display: false
+        parse:
+          type: literal
+          return: "ghost2[switch2normal]"
+      -
+        value: "ghost2[switch2stand]"
+        display: false
+        parse:
+          type: literal
+          return: "ghost2[switch2stand]"
+      -
+        value: heal
+        display: false
+        parse:
+          type: literal
+          return: heal
+      -
+        value: "iana[switch2normal]"
+        display: false
+        parse:
+          type: literal
+          return: "iana[switch2normal]"
+      -
+        value: "iana[switch2stand]"
+        display: false
+        parse:
+          type: literal
+          return: "iana[switch2stand]"
+      -
+        value: "iana[switch2stand_s2]"
+        display: false
+        parse:
+          type: literal
+          return: "iana[switch2stand_s2]"
+      -
+        value: iana_s2_aura
+        display: false
+        parse:
+          type: literal
+          return: iana_s2_aura
+      -
+        value: ines_emit_guard
+        display: false
+        parse:
+          type: literal
+          return: ines_emit_guard
+      -
+        value: ines_steal_atk
+        display: false
+        parse:
+          type: literal
+          return: ines_steal_atk
+      -
+        value: ines_steal_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: ines_steal_attack_speed
+      -
+        value: "kazema[switch2normal]"
+        display: false
+        parse:
+          type: literal
+          return: "kazema[switch2normal]"
+      -
+        value: laser
+        display: false
+        parse:
+          type: literal
+          return: laser
+      -
+        value: lin_t_1_s_3
+        display: false
+        parse:
+          type: literal
+          return: lin_t_1_s_3
+      -
+        value: "lin_t_1_s_3[common]"
+        display: false
+        parse:
+          type: literal
+          return: "lin_t_1_s_3[common]"
+      -
+        value: mcndog_resume
+        display: false
+        parse:
+          type: literal
+          return: mcndog_resume
+      -
+        value: mcndog_stun
+        display: false
+        parse:
+          type: literal
+          return: mcndog_stun
+      -
+        value: "mortis[switch2normal]"
+        display: false
+        parse:
+          type: literal
+          return: "mortis[switch2normal]"
+      -
+        value: multiMeleeAtk
+        display: false
+        parse:
+          type: literal
+          return: multiMeleeAtk
+      -
+        value: multiMeleeAtkS2
+        display: false
+        parse:
+          type: literal
+          return: multiMeleeAtkS2
+      -
+        value: nadaodonghua
+        display: false
+        parse:
+          type: literal
+          return: nadaodonghua
+      -
+        value: narant_steal_atk
+        display: false
+        parse:
+          type: literal
+          return: narant_steal_atk
+      -
+        value: narant_steal_def
+        display: false
+        parse:
+          type: literal
+          return: narant_steal_def
+      -
+        value: portlexi_shoot_projectile
+        display: false
+        parse:
+          type: literal
+          return: portlexi_shoot_projectile
+      -
+        value: rebornAttack
+        display: false
+        parse:
+          type: literal
+          return: rebornAttack
+      -
+        value: ristar_slow_start
+        display: false
+        parse:
+          type: literal
+          return: ristar_slow_start
+      -
+        value: steal_atk
+        display: false
+        parse:
+          type: literal
+          return: steal_atk
+      -
+        value: steal_def
+        display: false
+        parse:
+          type: literal
+          return: steal_def
+      -
+        value: stunAttack
+        display: false
+        parse:
+          type: literal
+          return: stunAttack
+      -
+        value: surfer_steal_def
+        display: false
+        parse:
+          type: literal
+          return: surfer_steal_def
+      -
+        value: switch_recover_sp
+        display: false
+        parse:
+          type: literal
+          return: switch_recover_sp
+      -
+        value: t2global
+        display: false
+        parse:
+          type: literal
+          return: t2global
+      -
+        value: trace
+        display: false
+        parse:
+          type: literal
+          return: trace
+      -
+        value: trshrb_switch
+        display: false
+        parse:
+          type: literal
+          return: trshrb_switch
+      -
+        value: uni_animal_spawn
+        display: false
+        parse:
+          type: literal
+          return: uni_animal_spawn
+      -
+        value: vigil_steal_def
+        display: false
+        parse:
+          type: literal
+          return: vigil_steal_def
+      -
+        value: "vrdant[switch2normal]"
+        display: false
+        parse:
+          type: literal
+          return: "vrdant[switch2normal]"
+      -
+        value: vvana_steal_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: vvana_steal_attack_speed
+  _castDirectly:
+    type: boolean
+    description: cast Directly
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkCanUseAblityFlag:
+    type: boolean
+    description: check Can Use Ablity Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _notInterruptAbilityIfCasting:
+    type: boolean
+    description: not Interrupt Ability If Casting
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _triggerHostAbility:
+    type: boolean
+    description: trigger Host Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useCastResult:
+    type: boolean
+    description: use Cast Result
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useFirstActiveAbility:
+    type: boolean
+    description: use First Active Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

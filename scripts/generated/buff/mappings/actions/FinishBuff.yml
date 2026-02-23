@@ -1,0 +1,28 @@
+actionType: FinishBuff
+fields:
+  _decCntIfStack:
+    type: boolean
+    description: dec Cnt If Stack
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _updateOverrideMap:
+    type: boolean
+    description: update Override Map
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

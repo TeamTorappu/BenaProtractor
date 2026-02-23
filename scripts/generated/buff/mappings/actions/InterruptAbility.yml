@@ -1,0 +1,222 @@
+actionType: InterruptAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: Aura
+        display: false
+        parse:
+          type: literal
+          return: Aura
+      -
+        value: BirdAura
+        display: false
+        parse:
+          type: literal
+          return: BirdAura
+      -
+        value: BirdAura_Self
+        display: false
+        parse:
+          type: literal
+          return: BirdAura_Self
+      -
+        value: CloseAttack
+        display: false
+        parse:
+          type: literal
+          return: CloseAttack
+      -
+        value: CollapseWarning
+        display: false
+        parse:
+          type: literal
+          return: CollapseWarning
+      -
+        value: FountainAlarm
+        display: false
+        parse:
+          type: literal
+          return: FountainAlarm
+      -
+        value: FountainHint
+        display: false
+        parse:
+          type: literal
+          return: FountainHint
+      -
+        value: FourDirAttackForRistar
+        display: false
+        parse:
+          type: literal
+          return: FourDirAttackForRistar
+      -
+        value: GlobalSleepAura
+        display: false
+        parse:
+          type: literal
+          return: GlobalSleepAura
+      -
+        value: GlobalUnique
+        display: false
+        parse:
+          type: literal
+          return: GlobalUnique
+      -
+        value: Hint
+        display: false
+        parse:
+          type: literal
+          return: Hint
+      -
+        value: InvisibleAura
+        display: false
+        parse:
+          type: literal
+          return: InvisibleAura
+      -
+        value: JckshdBuff
+        display: false
+        parse:
+          type: literal
+          return: JckshdBuff
+      -
+        value: JckshdBuffS3
+        display: false
+        parse:
+          type: literal
+          return: JckshdBuffS3
+      -
+        value: PetrifiedRay
+        display: false
+        parse:
+          type: literal
+          return: PetrifiedRay
+      -
+        value: ProjectileAura
+        display: false
+        parse:
+          type: literal
+          return: ProjectileAura
+      -
+        value: RandomGold
+        display: false
+        parse:
+          type: literal
+          return: RandomGold
+      -
+        value: SubRay
+        display: false
+        parse:
+          type: literal
+          return: SubRay
+      -
+        value: TraceTarget
+        display: false
+        parse:
+          type: literal
+          return: TraceTarget
+      -
+        value: laser
+        display: false
+        parse:
+          type: literal
+          return: laser
+  _emitAttackFinishOnly:
+    type: boolean
+    description: emit Attack Finish Only
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _stopAffect:
+    type: boolean
+    description: stop Affect
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useBlackboardCardUidAsOwner:
+    type: boolean
+    description: use Blackboard Card Uid As Owner
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useCurrentAbility:
+    type: boolean
+    description: use Current Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,199 @@
+field: _actions
+type: object
+description: actions
+actions:
+  EmitProjectile:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"MAGICAL","_atkScaleVar":"atk_scale","_defaultAtkScale":1,"_applyWay":"RANGED","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":false,"_attackType":"NORMAL","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"MAGICAL","_atkScaleVar":"atk_scale_aura","_defaultAtkScale":1,"_applyWay":"NONE","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":false,"_attackType":"NORMAL","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"},{"$type":"Torappu.Battle.Action.Nodes+ApplyElementDamage, Assembly-CSharp","_elementDamageType":"SANITY","_sourceType":"SOURCE","_isFixedEpDamage":false,"_baseOnHostAtk":false,"_baseOnEnemyHostAtk":true,"_fixedEpDamageKey":null,"_fixedEpDamage":0,"_noSource":false,"_forceUseProjectileCachedAtk":false,"_multiplyWithBuffValidStackCnt":false,"_buffKey":null,"_buffSourceType":"BUFF_OWNER","_targetType":"TARGET","_isEnvElementDamage":false,"_loadElementTypeFromBb":false,"_fixedEpDamageScale":"","_epDamageScale":"ep_damage_ratio"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"PHYSICAL","_atkScaleVar":"atk_scale","_defaultAtkScale":1,"_applyWay":"NONE","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":false,"_attackType":"SPLASH","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"PHYSICAL","_atkScaleVar":"atk_scale","_defaultAtkScale":1,"_applyWay":"RANGED","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":false,"_attackType":"NORMAL","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CreateBuffToCertainSideUnits, Assembly-CSharp","_sideMask":"ENEMY","_buff":{"attributes":{"abnormalFlags":null,"abnormalImmunes":null,"abnormalAntis":null,"abnormalCombos":null,"abnormalComboImmunes":null,"attributeModifiers":null},"buffKey":"enemy_esabr_add_energy","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"enemy_esabr_add_energy","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"IMMEDIATELY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":null,"stripBlackboardParamsWithBuffKey":false,"blackboard":null},"_isDerivedBuff":false,"_noSource":true,"_finishDerivedBuffIfParentFinish":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+Empty, Assembly-CSharp"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FixedValueDamage, Assembly-CSharp","_damageType":"PHYSICAL","_damageKey":"current_atk","_ignoreForSp":false,"_attackType":"NORMAL","_skipModifierEvent":false,"_considerUnhurtable":false,"_noSourceDamage":false,"_targetType":"TARGET","_assignRealDamageToBB":false,"_multiplierByKey":false,"_multiplierKey":"cnt","_damageSourceType":"SOURCE","_damageTargetType":"TARGET","_triggerOnCalculateDamage":false,"_isEnvDamage":false,"_ignoreCancelReasonMask":"NONE","_forceDisplayDamageNum":false,"_modifierKey":"","_devideDamageFromAbilityCnt":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FixedValueDamage, Assembly-CSharp","_damageType":"PHYSICAL","_damageKey":"value","_ignoreForSp":false,"_attackType":"SPLASH","_skipModifierEvent":false,"_considerUnhurtable":false,"_noSourceDamage":false,"_targetType":"TARGET","_assignRealDamageToBB":false,"_multiplierByKey":false,"_multiplierKey":"cnt","_damageSourceType":"SOURCE","_damageTargetType":"TARGET","_triggerOnCalculateDamage":true,"_isEnvDamage":false,"_ignoreCancelReasonMask":"NONE","_forceDisplayDamageNum":false,"_modifierKey":"","_devideDamageFromAbilityCnt":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FixedValueHeal, Assembly-CSharp","_targetType":"TARGET","_sourceType":"SOURCE","_ignoreHealFree":true,"_healValueKey":"value"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+LegionModeOnlyAddProfessionLevel, Assembly-CSharp","_targetType":"TARGET","_levelCnt":1,"_specifyProfessionCategory":false,"_professionCategory":"NONE","_sourceType":"MAIN_TARGET"},{"$type":"Torappu.Battle.Action.Nodes+CreateEffect, Assembly-CSharp","_targetType":"TARGET","_sourceType":"BUFF_OWNER","_effectKey":"trap_774_bqmlee_trail","_useSourceFaceVactor":false,"_useSourceToTargetDirection":false,"_useConstDirection":false,"_constDirection":"UP","_createEffectHoldBySource":false,"_useAttackPlaybackSpeed":false,"_manualSetPlaybackSpeed":false,"_blackboardKey":"","_playbackSpeed":1},{"$type":"Torappu.Battle.Action.Nodes+CreateEffect, Assembly-CSharp","_targetType":"TARGET","_sourceType":"BUFF_OWNER","_effectKey":"trap_774_bqmlee_hit","_useSourceFaceVactor":false,"_useSourceToTargetDirection":false,"_useConstDirection":false,"_constDirection":"UP","_createEffectHoldBySource":false,"_useAttackPlaybackSpeed":false,"_manualSetPlaybackSpeed":false,"_blackboardKey":"","_playbackSpeed":1}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+SummonRandomEnemyWithRuntimeRoute, Assembly-CSharp","_randomEnemys":["enemy_10028_vtswd","enemy_10029_vtshld","enemy_10030_vtwand"],"_noSource":true,"_source":"BUFF_OWNER","_motionMode":"FLY","_unharmful":true,"_alwaysCountAsKilled":false,"_waitTime":0,"_offset":0}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+  EmitProjectileOnSourceRootTile:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+  EmitProjectileUseAbilitySelector:
+    type: array
+    values:
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"MAGICAL","_atkScaleVar":"atk_scale","_defaultAtkScale":1,"_applyWay":"NONE","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":false,"_attackType":"NORMAL","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"},{"$type":"Torappu.Battle.Action.Nodes+IsTargetInEPBreakRecovery, Assembly-CSharp","_target":"TARGET","_checkRecoveryType":true,"_elementType":"DARK"},{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"ELEMENT","_atkScaleVar":"element_atk_scale","_defaultAtkScale":1,"_applyWay":"NONE","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":false,"_attackType":"NORMAL","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"MAGICAL","_atkScaleVar":"atk_scale","_defaultAtkScale":1,"_applyWay":"NONE","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":false,"_attackType":"NORMAL","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"PHYSICAL","_atkScaleVar":"atk_scale","_defaultAtkScale":1,"_applyWay":"NONE","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":true,"_attackType":"NORMAL","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FixedValueDamage, Assembly-CSharp","_damageType":"MAGICAL","_damageKey":"dynamic","_ignoreForSp":false,"_attackType":"NORMAL","_skipModifierEvent":false,"_considerUnhurtable":false,"_noSourceDamage":false,"_targetType":"TARGET","_assignRealDamageToBB":false,"_multiplierByKey":false,"_multiplierKey":"cnt","_damageSourceType":"SOURCE","_damageTargetType":"TARGET","_triggerOnCalculateDamage":true,"_isEnvDamage":false,"_ignoreCancelReasonMask":"NONE","_forceDisplayDamageNum":false,"_modifierKey":"","_devideDamageFromAbilityCnt":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+  RandomAction:
+    type: array
+    values:
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyHeal, Assembly-CSharp","_sourceType":"BUFF_SOURCE","_healScaleKey":"heal_scale","_useDynamicVar":false,"_targetType":"BUFF_OWNER","_scaleUpIfUnderHpRatio":false,"_scaleUpByBlackboardKey":null,"_customModifierKey":"","_useInputTargetAsHealTarget":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+ModifyBlackboardStr, Assembly-CSharp","_blackboardKeys":"enemy_key","_fromBlackboardKeys":"enemy_1","_value":null,"_checkFromBlackboardValue":false},{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"dsfull_tr_1[derived][1]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"dsfull_tr_1[derived][1]","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"BUFF_OWNER","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+  Svash2EmitProjectileFixedDirection:
+    type: array
+    values:
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp","_sourceType":"SOURCE","_targetType":"TARGET","_damageType":"PHYSICAL","_atkScaleVar":"bird_atk_scale","_defaultAtkScale":1,"_applyWay":"MELEE","_baseOnHostAtk":false,"_emitSourceOnCalculateDamage":false,"_attackType":"NORMAL","_forceUseProjectileCachedAtk":false,"_ignoreForSp":false,"_ignoreMissFlag":"NONE","_ignoreCancelReasonMask":"NONE","_modifierKey":"","_assignRealDamageToBB":false,"_skipModifierEvent":false,"_noSource":false,"_onlyUseSourceOnCalculateDamage":false,"_getCachedAtkFromBlackboard":false,"_cachedAtkKey":"atk","_setSharedFlag":false,"_sharedFlagIndex":"IS_CONTINUOUS"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

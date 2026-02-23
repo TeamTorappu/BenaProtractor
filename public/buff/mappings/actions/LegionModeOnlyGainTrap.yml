@@ -1,0 +1,112 @@
+actionType: LegionModeOnlyGainTrap
+fields:
+  _extraCheckOnlyUseOnceList:
+    type: boolean
+    description: extra Check Only Use Once List
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _gainToCardType:
+    type: string
+    description: gain To Card Type
+    values:
+      -
+        value: PENDING
+        display: false
+        parse:
+          type: literal
+          return: PENDING
+      -
+        value: USING
+        display: false
+        parse:
+          type: literal
+          return: USING
+  _onlyUseOnce:
+    type: boolean
+    description: only Use Once
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _releaseDiscardBeforeFind:
+    type: boolean
+    description: release Discard Before Find
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _tokenKey:
+    type: string
+    description: token Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: trap_732_ltnova
+        display: false
+        parse:
+          type: literal
+          return: trap_732_ltnova
+      -
+        value: trap_735_platre
+        display: false
+        parse:
+          type: literal
+          return: trap_735_platre
+      -
+        value: trap_745_beer
+        display: false
+        parse:
+          type: literal
+          return: trap_745_beer
+      -
+        value: trap_756_cdnest
+        display: false
+        parse:
+          type: literal
+          return: trap_756_cdnest
+      -
+        value: trap_765_bmoney
+        display: false
+        parse:
+          type: literal
+          return: trap_765_bmoney
+      -
+        value: trap_776_bqmleeb
+        display: false
+        parse:
+          type: literal
+          return: trap_776_bqmleeb

@@ -1,0 +1,82 @@
+actionType: CheckTraitAbilityBlackboard
+fields:
+  _compareType:
+    type: string
+    description: compare Type
+    values:
+      -
+        value: EQUALS
+        display: false
+        parse:
+          type: literal
+          return: EQUALS
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _leftBlackboardKey:
+    type: string
+    description: left Blackboard Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+  _rightBlackboardKey:
+    type: null | string
+    description: right Blackboard Key
+    values:
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _rightValue:
+    type: number
+    description: right Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

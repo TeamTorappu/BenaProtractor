@@ -1,0 +1,70 @@
+actionType: SandboxShowToast
+fields:
+  _lastTime:
+    type: number
+    description: last Time
+    values:
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 4
+        display: false
+        parse:
+          type: literal
+          return: 4
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _toastKey:
+    type: string
+    description: toast Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: ACT36SIDE_BOSS_ANGRY
+        display: false
+        parse:
+          type: literal
+          return: ACT36SIDE_BOSS_ANGRY
+  _useNameAsParmInMap:
+    type: boolean
+    description: use Name As Parm In Map
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useStringTableKey:
+    type: boolean
+    description: use String Table Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

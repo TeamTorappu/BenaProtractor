@@ -1,0 +1,60 @@
+actionType: FinishCurrentWave
+fields:
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _trackAllManagedEnemiesAtNextWave:
+    type: boolean
+    description: track All Managed Enemies At Next Wave
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _trackSourceAtNextWave:
+    type: boolean
+    description: track Source At Next Wave
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _trackSourceAtWaveDelta:
+    type: number
+    description: track Source At Wave Delta
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1

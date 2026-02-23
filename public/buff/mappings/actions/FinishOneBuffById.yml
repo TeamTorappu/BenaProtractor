@@ -1,0 +1,66 @@
+actionType: FinishOneBuffById
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: enemy_spnwiz_ghost_mark
+        display: false
+        parse:
+          type: literal
+          return: enemy_spnwiz_ghost_mark
+      -
+        value: "enemy_windoc_fear_hot[damage_resistance]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_windoc_fear_hot[damage_resistance]"
+      -
+        value: "vigil_wolf_t_1_enhance[holder]"
+        display: false
+        parse:
+          type: literal
+          return: "vigil_wolf_t_1_enhance[holder]"
+  _checkBuffFinished:
+    type: boolean
+    description: check Buff Finished
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

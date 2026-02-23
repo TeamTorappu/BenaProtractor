@@ -1,0 +1,22 @@
+actionType: LegionModeOnlyGainGoldViaCardNum
+fields:
+  _cardType:
+    type: string
+    description: card Type
+    values:
+      -
+        value: NULL
+        display: false
+        parse:
+          type: literal
+          return: NULL
+  _goldPerCount:
+    type: number
+    description: gold Per Count
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1

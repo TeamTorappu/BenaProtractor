@@ -1,0 +1,66 @@
+actionType: AssignStealAttributeAbilityTotalValueToBB
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: StealAtk
+        display: false
+        parse:
+          type: literal
+          return: StealAtk
+      -
+        value: StealDef
+        display: false
+        parse:
+          type: literal
+          return: StealDef
+      -
+        value: StealHp
+        display: false
+        parse:
+          type: literal
+          return: StealHp
+  _assignStealMaxValue:
+    type: boolean
+    description: assign Steal Max Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _useFirstActiveAbility:
+    type: boolean
+    description: use First Active Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

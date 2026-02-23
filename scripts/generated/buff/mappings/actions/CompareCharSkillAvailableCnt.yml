@@ -1,0 +1,42 @@
+actionType: CompareCharSkillAvailableCnt
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+  _count:
+    type: number
+    description: count
+    values:
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+  _dontShowWarnning:
+    type: boolean
+    description: dont Show Warnning
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,82 @@
+actionType: CreateTileEffectInRange
+fields:
+  _buildableType:
+    type: string
+    description: buildable Type
+    values:
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: trap_aegiret_01_buff_01
+        display: false
+        parse:
+          type: literal
+          return: trap_aegiret_01_buff_01
+  _holdIt:
+    type: boolean
+    description: hold It
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _specifyBuildType:
+    type: boolean
+    description: specify Build Type
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useAttackRange:
+    type: boolean
+    description: use Attack Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _verifyBeforeCreate:
+    type: boolean
+    description: verify Before Create
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,32 @@
+actionType: CheckSkillRemainingProgress
+fields:
+  _compareValue:
+    type: number
+    description: compare Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

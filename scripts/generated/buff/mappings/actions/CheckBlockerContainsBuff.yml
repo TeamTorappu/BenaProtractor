@@ -1,0 +1,62 @@
+actionType: CheckBlockerContainsBuff
+fields:
+  _buffKeys:
+    type: array
+    description: buff Keys
+    schema: action_subschema/_buffKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _buffSourceType:
+    type: string
+    description: buff Source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _checkBuffSource:
+    type: boolean
+    description: check Buff Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isAND:
+    type: boolean
+    description: is A N D
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

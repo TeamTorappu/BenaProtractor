@@ -1,0 +1,172 @@
+actionType: AddCharacterSharedBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _isOverwrite:
+    type: boolean
+    description: is Overwrite
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isStringBB:
+    type: boolean
+    description: is String B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useValueKey:
+    type: boolean
+    description: use Value Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _valueKey:
+    type: string
+    description: value Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: char_id
+        display: false
+        parse:
+          type: literal
+          return: char_id
+      -
+        value: chen3_col
+        display: false
+        parse:
+          type: literal
+          return: chen3_col
+      -
+        value: chen3_row
+        display: false
+        parse:
+          type: literal
+          return: chen3_row
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+      -
+        value: monstr_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: monstr_hp_ratio
+      -
+        value: range_id
+        display: false
+        parse:
+          type: literal
+          return: range_id
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+  _valueStr:
+    type: string
+    description: value Str
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""

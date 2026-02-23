@@ -1,0 +1,98 @@
+actionType: CreateDeckBuffByCnt
+fields:
+  _cnt:
+    type: number
+    description: cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _deckBuff:
+    type: object
+    description: deck Buff
+    schema: action_subschema/_deckBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _exceptTokenAndTrap:
+    type: boolean
+    description: except Token And Trap
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _onlyToTarget:
+    type: boolean
+    description: only To Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _onlyTokenAndTrap:
+    type: boolean
+    description: only Token And Trap
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _reverseOrdert:
+    type: boolean
+    description: reverse Ordert
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

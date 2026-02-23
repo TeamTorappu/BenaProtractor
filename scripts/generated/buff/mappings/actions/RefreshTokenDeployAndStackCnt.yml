@@ -1,0 +1,52 @@
+actionType: RefreshTokenDeployAndStackCnt
+fields:
+  _maxDeckStackCnt:
+    type: number
+    description: max Deck Stack Cnt
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _maxDeckStackCntKey:
+    type: string
+    description: max Deck Stack Cnt Key
+    values:
+      -
+        value: max_deck_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_deck_stack_cnt
+  _maxDeployCnt:
+    type: number
+    description: max Deploy Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _maxDeployCntKey:
+    type: string
+    description: max Deploy Cnt Key
+    values:
+      -
+        value: max_deploy_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_deploy_cnt
+  _refreshTargetTokenOrHost:
+    type: boolean
+    description: refresh Target Token Or Host
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

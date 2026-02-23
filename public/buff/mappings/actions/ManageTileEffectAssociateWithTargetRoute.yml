@@ -1,0 +1,48 @@
+actionType: ManageTileEffectAssociateWithTargetRoute
+fields:
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: tile_end_special
+        display: false
+        parse:
+          type: literal
+          return: tile_end_special
+  _isDelete:
+    type: boolean
+    description: is Delete
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useRouteEndPosition:
+    type: boolean
+    description: use Route End Position
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

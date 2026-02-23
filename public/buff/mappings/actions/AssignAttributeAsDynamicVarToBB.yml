@@ -1,0 +1,116 @@
+actionType: AssignAttributeAsDynamicVarToBB
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+  _scaleVar:
+    type: string
+    description: scale Var
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: ep_heal_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_heal_ratio
+      -
+        value: final_scale
+        display: false
+        parse:
+          type: literal
+          return: final_scale
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: hp_shield_scale
+        display: false
+        parse:
+          type: literal
+          return: hp_shield_scale
+      -
+        value: invalid
+        display: false
+        parse:
+          type: literal
+          return: invalid
+      -
+        value: kill_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: kill_atk_scale
+      -
+        value: max_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: max_hp_ratio
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+      -
+        value: shield
+        display: false
+        parse:
+          type: literal
+          return: shield
+      -
+        value: shield_scale
+        display: false
+        parse:
+          type: literal
+          return: shield_scale
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

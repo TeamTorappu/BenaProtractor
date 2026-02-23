@@ -1,0 +1,78 @@
+actionType: FinishBuffsByIdByBuffSource
+fields:
+  _alsoClearNullSource:
+    type: boolean
+    description: also Clear Null Source
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: enemy_ristar_boss_buff
+        display: false
+        parse:
+          type: literal
+          return: enemy_ristar_boss_buff
+      -
+        value: "mark_bbrain[damage_split_target]"
+        display: false
+        parse:
+          type: literal
+          return: "mark_bbrain[damage_split_target]"
+      -
+        value: "yato2_s1[3rd]"
+        display: false
+        parse:
+          type: literal
+          return: "yato2_s1[3rd]"
+      -
+        value: yato2_s1_atk_checker
+        display: false
+        parse:
+          type: literal
+          return: yato2_s1_atk_checker
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

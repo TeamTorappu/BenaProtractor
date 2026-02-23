@@ -1,0 +1,124 @@
+actionType: Act47SideAddForceToBalloon
+fields:
+  _force:
+    type: number
+    description: force
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+  _forceKey:
+    type: string
+    description: force Key
+    values:
+      -
+        value: force
+        display: false
+        parse:
+          type: literal
+          return: force
+      -
+        value: force_extra
+        display: false
+        parse:
+          type: literal
+          return: force_extra
+  _isMinus:
+    type: boolean
+    description: is Minus
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isUpForce:
+    type: boolean
+    description: is Up Force
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _tileKeyCol:
+    type: string
+    description: tile Key Col
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+  _tileKeyRow:
+    type: string
+    description: tile Key Row
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+  _updateOldTileVal:
+    type: boolean
+    description: update Old Tile Val
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

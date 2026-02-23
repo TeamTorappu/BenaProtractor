@@ -1,0 +1,42 @@
+actionType: InitForces
+fields:
+  _clearanceForceKey:
+    type: string
+    description: clearance Force Key
+    values:
+      -
+        value: clearance_force
+        display: false
+        parse:
+          type: literal
+          return: clearance_force
+  _passBallForceKey:
+    type: string
+    description: pass Ball Force Key
+    values:
+      -
+        value: passing_force
+        display: false
+        parse:
+          type: literal
+          return: passing_force
+  _slapShotForceKey:
+    type: string
+    description: slap Shot Force Key
+    values:
+      -
+        value: slapshot_force
+        display: false
+        parse:
+          type: literal
+          return: slapshot_force
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

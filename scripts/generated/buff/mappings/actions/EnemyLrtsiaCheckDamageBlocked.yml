@@ -1,0 +1,62 @@
+actionType: EnemyLrtsiaCheckDamageBlocked
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ProjectileShieldP1_core
+        display: false
+        parse:
+          type: literal
+          return: ProjectileShieldP1_core
+  _angleKey:
+    type: string
+    description: angle Key
+    values:
+      -
+        value: block_angle
+        display: false
+        parse:
+          type: literal
+          return: block_angle
+  _blockAngle:
+    type: number
+    description: block Angle
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _clockWise:
+    type: boolean
+    description: clock Wise
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE

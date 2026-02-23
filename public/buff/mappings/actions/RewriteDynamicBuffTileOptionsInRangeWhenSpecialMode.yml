@@ -1,0 +1,132 @@
+actionType: RewriteDynamicBuffTileOptionsInRangeWhenSpecialMode
+fields:
+  _advancedBuildableMask:
+    type: string
+    description: advanced Buildable Mask
+    values:
+      -
+        value: WOODRD_HOLE
+        display: false
+        parse:
+          type: literal
+          return: WOODRD_HOLE
+  _buildableType:
+    type: string
+    description: buildable Type
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+  _exclude:
+    type: boolean
+    description: exclude
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isObstacleLike:
+    type: boolean
+    description: is Obstacle Like
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _keepCurrentAdvancedBuildableMask:
+    type: boolean
+    description: keep Current Advanced Buildable Mask
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _keepCurrentBuildableType:
+    type: boolean
+    description: keep Current Buildable Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _keepCurrentObstacleLike:
+    type: boolean
+    description: keep Current Obstacle Like
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _keepCurrentPassableMask:
+    type: boolean
+    description: keep Current Passable Mask
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _killLocatedIfNotBuildable:
+    type: boolean
+    description: kill Located If Not Buildable
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modes:
+    type: array
+    description: modes
+    schema: action_subschema/_modes.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _passableMask:
+    type: string
+    description: passable Mask
+    values:
+      -
+        value: FLY_ONLY
+        display: false
+        parse:
+          type: literal
+          return: FLY_ONLY
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

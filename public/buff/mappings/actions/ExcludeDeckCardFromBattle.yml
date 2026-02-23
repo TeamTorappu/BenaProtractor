@@ -1,0 +1,32 @@
+actionType: ExcludeDeckCardFromBattle
+fields:
+  _cardId:
+    type: string
+    description: card Id
+    values:
+      -
+        value: trap_286_tjgsd
+        display: false
+        parse:
+          type: literal
+          return: trap_286_tjgsd
+  _excludeFromBattle:
+    type: boolean
+    description: exclude From Battle
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _playerSide:
+    type: string
+    description: player Side
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT

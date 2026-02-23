@@ -1,0 +1,126 @@
+actionType: ApplyFixedElementDamage
+fields:
+  _allowNoSourceDamage:
+    type: boolean
+    description: allow No Source Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _damageScaleKey:
+    type: null | string
+    description: damage Scale Key
+    values:
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: ep_damage_ratio_token
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio_token
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _damageValueKey:
+    type: string
+    description: damage Value Key
+    values:
+      -
+        value: cached_atk
+        display: false
+        parse:
+          type: literal
+          return: cached_atk
+      -
+        value: damage_value
+        display: false
+        parse:
+          type: literal
+          return: damage_value
+      -
+        value: ep_damage_fixed
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_fixed
+  _elementType:
+    type: string
+    description: element Type
+    values:
+      -
+        value: FIRE
+        display: false
+        parse:
+          type: literal
+          return: FIRE
+      -
+        value: SANITY
+        display: false
+        parse:
+          type: literal
+          return: SANITY
+  _isEnvDamage:
+    type: boolean
+    description: is Env Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET

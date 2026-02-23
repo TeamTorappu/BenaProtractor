@@ -1,0 +1,291 @@
+本文件讲解YML与JSON的关系.
+
+文件总体采用YML Dict, 以一个JSON kv对为例展开
+```json 
+{
+    "enemy_hymwr_t": {
+    "templateKey": "enemy_hymwr_t",
+    "effectKey": "",
+    "onEventPriority": "DEFAULT",
+    "eventToActions": {
+        "ON_TAKE_DAMAGE": [
+                {
+                    "$type": "Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp",
+                    "_targetType": "BUFF_OWNER",
+                    "_buffKeys": [
+                    "enemy_hymwr_t[mark]"
+                    ],
+                    "isAND": true,
+                    "_loadFromBlackboard": false,
+                    "_checkBuffSource": false,
+                    "_buffSourceType": "BUFF_SOURCE",
+                    "_checkSourceHost": false
+                },
+                {
+                    "$type": "Torappu.Battle.Action.Nodes+IfNot, Assembly-CSharp"
+                },
+                {
+                    "$type": "Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp",
+                    "_buff": {
+                    "attributes": {
+                        "abnormalFlags": [],
+                        "abnormalImmunes": [],
+                        "abnormalAntis": [],
+                        "abnormalCombos": [],
+                        "abnormalComboImmunes": [],
+                        "attributeModifiers": []
+                    },
+                    "buffKey": "enemy_hymwr_t[mark]",
+                    "loadFromDB": false,
+                    "isDurableBuff": false,
+                    "isDamageMissable": false,
+                    "isSilenceable": false,
+                    "isStunnable": false,
+                    "isFreezable": false,
+                    "isLevitatable": false,
+                    "statusResistable": "AUTOMATIC",
+                    "templateKey": "empty",
+                    "disableOverride": false,
+                    "overrideKey": null,
+                    "overrideType": "DEFAULT",
+                    "maxStackCnt": 1,
+                    "refreshRemainingTimeWhenStackMax": false,
+                    "clearAllStackCntWhenTimeUp": false,
+                    "maxValidStackCnt": -1,
+                    "independentCharacterSource": false,
+                    "overrideEffectKey": null,
+                    "overrideOnEventPriority": false,
+                    "onEventPriority": "DEFAULT",
+                    "audioSignal": null,
+                    "lifeTimeType": "LIMITED",
+                    "takeSnapshotWhenExtend": false,
+                    "durationKey": "none",
+                    "lifeTime": 1,
+                    "triggerLifeType": "IMMEDIATELY",
+                    "triggerCnt": 0,
+                    "triggerInterval": -1,
+                    "waitFirstTriggerInterval": true,
+                    "firstTriggerInterval": -1,
+                    "priority": -1,
+                    "priorityBBKeys": [],
+                    "stripBlackboardParamsWithBuffKey": false,
+                    "blackboard": []
+                    },
+                    "_buffOwner": "BUFF_OWNER",
+                    "_useSpecialBuffSource": false,
+                    "_specialBuffSource": "BUFF_SOURCE",
+                    "_isDerivedBuff": false,
+                    "_finishDerivedBuffIfParentFinish": false,
+                    "_inherateSourceProjectileFromParentBuff": false,
+                    "_hookEffectKeyFromSourceProjectile": false
+                },
+                {
+                    "$type": "Torappu.Battle.Action.Nodes+TriggerAbility, Assembly-CSharp",
+                    "_ownerType": "BUFF_OWNER",
+                    "_targetType": "BUFF_OWNER",
+                    "_abilityName": "PoisonDamage",
+                    "_checkCanUseAblityFlag": false,
+                    "_castDirectly": true,
+                    "_useFirstActiveAbility": false,
+                    "_useCastResult": false,
+                    "_triggerHostAbility": false,
+                    "_notInterruptAbilityIfCasting": false
+                }
+            ]
+        }
+    }
+}
+```
+
+# index.yml
+这是入口, Record的key都对应这个文件中的key, Record的value类型匹配type, description对应渲染的描述, 若有values, 则一一对应, values为List, 如
+
+```yml
+-
+    value: ""
+    display: true
+    parse:
+        type: literal
+        return: ""
+```
+当value为""时, 根据display决定是否默认显示, parse处对应处理逻辑,分为literal, fn
+
+literal直接渲染return
+
+
+```yml
+    parse:
+      type: fn
+      name: parseTemplateKey
+      args:
+        - $input
+        - $ctx
+```
+fn根据name(@/parser/buff/fn.fnMap)对应,传入$input(对应值)和$ctx(整个对象), args还支持, 执行函数
+
+    
+```yml
+eventToActions:
+  type: "record"
+  key:
+    file: event_list.yml
+  value:
+    file:
+      - action_keys.yml
+      - actions/*.yml
+```
+这里type为record,指示在下面的record特殊: key的列表从event_list.yml取, value从
+```yml
+      - action_keys.yml
+      - actions/*.yml (正则)
+
+```
+取
+
+# event_list.yml
+指示key, 均为type: (string)
+可能的key有
+
+```yml
+values:
+  -
+    value: COOPERATE_PLAYER_DYING
+    display: true
+    parse:
+      type: literal
+      return: true
+  -
+    ...
+```
+# action_nodes.yml
+基础, 对应基本的Node数据, 默认只看action_nodes.yml和action_keys_template.yml, 若有action_keys.yml和action/[nodename].yml, 则后层的覆盖前面的
+
+采用:
+
+```yml
+AOEDamage:
+  description: A O E Damage
+  icon: null
+```
+description对应渲染描述, icon对应在tree中渲染的图标
+
+# action_keys_template.yml
+_FroceFaceFront:
+  type: boolean
+  description: Froce Face Front
+  icon: null
+  default:
+    parse:
+      type: fn
+      name: parseBoolean
+      args:
+        - $input
+        - $ctx
+_OffsetKey:
+  type: string
+  description: Offset Key
+  icon: null
+
+_abilityNames:
+  type: array
+  description: ability Names
+  icon: null
+  schema: action_subschema/_abilityNames.yml
+
+带schema说明这里是复杂的东西, 需要到对应的yml中分析
+
+# action_keys.yml
+指示所有的action dict中key可能的所有取值, 若在此有定义, 则进行匹配渲染
+
+# action_subschema/[schema].yml
+如
+```yml
+field: _beginPosition
+type: object
+description: begin Position
+actions:
+  Main16ChangeTileShadowViaRange:
+    type: object
+    values:
+      -
+        value: "{"row":0,"col":0}"
+        display: true
+        parse:
+          type: fn
+          name: parsebeginPosition
+          args:
+            - $input
+            - $ctx
+```
+# actions/action_[action]
+
+当action有特殊定义时使用这里的数据进行解析
+如
+```yml
+actionType: Act27sideModifyTileCachedSideType
+fields:
+  _sideType:
+    type: string
+    description: side Type
+    values:
+      -
+        value: ALLY
+        display: true
+        parse:
+          type: literal
+          return: ALLY
+      -
+        value: ENEMY
+        display: true
+        parse:
+          type: literal
+          return: ENEMY
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: true
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MAIN_TARGET
+        display: true
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: MODIFIER_TARGET
+        display: true
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+  _useRangeId:
+    type: boolean
+    description: use Range Id
+    values:
+      -
+        value: false
+        display: true
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: true
+        parse:
+          type: literal
+          return: true
+  _useTileInSnapShot:
+    type: boolean
+    description: use Tile In Snap Shot
+    values:
+      -
+        value: false
+        display: true
+        parse:
+          type: literal
+          return: false
+```

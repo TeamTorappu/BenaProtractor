@@ -1,0 +1,100 @@
+actionType: AssignDamageValueToBlackboard
+fields:
+  _assignRealDelta:
+    type: boolean
+    description: assign Real Delta
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _assignValueWithoutCalculate:
+    type: boolean
+    description: assign Value Without Calculate
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: HEAL
+        display: false
+        parse:
+          type: literal
+          return: HEAL
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _owner:
+    type: string
+    description: owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+  _scaleKey:
+    type: string
+    description: scale Key
+    values:
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+      -
+        value: scale_not_used
+        display: false
+        parse:
+          type: literal
+          return: scale_not_used

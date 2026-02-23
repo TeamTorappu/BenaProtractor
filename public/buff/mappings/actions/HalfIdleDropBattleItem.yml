@@ -1,0 +1,70 @@
+actionType: HalfIdleDropBattleItem
+fields:
+  _countBB:
+    type: string
+    description: count B B
+    values:
+      -
+        value: bonus_cnt
+        display: false
+        parse:
+          type: literal
+          return: bonus_cnt
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cnt_battle_item
+        display: false
+        parse:
+          type: literal
+          return: cnt_battle_item
+      -
+        value: cnt_battle_item_gras_bonus
+        display: false
+        parse:
+          type: literal
+          return: cnt_battle_item_gras_bonus
+      -
+        value: cnt_battle_item_park_bonus
+        display: false
+        parse:
+          type: literal
+          return: cnt_battle_item_park_bonus
+  _poolKeyBB:
+    type: string
+    description: pool Key B B
+    values:
+      -
+        value: battle_item
+        display: false
+        parse:
+          type: literal
+          return: battle_item
+      -
+        value: battle_item_gras_bonus
+        display: false
+        parse:
+          type: literal
+          return: battle_item_gras_bonus
+      -
+        value: battle_item_park_bonus
+        display: false
+        parse:
+          type: literal
+          return: battle_item_park_bonus
+      -
+        value: equip_pool
+        display: false
+        parse:
+          type: literal
+          return: equip_pool
+      -
+        value: key
+        display: false
+        parse:
+          type: literal
+          return: key

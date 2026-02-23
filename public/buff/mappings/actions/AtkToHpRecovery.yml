@@ -1,0 +1,28 @@
+actionType: AtkToHpRecovery
+fields:
+  _getAtkFromTarget:
+    type: boolean
+    description: get Atk From Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _getAtkTargetType:
+    type: string
+    description: get Atk Target Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE

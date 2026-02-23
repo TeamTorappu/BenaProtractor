@@ -1,0 +1,78 @@
+actionType: UpdateBuffAttributeModifier
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+      -
+        value: DEF_PENETRATE
+        display: false
+        parse:
+          type: literal
+          return: DEF_PENETRATE
+      -
+        value: EP_RECOVERY_PER_SEC
+        display: false
+        parse:
+          type: literal
+          return: EP_RECOVERY_PER_SEC
+      -
+        value: MOVE_SPEED
+        display: false
+        parse:
+          type: literal
+          return: MOVE_SPEED
+  _formulaType:
+    type: string
+    description: formula Type
+    values:
+      -
+        value: ADDITION
+        display: false
+        parse:
+          type: literal
+          return: ADDITION
+      -
+        value: MULTIPLIER
+        display: false
+        parse:
+          type: literal
+          return: MULTIPLIER
+  _useBlackboard:
+    type: boolean
+    description: use Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0

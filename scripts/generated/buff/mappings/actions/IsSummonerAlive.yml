@@ -1,0 +1,18 @@
+actionType: IsSummonerAlive
+fields:
+  _token:
+    type: string
+    description: token
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

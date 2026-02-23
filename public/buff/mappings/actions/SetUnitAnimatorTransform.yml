@@ -1,0 +1,48 @@
+actionType: SetUnitAnimatorTransform
+fields:
+  _defaultTransformOffset:
+    type: object
+    description: default Transform Offset
+    schema: action_subschema/_defaultTransformOffset.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _offsetKey:
+    type: string
+    description: offset Key
+    values:
+      -
+        value: offset
+        display: false
+        parse:
+          type: literal
+          return: offset
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _reset:
+    type: boolean
+    description: reset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

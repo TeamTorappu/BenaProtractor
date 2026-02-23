@@ -1,0 +1,106 @@
+actionType: ChangeAnimatorMeshRenderer
+fields:
+  _enable:
+    type: boolean
+    description: enable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _exclusive:
+    type: boolean
+    description: exclusive
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _rendererCurModeIndex:
+    type: boolean
+    description: renderer Cur Mode Index
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _rendererIndex:
+    type: number
+    description: renderer Index
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+      -
+        value: 7
+        display: false
+        parse:
+          type: literal
+          return: 7
+      -
+        value: 8
+        display: false
+        parse:
+          type: literal
+          return: 8
+      -
+        value: 9
+        display: false
+        parse:
+          type: literal
+          return: 9

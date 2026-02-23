@@ -1,0 +1,28 @@
+actionType: FilterElementDamageModifer
+fields:
+  _epType:
+    type: string
+    description: ep Type
+    values:
+      -
+        value: DARK
+        display: false
+        parse:
+          type: literal
+          return: DARK
+      -
+        value: SANITY
+        display: false
+        parse:
+          type: literal
+          return: SANITY
+  _filterEPType:
+    type: boolean
+    description: filter E P Type
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

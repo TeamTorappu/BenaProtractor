@@ -1,0 +1,98 @@
+actionType: FinishBuffsOfEveryEnemyById
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "angel2_t_1[target][mark]"
+        display: false
+        parse:
+          type: literal
+          return: "angel2_t_1[target][mark]"
+      -
+        value: "blaze2_s_2[on_tile]"
+        display: false
+        parse:
+          type: literal
+          return: "blaze2_s_2[on_tile]"
+      -
+        value: "dsbish_p2_t_2[atk]"
+        display: false
+        parse:
+          type: literal
+          return: "dsbish_p2_t_2[atk]"
+      -
+        value: "sbell2_t1[enemy_enter]"
+        display: false
+        parse:
+          type: literal
+          return: "sbell2_t1[enemy_enter]"
+      -
+        value: "sbell2_t1[enemy_leave]"
+        display: false
+        parse:
+          type: literal
+          return: "sbell2_t1[enemy_leave]"
+      -
+        value: "sbell2_t1[s2_dot]"
+        display: false
+        parse:
+          type: literal
+          return: "sbell2_t1[s2_dot]"
+  _checkBuffSource:
+    type: boolean
+    description: check Buff Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _decCntIfStack:
+    type: boolean
+    description: dec Cnt If Stack
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _updateOverrideMap:
+    type: boolean
+    description: update Override Map
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

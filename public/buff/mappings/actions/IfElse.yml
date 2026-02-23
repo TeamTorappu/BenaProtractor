@@ -1,0 +1,32 @@
+actionType: IfElse
+fields:
+  _conditionNode:
+    type: object
+    description: condition Node
+    schema: action_subschema/_conditionNode.yml
+    parse:
+      type: fn
+      name: parseActionNode
+      args:
+        - $input
+        - $ctx
+  _failNodes:
+    type: array | null
+    description: fail Nodes
+    schema: action_subschema/_failNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+  _succeedNodes:
+    type: array | null
+    description: succeed Nodes
+    schema: action_subschema/_succeedNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx

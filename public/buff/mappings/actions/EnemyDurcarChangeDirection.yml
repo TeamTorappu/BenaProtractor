@@ -1,0 +1,42 @@
+actionType: EnemyDurcarChangeDirection
+fields:
+  _character:
+    type: string
+    description: character
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _endPosOffsetAlongDirection:
+    type: number
+    description: end Pos Offset Along Direction
+    values:
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+  _enemy:
+    type: string
+    description: enemy
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _setDirectByBB:
+    type: boolean
+    description: set Direct By B B
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

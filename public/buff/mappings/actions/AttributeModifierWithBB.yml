@@ -1,0 +1,354 @@
+actionType: AttributeModifierWithBB
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ABILITY_RANGE_FORWARD_EXTEND
+        display: false
+        parse:
+          type: literal
+          return: ABILITY_RANGE_FORWARD_EXTEND
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: ATTACK_SPEED
+        display: false
+        parse:
+          type: literal
+          return: ATTACK_SPEED
+      -
+        value: BLOCK_CNT
+        display: false
+        parse:
+          type: literal
+          return: BLOCK_CNT
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+      -
+        value: DEF_PENETRATE
+        display: false
+        parse:
+          type: literal
+          return: DEF_PENETRATE
+      -
+        value: EP_RECOVERY_PER_SEC
+        display: false
+        parse:
+          type: literal
+          return: EP_RECOVERY_PER_SEC
+      -
+        value: HP_RECOVERY_PER_SEC
+        display: false
+        parse:
+          type: literal
+          return: HP_RECOVERY_PER_SEC
+      -
+        value: HP_RECOVERY_PER_SEC_BY_MAX_HP_RATIO
+        display: false
+        parse:
+          type: literal
+          return: HP_RECOVERY_PER_SEC_BY_MAX_HP_RATIO
+      -
+        value: MAGIC_RESIST_PENETRATE
+        display: false
+        parse:
+          type: literal
+          return: MAGIC_RESIST_PENETRATE
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+      -
+        value: MOVE_SPEED
+        display: false
+        parse:
+          type: literal
+          return: MOVE_SPEED
+      -
+        value: SP_RECOVERY_PER_SEC
+        display: false
+        parse:
+          type: literal
+          return: SP_RECOVERY_PER_SEC
+      -
+        value: TAUNT_LEVEL
+        display: false
+        parse:
+          type: literal
+          return: TAUNT_LEVEL
+  _formulaType:
+    type: string
+    description: formula Type
+    values:
+      -
+        value: ADDITION
+        display: false
+        parse:
+          type: literal
+          return: ADDITION
+      -
+        value: FINAL_ADDITION
+        display: false
+        parse:
+          type: literal
+          return: FINAL_ADDITION
+      -
+        value: FINAL_SCALER
+        display: false
+        parse:
+          type: literal
+          return: FINAL_SCALER
+      -
+        value: MULTIPLIER
+        display: false
+        parse:
+          type: literal
+          return: MULTIPLIER
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _valueKey:
+    type: string
+    description: value Key
+    values:
+      -
+        value: ability_range_forward_extend
+        display: false
+        parse:
+          type: literal
+          return: ability_range_forward_extend
+      -
+        value: accumulated_minus_max_hp
+        display: false
+        parse:
+          type: literal
+          return: accumulated_minus_max_hp
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: "atk[clear]"
+        display: false
+        parse:
+          type: literal
+          return: "atk[clear]"
+      -
+        value: atk_bonus
+        display: false
+        parse:
+          type: literal
+          return: atk_bonus
+      -
+        value: atk_final
+        display: false
+        parse:
+          type: literal
+          return: atk_final
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+      -
+        value: def
+        display: false
+        parse:
+          type: literal
+          return: def
+      -
+        value: def_final
+        display: false
+        parse:
+          type: literal
+          return: def_final
+      -
+        value: def_penetrate
+        display: false
+        parse:
+          type: literal
+          return: def_penetrate
+      -
+        value: egir_bond_atk
+        display: false
+        parse:
+          type: literal
+          return: egir_bond_atk
+      -
+        value: egir_bond_block_cnt
+        display: false
+        parse:
+          type: literal
+          return: egir_bond_block_cnt
+      -
+        value: egir_bond_hp
+        display: false
+        parse:
+          type: literal
+          return: egir_bond_hp
+      -
+        value: egir_bond_max_hp
+        display: false
+        parse:
+          type: literal
+          return: egir_bond_max_hp
+      -
+        value: ep_recovery_per_sec
+        display: false
+        parse:
+          type: literal
+          return: ep_recovery_per_sec
+      -
+        value: hp_recover_per_sec_by_max_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_recover_per_sec_by_max_hp_ratio
+      -
+        value: hp_recovery_per_sec
+        display: false
+        parse:
+          type: literal
+          return: hp_recovery_per_sec
+      -
+        value: magic_resist_penetrate
+        display: false
+        parse:
+          type: literal
+          return: magic_resist_penetrate
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp
+      -
+        value: max_hp_final
+        display: false
+        parse:
+          type: literal
+          return: max_hp_final
+      -
+        value: move_speed
+        display: false
+        parse:
+          type: literal
+          return: move_speed
+      -
+        value: none
+        display: false
+        parse:
+          type: literal
+          return: none
+      -
+        value: normal_block_cnt
+        display: false
+        parse:
+          type: literal
+          return: normal_block_cnt
+      -
+        value: power_atk
+        display: false
+        parse:
+          type: literal
+          return: power_atk
+      -
+        value: power_def_penetrate
+        display: false
+        parse:
+          type: literal
+          return: power_def_penetrate
+      -
+        value: power_magic_resist_penetrate
+        display: false
+        parse:
+          type: literal
+          return: power_magic_resist_penetrate
+      -
+        value: real_atk
+        display: false
+        parse:
+          type: literal
+          return: real_atk
+      -
+        value: real_attack_speed
+        display: false
+        parse:
+          type: literal
+          return: real_attack_speed
+      -
+        value: real_def
+        display: false
+        parse:
+          type: literal
+          return: real_def
+      -
+        value: real_max_hp
+        display: false
+        parse:
+          type: literal
+          return: real_max_hp
+      -
+        value: sp_move
+        display: false
+        parse:
+          type: literal
+          return: sp_move
+      -
+        value: sp_recover_per_sec
+        display: false
+        parse:
+          type: literal
+          return: sp_recover_per_sec
+      -
+        value: sp_recovery_per_sec
+        display: false
+        parse:
+          type: literal
+          return: sp_recovery_per_sec
+      -
+        value: taunt
+        display: false
+        parse:
+          type: literal
+          return: taunt
+      -
+        value: tile_block_cnt
+        display: false
+        parse:
+          type: literal
+          return: tile_block_cnt
+      -
+        value: trpot_max_hp
+        display: false
+        parse:
+          type: literal
+          return: trpot_max_hp
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value

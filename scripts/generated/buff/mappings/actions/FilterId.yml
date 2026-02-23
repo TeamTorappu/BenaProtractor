@@ -1,0 +1,108 @@
+actionType: FilterId
+fields:
+  _filterId:
+    type: string
+    description: filter Id
+    values:
+      -
+        value: char_4186_tmoris
+        display: false
+        parse:
+          type: literal
+          return: char_4186_tmoris
+      -
+        value: enemy_1580_mnchrn
+        display: false
+        parse:
+          type: literal
+          return: enemy_1580_mnchrn
+      -
+        value: enemy_4046_muobst
+        display: false
+        parse:
+          type: literal
+          return: enemy_4046_muobst
+      -
+        value: token_10050_monstr_prosts
+        display: false
+        parse:
+          type: literal
+          return: token_10050_monstr_prosts
+      -
+        value: token_10055_phatm2_mndclv
+        display: false
+        parse:
+          type: literal
+          return: token_10055_phatm2_mndclv
+      -
+        value: trap_1513_lhshop
+        display: false
+        parse:
+          type: literal
+          return: trap_1513_lhshop
+      -
+        value: trap_1517_lhcol
+        display: false
+        parse:
+          type: literal
+          return: trap_1517_lhcol
+      -
+        value: trap_156_dsshell
+        display: false
+        parse:
+          type: literal
+          return: trap_156_dsshell
+      -
+        value: trap_778_giatow
+        display: false
+        parse:
+          type: literal
+          return: trap_778_giatow
+  _filterIds:
+    type: array | null
+    description: filter Ids
+    schema: action_subschema/_filterIds.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _isUnset:
+    type: boolean
+    description: is Unset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

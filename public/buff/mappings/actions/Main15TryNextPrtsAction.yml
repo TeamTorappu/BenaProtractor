@@ -1,0 +1,34 @@
+actionType: Main15TryNextPrtsAction
+fields:
+  _doNextWhenSuccess:
+    type: boolean
+    description: do Next When Success
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _forceNext:
+    type: boolean
+    description: force Next
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

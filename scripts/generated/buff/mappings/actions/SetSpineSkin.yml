@@ -1,0 +1,58 @@
+actionType: SetSpineSkin
+fields:
+  _skinKey:
+    type: string
+    description: skin Key
+    values:
+      -
+        value: Cut
+        display: false
+        parse:
+          type: literal
+          return: Cut
+      -
+        value: Default
+        display: false
+        parse:
+          type: literal
+          return: Default
+      -
+        value: RedBlade
+        display: false
+        parse:
+          type: literal
+          return: RedBlade
+      -
+        value: WhiteBlade
+        display: false
+        parse:
+          type: literal
+          return: WhiteBlade
+      -
+        value: YellowBlade
+        display: false
+        parse:
+          type: literal
+          return: YellowBlade
+      -
+        value: default
+        display: false
+        parse:
+          type: literal
+          return: default
+      -
+        value: wand
+        display: false
+        parse:
+          type: literal
+          return: wand
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

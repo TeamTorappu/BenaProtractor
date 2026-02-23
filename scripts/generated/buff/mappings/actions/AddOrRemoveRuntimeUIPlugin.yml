@@ -1,0 +1,60 @@
+actionType: AddOrRemoveRuntimeUIPlugin
+fields:
+  _isRemove:
+    type: boolean
+    description: is Remove
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _name:
+    type: string
+    description: name
+    values:
+      -
+        value: plugin_cost_speed_up
+        display: false
+        parse:
+          type: literal
+          return: plugin_cost_speed_up
+      -
+        value: plugin_topbar_origuim_imprison
+        display: false
+        parse:
+          type: literal
+          return: plugin_topbar_origuim_imprison
+  _playAudio:
+    type: null
+    description: play Audio
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _position:
+    type: string
+    description: position
+    values:
+      -
+        value: COST_PANAL
+        display: false
+        parse:
+          type: literal
+          return: COST_PANAL
+      -
+        value: TOP_BAR
+        display: false
+        parse:
+          type: literal
+          return: TOP_BAR

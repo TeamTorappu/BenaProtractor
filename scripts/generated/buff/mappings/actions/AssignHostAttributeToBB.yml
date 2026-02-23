@@ -1,0 +1,76 @@
+actionType: AssignHostAttributeToBB
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _scaleVar:
+    type: string
+    description: scale Var
+    values:
+      -
+        value: max_shield_ratio
+        display: false
+        parse:
+          type: literal
+          return: max_shield_ratio
+      -
+        value: scale_invalid
+        display: false
+        parse:
+          type: literal
+          return: scale_invalid
+      -
+        value: shield_ratio_each_trigger
+        display: false
+        parse:
+          type: literal
+          return: shield_ratio_each_trigger
+  _setCurrentHp:
+    type: boolean
+    description: set Current Hp
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

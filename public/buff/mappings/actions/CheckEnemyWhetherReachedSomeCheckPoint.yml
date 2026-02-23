@@ -1,0 +1,72 @@
+actionType: CheckEnemyWhetherReachedSomeCheckPoint
+fields:
+  _backToFront:
+    type: boolean
+    description: back To Front
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkPointIndex:
+    type: number
+    description: check Point Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _indexBbKey:
+    type: null | string
+    description: index Bb Key
+    values:
+      -
+        value: ban_skill_index
+        display: false
+        parse:
+          type: literal
+          return: ban_skill_index
+      -
+        value: checkpoint
+        display: false
+        parse:
+          type: literal
+          return: checkpoint
+      -
+        value: dead_index
+        display: false
+        parse:
+          type: literal
+          return: dead_index
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

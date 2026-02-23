@@ -1,0 +1,48 @@
+actionType: SetWithdrawCostRecoverRatio
+fields:
+  _dontLimitMaxWithdrawCost:
+    type: boolean
+    description: dont Limit Max Withdraw Cost
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isReset:
+    type: boolean
+    description: is Reset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ratio:
+    type: number
+    description: ratio
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

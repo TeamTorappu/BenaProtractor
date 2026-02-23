@@ -1,0 +1,100 @@
+actionType: HalfIdleUpgradeTrap
+fields:
+  _forceSpawn:
+    type: boolean
+    description: force Spawn
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _sourcePosType:
+    type: string
+    description: source Pos Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _targetPosType:
+    type: string
+    description: target Pos Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _upgradeTrapId:
+    type: string
+    description: upgrade Trap Id
+    values:
+      -
+        value: trap_1501_lhpark
+        display: false
+        parse:
+          type: literal
+          return: trap_1501_lhpark
+      -
+        value: trap_1508_lhmine
+        display: false
+        parse:
+          type: literal
+          return: trap_1508_lhmine
+      -
+        value: trap_1515_lhfacp
+        display: false
+        parse:
+          type: literal
+          return: trap_1515_lhfacp
+      -
+        value: trap_1519_lhrift
+        display: false
+        parse:
+          type: literal
+          return: trap_1519_lhrift
+      -
+        value: trap_1520_lhcolb
+        display: false
+        parse:
+          type: literal
+          return: trap_1520_lhcolb
+  _upgradeTrapKey:
+    type: null | string
+    description: upgrade Trap Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: token_id
+        display: false
+        parse:
+          type: literal
+          return: token_id
+      -
+        value: upgrade_trap_id
+        display: false
+        parse:
+          type: literal
+          return: upgrade_trap_id

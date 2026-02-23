@@ -1,0 +1,82 @@
+actionType: CheckCharacterGroupTag
+fields:
+  _groupTag:
+    type: string
+    description: group Tag
+    values:
+      -
+        value: abyssal
+        display: false
+        parse:
+          type: literal
+          return: abyssal
+      -
+        value: kazimierz
+        display: false
+        parse:
+          type: literal
+          return: kazimierz
+      -
+        value: laterano
+        display: false
+        parse:
+          type: literal
+          return: laterano
+      -
+        value: mujica
+        display: false
+        parse:
+          type: literal
+          return: mujica
+      -
+        value: rhine
+        display: false
+        parse:
+          type: literal
+          return: rhine
+      -
+        value: student
+        display: false
+        parse:
+          type: literal
+          return: student
+      -
+        value: sui
+        display: false
+        parse:
+          type: literal
+          return: sui
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

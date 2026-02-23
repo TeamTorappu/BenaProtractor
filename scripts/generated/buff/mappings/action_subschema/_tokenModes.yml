@@ -1,0 +1,16 @@
+field: _tokenModes
+type: object
+description: token Modes
+actions:
+  HealToken:
+    type: array
+    values:
+      -
+        value: "[3,4,5]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

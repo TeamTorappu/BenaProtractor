@@ -1,0 +1,44 @@
+actionType: Act49sideBossRegistSelf
+fields:
+  _partName:
+    type: string
+    description: part Name
+    values:
+      -
+        value: head
+        display: false
+        parse:
+          type: literal
+          return: head
+      -
+        value: left_hand
+        display: false
+        parse:
+          type: literal
+          return: left_hand
+      -
+        value: tail
+        display: false
+        parse:
+          type: literal
+          return: tail
+  _partNameKey:
+    type: string
+    description: part Name Key
+    values:
+      -
+        value: part_name
+        display: false
+        parse:
+          type: literal
+          return: part_name
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

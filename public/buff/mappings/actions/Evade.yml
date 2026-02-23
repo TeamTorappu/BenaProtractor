@@ -1,0 +1,52 @@
+actionType: Evade
+fields:
+  _applyWayFilter:
+    type: string
+    description: apply Way Filter
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: ANY_ATTACK
+        display: false
+        parse:
+          type: literal
+          return: ANY_ATTACK
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+      -
+        value: PHYSICAL_AND_MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL_AND_MAGICAL

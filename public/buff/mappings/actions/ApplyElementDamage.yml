@@ -1,0 +1,406 @@
+actionType: ApplyElementDamage
+fields:
+  _baseOnEnemyHostAtk:
+    type: boolean
+    description: base On Enemy Host Atk
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _baseOnHostAtk:
+    type: boolean
+    description: base On Host Atk
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _buffKey:
+    type: null | string
+    description: buff Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: "enemy_dsuply_2_t[attr_buff]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_dsuply_2_t[attr_buff]"
+      -
+        value: "enemy_dsuply_t[attr_buff]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_dsuply_t[attr_buff]"
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _buffSourceType:
+    type: string
+    description: buff Source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _elementDamageType:
+    type: string
+    description: element Damage Type
+    values:
+      -
+        value: DARK
+        display: false
+        parse:
+          type: literal
+          return: DARK
+      -
+        value: FIRE
+        display: false
+        parse:
+          type: literal
+          return: FIRE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: SANITY
+        display: false
+        parse:
+          type: literal
+          return: SANITY
+      -
+        value: WATER
+        display: false
+        parse:
+          type: literal
+          return: WATER
+  _epDamageScale:
+    type: string
+    description: ep Damage Scale
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: ep_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio
+      -
+        value: ep_damage_ratio_talent
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio_talent
+  _fixedEpDamage:
+    type: number
+    description: fixed Ep Damage
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1000
+        display: false
+        parse:
+          type: literal
+          return: 1000
+  _fixedEpDamageKey:
+    type: null | string
+    description: fixed Ep Damage Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: calculated_damage
+        display: false
+        parse:
+          type: literal
+          return: calculated_damage
+      -
+        value: current_damage
+        display: false
+        parse:
+          type: literal
+          return: current_damage
+      -
+        value: dark
+        display: false
+        parse:
+          type: literal
+          return: dark
+      -
+        value: dark_damage_value
+        display: false
+        parse:
+          type: literal
+          return: dark_damage_value
+      -
+        value: element_damage
+        display: false
+        parse:
+          type: literal
+          return: element_damage
+      -
+        value: element_value
+        display: false
+        parse:
+          type: literal
+          return: element_value
+      -
+        value: ep_damage
+        display: false
+        parse:
+          type: literal
+          return: ep_damage
+      -
+        value: ep_damage_value
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_value
+      -
+        value: ep_dark_damage
+        display: false
+        parse:
+          type: literal
+          return: ep_dark_damage
+      -
+        value: ep_value
+        display: false
+        parse:
+          type: literal
+          return: ep_value
+      -
+        value: fire_damage
+        display: false
+        parse:
+          type: literal
+          return: fire_damage
+      -
+        value: last_damage
+        display: false
+        parse:
+          type: literal
+          return: last_damage
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: revert_dark_damage
+        display: false
+        parse:
+          type: literal
+          return: revert_dark_damage
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _fixedEpDamageScale:
+    type: string
+    description: fixed Ep Damage Scale
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: ep_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio
+      -
+        value: ep_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_scale
+  _forceUseProjectileCachedAtk:
+    type: boolean
+    description: force Use Projectile Cached Atk
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isEnvElementDamage:
+    type: boolean
+    description: is Env Element Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isFixedEpDamage:
+    type: boolean
+    description: is Fixed Ep Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadElementTypeFromBb:
+    type: boolean
+    description: load Element Type From Bb
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _multiplyWithBuffValidStackCnt:
+    type: boolean
+    description: multiply With Buff Valid Stack Cnt
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _noSource:
+    type: boolean
+    description: no Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

@@ -1,0 +1,126 @@
+actionType: AutoChessAssignBondCharCntToBB
+fields:
+  _bondId:
+    type: string
+    description: bond Id
+    values:
+      -
+        value: egirShip
+        display: false
+        parse:
+          type: literal
+          return: egirShip
+      -
+        value: indomShip
+        display: false
+        parse:
+          type: literal
+          return: indomShip
+      -
+        value: kjeragShip
+        display: false
+        parse:
+          type: literal
+          return: kjeragShip
+      -
+        value: lateranoShip
+        display: false
+        parse:
+          type: literal
+          return: lateranoShip
+      -
+        value: preciShip
+        display: false
+        parse:
+          type: literal
+          return: preciShip
+      -
+        value: raidShip
+        display: false
+        parse:
+          type: literal
+          return: raidShip
+      -
+        value: steadShip
+        display: false
+        parse:
+          type: literal
+          return: steadShip
+      -
+        value: victoriaShip
+        display: false
+        parse:
+          type: literal
+          return: victoriaShip
+      -
+        value: yanShip
+        display: false
+        parse:
+          type: literal
+          return: yanShip
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+  _filterAllSides:
+    type: boolean
+    description: filter All Sides
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterCount:
+    type: boolean
+    description: filter Count
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _keyToCompare:
+    type: string
+    description: key To Compare
+    values:
+      -
+        value: power_bond_char_cnt
+        display: false
+        parse:
+          type: literal
+          return: power_bond_char_cnt
+  _keyToStoreCnt:
+    type: string
+    description: key To Store Cnt
+    values:
+      -
+        value: bond_char_cnt
+        display: false
+        parse:
+          type: literal
+          return: bond_char_cnt
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

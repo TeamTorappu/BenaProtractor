@@ -1,0 +1,60 @@
+actionType: LegionModeOnlyDrawCardViaProfession
+fields:
+  _addCardBuff:
+    type: boolean
+    description: add Card Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _drawCardFromUsedAndPending:
+    type: boolean
+    description: draw Card From Used And Pending
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _professions:
+    type: array
+    description: professions
+    schema: action_subschema/_professions.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _randomDrawCard:
+    type: boolean
+    description: random Draw Card
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

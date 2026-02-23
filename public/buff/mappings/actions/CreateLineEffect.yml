@@ -1,0 +1,162 @@
+actionType: CreateLineEffect
+fields:
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: enemy_acloon_skill_loop_1_line
+        display: false
+        parse:
+          type: literal
+          return: enemy_acloon_skill_loop_1_line
+      -
+        value: enemy_acstmk_attack_line
+        display: false
+        parse:
+          type: literal
+          return: enemy_acstmk_attack_line
+      -
+        value: enemy_cjfish_line
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjfish_line
+      -
+        value: enemy_icecage_line_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_icecage_line_01
+      -
+        value: enemy_sgactr_p2_absorb_line_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_sgactr_p2_absorb_line_01
+      -
+        value: enemy_sgactr_p2_absorb_line_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_sgactr_p2_absorb_line_02
+      -
+        value: etlchi_skill_03_line_01
+        display: false
+        parse:
+          type: literal
+          return: etlchi_skill_03_line_01
+      -
+        value: lemuen_skill_02_trail_01
+        display: false
+        parse:
+          type: literal
+          return: lemuen_skill_02_trail_01
+      -
+        value: logos_skill2_line_01
+        display: false
+        parse:
+          type: literal
+          return: logos_skill2_line_01
+      -
+        value: titi_skill_03_line_01
+        display: false
+        parse:
+          type: literal
+          return: titi_skill_03_line_01
+      -
+        value: trap_cdsoul_line
+        display: false
+        parse:
+          type: literal
+          return: trap_cdsoul_line
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _useAttackPlaybackSpeed:
+    type: boolean
+    description: use Attack Playback Speed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useHostAsTarget:
+    type: boolean
+    description: use Host As Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useSourceFaceVactor:
+    type: boolean
+    description: use Source Face Vactor
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useTargetAsEffectSource:
+    type: boolean
+    description: use Target As Effect Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

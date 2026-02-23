@@ -1,0 +1,102 @@
+actionType: ModifyBlackboardMainline12
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: standRegisterList
+        display: false
+        parse:
+          type: literal
+          return: standRegisterList
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _hostBuffID:
+    type: null | string
+    description: host Buff I D
+    values:
+      -
+        value: "enemy_wdslm[P2halfHpInvincible]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_wdslm[P2halfHpInvincible]"
+      -
+        value: "enemy_wdslm[invincibleStack]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_wdslm[invincibleStack]"
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _rewriteBlackboardKey:
+    type: null | string
+    description: rewrite Blackboard Key
+    values:
+      -
+        value: damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _viaHostBuffStackCount:
+    type: boolean
+    description: via Host Buff Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _viaStandsCount:
+    type: boolean
+    description: via Stands Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

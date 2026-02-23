@@ -1,0 +1,138 @@
+actionType: AOEElementDamage
+fields:
+  _elementDamageType:
+    type: string
+    description: element Damage Type
+    values:
+      -
+        value: FIRE
+        display: false
+        parse:
+          type: literal
+          return: FIRE
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _fixedEpDamage:
+    type: number
+    description: fixed Ep Damage
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _fixedEpDamageKey:
+    type: null | string
+    description: fixed Ep Damage Key
+    values:
+      -
+        value: fire_damage
+        display: false
+        parse:
+          type: literal
+          return: fire_damage
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _isFixedEpDamage:
+    type: boolean
+    description: is Fixed Ep Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _rangeId:
+    type: null | string
+    description: range Id
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useRadius:
+    type: boolean
+    description: use Radius
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

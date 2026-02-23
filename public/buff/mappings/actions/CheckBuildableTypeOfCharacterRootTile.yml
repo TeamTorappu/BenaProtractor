@@ -1,0 +1,44 @@
+actionType: CheckBuildableTypeOfCharacterRootTile
+fields:
+  _buildableType:
+    type: string
+    description: buildable Type
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _filterAllUnit:
+    type: boolean
+    description: filter All Unit
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,86 @@
+actionType: ApplyCacheAtkDamageFromBuff
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+  _damageScaleKey:
+    type: string
+    description: damage Scale Key
+    values:
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: atk_scale_init
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_init
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+  _modifierKey:
+    type: string
+    description: modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _useDynamicAttackType:
+    type: boolean
+    description: use Dynamic Attack Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

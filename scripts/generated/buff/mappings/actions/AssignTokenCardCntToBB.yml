@@ -1,0 +1,44 @@
+actionType: AssignTokenCardCntToBB
+fields:
+  _assignMaxCount:
+    type: boolean
+    description: assign Max Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _countKey:
+    type: string
+    description: count Key
+    values:
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: remaining_cnt
+        display: false
+        parse:
+          type: literal
+          return: remaining_cnt
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

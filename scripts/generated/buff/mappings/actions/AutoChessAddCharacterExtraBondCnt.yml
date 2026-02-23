@@ -1,0 +1,48 @@
+actionType: AutoChessAddCharacterExtraBondCnt
+fields:
+  _actionTargetType:
+    type: string
+    description: action Target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _additionalExtraBondCntKey:
+    type: string
+    description: additional Extra Bond Cnt Key
+    values:
+      -
+        value: extra_cnt
+        display: false
+        parse:
+          type: literal
+          return: extra_cnt
+  _defaultAdditionalExtraBondCnt:
+    type: number
+    description: default Additional Extra Bond Cnt
+    values:
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+  _isMinus:
+    type: boolean
+    description: is Minus
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,62 @@
+actionType: AddCostTimerModifier
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _costAddLocked:
+    type: boolean
+    description: cost Add Locked
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _costAddLockedBB:
+    type: null
+    description: cost Add Locked B B
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _priority:
+    type: number
+    description: priority
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0.33000001311302185
+        display: false
+        parse:
+          type: literal
+          return: 0.33000001311302185

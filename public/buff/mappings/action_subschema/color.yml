@@ -1,0 +1,25 @@
+field: color
+type: object
+description: color
+actions:
+  Act49SideSetEntityAnimatorColor:
+    type: object
+    values:
+      -
+        value: "{"r":0,"g":0,"b":0,"a":0}"
+        display: false
+        parse:
+          type: fn
+          name: parsecolor
+          args:
+            - $input
+            - $ctx
+      -
+        value: "{"r":1,"g":1,"b":1,"a":1}"
+        display: false
+        parse:
+          type: fn
+          name: parsecolor
+          args:
+            - $input
+            - $ctx

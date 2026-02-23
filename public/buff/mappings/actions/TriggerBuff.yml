@@ -1,0 +1,34 @@
+actionType: TriggerBuff
+fields:
+  _force:
+    type: boolean
+    description: force
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _triggerDerivedBuffs:
+    type: boolean
+    description: trigger Derived Buffs
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

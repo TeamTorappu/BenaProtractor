@@ -1,0 +1,72 @@
+actionType: Svash2LRCardPositionSwap
+fields:
+  _countKey:
+    type: string
+    description: count Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+  _deckBuff:
+    type: object
+    description: deck Buff
+    schema: action_subschema/_deckBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _emitPredefinedLocationReached:
+    type: boolean
+    description: emit Predefined Location Reached
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _minCostReduceKey:
+    type: string
+    description: min Cost Reduce Key
+    values:
+      -
+        value: cost_reduce_max
+        display: false
+        parse:
+          type: literal
+          return: cost_reduce_max
+  _rightSelector:
+    type: object
+    description: right Selector
+    schema: action_subschema/_rightSelector.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _selector:
+    type: object
+    description: selector
+    schema: action_subschema/_selector.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,102 @@
+actionType: NoSourceGlobalDamageScaleByBuffCnt
+fields:
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: trap_tbasnc_boss_periodic_damage
+        display: false
+        parse:
+          type: literal
+          return: trap_tbasnc_boss_periodic_damage
+  _damageKey:
+    type: string
+    description: damage Key
+    values:
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _damageWithoutModify:
+    type: boolean
+    description: damage Without Modify
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ignoreForSp:
+    type: boolean
+    description: ignore For Sp
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isEnvDamage:
+    type: boolean
+    description: is Env Damage
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _noSourceDamage:
+    type: boolean
+    description: no Source Damage
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx

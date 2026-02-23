@@ -1,0 +1,118 @@
+actionType: AssignAbilityBlackboardFromOthers
+fields:
+  _sourceAbilityName:
+    type: string
+    description: source Ability Name
+    values:
+      -
+        value: PassengerStorage
+        display: false
+        parse:
+          type: literal
+          return: PassengerStorage
+      -
+        value: "blaze2[to_default_state]"
+        display: false
+        parse:
+          type: literal
+          return: "blaze2[to_default_state]"
+      -
+        value: summon2
+        display: false
+        parse:
+          type: literal
+          return: summon2
+  _sourceBBKeys:
+    type: array
+    description: source B B Keys
+    schema: action_subschema/_sourceBBKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetAbilityName:
+    type: string
+    description: target Ability Name
+    values:
+      -
+        value: CauseStun
+        display: false
+        parse:
+          type: literal
+          return: CauseStun
+      -
+        value: PassengerStorage
+        display: false
+        parse:
+          type: literal
+          return: PassengerStorage
+      -
+        value: summon2_main
+        display: false
+        parse:
+          type: literal
+          return: summon2_main
+      -
+        value: summon2_main2
+        display: false
+        parse:
+          type: literal
+          return: summon2_main2
+  _targetBBKeys:
+    type: array
+    description: target B B Keys
+    schema: action_subschema/_targetBBKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useSnapshotAbilityAsTarget:
+    type: boolean
+    description: use Snapshot Ability As Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useSourceHost:
+    type: boolean
+    description: use Source Host
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,32 @@
+actionType: DamageFixedValueResistance
+fields:
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _filterDamageType:
+    type: boolean
+    description: filter Damage Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _fixedValue:
+    type: number
+    description: fixed Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0

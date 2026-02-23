@@ -1,0 +1,170 @@
+actionType: CalculateTraitAbilityBlackboard
+fields:
+  _addBlackboardKey:
+    type: null | string
+    description: add Blackboard Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: dynamic_extra
+        display: false
+        parse:
+          type: literal
+          return: dynamic_extra
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: reload_interval
+        display: false
+        parse:
+          type: literal
+          return: reload_interval
+      -
+        value: times_2
+        display: false
+        parse:
+          type: literal
+          return: times_2
+  _fromBlackboardKey:
+    type: null | string
+    description: from Blackboard Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: dynamic_extra
+        display: false
+        parse:
+          type: literal
+          return: dynamic_extra
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: reload_interval
+        display: false
+        parse:
+          type: literal
+          return: reload_interval
+      -
+        value: times_2
+        display: false
+        parse:
+          type: literal
+          return: times_2
+  _isSub:
+    type: boolean
+    description: is Sub
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetBlackboardKey:
+    type: string
+    description: target Blackboard Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: dynamic_extra
+        display: false
+        parse:
+          type: literal
+          return: dynamic_extra
+      -
+        value: reload_interval
+        display: false
+        parse:
+          type: literal
+          return: reload_interval
+      -
+        value: times_2
+        display: false
+        parse:
+          type: literal
+          return: times_2
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _useTraitBBToAdd:
+    type: boolean
+    description: use Trait B B To Add
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

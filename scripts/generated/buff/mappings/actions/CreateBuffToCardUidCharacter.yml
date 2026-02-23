@@ -1,0 +1,38 @@
+actionType: CreateBuffToCardUidCharacter
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffSource:
+    type: string
+    description: buff Source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _cardUidKey:
+    type: string
+    description: card Uid Key
+    values:
+      -
+        value: build_uid
+        display: false
+        parse:
+          type: literal
+          return: build_uid
+      -
+        value: new_uid
+        display: false
+        parse:
+          type: literal
+          return: new_uid

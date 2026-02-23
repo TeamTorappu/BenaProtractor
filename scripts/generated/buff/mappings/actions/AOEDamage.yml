@@ -1,0 +1,738 @@
+actionType: AOEDamage
+fields:
+  _abilityName:
+    type: null | string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: SelectTarget
+        display: false
+        parse:
+          type: literal
+          return: SelectTarget
+      -
+        value: aoe_selector
+        display: false
+        parse:
+          type: literal
+          return: aoe_selector
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: s3_selector
+        display: false
+        parse:
+          type: literal
+          return: s3_selector
+      -
+        value: selector_s2
+        display: false
+        parse:
+          type: literal
+          return: selector_s2
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+      -
+        value: SPLASH
+        display: false
+        parse:
+          type: literal
+          return: SPLASH
+  _buffs:
+    type: array | null
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _checkTargetAlive:
+    type: boolean
+    description: check Target Alive
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _createEffect:
+    type: boolean
+    description: create Effect
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _damageKey:
+    type: string
+    description: damage Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: blast_damage
+        display: false
+        parse:
+          type: literal
+          return: blast_damage
+      -
+        value: boom_value_ally
+        display: false
+        parse:
+          type: literal
+          return: boom_value_ally
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+      -
+        value: magic_damage
+        display: false
+        parse:
+          type: literal
+          return: magic_damage
+      -
+        value: reborn_magic_damage
+        display: false
+        parse:
+          type: literal
+          return: reborn_magic_damage
+      -
+        value: small_bomb_damage
+        display: false
+        parse:
+          type: literal
+          return: small_bomb_damage
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _damageScale:
+    type: null | string
+    description: damage Scale
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 1.0
+        display: false
+        parse:
+          type: literal
+          return: 1.0
+      -
+        value: aoe_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: aoe_atk_scale
+      -
+        value: aoe_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: aoe_damage_scale
+      -
+        value: aoe_scale
+        display: false
+        parse:
+          type: literal
+          return: aoe_scale
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: atk_scale_2
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_2
+      -
+        value: atk_scale_AOE
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_AOE
+      -
+        value: bomb_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: bomb_atk_scale
+      -
+        value: boom_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: boom_damage_scale
+      -
+        value: boom_scale
+        display: false
+        parse:
+          type: literal
+          return: boom_scale
+      -
+        value: combat_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: combat_atk_scale
+      -
+        value: critical_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: critical_damage_scale
+      -
+        value: damage_by_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_by_atk_scale
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: spash_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: spash_atk_scale
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterType:
+    type: string
+    description: filter Type
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+  _hitEffectKey:
+    type: null | string
+    description: hit Effect Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: accast_skill_hit
+        display: false
+        parse:
+          type: literal
+          return: accast_skill_hit
+      -
+        value: enemy_acloon_skill_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_acloon_skill_hit
+      -
+        value: enemy_eltrsm_phase_1_emp_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_eltrsm_phase_1_emp_hit
+      -
+        value: enemy_flmgd_skill_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_flmgd_skill_hit
+      -
+        value: enemy_flmspr_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_flmspr_hit_01
+      -
+        value: enemy_lrnazg_attack_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_lrnazg_attack_hit_01
+      -
+        value: enemy_ltntpt_attack_ap_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltntpt_attack_ap_hit_01
+      -
+        value: enemy_ltntpt_attack_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltntpt_attack_hit_01
+      -
+        value: enemy_mmkabi_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_mmkabi_hit_02
+      -
+        value: enemy_wdrrl_skill_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_wdrrl_skill_hit_01
+      -
+        value: enemy_xbsmi_range_die_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbsmi_range_die_hit
+      -
+        value: judge_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: judge_skill_02_hit_01
+      -
+        value: narant_skill_03_hit_04
+        display: false
+        parse:
+          type: literal
+          return: narant_skill_03_hit_04
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: odda_common_hit_01
+        display: false
+        parse:
+          type: literal
+          return: odda_common_hit_01
+      -
+        value: skzjs_start_hit
+        display: false
+        parse:
+          type: literal
+          return: skzjs_start_hit
+      -
+        value: trap_skzth_hit_01
+        display: false
+        parse:
+          type: literal
+          return: trap_skzth_hit_01
+  _hitEffectUseSourceFaceTo:
+    type: boolean
+    description: hit Effect Use Source Face To
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isNoSourceDamage:
+    type: boolean
+    description: is No Source Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _maxTargetCountKey:
+    type: string
+    description: max Target Count Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _modifierKey:
+    type: string
+    description: modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _radius:
+    type: number
+    description: radius
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.6000000238418579
+        display: false
+        parse:
+          type: literal
+          return: 0.6000000238418579
+      -
+        value: 0.800000011920929
+        display: false
+        parse:
+          type: literal
+          return: 0.800000011920929
+      -
+        value: 0.8999999761581421
+        display: false
+        parse:
+          type: literal
+          return: 0.8999999761581421
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 1.100000023841858
+        display: false
+        parse:
+          type: literal
+          return: 1.100000023841858
+      -
+        value: 1.25
+        display: false
+        parse:
+          type: literal
+          return: 1.25
+      -
+        value: 1.2999999523162842
+        display: false
+        parse:
+          type: literal
+          return: 1.2999999523162842
+      -
+        value: 1.5
+        display: false
+        parse:
+          type: literal
+          return: 1.5
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+      -
+        value: 3.0999999046325684
+        display: false
+        parse:
+          type: literal
+          return: 3.0999999046325684
+      -
+        value: 99
+        display: false
+        parse:
+          type: literal
+          return: 99
+  _rangeId:
+    type: null | string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: x-1
+        display: false
+        parse:
+          type: literal
+          return: x-1
+      -
+        value: x-4
+        display: false
+        parse:
+          type: literal
+          return: x-4
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+      -
+        value: x-6
+        display: false
+        parse:
+          type: literal
+          return: x-6
+  _sourceApplyWay:
+    type: string
+    description: source Apply Way
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+  _useAbilitySelector:
+    type: boolean
+    description: use Ability Selector
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useAbilitySourceSide:
+    type: boolean
+    description: use Ability Source Side
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useDamageFromBB:
+    type: boolean
+    description: use Damage From B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useRadius:
+    type: boolean
+    description: use Radius
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

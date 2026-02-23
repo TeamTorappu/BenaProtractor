@@ -1,0 +1,34 @@
+actionType: ChangeEnemyRouteMotionMode
+fields:
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: FLY
+        display: false
+        parse:
+          type: literal
+          return: FLY
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

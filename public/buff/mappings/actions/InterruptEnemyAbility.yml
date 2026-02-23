@@ -1,0 +1,34 @@
+actionType: InterruptEnemyAbility
+fields:
+  _enemyFrom:
+    type: string
+    description: enemy From
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _resetCooldown:
+    type: boolean
+    description: reset Cooldown
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

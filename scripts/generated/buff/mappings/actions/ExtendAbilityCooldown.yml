@@ -1,0 +1,70 @@
+actionType: ExtendAbilityCooldown
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: S2Ability
+        display: false
+        parse:
+          type: literal
+          return: S2Ability
+      -
+        value: S2MultiMeleeAttack
+        display: false
+        parse:
+          type: literal
+          return: S2MultiMeleeAttack
+  _extendTimeKey:
+    type: string
+    description: extend Time Key
+    values:
+      -
+        value: duration
+        display: false
+        parse:
+          type: literal
+          return: duration
+      -
+        value: s2_extend_time
+        display: false
+        parse:
+          type: literal
+          return: s2_extend_time
+  _keepPassedTime:
+    type: boolean
+    description: keep Passed Time
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _waitFirstPeriod:
+    type: boolean
+    description: wait First Period
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,22 @@
+actionType: FinishAllBuffsWithCertainAbnormalFlag
+fields:
+  _abnormalFlag:
+    type: string
+    description: abnormal Flag
+    values:
+      -
+        value: LEVITATE
+        display: false
+        parse:
+          type: literal
+          return: LEVITATE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

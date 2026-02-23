@@ -1,0 +1,82 @@
+actionType: SplashDamage
+fields:
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+  _createEffect:
+    type: boolean
+    description: create Effect
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _damageScale:
+    type: string
+    description: damage Scale
+    values:
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _sourceApplyWay:
+    type: string
+    description: source Apply Way
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE

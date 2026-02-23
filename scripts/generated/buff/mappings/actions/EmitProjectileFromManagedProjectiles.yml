@@ -1,0 +1,108 @@
+actionType: EmitProjectileFromManagedProjectiles
+fields:
+  _addBbDefaultValue:
+    type: number
+    description: add Bb Default Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+  _addBbKeyForEachProjectile:
+    type: null | string
+    description: add Bb Key For Each Projectile
+    values:
+      -
+        value: hit_interval
+        display: false
+        parse:
+          type: literal
+          return: hit_interval
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _addBbValue:
+    type: number
+    description: add Bb Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.30000001192092896
+        display: false
+        parse:
+          type: literal
+          return: 0.30000001192092896
+  _copyBb:
+    type: boolean
+    description: copy Bb
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _projectileKey:
+    type: null | string
+    description: projectile Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: projectile_chr_lemuen_s3
+        display: false
+        parse:
+          type: literal
+          return: projectile_chr_lemuen_s3
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useProjectileAsSource:
+    type: boolean
+    description: use Projectile As Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

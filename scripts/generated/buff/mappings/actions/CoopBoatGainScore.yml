@@ -1,0 +1,48 @@
+actionType: CoopBoatGainScore
+fields:
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _score:
+    type: number
+    description: score
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _scoreKey:
+    type: string
+    description: score Key
+    values:
+      -
+        value: score
+        display: false
+        parse:
+          type: literal
+          return: score
+  isMin:
+    type: boolean
+    description: is Min
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

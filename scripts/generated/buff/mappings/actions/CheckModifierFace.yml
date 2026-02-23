@@ -1,0 +1,22 @@
+actionType: CheckModifierFace
+fields:
+  _angle:
+    type: number
+    description: angle
+    values:
+      -
+        value: 180
+        display: false
+        parse:
+          type: literal
+          return: 180
+  _backward:
+    type: boolean
+    description: backward
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

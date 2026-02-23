@@ -1,0 +1,16 @@
+field: _keys
+type: object
+description: keys
+actions:
+  FilterCharacterSubPrefession:
+    type: array
+    values:
+      -
+        value: "["dollkeeper"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

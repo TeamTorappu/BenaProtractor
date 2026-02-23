@@ -1,0 +1,32 @@
+actionType: CreateGlobalBuffByKey
+fields:
+  _globalBuffKey:
+    type: string
+    description: global Buff Key
+    values:
+      -
+        value: "enemy_nstmon[clear_ground]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_nstmon[clear_ground]"
+  _globalBuffPrefabKey:
+    type: string
+    description: global Buff Prefab Key
+    values:
+      -
+        value: "enemy_nstmon[clear_ground]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_nstmon[clear_ground]"
+  _tryAddBuffImmediately:
+    type: boolean
+    description: try Add Buff Immediately
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,660 @@
+actionType: AdvancedApplyDamage
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _assignRealDamageToBB:
+    type: boolean
+    description: assign Real Damage To B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _atkScaleVar:
+    type: string
+    description: atk Scale Var
+    values:
+      -
+        value: aoe_scale
+        display: false
+        parse:
+          type: literal
+          return: aoe_scale
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: "atk_scale[bigAttack2]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[bigAttack2]"
+      -
+        value: "atk_scale[drone]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[drone]"
+      -
+        value: "atk_scale[normal]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[normal]"
+      -
+        value: atk_scale_1
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_1
+      -
+        value: atk_scale_2
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_2
+      -
+        value: atk_scale_aura
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_aura
+      -
+        value: atk_scale_collide
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_collide
+      -
+        value: atk_scale_cur
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_cur
+      -
+        value: atk_scale_extra
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_extra
+      -
+        value: atk_scale_init
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_init
+      -
+        value: atk_scale_magic
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_magic
+      -
+        value: atk_scale_pure
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_pure
+      -
+        value: atk_scale_s
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_s
+      -
+        value: blockee_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: blockee_atk_scale
+      -
+        value: bomb_scale
+        display: false
+        parse:
+          type: literal
+          return: bomb_scale
+      -
+        value: boom_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: boom_atk_scale
+      -
+        value: burn.atk_scale
+        display: false
+        parse:
+          type: literal
+          return: burn.atk_scale
+      -
+        value: damage_magic
+        display: false
+        parse:
+          type: literal
+          return: damage_magic
+      -
+        value: dot_scale
+        display: false
+        parse:
+          type: literal
+          return: dot_scale
+      -
+        value: element_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: element_atk_scale
+      -
+        value: "enemy_ltniak[skill_1_AOE].damage_scale"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ltniak[skill_1_AOE].damage_scale"
+      -
+        value: ep_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_scale
+      -
+        value: extra_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: extra_atk_scale
+      -
+        value: extra_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: extra_damage_ratio
+      -
+        value: extra_ep_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: extra_ep_damage_scale
+      -
+        value: final_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: final_atk_scale
+      -
+        value: magic_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: magic_atk_scale
+      -
+        value: prism_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: prism_atk_scale
+      -
+        value: ray_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: ray_atk_scale
+      -
+        value: s2_magic_scale
+        display: false
+        parse:
+          type: literal
+          return: s2_magic_scale
+      -
+        value: s3_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: s3_atk_scale
+      -
+        value: shield_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: shield_atk_scale
+      -
+        value: skill.atk_scale
+        display: false
+        parse:
+          type: literal
+          return: skill.atk_scale
+      -
+        value: snow_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: snow_atk_scale
+      -
+        value: sword_end_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: sword_end_atk_scale
+      -
+        value: talent_magic_scale
+        display: false
+        parse:
+          type: literal
+          return: talent_magic_scale
+      -
+        value: trigger_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: trigger_atk_scale
+      -
+        value: vigil_s_3.atk_scale
+        display: false
+        parse:
+          type: literal
+          return: vigil_s_3.atk_scale
+      -
+        value: vigil_wolf_s_3.atk_scale
+        display: false
+        parse:
+          type: literal
+          return: vigil_wolf_s_3.atk_scale
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: ADDITION
+        display: false
+        parse:
+          type: literal
+          return: ADDITION
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+      -
+        value: SPLASH
+        display: false
+        parse:
+          type: literal
+          return: SPLASH
+  _baseOnHostAtk:
+    type: boolean
+    description: base On Host Atk
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _cachedAtkKey:
+    type: string
+    description: cached Atk Key
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: dmg
+        display: false
+        parse:
+          type: literal
+          return: dmg
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: ELEMENT
+        display: false
+        parse:
+          type: literal
+          return: ELEMENT
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _defaultAtkScale:
+    type: number
+    description: default Atk Scale
+    values:
+      -
+        value: 0.800000011920929
+        display: false
+        parse:
+          type: literal
+          return: 0.800000011920929
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _emitSourceOnCalculateDamage:
+    type: boolean
+    description: emit Source On Calculate Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _forceUseProjectileCachedAtk:
+    type: boolean
+    description: force Use Projectile Cached Atk
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _getCachedAtkFromBlackboard:
+    type: boolean
+    description: get Cached Atk From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ignoreCancelReasonMask:
+    type: string
+    description: ignore Cancel Reason Mask
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _ignoreForSp:
+    type: boolean
+    description: ignore For Sp
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ignoreMissFlag:
+    type: string
+    description: ignore Miss Flag
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _modifierKey:
+    type: string
+    description: modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: WANG_STONE
+        display: false
+        parse:
+          type: literal
+          return: WANG_STONE
+      -
+        value: act1autochess_debuff_1
+        display: false
+        parse:
+          type: literal
+          return: act1autochess_debuff_1
+      -
+        value: blkkgt_s2_dot
+        display: false
+        parse:
+          type: literal
+          return: blkkgt_s2_dot
+      -
+        value: "graceb_sk2[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "graceb_sk2[mark]"
+      -
+        value: vendla_s_2
+        display: false
+        parse:
+          type: literal
+          return: vendla_s_2
+      -
+        value: "wscoot_t[extra_atk]"
+        display: false
+        parse:
+          type: literal
+          return: "wscoot_t[extra_atk]"
+  _noSource:
+    type: boolean
+    description: no Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _onlyUseSourceOnCalculateDamage:
+    type: boolean
+    description: only Use Source On Calculate Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _setSharedFlag:
+    type: boolean
+    description: set Shared Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sharedFlagIndex:
+    type: string
+    description: shared Flag Index
+    values:
+      -
+        value: IS_CONTINUOUS
+        display: false
+        parse:
+          type: literal
+          return: IS_CONTINUOUS
+      -
+        value: IS_ENVIRONMENT_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: IS_ENVIRONMENT_DAMAGE
+  _skipModifierEvent:
+    type: boolean
+    description: skip Modifier Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

@@ -1,0 +1,328 @@
+actionType: ModifyBlackboard
+fields:
+  _addBasedOriginValue:
+    type: boolean
+    description: add Based Origin Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _blackboardKeys:
+    type: string
+    description: blackboard Keys
+    values:
+      -
+        value: atk_scale_init
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_init
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+      -
+        value: cache_current_stack
+        display: false
+        parse:
+          type: literal
+          return: cache_current_stack
+      -
+        value: cache_enemy_count
+        display: false
+        parse:
+          type: literal
+          return: cache_enemy_count
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cur_index
+        display: false
+        parse:
+          type: literal
+          return: cur_index
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: damage_value
+        display: false
+        parse:
+          type: literal
+          return: damage_value
+      -
+        value: divided_value
+        display: false
+        parse:
+          type: literal
+          return: divided_value
+      -
+        value: drop_count
+        display: false
+        parse:
+          type: literal
+          return: drop_count
+      -
+        value: height_delta_each
+        display: false
+        parse:
+          type: literal
+          return: height_delta_each
+      -
+        value: hit_count
+        display: false
+        parse:
+          type: literal
+          return: hit_count
+      -
+        value: hp
+        display: false
+        parse:
+          type: literal
+          return: hp
+      -
+        value: init_delta
+        display: false
+        parse:
+          type: literal
+          return: init_delta
+      -
+        value: one
+        display: false
+        parse:
+          type: literal
+          return: one
+      -
+        value: prob
+        display: false
+        parse:
+          type: literal
+          return: prob
+      -
+        value: prob_cache
+        display: false
+        parse:
+          type: literal
+          return: prob_cache
+      -
+        value: re_height_delta_each
+        display: false
+        parse:
+          type: literal
+          return: re_height_delta_each
+      -
+        value: re_init_delta
+        display: false
+        parse:
+          type: literal
+          return: re_init_delta
+      -
+        value: recover_height_delta
+        display: false
+        parse:
+          type: literal
+          return: recover_height_delta
+      -
+        value: "shining_e_002_t[aura][lowland].def"
+        display: false
+        parse:
+          type: literal
+          return: "shining_e_002_t[aura][lowland].def"
+      -
+        value: switch_tile_index
+        display: false
+        parse:
+          type: literal
+          return: switch_tile_index
+      -
+        value: total_damage
+        display: false
+        parse:
+          type: literal
+          return: total_damage
+      -
+        value: triggered_cnt
+        display: false
+        parse:
+          type: literal
+          return: triggered_cnt
+      -
+        value: triggered_cnt_add
+        display: false
+        parse:
+          type: literal
+          return: triggered_cnt_add
+      -
+        value: zero_mark
+        display: false
+        parse:
+          type: literal
+          return: zero_mark
+  _checkFromBlackboardValue:
+    type: boolean
+    description: check From Blackboard Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _fromBlackboardKeys:
+    type: null | string
+    description: from Blackboard Keys
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: add
+        display: false
+        parse:
+          type: literal
+          return: add
+      -
+        value: atk_scale_add
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_add
+      -
+        value: attack_speed_add
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_add
+      -
+        value: cnt_add
+        display: false
+        parse:
+          type: literal
+          return: cnt_add
+      -
+        value: current_stack
+        display: false
+        parse:
+          type: literal
+          return: current_stack
+      -
+        value: damage_scale_aura
+        display: false
+        parse:
+          type: literal
+          return: damage_scale_aura
+      -
+        value: def_lowland
+        display: false
+        parse:
+          type: literal
+          return: def_lowland
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: enemy_count
+        display: false
+        parse:
+          type: literal
+          return: enemy_count
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: prob
+        display: false
+        parse:
+          type: literal
+          return: prob
+      -
+        value: prob_cache
+        display: false
+        parse:
+          type: literal
+          return: prob_cache
+      -
+        value: triggered_cnt_add
+        display: false
+        parse:
+          type: literal
+          return: triggered_cnt_add
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: -0.0020000000949949026
+        display: false
+        parse:
+          type: literal
+          return: -0.0020000000949949026
+      -
+        value: -0.4099999964237213
+        display: false
+        parse:
+          type: literal
+          return: -0.4099999964237213
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.0020000000949949026
+        display: false
+        parse:
+          type: literal
+          return: 0.0020000000949949026
+      -
+        value: 0.4099999964237213
+        display: false
+        parse:
+          type: literal
+          return: 0.4099999964237213
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 100
+        display: false
+        parse:
+          type: literal
+          return: 100

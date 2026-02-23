@@ -1,0 +1,42 @@
+actionType: RandomCreateBuff
+fields:
+  _buffWithWeight:
+    type: boolean
+    description: buff With Weight
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _datas:
+    type: array
+    description: datas
+    schema: action_subschema/_datas.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

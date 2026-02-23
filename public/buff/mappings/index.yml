@@ -1,0 +1,135 @@
+effectKey:
+  type: string
+  description: effect Key
+  values:
+    -
+      value: ""
+      display: false
+      parse:
+        type: literal
+        return: ""
+    -
+      value: blitz_skill_01_buff_01
+      display: false
+      parse:
+        type: literal
+        return: blitz_skill_01_buff_01
+    -
+      value: blitz_skill_01_buff_02
+      display: false
+      parse:
+        type: literal
+        return: blitz_skill_01_buff_02
+    -
+      value: blitz_skill_01_buff_03
+      display: false
+      parse:
+        type: literal
+        return: blitz_skill_01_buff_03
+    -
+      value: buff_violent
+      display: false
+      parse:
+        type: literal
+        return: buff_violent
+    -
+      value: common_combustion_buff_02
+      display: false
+      parse:
+        type: literal
+        return: common_combustion_buff_02
+    -
+      value: common_shield_01
+      display: false
+      parse:
+        type: literal
+        return: common_shield_01
+    -
+      value: enemy_dsfull_buff_01
+      display: false
+      parse:
+        type: literal
+        return: enemy_dsfull_buff_01
+    -
+      value: enemy_dsfull_buff_04
+      display: false
+      parse:
+        type: literal
+        return: enemy_dsfull_buff_04
+    -
+      value: indigo_skill_02_buff_03
+      display: false
+      parse:
+        type: literal
+        return: indigo_skill_02_buff_03
+    -
+      value: lava2_skill02_buff
+      display: false
+      parse:
+        type: literal
+        return: lava2_skill02_buff
+onEventPriority:
+  type: string
+  description: on Event Priority
+  values:
+    -
+      value: DEFAULT
+      display: false
+      parse:
+        type: literal
+        return: DEFAULT
+    -
+      value: HIGHER_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: HIGHER_PRIORITY
+    -
+      value: HIGH_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: HIGH_PRIORITY
+    -
+      value: LOWER_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: LOWER_PRIORITY
+    -
+      value: LOWEST_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: LOWEST_PRIORITY
+    -
+      value: LOW_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: LOW_PRIORITY
+    -
+      value: TITI_DOZE_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: TITI_DOZE_PRIORITY
+templateKey:
+  type: string
+  description: 模板标识
+  display: false
+  default:
+    parse:
+      type: fn
+      name: parseTemplateKey
+      args:
+        - $input
+        - $ctx
+eventToActions:
+  type: record
+  key:
+    file: event_list.yml
+  value:
+    file:
+      - action_keys.yml
+      - actions/*.yml

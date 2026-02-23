@@ -1,0 +1,102 @@
+actionType: ShowToast
+fields:
+  _descriptionUseStringTableKey:
+    type: boolean
+    description: description Use String Table Key
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _lastTime:
+    type: number
+    description: last Time
+    values:
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+  _priority:
+    type: number
+    description: priority
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _seType:
+    type: string
+    description: se Type
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _toastKey:
+    type: string
+    description: toast Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _toastType:
+    type: string
+    description: toast Type
+    values:
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+  _useTargetDescription:
+    type: boolean
+    description: use Target Description
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useTargetId:
+    type: boolean
+    description: use Target Id
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useTargetName:
+    type: boolean
+    description: use Target Name
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

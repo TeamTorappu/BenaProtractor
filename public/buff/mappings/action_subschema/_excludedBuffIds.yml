@@ -1,0 +1,25 @@
+field: _excludedBuffIds
+type: object
+description: excluded Buff Ids
+actions:
+  CheckHasEnemyInRange:
+    type: array
+    values:
+      -
+        value: "["enemy_sggem_t[link]"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

@@ -1,0 +1,50 @@
+actionType: KnockBackWithDirection
+fields:
+  _defaultForceLevel:
+    type: number
+    description: default Force Level
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: DOWN
+        display: false
+        parse:
+          type: literal
+          return: DOWN
+      -
+        value: LEFT
+        display: false
+        parse:
+          type: literal
+          return: LEFT
+      -
+        value: RIGHT
+        display: false
+        parse:
+          type: literal
+          return: RIGHT
+      -
+        value: UP
+        display: false
+        parse:
+          type: literal
+          return: UP
+  _useSourceDirection:
+    type: boolean
+    description: use Source Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

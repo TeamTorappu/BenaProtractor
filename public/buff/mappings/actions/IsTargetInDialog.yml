@@ -1,0 +1,12 @@
+actionType: IsTargetInDialog
+fields:
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

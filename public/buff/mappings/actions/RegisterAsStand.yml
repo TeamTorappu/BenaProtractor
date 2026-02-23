@@ -1,0 +1,52 @@
+actionType: RegisterAsStand
+fields:
+  _hostAbilityName:
+    type: string
+    description: host Ability Name
+    values:
+      -
+        value: standRegisterList
+        display: false
+        parse:
+          type: literal
+          return: standRegisterList
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _standAbilityName:
+    type: string
+    description: stand Ability Name
+    values:
+      -
+        value: standRegisterList
+        display: false
+        parse:
+          type: literal
+          return: standRegisterList
+  hostId:
+    type: string
+    description: host Id
+    values:
+      -
+        value: enemy_1542_wdslm
+        display: false
+        parse:
+          type: literal
+          return: enemy_1542_wdslm
+  useIdToFindHost:
+    type: boolean
+    description: use Id To Find Host
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,12 @@
+actionType: Act33SideCutRopeBySource
+fields:
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: PROJECTILE_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: PROJECTILE_SOURCE

@@ -1,0 +1,122 @@
+actionType: CreateDeckCardBuffsWithSelectOrderList
+fields:
+  _actionSource:
+    type: string
+    description: action Source
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _cardBuffKey:
+    type: null
+    description: card Buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _createCardBuff:
+    type: boolean
+    description: create Card Buff
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _createDeckBuff:
+    type: boolean
+    description: create Deck Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _deckBuff:
+    type: object
+    description: deck Buff
+    schema: action_subschema/_deckBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+  _selectors:
+    type: array
+    description: selectors
+    schema: action_subschema/_selectors.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useTokenAsSouurceCard:
+    type: boolean
+    description: use Token As Souurce Card
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

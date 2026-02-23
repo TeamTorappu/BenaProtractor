@@ -1,0 +1,38 @@
+actionType: ModifyAttackMaxTarget
+fields:
+  _maxTarget:
+    type: number
+    description: max Target
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+  _modeIndex:
+    type: number
+    description: mode Index
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

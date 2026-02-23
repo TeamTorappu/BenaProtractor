@@ -1,0 +1,50 @@
+actionType: LegionModeOnlyAssignSpecifiedProfessionStackCntToBB
+fields:
+  _assignBlackboardKey:
+    type: string
+    description: assign Blackboard Key
+    values:
+      -
+        value: sniper_level
+        display: false
+        parse:
+          type: literal
+          return: sniper_level
+      -
+        value: sniper_profession_cnt
+        display: false
+        parse:
+          type: literal
+          return: sniper_profession_cnt
+      -
+        value: tank_buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: tank_buff_cnt
+  _queryProfessionCategory:
+    type: string
+    description: query Profession Category
+    values:
+      -
+        value: SNIPER
+        display: false
+        parse:
+          type: literal
+          return: SNIPER
+      -
+        value: TANK
+        display: false
+        parse:
+          type: literal
+          return: TANK
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

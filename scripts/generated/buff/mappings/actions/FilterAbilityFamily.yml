@@ -1,0 +1,30 @@
+actionType: FilterAbilityFamily
+fields:
+  _familyGroupMask:
+    type: string
+    description: family Group Mask
+    values:
+      -
+        value: ATTACK
+        display: false
+        parse:
+          type: literal
+          return: ATTACK
+      -
+        value: ATTACK_OR_COMBAT
+        display: false
+        parse:
+          type: literal
+          return: ATTACK_OR_COMBAT
+      -
+        value: COMBAT
+        display: false
+        parse:
+          type: literal
+          return: COMBAT
+      -
+        value: SKILL
+        display: false
+        parse:
+          type: literal
+          return: SKILL

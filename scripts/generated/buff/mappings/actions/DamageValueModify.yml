@@ -1,0 +1,42 @@
+actionType: DamageValueModify
+fields:
+  _applyWayFilter:
+    type: string
+    description: apply Way Filter
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: PHYSICAL_AND_MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL_AND_MAGICAL
+  _filterApplyWay:
+    type: boolean
+    description: filter Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterDamageType:
+    type: boolean
+    description: filter Damage Type
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

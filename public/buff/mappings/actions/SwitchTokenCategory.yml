@@ -1,0 +1,12 @@
+actionType: SwitchTokenCategory
+fields:
+  _category:
+    type: string
+    description: category
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT

@@ -1,0 +1,22 @@
+actionType: RacingEnemyFilterByMode
+fields:
+  _racingMode:
+    type: string
+    description: racing Mode
+    values:
+      -
+        value: Recover
+        display: false
+        parse:
+          type: literal
+          return: Recover
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,66 @@
+actionType: BlockElementDamage
+fields:
+  _shieldBlackboardKey:
+    type: string
+    description: shield Blackboard Key
+    values:
+      -
+        value: shield_value
+        display: false
+        parse:
+          type: literal
+          return: shield_value
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _shieldByAnotherSource:
+    type: boolean
+    description: shield By Another Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _shieldSource:
+    type: string
+    description: shield Source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _sourceBuffKey:
+    type: string
+    description: source Buff Key
+    values:
+      -
+        value: "agoat2_s_2[shield]"
+        display: false
+        parse:
+          type: literal
+          return: "agoat2_s_2[shield]"
+      -
+        value: buff_name
+        display: false
+        parse:
+          type: literal
+          return: buff_name

@@ -1,0 +1,98 @@
+actionType: AssignCharacterSkillBlackboardToBB
+fields:
+  _sourceBlackboardKey:
+    type: string
+    description: source Blackboard Key
+    values:
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: damage_resistance_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_scale
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+      -
+        value: interval
+        display: false
+        parse:
+          type: literal
+          return: interval
+      -
+        value: levitate_duration
+        display: false
+        parse:
+          type: literal
+          return: levitate_duration
+      -
+        value: tower_type
+        display: false
+        parse:
+          type: literal
+          return: tower_type
+  _targetBlackboardKey:
+    type: string
+    description: target Blackboard Key
+    values:
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: damage_resistance_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_scale
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+      -
+        value: interval
+        display: false
+        parse:
+          type: literal
+          return: interval
+      -
+        value: levitate_duration
+        display: false
+        parse:
+          type: literal
+          return: levitate_duration
+      -
+        value: tower_type
+        display: false
+        parse:
+          type: literal
+          return: tower_type
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

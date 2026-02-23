@@ -1,0 +1,260 @@
+actionType: CreateBuffInCircleRange
+fields:
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _checkInArcCircle:
+    type: boolean
+    description: check In Arc Circle
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _count:
+    type: number
+    description: count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _degreeRanges:
+    type: array | null
+    description: degree Ranges
+    schema: action_subschema/_degreeRanges.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _limitCount:
+    type: boolean
+    description: limit Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _postFilter:
+    type: string
+    description: post Filter
+    values:
+      -
+        value: DIST_TO_SOURCE_ASC
+        display: false
+        parse:
+          type: literal
+          return: DIST_TO_SOURCE_ASC
+      -
+        value: HATRED_DES
+        display: false
+        parse:
+          type: literal
+          return: HATRED_DES
+  _rangeRadius:
+    type: number
+    description: range Radius
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+      -
+        value: 0.6000000238418579
+        display: false
+        parse:
+          type: literal
+          return: 0.6000000238418579
+      -
+        value: 1.2000000476837158
+        display: false
+        parse:
+          type: literal
+          return: 1.2000000476837158
+      -
+        value: 1.350000023841858
+        display: false
+        parse:
+          type: literal
+          return: 1.350000023841858
+      -
+        value: 1.5
+        display: false
+        parse:
+          type: literal
+          return: 1.5
+      -
+        value: 1.7000000476837158
+        display: false
+        parse:
+          type: literal
+          return: 1.7000000476837158
+      -
+        value: 1.7999999523162842
+        display: false
+        parse:
+          type: literal
+          return: 1.7999999523162842
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 4
+        display: false
+        parse:
+          type: literal
+          return: 4
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _specifyBuffSource:
+    type: string
+    description: specify Buff Source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useSpecifyBuffSource:
+    type: boolean
+    description: use Specify Buff Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

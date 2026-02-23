@@ -1,0 +1,218 @@
+actionType: CheckFilterTag
+fields:
+  _bbKey:
+    type: string
+    description: bb Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: check_tag
+        display: false
+        parse:
+          type: literal
+          return: check_tag
+      -
+        value: food_tag
+        display: false
+        parse:
+          type: literal
+          return: food_tag
+      -
+        value: tag
+        display: false
+        parse:
+          type: literal
+          return: tag
+  _filterTag:
+    type: null | string
+    description: filter Tag
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: FORTRESS_TRAP_SP
+        display: false
+        parse:
+          type: literal
+          return: FORTRESS_TRAP_SP
+      -
+        value: HalfIdleTrap
+        display: false
+        parse:
+          type: literal
+          return: HalfIdleTrap
+      -
+        value: LHHeSeries
+        display: false
+        parse:
+          type: literal
+          return: LHHeSeries
+      -
+        value: Landscape
+        display: false
+        parse:
+          type: literal
+          return: Landscape
+      -
+        value: SANDBOX_DISABLE_IN_RUSH
+        display: false
+        parse:
+          type: literal
+          return: SANDBOX_DISABLE_IN_RUSH
+      -
+        value: SANDBOX_RES
+        display: false
+        parse:
+          type: literal
+          return: SANDBOX_RES
+      -
+        value: TAG_TRAP_ERADIO
+        display: false
+        parse:
+          type: literal
+          return: TAG_TRAP_ERADIO
+      -
+        value: TAG_TRAP_WPNSTS
+        display: false
+        parse:
+          type: literal
+          return: TAG_TRAP_WPNSTS
+      -
+        value: TRFOOD
+        display: false
+        parse:
+          type: literal
+          return: TRFOOD
+      -
+        value: TRFOOD_BUFF
+        display: false
+        parse:
+          type: literal
+          return: TRFOOD_BUFF
+      -
+        value: collapsal
+        display: false
+        parse:
+          type: literal
+          return: collapsal
+      -
+        value: drone
+        display: false
+        parse:
+          type: literal
+          return: drone
+      -
+        value: infection
+        display: false
+        parse:
+          type: literal
+          return: infection
+      -
+        value: lhplt
+        display: false
+        parse:
+          type: literal
+          return: lhplt
+      -
+        value: machine
+        display: false
+        parse:
+          type: literal
+          return: machine
+      -
+        value: mutant
+        display: false
+        parse:
+          type: literal
+          return: mutant
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: rogue_4_skhbox
+        display: false
+        parse:
+          type: literal
+          return: rogue_4_skhbox
+      -
+        value: sail_boat_buildable
+        display: false
+        parse:
+          type: literal
+          return: sail_boat_buildable
+      -
+        value: sarkaz
+        display: false
+        parse:
+          type: literal
+          return: sarkaz
+      -
+        value: seamonster
+        display: false
+        parse:
+          type: literal
+          return: seamonster
+      -
+        value: tower
+        display: false
+        parse:
+          type: literal
+          return: tower
+      -
+        value: wildanimal
+        display: false
+        parse:
+          type: literal
+          return: wildanimal
+      -
+        value: winfire
+        display: false
+        parse:
+          type: literal
+          return: winfire
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

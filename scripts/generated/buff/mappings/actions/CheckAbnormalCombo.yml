@@ -1,0 +1,50 @@
+actionType: CheckAbnormalCombo
+fields:
+  _abnormalCombo:
+    type: string
+    description: abnormal Combo
+    values:
+      -
+        value: SLEEPING
+        display: false
+        parse:
+          type: literal
+          return: SLEEPING
+  _isUnset:
+    type: boolean
+    description: is Unset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

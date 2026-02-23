@@ -1,0 +1,178 @@
+actionType: AOEHeal
+fields:
+  _createEffect:
+    type: boolean
+    description: create Effect
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _healEffectKey:
+    type: null | string
+    description: heal Effect Key
+    values:
+      -
+        value: common_heal_hit_01
+        display: false
+        parse:
+          type: literal
+          return: common_heal_hit_01
+      -
+        value: enemy_ltnhap_attact_ap_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltnhap_attact_ap_hit_02
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: sensi_skill_02_buff_01
+        display: false
+        parse:
+          type: literal
+          return: sensi_skill_02_buff_01
+  _healScale:
+    type: string
+    description: heal Scale
+    values:
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+      -
+        value: tick_heal_scale
+        display: false
+        parse:
+          type: literal
+          return: tick_heal_scale
+  _ignoreHealFree:
+    type: boolean
+    description: ignore Heal Free
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _rangeId:
+    type: null | string
+    description: range Id
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: x-4
+        display: false
+        parse:
+          type: literal
+          return: x-4
+  _sourceSideType:
+    type: string
+    description: source Side Type
+    values:
+      -
+        value: ALLY
+        display: false
+        parse:
+          type: literal
+          return: ALLY
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useAttackRange:
+    type: boolean
+    description: use Attack Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

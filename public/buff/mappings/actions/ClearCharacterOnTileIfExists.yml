@@ -1,0 +1,12 @@
+actionType: ClearCharacterOnTileIfExists
+fields:
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

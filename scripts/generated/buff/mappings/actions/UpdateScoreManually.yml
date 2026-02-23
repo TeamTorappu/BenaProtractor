@@ -1,0 +1,12 @@
+actionType: UpdateScoreManually
+fields:
+  _score:
+    type: string
+    description: score
+    values:
+      -
+        value: BASIC
+        display: false
+        parse:
+          type: literal
+          return: BASIC

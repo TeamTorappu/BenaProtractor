@@ -1,0 +1,24 @@
+actionType: EnsureDmgOrHeal
+fields:
+  _key:
+    type: null | string
+    description: key
+    values:
+      -
+        value: min_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: min_atk_scale
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: projectile_min_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: projectile_min_atk_scale

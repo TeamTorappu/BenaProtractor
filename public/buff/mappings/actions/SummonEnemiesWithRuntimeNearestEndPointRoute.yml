@@ -1,0 +1,206 @@
+actionType: SummonEnemiesWithRuntimeNearestEndPointRoute
+fields:
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _enemyKey:
+    type: null | string
+    description: enemy Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: enemy_2130_dyswrd
+        display: false
+        parse:
+          type: literal
+          return: enemy_2130_dyswrd
+      -
+        value: enemy_2131_dyfire
+        display: false
+        parse:
+          type: literal
+          return: enemy_2131_dyfire
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _ignoreMissEndPoint:
+    type: boolean
+    description: ignore Miss End Point
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: FLY
+        display: false
+        parse:
+          type: literal
+          return: FLY
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _spawnOffset:
+    type: number
+    description: spawn Offset
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.05000000074505806
+        display: false
+        parse:
+          type: literal
+          return: 0.05000000074505806
+      -
+        value: 0.30000001192092896
+        display: false
+        parse:
+          type: literal
+          return: 0.30000001192092896
+  _summonCount:
+    type: number
+    description: summon Count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _summonOnNearestPassableTile:
+    type: boolean
+    description: summon On Nearest Passable Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _waitTime:
+    type: number
+    description: wait Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.25
+        display: false
+        parse:
+          type: literal
+          return: 0.25
+      -
+        value: 999999
+        display: false
+        parse:
+          type: literal
+          return: 999999

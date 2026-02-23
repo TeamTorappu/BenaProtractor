@@ -1,0 +1,82 @@
+actionType: CreateCardBuffFilterByBuildableType
+fields:
+  _buildableType:
+    type: string
+    description: buildable Type
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+  _cardBuffKey:
+    type: null
+    description: card Buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _expectToken:
+    type: boolean
+    description: expect Token
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: UNTIL_NEXT_SPAWN_SYNC_WITH_BUFF
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN_SYNC_WITH_BUFF
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

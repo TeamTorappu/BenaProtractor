@@ -1,0 +1,32 @@
+actionType: Act49sideBossTailSetSummonEnemyInterval
+fields:
+  _interval:
+    type: number
+    description: interval
+    values:
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+  _intervalKey:
+    type: string
+    description: interval Key
+    values:
+      -
+        value: summon_interval
+        display: false
+        parse:
+          type: literal
+          return: summon_interval
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

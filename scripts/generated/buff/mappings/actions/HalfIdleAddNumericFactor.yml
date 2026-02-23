@@ -1,0 +1,76 @@
+actionType: HalfIdleAddNumericFactor
+fields:
+  _affectType:
+    type: string
+    description: affect Type
+    values:
+      -
+        value: Exp
+        display: false
+        parse:
+          type: literal
+          return: Exp
+      -
+        value: ExpBook
+        display: false
+        parse:
+          type: literal
+          return: ExpBook
+  _calcType:
+    type: string
+    description: calc Type
+    values:
+      -
+        value: MUL
+        display: false
+        parse:
+          type: literal
+          return: MUL
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: exp_book_gain_burst
+        display: false
+        parse:
+          type: literal
+          return: exp_book_gain_burst
+      -
+        value: exp_gain_burst
+        display: false
+        parse:
+          type: literal
+          return: exp_gain_burst
+      -
+        value: "exp_gain_burst[support]"
+        display: false
+        parse:
+          type: literal
+          return: "exp_gain_burst[support]"
+  _validSource:
+    type: string
+    description: valid Source
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+  _valueKey:
+    type: string
+    description: value Key
+    values:
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale

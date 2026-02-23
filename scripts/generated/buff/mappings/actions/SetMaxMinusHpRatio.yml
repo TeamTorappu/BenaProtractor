@@ -1,0 +1,22 @@
+actionType: SetMaxMinusHpRatio
+fields:
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1

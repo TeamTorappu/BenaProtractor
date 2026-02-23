@@ -1,0 +1,54 @@
+actionType: RefreshAttachListenerToTileAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: DoFarm
+        display: false
+        parse:
+          type: literal
+          return: DoFarm
+      -
+        value: EnemyListener
+        display: false
+        parse:
+          type: literal
+          return: EnemyListener
+  _checkCanUseAblityFlag:
+    type: boolean
+    description: check Can Use Ablity Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _syncAbilityName:
+    type: string
+    description: sync Ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: DoFarm
+        display: false
+        parse:
+          type: literal
+          return: DoFarm

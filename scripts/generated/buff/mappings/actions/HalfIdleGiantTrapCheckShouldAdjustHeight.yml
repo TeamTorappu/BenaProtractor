@@ -1,0 +1,32 @@
+actionType: HalfIdleGiantTrapCheckShouldAdjustHeight
+fields:
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _targetBuildableType:
+    type: string
+    description: target Buildable Type
+    values:
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _targetHeightType:
+    type: string
+    description: target Height Type
+    values:
+      -
+        value: HIGHLAND
+        display: false
+        parse:
+          type: literal
+          return: HIGHLAND

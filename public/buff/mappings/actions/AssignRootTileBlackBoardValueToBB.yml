@@ -1,0 +1,72 @@
+actionType: AssignRootTileBlackBoardValueToBB
+fields:
+  _isStringKey:
+    type: boolean
+    description: is String Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _tileBBKey:
+    type: string
+    description: tile B B Key
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: char_id
+        display: false
+        parse:
+          type: literal
+          return: char_id
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp
+  _valueKey:
+    type: string
+    description: value Key
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: char_id_check
+        display: false
+        parse:
+          type: literal
+          return: char_id_check
+      -
+        value: max_hp
+        display: false
+        parse:
+          type: literal
+          return: max_hp

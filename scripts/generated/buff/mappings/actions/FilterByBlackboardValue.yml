@@ -1,0 +1,450 @@
+actionType: FilterByBlackboardValue
+fields:
+  _anotherBuff:
+    type: boolean
+    description: another Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _anotherKeyToCompare:
+    type: null | string
+    description: another Key To Compare
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: atk_buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: atk_buff_cnt
+      -
+        value: cache_current_stack
+        display: false
+        parse:
+          type: literal
+          return: cache_current_stack
+      -
+        value: cache_enemy_count
+        display: false
+        parse:
+          type: literal
+          return: cache_enemy_count
+      -
+        value: cached_sniper_level
+        display: false
+        parse:
+          type: literal
+          return: cached_sniper_level
+      -
+        value: captured_cnt_to_trigger
+        display: false
+        parse:
+          type: literal
+          return: captured_cnt_to_trigger
+      -
+        value: check_cnt
+        display: false
+        parse:
+          type: literal
+          return: check_cnt
+      -
+        value: check_sp_after
+        display: false
+        parse:
+          type: literal
+          return: check_sp_after
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cost_stun
+        display: false
+        parse:
+          type: literal
+          return: cost_stun
+      -
+        value: count
+        display: false
+        parse:
+          type: literal
+          return: count
+      -
+        value: damage_resistance_origin
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_origin
+      -
+        value: delta_max
+        display: false
+        parse:
+          type: literal
+          return: delta_max
+      -
+        value: direction
+        display: false
+        parse:
+          type: literal
+          return: direction
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: final_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: final_hp_ratio
+      -
+        value: fly_start_speed_rate
+        display: false
+        parse:
+          type: literal
+          return: fly_start_speed_rate
+      -
+        value: get_gold_cnt
+        display: false
+        parse:
+          type: literal
+          return: get_gold_cnt
+      -
+        value: hit_cnt
+        display: false
+        parse:
+          type: literal
+          return: hit_cnt
+      -
+        value: hp
+        display: false
+        parse:
+          type: literal
+          return: hp
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: hp_target
+        display: false
+        parse:
+          type: literal
+          return: hp_target
+      -
+        value: hp_trigger
+        display: false
+        parse:
+          type: literal
+          return: hp_trigger
+      -
+        value: kick_times
+        display: false
+        parse:
+          type: literal
+          return: kick_times
+      -
+        value: kill_count
+        display: false
+        parse:
+          type: literal
+          return: kill_count
+      -
+        value: limited_dynamic
+        display: false
+        parse:
+          type: literal
+          return: limited_dynamic
+      -
+        value: max_irrigate_time
+        display: false
+        parse:
+          type: literal
+          return: max_irrigate_time
+      -
+        value: max_radius
+        display: false
+        parse:
+          type: literal
+          return: max_radius
+      -
+        value: max_respawn_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_respawn_cnt
+      -
+        value: max_times
+        display: false
+        parse:
+          type: literal
+          return: max_times
+      -
+        value: min_scale
+        display: false
+        parse:
+          type: literal
+          return: min_scale
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: other_cnt
+        display: false
+        parse:
+          type: literal
+          return: other_cnt
+      -
+        value: other_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: other_hp_ratio
+      -
+        value: target_count
+        display: false
+        parse:
+          type: literal
+          return: target_count
+      -
+        value: threshold
+        display: false
+        parse:
+          type: literal
+          return: threshold
+      -
+        value: timer_threshold
+        display: false
+        parse:
+          type: literal
+          return: timer_threshold
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+      -
+        value: total_damage_range
+        display: false
+        parse:
+          type: literal
+          return: total_damage_range
+      -
+        value: trigger_damage_count
+        display: false
+        parse:
+          type: literal
+          return: trigger_damage_count
+      -
+        value: trigger_value
+        display: false
+        parse:
+          type: literal
+          return: trigger_value
+      -
+        value: unlock_owner
+        display: false
+        parse:
+          type: literal
+          return: unlock_owner
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffKey:
+    type: null | string
+    description: buff Key
+    values:
+      -
+        value: "act1autochess_gar_event_consume_ammo[status]"
+        display: false
+        parse:
+          type: literal
+          return: "act1autochess_gar_event_consume_ammo[status]"
+      -
+        value: "act1autochess_gar_event_selfdead[doll]"
+        display: false
+        parse:
+          type: literal
+          return: "act1autochess_gar_event_selfdead[doll]"
+      -
+        value: enemy_tjgdly_dive_cd
+        display: false
+        parse:
+          type: literal
+          return: enemy_tjgdly_dive_cd
+      -
+        value: "enemy_vtmstr_equip_B_disarm[enemy]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_vtmstr_equip_B_disarm[enemy]"
+      -
+        value: enemy_vtmstr_equip_avaliable
+        display: false
+        parse:
+          type: literal
+          return: enemy_vtmstr_equip_avaliable
+      -
+        value: "get_evade_when_blocked[evade]"
+        display: false
+        parse:
+          type: literal
+          return: "get_evade_when_blocked[evade]"
+      -
+        value: mpctrl_boss_stage
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_boss_stage
+      -
+        value: mpctrl_tower_stage
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_tower_stage
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: trap_trpot_mark
+        display: false
+        parse:
+          type: literal
+          return: trap_trpot_mark
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: EQUALS
+        display: false
+        parse:
+          type: literal
+          return: EQUALS
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+  _valueToCompare:
+    type: number
+    description: value To Compare
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+      -
+        value: 300000
+        display: false
+        parse:
+          type: literal
+          return: 300000
+      -
+        value: 4
+        display: false
+        parse:
+          type: literal
+          return: 4
+      -
+        value: 50
+        display: false
+        parse:
+          type: literal
+          return: 50

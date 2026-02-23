@@ -1,0 +1,12 @@
+actionType: CheckRemainTime
+fields:
+  _checkRemainTime:
+    type: number
+    description: check Remain Time
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1

@@ -1,0 +1,92 @@
+actionType: ApplyCacheAtkDamageByBuffBlackBoardCnt
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+  _buffCnt:
+    type: string
+    description: buff Cnt
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+  _buffMaxCnt:
+    type: string
+    description: buff Max Cnt
+    values:
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+  _damageScaleKey:
+    type: string
+    description: damage Scale Key
+    values:
+      -
+        value: atk_scale_2
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_2
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+  _forceDisplayDamageNum:
+    type: boolean
+    description: force Display Damage Num
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modifierKey:
+    type: string
+    description: modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _useDynamicAttackType:
+    type: boolean
+    description: use Dynamic Attack Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

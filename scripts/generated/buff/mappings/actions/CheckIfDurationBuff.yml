@@ -1,0 +1,12 @@
+actionType: CheckIfDurationBuff
+fields:
+  _buffType:
+    type: string
+    description: buff Type
+    values:
+      -
+        value: MAIN_BUFF
+        display: false
+        parse:
+          type: literal
+          return: MAIN_BUFF

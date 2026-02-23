@@ -1,0 +1,16 @@
+field: _surroundTilesOptions
+type: object
+description: surround Tiles Options
+actions:
+  SummonEnemiesOnTileSurroundedByTrapsWithRuntimeNearestEndPointRoute:
+    type: object
+    values:
+      -
+        value: "{"buildableType":"ALL","allowNoneBuildableType":false,"passableMask":"NONE","allowNonePassableMask":true,"checkBuildableOrPassable":false,"checkExtraBuildableCheckers":false,"advancedBuildableMask":"NONE","advancedBuildableMaskExcept":false,"allowAllAdvancedBuildableMask":false,"heightType":"LOWLAND","checkHeightType":false,"checkTileMode":false,"modeIndex":0,"checkTileMoveCost":false,"moveCostCompareType":"LT","moveCostThreshold":0,"allowedTileBlackboardKey":null,"checkTileTypes":false,"exceptTileTypes":false,"tileTypesMask":"NONE"}"
+        display: false
+        parse:
+          type: fn
+          name: parsesurroundTilesOptions
+          args:
+            - $input
+            - $ctx

@@ -1,0 +1,120 @@
+actionType: RewriteTileOptionsInRange
+fields:
+  _advancedBuildableMask:
+    type: string
+    description: advanced Buildable Mask
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+      -
+        value: NIGHT
+        display: false
+        parse:
+          type: literal
+          return: NIGHT
+  _buildableChange:
+    type: boolean
+    description: buildable Change
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _buildableType:
+    type: string
+    description: buildable Type
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _nightMode:
+    type: boolean
+    description: night Mode
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+      -
+        value: 1-2
+        display: false
+        parse:
+          type: literal
+          return: 1-2
+      -
+        value: 3-6
+        display: false
+        parse:
+          type: literal
+          return: 3-6
+      -
+        value: b-2
+        display: false
+        parse:
+          type: literal
+          return: b-2
+  _restoreTileOptions:
+    type: boolean
+    description: restore Tile Options
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

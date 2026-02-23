@@ -1,0 +1,16 @@
+field: _enemyKeys
+type: object
+description: enemy Keys
+actions:
+  CheckTargetRootTile:
+    type: array
+    values:
+      -
+        value: "["enemy_1312_ymillu"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

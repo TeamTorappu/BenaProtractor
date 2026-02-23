@@ -1,0 +1,12 @@
+actionType: FilterAbilityValidCastTargetCnt
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: EQUALS
+        display: false
+        parse:
+          type: literal
+          return: EQUALS

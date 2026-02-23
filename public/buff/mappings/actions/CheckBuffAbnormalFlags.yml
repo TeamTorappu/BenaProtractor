@@ -1,0 +1,32 @@
+actionType: CheckBuffAbnormalFlags
+fields:
+  _abnormalFlags:
+    type: array
+    description: abnormal Flags
+    schema: action_subschema/_abnormalFlags.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _allMustMatch:
+    type: boolean
+    description: all Must Match
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _buffType:
+    type: string
+    description: buff Type
+    values:
+      -
+        value: MAIN_BUFF
+        display: false
+        parse:
+          type: literal
+          return: MAIN_BUFF

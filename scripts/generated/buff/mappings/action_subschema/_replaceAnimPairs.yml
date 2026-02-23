@@ -1,0 +1,232 @@
+field: _replaceAnimPairs
+type: object
+description: replace Anim Pairs
+actions:
+  ModifyAnimatorHookerReplacePair:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Die","toAnimKey":"Die"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Die","toAnimKey":"Die_2"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Die","toAnimKey":"Die_B"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Idle","toAnimKey":"C1_Revive_Loop"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Idle","toAnimKey":"F_Idle"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Idle","toAnimKey":"Idle"},{"fromAnimKey":"Move","toAnimKey":"Idle"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Idle","toAnimKey":"Idle_B"},{"fromAnimKey":"Move","toAnimKey":"Move_2_B"},{"fromAnimKey":"Default","toAnimKey":"Default_B"},{"fromAnimKey":"Die","toAnimKey":"Die_B"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Idle","toAnimKey":"Idle_B"},{"fromAnimKey":"Move","toAnimKey":"Move_B"},{"fromAnimKey":"Default","toAnimKey":"Default_B"},{"fromAnimKey":"Die","toAnimKey":"Die_B"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Idle_B","toAnimKey":"Idle"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Move","toAnimKey":"2_Move_1"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Move","toAnimKey":"2_Move_2"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Move","toAnimKey":"Move"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Move","toAnimKey":"Move_1"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Move","toAnimKey":"Move_2"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Move","toAnimKey":"Move_2_A"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_1_A","toAnimKey":"Skill_1_A"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_1_A","toAnimKey":"Skill_1_B"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_2_End_A","toAnimKey":"Skill_2_End_A"},{"fromAnimKey":"Skill_2_Begin_A","toAnimKey":"Skill_2_Begin_A"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_2_End_A","toAnimKey":"Skill_2_End_B"},{"fromAnimKey":"Skill_2_Begin_A","toAnimKey":"Skill_2_Begin_B"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_3_Begin_A","toAnimKey":"Skill_3_Begin_A"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_3_Begin_A","toAnimKey":"Skill_3_Begin_B"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_End_1","toAnimKey":"Skill_End_1"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_End_1","toAnimKey":"Skill_End_2"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"fromAnimKey":"Skill_End_1","toAnimKey":"Skill_End_3"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

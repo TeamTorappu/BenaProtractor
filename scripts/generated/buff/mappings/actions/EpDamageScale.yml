@@ -1,0 +1,102 @@
+actionType: EpDamageScale
+fields:
+  _applyWayFilter:
+    type: string
+    description: apply Way Filter
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _elementType:
+    type: string
+    description: element Type
+    values:
+      -
+        value: DARK
+        display: false
+        parse:
+          type: literal
+          return: DARK
+      -
+        value: FIRE
+        display: false
+        parse:
+          type: literal
+          return: FIRE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: SANITY
+        display: false
+        parse:
+          type: literal
+          return: SANITY
+  _filterApplyWay:
+    type: boolean
+    description: filter Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterElementType:
+    type: boolean
+    description: filter Element Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isOneMinus:
+    type: boolean
+    description: is One Minus
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isStackable:
+    type: boolean
+    description: is Stackable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isValidStackCnt:
+    type: boolean
+    description: is Valid Stack Cnt
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

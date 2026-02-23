@@ -1,0 +1,32 @@
+actionType: AdjustVisualObjectHeight
+fields:
+  _isDelta:
+    type: boolean
+    description: is Delta
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _newHeight:
+    type: number
+    description: new Height
+    values:
+      -
+        value: -0.4000000059604645
+        display: false
+        parse:
+          type: literal
+          return: -0.4000000059604645
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

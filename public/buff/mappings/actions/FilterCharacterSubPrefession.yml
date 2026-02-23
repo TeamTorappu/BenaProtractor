@@ -1,0 +1,22 @@
+actionType: FilterCharacterSubPrefession
+fields:
+  _keys:
+    type: array
+    description: keys
+    schema: action_subschema/_keys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

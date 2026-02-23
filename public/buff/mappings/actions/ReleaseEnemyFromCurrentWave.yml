@@ -1,0 +1,60 @@
+actionType: ReleaseEnemyFromCurrentWave
+fields:
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _trackEnemyAtNextWave:
+    type: boolean
+    description: track Enemy At Next Wave
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _trackEnemyAtSpecificWave:
+    type: boolean
+    description: track Enemy At Specific Wave
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _trackEnemyAtWaveDelta:
+    type: number
+    description: track Enemy At Wave Delta
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0

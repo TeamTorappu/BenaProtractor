@@ -1,0 +1,422 @@
+actionType: ModifySp
+fields:
+  _customModifierKey:
+    type: string
+    description: custom Modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: "pirene_func[ally]"
+        display: false
+        parse:
+          type: literal
+          return: "pirene_func[ally]"
+      -
+        value: swire2_add_coin
+        display: false
+        parse:
+          type: literal
+          return: swire2_add_coin
+  _dontCheckSpType:
+    type: boolean
+    description: dont Check Sp Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _dontShowSpUI:
+    type: boolean
+    description: dont Show Sp U I
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _forceFlag:
+    type: boolean
+    description: force Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isMinis:
+    type: boolean
+    description: is Minis
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modifyByRatio:
+    type: boolean
+    description: modify By Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modifyByRatioBasedOnCurSP:
+    type: boolean
+    description: modify By Ratio Based On Cur S P
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modifyRatio:
+    type: number
+    description: modify Ratio
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _modifyValue:
+    type: number
+    description: modify Value
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: -20
+        display: false
+        parse:
+          type: literal
+          return: -20
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+      -
+        value: 9999
+        display: false
+        parse:
+          type: literal
+          return: 9999
+  _spMask:
+    type: string
+    description: sp Mask
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: ATTACK_OR_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: ATTACK_OR_DAMAGE
+      -
+        value: INCREASE_WHEN_ATTACK
+        display: false
+        parse:
+          type: literal
+          return: INCREASE_WHEN_ATTACK
+      -
+        value: INCREASE_WHEN_TAKEN_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: INCREASE_WHEN_TAKEN_DAMAGE
+      -
+        value: INCREASE_WITH_TIME
+        display: false
+        parse:
+          type: literal
+          return: INCREASE_WITH_TIME
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _spString:
+    type: null | string
+    description: sp String
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: __
+        display: false
+        parse:
+          type: literal
+          return: __
+      -
+        value: add_sp
+        display: false
+        parse:
+          type: literal
+          return: add_sp
+      -
+        value: addition_sp
+        display: false
+        parse:
+          type: literal
+          return: addition_sp
+      -
+        value: current_sp_ratio
+        display: false
+        parse:
+          type: literal
+          return: current_sp_ratio
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: ex_sub_sp
+        display: false
+        parse:
+          type: literal
+          return: ex_sub_sp
+      -
+        value: extra_sp
+        display: false
+        parse:
+          type: literal
+          return: extra_sp
+      -
+        value: init_sp
+        display: false
+        parse:
+          type: literal
+          return: init_sp
+      -
+        value: mana
+        display: false
+        parse:
+          type: literal
+          return: mana
+      -
+        value: none
+        display: false
+        parse:
+          type: literal
+          return: none
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: other_sp
+        display: false
+        parse:
+          type: literal
+          return: other_sp
+      -
+        value: skill_cost_min_sp
+        display: false
+        parse:
+          type: literal
+          return: skill_cost_min_sp
+      -
+        value: sleeper_sp
+        display: false
+        parse:
+          type: literal
+          return: sleeper_sp
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+      -
+        value: sp_cal
+        display: false
+        parse:
+          type: literal
+          return: sp_cal
+      -
+        value: sp_cost
+        display: false
+        parse:
+          type: literal
+          return: sp_cost
+      -
+        value: sp_each_character
+        display: false
+        parse:
+          type: literal
+          return: sp_each_character
+      -
+        value: sp_onattack
+        display: false
+        parse:
+          type: literal
+          return: sp_onattack
+      -
+        value: sp_other
+        display: false
+        parse:
+          type: literal
+          return: sp_other
+      -
+        value: sp_recover
+        display: false
+        parse:
+          type: literal
+          return: sp_recover
+      -
+        value: trpot_sp
+        display: false
+        parse:
+          type: literal
+          return: trpot_sp
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MAINBUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MAINBUFF_SOURCE
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

@@ -1,0 +1,336 @@
+actionType: AssignValueToBB
+fields:
+  _assignString:
+    type: boolean
+    description: assign String
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _copyFromKey:
+    type: null | string
+    description: copy From Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: atk_wave
+        display: false
+        parse:
+          type: literal
+          return: atk_wave
+      -
+        value: attack@times
+        display: false
+        parse:
+          type: literal
+          return: attack@times
+      -
+        value: attack@trigger_time
+        display: false
+        parse:
+          type: literal
+          return: attack@trigger_time
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+      -
+        value: attack_speed_ally
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_ally
+      -
+        value: attack_speed_ally_extra
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_ally_extra
+      -
+        value: attack_speed_enemy
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_enemy
+      -
+        value: attack_speed_enemy_extra
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_enemy_extra
+      -
+        value: attack_speed_wave
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_wave
+      -
+        value: back_move_speed
+        display: false
+        parse:
+          type: literal
+          return: back_move_speed
+      -
+        value: block_damage_max_times
+        display: false
+        parse:
+          type: literal
+          return: block_damage_max_times
+      -
+        value: consume_count
+        display: false
+        parse:
+          type: literal
+          return: consume_count
+      -
+        value: consumed_cnt
+        display: false
+        parse:
+          type: literal
+          return: consumed_cnt
+      -
+        value: damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance
+      -
+        value: damage_resistance_max
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_max
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: disarmed_duration
+        display: false
+        parse:
+          type: literal
+          return: disarmed_duration
+      -
+        value: duration
+        display: false
+        parse:
+          type: literal
+          return: duration
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: heal_value_s1
+        display: false
+        parse:
+          type: literal
+          return: heal_value_s1
+      -
+        value: hit_times_to_switch
+        display: false
+        parse:
+          type: literal
+          return: hit_times_to_switch
+      -
+        value: init_max_hp
+        display: false
+        parse:
+          type: literal
+          return: init_max_hp
+      -
+        value: init_shield
+        display: false
+        parse:
+          type: literal
+          return: init_shield
+      -
+        value: interval
+        display: false
+        parse:
+          type: literal
+          return: interval
+      -
+        value: interval_damage
+        display: false
+        parse:
+          type: literal
+          return: interval_damage
+      -
+        value: isPalsyingCur
+        display: false
+        parse:
+          type: literal
+          return: isPalsyingCur
+      -
+        value: lose_hp_scale
+        display: false
+        parse:
+          type: literal
+          return: lose_hp_scale
+      -
+        value: main_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: main_atk_scale
+      -
+        value: max_free_respawn_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_free_respawn_cnt
+      -
+        value: max_hit_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_hit_cnt
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: normal_cnt
+        display: false
+        parse:
+          type: literal
+          return: normal_cnt
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: power_cost_scale
+        display: false
+        parse:
+          type: literal
+          return: power_cost_scale
+      -
+        value: power_respawn_time
+        display: false
+        parse:
+          type: literal
+          return: power_respawn_time
+      -
+        value: prism_max_target
+        display: false
+        parse:
+          type: literal
+          return: prism_max_target
+      -
+        value: random_result
+        display: false
+        parse:
+          type: literal
+          return: random_result
+      -
+        value: shield_amount
+        display: false
+        parse:
+          type: literal
+          return: shield_amount
+      -
+        value: sniper_level
+        display: false
+        parse:
+          type: literal
+          return: sniper_level
+      -
+        value: stun_duration_add
+        display: false
+        parse:
+          type: literal
+          return: stun_duration_add
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+      -
+        value: 0.20000000298023224
+        display: false
+        parse:
+          type: literal
+          return: 0.20000000298023224
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5

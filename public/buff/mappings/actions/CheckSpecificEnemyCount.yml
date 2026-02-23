@@ -1,0 +1,52 @@
+actionType: CheckSpecificEnemyCount
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+  _enemyId:
+    type: string
+    description: enemy Id
+    values:
+      -
+        value: enemy_1542_wdslm
+        display: false
+        parse:
+          type: literal
+          return: enemy_1542_wdslm
+  _limitAmount:
+    type: number
+    description: limit Amount
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _limitAmountKey:
+    type: null
+    description: limit Amount Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

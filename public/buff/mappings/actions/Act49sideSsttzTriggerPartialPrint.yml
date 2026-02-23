@@ -1,0 +1,22 @@
+actionType: Act49sideSsttzTriggerPartialPrint
+fields:
+  _posBlackBoardKey:
+    type: string
+    description: pos Black Board Key
+    values:
+      -
+        value: target_pos
+        display: false
+        parse:
+          type: literal
+          return: target_pos
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

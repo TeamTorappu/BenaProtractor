@@ -1,0 +1,464 @@
+actionType: SummonEnemyWithRuntimeRoute
+fields:
+  _addBuffsSource:
+    type: string
+    description: add Buffs Source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _avoidHighland:
+    type: boolean
+    description: avoid Highland
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _changeSpawnCertainPos:
+    type: boolean
+    description: change Spawn Certain Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _enemyKey:
+    type: null | string
+    description: enemy Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: enemy_1040_bombd
+        display: false
+        parse:
+          type: literal
+          return: enemy_1040_bombd
+      -
+        value: enemy_1400_dhtbgj
+        display: false
+        parse:
+          type: literal
+          return: enemy_1400_dhtbgj
+      -
+        value: enemy_1421_lrchld
+        display: false
+        parse:
+          type: literal
+          return: enemy_1421_lrchld
+      -
+        value: enemy_1432_lrccon
+        display: false
+        parse:
+          type: literal
+          return: enemy_1432_lrccon
+      -
+        value: enemy_1542_wdslm_4
+        display: false
+        parse:
+          type: literal
+          return: enemy_1542_wdslm_4
+      -
+        value: enemy_1553_lrdead
+        display: false
+        parse:
+          type: literal
+          return: enemy_1553_lrdead
+      -
+        value: enemy_1578_icecage
+        display: false
+        parse:
+          type: literal
+          return: enemy_1578_icecage
+      -
+        value: enemy_2024_synut
+        display: false
+        parse:
+          type: literal
+          return: enemy_2024_synut
+      -
+        value: enemy_2083_skzhg
+        display: false
+        parse:
+          type: literal
+          return: enemy_2083_skzhg
+      -
+        value: enemy_2101_dyspll
+        display: false
+        parse:
+          type: literal
+          return: enemy_2101_dyspll
+      -
+        value: enemy_2121_dyspl2
+        display: false
+        parse:
+          type: literal
+          return: enemy_2121_dyspl2
+      -
+        value: enemy_2130_dyswrd
+        display: false
+        parse:
+          type: literal
+          return: enemy_2130_dyswrd
+      -
+        value: enemy_2131_dyfire
+        display: false
+        parse:
+          type: literal
+          return: enemy_2131_dyfire
+      -
+        value: enemy_4053_muejet
+        display: false
+        parse:
+          type: literal
+          return: enemy_4053_muejet
+      -
+        value: enemy_6031_visfrg
+        display: false
+        parse:
+          type: literal
+          return: enemy_6031_visfrg
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _force:
+    type: boolean
+    description: force
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _host:
+    type: string
+    description: host
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: FLY
+        display: false
+        parse:
+          type: literal
+          return: FLY
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+  _noEndPosition:
+    type: boolean
+    description: no End Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _selectTileInSnapshot:
+    type: boolean
+    description: select Tile In Snapshot
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _spawnCertainOffsetX:
+    type: number
+    description: spawn Certain Offset X
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _spawnCertainOffsetY:
+    type: number
+    description: spawn Certain Offset Y
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _spawnOffset:
+    type: number
+    description: spawn Offset
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.20000000298023224
+        display: false
+        parse:
+          type: literal
+          return: 0.20000000298023224
+      -
+        value: 0.25
+        display: false
+        parse:
+          type: literal
+          return: 0.25
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useRandomEnemy:
+    type: boolean
+    description: use Random Enemy
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useSourceEndPosition:
+    type: boolean
+    description: use Source End Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useSpecialHost:
+    type: boolean
+    description: use Special Host
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _waitTime:
+    type: number
+    description: wait Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.25
+        display: false
+        parse:
+          type: literal
+          return: 0.25
+      -
+        value: 9999
+        display: false
+        parse:
+          type: literal
+          return: 9999
+      -
+        value: 99999
+        display: false
+        parse:
+          type: literal
+          return: 99999
+      -
+        value: 999999
+        display: false
+        parse:
+          type: literal
+          return: 999999

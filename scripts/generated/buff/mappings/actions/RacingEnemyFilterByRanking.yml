@@ -1,0 +1,42 @@
+actionType: RacingEnemyFilterByRanking
+fields:
+  _compareType:
+    type: string
+    description: compare Type
+    values:
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _isReverseRanking:
+    type: boolean
+    description: is Reverse Ranking
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ranking:
+    type: number
+    description: ranking
+    values:
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

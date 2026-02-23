@@ -1,0 +1,32 @@
+actionType: FaceLOrRToTarget
+fields:
+  _checkType:
+    type: string
+    description: check Type
+    values:
+      -
+        value: MAP_POSITION
+        display: false
+        parse:
+          type: literal
+          return: MAP_POSITION
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

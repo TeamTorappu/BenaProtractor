@@ -1,0 +1,72 @@
+actionType: DywqgsSpawnTokenOnExceptCharacterSurroundedTiles
+fields:
+  _force:
+    type: boolean
+    description: force
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _options:
+    type: object
+    description: options
+    schema: action_subschema/_options.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _spawnCnt:
+    type: number
+    description: spawn Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _spawnOnRandomTiles:
+    type: boolean
+    description: spawn On Random Tiles
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _tokenToSpawn:
+    type: object
+    description: token To Spawn
+    schema: action_subschema/_tokenToSpawn.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx

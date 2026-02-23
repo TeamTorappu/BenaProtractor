@@ -1,0 +1,12 @@
+actionType: FinishDerivedBuff
+fields:
+  _updateOverrideMap:
+    type: boolean
+    description: update Override Map
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

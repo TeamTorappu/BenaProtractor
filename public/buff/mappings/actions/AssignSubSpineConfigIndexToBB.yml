@@ -1,0 +1,22 @@
+actionType: AssignSubSpineConfigIndexToBB
+fields:
+  _indexKey:
+    type: string
+    description: index Key
+    values:
+      -
+        value: spine
+        display: false
+        parse:
+          type: literal
+          return: spine
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

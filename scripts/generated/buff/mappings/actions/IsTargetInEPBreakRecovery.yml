@@ -1,0 +1,62 @@
+actionType: IsTargetInEPBreakRecovery
+fields:
+  _checkRecoveryType:
+    type: boolean
+    description: check Recovery Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _elementType:
+    type: string
+    description: element Type
+    values:
+      -
+        value: DARK
+        display: false
+        parse:
+          type: literal
+          return: DARK
+      -
+        value: FIRE
+        display: false
+        parse:
+          type: literal
+          return: FIRE
+      -
+        value: SANITY
+        display: false
+        parse:
+          type: literal
+          return: SANITY
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

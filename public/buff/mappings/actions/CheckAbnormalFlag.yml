@@ -1,0 +1,162 @@
+actionType: CheckAbnormalFlag
+fields:
+  _abnormalFlag:
+    type: string
+    description: abnormal Flag
+    values:
+      -
+        value: CAMOUFLAGE
+        display: false
+        parse:
+          type: literal
+          return: CAMOUFLAGE
+      -
+        value: COLD
+        display: false
+        parse:
+          type: literal
+          return: COLD
+      -
+        value: ELEMENT_FREE_ALL
+        display: false
+        parse:
+          type: literal
+          return: ELEMENT_FREE_ALL
+      -
+        value: FROZEN
+        display: false
+        parse:
+          type: literal
+          return: FROZEN
+      -
+        value: HEAL_FREE
+        display: false
+        parse:
+          type: literal
+          return: HEAL_FREE
+      -
+        value: INVINCIBLE
+        display: false
+        parse:
+          type: literal
+          return: INVINCIBLE
+      -
+        value: INVISIBLE
+        display: false
+        parse:
+          type: literal
+          return: INVISIBLE
+      -
+        value: LEVITATE
+        display: false
+        parse:
+          type: literal
+          return: LEVITATE
+      -
+        value: PALSY
+        display: false
+        parse:
+          type: literal
+          return: PALSY
+      -
+        value: PALSYING
+        display: false
+        parse:
+          type: literal
+          return: PALSYING
+      -
+        value: SILENCED
+        display: false
+        parse:
+          type: literal
+          return: SILENCED
+      -
+        value: SKILL_NOT_ACTIVATABLE
+        display: false
+        parse:
+          type: literal
+          return: SKILL_NOT_ACTIVATABLE
+      -
+        value: SP_RECOVER_STOPPED
+        display: false
+        parse:
+          type: literal
+          return: SP_RECOVER_STOPPED
+      -
+        value: STUNNED
+        display: false
+        parse:
+          type: literal
+          return: STUNNED
+      -
+        value: UNMOVABLE
+        display: false
+        parse:
+          type: literal
+          return: UNMOVABLE
+  _abnormalFlagKey:
+    type: string
+    description: abnormal Flag Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _isUnset:
+    type: boolean
+    description: is Unset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

@@ -1,0 +1,22 @@
+actionType: AlwaysExecuteNodeList
+fields:
+  _failWhenOneFail:
+    type: boolean
+    description: fail When One Fail
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _nodes:
+    type: array
+    description: nodes
+    schema: action_subschema/_nodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx

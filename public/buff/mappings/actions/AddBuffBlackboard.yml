@@ -1,0 +1,770 @@
+actionType: AddBuffBlackboard
+fields:
+  _addition:
+    type: number
+    description: addition
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.05000000074505806
+        display: false
+        parse:
+          type: literal
+          return: 0.05000000074505806
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _additionKey:
+    type: null | string
+    description: addition Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: addition_cnt
+        display: false
+        parse:
+          type: literal
+          return: addition_cnt
+      -
+        value: atk_add
+        display: false
+        parse:
+          type: literal
+          return: atk_add
+      -
+        value: atk_step
+        display: false
+        parse:
+          type: literal
+          return: atk_step
+      -
+        value: atk_up_each_time
+        display: false
+        parse:
+          type: literal
+          return: atk_up_each_time
+      -
+        value: base_damage
+        display: false
+        parse:
+          type: literal
+          return: base_damage
+      -
+        value: base_damage_pure
+        display: false
+        parse:
+          type: literal
+          return: base_damage_pure
+      -
+        value: damage_addition
+        display: false
+        parse:
+          type: literal
+          return: damage_addition
+      -
+        value: damage_resistance_addtion
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_addtion
+      -
+        value: damage_value
+        display: false
+        parse:
+          type: literal
+          return: damage_value
+      -
+        value: def_add
+        display: false
+        parse:
+          type: literal
+          return: def_add
+      -
+        value: delta_time
+        display: false
+        parse:
+          type: literal
+          return: delta_time
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+      -
+        value: existing_time
+        display: false
+        parse:
+          type: literal
+          return: existing_time
+      -
+        value: hp
+        display: false
+        parse:
+          type: literal
+          return: hp
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+      -
+        value: hp_step
+        display: false
+        parse:
+          type: literal
+          return: hp_step
+      -
+        value: hp_trigger
+        display: false
+        parse:
+          type: literal
+          return: hp_trigger
+      -
+        value: level_up_add_anim_time
+        display: false
+        parse:
+          type: literal
+          return: level_up_add_anim_time
+      -
+        value: level_up_add_attack_times
+        display: false
+        parse:
+          type: literal
+          return: level_up_add_attack_times
+      -
+        value: level_up_add_projectile_life_time
+        display: false
+        parse:
+          type: literal
+          return: level_up_add_projectile_life_time
+      -
+        value: magic_resistance_add
+        display: false
+        parse:
+          type: literal
+          return: magic_resistance_add
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: prob_add
+        display: false
+        parse:
+          type: literal
+          return: prob_add
+      -
+        value: shield_scale_addition
+        display: false
+        parse:
+          type: literal
+          return: shield_scale_addition
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+      -
+        value: stmbot_count
+        display: false
+        parse:
+          type: literal
+          return: stmbot_count
+      -
+        value: temp_hp_value
+        display: false
+        parse:
+          type: literal
+          return: temp_hp_value
+      -
+        value: temp_maxhp_value
+        display: false
+        parse:
+          type: literal
+          return: temp_maxhp_value
+      -
+        value: time_spend
+        display: false
+        parse:
+          type: literal
+          return: time_spend
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "[g]rogue_5_sp_recovery_with_tag"
+        display: false
+        parse:
+          type: literal
+          return: "[g]rogue_5_sp_recovery_with_tag"
+      -
+        value: "[g]rogue_5_sp_recovery_with_tag[exclude_self]"
+        display: false
+        parse:
+          type: literal
+          return: "[g]rogue_5_sp_recovery_with_tag[exclude_self]"
+      -
+        value: "[g]rogue_5_token_attri_up_aura"
+        display: false
+        parse:
+          type: literal
+          return: "[g]rogue_5_token_attri_up_aura"
+      -
+        value: achunt_equalize
+        display: false
+        parse:
+          type: literal
+          return: achunt_equalize
+      -
+        value: act1autochess_gar_event_consume_ammo
+        display: false
+        parse:
+          type: literal
+          return: act1autochess_gar_event_consume_ammo
+      -
+        value: "act1autochess_gar_event_selfdead[doll]"
+        display: false
+        parse:
+          type: literal
+          return: "act1autochess_gar_event_selfdead[doll]"
+      -
+        value: agoat2_t_1
+        display: false
+        parse:
+          type: literal
+          return: agoat2_t_1
+      -
+        value: "blkkgt_s_2[shield]"
+        display: false
+        parse:
+          type: literal
+          return: "blkkgt_s_2[shield]"
+      -
+        value: cement_t_1
+        display: false
+        parse:
+          type: literal
+          return: cement_t_1
+      -
+        value: "cetsyr_s_3[cal_hp_ratio]"
+        display: false
+        parse:
+          type: literal
+          return: "cetsyr_s_3[cal_hp_ratio]"
+      -
+        value: char_chilc_s1_compute_cost
+        display: false
+        parse:
+          type: literal
+          return: char_chilc_s1_compute_cost
+      -
+        value: dagda_talent_1
+        display: false
+        parse:
+          type: literal
+          return: dagda_talent_1
+      -
+        value: "delphn_s_2[damage]"
+        display: false
+        parse:
+          type: literal
+          return: "delphn_s_2[damage]"
+      -
+        value: "dolris_e_002[self][buff]"
+        display: false
+        parse:
+          type: literal
+          return: "dolris_e_002[self][buff]"
+      -
+        value: "dsbish_s_2[validator]"
+        display: false
+        parse:
+          type: literal
+          return: "dsbish_s_2[validator]"
+      -
+        value: dsdevr_swallow_counter
+        display: false
+        parse:
+          type: literal
+          return: dsdevr_swallow_counter
+      -
+        value: "enemy_act38side[count]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_act38side[count]"
+      -
+        value: "enemy_dqxjl[growth]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_dqxjl[growth]"
+      -
+        value: enemy_dyshhj_build_cnt_check
+        display: false
+        parse:
+          type: literal
+          return: enemy_dyshhj_build_cnt_check
+      -
+        value: "enemy_dywqgs_damage_resistance[S3]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_dywqgs_damage_resistance[S3]"
+      -
+        value: enemy_dywqgs_kill_self
+        display: false
+        parse:
+          type: literal
+          return: enemy_dywqgs_kill_self
+      -
+        value: "enemy_ftsjc[first_attack]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ftsjc[first_attack]"
+      -
+        value: "enemy_ftxjl[growth]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ftxjl[growth]"
+      -
+        value: "enemy_lrssia[summon_shield][2]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_lrssia[summon_shield][2]"
+      -
+        value: "enemy_lrtsia[hp_counter_p1]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_lrtsia[hp_counter_p1]"
+      -
+        value: "enemy_lrtsia[hp_counter_p2]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_lrtsia[hp_counter_p2]"
+      -
+        value: "enemy_lrwzrd[atk_boost]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_lrwzrd[atk_boost]"
+      -
+        value: "enemy_ltnclo[shield]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ltnclo[shield]"
+      -
+        value: enemy_mmjump_switch_mode
+        display: false
+        parse:
+          type: literal
+          return: enemy_mmjump_switch_mode
+      -
+        value: "enemy_nstmom[skill_counter]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_nstmom[skill_counter]"
+      -
+        value: enemy_pope_param_storage
+        display: false
+        parse:
+          type: literal
+          return: enemy_pope_param_storage
+      -
+        value: "enemy_sgass[damage]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_sgass[damage]"
+      -
+        value: enemy_shpkg_shield_checker
+        display: false
+        parse:
+          type: literal
+          return: enemy_shpkg_shield_checker
+      -
+        value: "enemy_smcar[hit_count]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_smcar[hit_count]"
+      -
+        value: enemy_smcar_exp
+        display: false
+        parse:
+          type: literal
+          return: enemy_smcar_exp
+      -
+        value: enemy_solzac_hold_fragment
+        display: false
+        parse:
+          type: literal
+          return: enemy_solzac_hold_fragment
+      -
+        value: "enemy_xdagt_t[undead]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_xdagt_t[undead]"
+      -
+        value: excu2_trait
+        display: false
+        parse:
+          type: literal
+          return: excu2_trait
+      -
+        value: "f12yin_e_003_t[evade_mark_checker]"
+        display: false
+        parse:
+          type: literal
+          return: "f12yin_e_003_t[evade_mark_checker]"
+      -
+        value: "get_evade_when_blocked[evade]"
+        display: false
+        parse:
+          type: literal
+          return: "get_evade_when_blocked[evade]"
+      -
+        value: halfIdle_lhblod_dmg_counter
+        display: false
+        parse:
+          type: literal
+          return: halfIdle_lhblod_dmg_counter
+      -
+        value: halfIdle_lhsht_buff_s1
+        display: false
+        parse:
+          type: literal
+          return: halfIdle_lhsht_buff_s1
+      -
+        value: halfIdle_lhside_sidewalk_recorder
+        display: false
+        parse:
+          type: literal
+          return: halfIdle_lhside_sidewalk_recorder
+      -
+        value: judge_t_1
+        display: false
+        parse:
+          type: literal
+          return: judge_t_1
+      -
+        value: "legion_gasbot_frozen_aura[count]"
+        display: false
+        parse:
+          type: literal
+          return: "legion_gasbot_frozen_aura[count]"
+      -
+        value: "mantra_s_3[enemy_trigger]"
+        display: false
+        parse:
+          type: literal
+          return: "mantra_s_3[enemy_trigger]"
+      -
+        value: mlynar_s_3
+        display: false
+        parse:
+          type: literal
+          return: mlynar_s_3
+      -
+        value: "mortis_standin[switch]"
+        display: false
+        parse:
+          type: literal
+          return: "mortis_standin[switch]"
+      -
+        value: mpctrl_boss_life
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_boss_life
+      -
+        value: mpctrl_kill_stage
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_kill_stage
+      -
+        value: mpctrl_protect_stage
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_protect_stage
+      -
+        value: mpctrl_target_stage
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_target_stage
+      -
+        value: mpctrl_tower_stage
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_tower_stage
+      -
+        value: "multi_fortress_p[immunes]"
+        display: false
+        parse:
+          type: literal
+          return: "multi_fortress_p[immunes]"
+      -
+        value: "oblvns_s_3[fever_undead]"
+        display: false
+        parse:
+          type: literal
+          return: "oblvns_s_3[fever_undead]"
+      -
+        value: "oblvns_t_1[cnt]"
+        display: false
+        parse:
+          type: literal
+          return: "oblvns_t_1[cnt]"
+      -
+        value: odda_t_1
+        display: false
+        parse:
+          type: literal
+          return: odda_t_1
+      -
+        value: "pepe_e_003_t[trigger]"
+        display: false
+        parse:
+          type: literal
+          return: "pepe_e_003_t[trigger]"
+      -
+        value: "pepe_t_1[kill_sp]"
+        display: false
+        parse:
+          type: literal
+          return: "pepe_t_1[kill_sp]"
+      -
+        value: "puzzle_skill_2[damage]"
+        display: false
+        parse:
+          type: literal
+          return: "puzzle_skill_2[damage]"
+      -
+        value: "rogue_5_copper_S_6[god_damage_buff]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_5_copper_S_6[god_damage_buff]"
+      -
+        value: shu_s_3
+        display: false
+        parse:
+          type: literal
+          return: shu_s_3
+      -
+        value: "splash_t[auraElement]"
+        display: false
+        parse:
+          type: literal
+          return: "splash_t[auraElement]"
+      -
+        value: thorns_e_002_t
+        display: false
+        parse:
+          type: literal
+          return: thorns_e_002_t
+      -
+        value: "trap_tfalco_summon[sp_stop]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_tfalco_summon[sp_stop]"
+      -
+        value: "trap_trsrhuntr_summon[sp_stop]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_trsrhuntr_summon[sp_stop]"
+      -
+        value: zuole_s_3
+        display: false
+        parse:
+          type: literal
+          return: zuole_s_3
+  _checkBuffSource:
+    type: boolean
+    description: check Buff Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isMinus:
+    type: boolean
+    description: is Minus
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _maxValueKey:
+    type: null | string
+    description: max Value Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: atk_up_max_value
+        display: false
+        parse:
+          type: literal
+          return: atk_up_max_value
+      -
+        value: max
+        display: false
+        parse:
+          type: literal
+          return: max
+      -
+        value: max_atk
+        display: false
+        parse:
+          type: literal
+          return: max_atk
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+      -
+        value: max_value
+        display: false
+        parse:
+          type: literal
+          return: max_value
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: shield_max
+        display: false
+        parse:
+          type: literal
+          return: shield_max
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useCurBuffBBWhenDoAddition:
+    type: boolean
+    description: use Cur Buff B B When Do Addition
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

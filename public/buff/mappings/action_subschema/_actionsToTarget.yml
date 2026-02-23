@@ -1,0 +1,133 @@
+field: _actionsToTarget
+type: object
+description: actions To Target
+actions:
+  RunActionsToWdslmAbilityTarget:
+    type: array
+    values:
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"TARGET","_buffKeys":["enemy_wdslmSTD[unableSyncSkillFlag]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false},{"$type":"Torappu.Battle.Action.Nodes+IfNot, Assembly-CSharp"},{"$type":"Torappu.Battle.Action.Nodes+TriggerEnemySkill, Assembly-CSharp","_skillName":"syncAttackP1","_checkSkillActive":false,"_checkSkillReady":false,"_ownerType":"TARGET","_targetType":"TARGET","_interruptCurAbility":true,"_interruptCurAbilityUnlessItIsExpectedAbility":false,"_assignCombatAbility":false,"_forceFindTargetBySkillSelector":false,"_clearPalsyingBuffBeforeTrigger":true,"_tryCastDirectlyWhenNoTarget":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"TARGET","_buffKeys":["enemy_wdslmSTD[unableSyncSkillFlag]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false},{"$type":"Torappu.Battle.Action.Nodes+IfNot, Assembly-CSharp"},{"$type":"Torappu.Battle.Action.Nodes+TriggerEnemySkill, Assembly-CSharp","_skillName":"syncAttackP2","_checkSkillActive":false,"_checkSkillReady":false,"_ownerType":"TARGET","_targetType":"TARGET","_interruptCurAbility":true,"_interruptCurAbilityUnlessItIsExpectedAbility":false,"_assignCombatAbility":false,"_forceFindTargetBySkillSelector":false,"_clearPalsyingBuffBeforeTrigger":true,"_tryCastDirectlyWhenNoTarget":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"TARGET","_buffKeys":["enemy_wdslmSTD[unableSyncSkillFlag]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false},{"$type":"Torappu.Battle.Action.Nodes+IfNot, Assembly-CSharp"},{"$type":"Torappu.Battle.Action.Nodes+TriggerEnemySkill, Assembly-CSharp","_skillName":"syncAttackWithSummon","_checkSkillActive":false,"_checkSkillReady":false,"_ownerType":"TARGET","_targetType":"TARGET","_interruptCurAbility":true,"_interruptCurAbilityUnlessItIsExpectedAbility":false,"_assignCombatAbility":false,"_forceFindTargetBySkillSelector":false,"_clearPalsyingBuffBeforeTrigger":true,"_tryCastDirectlyWhenNoTarget":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp","_targetType":"TARGET","_buffKeys":["enemy_wdslm[HP0Flag]"],"isAND":true,"_loadFromBlackboard":false,"_checkBuffSource":false,"_buffSourceType":"BUFF_SOURCE","_checkSourceHost":false},{"$type":"Torappu.Battle.Action.Nodes+IfNot, Assembly-CSharp"},{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":[],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"enemy_wdslm[HP0Flag]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":1,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"TARGET","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false},{"$type":"Torappu.Battle.Action.Nodes+InstantKill, Assembly-CSharp","_targetType":"TARGET","_killSource":false,"_noSource":false,"_withdrawIfRallyPoint":false,"_resultIfInRallyPointMode":false,"_skipReborn":false,"_noReason":false,"_markReachExit":false,"_switchState":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":["INVINCIBLE"],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"enemy_wdslmSTD[P2halfHpInvincible]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"DEFAULT","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"common_invincible_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"TARGET","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":true,"_finishDerivedBuffIfParentFinish":true,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":["INVINCIBLE"],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"enemy_wdslm[disappearInvin]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"STACK","maxStackCnt":99,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"common_invincible_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"TARGET","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":["INVINCIBLE"],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"enemy_wdslm[invincibleStack]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"STACK","maxStackCnt":20,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"common_invincible_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"TARGET","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":["INVINCIBLE"],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"enemy_wdslm[summonInvincible]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"EXTEND","maxStackCnt":1,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":null,"overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"LIMITED","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":2,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"TARGET","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+EqualizeTargetHpRatio, Assembly-CSharp","_source":"BUFF_OWNER","_target":"TARGET","_useSourceHpRatio":true,"_hpRatio":0.5,"_skipModifierEvent":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+EqualizeTargetHpRatio, Assembly-CSharp","_source":"SOURCE","_target":"TARGET","_useSourceHpRatio":true,"_hpRatio":0.5,"_skipModifierEvent":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FinishBuffsById, Assembly-CSharp","_buffKey":"enemy_wdslmSTD[P2halfHpInvincible]","_loadFromBlackboard":false,"_decCntIfStack":false,"_updateOverrideMap":true,"_targetType":"TARGET","_checkBuffSource":false,"_sourceType":"BUFF_SOURCE","_alsoClearNullSource":false,"_finishHostBuff":false,"_decCntKey":null,"_decCnt":1}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FinishBuffsById, Assembly-CSharp","_buffKey":"enemy_wdslm[disappearInvin]","_loadFromBlackboard":false,"_decCntIfStack":true,"_updateOverrideMap":true,"_targetType":"TARGET","_checkBuffSource":false,"_sourceType":"BUFF_SOURCE","_alsoClearNullSource":false,"_finishHostBuff":false,"_decCntKey":null,"_decCnt":1}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+FinishBuffsById, Assembly-CSharp","_buffKey":"enemy_wdslm[invincibleStack]","_loadFromBlackboard":false,"_decCntIfStack":true,"_updateOverrideMap":true,"_targetType":"TARGET","_checkBuffSource":false,"_sourceType":"BUFF_SOURCE","_alsoClearNullSource":false,"_finishHostBuff":false,"_decCntKey":null,"_decCnt":1}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "[{"$type":"Torappu.Battle.Action.Nodes+IsHostML12, Assembly-CSharp","_sourceType":"TARGET","_abilityName":"standRegisterList"},{"$type":"Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp","_buff":{"attributes":{"abnormalFlags":["INVINCIBLE"],"abnormalImmunes":[],"abnormalAntis":[],"abnormalCombos":[],"abnormalComboImmunes":[],"attributeModifiers":[]},"buffKey":"enemy_wdslm[invincibleStack]","loadFromDB":false,"isDurableBuff":false,"isDamageMissable":false,"isSilenceable":false,"isStunnable":false,"isFreezable":false,"isLevitatable":false,"statusResistable":"AUTOMATIC","templateKey":"empty","disableOverride":false,"overrideKey":null,"overrideType":"STACK","maxStackCnt":20,"refreshRemainingTimeWhenStackMax":false,"clearAllStackCntWhenTimeUp":false,"maxValidStackCnt":-1,"independentCharacterSource":false,"overrideEffectKey":"common_invincible_01","overrideOnEventPriority":false,"onEventPriority":"DEFAULT","audioSignal":null,"lifeTimeType":"INFINITY","takeSnapshotWhenExtend":false,"durationKey":null,"lifeTime":0,"triggerLifeType":"IMMEDIATELY","triggerCnt":0,"triggerInterval":-1,"waitFirstTriggerInterval":true,"firstTriggerInterval":-1,"priority":-1,"priorityBBKeys":[],"stripBlackboardParamsWithBuffKey":false,"blackboard":[]},"_buffOwner":"TARGET","_useSpecialBuffSource":false,"_specialBuffSource":"BUFF_SOURCE","_isDerivedBuff":false,"_finishDerivedBuffIfParentFinish":false,"_inherateSourceProjectileFromParentBuff":false,"_hookEffectKeyFromSourceProjectile":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

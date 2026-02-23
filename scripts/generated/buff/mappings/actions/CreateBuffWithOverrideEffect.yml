@@ -1,0 +1,88 @@
+actionType: CreateBuffWithOverrideEffect
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _buffOwner:
+    type: string
+    description: buff Owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: map_bossrush_cordon_buff_01_left
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_cordon_buff_01_left
+      -
+        value: map_bossrush_cordon_buff_01_right
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_cordon_buff_01_right
+      -
+        value: map_bossrush_cordon_buff_02
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_cordon_buff_02
+      -
+        value: map_bossrush_cordon_buff_03
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_cordon_buff_03
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

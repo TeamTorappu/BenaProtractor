@@ -1,0 +1,58 @@
+actionType: AutoChessCheckHasEquip
+fields:
+  _checkAllSamePlayerIndex:
+    type: boolean
+    description: check All Same Player Index
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _equipChessId:
+    type: null | string
+    description: equip Chess Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _equipChessIdBlackboardKey:
+    type: string
+    description: equip Chess Id Blackboard Key
+    values:
+      -
+        value: equip_chess_id
+        display: false
+        parse:
+          type: literal
+          return: equip_chess_id
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

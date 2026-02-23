@@ -1,0 +1,38 @@
+actionType: ChangeAnimatorMeshRendererViaIndexList
+fields:
+  _enable:
+    type: boolean
+    description: enable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _rendererIndexList:
+    type: array
+    description: renderer Index List
+    schema: action_subschema/_rendererIndexList.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx

@@ -1,0 +1,22 @@
+actionType: CheckBlockedPlayersideInCooperate
+fields:
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

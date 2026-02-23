@@ -1,0 +1,12 @@
+actionType: HalfIdleTriggerTrapUpgradeCheck
+fields:
+  _sourcePosType:
+    type: string
+    description: source Pos Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

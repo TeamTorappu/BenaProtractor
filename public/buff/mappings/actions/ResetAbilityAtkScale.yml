@@ -1,0 +1,124 @@
+actionType: ResetAbilityAtkScale
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: AOE
+        display: false
+        parse:
+          type: literal
+          return: AOE
+      -
+        value: Missile
+        display: false
+        parse:
+          type: literal
+          return: Missile
+      -
+        value: RandomGold
+        display: false
+        parse:
+          type: literal
+          return: RandomGold
+      -
+        value: SecAttack
+        display: false
+        parse:
+          type: literal
+          return: SecAttack
+      -
+        value: TalentBomb
+        display: false
+        parse:
+          type: literal
+          return: TalentBomb
+  _atkScale:
+    type: string
+    description: atk Scale
+    values:
+      -
+        value: aoe_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: aoe_atk_scale
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: atk_scale_down
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_down
+      -
+        value: curr_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: curr_atk_scale
+      -
+        value: new_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: new_atk_scale
+  _overwriteAtkScale:
+    type: boolean
+    description: overwrite Atk Scale
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _useBuffAbility:
+    type: boolean
+    description: use Buff Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,54 @@
+actionType: Act49sideBossRegisterDefaultSkillFocusGrid
+fields:
+  _defaultPosKey:
+    type: string
+    description: default Pos Key
+    values:
+      -
+        value: default_pos
+        display: false
+        parse:
+          type: literal
+          return: default_pos
+  _partName:
+    type: string
+    description: part Name
+    values:
+      -
+        value: head
+        display: false
+        parse:
+          type: literal
+          return: head
+      -
+        value: left_hand
+        display: false
+        parse:
+          type: literal
+          return: left_hand
+      -
+        value: tail
+        display: false
+        parse:
+          type: literal
+          return: tail
+  _partNameKey:
+    type: string
+    description: part Name Key
+    values:
+      -
+        value: part_name
+        display: false
+        parse:
+          type: literal
+          return: part_name
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

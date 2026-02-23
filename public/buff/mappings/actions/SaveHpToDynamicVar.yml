@@ -1,0 +1,72 @@
+actionType: SaveHpToDynamicVar
+fields:
+  _alwaysAssign:
+    type: boolean
+    description: always Assign
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _buffNameOfBlackboard:
+    type: null | string
+    description: buff Name Of Blackboard
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: "syskad_t[hpsave]"
+        display: false
+        parse:
+          type: literal
+          return: "syskad_t[hpsave]"
+  _saveType:
+    type: string
+    description: save Type
+    values:
+      -
+        value: HP
+        display: false
+        parse:
+          type: literal
+          return: HP
+      -
+        value: LOST_HP
+        display: false
+        parse:
+          type: literal
+          return: LOST_HP
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

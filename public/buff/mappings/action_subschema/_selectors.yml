@@ -1,0 +1,16 @@
+field: _selectors
+type: object
+description: selectors
+actions:
+  CreateDeckCardBuffsWithSelectOrderList:
+    type: array
+    values:
+      -
+        value: "[{"selectOrder":"NEXT_TO_RIGHT","deckSelector":{"categoryMask":"WARRIOR, SNIPER, CASTER","filterTag":null,"subprofessionTag":null,"onlySelectMe":false,"excludeMe":false,"mapTags":[],"enableOverride":false,"excludeNotInHand":false,"excludeNotShowInCardList":true,"excludeHiddenByCardState":false}},{"selectOrder":"NEXT_TO_RIGHT","deckSelector":{"categoryMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","filterTag":null,"subprofessionTag":null,"onlySelectMe":false,"excludeMe":false,"mapTags":[],"enableOverride":false,"excludeNotInHand":false,"excludeNotShowInCardList":true,"excludeHiddenByCardState":false}},{"selectOrder":"NEXT_TO_LEFT","deckSelector":{"categoryMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","filterTag":null,"subprofessionTag":null,"onlySelectMe":false,"excludeMe":false,"mapTags":[],"enableOverride":false,"excludeNotInHand":false,"excludeNotShowInCardList":true,"excludeHiddenByCardState":false}}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

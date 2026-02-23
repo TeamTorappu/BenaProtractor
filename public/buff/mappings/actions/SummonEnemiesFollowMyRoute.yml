@@ -1,0 +1,570 @@
+actionType: SummonEnemiesFollowMyRoute
+fields:
+  _addBuffToEnemy:
+    type: boolean
+    description: add Buff To Enemy
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _buffToEnemy:
+    type: null | object
+    description: buff To Enemy
+    schema: action_subschema/_buffToEnemy.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _checkMotionMode:
+    type: string
+    description: check Motion Mode
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: FLY_ONLY
+        display: false
+        parse:
+          type: literal
+          return: FLY_ONLY
+      -
+        value: WALK_ONLY
+        display: false
+        parse:
+          type: literal
+          return: WALK_ONLY
+  _delayTime:
+    type: number
+    description: delay Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+      -
+        value: 0.699999988079071
+        display: false
+        parse:
+          type: literal
+          return: 0.699999988079071
+      -
+        value: 0.8999999761581421
+        display: false
+        parse:
+          type: literal
+          return: 0.8999999761581421
+      -
+        value: 0.949999988079071
+        display: false
+        parse:
+          type: literal
+          return: 0.949999988079071
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 1.100000023841858
+        display: false
+        parse:
+          type: literal
+          return: 1.100000023841858
+      -
+        value: 1.2999999523162842
+        display: false
+        parse:
+          type: literal
+          return: 1.2999999523162842
+      -
+        value: 7
+        display: false
+        parse:
+          type: literal
+          return: 7
+  _dontBlockWave:
+    type: boolean
+    description: dont Block Wave
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _enemyKey:
+    type: null | string
+    description: enemy Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: enemy_1218_bomscr
+        display: false
+        parse:
+          type: literal
+          return: enemy_1218_bomscr
+      -
+        value: enemy_1269_nhfly
+        display: false
+        parse:
+          type: literal
+          return: enemy_1269_nhfly
+      -
+        value: enemy_1367_dseed
+        display: false
+        parse:
+          type: literal
+          return: enemy_1367_dseed
+      -
+        value: enemy_1370_bmbcar2
+        display: false
+        parse:
+          type: literal
+          return: enemy_1370_bmbcar2
+      -
+        value: enemy_1399_dhtb
+        display: false
+        parse:
+          type: literal
+          return: enemy_1399_dhtb
+      -
+        value: enemy_1554_lrtsia_2
+        display: false
+        parse:
+          type: literal
+          return: enemy_1554_lrtsia_2
+      -
+        value: enemy_1561_crzjdg_2
+        display: false
+        parse:
+          type: literal
+          return: enemy_1561_crzjdg_2
+      -
+        value: enemy_6019_escort
+        display: false
+        parse:
+          type: literal
+          return: enemy_6019_escort
+      -
+        value: enemy_8008_eltswd
+        display: false
+        parse:
+          type: literal
+          return: enemy_8008_eltswd
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _offset:
+    type: object
+    description: offset
+    schema: action_subschema/_offset.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _offsetXKey:
+    type: null | string
+    description: offset X Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _offsetYKey:
+    type: null | string
+    description: offset Y Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _onlySummonOneInTheSamePlace:
+    type: boolean
+    description: only Summon One In The Same Place
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _passableMask:
+    type: string
+    description: passable Mask
+    values:
+      -
+        value: FLY_ONLY
+        display: false
+        parse:
+          type: literal
+          return: FLY_ONLY
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: WALK_ONLY
+        display: false
+        parse:
+          type: literal
+          return: WALK_ONLY
+  _randomDelayRange:
+    type: number
+    description: random Delay Range
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+      -
+        value: 0.699999988079071
+        display: false
+        parse:
+          type: literal
+          return: 0.699999988079071
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _randomOffsetBound:
+    type: number
+    description: random Offset Bound
+    schema: action_subschema/_randomOffsetBound.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _skipCheckPoint:
+    type: boolean
+    description: skip Check Point
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _spawnOnHostRootTile:
+    type: boolean
+    description: spawn On Host Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _stopSummonIfHostDead:
+    type: boolean
+    description: stop Summon If Host Dead
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _summonCount:
+    type: number
+    description: summon Count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _trySummonOutsideWhenInObstacle:
+    type: boolean
+    description: try Summon Outside When In Obstacle
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useLocalUnharmfulFlag:
+    type: boolean
+    description: use Local Unharmful Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useMapPosition:
+    type: boolean
+    description: use Map Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useOffsetForEach:
+    type: boolean
+    description: use Offset For Each
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useOffsetInBB:
+    type: boolean
+    description: use Offset In B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useRandomDelay:
+    type: boolean
+    description: use Random Delay
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useTargetPosition:
+    type: boolean
+    description: use Target Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

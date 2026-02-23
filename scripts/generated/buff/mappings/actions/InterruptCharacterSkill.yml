@@ -1,0 +1,76 @@
+actionType: InterruptCharacterSkill
+fields:
+  _charFrom:
+    type: string
+    description: char From
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _interruptSkillSelf:
+    type: boolean
+    description: interrupt Skill Self
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _resetAbilityCooldown:
+    type: boolean
+    description: reset Ability Cooldown
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _resetAbilityCooldownIgnoreAffecting:
+    type: boolean
+    description: reset Ability Cooldown Ignore Affecting
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _switchOutFromSkillState:
+    type: boolean
+    description: switch Out From Skill State
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,16 @@
+field: _specificCardKeys
+type: object
+description: specific Card Keys
+actions:
+  LegionModeOnlySelectCard:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

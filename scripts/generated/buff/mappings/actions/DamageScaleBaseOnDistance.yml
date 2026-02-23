@@ -1,0 +1,104 @@
+actionType: DamageScaleBaseOnDistance
+fields:
+  _applyWayFilter:
+    type: string
+    description: apply Way Filter
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _filterApplyWay:
+    type: boolean
+    description: filter Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterDamageType:
+    type: boolean
+    description: filter Damage Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _maxScale:
+    type: number
+    description: max Scale
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+  _minTriggerDistance:
+    type: number
+    description: min Trigger Distance
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _reverseDistance:
+    type: boolean
+    description: reverse Distance
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET

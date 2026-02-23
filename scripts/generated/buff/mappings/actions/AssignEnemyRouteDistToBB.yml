@@ -1,0 +1,48 @@
+actionType: AssignEnemyRouteDistToBB
+fields:
+  _blackBoardkey:
+    type: string
+    description: black Boardkey
+    values:
+      -
+        value: dist
+        display: false
+        parse:
+          type: literal
+          return: dist
+      -
+        value: max_dist
+        display: false
+        parse:
+          type: literal
+          return: max_dist
+  _buffTarget:
+    type: string
+    description: buff Target
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _buffkey:
+    type: string
+    description: buffkey
+    values:
+      -
+        value: mpctrl_car_stage
+        display: false
+        parse:
+          type: literal
+          return: mpctrl_car_stage
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,144 @@
+actionType: SummonEnemiesOnTargetTile
+fields:
+  _addBuffToEnemy:
+    type: boolean
+    description: add Buff To Enemy
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _buffToEnemy:
+    type: null | object
+    description: buff To Enemy
+    schema: action_subschema/_buffToEnemy.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _checkMotionMode:
+    type: string
+    description: check Motion Mode
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+  _delayTime:
+    type: number
+    description: delay Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _enemyKey:
+    type: null
+    description: enemy Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _excludeRootTile:
+    type: boolean
+    description: exclude Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _randomOffsetBound:
+    type: object
+    description: random Offset Bound
+    schema: action_subschema/_randomOffsetBound.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _selectTileInSnapshot:
+    type: boolean
+    description: select Tile In Snapshot
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _summonCount:
+    type: number
+    description: summon Count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useProjectileTraceTargetMapPos:
+    type: boolean
+    description: use Projectile Trace Target Map Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

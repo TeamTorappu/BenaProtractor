@@ -1,0 +1,320 @@
+actionType: BlockDamage
+fields:
+  _allowNegativeDynamicVar:
+    type: boolean
+    description: allow Negative Dynamic Var
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _applyWayFilter:
+    type: string
+    description: apply Way Filter
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: ANY_ATTACK
+        display: false
+        parse:
+          type: literal
+          return: ANY_ATTACK
+      -
+        value: ANY_ATTACK_EXCEPT_ELEMENT
+        display: false
+        parse:
+          type: literal
+          return: ANY_ATTACK_EXCEPT_ELEMENT
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+      -
+        value: PHYSICAL_AND_MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL_AND_MAGICAL
+  _filterApplyWay:
+    type: boolean
+    description: filter Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterDamageType:
+    type: boolean
+    description: filter Damage Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _showDamageNumber:
+    type: boolean
+    description: show Damage Number
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _showShieldUI:
+    type: boolean
+    description: show Shield U I
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _specifyBlockEffect:
+    type: null | string
+    description: specify Block Effect
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: akafyu_skill_02_buff_02_hit
+        display: false
+        parse:
+          type: literal
+          return: akafyu_skill_02_buff_02_hit
+      -
+        value: common_buff_parry_03
+        display: false
+        parse:
+          type: literal
+          return: common_buff_parry_03
+      -
+        value: common_empty
+        display: false
+        parse:
+          type: literal
+          return: common_empty
+      -
+        value: enemy_ltnclo_shield_attack_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltnclo_shield_attack_01
+      -
+        value: enemy_mcnist_shield_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mcnist_shield_hit
+      -
+        value: enemy_mdhmmr_buff_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mdhmmr_buff_hit
+      -
+        value: enemy_mdrock_skill_01_buff_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mdrock_skill_01_buff_hit
+      -
+        value: enemy_minima_shield_absorb
+        display: false
+        parse:
+          type: literal
+          return: enemy_minima_shield_absorb
+      -
+        value: enemy_ncrmcr_skill_02_shield_hit_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ncrmcr_skill_02_shield_hit_01
+      -
+        value: enemy_xi_skill_02_buff_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_xi_skill_02_buff_hit
+      -
+        value: judge_shield_hit_01
+        display: false
+        parse:
+          type: literal
+          return: judge_shield_hit_01
+      -
+        value: lin_block_01
+        display: false
+        parse:
+          type: literal
+          return: lin_block_01
+      -
+        value: map_adaile_hudun_02
+        display: false
+        parse:
+          type: literal
+          return: map_adaile_hudun_02
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: tuye_skill_01_hit_buff_02
+        display: false
+        parse:
+          type: literal
+          return: tuye_skill_01_hit_buff_02
+      -
+        value: zuole_block_01
+        display: false
+        parse:
+          type: literal
+          return: zuole_block_01
+  _useDynamicVar:
+    type: boolean
+    description: use Dynamic Var
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useFixedValue:
+    type: boolean
+    description: use Fixed Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useSource:
+    type: boolean
+    description: use Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

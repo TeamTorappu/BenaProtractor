@@ -1,0 +1,18 @@
+actionType: ModifyFunnelMaxAtkScaleMultiplier
+fields:
+  _resetToOne:
+    type: boolean
+    description: reset To One
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

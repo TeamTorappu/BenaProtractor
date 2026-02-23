@@ -1,0 +1,96 @@
+actionType: ResetBuffAbilityAtkScaleWithBuffCnt
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "lmlee_s_2[count]"
+        display: false
+        parse:
+          type: literal
+          return: "lmlee_s_2[count]"
+      -
+        value: "logos_s_2[lock]"
+        display: false
+        parse:
+          type: literal
+          return: "logos_s_2[lock]"
+  _buffSourceType:
+    type: string
+    description: buff Source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _checkBuffSource:
+    type: boolean
+    description: check Buff Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _defaultValue:
+    type: string
+    description: default Value
+    values:
+      -
+        value: atk_scale_base
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_base
+      -
+        value: default_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: default_atk_scale
+  _factorValue:
+    type: string
+    description: factor Value
+    values:
+      -
+        value: atk_scale_delta
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_delta
+      -
+        value: factor_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: factor_atk_scale
+  _overwriteAtkScale:
+    type: boolean
+    description: overwrite Atk Scale
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

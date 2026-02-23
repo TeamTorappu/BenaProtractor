@@ -1,0 +1,948 @@
+actionType: LogExtraBattleInfo
+fields:
+  _additionValue:
+    type: number
+    description: addition Value
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: HP_RATIO
+        display: false
+        parse:
+          type: literal
+          return: HP_RATIO
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: SP
+        display: false
+        parse:
+          type: literal
+          return: SP
+  _countInHostIfToken:
+    type: boolean
+    description: count In Host If Token
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _key:
+    type: null | string
+    description: key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: ELTSWD_SWITCH
+        display: false
+        parse:
+          type: literal
+          return: ELTSWD_SWITCH
+      -
+        value: act4bossrush_ammo_skill
+        display: false
+        parse:
+          type: literal
+          return: act4bossrush_ammo_skill
+      -
+        value: act4bossrush_blacksteel_killed
+        display: false
+        parse:
+          type: literal
+          return: act4bossrush_blacksteel_killed
+      -
+        value: act4bossrush_wave_remained
+        display: false
+        parse:
+          type: literal
+          return: act4bossrush_wave_remained
+      -
+        value: act5bossrush_born_ranged
+        display: false
+        parse:
+          type: literal
+          return: act5bossrush_born_ranged
+      -
+        value: act5bossrush_enemy_ep_break
+        display: false
+        parse:
+          type: literal
+          return: act5bossrush_enemy_ep_break
+      -
+        value: act6bossrush_wave_remained
+        display: false
+        parse:
+          type: literal
+          return: act6bossrush_wave_remained
+      -
+        value: actived_bell
+        display: false
+        parse:
+          type: literal
+          return: actived_bell
+      -
+        value: aegiret_tower_active
+        display: false
+        parse:
+          type: literal
+          return: aegiret_tower_active
+      -
+        value: alive_cnt
+        display: false
+        parse:
+          type: literal
+          return: alive_cnt
+      -
+        value: be_killed
+        display: false
+        parse:
+          type: literal
+          return: be_killed
+      -
+        value: bldkgt_devour
+        display: false
+        parse:
+          type: literal
+          return: bldkgt_devour
+      -
+        value: born
+        display: false
+        parse:
+          type: literal
+          return: born
+      -
+        value: bossrush_finished_wave
+        display: false
+        parse:
+          type: literal
+          return: bossrush_finished_wave
+      -
+        value: bouncy_stun
+        display: false
+        parse:
+          type: literal
+          return: bouncy_stun
+      -
+        value: burn_by_player
+        display: false
+        parse:
+          type: literal
+          return: burn_by_player
+      -
+        value: cbrokt_fly
+        display: false
+        parse:
+          type: literal
+          return: cbrokt_fly
+      -
+        value: cbrush_kill_character
+        display: false
+        parse:
+          type: literal
+          return: cbrush_kill_character
+      -
+        value: char_born
+        display: false
+        parse:
+          type: literal
+          return: char_born
+      -
+        value: char_get_equip
+        display: false
+        parse:
+          type: literal
+          return: char_get_equip
+      -
+        value: char_remain
+        display: false
+        parse:
+          type: literal
+          return: char_remain
+      -
+        value: char_token_kill_boss
+        display: false
+        parse:
+          type: literal
+          return: char_token_kill_boss
+      -
+        value: char_token_kill_count
+        display: false
+        parse:
+          type: literal
+          return: char_token_kill_count
+      -
+        value: character_awake_sleep_tile
+        display: false
+        parse:
+          type: literal
+          return: character_awake_sleep_tile
+      -
+        value: character_deploy_sleep_tile
+        display: false
+        parse:
+          type: literal
+          return: character_deploy_sleep_tile
+      -
+        value: character_enter_rope_stun_state
+        display: false
+        parse:
+          type: literal
+          return: character_enter_rope_stun_state
+      -
+        value: chock_withdraw
+        display: false
+        parse:
+          type: literal
+          return: chock_withdraw
+      -
+        value: clean
+        display: false
+        parse:
+          type: literal
+          return: clean
+      -
+        value: cliff_die_debuff
+        display: false
+        parse:
+          type: literal
+          return: cliff_die_debuff
+      -
+        value: coin_collect_cnt
+        display: false
+        parse:
+          type: literal
+          return: coin_collect_cnt
+      -
+        value: coop_gain_score_enemy
+        display: false
+        parse:
+          type: literal
+          return: coop_gain_score_enemy
+      -
+        value: cr_camera
+        display: false
+        parse:
+          type: literal
+          return: cr_camera
+      -
+        value: crblt_boom
+        display: false
+        parse:
+          type: literal
+          return: crblt_boom
+      -
+        value: create_creep_tile
+        display: false
+        parse:
+          type: literal
+          return: create_creep_tile
+      -
+        value: creep_damage
+        display: false
+        parse:
+          type: literal
+          return: creep_damage
+      -
+        value: deployed_on_boss_wave_start
+        display: false
+        parse:
+          type: literal
+          return: deployed_on_boss_wave_start
+      -
+        value: dice
+        display: false
+        parse:
+          type: literal
+          return: dice
+      -
+        value: dsdevr_buff
+        display: false
+        parse:
+          type: literal
+          return: dsdevr_buff
+      -
+        value: dsshell_overlapped
+        display: false
+        parse:
+          type: literal
+          return: dsshell_overlapped
+      -
+        value: dyshhj_cast_bombard
+        display: false
+        parse:
+          type: literal
+          return: dyshhj_cast_bombard
+      -
+        value: dyspll_kill_char
+        display: false
+        parse:
+          type: literal
+          return: dyspll_kill_char
+      -
+        value: egun_over_energy
+        display: false
+        parse:
+          type: literal
+          return: egun_over_energy
+      -
+        value: empgrd_instant_kill
+        display: false
+        parse:
+          type: literal
+          return: empgrd_instant_kill
+      -
+        value: enemy_mnctur_stun
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnctur_stun
+      -
+        value: enemy_nhfly_boom
+        display: false
+        parse:
+          type: literal
+          return: enemy_nhfly_boom
+      -
+        value: enemy_skzdd_withdraw_mark
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzdd_withdraw_mark
+      -
+        value: eradio_fire
+        display: false
+        parse:
+          type: literal
+          return: eradio_fire
+      -
+        value: eradio_hit
+        display: false
+        parse:
+          type: literal
+          return: eradio_hit
+      -
+        value: extingushi_winfire
+        display: false
+        parse:
+          type: literal
+          return: extingushi_winfire
+      -
+        value: falldown
+        display: false
+        parse:
+          type: literal
+          return: falldown
+      -
+        value: fifty_percent_hp
+        display: false
+        parse:
+          type: literal
+          return: fifty_percent_hp
+      -
+        value: finish_when_enemy_white_crazy
+        display: false
+        parse:
+          type: literal
+          return: finish_when_enemy_white_crazy
+      -
+        value: flashstun
+        display: false
+        parse:
+          type: literal
+          return: flashstun
+      -
+        value: fly_over_char
+        display: false
+        parse:
+          type: literal
+          return: fly_over_char
+      -
+        value: fthlgj_reborn
+        display: false
+        parse:
+          type: literal
+          return: fthlgj_reborn
+      -
+        value: fttree_born
+        display: false
+        parse:
+          type: literal
+          return: fttree_born
+      -
+        value: gameover_in_magic_circuit
+        display: false
+        parse:
+          type: literal
+          return: gameover_in_magic_circuit
+      -
+        value: gameover_survive
+        display: false
+        parse:
+          type: literal
+          return: gameover_survive
+      -
+        value: host_killed
+        display: false
+        parse:
+          type: literal
+          return: host_killed
+      -
+        value: kill_char
+        display: false
+        parse:
+          type: literal
+          return: kill_char
+      -
+        value: kill_others
+        display: false
+        parse:
+          type: literal
+          return: kill_others
+      -
+        value: kill_with_phase2_skill2
+        display: false
+        parse:
+          type: literal
+          return: kill_with_phase2_skill2
+      -
+        value: killed
+        display: false
+        parse:
+          type: literal
+          return: killed
+      -
+        value: killed_by_deathMark
+        display: false
+        parse:
+          type: literal
+          return: killed_by_deathMark
+      -
+        value: killed_by_nstree
+        display: false
+        parse:
+          type: literal
+          return: killed_by_nstree
+      -
+        value: killed_without_buffed
+        display: false
+        parse:
+          type: literal
+          return: killed_without_buffed
+      -
+        value: land_highland
+        display: false
+        parse:
+          type: literal
+          return: land_highland
+      -
+        value: laterano_kill_fly_only
+        display: false
+        parse:
+          type: literal
+          return: laterano_kill_fly_only
+      -
+        value: locate_in_magic_circuit
+        display: false
+        parse:
+          type: literal
+          return: locate_in_magic_circuit
+      -
+        value: locate_on_tile_mire
+        display: false
+        parse:
+          type: literal
+          return: locate_on_tile_mire
+      -
+        value: locate_on_tile_yinyang
+        display: false
+        parse:
+          type: literal
+          return: locate_on_tile_yinyang
+      -
+        value: lrboom_slain
+        display: false
+        parse:
+          type: literal
+          return: lrboom_slain
+      -
+        value: lrchld_push
+        display: false
+        parse:
+          type: literal
+          return: lrchld_push
+      -
+        value: lrmm_max_radius
+        display: false
+        parse:
+          type: literal
+          return: lrmm_max_radius
+      -
+        value: ltstatBeDestroyed
+        display: false
+        parse:
+          type: literal
+          return: ltstatBeDestroyed
+      -
+        value: neonlamp_use
+        display: false
+        parse:
+          type: literal
+          return: neonlamp_use
+      -
+        value: nmekgt_skill
+        display: false
+        parse:
+          type: literal
+          return: nmekgt_skill
+      -
+        value: not_build_at_reed
+        display: false
+        parse:
+          type: literal
+          return: not_build_at_reed
+      -
+        value: nsblon_alive
+        display: false
+        parse:
+          type: literal
+          return: nsblon_alive
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: on_born
+        display: false
+        parse:
+          type: literal
+          return: on_born
+      -
+        value: output_unmovable
+        display: false
+        parse:
+          type: literal
+          return: output_unmovable
+      -
+        value: pckstp_manual_active
+        display: false
+        parse:
+          type: literal
+          return: pckstp_manual_active
+      -
+        value: pirene_hp_full
+        display: false
+        parse:
+          type: literal
+          return: pirene_hp_full
+      -
+        value: prey
+        display: false
+        parse:
+          type: literal
+          return: prey
+      -
+        value: prison
+        display: false
+        parse:
+          type: literal
+          return: prison
+      -
+        value: radian_kill_enemy_dylbhm
+        display: false
+        parse:
+          type: literal
+          return: radian_kill_enemy_dylbhm
+      -
+        value: reachExit
+        display: false
+        parse:
+          type: literal
+          return: reachExit
+      -
+        value: reach_exit
+        display: false
+        parse:
+          type: literal
+          return: reach_exit
+      -
+        value: relic131KillCnt
+        display: false
+        parse:
+          type: literal
+          return: relic131KillCnt
+      -
+        value: rgcssm_get_coin
+        display: false
+        parse:
+          type: literal
+          return: rgcssm_get_coin
+      -
+        value: rgdysm_be_killed
+        display: false
+        parse:
+          type: literal
+          return: rgdysm_be_killed
+      -
+        value: rgdysm_get_coin
+        display: false
+        parse:
+          type: literal
+          return: rgdysm_get_coin
+      -
+        value: rgdysm_still_alive
+        display: false
+        parse:
+          type: literal
+          return: rgdysm_still_alive
+      -
+        value: ristar_kill_enemy
+        display: false
+        parse:
+          type: literal
+          return: ristar_kill_enemy
+      -
+        value: rogue_disaster_envoy_reach_exit
+        display: false
+        parse:
+          type: literal
+          return: rogue_disaster_envoy_reach_exit
+      -
+        value: rogue_skzhg_appear
+        display: false
+        parse:
+          type: literal
+          return: rogue_skzhg_appear
+      -
+        value: rogue_thief_reach_exit
+        display: false
+        parse:
+          type: literal
+          return: rogue_thief_reach_exit
+      -
+        value: sanity_break
+        display: false
+        parse:
+          type: literal
+          return: sanity_break
+      -
+        value: shield_break
+        display: false
+        parse:
+          type: literal
+          return: shield_break
+      -
+        value: shield_broken
+        display: false
+        parse:
+          type: literal
+          return: shield_broken
+      -
+        value: shld_break
+        display: false
+        parse:
+          type: literal
+          return: shld_break
+      -
+        value: sieged_kill_char
+        display: false
+        parse:
+          type: literal
+          return: sieged_kill_char
+      -
+        value: skill_on
+        display: false
+        parse:
+          type: literal
+          return: skill_on
+      -
+        value: sky_kill_count
+        display: false
+        parse:
+          type: literal
+          return: sky_kill_count
+      -
+        value: sp06_log
+        display: false
+        parse:
+          type: literal
+          return: sp06_log
+      -
+        value: stay_with_char
+        display: false
+        parse:
+          type: literal
+          return: stay_with_char
+      -
+        value: stoprush
+        display: false
+        parse:
+          type: literal
+          return: stoprush
+      -
+        value: summon_dragon
+        display: false
+        parse:
+          type: literal
+          return: summon_dragon
+      -
+        value: survive_candle_battle
+        display: false
+        parse:
+          type: literal
+          return: survive_candle_battle
+      -
+        value: tailcut
+        display: false
+        parse:
+          type: literal
+          return: tailcut
+      -
+        value: target_killed
+        display: false
+        parse:
+          type: literal
+          return: target_killed
+      -
+        value: ticket_collected
+        display: false
+        parse:
+          type: literal
+          return: ticket_collected
+      -
+        value: tile_pollution_finish
+        display: false
+        parse:
+          type: literal
+          return: tile_pollution_finish
+      -
+        value: tjgsd_spawn
+        display: false
+        parse:
+          type: literal
+          return: tjgsd_spawn
+      -
+        value: trap_065_normbox
+        display: false
+        parse:
+          type: literal
+          return: trap_065_normbox
+      -
+        value: trap_066_rarebox
+        display: false
+        parse:
+          type: literal
+          return: trap_066_rarebox
+      -
+        value: trap_068_badbox
+        display: false
+        parse:
+          type: literal
+          return: trap_068_badbox
+      -
+        value: trap_135_portlent_spwan
+        display: false
+        parse:
+          type: literal
+          return: trap_135_portlent_spwan
+      -
+        value: trap_223_dynbox
+        display: false
+        parse:
+          type: literal
+          return: trap_223_dynbox
+      -
+        value: trap_224_dyrbox
+        display: false
+        parse:
+          type: literal
+          return: trap_224_dyrbox
+      -
+        value: trap_225_dysbox
+        display: false
+        parse:
+          type: literal
+          return: trap_225_dysbox
+      -
+        value: trap_murtre_build
+        display: false
+        parse:
+          type: literal
+          return: trap_murtre_build
+      -
+        value: trap_skztxy_skill
+        display: false
+        parse:
+          type: literal
+          return: trap_skztxy_skill
+      -
+        value: trigger
+        display: false
+        parse:
+          type: literal
+          return: trigger
+      -
+        value: trigger_rope
+        display: false
+        parse:
+          type: literal
+          return: trigger_rope
+      -
+        value: use_manual_skill
+        display: false
+        parse:
+          type: literal
+          return: use_manual_skill
+      -
+        value: use_xdmac
+        display: false
+        parse:
+          type: literal
+          return: use_xdmac
+      -
+        value: vgctrl_call_bro
+        display: false
+        parse:
+          type: literal
+          return: vgctrl_call_bro
+      -
+        value: victoria_kill_boss
+        display: false
+        parse:
+          type: literal
+          return: victoria_kill_boss
+      -
+        value: vtcar_reach_vtarsn
+        display: false
+        parse:
+          type: literal
+          return: vtcar_reach_vtarsn
+      -
+        value: winfire_awake_winfrz
+        display: false
+        parse:
+          type: literal
+          return: winfire_awake_winfrz
+      -
+        value: withdraw
+        display: false
+        parse:
+          type: literal
+          return: withdraw
+      -
+        value: wlfmster_cast_cage
+        display: false
+        parse:
+          type: literal
+          return: wlfmster_cast_cage
+  _loadKeyFromBlackBoard:
+    type: boolean
+    description: load Key From Black Board
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _logType:
+    type: string
+    description: log Type
+    values:
+      -
+        value: ATTRIBUTE
+        display: false
+        parse:
+          type: literal
+          return: ATTRIBUTE
+      -
+        value: CHARACTER_SKILL
+        display: false
+        parse:
+          type: literal
+          return: CHARACTER_SKILL
+      -
+        value: DETAILED
+        display: false
+        parse:
+          type: literal
+          return: DETAILED
+      -
+        value: HIDDEN_WAVE_END
+        display: false
+        parse:
+          type: literal
+          return: HIDDEN_WAVE_END
+      -
+        value: HIDDEN_WAVE_START
+        display: false
+        parse:
+          type: literal
+          return: HIDDEN_WAVE_START
+      -
+        value: SIMPLE
+        display: false
+        parse:
+          type: literal
+          return: SIMPLE
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE

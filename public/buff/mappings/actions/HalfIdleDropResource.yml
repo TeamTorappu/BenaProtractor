@@ -1,0 +1,88 @@
+actionType: HalfIdleDropResource
+fields:
+  _countBB:
+    type: string
+    description: count B B
+    values:
+      -
+        value: _
+        display: false
+        parse:
+          type: literal
+          return: _
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: cnt_resource
+        display: false
+        parse:
+          type: literal
+          return: cnt_resource
+      -
+        value: cnt_resource_gras_bonus
+        display: false
+        parse:
+          type: literal
+          return: cnt_resource_gras_bonus
+      -
+        value: cnt_resource_park_bonus
+        display: false
+        parse:
+          type: literal
+          return: cnt_resource_park_bonus
+  _poolKeyBB:
+    type: string
+    description: pool Key B B
+    values:
+      -
+        value: bonus_drop_pool
+        display: false
+        parse:
+          type: literal
+          return: bonus_drop_pool
+      -
+        value: default_pool
+        display: false
+        parse:
+          type: literal
+          return: default_pool
+      -
+        value: extra_pool
+        display: false
+        parse:
+          type: literal
+          return: extra_pool
+      -
+        value: pool_key_trap_skill_trigger
+        display: false
+        parse:
+          type: literal
+          return: pool_key_trap_skill_trigger
+      -
+        value: resource
+        display: false
+        parse:
+          type: literal
+          return: resource
+      -
+        value: resource_gras_bonus
+        display: false
+        parse:
+          type: literal
+          return: resource_gras_bonus
+      -
+        value: resource_park_bonus
+        display: false
+        parse:
+          type: literal
+          return: resource_park_bonus
+      -
+        value: resource_pool
+        display: false
+        parse:
+          type: literal
+          return: resource_pool

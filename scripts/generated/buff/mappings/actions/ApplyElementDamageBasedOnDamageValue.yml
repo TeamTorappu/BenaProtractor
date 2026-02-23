@@ -1,0 +1,106 @@
+actionType: ApplyElementDamageBasedOnDamageValue
+fields:
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: ELEMENT
+        display: false
+        parse:
+          type: literal
+          return: ELEMENT
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _elementType:
+    type: string
+    description: element Type
+    values:
+      -
+        value: DARK
+        display: false
+        parse:
+          type: literal
+          return: DARK
+      -
+        value: FIRE
+        display: false
+        parse:
+          type: literal
+          return: FIRE
+      -
+        value: SANITY
+        display: false
+        parse:
+          type: literal
+          return: SANITY
+  _filterDamageType:
+    type: boolean
+    description: filter Damage Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET

@@ -1,0 +1,92 @@
+actionType: CreateCardBuffFilterByCardState
+fields:
+  _cardBuffKey:
+    type: null
+    description: card Buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _cardState:
+    type: string
+    description: card State
+    values:
+      -
+        value: RESPAWNING
+        display: false
+        parse:
+          type: literal
+          return: RESPAWNING
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ignoreNullOwner:
+    type: boolean
+    description: ignore Null Owner
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+  _randomCard:
+    type: boolean
+    description: random Card
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

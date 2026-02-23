@@ -1,0 +1,88 @@
+actionType: ReInitEnemySkillCoolDown
+fields:
+  _checkSkillActive:
+    type: boolean
+    description: check Skill Active
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _onlyResetCD:
+    type: boolean
+    description: only Reset C D
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _skillName:
+    type: null | string
+    description: skill Name
+    values:
+      -
+        value: M2AdvanceSuddenly
+        display: false
+        parse:
+          type: literal
+          return: M2AdvanceSuddenly
+      -
+        value: MarkStunAttack_S2
+        display: false
+        parse:
+          type: literal
+          return: MarkStunAttack_S2
+      -
+        value: P2_Crazy
+        display: false
+        parse:
+          type: literal
+          return: P2_Crazy
+      -
+        value: P2_Resonance
+        display: false
+        parse:
+          type: literal
+          return: P2_Resonance
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _waitFirstPeriod:
+    type: boolean
+    description: wait First Period
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,22 @@
+actionType: AssignRandomBBKeyToBB
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _maxValue:
+    type: number
+    description: max Value
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1

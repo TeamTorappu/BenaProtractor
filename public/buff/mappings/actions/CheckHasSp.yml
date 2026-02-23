@@ -1,0 +1,90 @@
+actionType: CheckHasSp
+fields:
+  _checkHasSp:
+    type: number
+    description: check Has Sp
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _checkKey:
+    type: string
+    description: check Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: skill_cost_min_sp
+        display: false
+        parse:
+          type: literal
+          return: skill_cost_min_sp
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+      -
+        value: sp_warning
+        display: false
+        parse:
+          type: literal
+          return: sp_warning
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: EQUALS
+        display: false
+        parse:
+          type: literal
+          return: EQUALS
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE

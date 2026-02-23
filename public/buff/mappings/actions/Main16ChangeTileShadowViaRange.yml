@@ -1,0 +1,156 @@
+actionType: Main16ChangeTileShadowViaRange
+fields:
+  _beginPosition:
+    type: object
+    description: begin Position
+    schema: action_subschema/_beginPosition.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _centerPosKey:
+    type: string
+    description: center Pos Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: current
+        display: false
+        parse:
+          type: literal
+          return: current
+      -
+        value: currentPos
+        display: false
+        parse:
+          type: literal
+          return: currentPos
+      -
+        value: lastPos
+        display: false
+        parse:
+          type: literal
+          return: lastPos
+  _changeTileShadowState:
+    type: boolean
+    description: change Tile Shadow State
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _endPosition:
+    type: object
+    description: end Position
+    schema: action_subschema/_endPosition.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _temporaryEscapeShadowState:
+    type: boolean
+    description: temporary Escape Shadow State
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _toShadow:
+    type: boolean
+    description: to Shadow
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useArea:
+    type: boolean
+    description: use Area
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useBbPosAsCenterPos:
+    type: boolean
+    description: use Bb Pos As Center Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

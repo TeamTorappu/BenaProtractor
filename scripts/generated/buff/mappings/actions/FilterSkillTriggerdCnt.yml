@@ -1,0 +1,42 @@
+actionType: FilterSkillTriggerdCnt
+fields:
+  _compareType:
+    type: string
+    description: compare Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+  _count:
+    type: number
+    description: count
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useCurTriggerCnt:
+    type: boolean
+    description: use Cur Trigger Cnt
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,112 @@
+actionType: FinishTokenBuffsById
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "mlyss_s_1[token_buff]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_s_1[token_buff]"
+      -
+        value: "mlyss_s_2[token_buff]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_s_2[token_buff]"
+      -
+        value: "mlyss_s_2[token_buff_melee]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_s_2[token_buff_melee]"
+      -
+        value: "mlyss_s_3[token_buff]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_s_3[token_buff]"
+      -
+        value: "mlyss_s_3[token_buff_range]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_s_3[token_buff_range]"
+      -
+        value: "mlyss_s_3[token_melee_trigger]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_s_3[token_melee_trigger]"
+      -
+        value: "mlyss_wtrman_s_1[effect]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_wtrman_s_1[effect]"
+      -
+        value: "mlyss_wtrman_s_2[effect]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_wtrman_s_2[effect]"
+      -
+        value: "mlyss_wtrman_s_3[effect]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_wtrman_s_3[effect]"
+      -
+        value: "subbow_s_3[switch_mode]"
+        display: false
+        parse:
+          type: literal
+          return: "subbow_s_3[switch_mode]"
+  _decCntIfStack:
+    type: boolean
+    description: dec Cnt If Stack
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _updateOverrideMap:
+    type: boolean
+    description: update Override Map
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

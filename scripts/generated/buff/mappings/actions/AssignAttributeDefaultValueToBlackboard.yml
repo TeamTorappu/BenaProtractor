@@ -1,0 +1,72 @@
+actionType: AssignAttributeDefaultValueToBlackboard
+fields:
+  _atkValue:
+    type: number
+    description: atk Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _attackSpeedValue:
+    type: number
+    description: attack Speed Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _blockCnt:
+    type: number
+    description: block Cnt
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _defValue:
+    type: number
+    description: def Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _magicResistanceValue:
+    type: number
+    description: magic Resistance Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _maxHpValue:
+    type: number
+    description: max Hp Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

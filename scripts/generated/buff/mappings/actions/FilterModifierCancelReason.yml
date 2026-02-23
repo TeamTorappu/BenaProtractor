@@ -1,0 +1,12 @@
+actionType: FilterModifierCancelReason
+fields:
+  _reason:
+    type: string
+    description: reason
+    values:
+      -
+        value: HIT_FAILED
+        display: false
+        parse:
+          type: literal
+          return: HIT_FAILED

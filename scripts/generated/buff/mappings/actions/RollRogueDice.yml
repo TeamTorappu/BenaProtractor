@@ -1,0 +1,24 @@
+actionType: RollRogueDice
+fields:
+  _maxVal:
+    type: number
+    description: max Val
+    values:
+      -
+        value: 12
+        display: false
+        parse:
+          type: literal
+          return: 12
+      -
+        value: 6
+        display: false
+        parse:
+          type: literal
+          return: 6
+      -
+        value: 8
+        display: false
+        parse:
+          type: literal
+          return: 8

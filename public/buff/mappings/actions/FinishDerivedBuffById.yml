@@ -1,0 +1,80 @@
+actionType: FinishDerivedBuffById
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "c2e_cold[debuff]"
+        display: false
+        parse:
+          type: literal
+          return: "c2e_cold[debuff]"
+      -
+        value: "halfIdle_attack_to_apply_silence[skill][core]"
+        display: false
+        parse:
+          type: literal
+          return: "halfIdle_attack_to_apply_silence[skill][core]"
+      -
+        value: "halfIdle_dot_during_skill[magical][core]"
+        display: false
+        parse:
+          type: literal
+          return: "halfIdle_dot_during_skill[magical][core]"
+      -
+        value: "haruka_t_1_shield[advance]"
+        display: false
+        parse:
+          type: literal
+          return: "haruka_t_1_shield[advance]"
+      -
+        value: marcil_sp_no_decrease
+        display: false
+        parse:
+          type: literal
+          return: marcil_sp_no_decrease
+      -
+        value: "phenxi_e_t_2[in_skill]"
+        display: false
+        parse:
+          type: literal
+          return: "phenxi_e_t_2[in_skill]"
+      -
+        value: "phenxi_t_2[buff][stop]"
+        display: false
+        parse:
+          type: literal
+          return: "phenxi_t_2[buff][stop]"
+      -
+        value: "texas2_t_1[atk_up]"
+        display: false
+        parse:
+          type: literal
+          return: "texas2_t_1[atk_up]"
+      -
+        value: "wang_t_2[penetrate]"
+        display: false
+        parse:
+          type: literal
+          return: "wang_t_2[penetrate]"
+  _decCntIfStack:
+    type: boolean
+    description: dec Cnt If Stack
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _updateOverrideMap:
+    type: boolean
+    description: update Override Map
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,18 @@
+actionType: Act49sideSetPrintingChargable
+fields:
+  _setActive:
+    type: boolean
+    description: set Active
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

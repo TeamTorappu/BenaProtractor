@@ -1,0 +1,24 @@
+actionType: SetSharedFlag
+fields:
+  _sharedFlagIndex:
+    type: string
+    description: shared Flag Index
+    values:
+      -
+        value: DAMAGE_CAN_HURT_SLEEPING_ENTITY
+        display: false
+        parse:
+          type: literal
+          return: DAMAGE_CAN_HURT_SLEEPING_ENTITY
+      -
+        value: DAMAGE_IS_UNDEADABLE_THIS_TIME
+        display: false
+        parse:
+          type: literal
+          return: DAMAGE_IS_UNDEADABLE_THIS_TIME
+      -
+        value: HEAL_CAN_GENERAL_SHIELD
+        display: false
+        parse:
+          type: literal
+          return: HEAL_CAN_GENERAL_SHIELD

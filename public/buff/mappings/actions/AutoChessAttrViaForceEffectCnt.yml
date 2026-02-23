@@ -1,0 +1,34 @@
+actionType: AutoChessAttrViaForceEffectCnt
+fields:
+  _attributeTypes:
+    type: array
+    description: attribute Types
+    schema: action_subschema/_attributeTypes.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _formulaItemType:
+    type: string
+    description: formula Item Type
+    values:
+      -
+        value: ADDITION
+        display: false
+        parse:
+          type: literal
+          return: ADDITION
+      -
+        value: FINAL_SCALER
+        display: false
+        parse:
+          type: literal
+          return: FINAL_SCALER
+      -
+        value: MULTIPLIER
+        display: false
+        parse:
+          type: literal
+          return: MULTIPLIER

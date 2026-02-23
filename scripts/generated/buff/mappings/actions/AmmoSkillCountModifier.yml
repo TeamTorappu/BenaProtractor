@@ -1,0 +1,338 @@
+actionType: AmmoSkillCountModifier
+fields:
+  _addCount:
+    type: number
+    description: add Count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+  _addCountBBKey:
+    type: null | string
+    description: add Count B B Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: add_count
+        display: false
+        parse:
+          type: literal
+          return: add_count
+      -
+        value: add_stack
+        display: false
+        parse:
+          type: literal
+          return: add_stack
+      -
+        value: ally_ammo
+        display: false
+        parse:
+          type: literal
+          return: ally_ammo
+      -
+        value: ex_add_count
+        display: false
+        parse:
+          type: literal
+          return: ex_add_count
+      -
+        value: none
+        display: false
+        parse:
+          type: literal
+          return: none
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: real_ammo_percent
+        display: false
+        parse:
+          type: literal
+          return: real_ammo_percent
+      -
+        value: recover_each_cnt
+        display: false
+        parse:
+          type: literal
+          return: recover_each_cnt
+      -
+        value: self_ammo
+        display: false
+        parse:
+          type: literal
+          return: self_ammo
+  _addCountUsePercent:
+    type: boolean
+    description: add Count Use Percent
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _consumeCount:
+    type: number
+    description: consume Count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _consumeCountBBKey:
+    type: null
+    description: consume Count B B Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _consumeEventCount:
+    type: boolean
+    description: consume Event Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _discardRemainingCount:
+    type: boolean
+    description: discard Remaining Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _discardSoft:
+    type: boolean
+    description: discard Soft
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _modifyMaxCount:
+    type: boolean
+    description: modify Max Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _recoverCount:
+    type: number
+    description: recover Count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _recoverCountBBKey:
+    type: null | string
+    description: recover Count B B Key
+    values:
+      -
+        value: ammo
+        display: false
+        parse:
+          type: literal
+          return: ammo
+      -
+        value: ammo_percent
+        display: false
+        parse:
+          type: literal
+          return: ammo_percent
+      -
+        value: ammo_recover
+        display: false
+        parse:
+          type: literal
+          return: ammo_recover
+      -
+        value: charge
+        display: false
+        parse:
+          type: literal
+          return: charge
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: recover_cnt
+        display: false
+        parse:
+          type: literal
+          return: recover_cnt
+      -
+        value: recover_count
+        display: false
+        parse:
+          type: literal
+          return: recover_count
+      -
+        value: recover_each_cnt
+        display: false
+        parse:
+          type: literal
+          return: recover_each_cnt
+  _recoverCountUsePercent:
+    type: boolean
+    description: recover Count Use Percent
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _recoverEventCount:
+    type: boolean
+    description: recover Event Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _recoverSkipLimitCheck:
+    type: boolean
+    description: recover Skip Limit Check
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _restoreMaxCount:
+    type: boolean
+    description: restore Max Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _triggerConsumeEvent:
+    type: boolean
+    description: trigger Consume Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useEvtRetAsReturnValue:
+    type: boolean
+    description: use Evt Ret As Return Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

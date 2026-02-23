@@ -1,0 +1,64 @@
+actionType: LegionModeOnlyAddProfessionLevel
+fields:
+  _levelCnt:
+    type: number
+    description: level Cnt
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _professionCategory:
+    type: string
+    description: profession Category
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: SNIPER
+        display: false
+        parse:
+          type: literal
+          return: SNIPER
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _specifyProfessionCategory:
+    type: boolean
+    description: specify Profession Category
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,12 @@
+actionType: ClearTrap
+fields:
+  _charKey:
+    type: string
+    description: char Key
+    values:
+      -
+        value: clear_id
+        display: false
+        parse:
+          type: literal
+          return: clear_id

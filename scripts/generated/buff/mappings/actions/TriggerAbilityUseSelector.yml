@@ -1,0 +1,178 @@
+actionType: TriggerAbilityUseSelector
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: ActiveRandom
+        display: false
+        parse:
+          type: literal
+          return: ActiveRandom
+      -
+        value: Aim
+        display: false
+        parse:
+          type: literal
+          return: Aim
+      -
+        value: DysuihSummonFire
+        display: false
+        parse:
+          type: literal
+          return: DysuihSummonFire
+      -
+        value: Flag
+        display: false
+        parse:
+          type: literal
+          return: Flag
+      -
+        value: HealToken
+        display: false
+        parse:
+          type: literal
+          return: HealToken
+      -
+        value: M3_Fire
+        display: false
+        parse:
+          type: literal
+          return: M3_Fire
+      -
+        value: MultiAttack
+        display: false
+        parse:
+          type: literal
+          return: MultiAttack
+      -
+        value: Pull
+        display: false
+        parse:
+          type: literal
+          return: Pull
+      -
+        value: S2SecondShot
+        display: false
+        parse:
+          type: literal
+          return: S2SecondShot
+      -
+        value: TraceEnemy
+        display: false
+        parse:
+          type: literal
+          return: TraceEnemy
+      -
+        value: blitz_s_2_attack
+        display: false
+        parse:
+          type: literal
+          return: blitz_s_2_attack
+      -
+        value: charge
+        display: false
+        parse:
+          type: literal
+          return: charge
+      -
+        value: lasso
+        display: false
+        parse:
+          type: literal
+          return: lasso
+      -
+        value: pallas_e_heal
+        display: false
+        parse:
+          type: literal
+          return: pallas_e_heal
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

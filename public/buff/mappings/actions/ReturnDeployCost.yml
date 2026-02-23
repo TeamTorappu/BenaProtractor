@@ -1,0 +1,42 @@
+actionType: ReturnDeployCost
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _forceToDisplayNegativeNumber:
+    type: boolean
+    description: force To Display Negative Number
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _forceToDisplayNumber:
+    type: boolean
+    description: force To Display Number
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

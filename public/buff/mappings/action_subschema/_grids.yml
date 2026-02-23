@@ -1,0 +1,16 @@
+field: _grids
+type: object
+description: grids
+actions:
+  BuildCharacterInRange:
+    type: array
+    values:
+      -
+        value: "[{"row":1,"col":0},{"row":0,"col":-1},{"row":0,"col":1},{"row":-1,"col":0}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

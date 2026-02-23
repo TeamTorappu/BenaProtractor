@@ -1,0 +1,184 @@
+actionType: AttributeModifierWithCertainBuffCount
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+      -
+        value: MAGIC_RESISTANCE
+        display: false
+        parse:
+          type: literal
+          return: MAGIC_RESISTANCE
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: chimes_s_2_atk
+        display: false
+        parse:
+          type: literal
+          return: chimes_s_2_atk
+      -
+        value: enemy_cbshld_t_cnt
+        display: false
+        parse:
+          type: literal
+          return: enemy_cbshld_t_cnt
+      -
+        value: enemy_cbterm_t_1_cnt
+        display: false
+        parse:
+          type: literal
+          return: enemy_cbterm_t_1_cnt
+      -
+        value: enemy_ristar_def_reduce_cnt
+        display: false
+        parse:
+          type: literal
+          return: enemy_ristar_def_reduce_cnt
+      -
+        value: enemy_shushu_support
+        display: false
+        parse:
+          type: literal
+          return: enemy_shushu_support
+      -
+        value: mlynar_tr_atk
+        display: false
+        parse:
+          type: literal
+          return: mlynar_tr_atk
+      -
+        value: "wscoot_trait[atk][stack]"
+        display: false
+        parse:
+          type: literal
+          return: "wscoot_trait[atk][stack]"
+  _formulaType:
+    type: string
+    description: formula Type
+    values:
+      -
+        value: ADDITION
+        display: false
+        parse:
+          type: literal
+          return: ADDITION
+      -
+        value: MULTIPLIER
+        display: false
+        parse:
+          type: literal
+          return: MULTIPLIER
+  _maxCnt:
+    type: number
+    description: max Cnt
+    values:
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+      -
+        value: 110
+        display: false
+        parse:
+          type: literal
+          return: 110
+      -
+        value: 40
+        display: false
+        parse:
+          type: literal
+          return: 40
+      -
+        value: 6
+        display: false
+        parse:
+          type: literal
+          return: 6
+      -
+        value: 80
+        display: false
+        parse:
+          type: literal
+          return: 80
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useOneAsMinCnt:
+    type: boolean
+    description: use One As Min Cnt
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _writeModifyValueToBB:
+    type: boolean
+    description: write Modify Value To B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _writeToBBKey:
+    type: null | string
+    description: write To B B Key
+    values:
+      -
+        value: cur_atk_up
+        display: false
+        parse:
+          type: literal
+          return: cur_atk_up
+      -
+        value: maxCnt
+        display: false
+        parse:
+          type: literal
+          return: maxCnt
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null

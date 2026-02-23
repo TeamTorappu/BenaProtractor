@@ -1,0 +1,12 @@
+actionType: SetCameraMoveDirectlyDisableState
+fields:
+  disableCameraMoveDirectly:
+    type: boolean
+    description: disable Camera Move Directly
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

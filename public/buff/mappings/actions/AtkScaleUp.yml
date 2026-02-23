@@ -1,0 +1,192 @@
+actionType: AtkScaleUp
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _atkScaleKey:
+    type: string
+    description: atk Scale Key
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+      -
+        value: "atk_scale[skill_up]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[skill_up]"
+      -
+        value: atk_scale_1
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_1
+      -
+        value: atk_scale_2
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_2
+      -
+        value: atk_scale_now
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_now
+      -
+        value: atk_scale_splash
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_splash
+      -
+        value: e_002_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: e_002_atk_scale
+      -
+        value: enemy_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: enemy_atk_scale
+      -
+        value: last_atk_bonus
+        display: false
+        parse:
+          type: literal
+          return: last_atk_bonus
+      -
+        value: scale_up
+        display: false
+        parse:
+          type: literal
+          return: scale_up
+      -
+        value: sheltr_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: sheltr_atk_scale
+      -
+        value: "snhunt_t[atk_scale]"
+        display: false
+        parse:
+          type: literal
+          return: "snhunt_t[atk_scale]"
+      -
+        value: talent_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: talent_atk_scale
+  _cancelIfAtkScaleZero:
+    type: boolean
+    description: cancel If Atk Scale Zero
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _defaultValue:
+    type: number
+    description: default Value
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _filterApplyWay:
+    type: boolean
+    description: filter Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterNoneApplyWay:
+    type: boolean
+    description: filter None Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterProjectileKey:
+    type: string
+    description: filter Projectile Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: projectile_enemy_dirctr_s3
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_dirctr_s3

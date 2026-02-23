@@ -1,0 +1,104 @@
+actionType: LegionModeOnlySelectCard
+fields:
+  _canSelectNumKey:
+    type: string
+    description: can Select Num Key
+    values:
+      -
+        value: can_select_num
+        display: false
+        parse:
+          type: literal
+          return: can_select_num
+  _cardType:
+    type: string
+    description: card Type
+    values:
+      -
+        value: NULL
+        display: false
+        parse:
+          type: literal
+          return: NULL
+      -
+        value: PENDING
+        display: false
+        parse:
+          type: literal
+          return: PENDING
+  _discardUnselected:
+    type: boolean
+    description: discard Unselected
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _goldNumWhenSellCard:
+    type: string
+    description: gold Num When Sell Card
+    values:
+      -
+        value: sell_card_gold
+        display: false
+        parse:
+          type: literal
+          return: sell_card_gold
+  _profession:
+    type: array | null
+    description: profession
+    schema: action_subschema/_profession.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _putInPendingIfHandFull:
+    type: boolean
+    description: put In Pending If Hand Full
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _rangeNumKey:
+    type: string
+    description: range Num Key
+    values:
+      -
+        value: range_num
+        display: false
+        parse:
+          type: literal
+          return: range_num
+  _selectCardType:
+    type: string
+    description: select Card Type
+    values:
+      -
+        value: NULL
+        display: false
+        parse:
+          type: literal
+          return: NULL
+      -
+        value: SELL
+        display: false
+        parse:
+          type: literal
+          return: SELL
+  _specificCardKeys:
+    type: array
+    description: specific Card Keys
+    schema: action_subschema/_specificCardKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx

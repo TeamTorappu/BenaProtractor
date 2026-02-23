@@ -1,0 +1,50 @@
+actionType: CheckDistanceToTileCenter
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _distance:
+    type: number
+    description: distance
+    values:
+      -
+        value: 0.05000000074505806
+        display: false
+        parse:
+          type: literal
+          return: 0.05000000074505806
+      -
+        value: 0.20000000298023224
+        display: false
+        parse:
+          type: literal
+          return: 0.20000000298023224
+      -
+        value: 0.4000000059604645
+        display: false
+        parse:
+          type: literal
+          return: 0.4000000059604645
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,132 @@
+actionType: EnemyDuelSummonEnemies
+fields:
+  _addBuffToEnemy:
+    type: boolean
+    description: add Buff To Enemy
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _buffToEnemy:
+    type: object
+    description: buff To Enemy
+    schema: action_subschema/_buffToEnemy.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _checkMotionMode:
+    type: string
+    description: check Motion Mode
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+  _delayTime:
+    type: number
+    description: delay Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _dontBlockWave:
+    type: boolean
+    description: dont Block Wave
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _enemyKey:
+    type: null
+    description: enemy Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _randomOffsetBound:
+    type: number
+    description: random Offset Bound
+    schema: action_subschema/_randomOffsetBound.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _skipCheckPoint:
+    type: boolean
+    description: skip Check Point
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _stopSummonIfHostDead:
+    type: boolean
+    description: stop Summon If Host Dead
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useLocalUnharmfulFlag:
+    type: boolean
+    description: use Local Unharmful Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

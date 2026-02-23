@@ -1,0 +1,32 @@
+actionType: HalfIdleModifyLevelCapacity
+fields:
+  _isAdd:
+    type: boolean
+    description: is Add
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _levelCapacityKey:
+    type: string
+    description: level Capacity Key
+    values:
+      -
+        value: level_capacity
+        display: false
+        parse:
+          type: literal
+          return: level_capacity
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

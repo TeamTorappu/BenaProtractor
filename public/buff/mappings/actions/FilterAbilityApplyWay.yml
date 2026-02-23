@@ -1,0 +1,12 @@
+actionType: FilterAbilityApplyWay
+fields:
+  _applyWayFilter:
+    type: string
+    description: apply Way Filter
+    values:
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED

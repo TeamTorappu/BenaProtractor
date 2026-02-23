@@ -1,0 +1,22 @@
+actionType: HealViaDamage
+fields:
+  _filterModifierCancelled:
+    type: boolean
+    description: filter Modifier Cancelled
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _healType:
+    type: string
+    description: heal Type
+    values:
+      -
+        value: DAMAGE_SCALE
+        display: false
+        parse:
+          type: literal
+          return: DAMAGE_SCALE

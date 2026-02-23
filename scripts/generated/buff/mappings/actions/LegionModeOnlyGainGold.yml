@@ -1,0 +1,92 @@
+actionType: LegionModeOnlyGainGold
+fields:
+  _goldNum:
+    type: number
+    description: gold Num
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+  _goldNumKey:
+    type: string
+    description: gold Num Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+      -
+        value: current_price_half
+        display: false
+        parse:
+          type: literal
+          return: current_price_half
+      -
+        value: double_cdsoul_cnt
+        display: false
+        parse:
+          type: literal
+          return: double_cdsoul_cnt
+      -
+        value: finish_gold
+        display: false
+        parse:
+          type: literal
+          return: finish_gold
+      -
+        value: get_gold
+        display: false
+        parse:
+          type: literal
+          return: get_gold
+      -
+        value: gold
+        display: false
+        parse:
+          type: literal
+          return: gold
+      -
+        value: gold_cnt
+        display: false
+        parse:
+          type: literal
+          return: gold_cnt
+      -
+        value: gold_num
+        display: false
+        parse:
+          type: literal
+          return: gold_num
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

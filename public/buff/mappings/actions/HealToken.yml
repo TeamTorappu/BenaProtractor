@@ -1,0 +1,62 @@
+actionType: HealToken
+fields:
+  _createEffect:
+    type: boolean
+    description: create Effect
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterTokenMode:
+    type: boolean
+    description: filter Token Mode
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _healByRatio:
+    type: boolean
+    description: heal By Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ignoreHealFree:
+    type: boolean
+    description: ignore Heal Free
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceTarget:
+    type: string
+    description: source Target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _tokenModes:
+    type: array
+    description: token Modes
+    schema: action_subschema/_tokenModes.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx

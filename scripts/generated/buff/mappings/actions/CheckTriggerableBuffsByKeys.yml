@@ -1,0 +1,32 @@
+actionType: CheckTriggerableBuffsByKeys
+fields:
+  _buffKeys:
+    type: array
+    description: buff Keys
+    schema: action_subschema/_buffKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _excludeThisBuff:
+    type: boolean
+    description: exclude This Buff
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

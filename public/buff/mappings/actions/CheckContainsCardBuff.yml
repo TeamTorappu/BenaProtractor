@@ -1,0 +1,110 @@
+actionType: CheckContainsCardBuff
+fields:
+  _checkSourceUid:
+    type: boolean
+    description: check Source Uid
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: nasti_nstbld_m3456_exist
+        display: false
+        parse:
+          type: literal
+          return: nasti_nstbld_m3456_exist
+      -
+        value: nasti_nstbld_m3_build_lock
+        display: false
+        parse:
+          type: literal
+          return: nasti_nstbld_m3_build_lock
+      -
+        value: nearl2_t_1
+        display: false
+        parse:
+          type: literal
+          return: nearl2_t_1
+      -
+        value: "slent2_e_003_t2[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "slent2_e_003_t2[mark]"
+      -
+        value: "svrash_e_002_t[aura]"
+        display: false
+        parse:
+          type: literal
+          return: "svrash_e_002_t[aura]"
+      -
+        value: "svrash_e_002_t[self]"
+        display: false
+        parse:
+          type: literal
+          return: "svrash_e_002_t[self]"
+  _readBuffKeyFromBlackboard:
+    type: boolean
+    description: read Buff Key From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _selectTargetHostOrToken:
+    type: boolean
+    description: select Target Host Or Token
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

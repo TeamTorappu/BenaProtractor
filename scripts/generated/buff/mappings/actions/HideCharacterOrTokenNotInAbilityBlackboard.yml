@@ -1,0 +1,32 @@
+actionType: HideCharacterOrTokenNotInAbilityBlackboard
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: PassengerStorage
+        display: false
+        parse:
+          type: literal
+          return: PassengerStorage
+  _infoType:
+    type: string
+    description: info Type
+    values:
+      -
+        value: UNIQUE_ID
+        display: false
+        parse:
+          type: literal
+          return: UNIQUE_ID
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

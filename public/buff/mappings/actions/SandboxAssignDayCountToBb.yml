@@ -1,0 +1,22 @@
+actionType: SandboxAssignDayCountToBb
+fields:
+  _assignKey:
+    type: string
+    description: assign Key
+    values:
+      -
+        value: day_count
+        display: false
+        parse:
+          type: literal
+          return: day_count
+  _isMainMap:
+    type: boolean
+    description: is Main Map
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

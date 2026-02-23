@@ -1,0 +1,82 @@
+actionType: CreateCardBuffByCardUid
+fields:
+  _cardBuffKey:
+    type: string
+    description: card Buff Key
+    values:
+      -
+        value: irene_e_004
+        display: false
+        parse:
+          type: literal
+          return: irene_e_004
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _uidKey:
+    type: string
+    description: uid Key
+    values:
+      -
+        value: card_uid
+        display: false
+        parse:
+          type: literal
+          return: card_uid
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

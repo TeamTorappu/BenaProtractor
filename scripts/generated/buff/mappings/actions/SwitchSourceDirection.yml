@@ -1,0 +1,52 @@
+actionType: SwitchSourceDirection
+fields:
+  _downNodes:
+    type: array
+    description: down Nodes
+    schema: action_subschema/_downNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+  _leftNodes:
+    type: array
+    description: left Nodes
+    schema: action_subschema/_leftNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+  _rightNodes:
+    type: array
+    description: right Nodes
+    schema: action_subschema/_rightNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _upNodes:
+    type: array
+    description: up Nodes
+    schema: action_subschema/_upNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx

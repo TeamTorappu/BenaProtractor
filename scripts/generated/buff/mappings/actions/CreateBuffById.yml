@@ -1,0 +1,250 @@
+actionType: CreateBuffById
+fields:
+  _buffKey:
+    type: null | string
+    description: buff Key
+    values:
+      -
+        value: "attr_down[atk]"
+        display: false
+        parse:
+          type: literal
+          return: "attr_down[atk]"
+      -
+        value: c2e_cold
+        display: false
+        parse:
+          type: literal
+          return: c2e_cold
+      -
+        value: c2e_freeze
+        display: false
+        parse:
+          type: literal
+          return: c2e_freeze
+      -
+        value: "c2e_freeze[holder]"
+        display: false
+        parse:
+          type: literal
+          return: "c2e_freeze[holder]"
+      -
+        value: "damage_resistance[inf]"
+        display: false
+        parse:
+          type: literal
+          return: "damage_resistance[inf]"
+      -
+        value: disarmed_and_cant_use_skill
+        display: false
+        parse:
+          type: literal
+          return: disarmed_and_cant_use_skill
+      -
+        value: disarmed_combat
+        display: false
+        parse:
+          type: literal
+          return: disarmed_combat
+      -
+        value: dragon_fire
+        display: false
+        parse:
+          type: literal
+          return: dragon_fire
+      -
+        value: "dragon_fire[damage]"
+        display: false
+        parse:
+          type: literal
+          return: "dragon_fire[damage]"
+      -
+        value: e2c_cold
+        display: false
+        parse:
+          type: literal
+          return: e2c_cold
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: "palsy[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "palsy[stack]"
+      -
+        value: palsy_trigger
+        display: false
+        parse:
+          type: literal
+          return: palsy_trigger
+      -
+        value: palsying
+        display: false
+        parse:
+          type: literal
+          return: palsying
+      -
+        value: "peak_performance[inf]"
+        display: false
+        parse:
+          type: literal
+          return: "peak_performance[inf]"
+      -
+        value: purify
+        display: false
+        parse:
+          type: literal
+          return: purify
+      -
+        value: resistable_abnormal_flag_anti
+        display: false
+        parse:
+          type: literal
+          return: resistable_abnormal_flag_anti
+      -
+        value: silence
+        display: false
+        parse:
+          type: literal
+          return: silence
+      -
+        value: sleep
+        display: false
+        parse:
+          type: literal
+          return: sleep
+      -
+        value: sluggish
+        display: false
+        parse:
+          type: literal
+          return: sluggish
+      -
+        value: status_resistable_anti
+        display: false
+        parse:
+          type: literal
+          return: status_resistable_anti
+      -
+        value: "status_resistance[inf]"
+        display: false
+        parse:
+          type: literal
+          return: "status_resistance[inf]"
+      -
+        value: "status_resistance[limit]"
+        display: false
+        parse:
+          type: literal
+          return: "status_resistance[limit]"
+      -
+        value: stun
+        display: false
+        parse:
+          type: literal
+          return: stun
+      -
+        value: "weak[ep][inf]"
+        display: false
+        parse:
+          type: literal
+          return: "weak[ep][inf]"
+      -
+        value: "weak[inf]"
+        display: false
+        parse:
+          type: literal
+          return: "weak[inf]"
+      -
+        value: "weak[limit]"
+        display: false
+        parse:
+          type: literal
+          return: "weak[limit]"
+      -
+        value: "weak[magic][inf]"
+        display: false
+        parse:
+          type: literal
+          return: "weak[magic][inf]"
+  _buffOwner:
+    type: string
+    description: buff Owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,22 @@
+actionType: EnemyChangeRouteToTargetUseSelector
+fields:
+  _enemy:
+    type: string
+    description: enemy
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _tileSelectorAbilityName:
+    type: string
+    description: tile Selector Ability Name
+    values:
+      -
+        value: FindCharacter
+        display: false
+        parse:
+          type: literal
+          return: FindCharacter

@@ -1,0 +1,52 @@
+actionType: CheckTileInRange
+fields:
+  _radius:
+    type: number
+    description: radius
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _tileKeys:
+    type: array
+    description: tile Keys
+    schema: action_subschema/_tileKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _useCircle:
+    type: boolean
+    description: use Circle
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,38 @@
+actionType: CheckHostContainsBuff
+fields:
+  _buffKeys:
+    type: array
+    description: buff Keys
+    schema: action_subschema/_buffKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  isAND:
+    type: boolean
+    description: is A N D
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

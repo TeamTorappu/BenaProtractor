@@ -1,0 +1,236 @@
+actionType: DamageScale
+fields:
+  _applyWayFilter:
+    type: string
+    description: apply Way Filter
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+  _cachedDeltaValueToBBKey:
+    type: string
+    description: cached Delta Value To B B Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: cached_damage
+        display: false
+        parse:
+          type: literal
+          return: cached_damage
+      -
+        value: dark_damage
+        display: false
+        parse:
+          type: literal
+          return: dark_damage
+      -
+        value: delta_damage
+        display: false
+        parse:
+          type: literal
+          return: delta_damage
+      -
+        value: hp_total
+        display: false
+        parse:
+          type: literal
+          return: hp_total
+      -
+        value: postpone_damage
+        display: false
+        parse:
+          type: literal
+          return: postpone_damage
+      -
+        value: share_value
+        display: false
+        parse:
+          type: literal
+          return: share_value
+  _customKey:
+    type: string
+    description: custom Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+      -
+        value: damage_share
+        display: false
+        parse:
+          type: literal
+          return: damage_share
+      -
+        value: real_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: real_damage_scale
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: ANY_ATTACK
+        display: false
+        parse:
+          type: literal
+          return: ANY_ATTACK
+      -
+        value: ANY_ATTACK_EXCEPT_ELEMENT
+        display: false
+        parse:
+          type: literal
+          return: ANY_ATTACK_EXCEPT_ELEMENT
+      -
+        value: ELEMENT
+        display: false
+        parse:
+          type: literal
+          return: ELEMENT
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+      -
+        value: PHYSICAL_AND_MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL_AND_MAGICAL
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _filterApplyWay:
+    type: boolean
+    description: filter Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _filterDamageType:
+    type: boolean
+    description: filter Damage Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isOneMinus:
+    type: boolean
+    description: is One Minus
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isStackable:
+    type: boolean
+    description: is Stackable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isValidStackCnt:
+    type: boolean
+    description: is Valid Stack Cnt
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,144 @@
+actionType: AssignGridPositionToBlackboard
+fields:
+  _gridColKey:
+    type: null | string
+    description: grid Col Key
+    values:
+      -
+        value: begin_col
+        display: false
+        parse:
+          type: literal
+          return: begin_col
+      -
+        value: boss_col
+        display: false
+        parse:
+          type: literal
+          return: boss_col
+      -
+        value: chen3_col
+        display: false
+        parse:
+          type: literal
+          return: chen3_col
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+      -
+        value: end_col
+        display: false
+        parse:
+          type: literal
+          return: end_col
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: source_col
+        display: false
+        parse:
+          type: literal
+          return: source_col
+      -
+        value: target_col
+        display: false
+        parse:
+          type: literal
+          return: target_col
+  _gridRowKey:
+    type: null | string
+    description: grid Row Key
+    values:
+      -
+        value: begin_row
+        display: false
+        parse:
+          type: literal
+          return: begin_row
+      -
+        value: boss_row
+        display: false
+        parse:
+          type: literal
+          return: boss_row
+      -
+        value: chen3_row
+        display: false
+        parse:
+          type: literal
+          return: chen3_row
+      -
+        value: end_row
+        display: false
+        parse:
+          type: literal
+          return: end_row
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+      -
+        value: source_row
+        display: false
+        parse:
+          type: literal
+          return: source_row
+      -
+        value: target_row
+        display: false
+        parse:
+          type: literal
+          return: target_row
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useConstLocationKey:
+    type: boolean
+    description: use Const Location Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

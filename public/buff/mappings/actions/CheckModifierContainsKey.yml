@@ -1,0 +1,60 @@
+actionType: CheckModifierContainsKey
+fields:
+  _customKey:
+    type: string
+    description: custom Key
+    values:
+      -
+        value: WANG_STONE
+        display: false
+        parse:
+          type: literal
+          return: WANG_STONE
+      -
+        value: act1autochess_debuff_1
+        display: false
+        parse:
+          type: literal
+          return: act1autochess_debuff_1
+      -
+        value: act49side_print_dmg
+        display: false
+        parse:
+          type: literal
+          return: act49side_print_dmg
+      -
+        value: chen3_s3_projectile
+        display: false
+        parse:
+          type: literal
+          return: chen3_s3_projectile
+      -
+        value: "graceb_sk2[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "graceb_sk2[mark]"
+      -
+        value: link_damage
+        display: false
+        parse:
+          type: literal
+          return: link_damage
+      -
+        value: lrdead
+        display: false
+        parse:
+          type: literal
+          return: lrdead
+      -
+        value: s2_dot_heal
+        display: false
+        parse:
+          type: literal
+          return: s2_dot_heal
+      -
+        value: "wscoot_t[extra_atk]"
+        display: false
+        parse:
+          type: literal
+          return: "wscoot_t[extra_atk]"

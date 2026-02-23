@@ -1,0 +1,94 @@
+actionType: FilterAbilityName
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: Attack
+        display: false
+        parse:
+          type: literal
+          return: Attack
+      -
+        value: BigAttack
+        display: false
+        parse:
+          type: literal
+          return: BigAttack
+      -
+        value: DoubleAttack
+        display: false
+        parse:
+          type: literal
+          return: DoubleAttack
+      -
+        value: Funnel_s2
+        display: false
+        parse:
+          type: literal
+          return: Funnel_s2
+      -
+        value: S3Attack
+        display: false
+        parse:
+          type: literal
+          return: S3Attack
+      -
+        value: Special
+        display: false
+        parse:
+          type: literal
+          return: Special
+      -
+        value: pray
+        display: false
+        parse:
+          type: literal
+          return: pray
+      -
+        value: skchr_mberry_1
+        display: false
+        parse:
+          type: literal
+          return: skchr_mberry_1
+      -
+        value: syncAttackP1
+        display: false
+        parse:
+          type: literal
+          return: syncAttackP1
+      -
+        value: syncAttackP2
+        display: false
+        parse:
+          type: literal
+          return: syncAttackP2
+      -
+        value: syncAttackWithSummon
+        display: false
+        parse:
+          type: literal
+          return: syncAttackWithSummon
+      -
+        value: wtrman_melee_Attack
+        display: false
+        parse:
+          type: literal
+          return: wtrman_melee_Attack
+  _useSearchName:
+    type: boolean
+    description: use Search Name
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

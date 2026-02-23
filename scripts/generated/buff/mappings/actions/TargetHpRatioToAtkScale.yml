@@ -1,0 +1,12 @@
+actionType: TargetHpRatioToAtkScale
+fields:
+  _startHpRatio:
+    type: number
+    description: start Hp Ratio
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1

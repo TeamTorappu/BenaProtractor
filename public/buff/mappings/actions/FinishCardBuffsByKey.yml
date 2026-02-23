@@ -1,0 +1,136 @@
+actionType: FinishCardBuffsByKey
+fields:
+  _cardBuffKey:
+    type: string
+    description: card Buff Key
+    values:
+      -
+        value: PassengerStorage
+        display: false
+        parse:
+          type: literal
+          return: PassengerStorage
+      -
+        value: char_249_mlyss
+        display: false
+        parse:
+          type: literal
+          return: char_249_mlyss
+      -
+        value: eagle_valid
+        display: false
+        parse:
+          type: literal
+          return: eagle_valid
+      -
+        value: enemy_mjcdog_respawn
+        display: false
+        parse:
+          type: literal
+          return: enemy_mjcdog_respawn
+      -
+        value: gamecity_draw_buff_2
+        display: false
+        parse:
+          type: literal
+          return: gamecity_draw_buff_2
+      -
+        value: irene_e_004
+        display: false
+        parse:
+          type: literal
+          return: irene_e_004
+      -
+        value: "prosts_t_1[raw_born]"
+        display: false
+        parse:
+          type: literal
+          return: "prosts_t_1[raw_born]"
+      -
+        value: "rogue_2_enroll_3_attribute[card]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_2_enroll_3_attribute[card]"
+      -
+        value: rogue_3_relic_book_9
+        display: false
+        parse:
+          type: literal
+          return: rogue_3_relic_book_9
+      -
+        value: "svrash_e_002_t[aura]"
+        display: false
+        parse:
+          type: literal
+          return: "svrash_e_002_t[aura]"
+      -
+        value: token_10030_mlyss_wtrman
+        display: false
+        parse:
+          type: literal
+          return: token_10030_mlyss_wtrman
+  _findAllCard:
+    type: boolean
+    description: find All Card
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ignoreOwner:
+    type: boolean
+    description: ignore Owner
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _onlyOwner:
+    type: boolean
+    description: only Owner
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useUid:
+    type: boolean
+    description: use Uid
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

@@ -1,0 +1,150 @@
+actionType: CreateCardBuff
+fields:
+  _cardBuffKey:
+    type: null | string
+    description: card Buff Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: PassengerStorage
+        display: false
+        parse:
+          type: literal
+          return: PassengerStorage
+      -
+        value: eagle_valid
+        display: false
+        parse:
+          type: literal
+          return: eagle_valid
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: "prosts_t_1[raw_born]"
+        display: false
+        parse:
+          type: literal
+          return: "prosts_t_1[raw_born]"
+      -
+        value: respawn_buff
+        display: false
+        parse:
+          type: literal
+          return: respawn_buff
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: ALL_THE_TIME
+        display: false
+        parse:
+          type: literal
+          return: ALL_THE_TIME
+      -
+        value: HOLD_BY_BUFF
+        display: false
+        parse:
+          type: literal
+          return: HOLD_BY_BUFF
+      -
+        value: IMMEDIATELY
+        display: false
+        parse:
+          type: literal
+          return: IMMEDIATELY
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

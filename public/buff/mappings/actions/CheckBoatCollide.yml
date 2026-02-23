@@ -1,0 +1,54 @@
+actionType: CheckBoatCollide
+fields:
+  _calculateCollidePosToBB:
+    type: boolean
+    description: calculate Collide Pos To B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _radius:
+    type: number
+    description: radius
+    values:
+      -
+        value: 0.75
+        display: false
+        parse:
+          type: literal
+          return: 0.75
+  _setCollideTileToBB:
+    type: boolean
+    description: set Collide Tile To B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

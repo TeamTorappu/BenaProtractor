@@ -1,0 +1,28 @@
+actionType: FilterByAbilityIgnorePalsyInterrupt
+fields:
+  _skipUnitCheck:
+    type: boolean
+    description: skip Unit Check
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _unset:
+    type: boolean
+    description: unset
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

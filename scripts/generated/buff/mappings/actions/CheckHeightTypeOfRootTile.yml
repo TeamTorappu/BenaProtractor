@@ -1,0 +1,28 @@
+actionType: CheckHeightTypeOfRootTile
+fields:
+  _heightType:
+    type: string
+    description: height Type
+    values:
+      -
+        value: HIGHLAND
+        display: false
+        parse:
+          type: literal
+          return: HIGHLAND
+      -
+        value: LOWLAND
+        display: false
+        parse:
+          type: literal
+          return: LOWLAND
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

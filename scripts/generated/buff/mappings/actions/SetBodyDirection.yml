@@ -1,0 +1,152 @@
+actionType: SetBodyDirection
+fields:
+  _direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: E_NUM
+        display: false
+        parse:
+          type: literal
+          return: E_NUM
+      -
+        value: LEFT
+        display: false
+        parse:
+          type: literal
+          return: LEFT
+      -
+        value: RIGHT
+        display: false
+        parse:
+          type: literal
+          return: RIGHT
+  _directionKey:
+    type: string
+    description: direction Key
+    values:
+      -
+        value: direction
+        display: false
+        parse:
+          type: literal
+          return: direction
+      -
+        value: old_direction
+        display: false
+        parse:
+          type: literal
+          return: old_direction
+  _directionSourceType:
+    type: string
+    description: direction Source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _force:
+    type: boolean
+    description: force
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _includeFace:
+    type: boolean
+    description: include Face
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _onlyChangeFace:
+    type: boolean
+    description: only Change Face
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+  _useDirectionFromBlackboard:
+    type: boolean
+    description: use Direction From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _useSourceDirection:
+    type: boolean
+    description: use Source Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

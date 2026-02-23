@@ -1,0 +1,174 @@
+actionType: Main15InsertPrtsAction
+fields:
+  _actionType:
+    type: string
+    description: action Type
+    values:
+      -
+        value: MOVE_AND_CREATEBUFF
+        display: false
+        parse:
+          type: literal
+          return: MOVE_AND_CREATEBUFF
+      -
+        value: MOVE_AND_DRAG_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MOVE_AND_DRAG_SOURCE
+      -
+        value: MOVE_AND_SPAWNENEMY
+        display: false
+        parse:
+          type: literal
+          return: MOVE_AND_SPAWNENEMY
+  _buffData:
+    type: null | object
+    description: buff Data
+    schema: action_subschema/_buffData.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _chooseMostCharSurroud:
+    type: boolean
+    description: choose Most Char Surroud
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _chooseMostEnemySurroud:
+    type: boolean
+    description: choose Most Enemy Surroud
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _chooseSource:
+    type: boolean
+    description: choose Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _enemyKeyFly:
+    type: null | string
+    description: enemy Key Fly
+    values:
+      -
+        value: enemy_fly
+        display: false
+        parse:
+          type: literal
+          return: enemy_fly
+      -
+        value: enemy_key
+        display: false
+        parse:
+          type: literal
+          return: enemy_key
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _enemyKeyHL:
+    type: null | string
+    description: enemy Key H L
+    values:
+      -
+        value: enemy_highland
+        display: false
+        parse:
+          type: literal
+          return: enemy_highland
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _enemyKeyLL:
+    type: null | string
+    description: enemy Key L L
+    values:
+      -
+        value: enemy_lowland
+        display: false
+        parse:
+          type: literal
+          return: enemy_lowland
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _priority:
+    type: number
+    description: priority
+    values:
+      -
+        value: 100
+        display: false
+        parse:
+          type: literal
+          return: 100
+      -
+        value: 110
+        display: false
+        parse:
+          type: literal
+          return: 110
+      -
+        value: 200
+        display: false
+        parse:
+          type: literal
+          return: 200
+      -
+        value: 50
+        display: false
+        parse:
+          type: literal
+          return: 50
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

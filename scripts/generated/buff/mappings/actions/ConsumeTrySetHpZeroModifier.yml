@@ -1,0 +1,22 @@
+actionType: ConsumeTrySetHpZeroModifier
+fields:
+  _blockThisHpSet:
+    type: boolean
+    description: block This Hp Set
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _dontConsumeWhenUndeadable:
+    type: boolean
+    description: dont Consume When Undeadable
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

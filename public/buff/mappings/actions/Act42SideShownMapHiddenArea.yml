@@ -1,0 +1,32 @@
+actionType: Act42SideShownMapHiddenArea
+fields:
+  _areaIndexKey:
+    type: string
+    description: area Index Key
+    values:
+      -
+        value: rect_index
+        display: false
+        parse:
+          type: literal
+          return: rect_index
+  _areaPreStrKey:
+    type: string
+    description: area Pre Str Key
+    values:
+      -
+        value: rect_
+        display: false
+        parse:
+          type: literal
+          return: rect_
+  _envSysKey:
+    type: string
+    description: env Sys Key
+    values:
+      -
+        value: env_act42side_level_ctrl
+        display: false
+        parse:
+          type: literal
+          return: env_act42side_level_ctrl

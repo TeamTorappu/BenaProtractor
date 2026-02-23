@@ -1,0 +1,112 @@
+actionType: SpShowBuff
+fields:
+  _advancedShowType:
+    type: string
+    description: advanced Show Type
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+      -
+        value: USE_BLACKBOARD_DELTA_AS_ADDTION
+        display: false
+        parse:
+          type: literal
+          return: USE_BLACKBOARD_DELTA_AS_ADDTION
+      -
+        value: USE_BLACKBOARD_DELTA_AS_RATIO
+        display: false
+        parse:
+          type: literal
+          return: USE_BLACKBOARD_DELTA_AS_RATIO
+  _isSelf:
+    type: boolean
+    description: is Self
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isSkillCountDown:
+    type: boolean
+    description: is Skill Count Down
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _spShowBuffKey:
+    type: null | string
+    description: sp Show Buff Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: enemy_ristar_hit_counter
+        display: false
+        parse:
+          type: literal
+          return: enemy_ristar_hit_counter
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+      -
+        value: "oblvns_s_2[fever_eff]"
+        display: false
+        parse:
+          type: literal
+          return: "oblvns_s_2[fever_eff]"
+      -
+        value: trap_xdmac1_s
+        display: false
+        parse:
+          type: literal
+          return: trap_xdmac1_s
+      -
+        value: trap_xdmac2_s
+        display: false
+        parse:
+          type: literal
+          return: trap_xdmac2_s
+      -
+        value: trap_xdmac3_s
+        display: false
+        parse:
+          type: literal
+          return: trap_xdmac3_s
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

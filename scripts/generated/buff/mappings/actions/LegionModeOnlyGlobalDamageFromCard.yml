@@ -1,0 +1,68 @@
+actionType: LegionModeOnlyGlobalDamageFromCard
+fields:
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _damageKey:
+    type: string
+    description: damage Key
+    values:
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: enemy_pleslm_skill_02_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_pleslm_skill_02_hit
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx

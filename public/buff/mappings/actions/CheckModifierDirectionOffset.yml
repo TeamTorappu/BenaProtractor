@@ -1,0 +1,58 @@
+actionType: CheckModifierDirectionOffset
+fields:
+  _exceptThisOffset:
+    type: boolean
+    description: except This Offset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _offset:
+    type: object
+    description: offset
+    schema: action_subschema/_offset.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _targetToSource:
+    type: boolean
+    description: target To Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

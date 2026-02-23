@@ -1,0 +1,114 @@
+actionType: TriggerAbilityMergeBB
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: SpawnTrash
+        display: false
+        parse:
+          type: literal
+          return: SpawnTrash
+      -
+        value: "blaze2[to_default_state]"
+        display: false
+        parse:
+          type: literal
+          return: "blaze2[to_default_state]"
+  _assignBBKeys:
+    type: array
+    description: assign B B Keys
+    schema: action_subschema/_assignBBKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+  _castDirectly:
+    type: boolean
+    description: cast Directly
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _checkCanUseAblityFlag:
+    type: boolean
+    description: check Can Use Ablity Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _resetSelector:
+    type: boolean
+    description: reset Selector
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useCastResult:
+    type: boolean
+    description: use Cast Result
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useFirstActiveAbility:
+    type: boolean
+    description: use First Active Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _useOwnerHost:
+    type: boolean
+    description: use Owner Host
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

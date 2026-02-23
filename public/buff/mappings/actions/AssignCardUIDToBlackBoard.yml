@@ -1,0 +1,112 @@
+actionType: AssignCardUIDToBlackBoard
+fields:
+  _assignAsKey:
+    type: boolean
+    description: assign As Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _assignAsString:
+    type: boolean
+    description: assign As String
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _assignHostOrToken:
+    type: boolean
+    description: assign Host Or Token
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _blackBoardKey:
+    type: string
+    description: black Board Key
+    values:
+      -
+        value: cardUid
+        display: false
+        parse:
+          type: literal
+          return: cardUid
+      -
+        value: card_uid
+        display: false
+        parse:
+          type: literal
+          return: card_uid
+      -
+        value: char_id
+        display: false
+        parse:
+          type: literal
+          return: char_id
+      -
+        value: char_id2
+        display: false
+        parse:
+          type: literal
+          return: char_id2
+      -
+        value: new_uid
+        display: false
+        parse:
+          type: literal
+          return: new_uid
+      -
+        value: unique_id
+        display: false
+        parse:
+          type: literal
+          return: unique_id
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MAINBUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MAINBUFF_SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

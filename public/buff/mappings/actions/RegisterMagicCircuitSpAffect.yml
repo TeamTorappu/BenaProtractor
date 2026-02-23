@@ -1,0 +1,28 @@
+actionType: RegisterMagicCircuitSpAffect
+fields:
+  _isTwoEntriesOnly:
+    type: boolean
+    description: is Two Entries Only
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

@@ -1,0 +1,152 @@
+actionType: SplitDamageToNearbyOperators
+fields:
+  _allowedBuildableType:
+    type: string
+    description: allowed Buildable Type
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+  _atkScaleVar:
+    type: string
+    description: atk Scale Var
+    values:
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+  _checkBuildableType:
+    type: boolean
+    description: check Buildable Type
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _defaultAtkScale:
+    type: number
+    description: default Atk Scale
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _ignoreCancelReasonMask:
+    type: string
+    description: ignore Cancel Reason Mask
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _ignoreForSp:
+    type: boolean
+    description: ignore For Sp
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modifierKey:
+    type: null
+    description: modifier Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+  _skipModifierEvent:
+    type: boolean
+    description: skip Modifier Event
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+  _splitScale:
+    type: number
+    description: split Scale
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _splitScaleKey:
+    type: string
+    description: split Scale Key
+    values:
+      -
+        value: split_scale
+        display: false
+        parse:
+          type: literal
+          return: split_scale
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

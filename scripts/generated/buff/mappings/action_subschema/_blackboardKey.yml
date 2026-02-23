@@ -1,0 +1,16 @@
+field: _blackboardKey
+type: object
+description: blackboard Key
+actions:
+  AssignHighestBlackboardValueFromBuffs:
+    type: array
+    values:
+      -
+        value: "["magic_resist_penetrate","def_penetrate"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

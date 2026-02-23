@@ -1,0 +1,62 @@
+actionType: ShowRoutePreviewCursor
+fields:
+  _actionIndex:
+    type: number
+    description: action Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _branchId:
+    type: string
+    description: branch Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _fromCurrentPos:
+    type: boolean
+    description: from Current Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _overridePreviewEffect:
+    type: string
+    description: override Preview Effect
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+  _showType:
+    type: string
+    description: show Type
+    values:
+      -
+        value: FROM_BRANCH
+        display: false
+        parse:
+          type: literal
+          return: FROM_BRANCH
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER

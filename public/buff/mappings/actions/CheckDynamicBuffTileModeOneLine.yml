@@ -1,0 +1,90 @@
+actionType: CheckDynamicBuffTileModeOneLine
+fields:
+  _blackBoardKey:
+    type: string
+    description: black Board Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: direction
+        display: false
+        parse:
+          type: literal
+          return: direction
+  _direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: LEFT
+        display: false
+        parse:
+          type: literal
+          return: LEFT
+  _dontCheckButRecordDirectionToBb:
+    type: boolean
+    description: dont Check But Record Direction To Bb
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _exceptCurrentTile:
+    type: boolean
+    description: except Current Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _modeIndex:
+    type: number
+    description: mode Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+  _useCurrentTileDirection:
+    type: boolean
+    description: use Current Tile Direction
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true

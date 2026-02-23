@@ -1,0 +1,692 @@
+actionType: CreateBuffUseAbilitySelector
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+      -
+        value: Attack
+        display: false
+        parse:
+          type: literal
+          return: Attack
+      -
+        value: AttractSelector
+        display: false
+        parse:
+          type: literal
+          return: AttractSelector
+      -
+        value: BindPrts
+        display: false
+        parse:
+          type: literal
+          return: BindPrts
+      -
+        value: Blink
+        display: false
+        parse:
+          type: literal
+          return: Blink
+      -
+        value: BossSelect
+        display: false
+        parse:
+          type: literal
+          return: BossSelect
+      -
+        value: BossSelecter
+        display: false
+        parse:
+          type: literal
+          return: BossSelecter
+      -
+        value: BossSelector
+        display: false
+        parse:
+          type: literal
+          return: BossSelector
+      -
+        value: CheckChar
+        display: false
+        parse:
+          type: literal
+          return: CheckChar
+      -
+        value: Clear
+        display: false
+        parse:
+          type: literal
+          return: Clear
+      -
+        value: ConvertToPark
+        display: false
+        parse:
+          type: literal
+          return: ConvertToPark
+      -
+        value: DamageAmy
+        display: false
+        parse:
+          type: literal
+          return: DamageAmy
+      -
+        value: DamageShareSelect
+        display: false
+        parse:
+          type: literal
+          return: DamageShareSelect
+      -
+        value: ExtraSelect
+        display: false
+        parse:
+          type: literal
+          return: ExtraSelect
+      -
+        value: FindMcnist
+        display: false
+        parse:
+          type: literal
+          return: FindMcnist
+      -
+        value: FindWangw
+        display: false
+        parse:
+          type: literal
+          return: FindWangw
+      -
+        value: FountainKillSelector
+        display: false
+        parse:
+          type: literal
+          return: FountainKillSelector
+      -
+        value: GasSelect
+        display: false
+        parse:
+          type: literal
+          return: GasSelect
+      -
+        value: Heal
+        display: false
+        parse:
+          type: literal
+          return: Heal
+      -
+        value: HealS1
+        display: false
+        parse:
+          type: literal
+          return: HealS1
+      -
+        value: JustSelector
+        display: false
+        parse:
+          type: literal
+          return: JustSelector
+      -
+        value: Line
+        display: false
+        parse:
+          type: literal
+          return: Line
+      -
+        value: MagnetMark
+        display: false
+        parse:
+          type: literal
+          return: MagnetMark
+      -
+        value: MarkStunAttack_S1
+        display: false
+        parse:
+          type: literal
+          return: MarkStunAttack_S1
+      -
+        value: MarkStunAttack_S2
+        display: false
+        parse:
+          type: literal
+          return: MarkStunAttack_S2
+      -
+        value: MaxHpSelector
+        display: false
+        parse:
+          type: literal
+          return: MaxHpSelector
+      -
+        value: Mirror
+        display: false
+        parse:
+          type: literal
+          return: Mirror
+      -
+        value: Passive
+        display: false
+        parse:
+          type: literal
+          return: Passive
+      -
+        value: Phase2_S1_Effector
+        display: false
+        parse:
+          type: literal
+          return: Phase2_S1_Effector
+      -
+        value: RandomFinder
+        display: false
+        parse:
+          type: literal
+          return: RandomFinder
+      -
+        value: Range
+        display: false
+        parse:
+          type: literal
+          return: Range
+      -
+        value: Range2
+        display: false
+        parse:
+          type: literal
+          return: Range2
+      -
+        value: Reborn
+        display: false
+        parse:
+          type: literal
+          return: Reborn
+      -
+        value: RebornSummon
+        display: false
+        parse:
+          type: literal
+          return: RebornSummon
+      -
+        value: RotateAttack
+        display: false
+        parse:
+          type: literal
+          return: RotateAttack
+      -
+        value: S2
+        display: false
+        parse:
+          type: literal
+          return: S2
+      -
+        value: S2Attack
+        display: false
+        parse:
+          type: literal
+          return: S2Attack
+      -
+        value: S3AtkSelector
+        display: false
+        parse:
+          type: literal
+          return: S3AtkSelector
+      -
+        value: S3DefSelector
+        display: false
+        parse:
+          type: literal
+          return: S3DefSelector
+      -
+        value: S3HpSelector
+        display: false
+        parse:
+          type: literal
+          return: S3HpSelector
+      -
+        value: S3_Attack
+        display: false
+        parse:
+          type: literal
+          return: S3_Attack
+      -
+        value: Sacrifice
+        display: false
+        parse:
+          type: literal
+          return: Sacrifice
+      -
+        value: SealDebuff
+        display: false
+        parse:
+          type: literal
+          return: SealDebuff
+      -
+        value: SelectBase
+        display: false
+        parse:
+          type: literal
+          return: SelectBase
+      -
+        value: SelectBossAmiya
+        display: false
+        parse:
+          type: literal
+          return: SelectBossAmiya
+      -
+        value: SelectCharacter
+        display: false
+        parse:
+          type: literal
+          return: SelectCharacter
+      -
+        value: SelectChildSingle
+        display: false
+        parse:
+          type: literal
+          return: SelectChildSingle
+      -
+        value: SelectChld
+        display: false
+        parse:
+          type: literal
+          return: SelectChld
+      -
+        value: SelectCore
+        display: false
+        parse:
+          type: literal
+          return: SelectCore
+      -
+        value: SelectEnemy
+        display: false
+        parse:
+          type: literal
+          return: SelectEnemy
+      -
+        value: SelectEntlecWithoutHitRange
+        display: false
+        parse:
+          type: literal
+          return: SelectEntlecWithoutHitRange
+      -
+        value: SelectGun
+        display: false
+        parse:
+          type: literal
+          return: SelectGun
+      -
+        value: SelectMcreep
+        display: false
+        parse:
+          type: literal
+          return: SelectMcreep
+      -
+        value: SelectNearestCanon
+        display: false
+        parse:
+          type: literal
+          return: SelectNearestCanon
+      -
+        value: SelectNearestMcreep
+        display: false
+        parse:
+          type: literal
+          return: SelectNearestMcreep
+      -
+        value: SelectOtherPckstp
+        display: false
+        parse:
+          type: literal
+          return: SelectOtherPckstp
+      -
+        value: SelectOthers
+        display: false
+        parse:
+          type: literal
+          return: SelectOthers
+      -
+        value: SelectP1
+        display: false
+        parse:
+          type: literal
+          return: SelectP1
+      -
+        value: SelectSkzjkl
+        display: false
+        parse:
+          type: literal
+          return: SelectSkzjkl
+      -
+        value: SelectSkzth
+        display: false
+        parse:
+          type: literal
+          return: SelectSkzth
+      -
+        value: SelectVg
+        display: false
+        parse:
+          type: literal
+          return: SelectVg
+      -
+        value: SelectYmgpck
+        display: false
+        parse:
+          type: literal
+          return: SelectYmgpck
+      -
+        value: Skill
+        display: false
+        parse:
+          type: literal
+          return: Skill
+      -
+        value: Strong
+        display: false
+        parse:
+          type: literal
+          return: Strong
+      -
+        value: Stun
+        display: false
+        parse:
+          type: literal
+          return: Stun
+      -
+        value: SummonSpilot
+        display: false
+        parse:
+          type: literal
+          return: SummonSpilot
+      -
+        value: T1Selector
+        display: false
+        parse:
+          type: literal
+          return: T1Selector
+      -
+        value: TraitHealRange
+        display: false
+        parse:
+          type: literal
+          return: TraitHealRange
+      -
+        value: TwinSelector
+        display: false
+        parse:
+          type: literal
+          return: TwinSelector
+      -
+        value: UseLifeSteal
+        display: false
+        parse:
+          type: literal
+          return: UseLifeSteal
+      -
+        value: Water
+        display: false
+        parse:
+          type: literal
+          return: Water
+      -
+        value: act3bossrush_team3
+        display: false
+        parse:
+          type: literal
+          return: act3bossrush_team3
+      -
+        value: amiya3_skill1
+        display: false
+        parse:
+          type: literal
+          return: amiya3_skill1
+      -
+        value: charge_gunctrl
+        display: false
+        parse:
+          type: literal
+          return: charge_gunctrl
+      -
+        value: detectExi
+        display: false
+        parse:
+          type: literal
+          return: detectExi
+      -
+        value: frozenAura
+        display: false
+        parse:
+          type: literal
+          return: frozenAura
+      -
+        value: global_range
+        display: false
+        parse:
+          type: literal
+          return: global_range
+      -
+        value: halfIdle_select_enemy_with_lowest_HP
+        display: false
+        parse:
+          type: literal
+          return: halfIdle_select_enemy_with_lowest_HP
+      -
+        value: lin_t_1_s_3_selector
+        display: false
+        parse:
+          type: literal
+          return: lin_t_1_s_3_selector
+      -
+        value: miner_level3
+        display: false
+        parse:
+          type: literal
+          return: miner_level3
+      -
+        value: papyrs_s_2
+        display: false
+        parse:
+          type: literal
+          return: papyrs_s_2
+      -
+        value: pray
+        display: false
+        parse:
+          type: literal
+          return: pray
+      -
+        value: "racing_catcher[char]"
+        display: false
+        parse:
+          type: literal
+          return: "racing_catcher[char]"
+      -
+        value: shield_s1
+        display: false
+        parse:
+          type: literal
+          return: shield_s1
+      -
+        value: sktok_stmbot
+        display: false
+        parse:
+          type: literal
+          return: sktok_stmbot
+      -
+        value: sword_split
+        display: false
+        parse:
+          type: literal
+          return: sword_split
+      -
+        value: talr_s_2
+        display: false
+        parse:
+          type: literal
+          return: talr_s_2
+      -
+        value: wtrman_trigger
+        display: false
+        parse:
+          type: literal
+          return: wtrman_trigger
+  _actionFailedIfNoTarget:
+    type: boolean
+    description: action Failed If No Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET

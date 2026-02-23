@@ -1,0 +1,25 @@
+field: _professions
+type: object
+description: professions
+actions:
+  LegionModeOnlyDrawCardViaProfession:
+    type: array
+    values:
+      -
+        value: "["PIONEER"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+      -
+        value: "["SNIPER, CASTER"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx

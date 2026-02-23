@@ -1,0 +1,102 @@
+actionType: CreateCardBuffToMaxCost
+fields:
+  _cardBuffEffectPlugin:
+    type: null
+    description: card Buff Effect Plugin
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _cardBuffKey:
+    type: null
+    description: card Buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _excludeCardBuffKey:
+    type: null
+    description: exclude Card Buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: ALL_THE_TIME
+        display: false
+        parse:
+          type: literal
+          return: ALL_THE_TIME
+  _manuallyChangeCardState:
+    type: string
+    description: manually Change Card State
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+  _playAudio:
+    type: null
+    description: play Audio
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false

@@ -1,0 +1,38 @@
+actionType: FilterByTargetEpRatio
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+  _epRatio:
+    type: number
+    description: ep Ratio
+    values:
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
