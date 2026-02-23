@@ -162,6 +162,12 @@ async function buildAction(
 	showAll: boolean,
 	prefix?: string,
 ): Promise<TreeOption> {
+	/* null / 非法值 → dummy 占位节点 */
+	if (!action || typeof action !== 'object' || !('$type' in action)) {
+		const dummyLabel = prefix ? `${prefix} (空节点)` : '(空节点)'
+		return leaf(baseKey, dummyLabel, true)
+	}
+
 	const nodeType = extractNodeType(action.$type as string)
 	const nodes = await loadActionNodes()
 	const desc = nodes?.[nodeType]?.description ?? humanize(nodeType)
@@ -213,9 +219,12 @@ async function buildAction(
 			children.push(await buildAction(value, ck, showAll, fdesc))
 			continue
 		}
-		if (Array.isArray(value) && value.length > 0 && isActionNode(value[0])) {
+		if (Array.isArray(value) && value.length > 0 && value.some(v => isActionNode(v))) {
 			const items = await Promise.all(
-				value.map((item, i) => buildAction(item as Record<string, unknown>, `${ck}/${i}`, showAll, `[${i}]`)),
+				value.map((item, i) => {
+					const ik = `${ck}/${i}`
+					return buildAction(item as Record<string, unknown>, ik, showAll, `[${i}]`)
+				}),
 			)
 			children.push({ key: ck, label: fdesc, children: items })
 			continue
@@ -264,7 +273,7 @@ async function buildEvents(
 		const actionNodes = await Promise.all(
 			(actions as Record<string, unknown>[]).map((a, i) =>
 				buildAction(a, `${ek}/${i}`, showAll, `[${i}]`),
-			),
+			).filter(Boolean),
 		)
 		children.push({ key: ek, label: event, children: actionNodes })
 	}

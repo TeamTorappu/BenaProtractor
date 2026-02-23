@@ -84,6 +84,7 @@
           <div class="flex-grow min-w-0 h-full">
             <n-card title="数据结构" size="small" class="h-full overflow-hidden" :segmented="{ content: true }">
               <template #header-extra>
+                {{ selectedKey }}
                 <n-switch v-if="selectedKey" v-model:value="showAll" size="small" @update:value="refreshTree">
                   <template #checked>全部</template>
                   <template #unchecked>精简</template>

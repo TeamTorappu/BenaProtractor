@@ -1880,7 +1880,7 @@ IfDamageTargetSide:
   description: If Damage Target Side
   icon: null
 IfElse:
-  description: If Else
+  description: 执行判断
   icon: null
 IfEnemyIsMoving:
   description: If Enemy Is Moving
