@@ -20,14 +20,6 @@ export interface ParseCtx {
 
 export const fnMap: Map<string, Function> = new Map()
 
-/** 递归标记整棵子树为 display: false */
-function markHidden(node: TreeOption): TreeOption {
-    return {
-        ...node,
-        display: false,
-        children: node.children?.map(markHidden),
-    }
-}
 
 /* ── 标量解析函数（返回 string） ── */
 

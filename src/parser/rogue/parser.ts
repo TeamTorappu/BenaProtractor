@@ -311,7 +311,7 @@ export async function parseRogueToTree(
 
 	result.push({
 		key: 'buffs',
-		label: `buffs (${buffs.length})`,
+		label: `效果 (${buffs.length})`,
 		children,
 	})
 
