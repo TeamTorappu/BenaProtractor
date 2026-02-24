@@ -168,5 +168,15 @@
 	},
 	"sub_profession" : {
 		"" : ""
+	},
+	"trig_type" : {
+		"GAIN" : "获得时",
+		"TAKE_OUT" : "获得时",
+		"PUT_BACK" : "失去时"
+	},
+	"trig_type_copper" : {
+		"GAIN" : "获得时",
+		"TAKE_OUT" : "投出时",
+		"PUT_BACK" : "放回钱盒后"
 	}
 }

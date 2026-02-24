@@ -5,11 +5,14 @@
 import json
 import math
 from data_class import *
+from bena import ask_bena
 
 ANNE_NODE = None
 ANNE_RELIC = None
 ANNE_DICTIONARY_PATH = "./translation/anne_dictionary.json"
 ANNE_DICTIONARY = None
+
+GAP = 0.000000001
 
 # 读取字典数据
 if ANNE_DICTIONARY == None:
@@ -138,8 +141,9 @@ class AnneNode:
         # 异常效果家族与属性增减
         attrs = buff_data["attributes"]
         features = []
+        # 以下内容yj都写过[]和null的格式，泥岩的recharge居然同时两种都用，绝了
         # 异常效果
-        if len(attrs["abnormalFlags"]) > 0:
+        if attrs["abnormalFlags"] != None and len(attrs["abnormalFlags"]) > 0:
             for flag in attrs["abnormalFlags"]:
                 flag_name = read_dictionary("abnormal",flag)
                 features.append(flag_name)
@@ -147,27 +151,27 @@ class AnneNode:
                 if flag in ["STUNNED","COLD","FROZEN"]:
                     has_resistable_flag = True
         # 异常免疫
-        if len(attrs["abnormalImmunes"]) > 0:
+        if attrs["abnormalImmunes"] != None and len(attrs["abnormalImmunes"]) > 0:
             for flag in attrs["abnormalImmunes"]:
                 flag_name = read_dictionary("abnormal",flag)
                 features.append(flag_name+"免疫")
         # 异常反制
-        if len(attrs["abnormalAntis"]) > 0:
+        if attrs["abnormalAntis"] != None and len(attrs["abnormalAntis"]) > 0:
             for flag in attrs["abnormalAntis"]:
                 flag_name = read_dictionary("abnormal",flag)
                 features.append(flag_name+"反制")
         # 异常组合
-        if len(attrs["abnormalCombos"]) > 0:
+        if attrs["abnormalCombos"] != None and len(attrs["abnormalCombos"]) > 0:
             for combo in attrs["abnormalCombos"]:
                 combo_name = read_dictionary("abnormal",combo)
                 features.append(combo_name)
         # 异常组合免疫
-        if len(attrs["abnormalImmunes"]) > 0:
-            for combo in attrs["abnormalImmunes"]:
+        if attrs["abnormalComboImmunes"] != None and len(attrs["abnormalComboImmunes"]) > 0:
+            for combo in attrs["abnormalComboImmunes"]:
                 combo_name = read_dictionary("abnormal",combo)
                 features.append(combo_name+"免疫")
         # 属性加成（四 则 运 算）
-        if len(attrs["attributeModifiers"]) > 0:
+        if attrs["attributeModifiers"] != None and len(attrs["attributeModifiers"]) > 0:
             for modify in attrs["attributeModifiers"]:
                 attr_name = read_dictionary("attribute",modify["attributeType"])
                 formula = modify["formulaItem"]
@@ -190,14 +194,13 @@ class AnneNode:
                         value_str = "×"+value_str+"%(终乘)"
                 else:
                     if formula == "FINAL_SCALER": # yj的小巧思会让终乘在负的情况下+1，实际徒增学习和排错成本
-                        value_str = to_hundred_percent(value,False,True) + "(终乘)"
+                        value_str = to_percent(value,True) + "(终乘)"
                     elif formula == "MULTIPLIER": # 直乘就没有这种小巧思
-                        value_str = to_hundred_percent(value,True)
+                        value_str = to_delta_percent(value)
                     elif formula == "ADDITION": # 剩下两个只看正负号
-                        value_str = str(value) if value < 0 else f"+{value}"
+                        value_str = to_delta(value)
                     elif formula == "FINAL_ADDITION": # 剩下两个只看正负号
-                        value_str = str(value) if value < 0 else f"+{value}"
-                        value_str = value_str + "(终加)"
+                        value_str = to_delta(value) + "(终加)"
                 # 根据算法
                 features.append(attr_name+value_str)
         # 写入results
@@ -476,7 +479,7 @@ class AnneNode:
         source_name = read_dictionary("target",node["_sourceType"])
         target_name = read_dictionary("target",node["_targetType"])
         damage_name = self.analyze_damage(node) # 直接把整个node传参进去
-        default_atk_scale = to_hundred_percent(node["_defaultAtkScale"])
+        default_atk_scale = to_percent(node["_defaultAtkScale"])
         return {
             "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}{damage_name}",
             "description" : f"会读取黑板中的{node['_atkScaleVar']}作为攻击力倍率使用"
@@ -719,7 +722,11 @@ class AnneNode:
                 "false" : false_flag
             }
         else:
-            return {"main" : "（无效节点）"}
+            return {
+                "main" : "检查Buff，但给定条件无法检查（写法有误？）",
+                "true" : "（始终不执行）",
+                "true" : "（始终不执行）"
+            }
 
 '''
 #----------------------------------------
@@ -739,13 +746,13 @@ class AnneRelic:
             # 全局buff有二级结构所以拆开来解析
             if effect_key == "global_buff_normal": 
                 buff_key = rogue_effect.blackboard["key"] # 这个才是buff的名字
-                method = getattr(self, "gbn_"+buff_key, "")
+                method = getattr(self, "gbn_"+buff_key.replace("[","_").replace("]",""), "")
                 if method != "" :
-                    rogue_effect.translation = method(rogue_effect.blackboard)
+                    rogue_effect.translation = method(rogue_effect.type,rogue_effect.blackboard)
                     return rogue_effect.translation
                 else: # 无法翻译，把所有数据搓成可阅读的格式
                     rogue_effect.translation = {
-                        "main" : "常规全局Buff - "+buff_key+"（未翻译）",
+                        "main" : "环境效果："+buff_key+"（未翻译）",
                         "style_closed" : True,
                         "children" : []
                     }
@@ -754,7 +761,7 @@ class AnneRelic:
             else: # 其他的效果
                 method = getattr(self, "rogue_"+effect_key, "")
                 if method != "" :
-                    rogue_effect.translation = method(rogue_effect.blackboard)
+                    rogue_effect.translation = method(rogue_effect.type,rogue_effect.blackboard)
                     return rogue_effect.translation
                 else: # 无法翻译，把所有数据搓成可阅读的格式
                     rogue_effect.translation = {
@@ -767,70 +774,230 @@ class AnneRelic:
         # 返回译文
         return rogue_effect.translation
     
+    # 生效时点的处理
+    # 返回生效时间的字符串。
+    def analyze_timing(self,item_type,blackboard):
+        # 根据触发类型...
+        trig_type = "GAIN"
+        if "trig_type" in blackboard:
+            trig_type = blackboard["trig_type"]
+        # 界园钱特殊处理
+        if item_type == "COPPER_BUFF":
+            return read_dictionary("trig_type_copper",trig_type)
+        # 返回时点文本
+        return read_dictionary("trig_type",trig_type)
+
     # 职业筛选的处理
-    # 返回字符串。说明筛选的职业以及“干员”和“召唤物”这样的称呼
+    # 返回职业的字符串。说明筛选的职业以及“干员”和“召唤物”这样的称呼
     def analyze_profession(self,profession_mask):
         profession_mask = profession_mask.upper()
+        masked_list = [profession_mask]
         if "," in profession_mask:
-            masked_list = profession.split(",")
-            # 如果大于等于8职业的话有可能是用于筛所有干员的，进行缩减处理
-            if len(masked_list) >= 8 and "PIONEER" in masked_list and "WARRIOR" in masked_list and "TANK" in masked_list and "SNIPER" in masked_list and "CASTER" in masked_list and "SUPPORT" in masked_list and "MEDIC" in masked_list and "SPECIAL" in masked_list:
-                    if "TOKEN" in masked_list and "TRAP" in masked_list:
-                        return "干员、召唤物、装置"
-                    elif "TOKEN" in masked_list:
-                        return "干员、召唤物"
-                    else: #elif "TRAP" in masked_list:
-                        return "干员、装置"
+            masked_list = profession_mask.split(",")
+        elif "|" in profession_mask:
+            masked_list = profession_mask.split("|")
+        # 如果大于等于8职业的话有可能是用于筛所有干员的，进行缩减处理
+        if len(masked_list) >= 8 and "PIONEER" in masked_list and "WARRIOR" in masked_list and "TANK" in masked_list and "SNIPER" in masked_list and "CASTER" in masked_list and "SUPPORT" in masked_list and "MEDIC" in masked_list and "SPECIAL" in masked_list:
+            if "TOKEN" in masked_list and "TRAP" in masked_list:
+                return "干员、召唤物、装置"
+            elif "TOKEN" in masked_list:
+                return "干员、召唤物"
+            elif "TRAP" in masked_list:
+                return "干员、装置"
             else:
-                professions = []
-                objects = []
-                for masked in masked_list:
-                    if mask in ["TOKEN","TRAP"]:
-                        objects.append(read_dictionary("profession",mask))
-                    else:
-                        professions.append(read_dictionary("profession",mask))
-                return "、".join(["/".join(professions)+"干员"] + objects)
+                return "干员"
+        else:
+            professions = []
+            objects = []
+            for masked in masked_list:
+                if masked in ["TOKEN","TRAP"]:
+                    objects.append(read_dictionary("profession",masked))
+                else:
+                    professions.append(read_dictionary("profession",masked))
+            return "、".join(["/".join(professions)+"干员"] + objects)
     
+    # 整个选择器的处理
+    # 返回选择器称呼的字符串。说明筛选的职业、部署类型以及“干员”和“召唤物”这样的称呼
+    def analyze_selector(self,blackboard,prefix="",suffix=""):
+        # 部署类型处理
+        place = ""
+        if "selector.buildable" in blackboard:
+            if blackboard["selector.buildable"] == "melee":
+                place = "部署类型为近战位的"
+            elif blackboard["selector.buildable"] == "ranged":
+                place = "部署类型为远程位的"
+        # 职业筛选处理，没有默认全部单位
+        if "selector.profession" in blackboard:
+            target_name = self.analyze_profession(blackboard["selector.profession"])
+            return f"所有{place}{prefix}{target_name}{suffix}"
+        else:
+            return f"所有{place}{prefix}单位{suffix}"
+    
+    # 道具的处理
+    # 返回结构体，可能会带有链接
+    def analyze_item(self,blackboard):
+        if "id" in blackboard:
+            item = ask_bena("rogue_item",blackboard["id"])
+            if item != None:
+                if item.type == "COPPER": # 界园钱的特殊处理
+                    return {
+                        "main": f"让 {item.display_name} 加入玩家钱盒。",
+                        "link": blackboard['id']
+                    }
+                return {
+                    "main": f"给予玩家{item.display_type} {item.display_name} ×{math.floor(blackboard.get('count',0))}",
+                    "link": blackboard['id']
+                }
+            return {"main": f"给予玩家 {blackboard['id']} ×{math.floor(blackboard.get('count',0))}"}
+        return {"main": f"尝试给予玩家物品，但因未配置物品ID，没有实际效果。"}
+
+    #----------------------------------------
+    # 局外效果
+    #----------------------------------------
+    # 关卡内的可部署人数上限增减
+    def rogue_level_char_limit_add(self,item_type,blackboard):
+        value = blackboard.get("value",0)
+        if value < 0:
+            return {"main": f"战斗中的可部署人数上限{to_delta(value)}（不会低于1）"}
+        else:
+            return {"main": f"战斗中的可部署人数上限{to_delta(value)}"}
+    
+    # 立即奖励
+    def rogue_immediate_reward(self,item_type,blackboard):
+        timing = self.analyze_timing(item_type,blackboard)
+        translation = self.analyze_item(blackboard)
+        translation["main"] = timing+"，"+translation["main"]
+        return translation
+    
+    # 进入特殊节点奖励一次？
+    def rogue_secret_into_reward_once(self,item_type,blackboard):
+        timing = self.analyze_timing(item_type,blackboard)
+        translation = self.analyze_item(blackboard)
+        translation["main"] = timing+"，"+translation["main"]
+        return translation
+    
+    # 钱的自变化
+    def rogue_copper_exchange(self,item_type,blackboard):
+        timing = self.analyze_timing(item_type,blackboard)
+        if "id" in blackboard:
+            if blackboard["id"] == "pool_reroll_copper":
+                return {"main" : f"{timing}，尝试将钱盒内的该钱替换为随机的钱"}
+            elif blackboard["id"] == "pool_reroll_copper_high":
+                return {"main" : f"{timing}，尝试将钱盒内的该钱替换为随机的花钱"}
+            elif blackboard["id"] == "pool_reroll_copper_low":
+                return {"main" : f"{timing}，尝试将钱盒内的该钱替换为随机的厉钱"}
+            else:
+                item = ask_bena("rogue_item",blackboard["id"])
+                if item != None:
+                    # 变成指定通宝
+                    if item.type != "COPPER": # 界园钱的特殊处理
+                        return {"main" : f"{timing}，尝试将钱盒内的该钱替换为 {item.display_name}（非通宝，无法正常运作）"}
+                    return {
+                        "main": f"{timing}，尝试将钱盒内的该钱替换为 {item.display_name} 。",
+                        "link": blackboard['id']
+                    }
+        return {"main" : f"{timing}，尝试将钱盒内的该钱替换为空气。"}
+        
+    # 战斗后额外掉落随机招募券
+    def rogue_battle_extra_recruit_ticket(self,item_type,blackboard):
+        return {"main": f"每次战斗结束时，在掉落物中增加{math.floor(blackboard['count'])}个随机招募券。"}
+    
+    # 战斗中获得临时生命值
+    def rogue_level_life_point_add(self,item_type,blackboard):
+        if "trig_type" in blackboard:
+            timing = self.analyze_timing(item_type,blackboard)
+            return {"main" : f"{timing}，战斗开始时获得{blackboard['value']}点本局专用的生命值（会影响国王套判断）"}
+        return {"main" : f"战斗开始时获得{blackboard['value']}点本局专用的生命值（会影响国王套判断）"}
     #----------------------------------------
     # 普通效果
     #----------------------------------------
-    def rogue_char_attribute_mul(self,blackboard):
+    # 角色属性乘法藏品符文
+    def rogue_char_attribute_mul(self,item_type,blackboard):
         modifiers = []
-        if "max_hp" in blackboard:
-            power = to_hundred_percent(blackboard["max_hp"],True)
-            modifiers.append(f"最大生命值{sign}{power}(藏品符文)")
-        if "atk" in blackboard:
-            power = to_hundred_percent(blackboard["atk"],True)
-            modifiers.append(f"攻击力{sign}{power}(藏品符文)")
-        if "def" in blackboard:
-            power = to_hundred_percent(blackboard["def"],True)
-            modifiers.append(f"防御力{sign}{power}(藏品符文)")
-        if "magic_resistance" in blackboard:
-            power = to_hundred_percent(blackboard["magic_resistance"],True)
-            modifiers.append(f"法术抗性{sign}{power}(藏品符文)")
-        # 职业筛选处理，没有默认全部我方单位
-        if "profession" in blackboard:
-            target_name = analyze_profession(blackboard.profession)
-            return {"main" : "我方"+target_name+"、".join(modifiers)}
-        return {"main" : "全部我方单位"+"、".join(modifiers)}
+        for key,value in blackboard.items():
+            if key.upper() in ANNE_DICTIONARY["attribute"]: # 属性字典里存了所有属性类型
+                name = read_dictionary("attribute",key.upper())
+                power = to_delta_percent(value) # +/-X%
+                modifiers.append(f"{name}{power}(藏品符文)")
+        # 选择器目标处理
+        selector = self.analyze_selector(blackboard,"我方")
+        return {"main" : f"{selector}"+"、".join(modifiers)}
+
+    # 角色属性加法藏品符文
+    def rogue_char_attribute_add(self,item_type,blackboard):
+        modifiers = []
+        for key,value in blackboard.items():
+            if key.upper() in ANNE_DICTIONARY["attribute"]: # 属性字典里存了所有属性类型
+                name = read_dictionary("attribute",key.upper())
+                num = to_delta(value) # +/-X
+                modifiers.append(f"{name}{num}(藏品符文)")
+        # 选择器目标处理
+        selector = self.analyze_selector(blackboard,"我方")
+        return {"main" : f"{selector}"+"、".join(modifiers)}
+
+    # 依照持有的“物品”数量增加角色属性
+    def rogue_layer_char_attribute_add(self,item_type,blackboard):
+        need_item_key = blackboard["stack_by_res"]
+        need_item = ask_bena("rogue_item",need_item)
+        need_var = math.floor(blackboard["stack_by_res_cnt"])
+        modifiers = []
+        for key,value in blackboard.items():
+            if key.upper() in ANNE_DICTIONARY["attribute"]: # 属性字典里存了所有属性类型
+                name = read_dictionary("attribute",key.upper())
+                num = to_delta(value) # +/-X
+                modifiers.append(f"{name}{num}(藏品符文)")
+        # 选择器目标处理
+        selector = self.analyze_selector(blackboard,"我方")
+        return {
+            "main" : f"每有{need_var}个 {need_item}（向下取整），{selector}"+"、".join(modifiers),
+            "link" : need_item_key
+        }
+
+    # 特定情况下的奖励增加
+    #def rogue_up_reward(self,item_type,blackboard):
+    #    timing = "未知时机"
+    #    if blackboard["mask"] == "battle":
+    #        timing = "战斗胜利时"
     
     #----------------------------------------
     # 常规全局Buff的拆分解析（gbn）
     #----------------------------------------
     # 敌方最大生命值最终下降
-    def gbn_enemy_max_hp_down(self,blackboard):
-        power = to_hundred_percent(blackboard["max_hp"],False,True)
-        return {"main" : f"常规全局Buff - 敌方最大生命值×{power}"}   
+    def gbn_enemy_max_hp_down(self,item_type,blackboard):
+        power = to_delta_percent(blackboard["max_hp"])
+        return {"main" : f"环境效果：敌方最大生命值×{power}(终乘)"}   
 
     # 敌方防御力最终下降
-    def gbn_enemy_def_down(self,blackboard):
-        power = to_hundred_percent(blackboard["def"],False,True)
-        return {"main" : f"常规全局Buff - 敌方防御力×{power}"}
+    def gbn_enemy_def_down(self,item_type,blackboard):
+        power = to_percent(blackboard["def"],True)
+        return {"main" : f"环境效果：敌方防御力×{power}(终乘)"}
 
     # 敌方攻击力最终下降
-    def gbn_enemy_atk_down(self,blackboard):
-        power = to_hundred_percent(blackboard["atk"],False,True)
-        return {"main" : f"常规全局Buff - 敌方攻击力×{power}"}
+    def gbn_enemy_atk_down(self,item_type,blackboard):
+        power = to_percent(blackboard["atk"],True)
+        return {"main" : f"环境效果：敌方攻击力×{power}(终乘)"}
+
+    # 敌方变轻
+    def gbn_enemy_lighter(self,item_type,blackboard):
+        power = to_delta(blackboard["mass_level"])
+        return {"main" : f"环境效果：敌方重量等级{power}(直加)"}
+
+    # 湖中神盾
+    def gbn_rogue_3_increaseMaxHPWhenHavingShield(self,item_type,blackboard):
+        power = to_delta_percent(blackboard["mass_level"])
+        return {"main" : f"环境效果：开始战斗时若有护盾，所有我方单位{power}(直乘)"}
+
+    # 城墙之子
+    def gbn_rogue_4_finalDefense_end_tile(self,item_type,blackboard):
+        hp_power = to_delta_percent(blackboard["max_hp"])
+        block_power = to_delta(blackboard["block_cnt"])
+        target = self.analyze_selector(blackboard,"我方")
+        return {
+            "main" : f"环境效果：给予位于保护目标点及其周围八格的{target}增益Buff：",
+            "children" : [
+                {"main" : f"最大生命值{hp_power}(直乘)、阻挡数{block_power}(直加)、"}
+            ]
+        }
 
 ANNE_NODE = AnneNode()
 ANNE_RELIC = AnneRelic()
@@ -843,35 +1010,51 @@ ANNE_RELIC = AnneRelic()
 def read_dictionary(catalogue,type_str):
     return ANNE_DICTIONARY[catalogue].get(type_str,type_str)
 
-# 将数值加成改成+/-百分比格式，如果结尾是.0还会自动删去
+# 将数值加成改成+/-X的格式，如果结尾是.0还会自动删去
+def to_delta(addition_value):
+    # 去无意义小数
+    if abs(addition_value - round(addition_value)) < GAP: 
+        addition_value = round(addition_value)
+    # 检查正负
+    if addition_value < 0:
+        return str(addition_value) # 负数本来就有符号
+    else:
+        return "+"+str(addition_value)
+
+# 将数值加成改成X%格式，如果结尾是.0还会自动删去
 # 可以要求提供正负符号，当然负数本来就有符号。
-def to_hundred_percent(power_value,need_sign=False,negative_need_plus_one=False):
+def to_percent(power_value,negative_need_plus_one=False):
     percent_value = power_value * 100
     # 如果为负则加一的可选项
     if negative_need_plus_one and percent_value < 0:
         percent_value += 100
     # 去无意义小数
-    if percent_value == math.floor(percent_value): 
-        percent_value = int(percent_value)
-    # 检查正负
-    if need_sign:
-        # 提供符号
-        if percent_value < 0:
-            return str(percent_value)+"%"
-        else:
-            return "+"+str(percent_value)+"%"
+    if abs(percent_value - round(percent_value)) < GAP: 
+        percent_value = round(percent_value)
+    # 检查正负（外部应该会自己加上符号，因此负数要打个括号）
+    if percent_value < 0:
+        return "("+str(percent_value)+")%"
     else:
-        # 不提供符号，外部应该会自己加上符号，因此负数要打个括号
-        if percent_value < 0:
-            return "("+str(percent_value)+")%"
-        else:
-            return str(percent_value)+"%"
+        return str(percent_value)+"%"
+
+# 将数值加成改成+/-X%格式，如果结尾是.0还会自动删去
+# 可以要求提供正负符号，当然负数本来就有符号。
+def to_delta_percent(power_value):
+    percent_value = power_value * 100
+    # 去无意义小数
+    if abs(percent_value - round(percent_value)) < GAP: 
+        percent_value = round(percent_value)
+    # 检查正负
+    if percent_value < 0:
+        return str(percent_value)+"%" # 负数本来就有符号
+    else:
+        return "+"+str(percent_value)+"%"
 
 # 翻译一整个BuffTemplate
 def translate_whole_buff_template(buff_template: BuffTemplate):
     print("[安妮]尝试翻译Buff模板 "+buff_template.buff_key)
     translation = {
-        "main" : buff_template.buff_key,
+        "main" : f"{buff_template.display_name}（{buff_template.buff_key}）",
         "children" : []
     }
     if buff_template.on_event_priority != "DEFAULT":
@@ -903,35 +1086,59 @@ def translate_whole_buff_template(buff_template: BuffTemplate):
         translation["children"].append(event_translation)
     return translation
 
+LINE_LIMIT = 40
 # 翻译一整个RogueItem
 def translate_whole_rogue_item(rogue_item: RogueItem):
-    print("[安妮]尝试翻译肉鸽道具 "+rogue_item.item_key)
+    print(f"[安妮]尝试翻译{rogue_item.display_type} {rogue_item.display_name}（{rogue_item.item_key}）")
     translation = {
         "main" : f"{rogue_item.display_name}（{rogue_item.item_key}）",
         "children" : []
     }
     # 展示原始的文案
-    translation["children"].append({"main" : rogue_item.item_info["description"]})
-    translation["children"].append({"main" : "类型:"+rogue_item.display_type})
-    translation["children"].append({"main" : "稀有度:"+rogue_item.item_info["rarity"]}) # 需翻译
-    # 翻译藏品效果
+    if rogue_item.item_info["description"] != None:
+        description_lines = rogue_item.item_info["description"].splitlines()
+        for description_line in description_lines:
+            if len(description_line) > LINE_LIMIT:
+                while(len(description_line) > LINE_LIMIT): #强制自动换行
+                    translation["children"].append({"main" : description_line[:LINE_LIMIT]})
+                    description_line = description_line[LINE_LIMIT:]
+            translation["children"].append({"main" : description_line})
+    
+    # 类型和稀有度
+    translation["children"].append({"main" : "类型 : " + rogue_item.display_type + " | "+rogue_item.type})
+    translation["children"].append({"main" : "稀有度 : " + rogue_item.item_info["rarity"]}) # 需翻译
+    
+    # 界园的钱始终有两套，加个超链接
+    if rogue_item.type == "COPPER_BUFF":
+        another_key = rogue_item.item_key.replace("copper_buff","copper")
+        if ask_bena(rogue_item,another_key) != None:
+            translation["children"].append({"main" : f"（这里的鹰文可能与游戏内有出入，文案用的钱请见  {another_key}）","link" : another_key})
+    elif rogue_item.type == "COPPER":
+        another_key = rogue_item.item_key.replace("copper","copper_buff")
+        if ask_bena(rogue_item,another_key) != None:
+            translation["children"].append({"main" : f"（这是展示文案用的钱，钱的实际效果请见 {another_key}）","link" : another_key})
+
+    # 藏品效果或解释的原文
+    if rogue_item.item_info["usage"] != None:
+        usage = {"main" : rogue_item.display_type+"鹰文：","children": []}
+        usage_lines = rogue_item.item_info["usage"].splitlines()
+        for usage_line in usage_lines:
+            if len(usage_line) > LINE_LIMIT:
+                while(len(usage_line) > LINE_LIMIT): #强制自动换行
+                    usage["children"].append({"main" : usage_line[:LINE_LIMIT]})
+                    usage_line = usage_line[LINE_LIMIT:]
+            usage["children"].append({"main" : usage_line})
+        translation["children"].append(usage)
+    
+    # 效果文本
     if rogue_item.has_effect:
-        #原文
-        effect_origin = {
-            "main" : "藏品鹰文：",
-            "children": []
-        }
-        useage_lines = rogue_item.item_info["usage"].splitlines()
-        for useage_line in useage_lines:
-            effect_origin["children"].append({"main" : useage_line})
-        translation["children"].append(effect_origin)
-        #翻译后
         effect_translation = {
-            "main" : "藏品效果：",
+            "main" : rogue_item.display_type+"效果：",
             "children" : []
         }
         # 逐个效果翻译
         for effect in rogue_item.effect_list:
             effect_translation["children"].append(ANNE_RELIC.translate(effect))
         translation["children"].append(effect_translation)
+
     return translation

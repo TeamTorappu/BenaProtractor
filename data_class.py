@@ -48,16 +48,18 @@ class Node:
 class BuffTemplate:
     def __init__(self, buff_key, buff_data):
         self.buff_key = buff_key
+        self.display_name = buff_key
+        self.buff_data = buff_data
         self.template_key = buff_data["templateKey"] # 虽然不知道有啥区别，总之留着吧
         #self.effect_key = buff_data["effectKey"] # 特效没啥处理的必要
+        self.hidden = False
         self.on_event_priority = buff_data["onEventPriority"]
         self.events = []
         for event_name in buff_data["eventToActions"].keys():
             self.events.append(BuffEvent(event_name,buff_data["eventToActions"][event_name]))
-        self.display_name = ""
     
     # 获取显示名
-    def display_name(self):
+    def get_display_name(self):
         if self.display_name == "":
             return self.buff_key
         return self.display_name
@@ -76,10 +78,17 @@ class BuffEvent:
 
 # 肉鸽的Buff数据类，未来可能可以统一度量衡，目前还是算了
 class RogueBuffData:
-    def __init__(self, buff_data):
+    def __init__(self, buff_data, item_type):
         self.key = buff_data["key"]
+        self.type = item_type # 父级的类型，用于传参
         self.blackboard = process_blackboard(buff_data["blackboard"])
         self.translation = None
+
+RESOURCE_TYPES = [
+    "GOLD","EXP","HP","HPMAX","SHIELD","SQUAD_CAPACITY",
+    "SPECIAL_ZONE_AP","CUSTOM_TICKET","COPPER_DRAW_NUM",
+    "STASH_RECRUIT_LIMIT","DIVINATION_KIT","POPULATION"
+]
 
 # 肉鸽的道具类，可能是藏品，可能是资源，甚至可能是排异反应/岁时之类的东西
 class RogueItem:
@@ -88,9 +97,10 @@ class RogueItem:
         self.item_info = item_info
         self.item_data = item_data
         self.season = season
-        self.display_name = item_info["name"]
+        self.display_name = item_info["name"].strip() # 猜猜为什么
         self.type = item_info["type"]
         self.display_type = ""
+        self.hidden = False
         # 处理分类显示
         if self.type == "RELIC":
             self.display_type = "藏品"
@@ -103,15 +113,27 @@ class RogueItem:
         elif self.type == "ACTIVE_TOOL":
             self.display_type = "支援装置"
         elif self.type == "FEATURE":
-            self.display_type = "精通"
+            self.display_type = "机制"
+        elif self.type == "WRATH":
+            self.display_type = "岁时"
+            if item_data == None:
+                self.hidden = True # 无效果则隐藏
         elif self.type == "COPPER_BUFF":
-            self.display_type = "钱"
+            self.display_type = "钱" # 这是骰出的钱
+            if item_data == None:
+                self.hidden = True # 无效果则隐藏
+        elif self.type == "COPPER":
+            self.display_type = "盒内的钱" # 这个没有数据，不需要展示
+            #self.display_name += "(盒内)"
+            self.hidden = True # 隐藏
+        elif self.type in RESOURCE_TYPES:
+            self.display_type = "资源"
         else:
-            self.display_type = "鸽物"
+            self.display_type = self.type # "鸽物"
         # 如果是藏品或者类藏品，读取持有的buff数据
         self.effect_list = []
         self.has_effect = False
         if item_data != None and "buffs" in item_data:
             self.has_effect = True
             for buff in item_data["buffs"]:
-                self.effect_list.append(RogueBuffData(buff))
+                self.effect_list.append(RogueBuffData(buff,self.type))
