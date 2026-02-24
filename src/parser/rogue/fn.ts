@@ -68,3 +68,20 @@ export async function parseProfession(valueStr: string): Promise<string> {
     return valueStr.split(/[,|;]/g).map((p) => mappings?.[p.toUpperCase()] || p).join(',')
 }
 fnMap.set('parseProfession', parseProfession)
+
+export async function parseToPercent(value: number): Promise<string> {
+    return (value * 100).toFixed(2) + '%';
+}
+fnMap.set('parseToPercent', parseToPercent)
+
+export async function parseBlackboardKey(valueStr: string): Promise<string> {
+    switch (valueStr) {
+        case "enemy_def_down":
+            return "敌人防御力下降";
+        case "enemy_def_up[down_when_take_dmg]":
+            return "敌人防御力上升[受伤时下降]";
+        default:
+            return valueStr;
+    }
+}
+fnMap.set('parseBlackboardKey', parseBlackboardKey)

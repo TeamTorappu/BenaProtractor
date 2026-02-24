@@ -564,16 +564,14 @@ damage_value2:
       generated: true
 def:
   type: number
-  description: def
+  description: 减少
   icon: null
   default:
     parse:
       type: template
-      return: "{0}({1})"
+      return: "{0}"
       args:
-        - value
-        - valueStr
-      generated: true
+        - parseToPercent(value)
 def_down[stack].def:
   type: number
   description: "def_down[stack].def"
@@ -1204,12 +1202,10 @@ key:
   icon: null
   default:
     parse:
-      type: template
-      return: "{0}({1})"
+      type: fn
+      name: parseBlackboardKey
       args:
-        - value
         - valueStr
-      generated: true
 level:
   type: number
   description: level
