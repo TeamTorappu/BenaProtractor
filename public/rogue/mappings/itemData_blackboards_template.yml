@@ -564,7 +564,7 @@ damage_value2:
       generated: true
 def:
   type: number
-  description: 减少
+  description: 变动量
   icon: null
   default:
     parse:
