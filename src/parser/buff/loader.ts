@@ -3,8 +3,8 @@ import { loadPublicYAML } from "@/composables/usePublic";
 async function load(path: string): Promise<any> {
     try {
         return await loadPublicYAML(`buff/mappings/${path}`);
-    } catch {
-        return null;
+    } catch (error) {
+        console.error(`Failed to load ${path}`, error);
     }
 }
 

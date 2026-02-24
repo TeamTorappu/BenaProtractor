@@ -68,6 +68,48 @@ function resolveMatch(
 	return defMatch ?? keysMatch
 }
 
+/**
+ * 解析单个 arg 字符串，支持 fnMap 函数调用语法：`fnName($input)` / `fnName($input, $ctx)`
+ * 也支持嵌套调用：`fnA(fnB($input))`
+ */
+async function resolveArg(arg: string, value: unknown, ctx: unknown): Promise<unknown> {
+	if (arg === '$input') return value
+	if (arg === '$ctx') return ctx
+
+	const fnCallMatch = arg.match(/^(\w+)\((.+)\)$/)
+	if (fnCallMatch) {
+		const fnName = fnCallMatch[1]
+		const fn = fnMap.get(fnName)
+		if (fn) {
+			// 按顶层逗号拆分内部参数（跳过嵌套括号内的逗号）
+			const innerRaw = splitArgs(fnCallMatch[2])
+			const resolved = await Promise.all(
+				innerRaw.map(a => resolveArg(a.trim(), value, ctx)),
+			)
+			return await fn(...resolved)
+		}
+	}
+
+	return arg
+}
+
+/** 按顶层逗号拆分，忽略括号内的逗号 */
+function splitArgs(s: string): string[] {
+	const parts: string[] = []
+	let depth = 0
+	let start = 0
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] === '(') depth++
+		else if (s[i] === ')') depth--
+		else if (s[i] === ',' && depth === 0) {
+			parts.push(s.slice(start, i))
+			start = i + 1
+		}
+	}
+	parts.push(s.slice(start))
+	return parts
+}
+
 async function applyParse(
 	value: unknown,
 	parse: { type: string; return?: unknown; name?: string; args?: string[] },
@@ -78,19 +120,17 @@ async function applyParse(
 
 	if (parse.type === 'template' && parse.return) {
 		const template = String(parse.return)
-		const args = (parse.args ?? []).map((a: any) => {
-			if (a === '$input') return String(value)
-			if (a === '$ctx') return String(ctx)
-			return String(a)
-		})
-		return template.replace(/\{(\d+)\}/g, (_, idx) => args[Number(idx)] ?? '')
+		const args = await Promise.all(
+			(parse.args ?? []).map(a => resolveArg(String(a), value, ctx)),
+		)
+		return template.replace(/\{(\d+)\}/g, (_, idx) => fmt(args[Number(idx)] ?? ''))
 	}
 
 	if (parse.type === 'fn' && parse.name) {
 		const fn = fnMap.get(parse.name)
 		if (fn) {
-			const args = (parse.args ?? []).map(a =>
-				a === '$input' ? value : a === '$ctx' ? ctx : a,
+			const args = await Promise.all(
+				(parse.args ?? []).map(a => resolveArg(String(a), value, ctx)),
 			)
 			return String(await fn(...args))
 		}
@@ -286,7 +326,7 @@ async function buildAction(
 		const keysMatch = matchInValues(fKeys?.values, value)
 		const match = resolveMatch(defMatch, keysMatch)
 
-		const visible = match
+		let visible = match
 			? match.display !== false
 			: (fDef?.default?.display ?? fKeys?.default?.display ?? fTpl?.default?.display) !== false
 
@@ -303,6 +343,9 @@ async function buildAction(
 			displayText = fmt(value)
 		}
 
+		if (!displayText && visible) {
+			visible = false
+		}
 		if (visible || showAll)
 			children.push(leaf(ck, `${fdesc}: ${displayText}`, visible))
 	}

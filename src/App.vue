@@ -10,7 +10,7 @@
               <LogoGithub />
             </n-icon>
           </a>
-          <n-switch v-model:value="isDark" :rail-style="railStyle" >
+          <n-switch v-model:value="isDark" :rail-style="railStyle">
             <template #checked>
               <n-icon size="16">
                 <Moon />
@@ -30,7 +30,7 @@
         <n-layout-content content-style="display: flex; height: 100%; padding: 12px; gap: 12px;">
 
           <div class="w-72 flex-shrink-0 flex flex-col h-full">
-            <n-card size="small" class="h-full flex flex-col overflow-hidden min-h-0" :segmented="{ content: true }">
+            <n-card size="small" class="h-full flex flex-col overflow-auto min-h-0" :segmented="{ content: true }">
               <template #header>
                 <n-tabs v-model:value="activeTab" size="small" class="flex-grow" type="segment" animated>
                   <n-tab-pane name="buff" tab="Buff" />
@@ -38,15 +38,16 @@
                 </n-tabs>
               </template>
               <template #header-extra>
-                <n-badge :value="activeTab === 'buff' ? filteredKeys.length : filteredRogueItems.length" color="#18a058" />
+                <n-badge :value="activeTab === 'buff' ? filteredKeys.length : filteredRogueItems.length"
+                  color="#18a058" />
               </template>
-              <div v-if="activeTab === 'buff'" class="flex-grow overflow-hidden min-h-0">
+              <div v-if="activeTab === 'buff'" class="flex-grow overflow-auto min-h-0">
                 <n-input v-model:value="searchQuery" placeholder="搜索 Buff..." clearable>
                   <template #prefix><n-icon>
                       <Search />
                     </n-icon></template>
                 </n-input>
-                <n-virtual-list :items="filteredKeys" :item-size="34" class="h-full" >
+                <n-virtual-list :items="filteredKeys" :item-size="34" class="h-full">
                   <template #default="{ item }">
                     <div
                       :class="['px-3 py-1.5 my-0.5 rounded cursor-pointer transition-colors',
@@ -57,17 +58,19 @@
                   </template>
                 </n-virtual-list>
               </div>
-              <div v-if="activeTab === 'rogue'" class="flex-grow overflow-hidden min-h-0 flex flex-col gap-3">
+              <div v-if="activeTab === 'rogue'" class="flex-grow overflow-auto min-h-0 flex flex-col gap-3">
                 <div class="space-y-2 flex-shrink-0">
-                  <n-select v-model:value="rogueFilterSeason" placeholder="选择期" clearable :options="rogueSeasonOptions" size="small" />
-                  <n-select v-model:value="rogueFilterType" placeholder="选择类别" clearable :options="rogueTypeOptions" size="small" />
+                  <n-select v-model:value="rogueFilterSeason" placeholder="选择期" clearable :options="rogueSeasonOptions"
+                    size="small" />
+                  <n-select v-model:value="rogueFilterType" placeholder="选择类别" clearable :options="rogueTypeOptions"
+                    size="small" />
                   <n-input v-model:value="rogueSearchQuery" placeholder="搜索..." clearable size="small">
                     <template #prefix><n-icon>
                         <Search />
                       </n-icon></template>
                   </n-input>
                 </div>
-                <n-virtual-list :items="filteredRogueItems" :item-size="34" class="flex-grow overflow-hidden h-full" >
+                <n-virtual-list :items="filteredRogueItems" :item-size="34" class="overflow-auto h-full">
                   <template #default="{ item }">
                     <div
                       :class="['px-3 py-1.5 my-0.5 rounded cursor-pointer transition-colors',
@@ -82,35 +85,28 @@
           </div>
 
           <div class="flex-grow min-w-0 h-full">
-            <n-card title="数据结构" size="small" class="h-full overflow-hidden min-h-0" :segmented="{ content: true }">
+            <n-card size="small" class="h-full overflow-auto min-h-0" :segmented="{ content: true }">
+              <template #header>
+                <div>
+                  数据结构 {{ activeTab === 'buff' && selectedKey ? ` - ${selectedKey}` : '' }}{{ activeTab === 'rogue' &&
+                    selectedRogueId ? ` - ${selectedRogueId}` : '' }}
+                </div>
+              </template>
               <template #header-extra>
                 <div class="flex items-center gap-2">
-                  <n-button
-                    size="small"
-                    :disabled="!treeData.length"
-                    @click="toggleExpandAll"
-                  >
+                  <n-button size="small" :disabled="!treeData.length" @click="toggleExpandAll">
                     {{ expandAllTree ? '全部折叠' : '全部展开' }}
                   </n-button>
-                  {{ selectedKey }}
-                  <n-switch v-if="selectedKey" v-model:value="showAll" size="small" @update:value="refreshTree">
+                  <n-switch v-model:value="showAll" size="small" @update:value="refreshTree">
                     <template #checked>全部</template>
                     <template #unchecked>精简</template>
                   </n-switch>
                 </div>
               </template>
               <div class="h-full overflow-auto min-h-full">
-                <n-tree
-                  class="h-full"
-                  :data="treeData"
-                  :expanded-keys="expandedKeys"
-                  block-line
-                  selectable
-                  expand-on-click
-                  @update:expanded-keys="expandedKeys = $event"
-                  @update:selected-keys="1"
-                  virtual-scroll
-                />
+                <n-tree class="h-full" :data="treeData" :expanded-keys="expandedKeys" block-line selectable
+                  expand-on-click @update:expanded-keys="expandedKeys = $event" @update:selected-keys="1"
+                  virtual-scroll />
               </div>
             </n-card>
           </div>
@@ -118,7 +114,7 @@
         </n-layout-content>
 
         <n-layout-sider :width="450" collapse-mode="width" :collapsed-width="0" show-trigger="arrow-circle" bordered
-          :native-scrollbar="false" class="h-full">
+          class="h-full">
           <n-card title="JSON" size="small" :bordered="false" class="h-full ">
             <div class="h-full overflow-auto">
               <div v-if="isJsonEmpty" class="text-gray-400 text-sm flex items-center justify-center h-full">
@@ -164,7 +160,7 @@ import { loadPublicJSON } from '@/composables/usePublic'
 import { buildRogueObjects, loadRogueSeasons, type RogueItem } from '@/composables/useRogue'
 import { parseBuffsToTree } from '@/parser/buff';
 import { parseRogueToTree } from '@/parser/rogue'
-import { computedAsync } from '@vueuse/core'
+import { computedAsync, useDebounceFn } from '@vueuse/core'
 
 hljs.registerLanguage('json', json)
 
@@ -216,8 +212,8 @@ const filteredRogueItems = computed(() => {
   return rogueItems.value.filter(item => {
     const matchSeason = !rogueFilterSeason.value || item.data.season === rogueFilterSeason.value
     const matchType = !rogueFilterType.value || item.type === rogueFilterType.value
-    const matchSearch = !rogueSearchQuery.value || 
-      item.id.includes(rogueSearchQuery.value) || 
+    const matchSearch = !rogueSearchQuery.value ||
+      item.id.includes(rogueSearchQuery.value) ||
       item.name.includes(rogueSearchQuery.value)
     return matchSeason && matchType && matchSearch
   })
@@ -241,25 +237,24 @@ const filteredKeys = computed(() => {
   return filtered.map(k => ({ label: k, key: k }))
 })
 
-const selectKey = async (key: string) => {
+const selectKey = useDebounceFn(async (key: string) => {
   selectedKey.value = key
   treeData.value = []
   const obj = allBuffdata.value ? allBuffdata.value[key] : undefined
   codeContent.value = obj ? JSON.stringify(obj, null, 2) : '{}'
   treeData.value = await parseBuffsToTree(obj, showAll.value)
   updateExpandedKeys()
-  console.log(treeData.value)
-}
+}, 100)
 
-const selectRogue = async (id: string) => {
+const selectRogue = useDebounceFn(async (id: string) => {
   selectedRogueId.value = id
   const rogueItem = rogueItems.value.find(item => item.id === id)
   if (rogueItem) {
-    codeContent.value = JSON.stringify(rogueItem.data.itemData, null, 2)
-    treeData.value = await parseRogueToTree(rogueItem.data.itemData, showAll.value)
+    codeContent.value = JSON.stringify(rogueItem.data, null, 2)
+    treeData.value = await parseRogueToTree(rogueItem.data, showAll.value)
     updateExpandedKeys()
   }
-}
+}, 100)
 
 const refreshTree = async () => {
   if (activeTab.value === 'buff' && selectedKey.value) {
@@ -269,7 +264,7 @@ const refreshTree = async () => {
   } else if (activeTab.value === 'rogue' && selectedRogueId.value) {
     const rogueItem = rogueItems.value.find(item => item.id === selectedRogueId.value)
     if (rogueItem) {
-      treeData.value = await parseRogueToTree(rogueItem.data.itemData, showAll.value)
+      treeData.value = await parseRogueToTree(rogueItem.data, showAll.value)
       updateExpandedKeys()
     }
   }

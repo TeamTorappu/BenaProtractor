@@ -1,9 +1,21 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import YAML from "yaml";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+type PrimitiveType = "string" | "number" | "boolean" | "null" | "object" | "array";
+
+interface FieldStat {
+    types: Set<PrimitiveType>;
+    values: Set<string>;
+}
+
+interface BlackboardFieldStat {
+    valueTypes: Set<PrimitiveType>;
+    valueStrTypes: Set<PrimitiveType>;
+    pairs: Set<string>; // JSON-serialized { value, valueStr } for dedup
+}
 
 interface RogueData {
     itemKey: string;
@@ -18,11 +30,6 @@ interface RogueItem {
     parsedName: string;
     type: string;
     data: RogueData;
-}
-
-interface BuffFieldStat {
-    types: Set<string>;
-    values: Set<string>;
 }
 
 const typeNameMap: Record<string, string> = {
@@ -51,7 +58,7 @@ function buildRogueObjects(): RogueItem[] {
     const result: RogueItem[] = [];
 
     const details = rogueTable.details || {};
-    
+
     for (const season in details) {
         const seasonData = details[season];
         const seasonName = rogue_seasons[season] || season;
@@ -60,7 +67,7 @@ function buildRogueObjects(): RogueItem[] {
 
         for (const itemKey in items) {
             const itemInfo = items[itemKey];
-            
+
             if (itemKey in relics) {
                 const displayType = typeNameMap[itemInfo.type] || "鸽物";
 
@@ -83,7 +90,11 @@ function buildRogueObjects(): RogueItem[] {
     return result;
 }
 
-function getPrimitiveType(val: any): string {
+// ---------------------------------------------------------------------------
+// Utility functions (mirroring generate_buff_mapping_yml.ts)
+// ---------------------------------------------------------------------------
+
+function getPrimitiveType(val: any): PrimitiveType {
     if (val === null) return "null";
     if (Array.isArray(val)) return "array";
     const t = typeof val;
@@ -101,83 +112,252 @@ function toValueString(val: any): string {
     return JSON.stringify(val);
 }
 
-function unionTypeString(types: Set<string>): string {
-    const ordered = Array.from(types).sort();
-    return ordered.join(" | ");
+function unionTypeString(types: Set<PrimitiveType>): string {
+    return Array.from(types).sort().join(" | ");
 }
 
-// 统计buffs字段统计
-const buffFieldStats: Record<string, BuffFieldStat> = {};
-const allBuffs = buildRogueObjects();
+function ensureFieldStat(target: Record<string, FieldStat>, field: string): FieldStat {
+    if (!target[field]) {
+        target[field] = { types: new Set(), values: new Set() };
+    }
+    return target[field];
+}
 
-for (const item of allBuffs) {
-    const buffs = item.data.itemData.buffs;
+function descFromCamelCase(field: string): string {
+    return field
+        .replace(/^_+/, "")
+        .replace(/([A-Z])/g, " $1")
+        .trim();
+}
+
+function descFromSnakeCase(field: string): string {
+    return field
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function toYaml(obj: any, indent = 0): string {
+    const spaces = " ".repeat(indent);
+    function yamlString(str: string): string {
+        if (
+            str === "" ||
+            /[\[\]:#",\n]/.test(str) ||
+            str.startsWith(" ") ||
+            str.endsWith(" ") ||
+            str.includes("  ") ||
+            (str.includes("-") && str.trim() === "-")
+            || str.includes("{") || str.includes("[") || str.includes("(")
+        ) {
+            return '"' + str.replace(/"/g, '\"') + '"';
+        }
+        return str;
+    }
+
+    if (Array.isArray(obj)) {
+        return obj
+            .map((item) => {
+                if (typeof item === "string") {
+                    return `${spaces}- ${yamlString(item)}`;
+                }
+                if (typeof item === "object" && item !== null) {
+                    const block = toYaml(item, indent + 2);
+                    return `${spaces}-\n${block}`;
+                }
+                return `${spaces}- ${yamlString(String(item))}`;
+            })
+            .join("\n");
+    }
+
+    if (typeof obj === "object" && obj !== null) {
+        const lines: string[] = [];
+        for (const key of Object.keys(obj)) {
+            const value = obj[key];
+            if (typeof value === "object" && value !== null) {
+                lines.push(`${spaces}${key}:`);
+                lines.push(toYaml(value, indent + 2));
+            } else if (typeof value === "string") {
+                lines.push(`${spaces}${key}: ${yamlString(value)}`);
+            } else {
+                lines.push(`${spaces}${key}: ${String(value)}`);
+            }
+        }
+        return lines.join("\n");
+    }
+
+    if (typeof obj === "string") {
+        return `${spaces}${yamlString(obj)}`;
+    }
+    return `${spaces}${String(obj)}`;
+}
+
+// ---------------------------------------------------------------------------
+// Stat collection
+// ---------------------------------------------------------------------------
+
+const allItems = buildRogueObjects();
+
+// itemInfo field → type + unique values
+const itemInfoFieldStats: Record<string, FieldStat> = {};
+// itemData.buffs[].key → unique buff keys
+const buffKeySet = new Set<string>();
+// itemData.buffs[].blackboard → field stats (value + valueStr pairs)
+const blackboardFieldStats: Record<string, BlackboardFieldStat> = {};
+
+for (const item of allItems) {
+    // --- itemInfo ---
+    const info = item.data.itemInfo;
+    if (info && typeof info === "object" && !Array.isArray(info)) {
+        for (const [key, val] of Object.entries(info)) {
+            const stat = ensureFieldStat(itemInfoFieldStats, key);
+            stat.types.add(getPrimitiveType(val));
+            stat.values.add(toValueString(val));
+        }
+    }
+
+    // --- itemData ---
+    const buffs = item.data.itemData?.buffs;
     if (!Array.isArray(buffs)) continue;
 
     for (const buff of buffs) {
+        if (buff.key) buffKeySet.add(buff.key);
+
         const blackboard = buff.blackboard;
         if (!Array.isArray(blackboard)) continue;
 
         for (const entry of blackboard) {
             const field = entry.key;
-            if (!buffFieldStats[field]) {
-                buffFieldStats[field] = { types: new Set(), values: new Set() };
+            if (!blackboardFieldStats[field]) {
+                blackboardFieldStats[field] = {
+                    valueTypes: new Set(),
+                    valueStrTypes: new Set(),
+                    pairs: new Set(),
+                };
             }
-            const stat = buffFieldStats[field];
-            stat.types.add(getPrimitiveType(entry.value));
-            stat.values.add(toValueString(entry.value));
+            const stat = blackboardFieldStats[field];
+            stat.valueTypes.add(getPrimitiveType(entry.value));
+            stat.valueStrTypes.add(getPrimitiveType(entry.valueStr));
+            stat.pairs.add(JSON.stringify({ value: entry.value, valueStr: entry.valueStr }));
         }
     }
 }
 
-// 生成目录结构
-const outDir = path.join(__dirname, "generated/rogue");
+// ---------------------------------------------------------------------------
+// Output
+// ---------------------------------------------------------------------------
+
+const outDir = path.join(__dirname, "generated/rogue/mappings");
 fs.mkdirSync(outDir, { recursive: true });
 
-// 生成 index.yml - 简化版
-const indexDoc: Record<string, any> = {};
-const fields = Object.keys(buffFieldStats).sort();
-for (const field of fields) {
-    const stat = buffFieldStats[field];
-    indexDoc[field] = {
+// ---- index.yml ----
+const indexDoc: any = {
+    itemInfo: {
+        type: "object",
+        description: "基础数据",
+        file: "itemInfo.yml",
+    },
+    itemData: {
+        type: "object",
+        description: "buff",
+        key: { file: "itemData_keys.yml" },
+        value: { file: ["itemData_blackboards.yml", "itemData_blackboards_template.yml"] },
+    },
+};
+fs.writeFileSync(path.join(outDir, "index.yml"), toYaml(indexDoc), { encoding: "utf-8", flag: "w" });
+
+// ---- itemInfo.yml ----
+const itemInfoDoc: any = {};
+const itemInfoKeys = Object.keys(itemInfoFieldStats).sort();
+for (const field of itemInfoKeys) {
+    const stat = itemInfoFieldStats[field];
+    itemInfoDoc[field] = {
         type: unionTypeString(stat.types),
-        description: field,
-        icon: null,
+        description: descFromCamelCase(field),
+        // display: true,
+        generated: true,
     };
 }
+fs.writeFileSync(path.join(outDir, "itemInfo.yml"), toYaml(itemInfoDoc), { encoding: "utf-8", flag: "w" });
 
-fs.writeFileSync(
-    path.join(outDir, "index.yml"),
-    YAML.stringify(indexDoc, { nullStr: "" }),
-    "utf-8"
-);
-
-// 生成 full.yml - 完整版，包含所有值
-const fullDoc: Record<string, any> = {};
-for (const field of fields) {
-    const stat = buffFieldStats[field];
-    fullDoc[field] = {
-        type: unionTypeString(stat.types),
-        description: field,
+// ---- itemData_keys.yml ----
+const keysDoc: any = {};
+const buffKeys = Array.from(buffKeySet).sort();
+for (const key of buffKeys) {
+    keysDoc[key] = {
+        description: descFromSnakeCase(key),
         icon: null,
-        values: Array.from(stat.values)
-            .sort()
-            .map((value) => ({
-                value,
-                display: false,
-            })),
+        // display: true,
+        generated: true,
     };
 }
+fs.writeFileSync(path.join(outDir, "itemData_keys.yml"), toYaml(keysDoc), { encoding: "utf-8", flag: "w" });
 
+// ---- itemData_blackboards_template.yml ----
+const bbTemplateDoc: any = {};
+const bbFields = Object.keys(blackboardFieldStats).sort();
+for (const field of bbFields) {
+    const stat = blackboardFieldStats[field];
+    const typeStr = unionTypeString(stat.valueTypes);
+    bbTemplateDoc[field] = {
+        type: typeStr,
+        description: field,
+        icon: null,
+        default: {
+            // display: true,
+            parse: {
+                type: "template",
+                return: "{0}({1})",
+                args: ["value", "valueStr"],
+                generated: true,
+            },
+        },
+    };
+}
 fs.writeFileSync(
-    path.join(outDir, "full.yml"),
-    YAML.stringify(fullDoc, { nullStr: "" }),
-    "utf-8"
+    path.join(outDir, "itemData_blackboards_template.yml"),
+    toYaml(bbTemplateDoc),
+    { encoding: "utf-8", flag: "w" }
 );
+
+// ---- itemData_blackboards.yml ----
+const bbDoc: any = {};
+for (const field of bbFields) {
+    const stat = blackboardFieldStats[field];
+    const typeStr = unionTypeString(stat.valueTypes);
+
+    const sortedPairs = Array.from(stat.pairs)
+        .map((s) => JSON.parse(s) as { value: any; valueStr: any })
+        .sort((a, b) => {
+            const aKey = toValueString(a.value) + "|" + toValueString(a.valueStr);
+            const bKey = toValueString(b.value) + "|" + toValueString(b.valueStr);
+            return aKey.localeCompare(bKey);
+        });
+
+    bbDoc[field] = {
+        type: typeStr,
+        description: field,
+        values: sortedPairs.map((pair) => ({
+            value: toValueString(pair.value),
+            valueStr: toValueString(pair.valueStr),
+            // display: false,
+            parse: {
+                type: "template",
+                return: "{0}({1})",
+                args: ["value", "valueStr"],
+                generated: true,
+            },
+        })),
+    };
+}
+fs.writeFileSync(path.join(outDir, "itemData_blackboards.yml"), toYaml(bbDoc), { encoding: "utf-8", flag: "w" });
+
+// ---------------------------------------------------------------------------
+// Summary
+// ---------------------------------------------------------------------------
 
 console.log(`✓ rogue mappings 已生成: ${outDir}`);
-console.log(`✓ 已统计 ${fields.length} 个buff字段`);
-console.log(`  - 字段: ${fields.join(", ")}`);
+console.log(`✓ itemInfo 字段: ${itemInfoKeys.length}`);
+console.log(`✓ buff keys: ${buffKeys.length}`);
+console.log(`✓ blackboard 字段: ${bbFields.length}`);
 
 export { buildRogueObjects, loadRogueSeasons, type RogueItem };
 

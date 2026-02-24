@@ -1,0 +1,13 @@
+itemInfo:
+  type: object
+  description: 基础数据
+  file: itemInfo.yml
+itemData:
+  type: object
+  description: buff
+  key:
+    file: itemData_keys.yml
+  value:
+    file:
+      - itemData_blackboards.yml
+      - itemData_blackboards_template.yml

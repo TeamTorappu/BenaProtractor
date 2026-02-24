@@ -15,7 +15,7 @@ export interface RogueItem {
     data: RogueData;
 }
 
-const typeNameMap: Record<string, string> = {
+export const typeNameMap: Record<string, string> = {
     RELIC: "藏品",
     BAND: "分队",
     RECRUIT_TICKET: "招募券",

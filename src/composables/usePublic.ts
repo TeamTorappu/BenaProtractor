@@ -33,7 +33,7 @@ async function _loadPublicJSON(path: string) {
 
 async function _loadPublicYAML(path: string) {
     const text = await _loadPublicText(path);
-    return parseYaml(text);
+    return parseYaml(text, { uniqueKeys: false });
 }
 
 export const loadPublicJSON = useMemoize(async (path: string): Promise<Record<string, any>> => _loadPublicJSON(path));

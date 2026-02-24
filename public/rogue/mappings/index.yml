@@ -1,0 +1,11 @@
+itemInfo:
+  type: object
+  file: itemInfo.yml
+itemData:
+  type: object
+  key:
+    file: itemData_keys.yml
+  value:
+    file:
+      - itemData_blackboards.yml
+      - itemData_blackboards_template.yml

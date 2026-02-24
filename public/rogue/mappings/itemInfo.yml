@@ -1,0 +1,68 @@
+canSacrifice:
+  type: boolean
+  description: can Sacrifice
+  display: false
+  generated: true
+description:
+  type: null | string
+  description:  描述
+iconId:
+  type: string
+  description: icon Id
+  display: false
+  generated: true
+id:
+  type: string
+  description: id
+  display: false
+  generated: true
+itemIconGroupId:
+  type: null | string
+  description: item Icon Group Id
+  display: false
+  generated: true
+name:
+  type: string
+  description: 名称
+obtainApproach:
+  type: string
+  description: 获取方式
+rarity:
+  type: string
+  description: 稀有度
+shortUsage:
+  type: null | string
+  description: short Usage
+  display: false
+  generated: true
+sortId:
+  type: number
+  description: sort Id
+  display: false
+  generated: true
+subType:
+  type: string
+  description: sub Type
+  display: false
+  generated: true
+tinyIconColor:
+  type: null
+  description: tiny Icon Color
+  display: false
+  generated: true
+type:
+  type: string
+  description: 类别
+  default:
+    parse:
+      type: fn
+      name: parseRogueType
+      args:
+        - $input
+        - $ctx
+unlockCondDesc:
+  type: null | string
+  description: 解锁条件描述
+usage:
+  type: string
+  description: 效果
