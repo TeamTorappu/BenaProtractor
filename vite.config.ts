@@ -51,8 +51,6 @@ export default defineConfig(async () => ({
                     if (id.includes("node_modules")) {
                         if (id.includes("naive-ui")) return "vendor_naive_ui";
                         if (id.includes("highlight.js")) return "vendor_highlightjs";
-                        // ensure both the `vue` package and any `@vue/*` helpers stay together
-                        if (/node_modules\/(vue|@vue)/.test(id)) return "vendor_vue";
                         return "vendor";
                     }
                 },
