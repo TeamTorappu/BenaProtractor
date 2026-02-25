@@ -1,51 +1,51 @@
 canSacrifice:
   type: boolean
   description: can Sacrifice
-  generated: true
+  display: false
 description:
   type: null | string
   description: 描述
-  generated: true
+  display: true
 iconId:
   type: string
   description: icon Id
-  generated: true
+  display: false
 id:
   type: string
   description: id
-  generated: true
+  display: false
 itemIconGroupId:
   type: null | string
   description: item Icon Group Id
-  generated: true
+  display: false
 name:
   type: string
   description: 名称
-  generated: true
+  display: true
 obtainApproach:
   type: string
   description: 获取方式
-  generated: true
+  display: true
 rarity:
   type: string
   description: 稀有度
-  generated: true
+  display: true
 shortUsage:
   type: null | string
   description: short Usage
-  generated: true
+  display: false
 sortId:
   type: number
   description: sort Id
-  generated: true
+  display: false
 subType:
   type: string
   description: sub Type
-  generated: true
+  display: false
 tinyIconColor:
   type: null
   description: tiny Icon Color
-  generated: true
+  display: false
 type:
   type: string
   description: 类别
@@ -56,12 +56,12 @@ type:
       args:
         - $input
         - $ctx
-  generated: true
+  display: true
 unlockCondDesc:
   type: null | string
   description: 解锁条件描述
-  generated: true
+  display: true
 usage:
   type: string
   description: 效果
-  generated: true
+  display: true

@@ -1334,7 +1334,6 @@ _buff:
     args:
       - $input
       - $ctx
-    generated: true
 _buffAsSource:
   type: boolean
   description: buff As Source
@@ -1564,7 +1563,6 @@ _buffs:
     args:
       - $input
       - $ctx
-    generated: true
 _buffsUseTargetAsSource:
   type: array
   description: buffs Use Target As Source
