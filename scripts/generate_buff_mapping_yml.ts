@@ -18,9 +18,24 @@ interface ActionFieldStatMap {
 interface ActionStatsMap {
     [actionType: string]: ActionFieldStatMap;
 }
-
+function trimStrings<T>(obj: T): T {
+    if (typeof obj === "string") {
+        return obj.trim() as unknown as T;
+    }
+    if (Array.isArray(obj)) {
+        return obj.map(item => trimStrings(item)) as unknown as T;
+    }
+    if (obj && typeof obj === "object") {
+        const res: any = {};
+        for (const [k, v] of Object.entries(obj as any)) {
+            res[k] = trimStrings(v as any);
+        }
+        return res;
+    }
+    return obj;
+}
 const buffDataPath = path.join(__dirname, "../public/gamedata/battle/buff_template_data.json");
-const buffData = JSON.parse(fs.readFileSync(buffDataPath, "utf-8")) as Record<string, any>;
+const buffData = trimStrings(JSON.parse(fs.readFileSync(buffDataPath, "utf-8")) as Record<string, any>);
 
 const baseFieldStats: Record<string, FieldStat> = {};
 const eventTypes = new Set<string>();

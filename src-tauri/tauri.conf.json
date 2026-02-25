@@ -32,7 +32,6 @@
       "icons/icon.ico"
     ],
     "resources": [
-      "../public/**/*",
       "../public/**/*"
     ]
   }

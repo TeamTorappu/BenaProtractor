@@ -15343,7 +15343,6 @@ _buffs:
     args:
       - $input
       - $ctx
-    generated: true
 _buffsUseTargetAsSource:
   type: array
   description: buffs Use Target As Source

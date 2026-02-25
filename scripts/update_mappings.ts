@@ -216,8 +216,8 @@ for (const pair of MAPPING_PAIRS) {
 			const genContent = fs.readFileSync(genFile, "utf-8");
 			const pubContent = fs.readFileSync(pubFile, "utf-8");
 
-			const genDoc = parseYaml(genContent) as Record<string, unknown>;
-			const pubDoc = parseYaml(pubContent) as Record<string, unknown>;
+			const genDoc = parseYaml(genContent, { uniqueKeys: false }) as Record<string, unknown>;
+			const pubDoc = parseYaml(pubContent, { uniqueKeys: false }) as Record<string, unknown>;
 
 			if (!genDoc || !pubDoc) {
 				stats.skipped++;

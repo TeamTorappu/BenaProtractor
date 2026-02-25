@@ -468,7 +468,7 @@ damage_resistance:
       generated: true
 damage_resistance[sanity_high].damage_resistance:
   type: number
-  description: "damage_resistance[sanity_high].damage_resistance"
+  description: damage_resistance[sanity_high].damage_resistance
   icon: null
   default:
     parse:
@@ -480,7 +480,7 @@ damage_resistance[sanity_high].damage_resistance:
       generated: true
 damage_resistance[sanity_low].damage_resistance:
   type: number
-  description: "damage_resistance[sanity_low].damage_resistance"
+  description: damage_resistance[sanity_low].damage_resistance
   icon: null
   default:
     parse:
@@ -572,9 +572,10 @@ def:
       return: "{0}"
       args:
         - parseToPercent(value)
+      generated: true
 def_down[stack].def:
   type: number
-  description: "def_down[stack].def"
+  description: def_down[stack].def
   icon: null
   default:
     parse:
@@ -1206,6 +1207,8 @@ key:
       name: parseBlackboardKey
       args:
         - valueStr
+      return: "{0}({1})"
+      generated: true
 level:
   type: number
   description: level
@@ -2072,18 +2075,6 @@ portal:
       generated: true
 portal_only:
   type: number
-  description: portal_only
-  icon: null
-  default:
-    parse:
-      type: template
-      return: "{0}({1})"
-      args:
-        - value
-        - valueStr
-      generated: true
-portal_only :
-  type: number
   description: "portal_only "
   icon: null
   default:
@@ -2152,6 +2143,8 @@ profession:
       name: parseProfession
       args:
         - valueStr
+      return: "{0}({1})"
+      generated: true
 range_id:
   type: number
   description: range_id
@@ -2187,6 +2180,8 @@ rarity:
       args:
         - value
         - valueStr
+      return: "{0}({1})"
+      generated: true
 rate:
   type: number
   description: rate
@@ -2285,7 +2280,7 @@ rewards:
       generated: true
 rogue_2_atk_up[king_suit].atk:
   type: number
-  description: "rogue_2_atk_up[king_suit].atk"
+  description: rogue_2_atk_up[king_suit].atk
   icon: null
   default:
     parse:
@@ -2297,7 +2292,7 @@ rogue_2_atk_up[king_suit].atk:
       generated: true
 rogue_2_atk_up[king_suit][bonus].atk:
   type: number
-  description: "rogue_2_atk_up[king_suit][bonus].atk"
+  description: rogue_2_atk_up[king_suit][bonus].atk
   icon: null
   default:
     parse:
@@ -2309,7 +2304,7 @@ rogue_2_atk_up[king_suit][bonus].atk:
       generated: true
 rogue_3_blackfog[enemy].attack_speed:
   type: number
-  description: "rogue_3_blackfog[enemy].attack_speed"
+  description: rogue_3_blackfog[enemy].attack_speed
   icon: null
   default:
     parse:
@@ -2321,7 +2316,7 @@ rogue_3_blackfog[enemy].attack_speed:
       generated: true
 rogue_3_relic_book_3[cost].cost:
   type: number
-  description: "rogue_3_relic_book_3[cost].cost"
+  description: rogue_3_relic_book_3[cost].cost
   icon: null
   default:
     parse:
@@ -2333,7 +2328,7 @@ rogue_3_relic_book_3[cost].cost:
       generated: true
 rogue_4_maxhp_up[lordoffiends_suit].max_hp:
   type: number
-  description: "rogue_4_maxhp_up[lordoffiends_suit].max_hp"
+  description: rogue_4_maxhp_up[lordoffiends_suit].max_hp
   icon: null
   default:
     parse:
@@ -2345,7 +2340,7 @@ rogue_4_maxhp_up[lordoffiends_suit].max_hp:
       generated: true
 rogue_4_maxhp_up[lordoffiends_suit][bonus].max_hp:
   type: number
-  description: "rogue_4_maxhp_up[lordoffiends_suit][bonus].max_hp"
+  description: rogue_4_maxhp_up[lordoffiends_suit][bonus].max_hp
   icon: null
   default:
     parse:
@@ -2357,7 +2352,7 @@ rogue_4_maxhp_up[lordoffiends_suit][bonus].max_hp:
       generated: true
 rogue_5_character_random_sp_modify[gain].sp:
   type: number
-  description: "rogue_5_character_random_sp_modify[gain].sp"
+  description: rogue_5_character_random_sp_modify[gain].sp
   icon: null
   default:
     parse:
@@ -2369,7 +2364,7 @@ rogue_5_character_random_sp_modify[gain].sp:
       generated: true
 rogue_5_character_random_sp_modify[lose].sp:
   type: number
-  description: "rogue_5_character_random_sp_modify[lose].sp"
+  description: rogue_5_character_random_sp_modify[lose].sp
   icon: null
   default:
     parse:
@@ -2381,7 +2376,7 @@ rogue_5_character_random_sp_modify[lose].sp:
       generated: true
 rogue_5_damage_after_max_cost[damage].damage_value:
   type: number
-  description: "rogue_5_damage_after_max_cost[damage].damage_value"
+  description: rogue_5_damage_after_max_cost[damage].damage_value
   icon: null
   default:
     parse:
@@ -2393,7 +2388,7 @@ rogue_5_damage_after_max_cost[damage].damage_value:
       generated: true
 rogue_5_damage_after_max_cost[damage].interval:
   type: number
-  description: "rogue_5_damage_after_max_cost[damage].interval"
+  description: rogue_5_damage_after_max_cost[damage].interval
   icon: null
   default:
     parse:
@@ -2405,7 +2400,7 @@ rogue_5_damage_after_max_cost[damage].interval:
       generated: true
 rogue_5_damage_after_max_cost[damage].stun:
   type: number
-  description: "rogue_5_damage_after_max_cost[damage].stun"
+  description: rogue_5_damage_after_max_cost[damage].stun
   icon: null
   default:
     parse:
@@ -2417,7 +2412,7 @@ rogue_5_damage_after_max_cost[damage].stun:
       generated: true
 rogue_5_enemy_speed_random_change[down].move_speed:
   type: number
-  description: "rogue_5_enemy_speed_random_change[down].move_speed"
+  description: rogue_5_enemy_speed_random_change[down].move_speed
   icon: null
   default:
     parse:
@@ -2429,7 +2424,7 @@ rogue_5_enemy_speed_random_change[down].move_speed:
       generated: true
 rogue_5_enemy_speed_random_change[up].move_speed:
   type: number
-  description: "rogue_5_enemy_speed_random_change[up].move_speed"
+  description: rogue_5_enemy_speed_random_change[up].move_speed
   icon: null
   default:
     parse:
@@ -2608,18 +2603,6 @@ selector.profession:
         - valueStr
       generated: true
 selector.side:
-  type: number
-  description: selector.side
-  icon: null
-  default:
-    parse:
-      type: template
-      return: "{0}({1})"
-      args:
-        - value
-        - valueStr
-      generated: true
-selector.side :
   type: number
   description: "selector.side "
   icon: null
@@ -2825,7 +2808,7 @@ stack_by_res_cnt:
       generated: true
 status_resistance[limit]:
   type: number
-  description: "status_resistance[limit]"
+  description: status_resistance[limit]
   icon: null
   default:
     parse:
@@ -3089,18 +3072,6 @@ upper_bound@respawn_time:
       generated: true
 validator.roguelike_event_type:
   type: number
-  description: validator.roguelike_event_type
-  icon: null
-  default:
-    parse:
-      type: template
-      return: "{0}({1})"
-      args:
-        - value
-        - valueStr
-      generated: true
-validator.roguelike_event_type :
-  type: number
   description: "validator.roguelike_event_type "
   icon: null
   default:
@@ -3137,7 +3108,7 @@ value:
       generated: true
 weak[limit]:
   type: number
-  description: "weak[limit]"
+  description: weak[limit]
   icon: null
   default:
     parse:

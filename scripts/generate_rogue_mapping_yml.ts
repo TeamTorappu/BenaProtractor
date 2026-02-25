@@ -41,9 +41,25 @@ const typeNameMap: Record<string, string> = {
     FEATURE: "精通",
     COPPER_BUFF: "钱",
 };
+function trimStrings<T>(obj: T): T {
+    if (typeof obj === "string") {
+        return obj.trim() as unknown as T;
+    }
+    if (Array.isArray(obj)) {
+        return obj.map(item => trimStrings(item)) as unknown as T;
+    }
+    if (obj && typeof obj === "object") {
+        const res: any = {};
+        for (const [k, v] of Object.entries(obj as any)) {
+            res[k] = trimStrings(v as any);
+        }
+        return res;
+    }
+    return obj;
+}
 
 const roguePath = path.resolve(process.cwd(), "./public/gamedata/excel/roguelike_topic_table.json");
-const rogueTable = JSON.parse(fs.readFileSync(roguePath, "utf-8")) as Record<string, any>;
+const rogueTable = trimStrings(JSON.parse(fs.readFileSync(roguePath, "utf-8")) as Record<string, any>);
 
 function loadRogueSeasons(): Record<string, string> {
     return Object.fromEntries(
@@ -221,7 +237,7 @@ for (const field of itemInfoKeys) {
     itemInfoDoc[field] = {
         type: unionTypeString(stat.types),
         description: descFromCamelCase(field),
-        // display: true,
+        display: true,
         generated: true,
     };
 }
@@ -234,7 +250,7 @@ for (const key of buffKeys) {
     keysDoc[key] = {
         description: descFromSnakeCase(key),
         icon: null,
-        // display: true,
+        display: false,
         generated: true,
     };
 }
