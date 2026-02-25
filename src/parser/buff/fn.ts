@@ -734,3 +734,58 @@ export async function parseNodeCheckContainsBuff($input: any, $ctx: ParseCtx): P
     return { key: $ctx.baseKey, label: condition, isLeaf: true };
 }
 fnMap.set("parseNodeCheckContainsBuff", parseNodeCheckContainsBuff);
+
+
+export async function parseTargetOptions($input: any, $ctx: ParseCtx): Promise<TreeOption> {
+    const opt = $input as Record<string, any>;
+    const mappings = await getMappings();
+
+    const sideMap: Record<string, string> = { ENEMY: "敌方", ALLY: "我方", ALL: "全部" };
+    const motionMap: Record<string, string> = { ALL: "全部", WALK_ONLY: "移动中" };
+
+    const side = sideMap[opt.targetSide] ?? opt.targetSide;
+    const motion = motionMap[opt.targetMotion] ?? opt.targetMotion;
+    const label = `目标：${side}`;
+
+    const children: TreeOption[] = [];
+    const ck = (k: string) => `${$ctx.baseKey}/${k}`;
+
+    children.push({ key: ck("targetSide"), label: `目标阵营: ${side}`, isLeaf: true });
+    children.push({ key: ck("targetMotion"), label: `运动状态: ${motion}`, isLeaf: true });
+
+    if (opt.targetCategory && opt.targetCategory !== "DEFAULT")
+        children.push({ key: ck("targetCategory"), label: `目标类别: ${opt.targetCategory}`, isLeaf: true });
+
+    if (opt.professionMask && opt.professionMask !== "NONE") {
+        const profs = opt.professionMask.split(/[,|;]/g).map((p: string) => mappings?.[p.toUpperCase()] || p).join(',');
+        children.push({ key: ck("professionMask"), label: `职业筛选: ${profs}`, isLeaf: true });
+    }
+
+    if (opt.checkUnitType && opt.unitTypeMask && opt.unitTypeMask !== "NONE")
+        children.push({ key: ck("unitTypeMask"), label: `单位类型: ${opt.unitTypeMask}`, isLeaf: true });
+
+    if (opt.purposeMask && opt.purposeMask !== "NONE")
+        children.push({ key: ck("purposeMask"), label: `用途: ${opt.purposeMask}`, isLeaf: true });
+
+    if (opt.ignoreTargetFree) children.push({ key: ck("ignoreTargetFree"), label: "无视不可选中", isLeaf: true });
+    if (opt.ignoreAllyTargetFree) children.push({ key: ck("ignoreAllyTargetFree"), label: "无视友方不可选中", isLeaf: true });
+    if (opt.ignoreHealFree) children.push({ key: ck("ignoreHealFree"), label: "无视禁疗", isLeaf: true });
+    if (opt.ignoreTargetSide) children.push({ key: ck("ignoreTargetSide"), label: "无视阵营", isLeaf: true });
+
+    if (opt.excludeSomeAbnormalFlags) {
+        const excl = readDict(mappings, "abnormal", opt.excludeAbnormalFlag);
+        children.push({ key: ck("excludeAbnormalFlag"), label: `排除${excl}单位`, isLeaf: true });
+    }
+    if (opt.onlyIgnoreSomeOfTargetFreeCase) {
+        const abFlag = readDict(mappings, "abnormal", opt.abnormalFlag);
+        children.push({ key: ck("abnormalFlag"), label: `仅忽略${abFlag}导致的不可选中`, isLeaf: true });
+    }
+
+    if (opt.abnormalCombo && opt.abnormalCombo !== "NONE") {
+        const combo = readDict(mappings, "abnormal", opt.abnormalCombo);
+        children.push({ key: ck("abnormalCombo"), label: `异常连锁: ${combo}`, isLeaf: true });
+    }
+
+    return { key: $ctx.baseKey, label, children };
+}
+fnMap.set("parseTargetOptions", parseTargetOptions);

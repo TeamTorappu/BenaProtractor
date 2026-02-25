@@ -12118,11 +12118,10 @@ _targetOptions:
   schema: action_subschema/_targetOptions.yml
   parse:
     type: fn
-    name: parseObjectDefault
+    name: parseTargetOptions
     args:
       - $input
       - $ctx
-    generated: true
 _targetPosFromBB:
   type: boolean
   description: target Pos From B B
