@@ -22,3 +22,5 @@ git submodule update --init --recursive
 
 ## 编辑
 根据git日志观察有哪些新增, 移除`generated`, 实现`fn`, 填充`public/buff/...`
+
+可以直接构建`parseNode{type}`, 作为最高优先级处理
