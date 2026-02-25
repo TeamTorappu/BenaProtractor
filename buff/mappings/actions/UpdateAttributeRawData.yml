@@ -1,0 +1,56 @@
+actionType: UpdateAttributeRawData
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+          generated: true
+      -
+        value: MOVE_SPEED
+        display: false
+        parse:
+          type: literal
+          return: MOVE_SPEED
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _valueKey:
+    type: string
+    description: value Key
+    values:
+      -
+        value: default_max_hp
+        display: false
+        parse:
+          type: literal
+          return: default_max_hp
+          generated: true
+      -
+        value: moveSpeedWhenReachExit
+        display: false
+        parse:
+          type: literal
+          return: moveSpeedWhenReachExit
+          generated: true
+      -
+        value: prop_max_hp
+        display: false
+        parse:
+          type: literal
+          return: prop_max_hp
+          generated: true

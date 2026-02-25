@@ -1,0 +1,34 @@
+actionType: LegionModeOnlyAssignDangerLevelToBB
+fields:
+  _dangerLevelKey:
+    type: string
+    description: danger Level Key
+    values:
+      -
+        value: cached_danger_level
+        display: false
+        parse:
+          type: literal
+          return: cached_danger_level
+          generated: true
+      -
+        value: current_danger_level
+        display: false
+        parse:
+          type: literal
+          return: current_danger_level
+          generated: true
+      -
+        value: danger_cnt
+        display: false
+        parse:
+          type: literal
+          return: danger_cnt
+          generated: true
+      -
+        value: danger_level
+        display: false
+        parse:
+          type: literal
+          return: danger_level
+          generated: true

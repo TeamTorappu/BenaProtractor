@@ -1,0 +1,56 @@
+field: _deckSelector
+type: object
+description: deck Selector
+actions:
+  CreateDeckBuffWithSelectOrder:
+    type: object
+    values:
+      -
+        value: "{\"categoryMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"filterTag\":null,\"subprofessionTag\":null,\"onlySelectMe\":false,\"excludeMe\":false,\"mapTags\":[],\"enableOverride\":false,\"excludeNotInHand\":false,\"excludeNotShowInCardList\":true,\"excludeHiddenByCardState\":false}"
+        display: false
+        parse:
+          type: fn
+          name: parsedeckSelector
+          args:
+            - $input
+            - $ctx
+          generated: true
+  CreateCardBuffByDeckSequenceOrder:
+    type: object
+    values:
+      -
+        value: "{\"categoryMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"filterTag\":null,\"subprofessionTag\":null,\"onlySelectMe\":false,\"excludeMe\":false,\"mapTags\":[],\"enableOverride\":false,\"excludeNotInHand\":false,\"excludeNotShowInCardList\":true,\"excludeHiddenByCardState\":false}"
+        display: false
+        parse:
+          type: fn
+          name: parsedeckSelector
+          args:
+            - $input
+            - $ctx
+          generated: true
+  CreateCardBuffWithDeckSelector:
+    type: object
+    values:
+      -
+        value: "{\"categoryMask\":\"TANK, SUPPORT\",\"filterTag\":null,\"subprofessionTag\":null,\"onlySelectMe\":false,\"excludeMe\":false,\"mapTags\":[],\"enableOverride\":false,\"excludeNotInHand\":false,\"excludeNotShowInCardList\":false,\"excludeHiddenByCardState\":true}"
+        display: false
+        parse:
+          type: fn
+          name: parsedeckSelector
+          args:
+            - $input
+            - $ctx
+          generated: true
+  CreateDeckBuffWithDeckSelector:
+    type: object
+    values:
+      -
+        value: "{\"categoryMask\":\"TANK, SUPPORT\",\"filterTag\":null,\"subprofessionTag\":null,\"onlySelectMe\":false,\"excludeMe\":false,\"mapTags\":[],\"enableOverride\":false,\"excludeNotInHand\":false,\"excludeNotShowInCardList\":false,\"excludeHiddenByCardState\":true}"
+        display: false
+        parse:
+          type: fn
+          name: parsedeckSelector
+          args:
+            - $input
+            - $ctx
+          generated: true

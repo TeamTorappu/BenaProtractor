@@ -1,0 +1,46 @@
+actionType: UpdateObjectScaleViaRemainingRatio
+fields:
+  _maxScale:
+    type: number
+    description: max Scale
+    values:
+      -
+        value: 1.5
+        display: false
+        parse:
+          type: literal
+          return: 1.5
+          generated: true
+  _minScale:
+    type: number
+    description: min Scale
+    values:
+      -
+        value: 0.800000011920929
+        display: false
+        parse:
+          type: literal
+          return: 0.800000011920929
+          generated: true
+  _mountPointType:
+    type: string
+    description: mount Point Type
+    values:
+      -
+        value: UI
+        display: false
+        parse:
+          type: literal
+          return: UI
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

@@ -1,0 +1,56 @@
+actionType: CreateEffectAtScreenPos
+fields:
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: enemy_crzgas_mist_03
+        display: false
+        parse:
+          type: literal
+          return: enemy_crzgas_mist_03
+          generated: true
+      -
+        value: enemy_pleslm_skill_02_range
+        display: false
+        parse:
+          type: literal
+          return: enemy_pleslm_skill_02_range
+          generated: true
+      -
+        value: map_snow_left_2_right
+        display: false
+        parse:
+          type: literal
+          return: map_snow_left_2_right
+          generated: true
+      -
+        value: trap_713_cdflsb_attack
+        display: false
+        parse:
+          type: literal
+          return: trap_713_cdflsb_attack
+          generated: true
+  _screenWidthRatio:
+    type: number
+    description: screen Width Ratio
+    values:
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+          generated: true
+  _screenheightRatio:
+    type: number
+    description: screenheight Ratio
+    values:
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+          generated: true

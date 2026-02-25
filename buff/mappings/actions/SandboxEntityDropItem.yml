@@ -1,0 +1,31 @@
+actionType: SandboxEntityDropItem
+fields:
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _type:
+    type: string
+    description: type
+    values:
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+          generated: true
+      -
+        value: TRAP
+        display: false
+        parse:
+          type: literal
+          return: TRAP
+          generated: true

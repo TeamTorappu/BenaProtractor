@@ -1,0 +1,222 @@
+actionType: SpawnTokenOnRangeTile
+fields:
+  _buffToToken:
+    type: array | null
+    description: buff To Token
+    schema: action_subschema/_buffToToken.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _checkBuildableType:
+    type: boolean
+    description: check Buildable Type
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkPassableMask:
+    type: boolean
+    description: check Passable Mask
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _force:
+    type: boolean
+    description: force
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _passableMask:
+    type: string
+    description: passable Mask
+    values:
+      -
+        value: WALK_ONLY
+        display: false
+        parse:
+          type: literal
+          return: WALK_ONLY
+          generated: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+          generated: true
+      -
+        value: x-4
+        display: false
+        parse:
+          type: literal
+          return: x-4
+          generated: true
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _spawnCnt:
+    type: number
+    description: spawn Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _spawnOnRandomTiles:
+    type: boolean
+    description: spawn On Random Tiles
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _tileEffect:
+    type: null | string
+    description: tile Effect
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: enemy_mpgrou_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_mpgrou_buff_01
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: stmkgt_blocker_01
+        display: false
+        parse:
+          type: literal
+          return: stmkgt_blocker_01
+          generated: true
+  _tileHoldEffect:
+    type: boolean
+    description: tile Hold Effect
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _tokenToSpawn:
+    type: object
+    description: token To Spawn
+    schema: action_subschema/_tokenToSpawn.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

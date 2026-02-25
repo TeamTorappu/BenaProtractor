@@ -1,0 +1,35 @@
+actionType: AssignCurSpToBB
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

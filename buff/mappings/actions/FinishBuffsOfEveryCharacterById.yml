@@ -1,0 +1,149 @@
+actionType: FinishBuffsOfEveryCharacterById
+fields:
+  _alsoClearNullSource:
+    type: boolean
+    description: also Clear Null Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "angel2_s_2[select_target]"
+        display: false
+        parse:
+          type: literal
+          return: "angel2_s_2[select_target]"
+          generated: true
+      -
+        value: "dsbish_phase2_s_2[auto_trigger_skill]"
+        display: false
+        parse:
+          type: literal
+          return: "dsbish_phase2_s_2[auto_trigger_skill]"
+          generated: true
+      -
+        value: "dsbish_phase2_s_2[damage]"
+        display: false
+        parse:
+          type: literal
+          return: "dsbish_phase2_s_2[damage]"
+          generated: true
+      -
+        value: "enemy_acelem[to_parasitic]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_acelem[to_parasitic]"
+          generated: true
+      -
+        value: "nasti_nstchr_m2[shield_core]"
+        display: false
+        parse:
+          type: literal
+          return: "nasti_nstchr_m2[shield_core]"
+          generated: true
+      -
+        value: "svash2_s_3[target_bird_onuse]"
+        display: false
+        parse:
+          type: literal
+          return: "svash2_s_3[target_bird_onuse]"
+          generated: true
+      -
+        value: svash2_token_trigger
+        display: false
+        parse:
+          type: literal
+          return: svash2_token_trigger
+          generated: true
+  _checkBuffSource:
+    type: boolean
+    description: check Buff Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _decCntIfStack:
+    type: boolean
+    description: dec Cnt If Stack
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _updateOverrideMap:
+    type: boolean
+    description: update Override Map
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

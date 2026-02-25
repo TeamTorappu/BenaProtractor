@@ -1,0 +1,20 @@
+actionType: SwitchRallyPointCategory
+fields:
+  _category:
+    type: string
+    description: category
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+          generated: true
+      -
+        value: TRAP_OR_ITEM
+        display: false
+        parse:
+          type: literal
+          return: TRAP_OR_ITEM
+          generated: true

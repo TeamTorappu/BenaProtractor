@@ -1,0 +1,68 @@
+actionType: DywqgsCheckChessSiege
+fields:
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _flagBuff:
+    type: object
+    description: flag Buff
+    schema: action_subschema/_flagBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _options:
+    type: object
+    description: options
+    schema: action_subschema/_options.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _siegedAudioSignal:
+    type: string
+    description: sieged Audio Signal
+    values:
+      -
+        value: dywqgs_sieged_audio
+        display: false
+        parse:
+          type: literal
+          return: dywqgs_sieged_audio
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

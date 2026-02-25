@@ -1,0 +1,24 @@
+actionType: HalfIdleLhportCheckAbleToSummonShip
+fields:
+  _envSystemKey:
+    type: string
+    description: env System Key
+    values:
+      -
+        value: env_036_act1vhalfidle_lhhe
+        display: false
+        parse:
+          type: literal
+          return: env_036_act1vhalfidle_lhhe
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true

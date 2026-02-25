@@ -1,0 +1,13 @@
+actionType: RoguelikeCheckZoneType
+fields:
+  _zoneType:
+    type: string
+    description: zone Type
+    values:
+      -
+        value: SP
+        display: false
+        parse:
+          type: literal
+          return: SP
+          generated: true

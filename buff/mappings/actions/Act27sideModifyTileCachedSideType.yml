@@ -1,0 +1,74 @@
+actionType: Act27sideModifyTileCachedSideType
+fields:
+  _sideType:
+    type: string
+    description: side Type
+    values:
+      -
+        value: ALLY
+        display: false
+        parse:
+          type: literal
+          return: ALLY
+          generated: true
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+          generated: true
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true
+  _useRangeId:
+    type: boolean
+    description: use Range Id
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useTileInSnapShot:
+    type: boolean
+    description: use Tile In Snap Shot
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

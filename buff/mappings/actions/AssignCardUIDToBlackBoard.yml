@@ -1,0 +1,127 @@
+actionType: AssignCardUIDToBlackBoard
+fields:
+  _assignAsKey:
+    type: boolean
+    description: assign As Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _assignAsString:
+    type: boolean
+    description: assign As String
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _assignHostOrToken:
+    type: boolean
+    description: assign Host Or Token
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _blackBoardKey:
+    type: string
+    description: black Board Key
+    values:
+      -
+        value: cardUid
+        display: false
+        parse:
+          type: literal
+          return: cardUid
+          generated: true
+      -
+        value: card_uid
+        display: false
+        parse:
+          type: literal
+          return: card_uid
+          generated: true
+      -
+        value: char_id
+        display: false
+        parse:
+          type: literal
+          return: char_id
+          generated: true
+      -
+        value: char_id2
+        display: false
+        parse:
+          type: literal
+          return: char_id2
+          generated: true
+      -
+        value: new_uid
+        display: false
+        parse:
+          type: literal
+          return: new_uid
+          generated: true
+      -
+        value: unique_id
+        display: false
+        parse:
+          type: literal
+          return: unique_id
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: MAINBUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MAINBUFF_SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

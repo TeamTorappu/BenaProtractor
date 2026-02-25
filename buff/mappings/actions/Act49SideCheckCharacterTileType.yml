@@ -1,0 +1,45 @@
+actionType: Act49SideCheckCharacterTileType
+fields:
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _tileType:
+    type: string
+    description: tile Type
+    values:
+      -
+        value: Carp
+        display: false
+        parse:
+          type: literal
+          return: Carp
+          generated: true
+      -
+        value: Empty
+        display: false
+        parse:
+          type: literal
+          return: Empty
+          generated: true
+      -
+        value: None
+        display: false
+        parse:
+          type: literal
+          return: None
+          generated: true
+      -
+        value: Pure
+        display: false
+        parse:
+          type: literal
+          return: Pure
+          generated: true

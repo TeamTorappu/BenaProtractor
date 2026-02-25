@@ -1,0 +1,50 @@
+field: _effectKeys
+type: object
+description: effect Keys
+actions:
+  CreateRandomEffect:
+    type: array
+    values:
+      -
+        value: "[\"enemy_minima_drone_1\",\"enemy_minima_drone_2\",\"enemy_minima_drone_3\",\"enemy_minima_drone_4\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+  GainToken:
+    type: array
+    values:
+      -
+        value: "[\"enemy_trcerb_common_die_01\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"enemy_trcerb_common_die_02\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

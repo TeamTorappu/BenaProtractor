@@ -1,0 +1,57 @@
+actionType: CreateBuffToBindingTiles
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _excludeRootTile:
+    type: boolean
+    description: exclude Root Tile
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true

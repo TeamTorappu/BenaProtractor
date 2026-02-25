@@ -1,0 +1,756 @@
+add_node_refresh_count:
+  description: Add Node Refresh Count
+  icon: null
+  generated: true
+add_totem_drop:
+  description: Add Totem Drop
+  icon: null
+  generated: true
+alchemy_extra_reward:
+  description: Alchemy Extra Reward
+  icon: null
+  generated: true
+battle_dice_up:
+  description: Battle Dice Up
+  icon: null
+  generated: true
+battle_event_cost:
+  description: Battle Event Cost
+  icon: null
+  generated: true
+battle_event_drop_extra:
+  description: Battle Event Drop Extra
+  icon: null
+  generated: true
+battle_exp_only:
+  description: Battle Exp Only
+  icon: null
+  generated: true
+battle_expedition:
+  description: Battle Expedition
+  icon: null
+  generated: true
+battle_extra_drop:
+  description: Battle Extra Drop
+  icon: null
+  generated: true
+battle_extra_exp_copper_draw:
+  description: Battle Extra Exp Copper Draw
+  icon: null
+  generated: true
+battle_extra_recruit:
+  description: Battle Extra Recruit
+  icon: null
+  generated: true
+battle_extra_recruit_ticket:
+  description: Battle Extra Recruit Ticket
+  icon: null
+  generated: true
+battle_extra_relic:
+  description: Battle Extra Relic
+  icon: null
+  generated: true
+battle_extra_reward:
+  description: Battle Extra Reward
+  icon: null
+  generated: true
+battle_fail_protect:
+  description: Battle Fail Protect
+  icon: null
+  generated: true
+battle_reward_off:
+  description: Battle Reward Off
+  icon: null
+  generated: true
+battle_san_scale:
+  description: Battle San Scale
+  icon: null
+  generated: true
+battle_temp_char:
+  description: Battle Temp Char
+  icon: null
+  generated: true
+battle_travel:
+  description: Battle Travel
+  icon: null
+  generated: true
+boss_extra_3_in_1:
+  description: Boss Extra 3 In 1
+  icon: null
+  generated: true
+box_prob_up_cond_copper:
+  description: Box Prob Up Cond Copper
+  icon: null
+  generated: true
+change_fragment_type_weight:
+  description: Change Fragment Type Weight
+  icon: null
+  generated: true
+change_reward:
+  description: Change Reward
+  icon: null
+  generated: true
+change_shop_slot_pool:
+  description: Change Shop Slot Pool
+  icon: null
+  generated: true
+change_stage:
+  description: Change Stage
+  icon: null
+  generated: true
+chaos_player_exp_up:
+  description: Chaos Player Exp Up
+  icon: null
+  generated: true
+char_ability_new:
+  description: Char Ability New
+  icon: null
+  generated: true
+char_ability_new_at_root:
+  description: Char Ability New At Root
+  icon: null
+  generated: true
+char_attribute_add:
+  description: Char Attribute Add
+  icon: null
+  generated: true
+char_attribute_mul:
+  description: Char Attribute Mul
+  icon: null
+  generated: true
+char_random_target_attribute:
+  description: Char Random Target Attribute
+  icon: null
+  generated: true
+char_random_target_attribute_random_multi:
+  description: Char Random Target Attribute Random Multi
+  icon: null
+  generated: true
+char_skill_cost_mul:
+  description: Char Skill Cost Mul
+  icon: null
+  generated: true
+char_specific_target_attribute_cost:
+  description: Char Specific Target Attribute Cost
+  icon: null
+  generated: true
+char_squad_attribute_add:
+  description: Char Squad Attribute Add
+  icon: null
+  generated: true
+char_squad_attribute_mul:
+  description: Char Squad Attribute Mul
+  icon: null
+  generated: true
+char_squad_attribute_mul_ex:
+  description: Char Squad Attribute Mul Ex
+  icon: null
+  generated: true
+condition_node_into_reward:
+  description: Condition Node Into Reward
+  icon: null
+  generated: true
+convert_a_to_b:
+  description: Convert A To B
+  icon: null
+  generated: true
+copper_change_reward:
+  description: Copper Change Reward
+  icon: null
+  generated: true
+copper_clear_count_down:
+  description: Copper Clear Count Down
+  icon: null
+  generated: true
+copper_draw_reward_lucky_level:
+  description: Copper Draw Reward Lucky Level
+  icon: null
+  generated: true
+copper_exchange:
+  description: Copper Exchange
+  icon: null
+  generated: true
+copper_exchange_cond:
+  description: Copper Exchange Cond
+  icon: null
+  generated: true
+copper_gain_count_down:
+  description: Copper Gain Count Down
+  icon: null
+  generated: true
+copper_gain_reward:
+  description: Copper Gain Reward
+  icon: null
+  generated: true
+copper_layer_reward:
+  description: Copper Layer Reward
+  icon: null
+  generated: true
+copper_pop_out_prob:
+  description: Copper Pop Out Prob
+  icon: null
+  generated: true
+copper_pop_out_prob_base:
+  description: Copper Pop Out Prob Base
+  icon: null
+  generated: true
+copper_unlock_layer:
+  description: Copper Unlock Layer
+  icon: null
+  generated: true
+cost_on_imperfect:
+  description: Cost On Imperfect
+  icon: null
+  generated: true
+count_a_extra_b:
+  description: Count A Extra B
+  icon: null
+  generated: true
+count_a_to_b:
+  description: Count A To B
+  icon: null
+  generated: true
+deck_card_buff:
+  description: Deck Card Buff
+  icon: null
+  generated: true
+default_boss_set:
+  description: Default Boss Set
+  icon: null
+  generated: true
+direct_upgrade:
+  description: Direct Upgrade
+  icon: null
+  generated: true
+disaster_rate_up:
+  description: Disaster Rate Up
+  icon: null
+  generated: true
+drop_extra_pool:
+  description: Drop Extra Pool
+  icon: null
+  generated: true
+dynamic_update:
+  description: Dynamic Update
+  icon: null
+  generated: true
+enemy_ability_new:
+  description: Enemy Ability New
+  icon: null
+  generated: true
+enemy_attribute_add:
+  description: Enemy Attribute Add
+  icon: null
+  generated: true
+enemy_attribute_mul:
+  description: Enemy Attribute Mul
+  icon: null
+  generated: true
+enemy_skill_attributedata_assign:
+  description: Enemy Skill Attributedata Assign
+  icon: null
+  generated: true
+expedition_extra_pool_reward:
+  description: Expedition Extra Pool Reward
+  icon: null
+  generated: true
+expedition_extra_random_reward:
+  description: Expedition Extra Random Reward
+  icon: null
+  generated: true
+extend_disaster:
+  description: Extend Disaster
+  icon: null
+  generated: true
+extra_gain_on_cost:
+  description: Extra Gain On Cost
+  icon: null
+  generated: true
+extra_gain_on_gain_add:
+  description: Extra Gain On Gain Add
+  icon: null
+  generated: true
+extra_gold_from_chest:
+  description: Extra Gold From Chest
+  icon: null
+  generated: true
+force_add_choice:
+  description: Force Add Choice
+  icon: null
+  generated: true
+force_next_scene:
+  description: Force Next Scene
+  icon: null
+  generated: true
+force_path_gen:
+  description: Force Path Gen
+  icon: null
+  generated: true
+fragment_memory:
+  description: Fragment Memory
+  icon: null
+  generated: true
+gain_on_dice_roll:
+  description: Gain On Dice Roll
+  icon: null
+  generated: true
+gain_on_perfect:
+  description: Gain On Perfect
+  icon: null
+  generated: true
+game_pass_count_item_to_bank:
+  description: Game Pass Count Item To Bank
+  icon: null
+  generated: true
+gift_on_buy:
+  description: Gift On Buy
+  icon: null
+  generated: true
+gift_on_sacrifice:
+  description: Gift On Sacrifice
+  icon: null
+  generated: true
+global_buff_layer:
+  description: Global Buff Layer
+  icon: null
+  generated: true
+global_buff_normal:
+  description: Global Buff Normal
+  icon: null
+  generated: true
+global_buff_override_blackboard:
+  description: Global Buff Override Blackboard
+  icon: null
+  generated: true
+global_buff_stack:
+  description: Global Buff Stack
+  icon: null
+  generated: true
+global_buff_stack_base_one:
+  description: Global Buff Stack Base One
+  icon: null
+  generated: true
+global_buff_with_condition:
+  description: Global Buff With Condition
+  icon: null
+  generated: true
+immediate_cost:
+  description: Immediate Cost
+  icon: null
+  generated: true
+immediate_mutation:
+  description: Immediate Mutation
+  icon: null
+  generated: true
+immediate_recruit:
+  description: Immediate Recruit
+  icon: null
+  generated: true
+immediate_reward:
+  description: Immediate Reward
+  icon: null
+  generated: true
+immediate_reward_node_cost:
+  description: Immediate Reward Node Cost
+  icon: null
+  generated: true
+immediate_virtue:
+  description: Immediate Virtue
+  icon: null
+  generated: true
+initial_recruit_reward:
+  description: Initial Recruit Reward
+  icon: null
+  generated: true
+inspiration_extra_reward:
+  description: Inspiration Extra Reward
+  icon: null
+  generated: true
+item_cover_set:
+  description: Item Cover Set
+  icon: null
+  generated: true
+item_rand_multiply:
+  description: Item Rand Multiply
+  icon: null
+  generated: true
+layer_after_battle_data:
+  description: Layer After Battle Data
+  icon: null
+  generated: true
+layer_after_battle_node:
+  description: Layer After Battle Node
+  icon: null
+  generated: true
+layer_after_perfect_battle:
+  description: Layer After Perfect Battle
+  icon: null
+  generated: true
+layer_battle_cost_inspiration:
+  description: Layer Battle Cost Inspiration
+  icon: null
+  generated: true
+layer_battle_get_candle:
+  description: Layer Battle Get Candle
+  icon: null
+  generated: true
+layer_char_attribute_add:
+  description: Layer Char Attribute Add
+  icon: null
+  generated: true
+layer_char_attribute_final_scaler:
+  description: Layer Char Attribute Final Scaler
+  icon: null
+  generated: true
+layer_char_attribute_mul:
+  description: Layer Char Attribute Mul
+  icon: null
+  generated: true
+layer_char_random_target_attribute:
+  description: Layer Char Random Target Attribute
+  icon: null
+  generated: true
+layer_copper_draw:
+  description: Layer Copper Draw
+  icon: null
+  generated: true
+layer_copper_owned:
+  description: Layer Copper Owned
+  icon: null
+  generated: true
+layer_inspiration:
+  description: Layer Inspiration
+  icon: null
+  generated: true
+layer_item_cost:
+  description: Layer Item Cost
+  icon: null
+  generated: true
+layer_level_char_limit_add:
+  description: Layer Level Char Limit Add
+  icon: null
+  generated: true
+layer_node_in:
+  description: Layer Node In
+  icon: null
+  generated: true
+layer_pass_sky_battle:
+  description: Layer Pass Sky Battle
+  icon: null
+  generated: true
+layer_portal_change_layer:
+  description: Layer Portal Change Layer
+  icon: null
+  generated: true
+layer_relic_owned:
+  description: Layer Relic Owned
+  icon: null
+  generated: true
+layer_select_choice:
+  description: Layer Select Choice
+  icon: null
+  generated: true
+layer_teleport_in:
+  description: Layer Teleport In
+  icon: null
+  generated: true
+layer_vision:
+  description: Layer Vision
+  icon: null
+  generated: true
+layer_zone_in_up_elite_down:
+  description: Layer Zone In Up Elite Down
+  icon: null
+  generated: true
+level_char_limit_add:
+  description: Level Char Limit Add
+  icon: null
+  generated: true
+level_cost_increase_time_mul:
+  description: Level Cost Increase Time Mul
+  icon: null
+  generated: true
+level_hidden_group_disable:
+  description: Level Hidden Group Disable
+  icon: null
+  generated: true
+level_hidden_group_enable:
+  description: Level Hidden Group Enable
+  icon: null
+  generated: true
+level_init_cost_add:
+  description: Level Init Cost Add
+  icon: null
+  generated: true
+level_init_cost_add_by_layer:
+  description: Level Init Cost Add By Layer
+  icon: null
+  generated: true
+level_init_cost_add_by_squad:
+  description: Level Init Cost Add By Squad
+  icon: null
+  generated: true
+level_insert_token_inst:
+  description: Level Insert Token Inst
+  icon: null
+  generated: true
+level_life_point_add:
+  description: Level Life Point Add
+  icon: null
+  generated: true
+level_life_point_modify_scale:
+  description: Level Life Point Modify Scale
+  icon: null
+  generated: true
+level_limitation_up:
+  description: Level Limitation Up
+  icon: null
+  generated: true
+level_max_cost_add:
+  description: Level Max Cost Add
+  icon: null
+  generated: true
+limited_direct_upgrade:
+  description: Limited Direct Upgrade
+  icon: null
+  generated: true
+map_gen_change_zone:
+  description: Map Gen Change Zone
+  icon: null
+  generated: true
+memory_reward:
+  description: Memory Reward
+  icon: null
+  generated: true
+misc_add_env_system:
+  description: Misc Add Env System
+  icon: null
+  generated: true
+misc_insert_token_card:
+  description: Misc Insert Token Card
+  icon: null
+  generated: true
+misc_random_insert_token_card:
+  description: Misc Random Insert Token Card
+  icon: null
+  generated: true
+misc_shuffle_deck_atk:
+  description: Misc Shuffle Deck Atk
+  icon: null
+  generated: true
+misc_shuffle_deck_cost:
+  description: Misc Shuffle Deck Cost
+  icon: null
+  generated: true
+move_reward:
+  description: Move Reward
+  icon: null
+  generated: true
+must_vert_path_node_type:
+  description: Must Vert Path Node Type
+  icon: null
+  generated: true
+node_extra_exp:
+  description: Node Extra Exp
+  icon: null
+  generated: true
+node_finish_all_reward:
+  description: Node Finish All Reward
+  icon: null
+  generated: true
+node_finish_cost:
+  description: Node Finish Cost
+  icon: null
+  generated: true
+node_finish_reward:
+  description: Node Finish Reward
+  icon: null
+  generated: true
+node_into_cost:
+  description: Node Into Cost
+  icon: null
+  generated: true
+node_into_reward:
+  description: Node Into Reward
+  icon: null
+  generated: true
+player_level_rewards:
+  description: Player Level Rewards
+  icon: null
+  generated: true
+player_level_up:
+  description: Player Level Up
+  icon: null
+  generated: true
+portal_teleport:
+  description: Portal Teleport
+  icon: null
+  generated: true
+portal_variation_prob:
+  description: Portal Variation Prob
+  icon: null
+  generated: true
+predict_totem_or_chaos:
+  description: Predict Totem Or Chaos
+  icon: null
+  generated: true
+produce_scale:
+  description: Produce Scale
+  icon: null
+  generated: true
+recruit_cost:
+  description: Recruit Cost
+  icon: null
+  generated: true
+recruit_cost_char:
+  description: Recruit Cost Char
+  icon: null
+  generated: true
+recruit_cost_once:
+  description: Recruit Cost Once
+  icon: null
+  generated: true
+recruit_cost_zone:
+  description: Recruit Cost Zone
+  icon: null
+  generated: true
+recruit_extra_prob:
+  description: Recruit Extra Prob
+  icon: null
+  generated: true
+recruit_extra_temp_prob:
+  description: Recruit Extra Temp Prob
+  icon: null
+  generated: true
+reroll_stage_id:
+  description: Reroll Stage Id
+  icon: null
+  generated: true
+resume_on_battle_fail:
+  description: Resume On Battle Fail
+  icon: null
+  generated: true
+secret_into_reward:
+  description: Secret Into Reward
+  icon: null
+  generated: true
+secret_into_reward_once:
+  description: Secret Into Reward Once
+  icon: null
+  generated: true
+set_choice_dynamic_param:
+  description: Set Choice Dynamic Param
+  icon: null
+  generated: true
+set_dice:
+  description: Set Dice
+  icon: null
+  generated: true
+set_dynamic_param:
+  description: Set Dynamic Param
+  icon: null
+  generated: true
+set_force_reroll_type:
+  description: Set Force Reroll Type
+  icon: null
+  generated: true
+set_force_reroll_type_copper:
+  description: Set Force Reroll Type Copper
+  icon: null
+  generated: true
+set_node_refresh_cost:
+  description: Set Node Refresh Cost
+  icon: null
+  generated: true
+set_node_refresh_weight:
+  description: Set Node Refresh Weight
+  icon: null
+  generated: true
+shop_discount:
+  description: Shop Discount
+  icon: null
+  generated: true
+shop_discount_rarity:
+  description: Shop Discount Rarity
+  icon: null
+  generated: true
+snapshot_chaos:
+  description: Snapshot Chaos
+  icon: null
+  generated: true
+spzone_battle_temp_char:
+  description: Spzone Battle Temp Char
+  icon: null
+  generated: true
+spzone_node_rand_unlock:
+  description: Spzone Node Rand Unlock
+  icon: null
+  generated: true
+totem_drop:
+  description: Totem Drop
+  icon: null
+  generated: true
+totem_drop_boss:
+  description: Totem Drop Boss
+  icon: null
+  generated: true
+totem_effect_reward:
+  description: Totem Effect Reward
+  icon: null
+  generated: true
+unlock_node:
+  description: Unlock Node
+  icon: null
+  generated: true
+unlock_system:
+  description: Unlock System
+  icon: null
+  generated: true
+up_reward:
+  description: Up Reward
+  icon: null
+  generated: true
+upgrade_cost:
+  description: Upgrade Cost
+  icon: null
+  generated: true
+upgrade_cost_char:
+  description: Upgrade Cost Char
+  icon: null
+  generated: true
+upgrade_cost_zone:
+  description: Upgrade Cost Zone
+  icon: null
+  generated: true
+upgrade_dice:
+  description: Upgrade Dice
+  icon: null
+  generated: true
+vision_limitation_up:
+  description: Vision Limitation Up
+  icon: null
+  generated: true
+wrath_pacify:
+  description: Wrath Pacify
+  icon: null
+  generated: true
+zone_into_cost:
+  description: Zone Into Cost
+  icon: null
+  generated: true
+zone_into_mutation:
+  description: Zone Into Mutation
+  icon: null
+  generated: true
+zone_into_reward:
+  description: Zone Into Reward
+  icon: null
+  generated: true
+zone_into_reward_stash_recruit:
+  description: Zone Into Reward Stash Recruit
+  icon: null
+  generated: true
+zone_node_refresh:
+  description: Zone Node Refresh
+  icon: null
+  generated: true

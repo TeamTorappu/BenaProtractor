@@ -1,0 +1,77 @@
+actionType: CheckUnitCurrentMode
+fields:
+  _checkCurModeIndex:
+    type: number
+    description: check Cur Mode Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+          generated: true
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+          generated: true
+      -
+        value: 4
+        display: false
+        parse:
+          type: literal
+          return: 4
+          generated: true
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+          generated: true
+  _loadCurModeBbKey:
+    type: string
+    description: load Cur Mode Bb Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true

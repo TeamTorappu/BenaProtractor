@@ -1,0 +1,35 @@
+actionType: Act49sideBossEmitProjectileToSkillTargetPos
+fields:
+  _projectileKey:
+    type: string
+    description: projectile Key
+    values:
+      -
+        value: projectile_enemy_suisho_fireBreath
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_suisho_fireBreath
+          generated: true
+  _skillName:
+    type: string
+    description: skill Name
+    values:
+      -
+        value: FireBreath
+        display: false
+        parse:
+          type: literal
+          return: FireBreath
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

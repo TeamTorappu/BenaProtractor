@@ -1,0 +1,13 @@
+actionType: CheckEntitySuicide
+fields:
+  _entity:
+    type: string
+    description: entity
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

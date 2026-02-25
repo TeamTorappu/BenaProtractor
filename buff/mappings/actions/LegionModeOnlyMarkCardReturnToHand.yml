@@ -1,0 +1,24 @@
+actionType: LegionModeOnlyMarkCardReturnToHand
+fields:
+  _needKeepStatus:
+    type: boolean
+    description: need Keep Status
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

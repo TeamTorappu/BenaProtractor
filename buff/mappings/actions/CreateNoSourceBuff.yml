@@ -1,0 +1,35 @@
+actionType: CreateNoSourceBuff
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffOwner:
+    type: string
+    description: buff Owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

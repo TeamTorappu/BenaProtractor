@@ -1,0 +1,13 @@
+actionType: EnsureBlackboardDefaultValue
+fields:
+  _defaultSettings:
+    type: array
+    description: default Settings
+    schema: action_subschema/_defaultSettings.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

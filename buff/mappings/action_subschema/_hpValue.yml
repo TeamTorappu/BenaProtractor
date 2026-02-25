@@ -1,0 +1,17 @@
+field: _hpValue
+type: object
+description: hp Value
+actions:
+  FilterByTargetHp:
+    type: object
+    values:
+      -
+        value: "{\"_serializedValue\":0}"
+        display: false
+        parse:
+          type: fn
+          name: parsehpValue
+          args:
+            - $input
+            - $ctx
+          generated: true

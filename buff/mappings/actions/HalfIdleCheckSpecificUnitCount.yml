@@ -1,0 +1,46 @@
+actionType: HalfIdleCheckSpecificUnitCount
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+          generated: true
+  _limitAmount:
+    type: number
+    description: limit Amount
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _limitAmountKey:
+    type: null
+    description: limit Amount Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _unitId:
+    type: string
+    description: unit Id
+    values:
+      -
+        value: trap_1519_lhrift
+        display: false
+        parse:
+          type: literal
+          return: trap_1519_lhrift
+          generated: true

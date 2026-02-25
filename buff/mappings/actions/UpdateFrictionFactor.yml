@@ -1,0 +1,42 @@
+actionType: UpdateFrictionFactor
+fields:
+  _frictionFactor:
+    type: number
+    description: friction Factor
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _restoreFrictionFactor:
+    type: boolean
+    description: restore Friction Factor
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

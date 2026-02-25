@@ -1,0 +1,24 @@
+actionType: FilterByAbilityFinishReason
+fields:
+  _finishReason:
+    type: string
+    description: finish Reason
+    values:
+      -
+        value: PALSY
+        display: false
+        parse:
+          type: literal
+          return: PALSY
+          generated: true
+  _useBuffAbility:
+    type: boolean
+    description: use Buff Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

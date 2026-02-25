@@ -1,0 +1,17 @@
+field: _defaultTransformOffset
+type: object
+description: default Transform Offset
+actions:
+  SetUnitAnimatorTransform:
+    type: object
+    values:
+      -
+        value: "{\"x\":0,\"y\":-0.20000000298023224,\"z\":-0.6000000238418579}"
+        display: false
+        parse:
+          type: fn
+          name: parsedefaultTransformOffset
+          args:
+            - $input
+            - $ctx
+          generated: true

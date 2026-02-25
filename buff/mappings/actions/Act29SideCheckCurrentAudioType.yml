@@ -1,0 +1,32 @@
+actionType: Act29SideCheckCurrentAudioType
+fields:
+  _audioType:
+    type: string
+    description: 音频类型
+    values:
+      -
+        value: Depressed
+        parse:
+          type: literal
+          return: Depressed / 沮丧的
+      -
+        value: Enthusiastic
+        parse:
+          type: literal
+          return: Enthusiastic / 热情的
+      -
+        value: None
+        parse:
+          type: literal
+          return: 无
+  _evnSysKey:
+    type: string
+    description: evn Sys Key
+    values:
+      -
+        value: env_008_act29side_audio_type_switcher
+        # display: false
+        parse:
+          type: literal
+          return: 切换至 env_008_act29side_audio_type_switcher
+          # generated: true

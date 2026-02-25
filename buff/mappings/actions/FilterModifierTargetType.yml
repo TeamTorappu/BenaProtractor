@@ -1,0 +1,27 @@
+actionType: FilterModifierTargetType
+fields:
+  _modifierTargetType:
+    type: string
+    description: modifier Target Type
+    values:
+      -
+        value: EP
+        display: false
+        parse:
+          type: literal
+          return: EP
+          generated: true
+      -
+        value: HP
+        display: false
+        parse:
+          type: literal
+          return: HP
+          generated: true
+      -
+        value: SP
+        display: false
+        parse:
+          type: literal
+          return: SP
+          generated: true

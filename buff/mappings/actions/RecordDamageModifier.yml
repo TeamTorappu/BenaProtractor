@@ -1,0 +1,13 @@
+actionType: RecordDamageModifier
+fields:
+  _filterModifierCancelled:
+    type: boolean
+    description: filter Modifier Cancelled
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

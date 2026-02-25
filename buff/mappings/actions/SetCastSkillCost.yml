@@ -1,0 +1,46 @@
+actionType: SetCastSkillCost
+fields:
+  _assignOldValueKey:
+    type: null
+    description: assign Old Value Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _valueBbKey:
+    type: string
+    description: value Bb Key
+    values:
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+          generated: true

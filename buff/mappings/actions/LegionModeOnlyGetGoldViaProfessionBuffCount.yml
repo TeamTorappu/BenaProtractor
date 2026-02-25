@@ -1,0 +1,46 @@
+actionType: LegionModeOnlyGetGoldViaProfessionBuffCount
+fields:
+  _goldPerBuff:
+    type: number
+    description: gold Per Buff
+    values:
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+          generated: true
+  _goldPerBuffKey:
+    type: string
+    description: gold Per Buff Key
+    values:
+      -
+        value: gold_per_buff
+        display: false
+        parse:
+          type: literal
+          return: gold_per_buff
+          generated: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

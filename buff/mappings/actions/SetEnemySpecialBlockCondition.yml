@@ -1,0 +1,53 @@
+actionType: SetEnemySpecialBlockCondition
+fields:
+  _buffKeyPairs:
+    type: array
+    description: buff Key Pairs
+    schema: action_subschema/_buffKeyPairs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _enemy:
+    type: string
+    description: enemy
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _filterTags:
+    type: array | null
+    description: filter Tags
+    schema: action_subschema/_filterTags.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _type:
+    type: string
+    description: type
+    values:
+      -
+        value: BUFF_KEY_MATCH_AND
+        display: false
+        parse:
+          type: literal
+          return: BUFF_KEY_MATCH_AND
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true

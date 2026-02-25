@@ -1,0 +1,37 @@
+field: _loopBody
+type: object
+description: loop Body
+actions:
+  Loop:
+    type: array
+    values:
+      -
+        value: "[{\"$type\":\"Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp\",\"_targetType\":\"BUFF_OWNER\",\"_anotherBuff\":false,\"_buffKey\":null,\"_blackboardKey\":\"index\",\"_valueToCompare\":0,\"_anotherKeyToCompare\":\"spine\",\"_condType\":\"EQUALS\"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[{\"$type\":\"Torappu.Battle.Action.Nodes+HealViaMaxHpRatio, Assembly-CSharp\",\"_healTarget\":\"BUFF_OWNER\",\"_getMaxHpFromTarget\":false,\"_ignoreHealFree\":false,\"_skipModifierEvent\":false}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[{\"$type\":\"Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp\",\"_conditionNode\":{\"$type\":\"Torappu.Battle.Action.Nodes+Dice, Assembly-CSharp\",\"_probKey\":\"prob\"},\"_succeedNodes\":[{\"$type\":\"Torappu.Battle.Action.Nodes+BlackboardAdd, Assembly-CSharp\",\"_blackboardKey\":\"random_result\",\"_addition\":1,\"_additionKey\":null,\"_isFloat\":false}],\"_failNodes\":null},{\"$type\":\"Torappu.Battle.Action.Nodes+AlwaysNext, Assembly-CSharp\"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

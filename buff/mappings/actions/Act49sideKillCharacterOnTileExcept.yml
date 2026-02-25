@@ -1,0 +1,35 @@
+actionType: Act49sideKillCharacterOnTileExcept
+fields:
+  _buffToKillCharacter:
+    type: object
+    description: buff To Kill Character
+    schema: action_subschema/_buffToKillCharacter.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _exceptCharId:
+    type: string
+    description: except Char Id
+    values:
+      -
+        value: trap_286_tjgsd
+        display: false
+        parse:
+          type: literal
+          return: trap_286_tjgsd
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

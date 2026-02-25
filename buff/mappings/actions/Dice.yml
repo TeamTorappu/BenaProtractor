@@ -1,0 +1,48 @@
+actionType: Dice
+fields:
+  _probKey:
+    type: string
+    description: prob Key
+    values:
+      -
+        value: prob
+        display: false
+        parse:
+          type: literal
+          return: prob
+          generated: true
+      -
+        value: prob2
+        display: false
+        parse:
+          type: literal
+          return: prob2
+          generated: true
+      -
+        value: "prob[active]"
+        display: false
+        parse:
+          type: literal
+          return: "prob[active]"
+          generated: true
+      -
+        value: "prob[passive]"
+        display: false
+        parse:
+          type: literal
+          return: "prob[passive]"
+          generated: true
+      -
+        value: prob_knockback
+        display: false
+        parse:
+          type: literal
+          return: prob_knockback
+          generated: true
+      -
+        value: real_prob
+        display: false
+        parse:
+          type: literal
+          return: real_prob
+          generated: true

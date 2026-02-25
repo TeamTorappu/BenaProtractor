@@ -1,0 +1,121 @@
+actionType: EmitProjectileFromManagedProjectiles
+fields:
+  _addBbDefaultValue:
+    type: number
+    description: add Bb Default Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+          generated: true
+  _addBbKeyForEachProjectile:
+    type: null | string
+    description: add Bb Key For Each Projectile
+    values:
+      -
+        value: hit_interval
+        display: false
+        parse:
+          type: literal
+          return: hit_interval
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _addBbValue:
+    type: number
+    description: add Bb Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.30000001192092896
+        display: false
+        parse:
+          type: literal
+          return: 0.30000001192092896
+          generated: true
+  _copyBb:
+    type: boolean
+    description: copy Bb
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _projectileKey:
+    type: null | string
+    description: projectile Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: projectile_chr_lemuen_s3
+        display: false
+        parse:
+          type: literal
+          return: projectile_chr_lemuen_s3
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useProjectileAsSource:
+    type: boolean
+    description: use Projectile As Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

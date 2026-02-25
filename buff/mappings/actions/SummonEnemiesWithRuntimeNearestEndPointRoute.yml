@@ -1,0 +1,232 @@
+actionType: SummonEnemiesWithRuntimeNearestEndPointRoute
+fields:
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _enemyKey:
+    type: null | string
+    description: enemy Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: enemy_2130_dyswrd
+        display: false
+        parse:
+          type: literal
+          return: enemy_2130_dyswrd
+          generated: true
+      -
+        value: enemy_2131_dyfire
+        display: false
+        parse:
+          type: literal
+          return: enemy_2131_dyfire
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _ignoreMissEndPoint:
+    type: boolean
+    description: ignore Miss End Point
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: FLY
+        display: false
+        parse:
+          type: literal
+          return: FLY
+          generated: true
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _spawnOffset:
+    type: number
+    description: spawn Offset
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.05000000074505806
+        display: false
+        parse:
+          type: literal
+          return: 0.05000000074505806
+          generated: true
+      -
+        value: 0.30000001192092896
+        display: false
+        parse:
+          type: literal
+          return: 0.30000001192092896
+          generated: true
+  _summonCount:
+    type: number
+    description: summon Count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _summonOnNearestPassableTile:
+    type: boolean
+    description: summon On Nearest Passable Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _waitTime:
+    type: number
+    description: wait Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.25
+        display: false
+        parse:
+          type: literal
+          return: 0.25
+          generated: true
+      -
+        value: 999999
+        display: false
+        parse:
+          type: literal
+          return: 999999
+          generated: true

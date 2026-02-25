@@ -1,0 +1,49 @@
+actionType: RecordAbilityRemainingTime
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: PetrifiedRay
+        display: false
+        parse:
+          type: literal
+          return: PetrifiedRay
+          generated: true
+      -
+        value: SummonDupilr
+        display: false
+        parse:
+          type: literal
+          return: SummonDupilr
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _recordKey:
+    type: string
+    description: record Key
+    values:
+      -
+        value: PetrifiedRay_CD
+        display: false
+        parse:
+          type: literal
+          return: PetrifiedRay_CD
+          generated: true
+      -
+        value: SummonDupilr_CD
+        display: false
+        parse:
+          type: literal
+          return: SummonDupilr_CD
+          generated: true

@@ -1,0 +1,89 @@
+actionType: Act44SideGainGrade
+fields:
+  _hitCountKey:
+    type: string
+    description: hit Count Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+  _isAllyGainGrade:
+    type: boolean
+    description: is Ally Gain Grade
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isCollideGainGrade:
+    type: boolean
+    description: is Collide Gain Grade
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _isEnemyGainGrade:
+    type: boolean
+    description: is Enemy Gain Grade
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isFallDownGainGrade:
+    type: boolean
+    description: is Fall Down Gain Grade
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

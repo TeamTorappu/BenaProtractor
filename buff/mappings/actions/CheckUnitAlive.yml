@@ -1,0 +1,34 @@
+actionType: CheckUnitAlive
+fields:
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

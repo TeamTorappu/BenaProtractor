@@ -1,0 +1,195 @@
+actionType: AddCharacterSharedBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _isOverwrite:
+    type: boolean
+    description: is Overwrite
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isStringBB:
+    type: boolean
+    description: is String B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _useValueKey:
+    type: boolean
+    description: use Value Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+          generated: true
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _valueKey:
+    type: string
+    description: value Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: char_id
+        display: false
+        parse:
+          type: literal
+          return: char_id
+          generated: true
+      -
+        value: chen3_col
+        display: false
+        parse:
+          type: literal
+          return: chen3_col
+          generated: true
+      -
+        value: chen3_row
+        display: false
+        parse:
+          type: literal
+          return: chen3_row
+          generated: true
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+          generated: true
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+          generated: true
+      -
+        value: monstr_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: monstr_hp_ratio
+          generated: true
+      -
+        value: range_id
+        display: false
+        parse:
+          type: literal
+          return: range_id
+          generated: true
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+          generated: true
+  _valueStr:
+    type: string
+    description: value Str
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true

@@ -1,0 +1,81 @@
+actionType: RecordCurrentHpRatio
+fields:
+  _needOffset:
+    type: boolean
+    description: need Offset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _recordKey:
+    type: string
+    description: record Key
+    values:
+      -
+        value: hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: hp_ratio
+          generated: true
+      -
+        value: record_cur_hp
+        display: false
+        parse:
+          type: literal
+          return: record_cur_hp
+          generated: true
+      -
+        value: record_cur_maxhp
+        display: false
+        parse:
+          type: literal
+          return: record_cur_maxhp
+          generated: true
+  _recordType:
+    type: string
+    description: record Type
+    values:
+      -
+        value: hp
+        display: false
+        parse:
+          type: literal
+          return: hp
+          generated: true
+      -
+        value: hpRatio
+        display: false
+        parse:
+          type: literal
+          return: hpRatio
+          generated: true
+      -
+        value: maxHp
+        display: false
+        parse:
+          type: literal
+          return: maxHp
+          generated: true

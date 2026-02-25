@@ -1,0 +1,163 @@
+actionType: ModifyGraphicHolderHeight
+fields:
+  _OffsetKey:
+    type: string
+    description: Offset Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: fly_height
+        display: false
+        parse:
+          type: literal
+          return: fly_height
+          generated: true
+      -
+        value: height_offset
+        display: false
+        parse:
+          type: literal
+          return: height_offset
+          generated: true
+      -
+        value: invalid
+        display: false
+        parse:
+          type: literal
+          return: invalid
+          generated: true
+  _audioSignalOnStop:
+    type: string
+    description: audio Signal On Stop
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: leizi2_born_takeoff
+        display: false
+        parse:
+          type: literal
+          return: leizi2_born_takeoff
+          generated: true
+      -
+        value: leizi2_s1_land
+        display: false
+        parse:
+          type: literal
+          return: leizi2_s1_land
+          generated: true
+      -
+        value: leizi2_s2_land
+        display: false
+        parse:
+          type: literal
+          return: leizi2_s2_land
+          generated: true
+      -
+        value: leizi2_s3_land
+        display: false
+        parse:
+          type: literal
+          return: leizi2_s3_land
+          generated: true
+  _duration:
+    type: number
+    description: duration
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+          generated: true
+  _durationKey:
+    type: string
+    description: duration Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: fly_duration
+        display: false
+        parse:
+          type: literal
+          return: fly_duration
+          generated: true
+      -
+        value: fly_end_duration
+        display: false
+        parse:
+          type: literal
+          return: fly_end_duration
+          generated: true
+      -
+        value: height_duration
+        display: false
+        parse:
+          type: literal
+          return: height_duration
+          generated: true
+      -
+        value: invalid
+        display: false
+        parse:
+          type: literal
+          return: invalid
+          generated: true
+  _offset:
+    type: number
+    description: offset
+    schema: action_subschema/_offset.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useGlobalPos:
+    type: boolean
+    description: use Global Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

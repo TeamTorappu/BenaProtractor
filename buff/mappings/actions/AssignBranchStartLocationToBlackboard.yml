@@ -1,0 +1,42 @@
+actionType: AssignBranchStartLocationToBlackboard
+fields:
+  _actionIndex:
+    type: number
+    description: action Index
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _branchId:
+    type: string
+    description: branch Id
+    values:
+      -
+        value: left_hand_blink
+        display: false
+        parse:
+          type: literal
+          return: left_hand_blink
+          generated: true
+      -
+        value: right_hand_blink
+        display: false
+        parse:
+          type: literal
+          return: right_hand_blink
+          generated: true

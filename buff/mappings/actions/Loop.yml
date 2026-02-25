@@ -1,0 +1,89 @@
+actionType: Loop
+fields:
+  _keyMappingList:
+    type: array
+    description: key Mapping List
+    schema: action_subschema/_keyMappingList.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _loopBody:
+    type: array
+    description: loop Body
+    schema: action_subschema/_loopBody.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _loopCnt:
+    type: number
+    description: loop Cnt
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _loopCntKey:
+    type: null | string
+    description: loop Cnt Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+          generated: true
+  _stopWhenPreviousSucceed:
+    type: boolean
+    description: stop When Previous Succeed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useMappingList:
+    type: boolean
+    description: use Mapping List
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

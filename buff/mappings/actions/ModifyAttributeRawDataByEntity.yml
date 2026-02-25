@@ -1,0 +1,89 @@
+actionType: ModifyAttributeRawDataByEntity
+fields:
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _typesNeedtoModify:
+    type: array
+    description: types Needto Modify
+    schema: action_subschema/_typesNeedtoModify.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _typesNeedtoUseRatio:
+    type: array
+    description: types Needto Use Ratio
+    schema: action_subschema/_typesNeedtoUseRatio.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _useCardSnapshot:
+    type: boolean
+    description: use Card Snapshot
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useRatio:
+    type: boolean
+    description: use Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

@@ -1,0 +1,24 @@
+actionType: EnemyDurcarCheckOverlapWithHighland
+fields:
+  _ignoreCheckSomeTiles:
+    type: boolean
+    description: ignore Check Some Tiles
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _ignoredAdvancedBuildMask:
+    type: string
+    description: ignored Advanced Build Mask
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+          generated: true

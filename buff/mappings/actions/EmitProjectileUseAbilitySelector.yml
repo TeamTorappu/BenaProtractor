@@ -1,0 +1,402 @@
+actionType: EmitProjectileUseAbilitySelector
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: MissileSelector
+        display: false
+        parse:
+          type: literal
+          return: MissileSelector
+          generated: true
+      -
+        value: SecondSelector
+        display: false
+        parse:
+          type: literal
+          return: SecondSelector
+          generated: true
+      -
+        value: SplashSelector
+        display: false
+        parse:
+          type: literal
+          return: SplashSelector
+          generated: true
+  _abilityOwner:
+    type: string
+    description: ability Owner
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _actions:
+    type: array | null
+    description: actions
+    schema: action_subschema/_actions.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffDataList:
+    type: array
+    description: buff Data List
+    schema: action_subschema/_buffDataList.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _cacheAtkToActions:
+    type: boolean
+    description: cache Atk To Actions
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _emitCount:
+    type: number
+    description: emit Count
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _ev:
+    type: string
+    description: ev
+    values:
+      -
+        value: ON_HIT_OBJECT
+        display: false
+        parse:
+          type: literal
+          return: ON_HIT_OBJECT
+          generated: true
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _extraBlackboard:
+    type: boolean
+    description: extra Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _hookStartPoint:
+    type: boolean
+    description: hook Start Point
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _mountPoint:
+    type: string
+    description: mount Point
+    values:
+      -
+        value: FOOT
+        display: false
+        parse:
+          type: literal
+          return: FOOT
+          generated: true
+      -
+        value: HIT
+        display: false
+        parse:
+          type: literal
+          return: HIT
+          generated: true
+      -
+        value: MUZZLE
+        display: false
+        parse:
+          type: literal
+          return: MUZZLE
+          generated: true
+  _mountPointGroup:
+    type: null | object
+    description: mount Point Group
+    schema: action_subschema/_mountPointGroup.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _overwriteActions:
+    type: boolean
+    description: overwrite Actions
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _overwriteBlackboard:
+    type: boolean
+    description: overwrite Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _overwriteBuffs:
+    type: boolean
+    description: overwrite Buffs
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _projectileKey:
+    type: string
+    description: projectile Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: projectile_chr_taraxa_s2_1
+        display: false
+        parse:
+          type: literal
+          return: projectile_chr_taraxa_s2_1
+          generated: true
+      -
+        value: projectile_chr_taraxa_s2_2
+        display: false
+        parse:
+          type: literal
+          return: projectile_chr_taraxa_s2_2
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _startPointTarget:
+    type: string
+    description: start Point Target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _useAbilityFromOther:
+    type: boolean
+    description: use Ability From Other
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useMountPointGroup:
+    type: boolean
+    description: use Mount Point Group
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useProjectilePos:
+    type: boolean
+    description: use Projectile Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

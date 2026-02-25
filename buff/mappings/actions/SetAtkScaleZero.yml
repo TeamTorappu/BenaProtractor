@@ -1,0 +1,24 @@
+actionType: SetAtkScaleZero
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+  _filterApplyWay:
+    type: boolean
+    description: filter Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

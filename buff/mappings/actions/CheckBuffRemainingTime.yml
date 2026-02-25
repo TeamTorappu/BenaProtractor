@@ -1,0 +1,89 @@
+actionType: CheckBuffRemainingTime
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: "mpctrl_survive_stage[basic]"
+        display: false
+        parse:
+          type: literal
+          return: "mpctrl_survive_stage[basic]"
+          generated: true
+  _checkTime:
+    type: number
+    description: check Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _checkTimeKey:
+    type: string
+    description: check Time Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: revert_remaining_time_delta
+        display: false
+        parse:
+          type: literal
+          return: revert_remaining_time_delta
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useSnapshotBuff:
+    type: boolean
+    description: use Snapshot Buff
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

@@ -1,0 +1,3281 @@
+add:
+  type: number
+  description: add
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+addition@cost:
+  type: number
+  description: addition@cost
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+ammo_add_ratio:
+  type: number
+  description: ammo_add_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+ammo_max_ratio:
+  type: number
+  description: ammo_max_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+atk:
+  type: number
+  description: atk
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+atk_extra:
+  type: number
+  description: atk_extra
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+atk_scale:
+  type: number
+  description: atk_scale
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+attack_speed:
+  type: number
+  description: attack_speed
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+base_force_level:
+  type: number
+  description: base_force_level
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+blacklist:
+  type: number
+  description: blacklist
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+block_cnt:
+  type: number
+  description: block_cnt
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+born_hp_ratio:
+  type: number
+  description: born_hp_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+buildable_type:
+  type: number
+  description: buildable_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+certain_inspiration:
+  type: number
+  description: certain_inspiration
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+change:
+  type: number
+  description: change
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+char_id_list:
+  type: number
+  description: char_id_list
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+char_list:
+  type: number
+  description: char_list
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+choice_id:
+  type: number
+  description: choice_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+choices:
+  type: number
+  description: choices
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+cnt:
+  type: number
+  description: cnt
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+cold:
+  type: number
+  description: cold
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+compare:
+  type: number
+  description: compare
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+condition:
+  type: number
+  description: condition
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+condition_count:
+  type: number
+  description: condition_count
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+condition_fragments_total_weight:
+  type: number
+  description: condition_fragments_total_weight
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+condition_id:
+  type: number
+  description: condition_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+condition_key:
+  type: number
+  description: condition_key
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+condition_value:
+  type: number
+  description: condition_value
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+cost:
+  type: number
+  description: cost
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+cost_max_hp:
+  type: number
+  description: cost_max_hp
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+cost_stun:
+  type: number
+  description: cost_stun
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+cost_value:
+  type: number
+  description: cost_value
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+count:
+  type: number
+  description: count
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+count_extra:
+  type: number
+  description: count_extra
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+counts:
+  type: number
+  description: counts
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage:
+  type: number
+  description: damage
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_hitrate_magical:
+  type: number
+  description: damage_hitrate_magical
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_hitrate_physical:
+  type: number
+  description: damage_hitrate_physical
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_resistance:
+  type: number
+  description: damage_resistance
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_resistance[sanity_high].damage_resistance:
+  type: number
+  description: "damage_resistance[sanity_high].damage_resistance"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_resistance[sanity_low].damage_resistance:
+  type: number
+  description: "damage_resistance[sanity_low].damage_resistance"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_resistance_factor:
+  type: number
+  description: damage_resistance_factor
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_scale:
+  type: number
+  description: damage_scale
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_scale_base:
+  type: number
+  description: damage_scale_base
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_scale_factor:
+  type: number
+  description: damage_scale_factor
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_value1:
+  type: number
+  description: damage_value1
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+damage_value2:
+  type: number
+  description: damage_value2
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+def:
+  type: number
+  description: 变动量
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}"
+      args:
+        - parseToPercent(value)
+def_down[stack].def:
+  type: number
+  description: "def_down[stack].def"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+def_extra:
+  type: number
+  description: def_extra
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+def_penetrate:
+  type: number
+  description: def_penetrate
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+delta:
+  type: number
+  description: delta
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+direction:
+  type: number
+  description: direction
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+divine_type:
+  type: number
+  description: divine_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+division:
+  type: number
+  description: division
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+divisor:
+  type: number
+  description: divisor
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+dont_occupy_deploy_cnt:
+  type: number
+  description: dont_occupy_deploy_cnt
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+down_layer:
+  type: number
+  description: down_layer
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+drop_event_index:
+  type: number
+  description: drop_event_index
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+drop_zone_id:
+  type: number
+  description: drop_zone_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+duration:
+  type: number
+  description: duration
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+dynamicability:
+  type: number
+  description: dynamicability
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+each_atk:
+  type: number
+  description: each_atk
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+effect:
+  type: number
+  description: effect
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+enemy_key:
+  type: number
+  description: enemy_key
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+ep_damage_resistance:
+  type: number
+  description: ep_damage_resistance
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+ep_damage_scale:
+  type: number
+  description: ep_damage_scale
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+event_args:
+  type: number
+  description: event_args
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+event_id:
+  type: number
+  description: event_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+event_key:
+  type: number
+  description: event_key
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+exped_type:
+  type: number
+  description: exped_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+extend_duration:
+  type: number
+  description: extend_duration
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+extra_cond_lucky_level_drawn:
+  type: number
+  description: extra_cond_lucky_level_drawn
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+fear:
+  type: number
+  description: fear
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+filter_operator:
+  type: number
+  description: filter_operator
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+force:
+  type: number
+  description: force
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+freeze:
+  type: number
+  description: freeze
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+from:
+  type: number
+  description: from
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+gain:
+  type: number
+  description: gain
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+gen_zone_id:
+  type: number
+  description: gen_zone_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+heal_scale:
+  type: number
+  description: heal_scale
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+heal_value:
+  type: number
+  description: heal_value
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+high_max:
+  type: number
+  description: high_max
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+high_min:
+  type: number
+  description: high_min
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+hp:
+  type: number
+  description: hp
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+hp_ratio:
+  type: number
+  description: hp_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+hp_recovery_per_sec:
+  type: number
+  description: hp_recovery_per_sec
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+hp_recovery_per_sec_by_max_hp_ratio:
+  type: number
+  description: hp_recovery_per_sec_by_max_hp_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+id:
+  type: number
+  description: id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+id1:
+  type: number
+  description: id1
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+id2:
+  type: number
+  description: id2
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+id_a:
+  type: number
+  description: id_a
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+id_b:
+  type: number
+  description: id_b
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+ids:
+  type: number
+  description: ids
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+init:
+  type: number
+  description: init
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+inspiration:
+  type: number
+  description: inspiration
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+int:
+  type: number
+  description: int
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+interval:
+  type: number
+  description: interval
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+is_drawn:
+  type: number
+  description: is_drawn
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+is_success:
+  type: number
+  description: is_success
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+key:
+  type: number
+  description: key
+  icon: null
+  default:
+    parse:
+      type: fn
+      name: parseBlackboardKey
+      args:
+        - valueStr
+level:
+  type: number
+  description: level
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+levitate_duration:
+  type: number
+  description: levitate_duration
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+life_point:
+  type: number
+  description: life_point
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+limit:
+  type: number
+  description: limit
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+limit_cost:
+  type: number
+  description: limit_cost
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+limit_max:
+  type: number
+  description: limit_max
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+low_max:
+  type: number
+  description: low_max
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+low_min:
+  type: number
+  description: low_min
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+lower_bound@cost:
+  type: number
+  description: lower_bound@cost
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+lower_bound@respawn_time:
+  type: number
+  description: lower_bound@respawn_time
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+lucky_level:
+  type: number
+  description: lucky_level
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+magic_resist_penetrate:
+  type: number
+  description: magic_resist_penetrate
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+magic_resistance:
+  type: number
+  description: magic_resistance
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+mapping:
+  type: number
+  description: mapping
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+mask:
+  type: number
+  description: mask
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+mass_level:
+  type: number
+  description: mass_level
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max:
+  type: number
+  description: max
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_add_on_scale:
+  type: number
+  description: max_add_on_scale
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_atk:
+  type: number
+  description: max_atk
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_attack_speed:
+  type: number
+  description: max_attack_speed
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_cost:
+  type: number
+  description: max_cost
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_cost_ceil:
+  type: number
+  description: max_cost_ceil
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_deploy_count:
+  type: number
+  description: max_deploy_count
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_dist:
+  type: number
+  description: max_dist
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_es_ratio:
+  type: number
+  description: max_es_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_hp:
+  type: number
+  description: max_hp
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_hp_extra:
+  type: number
+  description: max_hp_extra
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_hp_ratio:
+  type: number
+  description: max_hp_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_in_layer:
+  type: number
+  description: max_in_layer
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_len:
+  type: number
+  description: max_len
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_stack_cnt:
+  type: number
+  description: max_stack_cnt
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_stack_cnt_override:
+  type: number
+  description: max_stack_cnt_override
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_stack_count:
+  type: number
+  description: max_stack_count
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_valid_stack_cnt:
+  type: number
+  description: max_valid_stack_cnt
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+max_value:
+  type: number
+  description: max_value
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+mid_max:
+  type: number
+  description: mid_max
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+mid_min:
+  type: number
+  description: mid_min
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+min:
+  type: number
+  description: min
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+min_add_on_scale:
+  type: number
+  description: min_add_on_scale
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+min_atk:
+  type: number
+  description: min_atk
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+min_attack_speed:
+  type: number
+  description: min_attack_speed
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+min_dist:
+  type: number
+  description: min_dist
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+min_hp_ratio:
+  type: number
+  description: min_hp_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+min_value:
+  type: number
+  description: min_value
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+move_speed:
+  type: number
+  description: move_speed
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+move_type:
+  type: number
+  description: move_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+multiplier:
+  type: number
+  description: multiplier
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+multiplier@atk:
+  type: number
+  description: multiplier@atk
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+multiplier@block_cnt:
+  type: number
+  description: multiplier@block_cnt
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+multiplier@cost:
+  type: number
+  description: multiplier@cost
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+multiplier@def:
+  type: number
+  description: multiplier@def
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+multiplier@magic_resistance:
+  type: number
+  description: multiplier@magic_resistance
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+multiplier@max_hp:
+  type: number
+  description: multiplier@max_hp
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+node:
+  type: number
+  description: node
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+node_sky:
+  type: number
+  description: node_sky
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+node_type:
+  type: number
+  description: node_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+one_minus_status_resistance:
+  type: number
+  description: one_minus_status_resistance
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+only:
+  type: number
+  description: only
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+override_key:
+  type: number
+  description: override_key
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+pa:
+  type: number
+  description: pa
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+pb:
+  type: number
+  description: pb
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+per_a:
+  type: number
+  description: per_a
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+per_b:
+  type: number
+  description: per_b
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+per_lucky_level_drawn:
+  type: number
+  description: per_lucky_level_drawn
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+per_zone:
+  type: number
+  description: per_zone
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+perfect:
+  type: number
+  description: perfect
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+pool:
+  type: number
+  description: pool
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+pool1:
+  type: number
+  description: pool1
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+pool2:
+  type: number
+  description: pool2
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+pool3:
+  type: number
+  description: pool3
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+pool_id:
+  type: number
+  description: pool_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+portal:
+  type: number
+  description: portal
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+portal_only:
+  type: number
+  description: portal_only
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+portal_only :
+  type: number
+  description: "portal_only "
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+pr:
+  type: number
+  description: pr
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+prob:
+  type: number
+  description: prob
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+prob_add:
+  type: number
+  description: prob_add
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+prob_max:
+  type: number
+  description: prob_max
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+profession:
+  type: number
+  description: 职业
+  icon: null
+  default:
+    parse:
+      type: fn
+      name: parseProfession
+      args:
+        - valueStr
+range_id:
+  type: number
+  description: range_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+range_radius:
+  type: number
+  description: range_radius
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rarity:
+  type: number
+  description: 稀有度
+  icon: null
+  default:
+    parse:
+      type: fn
+      name: parseRarity
+      args:
+        - value
+        - valueStr
+rate:
+  type: number
+  description: rate
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+ratio:
+  type: number
+  description: ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+reliance_relics:
+  type: number
+  description: reliance_relics
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+remaining_respawn_time:
+  type: number
+  description: remaining_respawn_time
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+respawn_time:
+  type: number
+  description: respawn_time
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+respawn_time_addition:
+  type: number
+  description: respawn_time_addition
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+respawn_time_factor:
+  type: number
+  description: respawn_time_factor
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rewards:
+  type: number
+  description: rewards
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_2_atk_up[king_suit].atk:
+  type: number
+  description: "rogue_2_atk_up[king_suit].atk"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_2_atk_up[king_suit][bonus].atk:
+  type: number
+  description: "rogue_2_atk_up[king_suit][bonus].atk"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_3_blackfog[enemy].attack_speed:
+  type: number
+  description: "rogue_3_blackfog[enemy].attack_speed"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_3_relic_book_3[cost].cost:
+  type: number
+  description: "rogue_3_relic_book_3[cost].cost"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_4_maxhp_up[lordoffiends_suit].max_hp:
+  type: number
+  description: "rogue_4_maxhp_up[lordoffiends_suit].max_hp"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_4_maxhp_up[lordoffiends_suit][bonus].max_hp:
+  type: number
+  description: "rogue_4_maxhp_up[lordoffiends_suit][bonus].max_hp"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_5_character_random_sp_modify[gain].sp:
+  type: number
+  description: "rogue_5_character_random_sp_modify[gain].sp"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_5_character_random_sp_modify[lose].sp:
+  type: number
+  description: "rogue_5_character_random_sp_modify[lose].sp"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_5_damage_after_max_cost[damage].damage_value:
+  type: number
+  description: "rogue_5_damage_after_max_cost[damage].damage_value"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_5_damage_after_max_cost[damage].interval:
+  type: number
+  description: "rogue_5_damage_after_max_cost[damage].interval"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_5_damage_after_max_cost[damage].stun:
+  type: number
+  description: "rogue_5_damage_after_max_cost[damage].stun"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_5_enemy_speed_random_change[down].move_speed:
+  type: number
+  description: "rogue_5_enemy_speed_random_change[down].move_speed"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rogue_5_enemy_speed_random_change[up].move_speed:
+  type: number
+  description: "rogue_5_enemy_speed_random_change[up].move_speed"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+roguelike_final_scale_layer_first:
+  type: number
+  description: roguelike_final_scale_layer_first
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rule_bonus:
+  type: number
+  description: rule_bonus
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+rule_lucky_level_all:
+  type: number
+  description: rule_lucky_level_all
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+scale:
+  type: number
+  description: scale
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+scene_id:
+  type: number
+  description: scene_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+scene_ids:
+  type: number
+  description: scene_ids
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector:
+  type: number
+  description: selector
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.boss_option:
+  type: number
+  description: selector.boss_option
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.buildable:
+  type: number
+  description: selector.buildable
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.char:
+  type: number
+  description: selector.char
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.enemy:
+  type: number
+  description: selector.enemy
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.enemy_exclude:
+  type: number
+  description: selector.enemy_exclude
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.enemy_level_type:
+  type: number
+  description: selector.enemy_level_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.profession:
+  type: number
+  description: selector.profession
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.side:
+  type: number
+  description: selector.side
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.side :
+  type: number
+  description: "selector.side "
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.sub_profession:
+  type: number
+  description: selector.sub_profession
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+selector.tag:
+  type: number
+  description: selector.tag
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+sequence_select:
+  type: number
+  description: sequence_select
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+shield_value:
+  type: number
+  description: shield_value
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+silence:
+  type: number
+  description: silence
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+skill:
+  type: number
+  description: skill
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+skill_name:
+  type: number
+  description: skill_name
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+sluggish:
+  type: number
+  description: sluggish
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+sp:
+  type: number
+  description: sp
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+sp_recover_ratio:
+  type: number
+  description: sp_recover_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+sp_recovery_per_sec:
+  type: number
+  description: sp_recovery_per_sec
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+sp_value:
+  type: number
+  description: sp_value
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+squad_limit:
+  type: number
+  description: squad_limit
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+src:
+  type: number
+  description: src
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+stack_by_res:
+  type: number
+  description: stack_by_res
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+stack_by_res_cnt:
+  type: number
+  description: stack_by_res_cnt
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+status_resistance[limit]:
+  type: number
+  description: "status_resistance[limit]"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+step:
+  type: number
+  description: step
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+stun:
+  type: number
+  description: stun
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+sub_profession:
+  type: number
+  description: sub_profession
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+sub_type:
+  type: number
+  description: sub_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+suffix:
+  type: number
+  description: suffix
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+tag:
+  type: number
+  description: tag
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+target:
+  type: number
+  description: target
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+tile:
+  type: number
+  description: tile
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+to:
+  type: number
+  description: to
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+token_key:
+  type: number
+  description: token_key
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+trader_return:
+  type: number
+  description: trader_return
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+trig_cnt:
+  type: number
+  description: trig_cnt
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+trig_layer:
+  type: number
+  description: trig_layer
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+trig_type:
+  type: number
+  description: trig_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+type:
+  type: number
+  description: type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+uniq_id:
+  type: number
+  description: uniq_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+unmovable_duration:
+  type: number
+  description: unmovable_duration
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+up:
+  type: number
+  description: up
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+up_layer:
+  type: number
+  description: up_layer
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+upper_bound@cost:
+  type: number
+  description: upper_bound@cost
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+upper_bound@respawn_time:
+  type: number
+  description: upper_bound@respawn_time
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+validator.roguelike_event_type:
+  type: number
+  description: validator.roguelike_event_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+validator.roguelike_event_type :
+  type: number
+  description: "validator.roguelike_event_type "
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+validator.roguelike_sky_zone_event_type:
+  type: number
+  description: validator.roguelike_sky_zone_event_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+value:
+  type: number
+  description: value
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+weak[limit]:
+  type: number
+  description: "weak[limit]"
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+weight:
+  type: number
+  description: weight
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+weights:
+  type: number
+  description: weights
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+withdraw_cost_recover_ratio:
+  type: number
+  description: withdraw_cost_recover_ratio
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+zone:
+  type: number
+  description: zone
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+zone_from:
+  type: number
+  description: zone_from
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+zone_id:
+  type: number
+  description: zone_id
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+zone_id_from:
+  type: number
+  description: zone_id_from
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+zone_id_to:
+  type: number
+  description: zone_id_to
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+zone_list:
+  type: number
+  description: zone_list
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+zone_type:
+  type: number
+  description: zone_type
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true
+zone_type_current:
+  type: number
+  description: zone_type_current
+  icon: null
+  default:
+    parse:
+      type: template
+      return: "{0}({1})"
+      args:
+        - value
+        - valueStr
+      generated: true

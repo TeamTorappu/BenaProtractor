@@ -1,0 +1,141 @@
+actionType: ResetAbilityAtkScale
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: AOE
+        display: false
+        parse:
+          type: literal
+          return: AOE
+          generated: true
+      -
+        value: Missile
+        display: false
+        parse:
+          type: literal
+          return: Missile
+          generated: true
+      -
+        value: RandomGold
+        display: false
+        parse:
+          type: literal
+          return: RandomGold
+          generated: true
+      -
+        value: SecAttack
+        display: false
+        parse:
+          type: literal
+          return: SecAttack
+          generated: true
+      -
+        value: TalentBomb
+        display: false
+        parse:
+          type: literal
+          return: TalentBomb
+          generated: true
+  _atkScale:
+    type: string
+    description: atk Scale
+    values:
+      -
+        value: aoe_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: aoe_atk_scale
+          generated: true
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+          generated: true
+      -
+        value: atk_scale_down
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_down
+          generated: true
+      -
+        value: curr_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: curr_atk_scale
+          generated: true
+      -
+        value: new_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: new_atk_scale
+          generated: true
+  _overwriteAtkScale:
+    type: boolean
+    description: overwrite Atk Scale
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _useBuffAbility:
+    type: boolean
+    description: use Buff Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

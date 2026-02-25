@@ -1,0 +1,67 @@
+actionType: ModifyCharacterLimit
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _getPlayerSideSource:
+    type: boolean
+    description: get Player Side Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isMins:
+    type: boolean
+    description: is Mins
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true

@@ -1,0 +1,24 @@
+actionType: FinishHostCardBuffByKey
+fields:
+  _cardBuffKey:
+    type: string
+    description: card Buff Key
+    values:
+      -
+        value: nasti_nstbld_m3_build_lock
+        display: false
+        parse:
+          type: literal
+          return: nasti_nstbld_m3_build_lock
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

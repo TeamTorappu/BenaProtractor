@@ -1,0 +1,42 @@
+actionType: RandomAction
+fields:
+  _actions:
+    type: array
+    description: actions
+    schema: action_subschema/_actions.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _otherwiseActions:
+    type: array | null
+    description: otherwise Actions
+    schema: action_subschema/_otherwiseActions.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _probKey:
+    type: string
+    description: prob Key
+    values:
+      -
+        value: prob
+        display: false
+        parse:
+          type: literal
+          return: prob
+          generated: true
+      -
+        value: prob1
+        display: false
+        parse:
+          type: literal
+          return: prob1
+          generated: true

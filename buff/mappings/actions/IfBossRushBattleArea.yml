@@ -1,0 +1,38 @@
+actionType: IfBossRushBattleArea
+fields:
+  _isFirstOnTheLeft:
+    type: boolean
+    description: is First On The Left
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isFirstOnTheRight:
+    type: boolean
+    description: is First On The Right
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

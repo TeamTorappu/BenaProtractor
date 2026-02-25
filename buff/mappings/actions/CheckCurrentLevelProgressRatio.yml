@@ -1,0 +1,35 @@
+actionType: CheckCurrentLevelProgressRatio
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+  _levelProgressKey:
+    type: string
+    description: level Progress Key
+    values:
+      -
+        value: add_weapon_effect
+        display: false
+        parse:
+          type: literal
+          return: add_weapon_effect
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

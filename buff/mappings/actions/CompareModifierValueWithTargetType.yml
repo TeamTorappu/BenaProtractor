@@ -1,0 +1,82 @@
+actionType: CompareModifierValueWithTargetType
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+          generated: true
+  _ignoreEs:
+    type: boolean
+    description: ignore Es
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _modifierTarget:
+    type: string
+    description: modifier Target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _ratio:
+    type: number
+    description: ratio
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: HP
+        display: false
+        parse:
+          type: literal
+          return: HP
+          generated: true
+  _useMaxRatio:
+    type: boolean
+    description: use Max Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

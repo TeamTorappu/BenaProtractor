@@ -1,0 +1,38 @@
+actionType: PickRandomBranchPhase
+fields:
+  _blockGameFinish:
+    type: boolean
+    description: block Game Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _notRepeatInOneLoop:
+    type: boolean
+    description: not Repeat In One Loop
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

@@ -1,0 +1,80 @@
+actionType: Act49SideWriteCharacter
+fields:
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _tileType:
+    type: string
+    description: tile Type
+    values:
+      -
+        value: Anchor
+        display: false
+        parse:
+          type: literal
+          return: Anchor
+          generated: true
+      -
+        value: Camp
+        display: false
+        parse:
+          type: literal
+          return: Camp
+          generated: true
+      -
+        value: Carp
+        display: false
+        parse:
+          type: literal
+          return: Carp
+          generated: true
+      -
+        value: Empty
+        display: false
+        parse:
+          type: literal
+          return: Empty
+          generated: true
+      -
+        value: Food
+        display: false
+        parse:
+          type: literal
+          return: Food
+          generated: true
+      -
+        value: Fortune
+        display: false
+        parse:
+          type: literal
+          return: Fortune
+          generated: true
+      -
+        value: Highland
+        display: false
+        parse:
+          type: literal
+          return: Highland
+          generated: true
+      -
+        value: Pure
+        display: false
+        parse:
+          type: literal
+          return: Pure
+          generated: true
+      -
+        value: Trigger
+        display: false
+        parse:
+          type: literal
+          return: Trigger
+          generated: true

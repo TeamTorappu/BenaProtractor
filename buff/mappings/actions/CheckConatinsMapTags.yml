@@ -1,0 +1,13 @@
+actionType: CheckConatinsMapTags
+fields:
+  _mapTags:
+    type: array
+    description: map Tags
+    schema: action_subschema/_mapTags.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

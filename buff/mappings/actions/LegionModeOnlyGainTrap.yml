@@ -1,0 +1,127 @@
+actionType: LegionModeOnlyGainTrap
+fields:
+  _extraCheckOnlyUseOnceList:
+    type: boolean
+    description: extra Check Only Use Once List
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _gainToCardType:
+    type: string
+    description: gain To Card Type
+    values:
+      -
+        value: PENDING
+        display: false
+        parse:
+          type: literal
+          return: PENDING
+          generated: true
+      -
+        value: USING
+        display: false
+        parse:
+          type: literal
+          return: USING
+          generated: true
+  _onlyUseOnce:
+    type: boolean
+    description: only Use Once
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _releaseDiscardBeforeFind:
+    type: boolean
+    description: release Discard Before Find
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _tokenKey:
+    type: string
+    description: token Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: trap_732_ltnova
+        display: false
+        parse:
+          type: literal
+          return: trap_732_ltnova
+          generated: true
+      -
+        value: trap_735_platre
+        display: false
+        parse:
+          type: literal
+          return: trap_735_platre
+          generated: true
+      -
+        value: trap_745_beer
+        display: false
+        parse:
+          type: literal
+          return: trap_745_beer
+          generated: true
+      -
+        value: trap_756_cdnest
+        display: false
+        parse:
+          type: literal
+          return: trap_756_cdnest
+          generated: true
+      -
+        value: trap_765_bmoney
+        display: false
+        parse:
+          type: literal
+          return: trap_765_bmoney
+          generated: true
+      -
+        value: trap_776_bqmleeb
+        display: false
+        parse:
+          type: literal
+          return: trap_776_bqmleeb
+          generated: true

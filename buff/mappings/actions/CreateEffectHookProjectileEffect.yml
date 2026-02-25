@@ -1,0 +1,148 @@
+actionType: CreateEffectHookProjectileEffect
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _constDirection:
+    type: string
+    description: const Direction
+    values:
+      -
+        value: UP
+        display: false
+        parse:
+          type: literal
+          return: UP
+          generated: true
+  _createEffectHoldBySource:
+    type: boolean
+    description: create Effect Hold By Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: thorn2_skill_hit
+        display: false
+        parse:
+          type: literal
+          return: thorn2_skill_hit
+          generated: true
+      -
+        value: tinman_skill_01_hit_01
+        display: false
+        parse:
+          type: literal
+          return: tinman_skill_01_hit_01
+          generated: true
+      -
+        value: tinman_skill_02_hit_01
+        display: false
+        parse:
+          type: literal
+          return: tinman_skill_02_hit_01
+          generated: true
+  _manualSetPlaybackSpeed:
+    type: boolean
+    description: manual Set Playback Speed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _playbackSpeed:
+    type: number
+    description: playback Speed
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useAttackPlaybackSpeed:
+    type: boolean
+    description: use Attack Playback Speed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useConstDirection:
+    type: boolean
+    description: use Const Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useSourceFaceVactor:
+    type: boolean
+    description: use Source Face Vactor
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useSourceToTargetDirection:
+    type: boolean
+    description: use Source To Target Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

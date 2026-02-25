@@ -1,0 +1,109 @@
+actionType: ModifyAbilityAttackTime
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: Building
+        display: false
+        parse:
+          type: literal
+          return: Building
+          generated: true
+      -
+        value: M1Attack
+        display: false
+        parse:
+          type: literal
+          return: M1Attack
+          generated: true
+      -
+        value: M2Attack
+        display: false
+        parse:
+          type: literal
+          return: M2Attack
+          generated: true
+  _bbKey:
+    type: null | string
+    description: bb Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: s_duration
+        display: false
+        parse:
+          type: literal
+          return: s_duration
+          generated: true
+      -
+        value: skill_time
+        display: false
+        parse:
+          type: literal
+          return: skill_time
+          generated: true
+  _useOtherAbility:
+    type: boolean
+    description: use Other Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+          generated: true
+      -
+        value: 2.8299999237060547
+        display: false
+        parse:
+          type: literal
+          return: 2.8299999237060547
+          generated: true
+      -
+        value: 99
+        display: false
+        parse:
+          type: literal
+          return: 99
+          generated: true

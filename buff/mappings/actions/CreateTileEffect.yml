@@ -1,0 +1,170 @@
+actionType: CreateTileEffect
+fields:
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: enemy_dsbish_C2_skill02_ground
+        display: false
+        parse:
+          type: literal
+          return: enemy_dsbish_C2_skill02_ground
+          generated: true
+      -
+        value: enemy_nstmom_skill_01_debuff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_nstmom_skill_01_debuff_01
+          generated: true
+      -
+        value: enemy_nstmom_skill_01_debuff_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_nstmom_skill_01_debuff_02
+          generated: true
+      -
+        value: enemy_planty_ground_start_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_planty_ground_start_02
+          generated: true
+      -
+        value: enemy_vtsk_skill_01_range_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_vtsk_skill_01_range_01
+          generated: true
+      -
+        value: enemy_ymghol_2_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ymghol_2_buff_01
+          generated: true
+      -
+        value: enemy_ymghol_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ymghol_buff_01
+          generated: true
+      -
+        value: stmkgt_skill_02_range_01
+        display: false
+        parse:
+          type: literal
+          return: stmkgt_skill_02_range_01
+          generated: true
+      -
+        value: trap_028_Leithanien_pool_finish_01
+        display: false
+        parse:
+          type: literal
+          return: trap_028_Leithanien_pool_finish_01
+          generated: true
+      -
+        value: trap_acblock_01
+        display: false
+        parse:
+          type: literal
+          return: trap_acblock_01
+          generated: true
+  _hasSource:
+    type: boolean
+    description: has Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _holdIt:
+    type: boolean
+    description: hold It
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _tileKeyCol:
+    type: string
+    description: tile Key Col
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+          generated: true
+  _tileKeyRow:
+    type: string
+    description: tile Key Row
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+          generated: true
+  _verifyBeforeCreate:
+    type: boolean
+    description: verify Before Create
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

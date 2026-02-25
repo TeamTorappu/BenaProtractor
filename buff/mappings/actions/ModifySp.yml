@@ -1,0 +1,484 @@
+actionType: ModifySp
+fields:
+  _customModifierKey:
+    type: string
+    description: custom Modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: "pirene_func[ally]"
+        display: false
+        parse:
+          type: literal
+          return: "pirene_func[ally]"
+          generated: true
+      -
+        value: swire2_add_coin
+        display: false
+        parse:
+          type: literal
+          return: swire2_add_coin
+          generated: true
+  _dontCheckSpType:
+    type: boolean
+    description: dont Check Sp Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _dontShowSpUI:
+    type: boolean
+    description: dont Show Sp U I
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _forceFlag:
+    type: boolean
+    description: force Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isMinis:
+    type: boolean
+    description: is Minis
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _modifyByRatio:
+    type: boolean
+    description: modify By Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _modifyByRatioBasedOnCurSP:
+    type: boolean
+    description: modify By Ratio Based On Cur S P
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _modifyRatio:
+    type: number
+    description: modify Ratio
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+          generated: true
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _modifyValue:
+    type: number
+    description: modify Value
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+          generated: true
+      -
+        value: -20
+        display: false
+        parse:
+          type: literal
+          return: -20
+          generated: true
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+          generated: true
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+          generated: true
+      -
+        value: 9999
+        display: false
+        parse:
+          type: literal
+          return: 9999
+          generated: true
+  _spMask:
+    type: string
+    description: sp Mask
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+          generated: true
+      -
+        value: ATTACK_OR_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: ATTACK_OR_DAMAGE
+          generated: true
+      -
+        value: INCREASE_WHEN_ATTACK
+        display: false
+        parse:
+          type: literal
+          return: INCREASE_WHEN_ATTACK
+          generated: true
+      -
+        value: INCREASE_WHEN_TAKEN_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: INCREASE_WHEN_TAKEN_DAMAGE
+          generated: true
+      -
+        value: INCREASE_WITH_TIME
+        display: false
+        parse:
+          type: literal
+          return: INCREASE_WITH_TIME
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+  _spString:
+    type: null | string
+    description: sp String
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: __
+        display: false
+        parse:
+          type: literal
+          return: __
+          generated: true
+      -
+        value: add_sp
+        display: false
+        parse:
+          type: literal
+          return: add_sp
+          generated: true
+      -
+        value: addition_sp
+        display: false
+        parse:
+          type: literal
+          return: addition_sp
+          generated: true
+      -
+        value: current_sp_ratio
+        display: false
+        parse:
+          type: literal
+          return: current_sp_ratio
+          generated: true
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+          generated: true
+      -
+        value: ex_sub_sp
+        display: false
+        parse:
+          type: literal
+          return: ex_sub_sp
+          generated: true
+      -
+        value: extra_sp
+        display: false
+        parse:
+          type: literal
+          return: extra_sp
+          generated: true
+      -
+        value: init_sp
+        display: false
+        parse:
+          type: literal
+          return: init_sp
+          generated: true
+      -
+        value: mana
+        display: false
+        parse:
+          type: literal
+          return: mana
+          generated: true
+      -
+        value: none
+        display: false
+        parse:
+          type: literal
+          return: none
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: other_sp
+        display: false
+        parse:
+          type: literal
+          return: other_sp
+          generated: true
+      -
+        value: skill_cost_min_sp
+        display: false
+        parse:
+          type: literal
+          return: skill_cost_min_sp
+          generated: true
+      -
+        value: sleeper_sp
+        display: false
+        parse:
+          type: literal
+          return: sleeper_sp
+          generated: true
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+          generated: true
+      -
+        value: sp_cal
+        display: false
+        parse:
+          type: literal
+          return: sp_cal
+          generated: true
+      -
+        value: sp_cost
+        display: false
+        parse:
+          type: literal
+          return: sp_cost
+          generated: true
+      -
+        value: sp_each_character
+        display: false
+        parse:
+          type: literal
+          return: sp_each_character
+          generated: true
+      -
+        value: sp_onattack
+        display: false
+        parse:
+          type: literal
+          return: sp_onattack
+          generated: true
+      -
+        value: sp_other
+        display: false
+        parse:
+          type: literal
+          return: sp_other
+          generated: true
+      -
+        value: sp_recover
+        display: false
+        parse:
+          type: literal
+          return: sp_recover
+          generated: true
+      -
+        value: trpot_sp
+        display: false
+        parse:
+          type: literal
+          return: trpot_sp
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: MAINBUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MAINBUFF_SOURCE
+          generated: true
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+          generated: true
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+          generated: true
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

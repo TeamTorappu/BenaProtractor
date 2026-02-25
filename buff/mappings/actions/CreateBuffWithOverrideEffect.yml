@@ -1,0 +1,99 @@
+actionType: CreateBuffWithOverrideEffect
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffOwner:
+    type: string
+    description: buff Owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: map_bossrush_cordon_buff_01_left
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_cordon_buff_01_left
+          generated: true
+      -
+        value: map_bossrush_cordon_buff_01_right
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_cordon_buff_01_right
+          generated: true
+      -
+        value: map_bossrush_cordon_buff_02
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_cordon_buff_02
+          generated: true
+      -
+        value: map_bossrush_cordon_buff_03
+        display: false
+        parse:
+          type: literal
+          return: map_bossrush_cordon_buff_03
+          generated: true
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

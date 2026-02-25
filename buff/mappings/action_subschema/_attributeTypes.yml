@@ -1,0 +1,37 @@
+field: _attributeTypes
+type: object
+description: attribute Types
+actions:
+  AutoChessAttrViaForceEffectCnt:
+    type: array
+    values:
+      -
+        value: "[\"ATTACK_SPEED\",\"HP_RECOVERY_PER_SEC\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"MAX_HP\",\"ATK\",\"DEF\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"MOVE_SPEED\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

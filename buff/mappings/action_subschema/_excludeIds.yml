@@ -1,0 +1,17 @@
+field: _excludeIds
+type: object
+description: exclude Ids
+actions:
+  DuelSyncChosenInfoToGameMode:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

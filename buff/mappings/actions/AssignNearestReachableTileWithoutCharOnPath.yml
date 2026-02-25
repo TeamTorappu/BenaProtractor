@@ -1,0 +1,35 @@
+actionType: AssignNearestReachableTileWithoutCharOnPath
+fields:
+  _buildableMask:
+    type: string
+    description: buildable Mask
+    values:
+      -
+        value: NIGHT
+        display: false
+        parse:
+          type: literal
+          return: NIGHT
+          generated: true
+  _filterBuildableMask:
+    type: boolean
+    description: filter Buildable Mask
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

@@ -1,0 +1,46 @@
+actionType: RemoveRootTileFromBB
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: fxdjj_tile_trigger_sk1
+        display: false
+        parse:
+          type: literal
+          return: fxdjj_tile_trigger_sk1
+          generated: true
+  _buffSource:
+    type: string
+    description: buff Source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _specificBuffBB:
+    type: boolean
+    description: specific Buff B B
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

@@ -1,0 +1,46 @@
+actionType: HalfIdleCheckLhblodSPRecoverNum
+fields:
+  _damageKey:
+    type: string
+    description: damage Key
+    values:
+      -
+        value: total_dmg
+        display: false
+        parse:
+          type: literal
+          return: total_dmg
+          generated: true
+  _resultKey:
+    type: string
+    description: result Key
+    values:
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+          generated: true
+  _stride:
+    type: number
+    description: stride
+    values:
+      -
+        value: 100
+        display: false
+        parse:
+          type: literal
+          return: 100
+          generated: true
+  _strideKey:
+    type: string
+    description: stride Key
+    values:
+      -
+        value: trigger_dmg
+        display: false
+        parse:
+          type: literal
+          return: trigger_dmg
+          generated: true

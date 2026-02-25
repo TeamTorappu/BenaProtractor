@@ -1,0 +1,193 @@
+field: _abnormalFlags
+type: object
+description: abnormal Flags
+actions:
+  CheckAbnormalFlags:
+    type: array
+    values:
+      -
+        value: "[\"CAMOUFLAGE\",\"INVISIBLE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"FROZEN\",\"STUNNED\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"FROZEN\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"INVINCIBLE\",\"TARGET_FREE\",\"INVISIBLE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"LEVITATE\",\"FORCE_LEVITATE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"LEVITATE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"STUNNED\",\"FROZEN\",\"COLD\",\"FEARED\",\"ATTRACTED\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"STUNNED\",\"FROZEN\",\"LEVITATE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"STUNNED\",\"FROZEN\",\"UNMOVABLE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"STUNNED\",\"FROZEN\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"STUNNED\",\"LEVITATE\",\"FROZEN\",\"UNMOVABLE\",\"FEARED\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"STUNNED\",\"LEVITATE\",\"FROZEN\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"STUNNED\",\"UNMOVABLE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"TARGET_FREE\",\"ALLY_TARGET_FREE\",\"INVINCIBLE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"TARGET_FREE\",\"INVINCIBLE\",\"INVISIBLE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"TARGET_FREE\",\"INVINCIBLE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+  CheckAndBlockBuffByAbnormalFlags:
+    type: array
+    values:
+      -
+        value: "[\"STUNNED\",\"FROZEN\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+  CheckBuffAbnormalFlags:
+    type: array
+    values:
+      -
+        value: "[\"STUNNED\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

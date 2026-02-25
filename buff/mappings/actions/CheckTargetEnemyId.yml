@@ -1,0 +1,24 @@
+actionType: CheckTargetEnemyId
+fields:
+  _isUnset:
+    type: boolean
+    description: is Unset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

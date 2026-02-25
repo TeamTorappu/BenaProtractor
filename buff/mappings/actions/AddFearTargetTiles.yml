@@ -1,0 +1,46 @@
+actionType: AddFearTargetTiles
+fields:
+  _maxDegree:
+    type: number
+    description: max Degree
+    values:
+      -
+        value: 45
+        display: false
+        parse:
+          type: literal
+          return: 45
+          generated: true
+  _rangeRadius:
+    type: number
+    description: range Radius
+    values:
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

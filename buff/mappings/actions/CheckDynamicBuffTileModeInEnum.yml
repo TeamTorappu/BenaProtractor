@@ -1,0 +1,31 @@
+actionType: CheckDynamicBuffTileModeInEnum
+fields:
+  _exclude:
+    type: boolean
+    description: exclude
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _modes:
+    type: array
+    description: modes
+    schema: action_subschema/_modes.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

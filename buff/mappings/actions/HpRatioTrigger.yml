@@ -1,0 +1,92 @@
+actionType: HpRatioTrigger
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+  _hpRatioEachTime:
+    type: number
+    description: hp Ratio Each Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.20000000298023224
+        display: false
+        parse:
+          type: literal
+          return: 0.20000000298023224
+          generated: true
+  _minHpKey:
+    type: null | string
+    description: min Hp Key
+    values:
+      -
+        value: min_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: min_hp_ratio
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useMinHpRatio:
+    type: boolean
+    description: use Min Hp Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

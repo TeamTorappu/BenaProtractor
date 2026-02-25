@@ -1,0 +1,24 @@
+actionType: AssignBuffLifeTimeToBB
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffType:
+    type: string
+    description: buff Type
+    values:
+      -
+        value: MAIN_BUFF
+        display: false
+        parse:
+          type: literal
+          return: MAIN_BUFF
+          generated: true

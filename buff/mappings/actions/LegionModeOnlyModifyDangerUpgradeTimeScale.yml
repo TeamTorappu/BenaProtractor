@@ -1,0 +1,35 @@
+actionType: LegionModeOnlyModifyDangerUpgradeTimeScale
+fields:
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: multi
+        display: false
+        parse:
+          type: literal
+          return: multi
+          generated: true
+  _useBb:
+    type: boolean
+    description: use Bb
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true

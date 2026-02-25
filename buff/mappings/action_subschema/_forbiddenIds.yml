@@ -1,0 +1,17 @@
+field: _forbiddenIds
+type: object
+description: forbidden Ids
+actions:
+  EnemyLrtsiaSummonEnemyOnSurroundTiles:
+    type: array
+    values:
+      -
+        value: "[\"trap_001_crate\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

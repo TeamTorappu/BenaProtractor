@@ -1,0 +1,13 @@
+actionType: FinishCardBuffByCard
+fields:
+  _exceptOwner:
+    type: boolean
+    description: except Owner
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

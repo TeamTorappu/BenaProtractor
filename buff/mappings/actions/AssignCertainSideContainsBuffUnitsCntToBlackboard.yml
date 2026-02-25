@@ -1,0 +1,46 @@
+actionType: AssignCertainSideContainsBuffUnitsCntToBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "buff_creep[tile]"
+        display: false
+        parse:
+          type: literal
+          return: "buff_creep[tile]"
+          generated: true
+  _filterProfessionMask:
+    type: boolean
+    description: filter Profession Mask
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sideMask:
+    type: string
+    description: side Mask
+    values:
+      -
+        value: ALLY
+        display: false
+        parse:
+          type: literal
+          return: ALLY
+          generated: true

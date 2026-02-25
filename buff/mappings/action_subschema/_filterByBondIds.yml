@@ -1,0 +1,60 @@
+field: _filterByBondIds
+type: object
+description: filter By Bond Ids
+actions:
+  AutochessCreateBuffToSpecifiedChar:
+    type: array
+    values:
+      -
+        value: "[\"sargonShip\",\"maniShip\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"sargonShip\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"steadShip\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+  AutoChessAssignGatheredAttributeToBlackboard:
+    type: array
+    values:
+      -
+        value: "[\"yanShip\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

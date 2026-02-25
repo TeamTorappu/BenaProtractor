@@ -1,0 +1,34 @@
+actionType: CheckMainBuffId
+fields:
+  _idToFilter:
+    type: string
+    description: id To Filter
+    values:
+      -
+        value: fear
+        display: false
+        parse:
+          type: literal
+          return: fear
+          generated: true
+      -
+        value: "heyak_e_004_t_aoe[levitate_flag]"
+        display: false
+        parse:
+          type: literal
+          return: "heyak_e_004_t_aoe[levitate_flag]"
+          generated: true
+      -
+        value: "necras_t_1[upgrade]"
+        display: false
+        parse:
+          type: literal
+          return: "necras_t_1[upgrade]"
+          generated: true
+      -
+        value: sluggish
+        display: false
+        parse:
+          type: literal
+          return: sluggish
+          generated: true

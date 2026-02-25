@@ -1,0 +1,13 @@
+actionType: HealCurrentGiantBossViaMaxHpRatio
+fields:
+  _canGeneralShield:
+    type: boolean
+    description: can General Shield
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

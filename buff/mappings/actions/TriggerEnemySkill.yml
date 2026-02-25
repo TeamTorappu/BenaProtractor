@@ -1,0 +1,1005 @@
+actionType: TriggerEnemySkill
+fields:
+  _assignCombatAbility:
+    type: boolean
+    description: assign Combat Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkSkillActive:
+    type: boolean
+    description: check Skill Active
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkSkillReady:
+    type: boolean
+    description: check Skill Ready
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _clearPalsyingBuffBeforeTrigger:
+    type: boolean
+    description: clear Palsying Buff Before Trigger
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _forceFindTargetBySkillSelector:
+    type: boolean
+    description: force Find Target By Skill Selector
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _interruptCurAbility:
+    type: boolean
+    description: interrupt Cur Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _interruptCurAbilityUnlessItIsExpectedAbility:
+    type: boolean
+    description: interrupt Cur Ability Unless It Is Expected Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _skillName:
+    type: null | string
+    description: skill Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: AddBullet
+        display: false
+        parse:
+          type: literal
+          return: AddBullet
+          generated: true
+      -
+        value: AdvanceSuddenly
+        display: false
+        parse:
+          type: literal
+          return: AdvanceSuddenly
+          generated: true
+      -
+        value: Angry
+        display: false
+        parse:
+          type: literal
+          return: Angry
+          generated: true
+      -
+        value: Aoe
+        display: false
+        parse:
+          type: literal
+          return: Aoe
+          generated: true
+      -
+        value: AoeM2
+        display: false
+        parse:
+          type: literal
+          return: AoeM2
+          generated: true
+      -
+        value: Arson
+        display: false
+        parse:
+          type: literal
+          return: Arson
+          generated: true
+      -
+        value: Awake
+        display: false
+        parse:
+          type: literal
+          return: Awake
+          generated: true
+      -
+        value: BeginAnim
+        display: false
+        parse:
+          type: literal
+          return: BeginAnim
+          generated: true
+      -
+        value: BigBomb
+        display: false
+        parse:
+          type: literal
+          return: BigBomb
+          generated: true
+      -
+        value: Blink
+        display: false
+        parse:
+          type: literal
+          return: Blink
+          generated: true
+      -
+        value: BlinkS2
+        display: false
+        parse:
+          type: literal
+          return: BlinkS2
+          generated: true
+      -
+        value: BloodFountain
+        display: false
+        parse:
+          type: literal
+          return: BloodFountain
+          generated: true
+      -
+        value: Boom_ally
+        display: false
+        parse:
+          type: literal
+          return: Boom_ally
+          generated: true
+      -
+        value: Boom_enemy
+        display: false
+        parse:
+          type: literal
+          return: Boom_enemy
+          generated: true
+      -
+        value: BornAnim
+        display: false
+        parse:
+          type: literal
+          return: BornAnim
+          generated: true
+      -
+        value: Break
+        display: false
+        parse:
+          type: literal
+          return: Break
+          generated: true
+      -
+        value: BuildBridge
+        display: false
+        parse:
+          type: literal
+          return: BuildBridge
+          generated: true
+      -
+        value: Burst_2
+        display: false
+        parse:
+          type: literal
+          return: Burst_2
+          generated: true
+      -
+        value: Call
+        display: false
+        parse:
+          type: literal
+          return: Call
+          generated: true
+      -
+        value: CallTransport
+        display: false
+        parse:
+          type: literal
+          return: CallTransport
+          generated: true
+      -
+        value: ChangeToC
+        display: false
+        parse:
+          type: literal
+          return: ChangeToC
+          generated: true
+      -
+        value: CombatAoe
+        display: false
+        parse:
+          type: literal
+          return: CombatAoe
+          generated: true
+      -
+        value: ComeTheClaws
+        display: false
+        parse:
+          type: literal
+          return: ComeTheClaws
+          generated: true
+      -
+        value: CutRope
+        display: false
+        parse:
+          type: literal
+          return: CutRope
+          generated: true
+      -
+        value: DR_Boom
+        display: false
+        parse:
+          type: literal
+          return: DR_Boom
+          generated: true
+      -
+        value: DropShield
+        display: false
+        parse:
+          type: literal
+          return: DropShield
+          generated: true
+      -
+        value: DyjswwSwitch
+        display: false
+        parse:
+          type: literal
+          return: DyjswwSwitch
+          generated: true
+      -
+        value: Eat
+        display: false
+        parse:
+          type: literal
+          return: Eat
+          generated: true
+      -
+        value: ElementBarrier_0
+        display: false
+        parse:
+          type: literal
+          return: ElementBarrier_0
+          generated: true
+      -
+        value: ElementBarrier_1
+        display: false
+        parse:
+          type: literal
+          return: ElementBarrier_1
+          generated: true
+      -
+        value: EndAnim
+        display: false
+        parse:
+          type: literal
+          return: EndAnim
+          generated: true
+      -
+        value: EndShieldSwitchMode
+        display: false
+        parse:
+          type: literal
+          return: EndShieldSwitchMode
+          generated: true
+      -
+        value: Explosion
+        display: false
+        parse:
+          type: literal
+          return: Explosion
+          generated: true
+      -
+        value: FallDown
+        display: false
+        parse:
+          type: literal
+          return: FallDown
+          generated: true
+      -
+        value: FireBreath
+        display: false
+        parse:
+          type: literal
+          return: FireBreath
+          generated: true
+      -
+        value: Fly
+        display: false
+        parse:
+          type: literal
+          return: Fly
+          generated: true
+      -
+        value: FlyAttack
+        display: false
+        parse:
+          type: literal
+          return: FlyAttack
+          generated: true
+      -
+        value: FlyToThreeBoombard
+        display: false
+        parse:
+          type: literal
+          return: FlyToThreeBoombard
+          generated: true
+      -
+        value: FlyUp
+        display: false
+        parse:
+          type: literal
+          return: FlyUp
+          generated: true
+      -
+        value: ForeverEnhance
+        display: false
+        parse:
+          type: literal
+          return: ForeverEnhance
+          generated: true
+      -
+        value: GhostEnd
+        display: false
+        parse:
+          type: literal
+          return: GhostEnd
+          generated: true
+      -
+        value: GrabEnd
+        display: false
+        parse:
+          type: literal
+          return: GrabEnd
+          generated: true
+      -
+        value: "HeroBomb[second_state]"
+        display: false
+        parse:
+          type: literal
+          return: "HeroBomb[second_state]"
+          generated: true
+      -
+        value: Hide
+        display: false
+        parse:
+          type: literal
+          return: Hide
+          generated: true
+      -
+        value: HpTriggerBoombard
+        display: false
+        parse:
+          type: literal
+          return: HpTriggerBoombard
+          generated: true
+      -
+        value: Jump
+        display: false
+        parse:
+          type: literal
+          return: Jump
+          generated: true
+      -
+        value: KeepPunch
+        display: false
+        parse:
+          type: literal
+          return: KeepPunch
+          generated: true
+      -
+        value: Laser
+        display: false
+        parse:
+          type: literal
+          return: Laser
+          generated: true
+      -
+        value: LaserDefault
+        display: false
+        parse:
+          type: literal
+          return: LaserDefault
+          generated: true
+      -
+        value: LaserS1
+        display: false
+        parse:
+          type: literal
+          return: LaserS1
+          generated: true
+      -
+        value: LaserS2
+        display: false
+        parse:
+          type: literal
+          return: LaserS2
+          generated: true
+      -
+        value: LaserS3
+        display: false
+        parse:
+          type: literal
+          return: LaserS3
+          generated: true
+      -
+        value: LayAnim
+        display: false
+        parse:
+          type: literal
+          return: LayAnim
+          generated: true
+      -
+        value: M1SummonSkzjbc
+        display: false
+        parse:
+          type: literal
+          return: M1SummonSkzjbc
+          generated: true
+      -
+        value: M2AOE
+        display: false
+        parse:
+          type: literal
+          return: M2AOE
+          generated: true
+      -
+        value: MeetAmy
+        display: false
+        parse:
+          type: literal
+          return: MeetAmy
+          generated: true
+      -
+        value: Motion
+        display: false
+        parse:
+          type: literal
+          return: Motion
+          generated: true
+      -
+        value: MoveEnd
+        display: false
+        parse:
+          type: literal
+          return: MoveEnd
+          generated: true
+      -
+        value: MoveUp
+        display: false
+        parse:
+          type: literal
+          return: MoveUp
+          generated: true
+      -
+        value: Nova
+        display: false
+        parse:
+          type: literal
+          return: Nova
+          generated: true
+      -
+        value: PoisonRelease
+        display: false
+        parse:
+          type: literal
+          return: PoisonRelease
+          generated: true
+      -
+        value: RebornEndInvincible
+        display: false
+        parse:
+          type: literal
+          return: RebornEndInvincible
+          generated: true
+      -
+        value: RebornToPrev
+        display: false
+        parse:
+          type: literal
+          return: RebornToPrev
+          generated: true
+      -
+        value: Rebuild
+        display: false
+        parse:
+          type: literal
+          return: Rebuild
+          generated: true
+      -
+        value: RebuildS1
+        display: false
+        parse:
+          type: literal
+          return: RebuildS1
+          generated: true
+      -
+        value: RebuildS2
+        display: false
+        parse:
+          type: literal
+          return: RebuildS2
+          generated: true
+      -
+        value: SacrificeEnemy
+        display: false
+        parse:
+          type: literal
+          return: SacrificeEnemy
+          generated: true
+      -
+        value: ShieldUp
+        display: false
+        parse:
+          type: literal
+          return: ShieldUp
+          generated: true
+      -
+        value: Show
+        display: false
+        parse:
+          type: literal
+          return: Show
+          generated: true
+      -
+        value: Skill2
+        display: false
+        parse:
+          type: literal
+          return: Skill2
+          generated: true
+      -
+        value: SmokeBomb
+        display: false
+        parse:
+          type: literal
+          return: SmokeBomb
+          generated: true
+      -
+        value: Spawn
+        display: false
+        parse:
+          type: literal
+          return: Spawn
+          generated: true
+      -
+        value: SpawnTrap
+        display: false
+        parse:
+          type: literal
+          return: SpawnTrap
+          generated: true
+      -
+        value: SplashAOE
+        display: false
+        parse:
+          type: literal
+          return: SplashAOE
+          generated: true
+      -
+        value: Stab
+        display: false
+        parse:
+          type: literal
+          return: Stab
+          generated: true
+      -
+        value: StartRun
+        display: false
+        parse:
+          type: literal
+          return: StartRun
+          generated: true
+      -
+        value: Stress
+        display: false
+        parse:
+          type: literal
+          return: Stress
+          generated: true
+      -
+        value: StunAnimation
+        display: false
+        parse:
+          type: literal
+          return: StunAnimation
+          generated: true
+      -
+        value: Summon
+        display: false
+        parse:
+          type: literal
+          return: Summon
+          generated: true
+      -
+        value: SummonToken
+        display: false
+        parse:
+          type: literal
+          return: SummonToken
+          generated: true
+      -
+        value: SwapM3
+        display: false
+        parse:
+          type: literal
+          return: SwapM3
+          generated: true
+      -
+        value: SwitchAudioType
+        display: false
+        parse:
+          type: literal
+          return: SwitchAudioType
+          generated: true
+      -
+        value: SwitchMode
+        display: false
+        parse:
+          type: literal
+          return: SwitchMode
+          generated: true
+      -
+        value: TakeOff
+        display: false
+        parse:
+          type: literal
+          return: TakeOff
+          generated: true
+      -
+        value: ThrowEnemy
+        display: false
+        parse:
+          type: literal
+          return: ThrowEnemy
+          generated: true
+      -
+        value: Transfor
+        display: false
+        parse:
+          type: literal
+          return: Transfor
+          generated: true
+      -
+        value: TransportTrigger
+        display: false
+        parse:
+          type: literal
+          return: TransportTrigger
+          generated: true
+      -
+        value: Walk
+        display: false
+        parse:
+          type: literal
+          return: Walk
+          generated: true
+      -
+        value: WindEnd
+        display: false
+        parse:
+          type: literal
+          return: WindEnd
+          generated: true
+      -
+        value: clearance
+        display: false
+        parse:
+          type: literal
+          return: clearance
+          generated: true
+      -
+        value: dive
+        display: false
+        parse:
+          type: literal
+          return: dive
+          generated: true
+      -
+        value: drop
+        display: false
+        parse:
+          type: literal
+          return: drop
+          generated: true
+      -
+        value: erase
+        display: false
+        parse:
+          type: literal
+          return: erase
+          generated: true
+      -
+        value: fake_revive
+        display: false
+        parse:
+          type: literal
+          return: fake_revive
+          generated: true
+      -
+        value: fake_revive_advance
+        display: false
+        parse:
+          type: literal
+          return: fake_revive_advance
+          generated: true
+      -
+        value: fake_revive_stun
+        display: false
+        parse:
+          type: literal
+          return: fake_revive_stun
+          generated: true
+      -
+        value: fly
+        display: false
+        parse:
+          type: literal
+          return: fly
+          generated: true
+      -
+        value: land
+        display: false
+        parse:
+          type: literal
+          return: land
+          generated: true
+      -
+        value: libertyothers
+        display: false
+        parse:
+          type: literal
+          return: libertyothers
+          generated: true
+      -
+        value: move
+        display: false
+        parse:
+          type: literal
+          return: move
+          generated: true
+      -
+        value: multiAttack
+        display: false
+        parse:
+          type: literal
+          return: multiAttack
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: rushEndAdvance
+        display: false
+        parse:
+          type: literal
+          return: rushEndAdvance
+          generated: true
+      -
+        value: rushEndNormal
+        display: false
+        parse:
+          type: literal
+          return: rushEndNormal
+          generated: true
+      -
+        value: score
+        display: false
+        parse:
+          type: literal
+          return: score
+          generated: true
+      -
+        value: skill
+        display: false
+        parse:
+          type: literal
+          return: skill
+          generated: true
+      -
+        value: surface
+        display: false
+        parse:
+          type: literal
+          return: surface
+          generated: true
+      -
+        value: switch
+        display: false
+        parse:
+          type: literal
+          return: switch
+          generated: true
+      -
+        value: switch_back
+        display: false
+        parse:
+          type: literal
+          return: switch_back
+          generated: true
+      -
+        value: take_off
+        display: false
+        parse:
+          type: literal
+          return: take_off
+          generated: true
+      -
+        value: triggerAnim
+        display: false
+        parse:
+          type: literal
+          return: triggerAnim
+          generated: true
+      -
+        value: write
+        display: false
+        parse:
+          type: literal
+          return: write
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+          generated: true
+      -
+        value: PROJECTILE_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: PROJECTILE_SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _tryCastDirectlyWhenNoTarget:
+    type: boolean
+    description: try Cast Directly When No Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

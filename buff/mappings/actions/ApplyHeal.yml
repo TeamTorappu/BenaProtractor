@@ -1,0 +1,24 @@
+actionType: ApplyHeal
+fields:
+  _isCont:
+    type: boolean
+    description: is Cont
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _isHpRatio:
+    type: boolean
+    description: is Hp Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

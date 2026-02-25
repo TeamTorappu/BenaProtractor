@@ -1,0 +1,24 @@
+actionType: RoguelikeShowToastRL05
+fields:
+  _lastTime:
+    type: number
+    description: last Time
+    values:
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+          generated: true
+  _toastTypeRL05:
+    type: string
+    description: toast Type R L05
+    values:
+      -
+        value: GOLD_STEAL
+        display: false
+        parse:
+          type: literal
+          return: GOLD_STEAL
+          generated: true

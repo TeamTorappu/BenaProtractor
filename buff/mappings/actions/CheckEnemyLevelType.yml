@@ -1,0 +1,45 @@
+actionType: CheckEnemyLevelType
+fields:
+  _targetLevelType:
+    type: string
+    description: target Level Type
+    values:
+      -
+        value: BOSS
+        display: false
+        parse:
+          type: literal
+          return: BOSS
+          generated: true
+      -
+        value: ELITE
+        display: false
+        parse:
+          type: literal
+          return: ELITE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

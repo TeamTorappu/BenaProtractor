@@ -1,0 +1,217 @@
+field: _retainedBuffsWhenClear
+type: object
+description: retained Buffs When Clear
+actions:
+  ClearAllBuffs:
+    type: array
+    values:
+      -
+        value: "[\"bena_switchbegin\",\"bena_tr\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"bena_switchend\",\"bena_tr\",\"bena_stand[blockzero]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"blaze2[reborn_start]\",\"blaze2_t_2\",\"blaze2_t_2[reborn_state]\",\"blaze2_t_2[reborn_state][trigger]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"blaze2_switchbegin\",\"blaze2_t_2\",\"blaze2_t_2[reborn_state]\",\"blaze2_switchbegin[inv]\",\"blaze2_reborn[block_zero]\",\"blaze2_t_2[reborn_state][vfx1]\",\"blaze2_t_2[reborn_state][trigger]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"dupilr_trait\",\"dupilr_trait[candead]\",\"dupilr_trait[ondead]\",\"dupilr_trait[undead]\",\"dupilr_trait[startdead]\",\"dupilr_abnormalimmunes\",\"dupilr_effect[candead]\",\"duplir_s[has_ally_in_range]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"dupilr_trait\",\"dupilr_trait[ondead]\",\"dupilr_trait[undead]\",\"dupilr_abnormalimmunes\",\"dupilr_trait[candead]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"dupilr_trait\",\"dupilr_trait[startdead]\",\"dupilr_trait[candead]\",\"dupilr_trait[ondead]\",\"dupilr_trait[undead]\",\"dupilr_abnormalimmunes\",\"duplir_s[has_ally_in_range]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"enemy_dyshhj_white_list[buff]\",\"enemy_max_hp_down\",\"enemy_atk_down\",\"enemy_damage_resistance[inf]\",\"enemy_def_down\",\"enemy_attack_speed_down\",\"enemy_dyshhj_sp_recovery\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"enemy_eltswd_m2_passive\",\"enemy_eltswd_passive[mark]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"enemy_eltufo_crystal\",\"enemy_eltufo_passive[mark]\",\"enemy_eltufo_crystal_time\",\"enemy_eltufo_crystal[eff]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"ghost2_switchbegin\",\"ghost2_tr\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"ghost2_switchend\",\"ghost2_tr\",\"ghost2_stand[block_zero]\",\"ghost2_standin[switch]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"iana_switchbegin\",\"iana_tr\",\"iana_s_1\",\"iana_s_2\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"iana_switchend\",\"iana_tr\",\"iana_stand[block_zero]\",\"iana_standin[switch]\",\"iana_s_1\",\"iana_s_2[buff]\",\"iana_s_2[effect_1]\",\"iana_s_2[effect_2]\",\"iana_s_2[effect_3]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"kazema_switchbegin\",\"kazema_tr\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"kazema_switchend\",\"kazema_tr\",\"kazema_stand[block_zero]\",\"kazema_standin[switch]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"mortis_switchbegin\",\"mortis_tr\",\"mortis_s1[passive]\",\"mortis_s1[add_attr_core]\",\"mortis_to_stand_mark\",\"mortis_stand[block_dec]\",\"char_mortis_self_mark\",\"mortis_t1[dark_shield]\",\"mortis_t2[fever]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"mortis_switchend\",\"mortis_tr\",\"mortis_standin[switch]\",\"mortis_stand[block_zero]\",\"mortis_s1[add_attr_core]\",\"mortis_stand[block_dec]\",\"char_mortis_self_mark\",\"mortis_t1[dark_shield]\",\"mortis_t2[fever]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"trap_winfire_t\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"vrdant_switchbegin\",\"vrdant_tr\",\"vrdant_s1[attri_add]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"vrdant_switchend\",\"vrdant_tr\",\"vrdant_stand[block_zero]\",\"vrdant_standin[switch]\",\"vrdant_s1[attri_add]\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

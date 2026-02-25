@@ -1,0 +1,13 @@
+actionType: CheckEnemyInBornState
+fields:
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

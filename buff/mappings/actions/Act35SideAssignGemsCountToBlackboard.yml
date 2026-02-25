@@ -1,0 +1,68 @@
+actionType: Act35SideAssignGemsCountToBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _envSystemKey:
+    type: string
+    description: env System Key
+    values:
+      -
+        value: env_017_act35side
+        display: false
+        parse:
+          type: literal
+          return: env_017_act35side
+          generated: true
+  _excludeLinkGems:
+    type: boolean
+    description: exclude Link Gems
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _maxCount:
+    type: number
+    description: max Count
+    values:
+      -
+        value: 999999
+        display: false
+        parse:
+          type: literal
+          return: 999999
+          generated: true
+  _maxCountKey:
+    type: string
+    description: max Count Key
+    values:
+      -
+        value: max_target
+        display: false
+        parse:
+          type: literal
+          return: max_target
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

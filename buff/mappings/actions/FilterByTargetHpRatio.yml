@@ -1,0 +1,173 @@
+actionType: FilterByTargetHpRatio
+fields:
+  _blackboardPrefix:
+    type: null | string
+    description: blackboard Prefix
+    values:
+      -
+        value: check_
+        display: false
+        parse:
+          type: literal
+          return: check_
+          generated: true
+      -
+        value: full.
+        display: false
+        parse:
+          type: literal
+          return: full.
+          generated: true
+      -
+        value: min_
+        display: false
+        parse:
+          type: literal
+          return: min_
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: switch_
+        display: false
+        parse:
+          type: literal
+          return: switch_
+          generated: true
+      -
+        value: xxx
+        display: false
+        parse:
+          type: literal
+          return: xxx
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: EQUALS
+        display: false
+        parse:
+          type: literal
+          return: EQUALS
+          generated: true
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _useSourceHpRatio:
+    type: boolean
+    description: use Source Hp Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true

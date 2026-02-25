@@ -1,0 +1,53 @@
+actionType: HalfIdleUpgradeTrapWithRangeCheck
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: CheckUpgrade
+        display: false
+        parse:
+          type: literal
+          return: CheckUpgrade
+          generated: true
+  _sourcePosType:
+    type: string
+    description: source Pos Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _targetPosType:
+    type: string
+    description: target Pos Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _upgradeMaps:
+    type: array
+    description: upgrade Maps
+    schema: action_subschema/_upgradeMaps.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

@@ -1,0 +1,35 @@
+actionType: SandboxHunterDropItem
+fields:
+  _detailType:
+    type: string
+    description: detail Type
+    values:
+      -
+        value: STOLEN
+        display: false
+        parse:
+          type: literal
+          return: STOLEN
+          generated: true
+  _owner:
+    type: string
+    description: owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _type:
+    type: string
+    description: type
+    values:
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+          generated: true

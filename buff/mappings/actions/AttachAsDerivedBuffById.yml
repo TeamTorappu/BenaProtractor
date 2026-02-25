@@ -1,0 +1,215 @@
+actionType: AttachAsDerivedBuffById
+fields:
+  _attachToSourceHost:
+    type: boolean
+    description: attach To Source Host
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: ascln_t_1
+        display: false
+        parse:
+          type: literal
+          return: ascln_t_1
+          generated: true
+      -
+        value: "chen3_s1[buff_holder]"
+        display: false
+        parse:
+          type: literal
+          return: "chen3_s1[buff_holder]"
+          generated: true
+      -
+        value: "chen3_s2[target_kill]"
+        display: false
+        parse:
+          type: literal
+          return: "chen3_s2[target_kill]"
+          generated: true
+      -
+        value: confes_t_1_blocked
+        display: false
+        parse:
+          type: literal
+          return: confes_t_1_blocked
+          generated: true
+      -
+        value: enemy_mcnist_on_reborn
+        display: false
+        parse:
+          type: literal
+          return: enemy_mcnist_on_reborn
+          generated: true
+      -
+        value: "enemy_xbtor_damage[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_xbtor_damage[mark]"
+          generated: true
+      -
+        value: "haruka_s_3[talent]"
+        display: false
+        parse:
+          type: literal
+          return: "haruka_s_3[talent]"
+          generated: true
+      -
+        value: lemuen_passive_mark
+        display: false
+        parse:
+          type: literal
+          return: lemuen_passive_mark
+          generated: true
+      -
+        value: lemuen_s_3
+        display: false
+        parse:
+          type: literal
+          return: lemuen_s_3
+          generated: true
+      -
+        value: "logos_s_2[focus]"
+        display: false
+        parse:
+          type: literal
+          return: "logos_s_2[focus]"
+          generated: true
+      -
+        value: "nasti_nstchr_m2[dec_blood]"
+        display: false
+        parse:
+          type: literal
+          return: "nasti_nstchr_m2[dec_blood]"
+          generated: true
+      -
+        value: nymph_t_1
+        display: false
+        parse:
+          type: literal
+          return: nymph_t_1
+          generated: true
+      -
+        value: shu_t_1
+        display: false
+        parse:
+          type: literal
+          return: shu_t_1
+          generated: true
+      -
+        value: token_phatm2_passive
+        display: false
+        parse:
+          type: literal
+          return: token_phatm2_passive
+          generated: true
+      -
+        value: trap_lhrock_self
+        display: false
+        parse:
+          type: literal
+          return: trap_lhrock_self
+          generated: true
+      -
+        value: "trap_lhrock_self[lhkawaSide]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_lhrock_self[lhkawaSide]"
+          generated: true
+      -
+        value: wang_t_1_spawn
+        display: false
+        parse:
+          type: literal
+          return: wang_t_1_spawn
+          generated: true
+      -
+        value: "yato2_s1_atk_check[holder]"
+        display: false
+        parse:
+          type: literal
+          return: "yato2_s1_atk_check[holder]"
+          generated: true
+  _finishDerivedBuffIfNoParent:
+    type: boolean
+    description: finish Derived Buff If No Parent
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _loadFromBlackboard:
+    type: boolean
+    description: load From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true

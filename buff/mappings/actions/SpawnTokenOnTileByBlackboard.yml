@@ -1,0 +1,79 @@
+actionType: SpawnTokenOnTileByBlackboard
+fields:
+  _checkBuildableType:
+    type: boolean
+    description: check Buildable Type
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _dirBlackboard:
+    type: string
+    description: dir Blackboard
+    values:
+      -
+        value: direction
+        display: false
+        parse:
+          type: literal
+          return: direction
+          generated: true
+  _excludeTileInBlackboard:
+    type: boolean
+    description: exclude Tile In Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _onlySpawnOnNoCharacterTile:
+    type: boolean
+    description: only Spawn On No Character Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+          generated: true
+  _tokenToSpawn:
+    type: object
+    description: token To Spawn
+    schema: action_subschema/_tokenToSpawn.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _validTileBlackboard:
+    type: null
+    description: valid Tile Blackboard
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true

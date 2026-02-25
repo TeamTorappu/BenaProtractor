@@ -1,0 +1,85 @@
+actionType: DurBusAbilityCheckPassengers
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: Eat
+        display: false
+        parse:
+          type: literal
+          return: Eat
+          generated: true
+      -
+        value: GetEnmey
+        display: false
+        parse:
+          type: literal
+          return: GetEnmey
+          generated: true
+  _markCurrentPassengers:
+    type: boolean
+    description: mark Current Passengers
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _searchPassengersStatus:
+    type: boolean
+    description: search Passengers Status
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _setSearchPassengersStatus:
+    type: boolean
+    description: set Search Passengers Status
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

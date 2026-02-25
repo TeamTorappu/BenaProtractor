@@ -1,0 +1,31 @@
+actionType: CheckCharacterSkillType
+fields:
+  _skillType:
+    type: string
+    description: skill Type
+    values:
+      -
+        value: AUTO
+        display: false
+        parse:
+          type: literal
+          return: AUTO
+          generated: true
+      -
+        value: MANUAL
+        display: false
+        parse:
+          type: literal
+          return: MANUAL
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

@@ -1,0 +1,27 @@
+field: _scaleUpKeys
+type: object
+description: scale Up Keys
+actions:
+  FixedValueElementHeal:
+    type: array
+    values:
+      -
+        value: "[\"stack_cnt\",\"ep_heal_ratio\",\"heal_scale\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

@@ -1,0 +1,13 @@
+actionType: PlayBGM
+fields:
+  _needSourceStateRunning:
+    type: boolean
+    description: need Source State Running
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

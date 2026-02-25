@@ -1,0 +1,244 @@
+actionType: AutoChessAssignBondStackCntToBB
+fields:
+  _assignAllPlayerIndex:
+    type: boolean
+    description: assign All Player Index
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _assignCurrentMaxBond:
+    type: boolean
+    description: assign Current Max Bond
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _bondBlackboardKey:
+    type: null | string
+    description: bond Blackboard Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: bond_id
+        display: false
+        parse:
+          type: literal
+          return: bond_id
+          generated: true
+      -
+        value: none
+        display: false
+        parse:
+          type: literal
+          return: none
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _bondId:
+    type: null | string
+    description: bond Id
+    values:
+      -
+        value: deputShip
+        display: false
+        parse:
+          type: literal
+          return: deputShip
+          generated: true
+      -
+        value: egirShip
+        display: false
+        parse:
+          type: literal
+          return: egirShip
+          generated: true
+      -
+        value: indomShip
+        display: false
+        parse:
+          type: literal
+          return: indomShip
+          generated: true
+      -
+        value: kjeragShip
+        display: false
+        parse:
+          type: literal
+          return: kjeragShip
+          generated: true
+      -
+        value: lateranoShip
+        display: false
+        parse:
+          type: literal
+          return: lateranoShip
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: preciShip
+        display: false
+        parse:
+          type: literal
+          return: preciShip
+          generated: true
+      -
+        value: raidShip
+        display: false
+        parse:
+          type: literal
+          return: raidShip
+          generated: true
+      -
+        value: sargonShip
+        display: false
+        parse:
+          type: literal
+          return: sargonShip
+          generated: true
+      -
+        value: skillfulShip
+        display: false
+        parse:
+          type: literal
+          return: skillfulShip
+          generated: true
+      -
+        value: steadShip
+        display: false
+        parse:
+          type: literal
+          return: steadShip
+          generated: true
+      -
+        value: swiftShip
+        display: false
+        parse:
+          type: literal
+          return: swiftShip
+          generated: true
+      -
+        value: victoriaShip
+        display: false
+        parse:
+          type: literal
+          return: victoriaShip
+          generated: true
+      -
+        value: yanShip
+        display: false
+        parse:
+          type: literal
+          return: yanShip
+          generated: true
+  _byPosition:
+    type: boolean
+    description: by Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _checkDiffWithOldStoreCnt:
+    type: boolean
+    description: check Diff With Old Store Cnt
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _keyToStoreCnt:
+    type: string
+    description: key To Store Cnt
+    values:
+      -
+        value: bond_stack
+        display: false
+        parse:
+          type: literal
+          return: bond_stack
+          generated: true
+      -
+        value: bond_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: bond_stack_cnt
+          generated: true
+      -
+        value: current_max_bond_cnt
+        display: false
+        parse:
+          type: literal
+          return: current_max_bond_cnt
+          generated: true
+      -
+        value: stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

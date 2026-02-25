@@ -1,0 +1,37 @@
+field: _typesNeedtoUseRatio
+type: object
+description: types Needto Use Ratio
+actions:
+  ModifyAttributeRawDataByEntity:
+    type: array
+    values:
+      -
+        value: "[\"MAX_HP\",\"ATK\",\"DEF\",\"MAGIC_RESISTANCE\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"MAX_HP\",\"ATK\",\"DEF\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

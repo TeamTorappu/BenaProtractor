@@ -1,0 +1,96 @@
+actionType: FetchHpToBlackboard
+fields:
+  _blackboardStr:
+    type: string
+    description: blackboard Str
+    values:
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+          generated: true
+      -
+        value: monstr_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: monstr_hp_ratio
+          generated: true
+      -
+        value: ulpia_hp_ratio
+        display: false
+        parse:
+          type: literal
+          return: ulpia_hp_ratio
+          generated: true
+  _buffNameOfBlackboard:
+    type: null
+    description: buff Name Of Blackboard
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+          generated: true
+  _isHpRatio:
+    type: boolean
+    description: is Hp Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _skipModifierEvent:
+    type: boolean
+    description: skip Modifier Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

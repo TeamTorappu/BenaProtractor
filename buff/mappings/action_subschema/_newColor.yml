@@ -1,0 +1,27 @@
+field: _newColor
+type: object
+description: new Color
+actions:
+  ModifyCharacterSpineColor:
+    type: object
+    values:
+      -
+        value: "{\"r\":1,\"g\":1,\"b\":1,\"a\":0}"
+        display: false
+        parse:
+          type: fn
+          name: parsenewColor
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "{\"r\":1,\"g\":1,\"b\":1,\"a\":1}"
+        display: false
+        parse:
+          type: fn
+          name: parsenewColor
+          args:
+            - $input
+            - $ctx
+          generated: true

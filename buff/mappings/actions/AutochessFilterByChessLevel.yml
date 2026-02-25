@@ -1,0 +1,49 @@
+actionType: AutochessFilterByChessLevel
+fields:
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+          generated: true
+  _levelToCompare:
+    type: number
+    description: level To Compare
+    values:
+      -
+        value: 4
+        display: false
+        parse:
+          type: literal
+          return: 4
+          generated: true
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

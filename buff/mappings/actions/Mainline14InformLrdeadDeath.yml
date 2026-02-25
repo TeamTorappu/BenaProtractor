@@ -1,0 +1,13 @@
+actionType: Mainline14InformLrdeadDeath
+fields:
+  _evnSysKey:
+    type: string
+    description: evn Sys Key
+    values:
+      -
+        value: env_v050_mainline14_lrdeadP2Ctrl
+        display: false
+        parse:
+          type: literal
+          return: env_v050_mainline14_lrdeadP2Ctrl
+          generated: true

@@ -1,0 +1,17 @@
+field: _checkTypes
+type: object
+description: check Types
+actions:
+  CheckTargetSkillDurationType:
+    type: array
+    values:
+      -
+        value: "[\"AMMO\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

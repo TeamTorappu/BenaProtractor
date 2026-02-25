@@ -1,0 +1,233 @@
+actionType: CheckHasEnemyInRange
+fields:
+  _assignBBKey:
+    type: string
+    description: assign B B Key
+    values:
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+          generated: true
+  _assignToBB:
+    type: boolean
+    description: assign To B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkId:
+    type: boolean
+    description: check Id
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkRadius:
+    type: boolean
+    description: check Radius
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+  _countKey:
+    type: string
+    description: count Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+          generated: true
+  _excludeSource:
+    type: boolean
+    description: exclude Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _excludedBuffIds:
+    type: array | null
+    description: excluded Buff Ids
+    schema: action_subschema/_excludedBuffIds.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _includedBuffIds:
+    type: array | null
+    description: included Buff Ids
+    schema: action_subschema/_includedBuffIds.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _needCheckCount:
+    type: boolean
+    description: need Check Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+          generated: true
+  _rangeRadius:
+    type: number
+    description: range Radius
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+          generated: true
+  _soureceType:
+    type: string
+    description: sourece Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _useAttackRange:
+    type: boolean
+    description: use Attack Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

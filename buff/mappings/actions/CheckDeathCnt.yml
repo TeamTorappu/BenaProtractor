@@ -1,0 +1,24 @@
+actionType: CheckDeathCnt
+fields:
+  _checkFinishCnt:
+    type: number
+    description: check Finish Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+          generated: true

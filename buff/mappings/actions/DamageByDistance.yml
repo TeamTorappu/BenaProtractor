@@ -1,0 +1,71 @@
+actionType: DamageByDistance
+fields:
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+          generated: true
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+          generated: true
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+          generated: true
+  _isInit:
+    type: boolean
+    description: is Init
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

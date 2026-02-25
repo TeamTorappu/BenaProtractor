@@ -1,0 +1,17 @@
+field: _randomOffsetBound
+type: object
+description: random Offset Bound
+actions:
+  SummonEnemiesOnTargetTile:
+    type: object
+    values:
+      -
+        value: "{\"_serializedValue\":0}"
+        display: false
+        parse:
+          type: fn
+          name: parserandomOffsetBound
+          args:
+            - $input
+            - $ctx
+          generated: true

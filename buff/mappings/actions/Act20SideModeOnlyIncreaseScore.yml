@@ -1,0 +1,13 @@
+actionType: Act20SideModeOnlyIncreaseScore
+fields:
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true

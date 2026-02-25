@@ -1,0 +1,35 @@
+actionType: CheckCurrentTileKey
+fields:
+  _isExclude:
+    type: boolean
+    description: is Exclude
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _tileKey:
+    type: array
+    description: tile Key
+    schema: action_subschema/_tileKey.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

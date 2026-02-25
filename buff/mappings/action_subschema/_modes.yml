@@ -1,0 +1,89 @@
+field: _modes
+type: object
+description: modes
+actions:
+  KillTokens:
+    type: array
+    values:
+      -
+        value: "[0,1,2,3,4]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+  ModifyCharacterAttackTriggerRangeId:
+    type: array
+    values:
+      -
+        value: "[1]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[3,4]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+  RewriteDynamicBuffTileOptionsInRangeWhenSpecialMode:
+    type: array
+    values:
+      -
+        value: "[0]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+  CheckDynamicBuffTileModeInEnum:
+    type: array
+    values:
+      -
+        value: "[0]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+  ReplaceAbilityDamageType:
+    type: array
+    values:
+      -
+        value: "[3,4]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

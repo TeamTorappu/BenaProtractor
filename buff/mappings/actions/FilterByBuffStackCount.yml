@@ -1,0 +1,823 @@
+actionType: FilterByBuffStackCount
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "act3bossrush_relic4_buff[sp]"
+        display: false
+        parse:
+          type: literal
+          return: "act3bossrush_relic4_buff[sp]"
+          generated: true
+      -
+        value: "axetro_t[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "axetro_t[stack]"
+          generated: true
+      -
+        value: "block_mcreep[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "block_mcreep[stack]"
+          generated: true
+      -
+        value: "buff_mire[attr]"
+        display: false
+        parse:
+          type: literal
+          return: "buff_mire[attr]"
+          generated: true
+      -
+        value: "chen3_t2[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "chen3_t2[stack]"
+          generated: true
+      -
+        value: "civilian_mainline12[detect_p1_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "civilian_mainline12[detect_p1_stack]"
+          generated: true
+      -
+        value: "civilian_mainline12[detect_p2_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "civilian_mainline12[detect_p2_stack]"
+          generated: true
+      -
+        value: cliff_buff_level
+        display: false
+        parse:
+          type: literal
+          return: cliff_buff_level
+          generated: true
+      -
+        value: "crow_t_1[atk_speed]"
+        display: false
+        parse:
+          type: literal
+          return: "crow_t_1[atk_speed]"
+          generated: true
+      -
+        value: "doroth_t_2[atk]"
+        display: false
+        parse:
+          type: literal
+          return: "doroth_t_2[atk]"
+          generated: true
+      -
+        value: "dusk_t_1[atk]"
+        display: false
+        parse:
+          type: literal
+          return: "dusk_t_1[atk]"
+          generated: true
+      -
+        value: "electric_s[activate][mark]"
+        display: false
+        parse:
+          type: literal
+          return: "electric_s[activate][mark]"
+          generated: true
+      -
+        value: "enemy_act38side[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_act38side[stack]"
+          generated: true
+      -
+        value: "enemy_blwzad[dot][real]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_blwzad[dot][real]"
+          generated: true
+      -
+        value: "enemy_bonore_mark[cnt]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_bonore_mark[cnt]"
+          generated: true
+      -
+        value: enemy_cjgost_summon
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjgost_summon
+          generated: true
+      -
+        value: "enemy_confinement[atk_cnt]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_confinement[atk_cnt]"
+          generated: true
+      -
+        value: "enemy_dhnzzh_passive_hit[attr]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_dhnzzh_passive_hit[attr]"
+          generated: true
+      -
+        value: enemy_dklord_atk
+        display: false
+        parse:
+          type: literal
+          return: enemy_dklord_atk
+          generated: true
+      -
+        value: "enemy_dursho_t[atk]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_dursho_t[atk]"
+          generated: true
+      -
+        value: "enemy_lhkarb_devour[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_lhkarb_devour[mark]"
+          generated: true
+      -
+        value: enemy_lhship_mark
+        display: false
+        parse:
+          type: literal
+          return: enemy_lhship_mark
+          generated: true
+      -
+        value: "enemy_lrmzrd[projectile_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_lrmzrd[projectile_stack]"
+          generated: true
+      -
+        value: "enemy_ltnclr[atk_boost_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ltnclr[atk_boost_stack]"
+          generated: true
+      -
+        value: "enemy_mainline12[detect_p1_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_mainline12[detect_p1_stack]"
+          generated: true
+      -
+        value: "enemy_mainline12[detect_p2_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_mainline12[detect_p2_stack]"
+          generated: true
+      -
+        value: "enemy_mjclun[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_mjclun[stack]"
+          generated: true
+      -
+        value: "enemy_tjgxb[buff]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_tjgxb[buff]"
+          generated: true
+      -
+        value: "enemy_windoc_fear_hot[damage_resistance]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_windoc_fear_hot[damage_resistance]"
+          generated: true
+      -
+        value: enemy_xbrok_move_speed
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbrok_move_speed
+          generated: true
+      -
+        value: enemy_xbtd_speed_up
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbtd_speed_up
+          generated: true
+      -
+        value: flmlod_flmgd_death
+        display: false
+        parse:
+          type: literal
+          return: flmlod_flmgd_death
+          generated: true
+      -
+        value: "halfIdle_stack_buff[def][trap_born][core]"
+        display: false
+        parse:
+          type: literal
+          return: "halfIdle_stack_buff[def][trap_born][core]"
+          generated: true
+      -
+        value: "halfIdle_stack_buff[max_hp][core]"
+        display: false
+        parse:
+          type: literal
+          return: "halfIdle_stack_buff[max_hp][core]"
+          generated: true
+      -
+        value: "halfIdle_stack_buff[melee][atk][core]"
+        display: false
+        parse:
+          type: literal
+          return: "halfIdle_stack_buff[melee][atk][core]"
+          generated: true
+      -
+        value: "halfIdle_stack_buff[ranged][atk][core]"
+        display: false
+        parse:
+          type: literal
+          return: "halfIdle_stack_buff[ranged][atk][core]"
+          generated: true
+      -
+        value: "halfIdle_summon_enemy_counter[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "halfIdle_summon_enemy_counter[stack]"
+          generated: true
+      -
+        value: "halo2_t_2[attack_speed]"
+        display: false
+        parse:
+          type: literal
+          return: "halo2_t_2[attack_speed]"
+          generated: true
+      -
+        value: "halo_t_1[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "halo_t_1[stack]"
+          generated: true
+      -
+        value: "hlchgr_t[stack_mark]"
+        display: false
+        parse:
+          type: literal
+          return: "hlchgr_t[stack_mark]"
+          generated: true
+      -
+        value: "hsgma2_s_3[attack_cnt]"
+        display: false
+        parse:
+          type: literal
+          return: "hsgma2_s_3[attack_cnt]"
+          generated: true
+      -
+        value: "legion_atk_up_on_output_damage[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "legion_atk_up_on_output_damage[stack]"
+          generated: true
+      -
+        value: "legion_mercha_buff[status_stack_core]"
+        display: false
+        parse:
+          type: literal
+          return: "legion_mercha_buff[status_stack_core]"
+          generated: true
+      -
+        value: "legion_trap_mercha[atk_up]"
+        display: false
+        parse:
+          type: literal
+          return: "legion_trap_mercha[atk_up]"
+          generated: true
+      -
+        value: ling_atk_up
+        display: false
+        parse:
+          type: literal
+          return: ling_atk_up
+          generated: true
+      -
+        value: "lmlee_s_2[count]"
+        display: false
+        parse:
+          type: literal
+          return: "lmlee_s_2[count]"
+          generated: true
+      -
+        value: "mlyss_wtrman_t_2[range_cnt]"
+        display: false
+        parse:
+          type: literal
+          return: "mlyss_wtrman_t_2[range_cnt]"
+          generated: true
+      -
+        value: "nymph_t_2[atk]"
+        display: false
+        parse:
+          type: literal
+          return: "nymph_t_2[atk]"
+          generated: true
+      -
+        value: "pepe_s3_range[atk]"
+        display: false
+        parse:
+          type: literal
+          return: "pepe_s3_range[atk]"
+          generated: true
+      -
+        value: "rmixer_t1[attr_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "rmixer_t1[attr_stack]"
+          generated: true
+      -
+        value: "rockr_t_1[atk]"
+        display: false
+        parse:
+          type: literal
+          return: "rockr_t_1[atk]"
+          generated: true
+      -
+        value: "rogue_2_atk_up_on_output_damage[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_2_atk_up_on_output_damage[stack]"
+          generated: true
+      -
+        value: "siege2_s_2[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "siege2_s_2[mark]"
+          generated: true
+      -
+        value: "siege2_t_2[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "siege2_t_2[mark]"
+          generated: true
+      -
+        value: skagod_dash_speed
+        display: false
+        parse:
+          type: literal
+          return: skagod_dash_speed
+          generated: true
+      -
+        value: "spawnp_t[mcreep_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "spawnp_t[mcreep_stack]"
+          generated: true
+      -
+        value: "spawnp_t[mcreep_stack_near]"
+        display: false
+        parse:
+          type: literal
+          return: "spawnp_t[mcreep_stack_near]"
+          generated: true
+      -
+        value: "tecno_e_002[atk_up_stack]"
+        display: false
+        parse:
+          type: literal
+          return: "tecno_e_002[atk_up_stack]"
+          generated: true
+      -
+        value: "tippi_t[stack]"
+        display: false
+        parse:
+          type: literal
+          return: "tippi_t[stack]"
+          generated: true
+      -
+        value: "token_mcbird_move_speed[down]"
+        display: false
+        parse:
+          type: literal
+          return: "token_mcbird_move_speed[down]"
+          generated: true
+      -
+        value: trap_dhtl_add_height
+        display: false
+        parse:
+          type: literal
+          return: trap_dhtl_add_height
+          generated: true
+      -
+        value: "trap_lhplt_s_limit[counter]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_lhplt_s_limit[counter]"
+          generated: true
+      -
+        value: trswlf_damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: trswlf_damage_resistance
+          generated: true
+      -
+        value: "ulpia_t_1[abyssal][buff]"
+        display: false
+        parse:
+          type: literal
+          return: "ulpia_t_1[abyssal][buff]"
+          generated: true
+      -
+        value: "ulpia_t_1[self]"
+        display: false
+        parse:
+          type: literal
+          return: "ulpia_t_1[self]"
+          generated: true
+      -
+        value: "vigil_wolf_t_1_enhance[holder]"
+        display: false
+        parse:
+          type: literal
+          return: "vigil_wolf_t_1_enhance[holder]"
+          generated: true
+      -
+        value: "wdkght_t[enhance]"
+        display: false
+        parse:
+          type: literal
+          return: "wdkght_t[enhance]"
+          generated: true
+  _checkBuffSource:
+    type: boolean
+    description: check Buff Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkFromUnoverridableBuffCount:
+    type: boolean
+    description: check From Unoverridable Buff Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkSnapshotBuff:
+    type: boolean
+    description: check Snapshot Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _checkTargetHost:
+    type: boolean
+    description: check Target Host
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: EQUALS
+        display: false
+        parse:
+          type: literal
+          return: EQUALS
+          generated: true
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _stackCount:
+    type: number
+    description: stack Count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+          generated: true
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+          generated: true
+      -
+        value: 300
+        display: false
+        parse:
+          type: literal
+          return: 300
+          generated: true
+      -
+        value: 4
+        display: false
+        parse:
+          type: literal
+          return: 4
+          generated: true
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+          generated: true
+      -
+        value: 99
+        display: false
+        parse:
+          type: literal
+          return: 99
+          generated: true
+  _stackCountKey:
+    type: null | string
+    description: stack Count Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: block_mcreep_cnt
+        display: false
+        parse:
+          type: literal
+          return: block_mcreep_cnt
+          generated: true
+      -
+        value: buff_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: buff_stack_cnt
+          generated: true
+      -
+        value: flmgd_death_cnt
+        display: false
+        parse:
+          type: literal
+          return: flmgd_death_cnt
+          generated: true
+      -
+        value: fx_cnt
+        display: false
+        parse:
+          type: literal
+          return: fx_cnt
+          generated: true
+      -
+        value: max_generation
+        display: false
+        parse:
+          type: literal
+          return: max_generation
+          generated: true
+      -
+        value: max_mcreep_count
+        display: false
+        parse:
+          type: literal
+          return: max_mcreep_count
+          generated: true
+      -
+        value: max_mcreep_near_count
+        display: false
+        parse:
+          type: literal
+          return: max_mcreep_near_count
+          generated: true
+      -
+        value: max_projectile_count
+        display: false
+        parse:
+          type: literal
+          return: max_projectile_count
+          generated: true
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+          generated: true
+      -
+        value: max_stack_count
+        display: false
+        parse:
+          type: literal
+          return: max_stack_count
+          generated: true
+      -
+        value: max_summon_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_summon_cnt
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: passive_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: passive_stack_cnt
+          generated: true
+      -
+        value: stack_cnt_check
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt_check
+          generated: true
+      -
+        value: stack_time
+        display: false
+        parse:
+          type: literal
+          return: stack_time
+          generated: true
+      -
+        value: status_cnt
+        display: false
+        parse:
+          type: literal
+          return: status_cnt
+          generated: true
+      -
+        value: target_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: target_stack_cnt
+          generated: true
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+          generated: true
+  _stackCountPeeling:
+    type: number
+    description: stack Count Peeling
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+          generated: true
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true

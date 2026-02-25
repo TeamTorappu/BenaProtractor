@@ -1,0 +1,79 @@
+actionType: SandboxCheckCurrentMode
+fields:
+  _checkBuildMode:
+    type: boolean
+    description: check Build Mode
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkNodeType:
+    type: boolean
+    description: check Node Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _checkSeasonType:
+    type: boolean
+    description: check Season Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _checkWeatherType:
+    type: boolean
+    description: check Weather Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _sandboxNodeTypeV2:
+    type: string
+    description: sandbox Node Type V2
+    values:
+      -
+        value: HOME
+        display: false
+        parse:
+          type: literal
+          return: HOME
+          generated: true
+  _sandboxSeasonTypeV2:
+    type: string
+    description: sandbox Season Type V2
+    values:
+      -
+        value: DRY
+        display: false
+        parse:
+          type: literal
+          return: DRY
+          generated: true
+  _sandboxWeatherType:
+    type: null
+    description: sandbox Weather Type
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true

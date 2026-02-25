@@ -1,0 +1,555 @@
+actionType: EmitProjectile
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: SelectNormalTarget
+        display: false
+        parse:
+          type: literal
+          return: SelectNormalTarget
+          generated: true
+  _actions:
+    type: array | null
+    description: actions
+    schema: action_subschema/_actions.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffDataList:
+    type: array
+    description: buff Data List
+    schema: action_subschema/_buffDataList.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _cacheAtkToActions:
+    type: boolean
+    description: cache Atk To Actions
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _emitOnRootTile:
+    type: boolean
+    description: emit On Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ev:
+    type: string
+    description: ev
+    values:
+      -
+        value: ON_HIT_OBJECT
+        display: false
+        parse:
+          type: literal
+          return: ON_HIT_OBJECT
+          generated: true
+      -
+        value: ON_HIT_TILE
+        display: false
+        parse:
+          type: literal
+          return: ON_HIT_TILE
+          generated: true
+      -
+        value: ON_REACHED_TARGET
+        display: false
+        parse:
+          type: literal
+          return: ON_REACHED_TARGET
+          generated: true
+  _extraBlackboard:
+    type: boolean
+    description: extra Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _mountPoint:
+    type: string
+    description: mount Point
+    values:
+      -
+        value: FOOT
+        display: false
+        parse:
+          type: literal
+          return: FOOT
+          generated: true
+      -
+        value: GROUND
+        display: false
+        parse:
+          type: literal
+          return: GROUND
+          generated: true
+      -
+        value: HIT
+        display: false
+        parse:
+          type: literal
+          return: HIT
+          generated: true
+      -
+        value: MUZZLE
+        display: false
+        parse:
+          type: literal
+          return: MUZZLE
+          generated: true
+      -
+        value: SPECIAL_5
+        display: false
+        parse:
+          type: literal
+          return: SPECIAL_5
+          generated: true
+      -
+        value: SPECIAL_6
+        display: false
+        parse:
+          type: literal
+          return: SPECIAL_6
+          generated: true
+  _overwriteActions:
+    type: boolean
+    description: overwrite Actions
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _overwriteBlackboard:
+    type: boolean
+    description: overwrite Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _overwriteBuffs:
+    type: boolean
+    description: overwrite Buffs
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _projectileKey:
+    type: string
+    description: projectile Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: projectile_cd1punch
+        display: false
+        parse:
+          type: literal
+          return: projectile_cd1punch
+          generated: true
+      -
+        value: projectile_chr_monstr_s2_extra
+        display: false
+        parse:
+          type: literal
+          return: projectile_chr_monstr_s2_extra
+          generated: true
+      -
+        value: projectile_chr_radian_tower2_s2
+        display: false
+        parse:
+          type: literal
+          return: projectile_chr_radian_tower2_s2
+          generated: true
+      -
+        value: projectile_chr_typhon
+        display: false
+        parse:
+          type: literal
+          return: projectile_chr_typhon
+          generated: true
+      -
+        value: projectile_cnnon_target_mark
+        display: false
+        parse:
+          type: literal
+          return: projectile_cnnon_target_mark
+          generated: true
+      -
+        value: projectile_enemy_actoxi
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_actoxi
+          generated: true
+      -
+        value: "projectile_enemy_dirctr_tr_1[p1]"
+        display: false
+        parse:
+          type: literal
+          return: "projectile_enemy_dirctr_tr_1[p1]"
+          generated: true
+      -
+        value: "projectile_enemy_dirctr_tr_1[p2]"
+        display: false
+        parse:
+          type: literal
+          return: "projectile_enemy_dirctr_tr_1[p2]"
+          generated: true
+      -
+        value: projectile_enemy_dyfire_boom
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_dyfire_boom
+          generated: true
+      -
+        value: projectile_enemy_dyswrd
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_dyswrd
+          generated: true
+      -
+        value: projectile_enemy_lhbelt
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_lhbelt
+          generated: true
+      -
+        value: projectile_enemy_mnchrs_line
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_mnchrs_line
+          generated: true
+      -
+        value: projectile_enemy_mncrer_heal
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_mncrer_heal
+          generated: true
+      -
+        value: projectile_enemy_mncrer_heal_water
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_mncrer_heal_water
+          generated: true
+      -
+        value: projectile_enemy_rxbtd_lifesteal
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_rxbtd_lifesteal
+          generated: true
+      -
+        value: projectile_enemy_rxbtd_magnet
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_rxbtd_magnet
+          generated: true
+      -
+        value: projectile_enemy_uacann_range
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_uacann_range
+          generated: true
+      -
+        value: projectile_enemy_vtshld
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_vtshld
+          generated: true
+      -
+        value: projectile_enemy_vtswd
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_vtswd
+          generated: true
+      -
+        value: projectile_enemy_vtwand
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_vtwand
+          generated: true
+      -
+        value: projectile_enemy_vtzepl_die
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_vtzepl_die
+          generated: true
+      -
+        value: projectile_enemy_vtzepl_summon
+        display: false
+        parse:
+          type: literal
+          return: projectile_enemy_vtzepl_summon
+          generated: true
+      -
+        value: projectile_trap_acarm076
+        display: false
+        parse:
+          type: literal
+          return: projectile_trap_acarm076
+          generated: true
+      -
+        value: projectile_trap_skztxy_skz
+        display: false
+        parse:
+          type: literal
+          return: projectile_trap_skztxy_skz
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _targetPosFromBB:
+    type: boolean
+    description: target Pos From B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: MAIN_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MAIN_TARGET
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _useAbilityTileSelector:
+    type: boolean
+    description: use Ability Tile Selector
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useProjectileAsTarget:
+    type: boolean
+    description: use Projectile As Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useSnapshotAbilityWhenFromBuff:
+    type: boolean
+    description: use Snapshot Ability When From Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useTargetAsStartPoint:
+    type: boolean
+    description: use Target As Start Point
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useTargetRootTile:
+    type: boolean
+    description: use Target Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useTileAsTarget:
+    type: boolean
+    description: use Tile As Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

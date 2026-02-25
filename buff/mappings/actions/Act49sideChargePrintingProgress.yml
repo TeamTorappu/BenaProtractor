@@ -1,0 +1,13 @@
+actionType: Act49sideChargePrintingProgress
+fields:
+  _chargeValue:
+    type: number
+    description: charge Value
+    values:
+      -
+        value: 9999
+        display: false
+        parse:
+          type: literal
+          return: 9999
+          generated: true

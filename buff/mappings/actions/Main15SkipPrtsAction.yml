@@ -1,0 +1,13 @@
+actionType: Main15SkipPrtsAction
+fields:
+  _actionType:
+    type: string
+    description: action Type
+    values:
+      -
+        value: MOVE_AND_DRAG_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MOVE_AND_DRAG_SOURCE
+          generated: true

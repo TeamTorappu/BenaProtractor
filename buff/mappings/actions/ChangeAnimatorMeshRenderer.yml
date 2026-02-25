@@ -1,0 +1,120 @@
+actionType: ChangeAnimatorMeshRenderer
+fields:
+  _enable:
+    type: boolean
+    description: enable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _exclusive:
+    type: boolean
+    description: exclusive
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _rendererCurModeIndex:
+    type: boolean
+    description: renderer Cur Mode Index
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _rendererIndex:
+    type: number
+    description: renderer Index
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+          generated: true
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: 10
+        display: false
+        parse:
+          type: literal
+          return: 10
+          generated: true
+      -
+        value: 7
+        display: false
+        parse:
+          type: literal
+          return: 7
+          generated: true
+      -
+        value: 8
+        display: false
+        parse:
+          type: literal
+          return: 8
+          generated: true
+      -
+        value: 9
+        display: false
+        parse:
+          type: literal
+          return: 9
+          generated: true

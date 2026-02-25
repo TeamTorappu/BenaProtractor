@@ -1,0 +1,79 @@
+actionType: Act33SideEmitManagedProjectile
+fields:
+  _actions:
+    type: null
+    description: actions
+    schema: action_subschema/_actions.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _ev:
+    type: string
+    description: ev
+    values:
+      -
+        value: ON_HIT_OBJECT
+        display: false
+        parse:
+          type: literal
+          return: ON_HIT_OBJECT
+          generated: true
+  _mountPoint:
+    type: string
+    description: mount Point
+    values:
+      -
+        value: MUZZLE
+        display: false
+        parse:
+          type: literal
+          return: MUZZLE
+          generated: true
+  _overwriteActions:
+    type: boolean
+    description: overwrite Actions
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _projectileKey:
+    type: string
+    description: projectile Key
+    values:
+      -
+        value: projectile_spblls
+        display: false
+        parse:
+          type: literal
+          return: projectile_spblls
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

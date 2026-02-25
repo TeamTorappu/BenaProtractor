@@ -1,0 +1,67 @@
+actionType: KillTokens
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: rosmon_token_s3_mark
+        display: false
+        parse:
+          type: literal
+          return: rosmon_token_s3_mark
+          generated: true
+  _checkContainsBuff:
+    type: boolean
+    description: check Contains Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkModes:
+    type: boolean
+    description: check Modes
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _modes:
+    type: array
+    description: modes
+    schema: action_subschema/_modes.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

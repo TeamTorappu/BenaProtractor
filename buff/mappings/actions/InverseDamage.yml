@@ -1,0 +1,186 @@
+actionType: InverseDamage
+fields:
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+          generated: true
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+          generated: true
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+          generated: true
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+          generated: true
+  _damageTypeKey:
+    type: string
+    description: damage Type Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+  _damageValueKey:
+    type: string
+    description: damage Value Key
+    values:
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+          generated: true
+  _filterModifierCancelled:
+    type: boolean
+    description: filter Modifier Cancelled
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _fixValue:
+    type: boolean
+    description: fix Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _hasSource:
+    type: boolean
+    description: has Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sideMask:
+    type: string
+    description: side Mask
+    values:
+      -
+        value: BOTH_ALLY_AND_ENEMY
+        display: false
+        parse:
+          type: literal
+          return: BOTH_ALLY_AND_ENEMY
+          generated: true
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+          generated: true
+  _skipModifierEvent:
+    type: boolean
+    description: skip Modifier Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _skipSourceEvent:
+    type: boolean
+    description: skip Source Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true

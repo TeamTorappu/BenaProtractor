@@ -1,0 +1,35 @@
+actionType: CoopApplyRecordDamageToMoveCtrl
+fields:
+  _recordKey:
+    type: string
+    description: record Key
+    values:
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useTargetDirect:
+    type: boolean
+    description: use Target Direct
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

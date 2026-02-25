@@ -1,0 +1,57 @@
+actionType: ModifyGlobalBuffBlackboard
+fields:
+  _addition:
+    type: number
+    description: addition
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _globalBuffKey:
+    type: string
+    description: global Buff Key
+    values:
+      -
+        value: rogue_2_relic_fight_131
+        display: false
+        parse:
+          type: literal
+          return: rogue_2_relic_fight_131
+          generated: true
+  _maxValKey:
+    type: string
+    description: max Val Key
+    values:
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+          generated: true
+  _tryAddBuffIfModified:
+    type: boolean
+    description: try Add Buff If Modified
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

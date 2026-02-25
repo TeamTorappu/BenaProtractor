@@ -1,0 +1,24 @@
+actionType: FilterCharacterLastDeathReason
+fields:
+  _characterType:
+    type: string
+    description: character Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _finishReason:
+    type: string
+    description: finish Reason
+    values:
+      -
+        value: MOVE_LIKE_RESPAWN_SELF
+        display: false
+        parse:
+          type: literal
+          return: MOVE_LIKE_RESPAWN_SELF
+          generated: true

@@ -1,0 +1,153 @@
+actionType: AdvancedApplyHeal
+fields:
+  _customModifierKey:
+    type: string
+    description: custom Modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: s2_dot_heal
+        display: false
+        parse:
+          type: literal
+          return: s2_dot_heal
+          generated: true
+  _healScaleKey:
+    type: string
+    description: heal Scale Key
+    values:
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+          generated: true
+  _scaleUpByBlackboardKey:
+    type: null | string
+    description: scale Up By Blackboard Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: addition_heal_scale
+        display: false
+        parse:
+          type: literal
+          return: addition_heal_scale
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: stack_cnt
+          generated: true
+  _scaleUpIfUnderHpRatio:
+    type: boolean
+    description: scale Up If Under Hp Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _useDynamicVar:
+    type: boolean
+    description: use Dynamic Var
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useInputTargetAsHealTarget:
+    type: boolean
+    description: use Input Target As Heal Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

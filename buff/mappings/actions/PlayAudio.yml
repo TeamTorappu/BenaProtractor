@@ -1,0 +1,1402 @@
+actionType: PlayAudio
+fields:
+  _audioSignal:
+    type: string
+    description: audio Signal
+    values:
+      - value: ASCLN_S_2_BOMB
+        display: false
+        parse:
+          type: literal
+          return: ASCLN_S_2_BOMB
+          generated: true
+      - value: Awake
+        display: false
+        parse:
+          type: literal
+          return: Awake
+          generated: true
+      - value: DHNZZH_CALL_1
+        display: false
+        parse:
+          type: literal
+          return: DHNZZH_CALL_1
+          generated: true
+      - value: DHNZZH_CALL_2
+        display: false
+        parse:
+          type: literal
+          return: DHNZZH_CALL_2
+          generated: true
+      - value: DHNZZH_HOST_POLLUTE
+        display: false
+        parse:
+          type: literal
+          return: DHNZZH_HOST_POLLUTE
+          generated: true
+      - value: DHTB_HIT
+        display: false
+        parse:
+          type: literal
+          return: DHTB_HIT
+          generated: true
+      - value: ELTRSM_AOE_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: ELTRSM_AOE_DAMAGE
+          generated: true
+      - value: ELTRSM_REBORN_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: ELTRSM_REBORN_DAMAGE
+          generated: true
+      - value: ELTRSM_SWD_DROP
+        display: false
+        parse:
+          type: literal
+          return: ELTRSM_SWD_DROP
+          generated: true
+      - value: MUFRPRN_TRANS
+        display: false
+        parse:
+          type: literal
+          return: MUFRPRN_TRANS
+          generated: true
+      - value: POLLUTE_FIRST_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: POLLUTE_FIRST_DAMAGE
+          generated: true
+      - value: RollStart
+        display: false
+        parse:
+          type: literal
+          return: RollStart
+          generated: true
+      - value: SpawnEnemy
+        display: false
+        parse:
+          type: literal
+          return: SpawnEnemy
+          generated: true
+      - value: TRAP_BROKEN
+        display: false
+        parse:
+          type: literal
+          return: TRAP_BROKEN
+          generated: true
+      - value: TRAP_BUILD
+        display: false
+        parse:
+          type: literal
+          return: TRAP_BUILD
+          generated: true
+      - value: WISDEL_S_OVERLOAD
+        display: false
+        parse:
+          type: literal
+          return: WISDEL_S_OVERLOAD
+          generated: true
+      - value: WISDEL_T_BOMB
+        display: false
+        parse:
+          type: literal
+          return: WISDEL_T_BOMB
+          generated: true
+      - value: accast_skill_aoe
+        display: false
+        parse:
+          type: literal
+          return: accast_skill_aoe
+          generated: true
+      - value: acdums_audio[aoe]
+        display: false
+        parse:
+          type: literal
+          return: acdums_audio[aoe]
+          generated: true
+      - value: acdums_audio[depassion]
+        display: false
+        parse:
+          type: literal
+          return: acdums_audio[depassion]
+          generated: true
+      - value: acdums_audio[depassion][delay]
+        display: false
+        parse:
+          type: literal
+          return: acdums_audio[depassion][delay]
+          generated: true
+      - value: acdums_audio[passion]
+        display: false
+        parse:
+          type: literal
+          return: acdums_audio[passion]
+          generated: true
+      - value: acdums_audio[passion][delay]
+        display: false
+        parse:
+          type: literal
+          return: acdums_audio[passion][delay]
+          generated: true
+      - value: achunt_line_damage.chain_hit
+        display: false
+        parse:
+          type: literal
+          return: achunt_line_damage.chain_hit
+          generated: true
+      - value: acloon_s_2
+        display: false
+        parse:
+          type: literal
+          return: acloon_s_2
+          generated: true
+      - value: acpupp_revive_1
+        display: false
+        parse:
+          type: literal
+          return: acpupp_revive_1
+          generated: true
+      - value: act45side_born_line
+        display: false
+        parse:
+          type: literal
+          return: act45side_born_line
+          generated: true
+      - value: aice_frozen_target
+        display: false
+        parse:
+          type: literal
+          return: aice_frozen_target
+          generated: true
+      - value: akkord_aoe_audio
+        display: false
+        parse:
+          type: literal
+          return: akkord_aoe_audio
+          generated: true
+      - value: amya3_s_1_heal
+        display: false
+        parse:
+          type: literal
+          return: amya3_s_1_heal
+          generated: true
+      - value: askate_sp
+        display: false
+        parse:
+          type: literal
+          return: askate_sp
+          generated: true
+      - value: bond_aegir_eat_01
+        display: false
+        parse:
+          type: literal
+          return: bond_aegir_eat_01
+          generated: true
+      - value: bond_shield_buff_hit
+        display: false
+        parse:
+          type: literal
+          return: bond_shield_buff_hit
+          generated: true
+      - value: branch_t_1
+        display: false
+        parse:
+          type: literal
+          return: branch_t_1
+          generated: true
+      - value: buff_damage
+        display: false
+        parse:
+          type: literal
+          return: buff_damage
+          generated: true
+      - value: chen3_talent_evade_start_audio
+        display: false
+        parse:
+          type: literal
+          return: chen3_talent_evade_start_audio
+          generated: true
+      - value: coin_collect
+        display: false
+        parse:
+          type: literal
+          return: coin_collect
+          generated: true
+      - value: collect_enemy_dseed
+        display: false
+        parse:
+          type: literal
+          return: collect_enemy_dseed
+          generated: true
+      - value: confes_t_sleep
+        display: false
+        parse:
+          type: literal
+          return: confes_t_sleep
+          generated: true
+      - value: crzjdg_advance_suddenly_audio_1
+        display: false
+        parse:
+          type: literal
+          return: crzjdg_advance_suddenly_audio_1
+          generated: true
+      - value: crzjdg_advance_suddenly_audio_2
+        display: false
+        parse:
+          type: literal
+          return: crzjdg_advance_suddenly_audio_2
+          generated: true
+      - value: crzjdg_advance_suddenly_audio_3
+        display: false
+        parse:
+          type: literal
+          return: crzjdg_advance_suddenly_audio_3
+          generated: true
+      - value: crzjdg_advance_suddenly_hit
+        display: false
+        parse:
+          type: literal
+          return: crzjdg_advance_suddenly_hit
+          generated: true
+      - value: crzjdg_revive_end
+        display: false
+        parse:
+          type: literal
+          return: crzjdg_revive_end
+          generated: true
+      - value: crzjdg_revive_start
+        display: false
+        parse:
+          type: literal
+          return: crzjdg_revive_start
+          generated: true
+      - value: damage_ref
+        display: false
+        parse:
+          type: literal
+          return: damage_ref
+          generated: true
+      - value: dolris_s_1_start
+        display: false
+        parse:
+          type: literal
+          return: dolris_s_1_start
+          generated: true
+      - value: dolris_s_2_start
+        display: false
+        parse:
+          type: literal
+          return: dolris_s_2_start
+          generated: true
+      - value: dot_damage
+        display: false
+        parse:
+          type: literal
+          return: dot_damage
+          generated: true
+      - value: dragon_upgrade
+        display: false
+        parse:
+          type: literal
+          return: dragon_upgrade
+          generated: true
+      - value: dychss_swich_mode
+        display: false
+        parse:
+          type: literal
+          return: dychss_swich_mode
+          generated: true
+      - value: dychss_swich_mode_back
+        display: false
+        parse:
+          type: literal
+          return: dychss_swich_mode_back
+          generated: true
+      - value: dycyue_lock
+        display: false
+        parse:
+          type: literal
+          return: dycyue_lock
+          generated: true
+      - value: dydfst_1_damage
+        display: false
+        parse:
+          type: literal
+          return: dydfst_1_damage
+          generated: true
+      - value: dydfst_2_damage
+        display: false
+        parse:
+          type: literal
+          return: dydfst_2_damage
+          generated: true
+      - value: dydfst_3_damage
+        display: false
+        parse:
+          type: literal
+          return: dydfst_3_damage
+          generated: true
+      - value: dydfst_4_damage
+        display: false
+        parse:
+          type: literal
+          return: dydfst_4_damage
+          generated: true
+      - value: dyegrd_die_shadow_audio
+        display: false
+        parse:
+          type: literal
+          return: dyegrd_die_shadow_audio
+          generated: true
+      - value: dyhlgy_wind_damage
+        display: false
+        parse:
+          type: literal
+          return: dyhlgy_wind_damage
+          generated: true
+      - value: dyjsfg_boom_audio
+        display: false
+        parse:
+          type: literal
+          return: dyjsfg_boom_audio
+          generated: true
+      - value: dyjsfg_overload_audio
+        display: false
+        parse:
+          type: literal
+          return: dyjsfg_overload_audio
+          generated: true
+      - value: dyjsfg_trample_audio
+        display: false
+        parse:
+          type: literal
+          return: dyjsfg_trample_audio
+          generated: true
+      - value: enemu_mhrhcr_block
+        display: false
+        parse:
+          type: literal
+          return: enemu_mhrhcr_block
+          generated: true
+      - value: enemy_10002_trtrsl.ShineEff
+        display: false
+        parse:
+          type: literal
+          return: enemy_10002_trtrsl.ShineEff
+          generated: true
+      - value: enemy_10002_trtrsl.run_fail
+        display: false
+        parse:
+          type: literal
+          return: enemy_10002_trtrsl.run_fail
+          generated: true
+      - value: enemy_10002_trtrsl.run_suc
+        display: false
+        parse:
+          type: literal
+          return: enemy_10002_trtrsl.run_suc
+          generated: true
+      - value: enemy_1546_cliff.blink
+        display: false
+        parse:
+          type: literal
+          return: enemy_1546_cliff.blink
+          generated: true
+      - value: enemy_6033_skagod.dash_damage
+        display: false
+        parse:
+          type: literal
+          return: enemy_6033_skagod.dash_damage
+          generated: true
+      - value: enemy_arcgo_born
+        display: false
+        parse:
+          type: literal
+          return: enemy_arcgo_born
+          generated: true
+      - value: enemy_arctxi_damage
+        display: false
+        parse:
+          type: literal
+          return: enemy_arctxi_damage
+          generated: true
+      - value: enemy_cjfish_drag[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjfish_drag[audio]
+          generated: true
+      - value: enemy_cjhot_hit[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjhot_hit[audio]
+          generated: true
+      - value: enemy_cjtaot_absorb[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_cjtaot_absorb[audio]
+          generated: true
+      - value: enemy_cnvfire[born]
+        display: false
+        parse:
+          type: literal
+          return: enemy_cnvfire[born]
+          generated: true
+      - value: enemy_frgzac_heal
+        display: false
+        parse:
+          type: literal
+          return: enemy_frgzac_heal
+          generated: true
+      - value: enemy_iceball_t[dont_move]
+        display: false
+        parse:
+          type: literal
+          return: enemy_iceball_t[dont_move]
+          generated: true
+      - value: enemy_ldevil_character_dying
+        display: false
+        parse:
+          type: literal
+          return: enemy_ldevil_character_dying
+          generated: true
+      - value: enemy_ldevil_damage
+        display: false
+        parse:
+          type: literal
+          return: enemy_ldevil_damage
+          generated: true
+      - value: enemy_ldevil_damage_adv
+        display: false
+        parse:
+          type: literal
+          return: enemy_ldevil_damage_adv
+          generated: true
+      - value: enemy_ldevil_shield
+        display: false
+        parse:
+          type: literal
+          return: enemy_ldevil_shield
+          generated: true
+      - value: enemy_ldevil_shield_adv
+        display: false
+        parse:
+          type: literal
+          return: enemy_ldevil_shield_adv
+          generated: true
+      - value: enemy_lhship_submit
+        display: false
+        parse:
+          type: literal
+          return: enemy_lhship_submit
+          generated: true
+      - value: enemy_ltniak_clear_mark
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltniak_clear_mark
+          generated: true
+      - value: enemy_misery_s_mark[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_misery_s_mark[audio]
+          generated: true
+      - value: enemy_mjcbln_drop
+        display: false
+        parse:
+          type: literal
+          return: enemy_mjcbln_drop
+          generated: true
+      - value: enemy_mjcdog_drop
+        display: false
+        parse:
+          type: literal
+          return: enemy_mjcdog_drop
+          generated: true
+      - value: enemy_mnctur_rush_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnctur_rush_hit
+          generated: true
+      - value: enemy_mnctur_stun
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnctur_stun
+          generated: true
+      - value: enemy_mnggyl_steal
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnggyl_steal
+          generated: true
+      - value: enemy_mnlaur_steal
+        display: false
+        parse:
+          type: literal
+          return: enemy_mnlaur_steal
+          generated: true
+      - value: enemy_mntrjn_add
+        display: false
+        parse:
+          type: literal
+          return: enemy_mntrjn_add
+          generated: true
+      - value: enemy_mublow_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_mublow_hit
+          generated: true
+      - value: enemy_mublow_skill_on
+        display: false
+        parse:
+          type: literal
+          return: enemy_mublow_skill_on
+          generated: true
+      - value: enemy_muobst_collide
+        display: false
+        parse:
+          type: literal
+          return: enemy_muobst_collide
+          generated: true
+      - value: enemy_murgby_enhance
+        display: false
+        parse:
+          type: literal
+          return: enemy_murgby_enhance
+          generated: true
+      - value: enemy_mustak_collide
+        display: false
+        parse:
+          type: literal
+          return: enemy_mustak_collide
+          generated: true
+      - value: enemy_pope_m1_dead_audio
+        display: false
+        parse:
+          type: literal
+          return: enemy_pope_m1_dead_audio
+          generated: true
+      - value: enemy_pope_m2_dead_audio
+        display: false
+        parse:
+          type: literal
+          return: enemy_pope_m2_dead_audio
+          generated: true
+      - value: enemy_scarab[push]
+        display: false
+        parse:
+          type: literal
+          return: enemy_scarab[push]
+          generated: true
+      - value: enemy_sgrich[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_sgrich[audio]
+          generated: true
+      - value: enemy_skzjkl_reach_exit_kill_all
+        display: false
+        parse:
+          type: literal
+          return: enemy_skzjkl_reach_exit_kill_all
+          generated: true
+      - value: enemy_smbox_killed
+        display: false
+        parse:
+          type: literal
+          return: enemy_smbox_killed
+          generated: true
+      - value: enemy_smdeer_doom[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_smdeer_doom[audio]
+          generated: true
+      - value: enemy_smedzi_doom[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_smedzi_doom[audio]
+          generated: true
+      - value: enemy_summon_dzoms
+        display: false
+        parse:
+          type: literal
+          return: enemy_summon_dzoms
+          generated: true
+      - value: enemy_thief_t[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_thief_t[audio]
+          generated: true
+      - value: enemy_trcerb_anger
+        display: false
+        parse:
+          type: literal
+          return: enemy_trcerb_anger
+          generated: true
+      - value: enemy_trcerb_common_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_trcerb_common_die_01
+          generated: true
+      - value: enemy_trcerb_s3_aoe
+        display: false
+        parse:
+          type: literal
+          return: enemy_trcerb_s3_aoe
+          generated: true
+      - value: enemy_trcerb_s3_hit
+        display: false
+        parse:
+          type: literal
+          return: enemy_trcerb_s3_hit
+          generated: true
+      - value: enemy_trwlpl_eat_complete
+        display: false
+        parse:
+          type: literal
+          return: enemy_trwlpl_eat_complete
+          generated: true
+      - value: enemy_vtlionk_advance
+        display: false
+        parse:
+          type: literal
+          return: enemy_vtlionk_advance
+          generated: true
+      - value: enemy_vtmstr_getEquip
+        display: false
+        parse:
+          type: literal
+          return: enemy_vtmstr_getEquip
+          generated: true
+      - value: enemy_vtsk_skillRange
+        display: false
+        parse:
+          type: literal
+          return: enemy_vtsk_skillRange
+          generated: true
+      - value: enemy_xbcas[nomal][audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbcas[nomal][audio]
+          generated: true
+      - value: enemy_xbpln_no_res[audio]
+        display: false
+        parse:
+          type: literal
+          return: enemy_xbpln_no_res[audio]
+          generated: true
+      - value: explode
+        display: false
+        parse:
+          type: literal
+          return: explode
+          generated: true
+      - value: fire
+        display: false
+        parse:
+          type: literal
+          return: fire
+          generated: true
+      - value: flmchn2_debuff_damage_audio
+        display: false
+        parse:
+          type: literal
+          return: flmchn2_debuff_damage_audio
+          generated: true
+      - value: flmchn_debuff_damage_audio
+        display: false
+        parse:
+          type: literal
+          return: flmchn_debuff_damage_audio
+          generated: true
+      - value: fowstn_shadow_start_audio
+        display: false
+        parse:
+          type: literal
+          return: fowstn_shadow_start_audio
+          generated: true
+      - value: frazac_kill
+        display: false
+        parse:
+          type: literal
+          return: frazac_kill
+          generated: true
+      - value: ghost_begin
+        display: false
+        parse:
+          type: literal
+          return: ghost_begin
+          generated: true
+      - value: ghost_begin_2
+        display: false
+        parse:
+          type: literal
+          return: ghost_begin_2
+          generated: true
+      - value: ghost_die
+        display: false
+        parse:
+          type: literal
+          return: ghost_die
+          generated: true
+      - value: haruka_s2_damage
+        display: false
+        parse:
+          type: literal
+          return: haruka_s2_damage
+          generated: true
+      - value: haruka_shield_break_ally
+        display: false
+        parse:
+          type: literal
+          return: haruka_shield_break_ally
+          generated: true
+      - value: haruka_shield_start_ally
+        display: false
+        parse:
+          type: literal
+          return: haruka_shield_start_ally
+          generated: true
+      - value: iana_t_1
+        display: false
+        parse:
+          type: literal
+          return: iana_t_1
+          generated: true
+      - value: levitate
+        display: false
+        parse:
+          type: literal
+          return: levitate
+          generated: true
+      - value: line_connect
+        display: false
+        parse:
+          type: literal
+          return: line_connect
+          generated: true
+      - value: logos_s1_kill
+        display: false
+        parse:
+          type: literal
+          return: logos_s1_kill
+          generated: true
+      - value: lose_hp
+        display: false
+        parse:
+          type: literal
+          return: lose_hp
+          generated: true
+      - value: mcnd_shield_break
+        display: false
+        parse:
+          type: literal
+          return: mcnd_shield_break
+          generated: true
+      - value: mcndog_defence
+        display: false
+        parse:
+          type: literal
+          return: mcndog_defence
+          generated: true
+      - value: mcnist_shield
+        display: false
+        parse:
+          type: literal
+          return: mcnist_shield
+          generated: true
+      - value: mcnist_shield_advance
+        display: false
+        parse:
+          type: literal
+          return: mcnist_shield_advance
+          generated: true
+      - value: mcnist_shield_break
+        display: false
+        parse:
+          type: literal
+          return: mcnist_shield_break
+          generated: true
+      - value: mcnist_shield_break_advance
+        display: false
+        parse:
+          type: literal
+          return: mcnist_shield_break_advance
+          generated: true
+      - value: mcnrsh_damage
+        display: false
+        parse:
+          type: literal
+          return: mcnrsh_damage
+          generated: true
+      - value: mh_damage_resistance[audio]
+        display: false
+        parse:
+          type: literal
+          return: mh_damage_resistance[audio]
+          generated: true
+      - value: mhrors_killed[audio]
+        display: false
+        parse:
+          type: literal
+          return: mhrors_killed[audio]
+          generated: true
+      - value: mirbst_m2_stone_audio
+        display: false
+        parse:
+          type: literal
+          return: mirbst_m2_stone_audio
+          generated: true
+      - value: mortis_switch_black_fog_audio
+        display: false
+        parse:
+          type: literal
+          return: mortis_switch_black_fog_audio
+          generated: true
+      - value: muboom_boom
+        display: false
+        parse:
+          type: literal
+          return: muboom_boom
+          generated: true
+      - value: mujica_enemy_warning
+        display: false
+        parse:
+          type: literal
+          return: mujica_enemy_warning
+          generated: true
+      - value: mumole_heal
+        display: false
+        parse:
+          type: literal
+          return: mumole_heal
+          generated: true
+      - value: nasti_nstbld_start_repair_audio
+        display: false
+        parse:
+          type: literal
+          return: nasti_nstbld_start_repair_audio
+          generated: true
+      - value: nasti_nstchr_full_hp_audio
+        display: false
+        parse:
+          type: literal
+          return: nasti_nstchr_full_hp_audio
+          generated: true
+      - value: nasti_s1_effect_audio
+        display: false
+        parse:
+          type: literal
+          return: nasti_s1_effect_audio
+          generated: true
+      - value: necras_explode
+        display: false
+        parse:
+          type: literal
+          return: necras_explode
+          generated: true
+      - value: necras_skill_dot
+        display: false
+        parse:
+          type: literal
+          return: necras_skill_dot
+          generated: true
+      - value: necras_upgrade
+        display: false
+        parse:
+          type: literal
+          return: necras_upgrade
+          generated: true
+      - value: nsblon[born]
+        display: false
+        parse:
+          type: literal
+          return: nsblon[born]
+          generated: true
+      - value: nstmom[release]
+        display: false
+        parse:
+          type: literal
+          return: nstmom[release]
+          generated: true
+      - value: nstmon_ray_eff
+        display: false
+        parse:
+          type: literal
+          return: nstmon_ray_eff
+          generated: true
+      - value: nstmon_ray_eff_2
+        display: false
+        parse:
+          type: literal
+          return: nstmon_ray_eff_2
+          generated: true
+      - value: parrot_land
+        display: false
+        parse:
+          type: literal
+          return: parrot_land
+          generated: true
+      - value: pckstp_summon_ymgpck_audio
+        display: false
+        parse:
+          type: literal
+          return: pckstp_summon_ymgpck_audio
+          generated: true
+      - value: pckzhn_aoe_boom
+        display: false
+        parse:
+          type: literal
+          return: pckzhn_aoe_boom
+          generated: true
+      - value: pckzhn_born
+        display: false
+        parse:
+          type: literal
+          return: pckzhn_born
+          generated: true
+      - value: phatm2_s2_boom_damage
+        display: false
+        parse:
+          type: literal
+          return: phatm2_s2_boom_damage
+          generated: true
+      - value: player_hold_football
+        display: false
+        parse:
+          type: literal
+          return: player_hold_football
+          generated: true
+      - value: racing_gain_item
+        display: false
+        parse:
+          type: literal
+          return: racing_gain_item
+          generated: true
+      - value: racing_lifesteal_emit
+        display: false
+        parse:
+          type: literal
+          return: racing_lifesteal_emit
+          generated: true
+      - value: racing_magnet_emit
+        display: false
+        parse:
+          type: literal
+          return: racing_magnet_emit
+          generated: true
+      - value: reborn_finish
+        display: false
+        parse:
+          type: literal
+          return: reborn_finish
+          generated: true
+      - value: rgcssm_switch_mode
+        display: false
+        parse:
+          type: literal
+          return: rgcssm_switch_mode
+          generated: true
+      - value: river
+        display: false
+        parse:
+          type: literal
+          return: river
+          generated: true
+      - value: rllamb_die_audio
+        display: false
+        parse:
+          type: literal
+          return: rllamb_die_audio
+          generated: true
+      - value: sbell2_skill2_dot_audio
+        display: false
+        parse:
+          type: literal
+          return: sbell2_skill2_dot_audio
+          generated: true
+      - value: sbell2_snow_tile_enter_damage_audio
+        display: false
+        parse:
+          type: literal
+          return: sbell2_snow_tile_enter_damage_audio
+          generated: true
+      - value: sbell2_talent_heal_audio
+        display: false
+        parse:
+          type: literal
+          return: sbell2_talent_heal_audio
+          generated: true
+      - value: scale_end
+        display: false
+        parse:
+          type: literal
+          return: scale_end
+          generated: true
+      - value: scale_start
+        display: false
+        parse:
+          type: literal
+          return: scale_start
+          generated: true
+      - value: shield_hit
+        display: false
+        parse:
+          type: literal
+          return: shield_hit
+          generated: true
+      - value: skzamy_doom_start
+        display: false
+        parse:
+          type: literal
+          return: skzamy_doom_start
+          generated: true
+      - value: skzamy_revive_sealself
+        display: false
+        parse:
+          type: literal
+          return: skzamy_revive_sealself
+          generated: true
+      - value: skzamy_revive_takeoff
+        display: false
+        parse:
+          type: literal
+          return: skzamy_revive_takeoff
+          generated: true
+      - value: skzjs_delay_born_audio
+        display: false
+        parse:
+          type: literal
+          return: skzjs_delay_born_audio
+          generated: true
+      - value: skzrck_delay_born_audio
+        display: false
+        parse:
+          type: literal
+          return: skzrck_delay_born_audio
+          generated: true
+      - value: small_skeltm_born
+        display: false
+        parse:
+          type: literal
+          return: small_skeltm_born
+          generated: true
+      - value: small_token_born
+        display: false
+        parse:
+          type: literal
+          return: small_token_born
+          generated: true
+      - value: smedzi_blink_end
+        display: false
+        parse:
+          type: literal
+          return: smedzi_blink_end
+          generated: true
+      - value: smgrd_t_blackfog
+        display: false
+        parse:
+          type: literal
+          return: smgrd_t_blackfog
+          generated: true
+      - value: smlion_blink_end
+        display: false
+        parse:
+          type: literal
+          return: smlion_blink_end
+          generated: true
+      - value: smlion_blink_hit
+        display: false
+        parse:
+          type: literal
+          return: smlion_blink_hit
+          generated: true
+      - value: solzac_reborn
+        display: false
+        parse:
+          type: literal
+          return: solzac_reborn
+          generated: true
+      - value: ssttz_create_shield
+        display: false
+        parse:
+          type: literal
+          return: ssttz_create_shield
+          generated: true
+      - value: state_change
+        display: false
+        parse:
+          type: literal
+          return: state_change
+          generated: true
+      - value: stmpq_audio_effect_end
+        display: false
+        parse:
+          type: literal
+          return: stmpq_audio_effect_end
+          generated: true
+      - value: stmpq_audio_effect_start
+        display: false
+        parse:
+          type: literal
+          return: stmpq_audio_effect_start
+          generated: true
+      - value: suicide_pollute
+        display: false
+        parse:
+          type: literal
+          return: suicide_pollute
+          generated: true
+      - value: summon_enemy
+        display: false
+        parse:
+          type: literal
+          return: summon_enemy
+          generated: true
+      - value: svash2_s_2[blade]
+        display: false
+        parse:
+          type: literal
+          return: svash2_s_2[blade]
+          generated: true
+      - value: svash2_s_3[swap]
+        display: false
+        parse:
+          type: literal
+          return: svash2_s_3[swap]
+          generated: true
+      - value: talr_s2_dmg
+        display: false
+        parse:
+          type: literal
+          return: talr_s2_dmg
+          generated: true
+      - value: thorn2_s2_projectile_hit
+        display: false
+        parse:
+          type: literal
+          return: thorn2_s2_projectile_hit
+          generated: true
+      - value: thorn2_t_2_start
+        display: false
+        parse:
+          type: literal
+          return: thorn2_t_2_start
+          generated: true
+      - value: tinman_s_2[audio]
+        display: false
+        parse:
+          type: literal
+          return: tinman_s_2[audio]
+          generated: true
+      - value: titi_s_3[spread_from]
+        display: false
+        parse:
+          type: literal
+          return: titi_s_3[spread_from]
+          generated: true
+      - value: titi_s_3[spread_to]
+        display: false
+        parse:
+          type: literal
+          return: titi_s_3[spread_to]
+          generated: true
+      - value: tjgcb_sacrifice
+        display: false
+        parse:
+          type: literal
+          return: tjgcb_sacrifice
+          generated: true
+      - value: tjglb_sacrifice
+        display: false
+        parse:
+          type: literal
+          return: tjglb_sacrifice
+          generated: true
+      - value: tjgtsz_erase_character
+        display: false
+        parse:
+          type: literal
+          return: tjgtsz_erase_character
+          generated: true
+      - value: tjgxb_sacrifice
+        display: false
+        parse:
+          type: literal
+          return: tjgxb_sacrifice
+          generated: true
+      - value: tmoris_skill_1_start
+        display: false
+        parse:
+          type: literal
+          return: tmoris_skill_1_start
+          generated: true
+      - value: tmoris_skill_2_start
+        display: false
+        parse:
+          type: literal
+          return: tmoris_skill_2_start
+          generated: true
+      - value: token_encdool_boom_hit
+        display: false
+        parse:
+          type: literal
+          return: token_encdool_boom_hit
+          generated: true
+      - value: token_encdool_boom_start
+        display: false
+        parse:
+          type: literal
+          return: token_encdool_boom_start
+          generated: true
+      - value: trap_acgarm_buff_02
+        display: false
+        parse:
+          type: literal
+          return: trap_acgarm_buff_02
+          generated: true
+      - value: trap_crfilm[enable][audio]
+        display: false
+        parse:
+          type: literal
+          return: trap_crfilm[enable][audio]
+          generated: true
+      - value: trap_lheqp_kill_signal
+        display: false
+        parse:
+          type: literal
+          return: trap_lheqp_kill_signal
+          generated: true
+      - value: trap_lhupgd_kill_signal
+        display: false
+        parse:
+          type: literal
+          return: trap_lhupgd_kill_signal
+          generated: true
+      - value: trap_mjcsdw_born
+        display: false
+        parse:
+          type: literal
+          return: trap_mjcsdw_born
+          generated: true
+      - value: trap_mpmage_stopcost
+        display: false
+        parse:
+          type: literal
+          return: trap_mpmage_stopcost
+          generated: true
+      - value: trap_murbox_hit
+        display: false
+        parse:
+          type: literal
+          return: trap_murbox_hit
+          generated: true
+      - value: trap_murjet_start
+        display: false
+        parse:
+          type: literal
+          return: trap_murjet_start
+          generated: true
+      - value: trap_trpot_add_food
+        display: false
+        parse:
+          type: literal
+          return: trap_trpot_add_food
+          generated: true
+      - value: trshrb_t_1[fakedeath]
+        display: false
+        parse:
+          type: literal
+          return: trshrb_t_1[fakedeath]
+          generated: true
+      - value: vtcar_reach_vtarsn
+        display: false
+        parse:
+          type: literal
+          return: vtcar_reach_vtarsn
+          generated: true
+      - value: wang_stone1_t[damage_audio]
+        display: false
+        parse:
+          type: literal
+          return: wang_stone1_t[damage_audio]
+          generated: true
+      - value: wdslmRebornEnd
+        display: false
+        parse:
+          type: literal
+          return: wdslmRebornEnd
+          generated: true
+      - value: wdslmRebornStart
+        display: false
+        parse:
+          type: literal
+          return: wdslmRebornStart
+          generated: true
+      - value: yato2_t_audio[after_skill]
+        display: false
+        parse:
+          type: literal
+          return: yato2_t_audio[after_skill]
+          generated: true
+      - value: ymgscm_gain_card
+        display: false
+        parse:
+          type: literal
+          return: ymgscm_gain_card
+          generated: true
+      - value: ymgscm_m0_s1_back_sword
+        display: false
+        parse:
+          type: literal
+          return: ymgscm_m0_s1_back_sword
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      - value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      - value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      - value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true
+      - value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+      - value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

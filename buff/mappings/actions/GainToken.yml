@@ -1,0 +1,114 @@
+actionType: GainToken
+fields:
+  _effectKeys:
+    type: array | null
+    description: effect Keys
+    schema: action_subschema/_effectKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _extraAudioKey:
+    type: null | string
+    description: extra Audio Key
+    values:
+      -
+        value: act36side_gain
+        display: false
+        parse:
+          type: literal
+          return: act36side_gain
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _extraLogKey:
+    type: null | string
+    description: extra Log Key
+    values:
+      -
+        value: act36side_gain
+        display: false
+        parse:
+          type: literal
+          return: act36side_gain
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _getPlayerSideFromActionTargetType:
+    type: boolean
+    description: get Player Side From Action Target Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _rechargeTiming:
+    type: string
+    description: recharge Timing
+    values:
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+          generated: true
+  _spiltTokenKey:
+    type: boolean
+    description: spilt Token Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

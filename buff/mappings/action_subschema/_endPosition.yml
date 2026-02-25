@@ -1,0 +1,27 @@
+field: _endPosition
+type: object
+description: end Position
+actions:
+  Main16ChangeTileShadowViaRange:
+    type: object
+    values:
+      -
+        value: "{\"row\":0,\"col\":0}"
+        display: false
+        parse:
+          type: fn
+          name: parseendPosition
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "{\"row\":7,\"col\":29}"
+        display: false
+        parse:
+          type: fn
+          name: parseendPosition
+          args:
+            - $input
+            - $ctx
+          generated: true

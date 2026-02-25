@@ -1,0 +1,46 @@
+actionType: ModifyEnemySkillMaxTarget
+fields:
+  _checkSkillActive:
+    type: boolean
+    description: check Skill Active
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _maxTarget:
+    type: number
+    description: max Target
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _skillKey:
+    type: string
+    description: skill Key
+    values:
+      -
+        value: Lasso
+        display: false
+        parse:
+          type: literal
+          return: Lasso
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

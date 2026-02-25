@@ -1,0 +1,24 @@
+actionType: CheckOtherCharacterInRange
+fields:
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true

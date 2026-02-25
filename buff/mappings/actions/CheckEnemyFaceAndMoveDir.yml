@@ -1,0 +1,38 @@
+actionType: CheckEnemyFaceAndMoveDir
+fields:
+  _checkType:
+    type: string
+    description: check Type
+    values:
+      -
+        value: OPPOSITE
+        display: false
+        parse:
+          type: literal
+          return: OPPOSITE
+          generated: true
+      -
+        value: SAME
+        display: false
+        parse:
+          type: literal
+          return: SAME
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

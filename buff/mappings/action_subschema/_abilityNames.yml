@@ -1,0 +1,17 @@
+field: _abilityNames
+type: object
+description: ability Names
+actions:
+  AddFunnelAbilityActiveCnt:
+    type: array
+    values:
+      -
+        value: "[\"M0FunnelsNormalAttack\",\"M1FunnelRemoteAttack\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

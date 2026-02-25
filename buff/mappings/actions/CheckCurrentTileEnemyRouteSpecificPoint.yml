@@ -1,0 +1,24 @@
+actionType: CheckCurrentTileEnemyRouteSpecificPoint
+fields:
+  _isCheckEndPoint:
+    type: boolean
+    description: is Check End Point
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

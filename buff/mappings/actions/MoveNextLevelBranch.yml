@@ -1,0 +1,70 @@
+actionType: MoveNextLevelBranch
+fields:
+  _branchId:
+    type: string
+    description: branch Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: boss_summon
+        display: false
+        parse:
+          type: literal
+          return: boss_summon
+          generated: true
+      -
+        value: branch_skztxy_normal
+        display: false
+        parse:
+          type: literal
+          return: branch_skztxy_normal
+          generated: true
+      -
+        value: dysuib_relic_branch
+        display: false
+        parse:
+          type: literal
+          return: dysuib_relic_branch
+          generated: true
+      -
+        value: summon_ball
+        display: false
+        parse:
+          type: literal
+          return: summon_ball
+          generated: true
+  _isLoop:
+    type: boolean
+    description: is Loop
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _maxValidEnemyCount:
+    type: number
+    description: max Valid Enemy Count
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+          generated: true

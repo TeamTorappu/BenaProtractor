@@ -1,0 +1,103 @@
+actionType: FilterByTargetAttribute
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: BLOCK_CNT
+        display: false
+        parse:
+          type: literal
+          return: BLOCK_CNT
+          generated: true
+      -
+        value: MASS_LEVEL
+        display: false
+        parse:
+          type: literal
+          return: MASS_LEVEL
+          generated: true
+      -
+        value: MAX_HP
+        display: false
+        parse:
+          type: literal
+          return: MAX_HP
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _useFloat:
+    type: boolean
+    description: use Float
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _valueFP:
+    type: number
+    description: value F P
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true

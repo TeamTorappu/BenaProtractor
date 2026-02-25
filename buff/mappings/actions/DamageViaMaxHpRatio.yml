@@ -1,0 +1,221 @@
+actionType: DamageViaMaxHpRatio
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+          generated: true
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+          generated: true
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+          generated: true
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+          generated: true
+  _getMaxHpFromTarget:
+    type: boolean
+    description: get Max Hp From Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ignoreForSp:
+    type: boolean
+    description: ignore For Sp
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isUndeadable:
+    type: boolean
+    description: is Undeadable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _multiplierKey:
+    type: string
+    description: multiplier Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+          generated: true
+  _multiplyByKey:
+    type: boolean
+    description: multiply By Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _noSourceDamage:
+    type: boolean
+    description: no Source Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _skipModifierEvent:
+    type: boolean
+    description: skip Modifier Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

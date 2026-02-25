@@ -1,0 +1,46 @@
+actionType: LegionModeOnlyModifyCharLevelDefaultAddCnt
+fields:
+  _addKey:
+    type: string
+    description: add Key
+    values:
+      -
+        value: default_add
+        display: false
+        parse:
+          type: literal
+          return: default_add
+          generated: true
+  _addValue:
+    type: number
+    description: add Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _resetToDefault:
+    type: boolean
+    description: reset To Default
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

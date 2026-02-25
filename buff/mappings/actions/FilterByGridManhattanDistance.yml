@@ -1,0 +1,79 @@
+actionType: FilterByGridManhattanDistance
+fields:
+  _compareValue:
+    type: number
+    description: compare Value
+    values:
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+          generated: true
+  _compareValueKey:
+    type: null
+    description: compare Value Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+  _firstGridColKey:
+    type: string
+    description: first Grid Col Key
+    values:
+      -
+        value: begin_col
+        display: false
+        parse:
+          type: literal
+          return: begin_col
+          generated: true
+  _firstGridRowKey:
+    type: string
+    description: first Grid Row Key
+    values:
+      -
+        value: begin_row
+        display: false
+        parse:
+          type: literal
+          return: begin_row
+          generated: true
+  _secondGridColKey:
+    type: string
+    description: second Grid Col Key
+    values:
+      -
+        value: end_col
+        display: false
+        parse:
+          type: literal
+          return: end_col
+          generated: true
+  _secondGridRowKey:
+    type: string
+    description: second Grid Row Key
+    values:
+      -
+        value: end_row
+        display: false
+        parse:
+          type: literal
+          return: end_row
+          generated: true

@@ -1,0 +1,112 @@
+actionType: ShowToast
+fields:
+  _descriptionUseStringTableKey:
+    type: boolean
+    description: description Use String Table Key
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _lastTime:
+    type: number
+    description: last Time
+    values:
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+          generated: true
+  _priority:
+    type: number
+    description: priority
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _seType:
+    type: string
+    description: se Type
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _toastKey:
+    type: string
+    description: toast Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+  _toastType:
+    type: string
+    description: toast Type
+    values:
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+          generated: true
+  _useTargetDescription:
+    type: boolean
+    description: use Target Description
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useTargetId:
+    type: boolean
+    description: use Target Id
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useTargetName:
+    type: boolean
+    description: use Target Name
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

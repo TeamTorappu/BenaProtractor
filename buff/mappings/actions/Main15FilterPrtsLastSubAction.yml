@@ -1,0 +1,35 @@
+actionType: Main15FilterPrtsLastSubAction
+fields:
+  _actionType:
+    type: string
+    description: action Type
+    values:
+      -
+        value: FOLLOW_BOSS
+        display: false
+        parse:
+          type: literal
+          return: FOLLOW_BOSS
+          generated: true
+  _filterActionInstead:
+    type: boolean
+    description: filter Action Instead
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _mainActionType:
+    type: string
+    description: main Action Type
+    values:
+      -
+        value: MOVE_AND_SPAWNENEMY
+        display: false
+        parse:
+          type: literal
+          return: MOVE_AND_SPAWNENEMY
+          generated: true

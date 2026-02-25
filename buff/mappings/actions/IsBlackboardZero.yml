@@ -1,0 +1,283 @@
+actionType: IsBlackboardZero
+fields:
+  _noVarShowWarning:
+    type: boolean
+    description: no Var Show Warning
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _var:
+    type: string
+    description: var
+    values:
+      -
+        value: Boomed
+        display: false
+        parse:
+          type: literal
+          return: Boomed
+          generated: true
+      -
+        value: attack@max_cnt
+        display: false
+        parse:
+          type: literal
+          return: attack@max_cnt
+          generated: true
+      -
+        value: avoid_dup_trigger_lock
+        display: false
+        parse:
+          type: literal
+          return: avoid_dup_trigger_lock
+          generated: true
+      -
+        value: blocked
+        display: false
+        parse:
+          type: literal
+          return: blocked
+          generated: true
+      -
+        value: born_duration
+        display: false
+        parse:
+          type: literal
+          return: born_duration
+          generated: true
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+          generated: true
+      -
+        value: cnt_added
+        display: false
+        parse:
+          type: literal
+          return: cnt_added
+          generated: true
+      -
+        value: cold_twice
+        display: false
+        parse:
+          type: literal
+          return: cold_twice
+          generated: true
+      -
+        value: count
+        display: false
+        parse:
+          type: literal
+          return: count
+          generated: true
+      -
+        value: create_effect
+        display: false
+        parse:
+          type: literal
+          return: create_effect
+          generated: true
+      -
+        value: do_not_trigger_tile
+        display: false
+        parse:
+          type: literal
+          return: do_not_trigger_tile
+          generated: true
+      -
+        value: drop_disable
+        display: false
+        parse:
+          type: literal
+          return: drop_disable
+          generated: true
+      -
+        value: duration
+        display: false
+        parse:
+          type: literal
+          return: duration
+          generated: true
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+          generated: true
+      -
+        value: ep_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_ratio
+          generated: true
+      -
+        value: ep_scale
+        display: false
+        parse:
+          type: literal
+          return: ep_scale
+          generated: true
+      -
+        value: equip_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: equip_atk_scale
+          generated: true
+      -
+        value: first_snow
+        display: false
+        parse:
+          type: literal
+          return: first_snow
+          generated: true
+      -
+        value: food_disable
+        display: false
+        parse:
+          type: literal
+          return: food_disable
+          generated: true
+      -
+        value: food_disable_self
+        display: false
+        parse:
+          type: literal
+          return: food_disable_self
+          generated: true
+      -
+        value: hlevel_mark
+        display: false
+        parse:
+          type: literal
+          return: hlevel_mark
+          generated: true
+      -
+        value: isBossLevel
+        display: false
+        parse:
+          type: literal
+          return: isBossLevel
+          generated: true
+      -
+        value: isTriggered
+        display: false
+        parse:
+          type: literal
+          return: isTriggered
+          generated: true
+      -
+        value: is_power
+        display: false
+        parse:
+          type: literal
+          return: is_power
+          generated: true
+      -
+        value: lock
+        display: false
+        parse:
+          type: literal
+          return: lock
+          generated: true
+      -
+        value: mode_1
+        display: false
+        parse:
+          type: literal
+          return: mode_1
+          generated: true
+      -
+        value: no_extra
+        display: false
+        parse:
+          type: literal
+          return: no_extra
+          generated: true
+      -
+        value: ratio_checker
+        display: false
+        parse:
+          type: literal
+          return: ratio_checker
+          generated: true
+      -
+        value: reset_spawn_when_finish
+        display: false
+        parse:
+          type: literal
+          return: reset_spawn_when_finish
+          generated: true
+      -
+        value: respawn_time
+        display: false
+        parse:
+          type: literal
+          return: respawn_time
+          generated: true
+      -
+        value: skill_finish
+        display: false
+        parse:
+          type: literal
+          return: skill_finish
+          generated: true
+      -
+        value: special
+        display: false
+        parse:
+          type: literal
+          return: special
+          generated: true
+      -
+        value: step
+        display: false
+        parse:
+          type: literal
+          return: step
+          generated: true
+      -
+        value: triggered
+        display: false
+        parse:
+          type: literal
+          return: triggered
+          generated: true
+      -
+        value: uni_special
+        display: false
+        parse:
+          type: literal
+          return: uni_special
+          generated: true
+      -
+        value: unlock
+        display: false
+        parse:
+          type: literal
+          return: unlock
+          generated: true
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+          generated: true

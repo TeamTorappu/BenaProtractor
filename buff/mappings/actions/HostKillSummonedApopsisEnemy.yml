@@ -1,0 +1,13 @@
+actionType: HostKillSummonedApopsisEnemy
+fields:
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

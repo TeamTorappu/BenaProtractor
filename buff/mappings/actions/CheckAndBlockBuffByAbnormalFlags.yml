@@ -1,0 +1,13 @@
+actionType: CheckAndBlockBuffByAbnormalFlags
+fields:
+  _abnormalFlags:
+    type: array
+    description: abnormal Flags
+    schema: action_subschema/_abnormalFlags.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

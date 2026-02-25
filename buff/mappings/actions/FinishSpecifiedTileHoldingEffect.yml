@@ -1,0 +1,81 @@
+actionType: FinishSpecifiedTileHoldingEffect
+fields:
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: enemy_nstmom_skill_01_debuff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_nstmom_skill_01_debuff_01
+          generated: true
+      -
+        value: enemy_nstmom_skill_01_debuff_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_nstmom_skill_01_debuff_02
+          generated: true
+      -
+        value: enemy_ymghol_2_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ymghol_2_buff_01
+          generated: true
+      -
+        value: enemy_ymghol_buff_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_ymghol_buff_01
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _tileKeyCol:
+    type: string
+    description: tile Key Col
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+          generated: true
+  _tileKeyRow:
+    type: string
+    description: tile Key Row
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+          generated: true

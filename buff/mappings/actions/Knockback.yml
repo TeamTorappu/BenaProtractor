@@ -1,0 +1,45 @@
+actionType: Knockback
+fields:
+  _decreaseForceLevelWhenNotInDirection:
+    type: number
+    description: decrease Force Level When Not In Direction
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+          generated: true
+      -
+        value: 3
+        display: false
+        parse:
+          type: literal
+          return: 3
+          generated: true
+  _useSourceDirection:
+    type: boolean
+    description: use Source Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

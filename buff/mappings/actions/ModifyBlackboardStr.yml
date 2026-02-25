@@ -1,0 +1,46 @@
+actionType: ModifyBlackboardStr
+fields:
+  _blackboardKeys:
+    type: string
+    description: blackboard Keys
+    values:
+      -
+        value: lastPos
+        display: false
+        parse:
+          type: literal
+          return: lastPos
+          generated: true
+  _checkFromBlackboardValue:
+    type: boolean
+    description: check From Blackboard Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _fromBlackboardKeys:
+    type: string
+    description: from Blackboard Keys
+    values:
+      -
+        value: currentPos
+        display: false
+        parse:
+          type: literal
+          return: currentPos
+          generated: true
+  _value:
+    type: string
+    description: value
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true

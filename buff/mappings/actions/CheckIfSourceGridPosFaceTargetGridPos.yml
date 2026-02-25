@@ -1,0 +1,92 @@
+actionType: CheckIfSourceGridPosFaceTargetGridPos
+fields:
+  _faceIfSameCol:
+    type: string
+    description: face If Same Col
+    values:
+      -
+        value: BACK
+        display: false
+        parse:
+          type: literal
+          return: BACK
+          generated: true
+      -
+        value: FRONT
+        display: false
+        parse:
+          type: literal
+          return: FRONT
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+  _faceType:
+    type: string
+    description: face Type
+    values:
+      -
+        value: BACK
+        display: false
+        parse:
+          type: literal
+          return: BACK
+          generated: true
+      -
+        value: FRONT
+        display: false
+        parse:
+          type: literal
+          return: FRONT
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+          generated: true
+  _targetColOffset:
+    type: number
+    description: target Col Offset
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true

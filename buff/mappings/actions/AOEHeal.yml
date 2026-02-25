@@ -1,0 +1,200 @@
+actionType: AOEHeal
+fields:
+  _createEffect:
+    type: boolean
+    description: create Effect
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _healEffectKey:
+    type: null | string
+    description: heal Effect Key
+    values:
+      -
+        value: common_heal_hit_01
+        display: false
+        parse:
+          type: literal
+          return: common_heal_hit_01
+          generated: true
+      -
+        value: enemy_ltnhap_attact_ap_hit_02
+        display: false
+        parse:
+          type: literal
+          return: enemy_ltnhap_attact_ap_hit_02
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: sensi_skill_02_buff_01
+        display: false
+        parse:
+          type: literal
+          return: sensi_skill_02_buff_01
+          generated: true
+  _healScale:
+    type: string
+    description: heal Scale
+    values:
+      -
+        value: heal_scale
+        display: false
+        parse:
+          type: literal
+          return: heal_scale
+          generated: true
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+          generated: true
+      -
+        value: tick_heal_scale
+        display: false
+        parse:
+          type: literal
+          return: tick_heal_scale
+          generated: true
+  _ignoreHealFree:
+    type: boolean
+    description: ignore Heal Free
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _rangeId:
+    type: null | string
+    description: range Id
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: x-4
+        display: false
+        parse:
+          type: literal
+          return: x-4
+          generated: true
+  _sourceSideType:
+    type: string
+    description: source Side Type
+    values:
+      -
+        value: ALLY
+        display: false
+        parse:
+          type: literal
+          return: ALLY
+          generated: true
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useAttackRange:
+    type: boolean
+    description: use Attack Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

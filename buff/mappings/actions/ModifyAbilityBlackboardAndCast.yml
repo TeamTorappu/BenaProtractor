@@ -1,0 +1,46 @@
+actionType: ModifyAbilityBlackboardAndCast
+fields:
+  _ability:
+    type: string
+    description: ability
+    values:
+      -
+        value: Poison
+        display: false
+        parse:
+          type: literal
+          return: Poison
+          generated: true
+  _blackboardKeys:
+    type: string
+    description: blackboard Keys
+    values:
+      -
+        value: damage
+        display: false
+        parse:
+          type: literal
+          return: damage
+          generated: true
+  _logStackCountToDynamicVar:
+    type: boolean
+    description: log Stack Count To Dynamic Var
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _scaledByBuffGroupStackCount:
+    type: boolean
+    description: scaled By Buff Group Stack Count
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

@@ -1,0 +1,57 @@
+actionType: Act31SideAddAreaPollute
+fields:
+  _addPolluteV:
+    type: number
+    description: add Pollute V
+    values:
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+          generated: true
+  _needCheckTile:
+    type: boolean
+    description: need Check Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _rangeRadius:
+    type: number
+    description: range Radius
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useSnapshotTile:
+    type: boolean
+    description: use Snapshot Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

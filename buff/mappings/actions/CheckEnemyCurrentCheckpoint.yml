@@ -1,0 +1,13 @@
+actionType: CheckEnemyCurrentCheckpoint
+fields:
+  _checkpointTypes:
+    type: array
+    description: checkpoint Types
+    schema: action_subschema/_checkpointTypes.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

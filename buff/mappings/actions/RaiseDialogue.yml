@@ -1,0 +1,38 @@
+actionType: RaiseDialogue
+fields:
+  _doNotCheckSource:
+    type: boolean
+    description: do Not Check Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isAppearDialog:
+    type: boolean
+    description: is Appear Dialog
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

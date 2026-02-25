@@ -1,0 +1,46 @@
+actionType: LegionModeOnlyAssignCardCntToBB
+fields:
+  _cardId:
+    type: string
+    description: card Id
+    values:
+      -
+        value: trap_755_cdsoul
+        display: false
+        parse:
+          type: literal
+          return: trap_755_cdsoul
+          generated: true
+  _cardKey:
+    type: string
+    description: card Key
+    values:
+      -
+        value: cdsoul_cnt
+        display: false
+        parse:
+          type: literal
+          return: cdsoul_cnt
+          generated: true
+  _cardLibraryType:
+    type: string
+    description: card Library Type
+    values:
+      -
+        value: USING
+        display: false
+        parse:
+          type: literal
+          return: USING
+          generated: true
+  _onlyInHand:
+    type: boolean
+    description: only In Hand
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

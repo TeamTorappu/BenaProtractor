@@ -1,0 +1,35 @@
+actionType: FilterAbilitySpellCnt
+fields:
+  _compareValue:
+    type: number
+    description: compare Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

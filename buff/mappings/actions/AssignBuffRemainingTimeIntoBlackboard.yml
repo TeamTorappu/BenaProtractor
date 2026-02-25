@@ -1,0 +1,42 @@
+actionType: AssignBuffRemainingTimeIntoBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: hsgma2_s_3
+        display: false
+        parse:
+          type: literal
+          return: hsgma2_s_3
+          generated: true
+      -
+        value: trap_xdmac2_s
+        display: false
+        parse:
+          type: literal
+          return: trap_xdmac2_s
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

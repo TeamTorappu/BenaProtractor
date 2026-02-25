@@ -1,0 +1,86 @@
+actionType: Act49sideBossApplySkillDamage
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+          generated: true
+  _atkScale:
+    type: number
+    description: atk Scale
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: SPLASH
+        display: false
+        parse:
+          type: literal
+          return: SPLASH
+          generated: true
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+          generated: true
+  _partName:
+    type: string
+    description: part Name
+    values:
+      -
+        value: left_hand
+        display: false
+        parse:
+          type: literal
+          return: left_hand
+          generated: true
+      -
+        value: tail
+        display: false
+        parse:
+          type: literal
+          return: tail
+          generated: true
+  _partNameKey:
+    type: string
+    description: part Name Key
+    values:
+      -
+        value: part_name
+        display: false
+        parse:
+          type: literal
+          return: part_name
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

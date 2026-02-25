@@ -1,0 +1,3030 @@
+AOEDamage:
+  description: A O E Damage
+  icon: null
+AOEElementDamage:
+  description: A O E Element Damage
+  icon: null
+AOEHeal:
+  description: A O E Heal
+  icon: null
+Act20SideModeOnlyIncreaseScore:
+  description: Act20 Side Mode Only Increase Score
+  icon: null
+Act27sideAddTilesToEnemySideBlackList:
+  description: Act27side Add Tiles To Enemy Side Black List
+  icon: null
+Act27sideModifyAllAllyTileCachedSideType:
+  description: Act27side Modify All Ally Tile Cached Side Type
+  icon: null
+Act27sideModifyTileCachedSideType:
+  description: Act27side Modify Tile Cached Side Type
+  icon: null
+Act29SideCheckCurrentAudioType:
+  description: 崔林特尔梅之金(Act29Side) - 检查当前变奏类型
+  icon: null
+Act29SideSwitchCurretnAudioType:
+  description: Act29 Side Switch Curretn Audio Type
+  icon: null
+Act31SideAddAreaPollute:
+  description: Act31 Side Add Area Pollute
+  icon: null
+Act31SideAssignAreaPolluteValueToBB:
+  description: Act31 Side Assign Area Pollute Value To B B
+  icon: null
+Act31SideCheckInPolluteArea:
+  description: Act31 Side Check In Pollute Area
+  icon: null
+Act31SideCheckRootTilePolluteValue:
+  description: Act31 Side Check Root Tile Pollute Value
+  icon: null
+Act31SideDeathPolluteTile:
+  description: Act31 Side Death Pollute Tile
+  icon: null
+Act31SidePurifyAreaPollute:
+  description: Act31 Side Purify Area Pollute
+  icon: null
+Act31SideTriggerRebuildAreas:
+  description: Act31 Side Trigger Rebuild Areas
+  icon: null
+Act33SideCutRopeBySource:
+  description: Act33 Side Cut Rope By Source
+  icon: null
+Act33SideEmitManagedProjectile:
+  description: Act33 Side Emit Managed Projectile
+  icon: null
+Act33SideFilterByTargetRopeCnt:
+  description: Act33 Side Filter By Target Rope Cnt
+  icon: null
+Act35SideAssignGemsCountToBlackboard:
+  description: Act35 Side Assign Gems Count To Blackboard
+  icon: null
+Act35SideEliminateGems:
+  description: Act35 Side Eliminate Gems
+  icon: null
+Act35SideSummonGems:
+  description: Act35 Side Summon Gems
+  icon: null
+Act35SideSummonGemsInFourDirections:
+  description: Act35 Side Summon Gems In Four Directions
+  icon: null
+Act35SideSummonGemsInRange:
+  description: Act35 Side Summon Gems In Range
+  icon: null
+Act35SideSummonLinkGem:
+  description: Act35 Side Summon Link Gem
+  icon: null
+Act38SideCheckFunLevelLost:
+  description: Act38 Side Check Fun Level Lost
+  icon: null
+Act42SideShownMapHiddenArea:
+  description: Act42 Side Shown Map Hidden Area
+  icon: null
+Act43SideOnBlockChanged:
+  description: Act43 Side On Block Changed
+  icon: null
+Act43SideUpdateShootingArea:
+  description: Act43 Side Update Shooting Area
+  icon: null
+Act44SideEndRushTimeByBoss:
+  description: Act44 Side End Rush Time By Boss
+  icon: null
+Act44SideGainGrade:
+  description: Act44 Side Gain Grade
+  icon: null
+Act46SideAddAreaSP:
+  description: Act46 Side Add Area S P
+  icon: null
+Act46SideAreaExpandOrReset:
+  description: Act46 Side Area Expand Or Reset
+  icon: null
+Act46SideAssignAvalancheAreaIndexToBB:
+  description: Act46 Side Assign Avalanche Area Index To B B
+  icon: null
+Act46SideAvalancheForCharacterFromOutside:
+  description: Act46 Side Avalanche For Character From Outside
+  icon: null
+Act46SideBanAreaSkill:
+  description: Act46 Side Ban Area Skill
+  icon: null
+Act46SideCreateAreaGridFx:
+  description: Act46 Side Create Area Grid Fx
+  icon: null
+Act46SideOnBlockChanged:
+  description: Act46 Side On Block Changed
+  icon: null
+Act46SideRebuildNpcRoute:
+  description: Act46 Side Rebuild Npc Route
+  icon: null
+Act46SideSwitchAreaAnimatorState:
+  description: Act46 Side Switch Area Animator State
+  icon: null
+Act46SideTriggerAvalanche:
+  description: Act46 Side Trigger Avalanche
+  icon: null
+Act47SideAddForceToBalloon:
+  description: Act47 Side Add Force To Balloon
+  icon: null
+Act47SideSwitchToBanGroundMode:
+  description: Act47 Side Switch To Ban Ground Mode
+  icon: null
+Act48SideRegistFunctionTrap:
+  description: Act48 Side Regist Function Trap
+  icon: null
+Act49SideCheckCharacterTileType:
+  description: Act49 Side Check Character Tile Type
+  icon: null
+Act49SideCheckWordTileBuildable:
+  description: Act49 Side Check Word Tile Buildable
+  icon: null
+Act49SideEnemyTjglyLockSelfWithTile:
+  description: Act49 Side Enemy Tjgly Lock Self With Tile
+  icon: null
+Act49SideEnemyTjglyTryFindNextTile:
+  description: Act49 Side Enemy Tjgly Try Find Next Tile
+  icon: null
+Act49SideSetEntityAnimatorColor:
+  description: Act49 Side Set Entity Animator Color
+  icon: null
+Act49SideWriteCharacter:
+  description: Act49 Side Write Character
+  icon: null
+Act49sideBossApplySkillDamage:
+  description: Act49side Boss Apply Skill Damage
+  icon: null
+Act49sideBossEmitProjectileToSkillTargetPos:
+  description: Act49side Boss Emit Projectile To Skill Target Pos
+  icon: null
+Act49sideBossFinishWarningEffect:
+  description: Act49side Boss Finish Warning Effect
+  icon: null
+Act49sideBossLevelClearHolderTrap:
+  description: Act49side Boss Level Clear Holder Trap
+  icon: null
+Act49sideBossLevelEnemyReachExit:
+  description: Act49side Boss Level Enemy Reach Exit
+  icon: null
+Act49sideBossLevelEnemyReportBorn:
+  description: Act49side Boss Level Enemy Report Born
+  icon: null
+Act49sideBossLevelEnemyReportDeath:
+  description: Act49side Boss Level Enemy Report Death
+  icon: null
+Act49sideBossLevelSummonHolderTrap:
+  description: Act49side Boss Level Summon Holder Trap
+  icon: null
+Act49sideBossLevelTriggerLevelFinish:
+  description: Act49side Boss Level Trigger Level Finish
+  icon: null
+Act49sideBossRegistSelf:
+  description: Act49side Boss Regist Self
+  icon: null
+Act49sideBossRegisterDefaultSkillFocusGrid:
+  description: Act49side Boss Register Default Skill Focus Grid
+  icon: null
+Act49sideBossSyncHPRatio:
+  description: Act49side Boss Sync H P Ratio
+  icon: null
+Act49sideBossTailChargeSummonCnt:
+  description: Act49side Boss Tail Charge Summon Cnt
+  icon: null
+Act49sideBossTailSetSummonEnemyInterval:
+  description: Act49side Boss Tail Set Summon Enemy Interval
+  icon: null
+Act49sideBossUpdateSkillFocusGrid:
+  description: Act49side Boss Update Skill Focus Grid
+  icon: null
+Act49sideBossUpdateWarningEffect:
+  description: Act49side Boss Update Warning Effect
+  icon: null
+Act49sideChargePrintingProgress:
+  description: Act49side Charge Printing Progress
+  icon: null
+Act49sideEnemySheartCheckTriggerSkill:
+  description: Act49side Enemy Sheart Check Trigger Skill
+  icon: null
+Act49sideEnemySsttzFinishSkillLockEffect:
+  description: Act49side Enemy Ssttz Finish Skill Lock Effect
+  icon: null
+Act49sideEnemySsttzShowSkillLockEffect:
+  description: Act49side Enemy Ssttz Show Skill Lock Effect
+  icon: null
+Act49sideHeadBossSetParams:
+  description: Act49side Head Boss Set Params
+  icon: null
+Act49sideKillCharacterOnTileExcept:
+  description: Act49side Kill Character On Tile Except
+  icon: null
+Act49sideKillTrapOnTileIfExists:
+  description: Act49side Kill Trap On Tile If Exists
+  icon: null
+Act49sideSetPrintingChargable:
+  description: Act49side Set Printing Chargable
+  icon: null
+Act49sideSsttzSacrificeEnemy:
+  description: Act49side Ssttz Sacrifice Enemy
+  icon: null
+Act49sideSsttzTriggerPartialPrint:
+  description: Act49side Ssttz Trigger Partial Print
+  icon: null
+Act49sideSunmaoTrapSkillTriggered:
+  description: Act49side Sunmao Trap Skill Triggered
+  icon: null
+Act49sideWriteCharacterBasedOnAnchorPos:
+  description: Act49side Write Character Based On Anchor Pos
+  icon: null
+Act6FunCollectCoin:
+  description: Act6 Fun Collect Coin
+  icon: null
+ActivePredifinedInst:
+  description: Active Predifined Inst
+  icon: null
+AddAbilityBlackboard:
+  description: Add Ability Blackboard
+  icon: null
+AddAttackRangeAsFearTargetTiles:
+  description: Add Attack Range As Fear Target Tiles
+  icon: null
+AddAttractToTargetRootTile:
+  description: Add Attract To Target Root Tile
+  icon: null
+AddBuffBlackboard:
+  description: Add Buff Blackboard
+  icon: null
+AddBuffToRandomCharacterWithSpecificBuff:
+  description: Add Buff To Random Character With Specific Buff
+  icon: null
+AddCharacterSharedBlackboard:
+  description: Add Character Shared Blackboard
+  icon: null
+AddCostTimerModifier:
+  description: Add Cost Timer Modifier
+  icon: null
+AddEnemyBlockVolume:
+  description: Add Enemy Block Volume
+  icon: null
+AddEnemyIdToCharacterSharedBlackboard:
+  description: Add Enemy Id To Character Shared Blackboard
+  icon: null
+AddExcludeCharacterToDynamicBuffTile:
+  description: Add Exclude Character To Dynamic Buff Tile
+  icon: null
+AddFearTargetTiles:
+  description: Add Fear Target Tiles
+  icon: null
+AddFeverBySourceIfNotFull:
+  description: Add Fever By Source If Not Full
+  icon: null
+AddFunnelAbilityActiveCnt:
+  description: Add Funnel Ability Active Cnt
+  icon: null
+AddGameFinishBlockerByKey:
+  description: Add Game Finish Blocker By Key
+  icon: null
+AddGlobalBlackboard:
+  description: Add Global Blackboard
+  icon: null
+AddHeightOffsetToSpine:
+  description: Add Height Offset To Spine
+  icon: null
+AddOrRemoveRuntimeUIPlugin:
+  description: Add Or Remove Runtime U I Plugin
+  icon: null
+AddTileBlackboard:
+  description: Add Tile Blackboard
+  icon: null
+AdjustEnemyHeightToRootTile:
+  description: Adjust Enemy Height To Root Tile
+  icon: null
+AdjustVisualObjectHeight:
+  description: Adjust Visual Object Height
+  icon: null
+AdvancedApplyDamage:
+  description: 造成伤害
+  icon: null
+AdvancedApplyHeal:
+  description: Advanced Apply Heal
+  icon: null
+AdvancedHealViaDamage:
+  description: Advanced Heal Via Damage
+  icon: null
+AlwaysExecuteNodeList:
+  description: Always Execute Node List
+  icon: null
+AlwaysNext:
+  description: 不论前一个节点是否成功，始终继续执行
+  icon: null
+AmmoSkillCountModifier:
+  description: Ammo Skill Count Modifier
+  icon: null
+ApplyCacheAtkDamageByBuffBlackBoardCnt:
+  description: Apply Cache Atk Damage By Buff Black Board Cnt
+  icon: null
+ApplyCacheAtkDamageFromBuff:
+  description: Apply Cache Atk Damage From Buff
+  icon: null
+ApplyElementDamage:
+  description: Apply Element Damage
+  icon: null
+ApplyElementDamageBasedOnDamageValue:
+  description: Apply Element Damage Based On Damage Value
+  icon: null
+ApplyElementHeal:
+  description: Apply Element Heal
+  icon: null
+ApplyFixedElementDamage:
+  description: Apply Fixed Element Damage
+  icon: null
+ApplyForceOnRogue4DLC2BounceEnemy:
+  description: Apply Force On Rogue4 D L C2 Bounce Enemy
+  icon: null
+ApplyHeal:
+  description: Apply Heal
+  icon: null
+ArcgachaGainTrap:
+  description: Arcgacha Gain Trap
+  icon: null
+AssignAbilityBlackboardFromOthers:
+  description: Assign Ability Blackboard From Others
+  icon: null
+AssignAmmoSkillConsumedCountToBB:
+  description: Assign Ammo Skill Consumed Count To B B
+  icon: null
+AssignAmmoSkillMaxCountToBB:
+  description: Assign Ammo Skill Max Count To B B
+  icon: null
+AssignAmmoSkillRemainingCountToBB:
+  description: Assign Ammo Skill Remaining Count To B B
+  icon: null
+AssignAttributeAsDynamicVarToBB:
+  description: Assign Attribute As Dynamic Var To B B
+  icon: null
+AssignAttributeDefaultValueToBlackboard:
+  description: Assign Attribute Default Value To Blackboard
+  icon: null
+AssignAttributeRawDataIntoBlackboard:
+  description: Assign Attribute Raw Data Into Blackboard
+  icon: null
+AssignAttributeToBB:
+  description: Assign Attribute To B B
+  icon: null
+AssignBranchStartLocationToBlackboard:
+  description: Assign Branch Start Location To Blackboard
+  icon: null
+AssignBuffBlackboard:
+  description: Assign Buff Blackboard
+  icon: null
+AssignBuffBlackboardFromAbility:
+  description: Assign Buff Blackboard From Ability
+  icon: null
+AssignBuffBlackboardFromOthers:
+  description: Assign Buff Blackboard From Others
+  icon: null
+AssignBuffCountIntoBlackboard:
+  description: Assign Buff Count Into Blackboard
+  icon: null
+AssignBuffExistingTimeIntoBlackboard:
+  description: Assign Buff Existing Time Into Blackboard
+  icon: null
+AssignBuffLifeTimeToBB:
+  description: Assign Buff Life Time To B B
+  icon: null
+AssignBuffRemainingTimeIntoBlackboard:
+  description: Assign Buff Remaining Time Into Blackboard
+  icon: null
+AssignBuffStackCntToBlackboard:
+  description: Assign Buff Stack Cnt To Blackboard
+  icon: null
+AssignCardRemainingCntToBlackboard:
+  description: Assign Card Remaining Cnt To Blackboard
+  icon: null
+AssignCardUIDToBlackBoard:
+  description: Assign Card U I D To Black Board
+  icon: null
+AssignCertainSideContainsBuffUnitsCntToBlackboard:
+  description: Assign Certain Side Contains Buff Units Cnt To Blackboard
+  icon: null
+AssignCharacterCostIntoBlackboard:
+  description: Assign Character Cost Into Blackboard
+  icon: null
+AssignCharacterMaxEsIntoBlackBoard:
+  description: Assign Character Max Es Into Black Board
+  icon: null
+AssignCharacterSharedBBToBlackboard:
+  description: Assign Character Shared B B To Blackboard
+  icon: null
+AssignCharacterSkillBlackboardToBB:
+  description: Assign Character Skill Blackboard To B B
+  icon: null
+AssignCharacterSkillRangeToBlackboard:
+  description: Assign Character Skill Range To Blackboard
+  icon: null
+AssignCurSpToBB:
+  description: Assign Cur Sp To B B
+  icon: null
+AssignCurrentBlockNumToBB:
+  description: Assign Current Block Num To B B
+  icon: null
+AssignCurrentBlockVolumnToBB:
+  description: Assign Current Block Volumn To B B
+  icon: null
+AssignDamageValueToBlackboard:
+  description: Assign Damage Value To Blackboard
+  icon: null
+AssignDirectionToBB:
+  description: Assign Direction To B B
+  icon: null
+AssignEPBreakRecoveryToBB:
+  description: Assign E P Break Recovery To B B
+  icon: null
+AssignEnemyLastMoveDirectionToBB:
+  description: Assign Enemy Last Move Direction To B B
+  icon: null
+AssignEnemyLifePointReduceToBB:
+  description: Assign Enemy Life Point Reduce To B B
+  icon: null
+AssignEnemyMoveDistIntoBlackboard:
+  description: Assign Enemy Move Dist Into Blackboard
+  icon: null
+AssignEnemyRouteDistToBB:
+  description: Assign Enemy Route Dist To B B
+  icon: null
+AssignEntityCreateTimeToBB:
+  description: Assign Entity Create Time To B B
+  icon: null
+AssignEntityEsIntoBlackboard:
+  description: Assign Entity Es Into Blackboard
+  icon: null
+AssignFinishedBossWaveIntoBlackBoard:
+  description: Assign Finished Boss Wave Into Black Board
+  icon: null
+AssignGlobalBlackboardToBlackboard:
+  description: Assign Global Blackboard To Blackboard
+  icon: null
+AssignGoldToBlackboard:
+  description: Assign Gold To Blackboard
+  icon: null
+AssignGridPositionToBlackboard:
+  description: Assign Grid Position To Blackboard
+  icon: null
+AssignHighestBlackboardValueFromBuffs:
+  description: Assign Highest Blackboard Value From Buffs
+  icon: null
+AssignHostAttributeToBB:
+  description: Assign Host Attribute To B B
+  icon: null
+AssignHostBlackboardToBuffBlackboard:
+  description: Assign Host Blackboard To Buff Blackboard
+  icon: null
+AssignHpRatioToBB:
+  description: Assign Hp Ratio To B B
+  icon: null
+AssignIDToBlackboard:
+  description: Assign I D To Blackboard
+  icon: null
+AssignLocationPosToBlackboard:
+  description: Assign Location Pos To Blackboard
+  icon: null
+AssignModifierOriginAtkToBB:
+  description: Assign Modifier Origin Atk To B B
+  icon: null
+AssignModifierRealDeltaToBB:
+  description: Assign Modifier Real Delta To B B
+  icon: null
+AssignModifierValueIntoBlackboard:
+  description: Assign Modifier Value Into Blackboard
+  icon: null
+AssignNodeCountToBb:
+  description: Assign Node Count To Bb
+  icon: null
+AssignOverflowDamageToBlackboard:
+  description: Assign Overflow Damage To Blackboard
+  icon: null
+AssignPlayerSideCostIntoBlackboard:
+  description: Assign Player Side Cost Into Blackboard
+  icon: null
+AssignProfessionCntToBlackboard:
+  description: Assign Profession Cnt To Blackboard
+  icon: null
+AssignRandomBBKeyToBB:
+  description: Assign Random B B Key To B B
+  icon: null
+AssignRelativeDirectionToBB:
+  description: Assign Relative Direction To B B
+  icon: null
+AssignRespawnCntToBlackboard:
+  description: Assign Respawn Cnt To Blackboard
+  icon: null
+AssignRootTileBlackBoardValueToBB:
+  description: Assign Root Tile Black Board Value To B B
+  icon: null
+AssignRootTileToBB:
+  description: Assign Root Tile To B B
+  icon: null
+AssignSkillTriggerdCntToBlackboard:
+  description: Assign Skill Triggerd Cnt To Blackboard
+  icon: null
+AssignSpecificPositionAmongPositionListToBlackboard:
+  description: Assign Specific Position Among Position List To Blackboard
+  icon: null
+AssignStealAttributeAbilityTotalValueToBB:
+  description: Assign Steal Attribute Ability Total Value To B B
+  icon: null
+AssignSubSpineConfigIndexToBB:
+  description: Assign Sub Spine Config Index To B B
+  icon: null
+AssignTokenCardCntToBB:
+  description: 将召唤物数量记录到黑板
+  icon: null
+AssignTokenCntToBB:
+  description: Assign Token Cnt To B B
+  icon: null
+AssignUidToBlackBoard:
+  description: Assign Uid To Black Board
+  icon: null
+AssignValueToBB:
+  description: Assign Value To B B
+  icon: null
+AssignValueToBBWithWeight:
+  description: Assign Value To B B With Weight
+  icon: null
+AssignValueToTraitBB:
+  description: Assign Value To Trait B B
+  icon: null
+AtkAdditionUpBeforeCalcDamage:
+  description: Atk Addition Up Before Calc Damage
+  icon: null
+AtkScaleUp:
+  description: 临时提升攻击力倍率
+  icon: null
+AtkToHpRecovery:
+  description: Atk To Hp Recovery
+  icon: null
+AttachAsDerivedBuff:
+  description: Attach As Derived Buff
+  icon: null
+AttachAsDerivedBuffById:
+  description: Attach As Derived Buff By Id
+  icon: null
+AttachAsDerivedBuffToMainBuff:
+  description: Attach As Derived Buff To Main Buff
+  icon: null
+AttributeModifierWithBB:
+  description: Attribute Modifier With B B
+  icon: null
+AttributeModifierWithCertainBuffCount:
+  description: Attribute Modifier With Certain Buff Count
+  icon: null
+AttributeModifierWithLevelProgress:
+  description: Attribute Modifier With Level Progress
+  icon: null
+AutoChessAddCharacterExtraBondCnt:
+  description: Auto Chess Add Character Extra Bond Cnt
+  icon: null
+AutoChessAssignActiveGarrisonBondCntToBlackboard:
+  description: Auto Chess Assign Active Garrison Bond Cnt To Blackboard
+  icon: null
+AutoChessAssignBattleLayersToBlackboard:
+  description: Auto Chess Assign Battle Layers To Blackboard
+  icon: null
+AutoChessAssignBondCharCntToBB:
+  description: Auto Chess Assign Bond Char Cnt To B B
+  icon: null
+AutoChessAssignBondStackCntToBB:
+  description: Auto Chess Assign Bond Stack Cnt To B B
+  icon: null
+AutoChessAssignChessLevelToBlackboard:
+  description: Auto Chess Assign Chess Level To Blackboard
+  icon: null
+AutoChessAssignGainedCharacterCountLastTime:
+  description: Auto Chess Assign Gained Character Count Last Time
+  icon: null
+AutoChessAssignGatheredAttributeToBlackboard:
+  description: Auto Chess Assign Gathered Attribute To Blackboard
+  icon: null
+AutoChessAssignSameBondCharacterCntToBB:
+  description: Auto Chess Assign Same Bond Character Cnt To B B
+  icon: null
+AutoChessAssignTargetPlayerSideToBlackboard:
+  description: Auto Chess Assign Target Player Side To Blackboard
+  icon: null
+AutoChessAssignUseMagicCntInThisRound:
+  description: Auto Chess Assign Use Magic Cnt In This Round
+  icon: null
+AutoChessAttrViaForceEffectCnt:
+  description: Auto Chess Attr Via Force Effect Cnt
+  icon: null
+AutoChessCheckDifficulty:
+  description: Auto Chess Check Difficulty
+  icon: null
+AutoChessCheckHasEquip:
+  description: Auto Chess Check Has Equip
+  icon: null
+AutoChessCreateBuffMulti:
+  description: Auto Chess Create Buff Multi
+  icon: null
+AutoChessFilterCharacterBondIds:
+  description: Auto Chess Filter Character Bond Ids
+  icon: null
+AutoChessFreezeStore:
+  description: Auto Chess Freeze Store
+  icon: null
+AutoChessIsInBattle:
+  description: Auto Chess Is In Battle
+  icon: null
+AutoChessLogExtraBattleInfo:
+  description: Auto Chess Log Extra Battle Info
+  icon: null
+AutoChessRebuildCharacterOnTile:
+  description: Auto Chess Rebuild Character On Tile
+  icon: null
+AutoChessRefreshStore:
+  description: Auto Chess Refresh Store
+  icon: null
+AutoChessTriggerGarrisonAbility:
+  description: Auto Chess Trigger Garrison Ability
+  icon: null
+AutoChessUpgradeStore:
+  description: Auto Chess Upgrade Store
+  icon: null
+AutochessAssignEquipCntToBlackboard:
+  description: Autochess Assign Equip Cnt To Blackboard
+  icon: null
+AutochessCreateBuffToSpecifiedChar:
+  description: Autochess Create Buff To Specified Char
+  icon: null
+AutochessFilterByChessLevel:
+  description: Autochess Filter By Chess Level
+  icon: null
+AutochessFilterByCurrentCoin:
+  description: Autochess Filter By Current Coin
+  icon: null
+BlackboardAdd:
+  description: Blackboard Add
+  icon: null
+BleedingDamageIncreasingReset:
+  description: Bleeding Damage Increasing Reset
+  icon: null
+BleedingDamagePerSec:
+  description: Bleeding Damage Per Sec
+  icon: null
+BlinkNode:
+  description: Blink Node
+  icon: null
+BlockDamage:
+  description: 格挡/护盾/屏障
+  icon: null
+BlockElementDamage:
+  description: Block Element Damage
+  icon: null
+BossRushMoveCamera:
+  description: Boss Rush Move Camera
+  icon: null
+BuildCharacterInRange:
+  description: Build Character In Range
+  icon: null
+CalculateBlackboardValueViaParams:
+  description: 用参数计算黑板值
+  icon: null
+CalculateFeverSpShowBuffRemainingProgress:
+  description: Calculate Fever Sp Show Buff Remaining Progress
+  icon: null
+CalculateTraitAbilityBlackboard:
+  description: Calculate Trait Ability Blackboard
+  icon: null
+CancelModifier:
+  description: Cancel Modifier
+  icon: null
+ChangeAnimatorMeshBySandboxKilledBoss:
+  description: Change Animator Mesh By Sandbox Killed Boss
+  icon: null
+ChangeAnimatorMeshRenderer:
+  description: Change Animator Mesh Renderer
+  icon: null
+ChangeAnimatorMeshRendererViaIndexList:
+  description: Change Animator Mesh Renderer Via Index List
+  icon: null
+ChangeCharBlockMode:
+  description: Change Char Block Mode
+  icon: null
+ChangeEnemyLevitateHeightImmediately:
+  description: Change Enemy Levitate Height Immediately
+  icon: null
+ChangeEnemyRouteMotionMode:
+  description: Change Enemy Route Motion Mode
+  icon: null
+ChangeMotionMode:
+  description: Change Motion Mode
+  icon: null
+CharSearchBlockeeImmediate:
+  description: Char Search Blockee Immediate
+  icon: null
+CharSkillNotCountTimes:
+  description: Char Skill Not Count Times
+  icon: null
+CharacterHasValidToken:
+  description: Character Has Valid Token
+  icon: null
+CheckAbnormalCombo:
+  description: Check Abnormal Combo
+  icon: null
+CheckAbnormalFlag:
+  description: Check Abnormal Flag
+  icon: null
+CheckAbnormalFlags:
+  description: Check Abnormal Flags
+  icon: null
+CheckAbnormalImmune:
+  description: Check Abnormal Immune
+  icon: null
+CheckAndBlockBuffByAbnormalFlags:
+  description: Check And Block Buff By Abnormal Flags
+  icon: null
+CheckBlockMode:
+  description: Check Block Mode
+  icon: null
+CheckBlocked:
+  description: Check Blocked
+  icon: null
+CheckBlockedPlayersideInCooperate:
+  description: Check Blocked Playerside In Cooperate
+  icon: null
+CheckBlockerContainsBuff:
+  description: Check Blocker Contains Buff
+  icon: null
+CheckBoatCollide:
+  description: Check Boat Collide
+  icon: null
+CheckBuffAbnormalFlags:
+  description: Check Buff Abnormal Flags
+  icon: null
+CheckBuffAttributeModifierChanged:
+  description: Check Buff Attribute Modifier Changed
+  icon: null
+CheckBuffRemainingTime:
+  description: Check Buff Remaining Time
+  icon: null
+CheckBuildCnt:
+  description: Check Build Cnt
+  icon: null
+CheckBuildableType:
+  description: Check Buildable Type
+  icon: null
+CheckBuildableTypeOfCharacterRootTile:
+  description: Check Buildable Type Of Character Root Tile
+  icon: null
+CheckCanTriggerLikeAttack:
+  description: Check Can Trigger Like Attack
+  icon: null
+CheckCanUseAtkOrCbt:
+  description: Check Can Use Atk Or Cbt
+  icon: null
+CheckCharSkillAffecting:
+  description: Check Char Skill Affecting
+  icon: null
+CheckCharSkillAvailable:
+  description: Check Char Skill Available
+  icon: null
+CheckCharSkillUsedUp:
+  description: Check Char Skill Used Up
+  icon: null
+CheckCharacterData:
+  description: Check Character Data
+  icon: null
+CheckCharacterDefaultDirection:
+  description: Check Character Default Direction
+  icon: null
+CheckCharacterGroupTag:
+  description: 检查阵营标签
+  icon: null
+CheckCharacterInBornState:
+  description: Check Character In Born State
+  icon: null
+CheckCharacterInMagicCircuit:
+  description: Check Character In Magic Circuit
+  icon: null
+CheckCharacterOnTile:
+  description: Check Character On Tile
+  icon: null
+CheckCharacterSkillType:
+  description: Check Character Skill Type
+  icon: null
+CheckConatinsMapTags:
+  description: Check Conatins Map Tags
+  icon: null
+CheckContainsBuff:
+  description: 检查是否持有某Buff
+  icon: null
+CheckContainsCardBuff:
+  description: Check Contains Card Buff
+  icon: null
+CheckContainsDeckBuff:
+  description: Check Contains Deck Buff
+  icon: null
+CheckContainsDerviedBuff:
+  description: Check Contains Dervied Buff
+  icon: null
+CheckContainsEnvSystem:
+  description: Check Contains Env System
+  icon: null
+CheckCost:
+  description: Check Cost
+  icon: null
+CheckCurrentBuff:
+  description: Check Current Buff
+  icon: null
+CheckCurrentLevelProgressRatio:
+  description: Check Current Level Progress Ratio
+  icon: null
+CheckCurrentTileEnemyRouteSpecificPoint:
+  description: Check Current Tile Enemy Route Specific Point
+  icon: null
+CheckCurrentTileKey:
+  description: Check Current Tile Key
+  icon: null
+CheckDeathCnt:
+  description: Check Death Cnt
+  icon: null
+CheckDirection:
+  description: Check Direction
+  icon: null
+CheckDistance:
+  description: Check Distance
+  icon: null
+CheckDistanceToTileCenter:
+  description: Check Distance To Tile Center
+  icon: null
+CheckDynamicBuffTileModeInEnum:
+  description: Check Dynamic Buff Tile Mode In Enum
+  icon: null
+CheckDynamicBuffTileModeOneLine:
+  description: Check Dynamic Buff Tile Mode One Line
+  icon: null
+CheckEnemyAbilityName:
+  description: Check Enemy Ability Name
+  icon: null
+CheckEnemyCurrentCheckpoint:
+  description: Check Enemy Current Checkpoint
+  icon: null
+CheckEnemyFaceAndMoveDir:
+  description: Check Enemy Face And Move Dir
+  icon: null
+CheckEnemyId:
+  description: Check Enemy Id
+  icon: null
+CheckEnemyInBornState:
+  description: Check Enemy In Born State
+  icon: null
+CheckEnemyInMagicCircuit:
+  description: Check Enemy In Magic Circuit
+  icon: null
+CheckEnemyIsTracingTarget:
+  description: Check Enemy Is Tracing Target
+  icon: null
+CheckEnemyLevelMask:
+  description: Check Enemy Level Mask
+  icon: null
+CheckEnemyLevelType:
+  description: Check Enemy Level Type
+  icon: null
+CheckEnemyRouteCheckpoint:
+  description: Check Enemy Route Checkpoint
+  icon: null
+CheckEnemySkillAffecting:
+  description: Check Enemy Skill Affecting
+  icon: null
+CheckEnemySummoned:
+  description: Check Enemy Summoned
+  icon: null
+CheckEnemyUnbalanced:
+  description: Check Enemy Unbalanced
+  icon: null
+CheckEnemyWhetherReachedSomeCheckPoint:
+  description: Check Enemy Whether Reached Some Check Point
+  icon: null
+CheckEntityDisappeared:
+  description: Check Entity Disappeared
+  icon: null
+CheckEntityEquals:
+  description: Check Entity Equals
+  icon: null
+CheckEntitySuicide:
+  description: Check Entity Suicide
+  icon: null
+CheckFilterTag:
+  description: Check Filter Tag
+  icon: null
+CheckGamePlayedTime:
+  description: Check Game Played Time
+  icon: null
+CheckHasCharacterInRange:
+  description: Check Has Character In Range
+  icon: null
+CheckHasEnemyIdInCharacterSharedBlackboard:
+  description: Check Has Enemy Id In Character Shared Blackboard
+  icon: null
+CheckHasEnemyInRange:
+  description: Check Has Enemy In Range
+  icon: null
+CheckHasSp:
+  description: Check Has Sp
+  icon: null
+CheckHasStands:
+  description: Check Has Stands
+  icon: null
+CheckHeightTypeOfCharacterRootTile:
+  description: Check Height Type Of Character Root Tile
+  icon: null
+CheckHeightTypeOfRootTile:
+  description: Check Height Type Of Root Tile
+  icon: null
+CheckHostContainsBuff:
+  description: Check Host Contains Buff
+  icon: null
+CheckIdInBlackboardFunLiveModeOnly:
+  description: Check Id In Blackboard Fun Live Mode Only
+  icon: null
+CheckIfAtMinusHpState:
+  description: Check If At Minus Hp State
+  icon: null
+CheckIfDamageHasSharedFlags:
+  description: Check If Damage Has Shared Flags
+  icon: null
+CheckIfDurationBuff:
+  description: Check If Duration Buff
+  icon: null
+CheckIfSourceGridPosFaceTargetGridPos:
+  description: Check If Source Grid Pos Face Target Grid Pos
+  icon: null
+CheckIsBuildSlotCharacter:
+  description: Check Is Build Slot Character
+  icon: null
+CheckMainBuffId:
+  description: Check Main Buff Id
+  icon: null
+CheckManhattanDistanceBetweenSourceAndTarget:
+  description: Check Manhattan Distance Between Source And Target
+  icon: null
+CheckModifierContainsKey:
+  description: Check Modifier Contains Key
+  icon: null
+CheckModifierDirectionOffset:
+  description: Check Modifier Direction Offset
+  icon: null
+CheckModifierFace:
+  description: Check Modifier Face
+  icon: null
+CheckMotionMode:
+  description: Check Motion Mode
+  icon: null
+CheckOtherCharacterInRange:
+  description: Check Other Character In Range
+  icon: null
+CheckRemainTime:
+  description: Check Remain Time
+  icon: null
+CheckRootTileAdvBuildableMask:
+  description: Check Root Tile Adv Buildable Mask
+  icon: null
+CheckRouteMotionMode:
+  description: Check Route Motion Mode
+  icon: null
+CheckSkillIndex:
+  description: Check Skill Index
+  icon: null
+CheckSkillRemainingProgress:
+  description: Check Skill Remaining Progress
+  icon: null
+CheckSpecificEnemyCount:
+  description: Check Specific Enemy Count
+  icon: null
+CheckTargetEnemyId:
+  description: Check Target Enemy Id
+  icon: null
+CheckTargetEpIsFull:
+  description: Check Target Ep Is Full
+  icon: null
+CheckTargetInRange:
+  description: Check Target In Range
+  icon: null
+CheckTargetProfession:
+  description: Check Target Profession
+  icon: null
+CheckTargetRootTile:
+  description: Check Target Root Tile
+  icon: null
+CheckTargetRootTileBuildableByUid:
+  description: Check Target Root Tile Buildable By Uid
+  icon: null
+CheckTargetRootTileMatchAnyBBValue:
+  description: Check Target Root Tile Match Any B B Value
+  icon: null
+CheckTargetSkillDurationType:
+  description: Check Target Skill Duration Type
+  icon: null
+CheckTargetTokenOrHost:
+  description: Check Target Token Or Host
+  icon: null
+CheckTileInRange:
+  description: Check Tile In Range
+  icon: null
+CheckTileOptions:
+  description: Check Tile Options
+  icon: null
+CheckTilePassable:
+  description: Check Tile Passable
+  icon: null
+CheckTraitAbilityBlackboard:
+  description: Check Trait Ability Blackboard
+  icon: null
+CheckTriggerable:
+  description: Check Triggerable
+  icon: null
+CheckTriggerableBuffsByKeys:
+  description: Check Triggerable Buffs By Keys
+  icon: null
+CheckUnitAlive:
+  description: Check Unit Alive
+  icon: null
+CheckUnitCurrentMode:
+  description: Check Unit Current Mode
+  icon: null
+CheckUnitInAttackState:
+  description: Check Unit In Attack State
+  icon: null
+CheckUnitInDisappearState:
+  description: Check Unit In Disappear State
+  icon: null
+CheckUnitInMoveState:
+  description: Check Unit In Move State
+  icon: null
+CheckUnitInRebornState:
+  description: Check Unit In Reborn State
+  icon: null
+CheckUnitRootTileInTargetAttackRange:
+  description: Check Unit Root Tile In Target Attack Range
+  icon: null
+ClearAllBuffs:
+  description: Clear All Buffs
+  icon: null
+ClearCharacterOnTileIfExists:
+  description: Clear Character On Tile If Exists
+  icon: null
+ClearCharacterSp:
+  description: Clear Character Sp
+  icon: null
+ClearCheckpointInRuntimeRoute:
+  description: Clear Checkpoint In Runtime Route
+  icon: null
+ClearEnemySp:
+  description: Clear Enemy Sp
+  icon: null
+ClearFirstBuffBlackboardByKey:
+  description: Clear First Buff Blackboard By Key
+  icon: null
+ClearOverlappedCharacterIfExist:
+  description: Clear Overlapped Character If Exist
+  icon: null
+ClearTrap:
+  description: Clear Trap
+  icon: null
+CompareCharSkillAvailableCnt:
+  description: Compare Char Skill Available Cnt
+  icon: null
+CompareModifierValueWithTargetType:
+  description: Compare Modifier Value With Target Type
+  icon: null
+ConsumeTimeline:
+  description: Consume Timeline
+  icon: null
+ConsumeTrySetHpZeroModifier:
+  description: Consume Try Set Hp Zero Modifier
+  icon: null
+CoopApplyForceByTarget:
+  description: Coop Apply Force By Target
+  icon: null
+CoopApplyRecordDamageToMoveCtrl:
+  description: Coop Apply Record Damage To Move Ctrl
+  icon: null
+CoopBoatGainScore:
+  description: Coop Boat Gain Score
+  icon: null
+CoopChangeVelocityByDirection:
+  description: Coop Change Velocity By Direction
+  icon: null
+CoopRecordDefenceBossStatus:
+  description: Coop Record Defence Boss Status
+  icon: null
+CoopReplaceActionKey:
+  description: Coop Replace Action Key
+  icon: null
+CopyCharacterSharedBlackboard:
+  description: Copy Character Shared Blackboard
+  icon: null
+CopyHealth:
+  description: Copy Health
+  icon: null
+CreateBuff:
+  description: 创建 Buff
+  icon: null
+CreateBuffById:
+  description: Create Buff By Id
+  icon: null
+CreateBuffInCircleRange:
+  description: Create Buff In Circle Range
+  icon: null
+CreateBuffInRange:
+  description: Create Buff In Range
+  icon: null
+CreateBuffOnTileInRange:
+  description: Create Buff On Tile In Range
+  icon: null
+CreateBuffStacked:
+  description: Create Buff Stacked
+  icon: null
+CreateBuffToBindingTiles:
+  description: Create Buff To Binding Tiles
+  icon: null
+CreateBuffToBlockee:
+  description: Create Buff To Blockee
+  icon: null
+CreateBuffToCardUidCharacter:
+  description: Create Buff To Card Uid Character
+  icon: null
+CreateBuffToCastedTargets:
+  description: Create Buff To Casted Targets
+  icon: null
+CreateBuffToCertainProfession:
+  description: Create Buff To Certain Profession
+  icon: null
+CreateBuffToCertainSideUnits:
+  description: Create Buff To Certain Side Units
+  icon: null
+CreateBuffToCharacterInSpecifiedArea:
+  description: Create Buff To Character In Specified Area
+  icon: null
+CreateBuffToCharacterOnCertainTile:
+  description: Create Buff To Character On Certain Tile
+  icon: null
+CreateBuffToCharacterOnTargetRootTile:
+  description: Create Buff To Character On Target Root Tile
+  icon: null
+CreateBuffToCurTarget:
+  description: Create Buff To Cur Target
+  icon: null
+CreateBuffToFootball:
+  description: Create Buff To Football
+  icon: null
+CreateBuffToHost:
+  description: Create Buff To Host
+  icon: null
+CreateBuffToToken:
+  description: Create Buff To Token
+  icon: null
+CreateBuffToUnitInCurrentMapLayer:
+  description: Create Buff To Unit In Current Map Layer
+  icon: null
+CreateBuffUseAbilitySelector:
+  description: Create Buff Use Ability Selector
+  icon: null
+CreateBuffUseCardUidAsSource:
+  description: Create Buff Use Card Uid As Source
+  icon: null
+CreateBuffUseHostAsSource:
+  description: 创建Buff（以召唤物主人为来源）
+  icon: null
+CreateBuffUseTargetAsSource:
+  description: Create Buff Use Target As Source
+  icon: null
+CreateBuffWithOverrideEffect:
+  description: Create Buff With Override Effect
+  icon: null
+CreateBuffs:
+  description: Create Buffs
+  icon: null
+CreateCardBuff:
+  description: Create Card Buff
+  icon: null
+CreateCardBuffByCardUid:
+  description: Create Card Buff By Card Uid
+  icon: null
+CreateCardBuffByDeckSequenceOrder:
+  description: Create Card Buff By Deck Sequence Order
+  icon: null
+CreateCardBuffBySourceCard:
+  description: Create Card Buff By Source Card
+  icon: null
+CreateCardBuffFilterByBuildableType:
+  description: Create Card Buff Filter By Buildable Type
+  icon: null
+CreateCardBuffFilterByCardState:
+  description: Create Card Buff Filter By Card State
+  icon: null
+CreateCardBuffFilterByDeckBuff:
+  description: Create Card Buff Filter By Deck Buff
+  icon: null
+CreateCardBuffFilterByRarityAndProfession:
+  description: Create Card Buff Filter By Rarity And Profession
+  icon: null
+CreateCardBuffFilterByTag:
+  description: Create Card Buff Filter By Tag
+  icon: null
+CreateCardBuffMarkInAbilityBlackboard:
+  description: Create Card Buff Mark In Ability Blackboard
+  icon: null
+CreateCardBuffToAllCard:
+  description: Create Card Buff To All Card
+  icon: null
+CreateCardBuffToBlackboardExclude:
+  description: Create Card Buff To Blackboard Exclude
+  icon: null
+CreateCardBuffToMaxCost:
+  description: Create Card Buff To Max Cost
+  icon: null
+CreateCardBuffToMyHost:
+  description: Create Card Buff To My Host
+  icon: null
+CreateCardBuffToMyToken:
+  description: Create Card Buff To My Token
+  icon: null
+CreateCardBuffWithDeckSelector:
+  description: Create Card Buff With Deck Selector
+  icon: null
+CreateCardFilterByProfession:
+  description: Create Card Filter By Profession
+  icon: null
+CreateDeckBuff:
+  description: Create Deck Buff
+  icon: null
+CreateDeckBuffByCnt:
+  description: Create Deck Buff By Cnt
+  icon: null
+CreateDeckBuffWithDeckSelector:
+  description: Create Deck Buff With Deck Selector
+  icon: null
+CreateDeckBuffWithSelectOrder:
+  description: Create Deck Buff With Select Order
+  icon: null
+CreateDeckCardBuffsWithSelectOrderList:
+  description: Create Deck Card Buffs With Select Order List
+  icon: null
+CreateEffect:
+  description: Create Effect
+  icon: null
+CreateEffectAtScreenPos:
+  description: Create Effect At Screen Pos
+  icon: null
+CreateEffectHookProjectileEffect:
+  description: Create Effect Hook Projectile Effect
+  icon: null
+CreateEffectToSurroundingTiles:
+  description: Create Effect To Surrounding Tiles
+  icon: null
+CreateGlobalBuffByKey:
+  description: Create Global Buff By Key
+  icon: null
+CreateLineEffect:
+  description: Create Line Effect
+  icon: null
+CreateNoSourceBuff:
+  description: Create No Source Buff
+  icon: null
+CreatePreviewCursor:
+  description: Create Preview Cursor
+  icon: null
+CreateRandomEffect:
+  description: Create Random Effect
+  icon: null
+CreateTileBindingGlobalBuff:
+  description: Create Tile Binding Global Buff
+  icon: null
+CreateTileEffect:
+  description: Create Tile Effect
+  icon: null
+CreateTileEffectInRange:
+  description: Create Tile Effect In Range
+  icon: null
+DamageByDistance:
+  description: Damage By Distance
+  icon: null
+DamageFixedValueResistance:
+  description: Damage Fixed Value Resistance
+  icon: null
+DamageScale:
+  description: 伤害倍率
+  icon: null
+DamageScaleAccordingToHpRatio:
+  description: Damage Scale According To Hp Ratio
+  icon: null
+DamageScaleBaseOnDistance:
+  description: Damage Scale Base On Distance
+  icon: null
+DamageSplit:
+  description: 分摊伤害
+  icon: null
+DamageSplitToBuffKeySources:
+  description: Damage Split To Buff Key Sources
+  icon: null
+DamageValueModify:
+  description: Damage Value Modify
+  icon: null
+DamageViaAttr:
+  description: Damage Via Attr
+  icon: null
+DamageViaCurHpRatio:
+  description: Damage Via Cur Hp Ratio
+  icon: null
+DamageViaEs:
+  description: Damage Via Es
+  icon: null
+DamageViaMaxHpRatio:
+  description: Damage Via Max Hp Ratio
+  icon: null
+Dice:
+  description: Dice
+  icon: null
+DisableEnemyHud:
+  description: Disable Enemy Hud
+  icon: null
+DisableEnemySwitchFaceByMove:
+  description: Disable Enemy Switch Face By Move
+  icon: null
+DisableTrait:
+  description: Disable Trait
+  icon: null
+DoClearance:
+  description: Do Clearance
+  icon: null
+DoDribble:
+  description: Do Dribble
+  icon: null
+DoPassTheBall:
+  description: Do Pass The Ball
+  icon: null
+DoSlapShot:
+  description: Do Slap Shot
+  icon: null
+DragTowardSource:
+  description: Drag Toward Source
+  icon: null
+DuelCheckConvertToBattleStage:
+  description: Duel Check Convert To Battle Stage
+  icon: null
+DuelInitDuelMode:
+  description: Duel Init Duel Mode
+  icon: null
+DuelModifyPlaceAreaData:
+  description: Duel Modify Place Area Data
+  icon: null
+DuelMoveCamera:
+  description: Duel Move Camera
+  icon: null
+DuelSyncChosenInfoToGameMode:
+  description: Duel Sync Chosen Info To Game Mode
+  icon: null
+DurBusAbilityCheckPassengers:
+  description: Dur Bus Ability Check Passengers
+  icon: null
+DurBusAbilityReleasePassenger:
+  description: Dur Bus Ability Release Passenger
+  icon: null
+DywqgsCheckChessSiege:
+  description: Dywqgs Check Chess Siege
+  icon: null
+DywqgsSpawnTokenOnExceptCharacterSurroundedTiles:
+  description: Dywqgs Spawn Token On Except Character Surrounded Tiles
+  icon: null
+EmitProjectile:
+  description: Emit Projectile
+  icon: null
+EmitProjectileFromManagedProjectiles:
+  description: Emit Projectile From Managed Projectiles
+  icon: null
+EmitProjectileOnSourceRootTile:
+  description: Emit Projectile On Source Root Tile
+  icon: null
+EmitProjectileUseAbilitySelector:
+  description: Emit Projectile Use Ability Selector
+  icon: null
+EnableEffectTransform:
+  description: Enable Effect Transform
+  icon: null
+EnableShadowController:
+  description: Enable Shadow Controller
+  icon: null
+EnableTrait:
+  description: Enable Trait
+  icon: null
+EnemyChangeRouteToEndTile:
+  description: Enemy Change Route To End Tile
+  icon: null
+EnemyChangeRouteToTarget:
+  description: Enemy Change Route To Target
+  icon: null
+EnemyChangeRouteToTargetUseSelector:
+  description: Enemy Change Route To Target Use Selector
+  icon: null
+EnemyDuelReportCombat:
+  description: Enemy Duel Report Combat
+  icon: null
+EnemyDuelSummonEnemies:
+  description: Enemy Duel Summon Enemies
+  icon: null
+EnemyDurcarChangeDirection:
+  description: Enemy Durcar Change Direction
+  icon: null
+EnemyDurcarCheckOverlapWithHighland:
+  description: Enemy Durcar Check Overlap With Highland
+  icon: null
+EnemyFallDown:
+  description: Enemy Fall Down
+  icon: null
+EnemyForceTracePosition:
+  description: Enemy Force Trace Position
+  icon: null
+EnemyHasValidToken:
+  description: Enemy Has Valid Token
+  icon: null
+EnemyKillToken:
+  description: Enemy Kill Token
+  icon: null
+EnemyLrtsiaCheckDamageBlocked:
+  description: Enemy Lrtsia Check Damage Blocked
+  icon: null
+EnemyLrtsiaSummonEnemyOnSurroundTiles:
+  description: Enemy Lrtsia Summon Enemy On Surround Tiles
+  icon: null
+EnemySkipWaitCheckPoint:
+  description: Enemy Skip Wait Check Point
+  icon: null
+EnsureBlackboardDefaultValue:
+  description: Ensure Blackboard Default Value
+  icon: null
+EnsureDmgOrHeal:
+  description: Ensure Dmg Or Heal
+  icon: null
+EnsureFeverSystem:
+  description: Ensure Fever System
+  icon: null
+EpDamageScale:
+  description: Ep Damage Scale
+  icon: null
+EqualizeTargetHpRatio:
+  description: Equalize Target Hp Ratio
+  icon: null
+Evade:
+  description: Evade
+  icon: null
+ExcludeDeckCardFromBattle:
+  description: Exclude Deck Card From Battle
+  icon: null
+ExtendAbilityCooldown:
+  description: Extend Ability Cooldown
+  icon: null
+FaceLOrRToTarget:
+  description: Face L Or R To Target
+  icon: null
+FaceToDirectionViaMoreTargets:
+  description: Face To Direction Via More Targets
+  icon: null
+FaceToLOrRViaMoreTargets:
+  description: Face To L Or R Via More Targets
+  icon: null
+FaceToTarget:
+  description: Face To Target
+  icon: null
+FetchEnemyHpToHost:
+  description: Fetch Enemy Hp To Host
+  icon: null
+FetchHpToBlackboard:
+  description: Fetch Hp To Blackboard
+  icon: null
+FilterAbilityApplyWay:
+  description: Filter Ability Apply Way
+  icon: null
+FilterAbilityFamily:
+  description: Filter Ability Family
+  icon: null
+FilterAbilityName:
+  description: Filter Ability Name
+  icon: null
+FilterAbilitySpellCnt:
+  description: Filter Ability Spell Cnt
+  icon: null
+FilterAbilityValidCastTargetCnt:
+  description: Filter Ability Valid Cast Target Cnt
+  icon: null
+FilterBuffKeyInSnapshot:
+  description: Filter Buff Key In Snapshot
+  icon: null
+FilterByAbilityFinishReason:
+  description: Filter By Ability Finish Reason
+  icon: null
+FilterByAbilityIgnorePalsyInterrupt:
+  description: Filter By Ability Ignore Palsy Interrupt
+  icon: null
+FilterByBlackboardValue:
+  description: Filter By Blackboard Value
+  icon: null
+FilterByBuffStackCount:
+  description: Filter By Buff Stack Count
+  icon: null
+FilterByCardUidInBlackboard:
+  description: Filter By Card Uid In Blackboard
+  icon: null
+FilterByCharacterSharedBlackboard:
+  description: Filter By Character Shared Blackboard
+  icon: null
+FilterByExecuteBlackboardValue:
+  description: Filter By Execute Blackboard Value
+  icon: null
+FilterByGlobalBlackboard:
+  description: Filter By Global Blackboard
+  icon: null
+FilterByGridManhattanDistance:
+  description: Filter By Grid Manhattan Distance
+  icon: null
+FilterByTargetAttribute:
+  description: Filter By Target Attribute
+  icon: null
+FilterByTargetEpRatio:
+  description: Filter By Target Ep Ratio
+  icon: null
+FilterByTargetHp:
+  description: Filter By Target Hp
+  icon: null
+FilterByTargetHpRatio:
+  description: Filter By Target Hp Ratio
+  icon: null
+FilterByTargetMassLevel:
+  description: 检查目标重量
+  icon: null
+FilterByTargetSPType:
+  description: Filter By Target S P Type
+  icon: null
+FilterByTargetSpRatio:
+  description: Filter By Target Sp Ratio
+  icon: null
+FilterCardState:
+  description: Filter Card State
+  icon: null
+FilterCharacterKey:
+  description: Filter Character Key
+  icon: null
+FilterCharacterLastDeathReason:
+  description: Filter Character Last Death Reason
+  icon: null
+FilterCharacterSubPrefession:
+  description: Filter Character Sub Prefession
+  icon: null
+FilterDamageModifer:
+  description: Filter Damage Modifer
+  icon: null
+FilterDeathReason:
+  description: Filter Death Reason
+  icon: null
+FilterEPBreakRecoveryType:
+  description: Filter E P Break Recovery Type
+  icon: null
+FilterElementDamageModifer:
+  description: Filter Element Damage Modifer
+  icon: null
+FilterEnemyKey:
+  description: Filter Enemy Key
+  icon: null
+FilterId:
+  description: Filter Id
+  icon: null
+FilterIsDummy:
+  description: Filter Is Dummy
+  icon: null
+FilterModifierByRealDelta:
+  description: Filter Modifier By Real Delta
+  icon: null
+FilterModifierCancelReason:
+  description: Filter Modifier Cancel Reason
+  icon: null
+FilterModifierTargetType:
+  description: Filter Modifier Target Type
+  icon: null
+FilterRootTileOffset:
+  description: Filter Root Tile Offset
+  icon: null
+FilterSkillTriggerdCnt:
+  description: Filter Skill Triggerd Cnt
+  icon: null
+FilterTargetWithPlayerSide:
+  description: Filter Target With Player Side
+  icon: null
+FilterTileBlackboard:
+  description: Filter Tile Blackboard
+  icon: null
+FindNearestBuildableTileToBB:
+  description: Find Nearest Buildable Tile To B B
+  icon: null
+FinishAllBuffsWithCertainAbnormalFlag:
+  description: Finish All Buffs With Certain Abnormal Flag
+  icon: null
+FinishAllStatusResistableBuffs:
+  description: Finish All Status Resistable Buffs
+  icon: null
+FinishBuff:
+  description: 结束Buff
+  icon: null
+FinishBuffsById:
+  description: 根据ID结束Buffs
+  icon: null
+FinishBuffsByIdByBuffSource:
+  description: Finish Buffs By Id By Buff Source
+  icon: null
+FinishBuffsOfEveryCharacterById:
+  description: Finish Buffs Of Every Character By Id
+  icon: null
+FinishBuffsOfEveryEnemyById:
+  description: Finish Buffs Of Every Enemy By Id
+  icon: null
+FinishCardBuff:
+  description: Finish Card Buff
+  icon: null
+FinishCardBuffByCard:
+  description: Finish Card Buff By Card
+  icon: null
+FinishCardBuffByKeyInAbilityBlackboard:
+  description: Finish Card Buff By Key In Ability Blackboard
+  icon: null
+FinishCardBuffsByKey:
+  description: Finish Card Buffs By Key
+  icon: null
+FinishCurrentWave:
+  description: Finish Current Wave
+  icon: null
+FinishDeckBuffByCardUIDAndKey:
+  description: Finish Deck Buff By Card U I D And Key
+  icon: null
+FinishDeckBuffByKey:
+  description: Finish Deck Buff By Key
+  icon: null
+FinishDerivedBuff:
+  description: 结束所有子Buff
+  icon: null
+FinishDerivedBuffById:
+  description: 根据ID结束子Buff
+  icon: null
+FinishGame:
+  description: Finish Game
+  icon: null
+FinishHostBuffsById:
+  description: Finish Host Buffs By Id
+  icon: null
+FinishHostCardBuffByKey:
+  description: Finish Host Card Buff By Key
+  icon: null
+FinishManagedProjectiles:
+  description: Finish Managed Projectiles
+  icon: null
+FinishOneBuffById:
+  description: Finish One Buff By Id
+  icon: null
+FinishSeveralBuffsById:
+  description: Finish Several Buffs By Id
+  icon: null
+FinishSpecifiedTileHoldingEffect:
+  description: Finish Specified Tile Holding Effect
+  icon: null
+FinishTargetRootTileHoldingEffect:
+  description: Finish Target Root Tile Holding Effect
+  icon: null
+FinishTokenBuffsById:
+  description: Finish Token Buffs By Id
+  icon: null
+FinishTokenCardBuffByKey:
+  description: Finish Token Card Buff By Key
+  icon: null
+FixedValueDamage:
+  description: Fixed Value Damage
+  icon: null
+FixedValueElementHeal:
+  description: Fixed Value Element Heal
+  icon: null
+FixedValueHeal:
+  description: Fixed Value Heal
+  icon: null
+FootballAssignScoreToBB:
+  description: Football Assign Score To B B
+  icon: null
+FootballPlayerForceSearchTarget:
+  description: Football Player Force Search Target
+  icon: null
+ForceCharacterAnimatorFaceFront:
+  description: Force Character Animator Face Front
+  icon: null
+ForceCharacterFaceDefaultDirection:
+  description: Force Character Face Default Direction
+  icon: null
+ForceSetBattleSpeedLevel:
+  description: Force Set Battle Speed Level
+  icon: null
+ForceSetToTilePosition:
+  description: Force Set To Tile Position
+  icon: null
+ForceUpdateRange:
+  description: Force Update Range
+  icon: null
+FortressAddTileBlackboard:
+  description: Fortress Add Tile Blackboard
+  icon: null
+GainToken:
+  description: Gain Token
+  icon: null
+GameCityCheckEnemyInExit:
+  description: Game City Check Enemy In Exit
+  icon: null
+GetTargetEnemyId:
+  description: Get Target Enemy Id
+  icon: null
+HalfIdleAddNumericFactor:
+  description: Half Idle Add Numeric Factor
+  icon: null
+HalfIdleCancleNumericFactor:
+  description: Half Idle Cancle Numeric Factor
+  icon: null
+HalfIdleCheckHasCertainTargetUseAbilitySelector:
+  description: Half Idle Check Has Certain Target Use Ability Selector
+  icon: null
+HalfIdleCheckLhblodSPRecoverNum:
+  description: Half Idle Check Lhblod S P Recover Num
+  icon: null
+HalfIdleCheckNearbyRoad:
+  description: Half Idle Check Nearby Road
+  icon: null
+HalfIdleCheckOnIrrigatedTile:
+  description: Half Idle Check On Irrigated Tile
+  icon: null
+HalfIdleCheckSpecificUnitCount:
+  description: Half Idle Check Specific Unit Count
+  icon: null
+HalfIdleDropBattleItem:
+  description: Half Idle Drop Battle Item
+  icon: null
+HalfIdleDropResource:
+  description: Half Idle Drop Resource
+  icon: null
+HalfIdleEnemyDropItem:
+  description: Half Idle Enemy Drop Item
+  icon: null
+HalfIdleGainExp:
+  description: Half Idle Gain Exp
+  icon: null
+HalfIdleGiantTrapCheckShouldAdjustHeight:
+  description: Half Idle Giant Trap Check Should Adjust Height
+  icon: null
+HalfIdleLhkawaTrapAdjustWaterColor:
+  description: Half Idle Lhkawa Trap Adjust Water Color
+  icon: null
+HalfIdleLhkawaTrapNoticeBorn:
+  description: Half Idle Lhkawa Trap Notice Born
+  icon: null
+HalfIdleLhportCheckAbleToSummonShip:
+  description: Half Idle Lhport Check Able To Summon Ship
+  icon: null
+HalfIdleLhtownTrapNoticeBorn:
+  description: Half Idle Lhtown Trap Notice Born
+  icon: null
+HalfIdleModifyLevelCapacity:
+  description: Half Idle Modify Level Capacity
+  icon: null
+HalfIdleModifyLevelCapacityWhiteList:
+  description: Half Idle Modify Level Capacity White List
+  icon: null
+HalfIdlePolluteTrapNoticeBorn:
+  description: Half Idle Pollute Trap Notice Born
+  icon: null
+HalfIdlePolluteTrapNoticeDeath:
+  description: Half Idle Pollute Trap Notice Death
+  icon: null
+HalfIdlePortTrySummonShip:
+  description: Half Idle Port Try Summon Ship
+  icon: null
+HalfIdleSummonEnemyAtTargetMapPos:
+  description: Half Idle Summon Enemy At Target Map Pos
+  icon: null
+HalfIdleSummonRandomEnemyAtTargetMapPos:
+  description: Half Idle Summon Random Enemy At Target Map Pos
+  icon: null
+HalfIdleTriggerTrapUpgradeCheck:
+  description: Half Idle Trigger Trap Upgrade Check
+  icon: null
+HalfIdleUpgradeEquip:
+  description: Half Idle Upgrade Equip
+  icon: null
+HalfIdleUpgradeTrap:
+  description: Half Idle Upgrade Trap
+  icon: null
+HalfIdleUpgradeTrapWithRangeCheck:
+  description: Half Idle Upgrade Trap With Range Check
+  icon: null
+HasCertainCharacterInFrontOfMe:
+  description: Has Certain Character In Front Of Me
+  icon: null
+HaveShieldRoguelike:
+  description: Have Shield Roguelike
+  icon: null
+HealCurrentGiantBossViaMaxHpRatio:
+  description: Heal Current Giant Boss Via Max Hp Ratio
+  icon: null
+HealToken:
+  description: Heal Token
+  icon: null
+HealViaDamage:
+  description: Heal Via Damage
+  icon: null
+HealViaMaxHpRatio:
+  description: Heal Via Max Hp Ratio
+  icon: null
+HideCard:
+  description: Hide Card
+  icon: null
+HideCharacterOrTokenNotInAbilityBlackboard:
+  description: Hide Character Or Token Not In Ability Blackboard
+  icon: null
+HideEntityGraphicOrNot:
+  description: Hide Entity Graphic Or Not
+  icon: null
+HideEntityInFogAndManageBuff:
+  description: Hide Entity In Fog And Manage Buff
+  icon: null
+HoldFootball:
+  description: Hold Football
+  icon: null
+HostKillSummonedApopsisEnemy:
+  description: Host Kill Summoned Apopsis Enemy
+  icon: null
+HpNoLessThanCertainPercentModifier:
+  description: Hp No Less Than Certain Percent Modifier
+  icon: null
+HpRatioToAttributeAdd:
+  description: Hp Ratio To Attribute Add
+  icon: null
+HpRatioToAttributeMul:
+  description: Hp Ratio To Attribute Mul
+  icon: null
+HpRatioTrigger:
+  description: Hp Ratio Trigger
+  icon: null
+IfBossRushBattleArea:
+  description: If Boss Rush Battle Area
+  icon: null
+IfConditions:
+  description: If Conditions
+  icon: null
+IfDamageTargetSide:
+  description: If Damage Target Side
+  icon: null
+IfElse:
+  description: 执行判断
+  icon: null
+IfEnemyIsMoving:
+  description: If Enemy Is Moving
+  icon: null
+IfEnemyIsMovingBySelf:
+  description: If Enemy Is Moving By Self
+  icon: null
+IfModifierTarget:
+  description: If Modifier Target
+  icon: null
+IfNot:
+  description: If Not
+  icon: null
+IfTarget:
+  description: If Target
+  icon: null
+IfTargetEqual:
+  description: If Target Equal
+  icon: null
+IfTargetFromDirection:
+  description: If Target From Direction
+  icon: null
+IfTargetSide:
+  description: If Target Side
+  icon: null
+IgnoreAllButMoveCp:
+  description: Ignore All But Move Cp
+  icon: null
+InitBossRushController:
+  description: Init Boss Rush Controller
+  icon: null
+InitBossRushRecodr:
+  description: Init Boss Rush Recodr
+  icon: null
+InitFootball:
+  description: Init Football
+  icon: null
+InitForces:
+  description: Init Forces
+  icon: null
+InsertCheckPointInRuntimeRoute:
+  description: Insert Check Point In Runtime Route
+  icon: null
+InstantKill:
+  description: Instant Kill
+  icon: null
+InterruptAbility:
+  description: Interrupt Ability
+  icon: null
+InterruptCharacterAbility:
+  description: Interrupt Character Ability
+  icon: null
+InterruptCharacterAttack:
+  description: Interrupt Character Attack
+  icon: null
+InterruptCharacterSkill:
+  description: Interrupt Character Skill
+  icon: null
+InterruptEnemyAbility:
+  description: Interrupt Enemy Ability
+  icon: null
+InterruptEnemyCombat:
+  description: Interrupt Enemy Combat
+  icon: null
+InterruptTokenSkill:
+  description: 中断召唤物技能
+  icon: null
+InverseDamage:
+  description: Inverse Damage
+  icon: null
+IsAtkScaleZero:
+  description: Is Atk Scale Zero
+  icon: null
+IsBlackboardEqualWithFloat:
+  description: Is Blackboard Equal With Float
+  icon: null
+IsBlackboardEqualWithString:
+  description: Is Blackboard Equal With String
+  icon: null
+IsBlackboardZero:
+  description: Is Blackboard Zero
+  icon: null
+IsCharacter:
+  description: Is Character
+  icon: null
+IsCharacterOrTokenOrTrap:
+  description: Is Character Or Token Or Trap
+  icon: null
+IsCloseToFootball:
+  description: Is Close To Football
+  icon: null
+IsConsumerOfTrySetHpZeroModifier:
+  description: Is Consumer Of Try Set Hp Zero Modifier
+  icon: null
+IsDamage:
+  description: Is Damage
+  icon: null
+IsElementDamage:
+  description: Is Element Damage
+  icon: null
+IsElementHeal:
+  description: Is Element Heal
+  icon: null
+IsFeverFull:
+  description: Is Fever Full
+  icon: null
+IsHeal:
+  description: Is Heal
+  icon: null
+IsHostML12:
+  description: Is Host M L12
+  icon: null
+IsIgnoreForSp:
+  description: Is Ignore For Sp
+  icon: null
+IsInFever:
+  description: Is In Fever
+  icon: null
+IsMimicEnemy:
+  description: Is Mimic Enemy
+  icon: null
+IsPropLikeEnemy:
+  description: Is Prop Like Enemy
+  icon: null
+IsRogueLikeBoss:
+  description: Is Rogue Like Boss
+  icon: null
+IsSummonerAlive:
+  description: Is Summoner Alive
+  icon: null
+IsTargetInDialog:
+  description: Is Target In Dialog
+  icon: null
+IsTargetInEPBreakRecovery:
+  description: Is Target In E P Break Recovery
+  icon: null
+IsUnharmfulEnemy:
+  description: Is Unharmful Enemy
+  icon: null
+KillCharacterOnTileIfExists:
+  description: Kill Character On Tile If Exists
+  icon: null
+KillTokens:
+  description: Kill Tokens
+  icon: null
+KnockBackWithCharacterDirection:
+  description: Knock Back With Character Direction
+  icon: null
+KnockBackWithDirection:
+  description: Knock Back With Direction
+  icon: null
+Knockback:
+  description: Knockback
+  icon: null
+LandFootball:
+  description: Land Football
+  icon: null
+LegionModeOnlyAddLastProfessionLevel:
+  description: Legion Mode Only Add Last Profession Level
+  icon: null
+LegionModeOnlyAddProfessionLevel:
+  description: Legion Mode Only Add Profession Level
+  icon: null
+LegionModeOnlyAddProfessionLevelFromLastSelectCards:
+  description: Legion Mode Only Add Profession Level From Last Select Cards
+  icon: null
+LegionModeOnlyAssignCardCntToBB:
+  description: Legion Mode Only Assign Card Cnt To B B
+  icon: null
+LegionModeOnlyAssignCardPriceToBB:
+  description: Legion Mode Only Assign Card Price To B B
+  icon: null
+LegionModeOnlyAssignDangerLevelToBB:
+  description: Legion Mode Only Assign Danger Level To B B
+  icon: null
+LegionModeOnlyAssignSpecifiedProfessionStackCntToBB:
+  description: Legion Mode Only Assign Specified Profession Stack Cnt To B B
+  icon: null
+LegionModeOnlyAssignStatusProfessionCntToBB:
+  description: Legion Mode Only Assign Status Profession Cnt To B B
+  icon: null
+LegionModeOnlyAssignStatusStackCntToBB:
+  description: Legion Mode Only Assign Status Stack Cnt To B B
+  icon: null
+LegionModeOnlyCharacterOnDying:
+  description: Legion Mode Only Character On Dying
+  icon: null
+LegionModeOnlyCheckCardInHand:
+  description: Legion Mode Only Check Card In Hand
+  icon: null
+LegionModeOnlyCheckHandCardNotFull:
+  description: Legion Mode Only Check Hand Card Not Full
+  icon: null
+LegionModeOnlyCheckLastSelectCardsContainsProfession:
+  description: Legion Mode Only Check Last Select Cards Contains Profession
+  icon: null
+LegionModeOnlyClearProfessionLevel:
+  description: Legion Mode Only Clear Profession Level
+  icon: null
+LegionModeOnlyCreateBuffToDyingInRange:
+  description: Legion Mode Only Create Buff To Dying In Range
+  icon: null
+LegionModeOnlyCreateCardBuffToOneCardByCost:
+  description: Legion Mode Only Create Card Buff To One Card By Cost
+  icon: null
+LegionModeOnlyDrawCardViaID:
+  description: Legion Mode Only Draw Card Via I D
+  icon: null
+LegionModeOnlyDrawCardViaProfession:
+  description: Legion Mode Only Draw Card Via Profession
+  icon: null
+LegionModeOnlyDrawNextCard:
+  description: Legion Mode Only Draw Next Card
+  icon: null
+LegionModeOnlyEnemyDeathDrop:
+  description: Legion Mode Only Enemy Death Drop
+  icon: null
+LegionModeOnlyFinishTemporaryProfessionStatus:
+  description: Legion Mode Only Finish Temporary Profession Status
+  icon: null
+LegionModeOnlyForceRecycleUsingCard:
+  description: Legion Mode Only Force Recycle Using Card
+  icon: null
+LegionModeOnlyGainGold:
+  description: Legion Mode Only Gain Gold
+  icon: null
+LegionModeOnlyGainGoldViaCardNum:
+  description: Legion Mode Only Gain Gold Via Card Num
+  icon: null
+LegionModeOnlyGainTrap:
+  description: Legion Mode Only Gain Trap
+  icon: null
+LegionModeOnlyGetGoldViaProfessionBuffCount:
+  description: Legion Mode Only Get Gold Via Profession Buff Count
+  icon: null
+LegionModeOnlyGlobalDamageFromCard:
+  description: Legion Mode Only Global Damage From Card
+  icon: null
+LegionModeOnlyMarkCardReturnToHand:
+  description: Legion Mode Only Mark Card Return To Hand
+  icon: null
+LegionModeOnlyMarkCardUseOnce:
+  description: Legion Mode Only Mark Card Use Once
+  icon: null
+LegionModeOnlyModifyCharLevelDefaultAddCnt:
+  description: Legion Mode Only Modify Char Level Default Add Cnt
+  icon: null
+LegionModeOnlyModifyCharacterOverlapState:
+  description: Legion Mode Only Modify Character Overlap State
+  icon: null
+LegionModeOnlyModifyDangerUpgradeTimeScale:
+  description: Legion Mode Only Modify Danger Upgrade Time Scale
+  icon: null
+LegionModeOnlyModifyMaxProfessionBuffCnt:
+  description: Legion Mode Only Modify Max Profession Buff Cnt
+  icon: null
+LegionModeOnlyResetDangerUpgradeTimeScale:
+  description: Legion Mode Only Reset Danger Upgrade Time Scale
+  icon: null
+LegionModeOnlySelectCard:
+  description: Legion Mode Only Select Card
+  icon: null
+LegionModeOnlyShowStatusMessage:
+  description: Legion Mode Only Show Status Message
+  icon: null
+LegionModeOnlyTakeCardBackToHand:
+  description: Legion Mode Only Take Card Back To Hand
+  icon: null
+LegionModeOnlyTemporaryAddEachProfessionStatus:
+  description: Legion Mode Only Temporary Add Each Profession Status
+  icon: null
+LogExtraBattleInfo:
+  description: Log Extra Battle Info
+  icon: null
+LogExtraBattleInfoForBossRush:
+  description: Log Extra Battle Info For Boss Rush
+  icon: null
+LogExtraBattleInfoForBuff:
+  description: Log Extra Battle Info For Buff
+  icon: null
+LogExtraBattleInfoForCurrentPlayTime:
+  description: Log Extra Battle Info For Current Play Time
+  icon: null
+LogExtraBattleInfoForModifierRealDelta:
+  description: Log Extra Battle Info For Modifier Real Delta
+  icon: null
+LogExtraBattleInfoForTotalEnemyCnt:
+  description: Log Extra Battle Info For Total Enemy Cnt
+  icon: null
+LogExtraBattleInfoInstId:
+  description: Log Extra Battle Info Inst Id
+  icon: null
+LogExtraBattleInfoUnsafe:
+  description: Log Extra Battle Info Unsafe
+  icon: null
+LogExtraBattleInfoUseFrameCntAsKey:
+  description: Log Extra Battle Info Use Frame Cnt As Key
+  icon: null
+LogExtraBattleInfoWithNoTarget:
+  description: Log Extra Battle Info With No Target
+  icon: null
+Loop:
+  description: Loop
+  icon: null
+Main15FilterPrtsLastSubAction:
+  description: Main15 Filter Prts Last Sub Action
+  icon: null
+Main15ForceSetBattleSpeedLevel:
+  description: Main15 Force Set Battle Speed Level
+  icon: null
+Main15InsertPrtsAction:
+  description: Main15 Insert Prts Action
+  icon: null
+Main15SkipPrtsAction:
+  description: Main15 Skip Prts Action
+  icon: null
+Main15TryNextPrtsAction:
+  description: Main15 Try Next Prts Action
+  icon: null
+Main16ChangeTileShadowViaRange:
+  description: Main16 Change Tile Shadow Via Range
+  icon: null
+Mainline14InformLrdeadDeath:
+  description: Mainline14 Inform Lrdead Death
+  icon: null
+Mainline14TriggerSkill:
+  description: Mainline14 Trigger Skill
+  icon: null
+MakeTargetDyingInCooperate:
+  description: Make Target Dying In Cooperate
+  icon: null
+ManageAttachListenerAbility:
+  description: Manage Attach Listener Ability
+  icon: null
+ManageSbell2AttachListenerAbility:
+  description: Manage Sbell2 Attach Listener Ability
+  icon: null
+ManageTileEffectAssociateWithTargetRoute:
+  description: Manage Tile Effect Associate With Target Route
+  icon: null
+MarkCurrentHpRatio:
+  description: Mark Current Hp Ratio
+  icon: null
+MarkDangerAreaFinished:
+  description: Mark Danger Area Finished
+  icon: null
+MarkFogTickTime:
+  description: Mark Fog Tick Time
+  icon: null
+MarkFogView:
+  description: Mark Fog View
+  icon: null
+MarkFogViewByAbilitySelector:
+  description: Mark Fog View By Ability Selector
+  icon: null
+ModifierScaleUp:
+  description: Modifier Scale Up
+  icon: null
+ModifyAbilityAttackTime:
+  description: Modify Ability Attack Time
+  icon: null
+ModifyAbilityBlackboard:
+  description: Modify Ability Blackboard
+  icon: null
+ModifyAbilityBlackboardAndCast:
+  description: Modify Ability Blackboard And Cast
+  icon: null
+ModifyAnimatorHookerReplacePair:
+  description: Modify Animator Hooker Replace Pair
+  icon: null
+ModifyAttackBlackboard:
+  description: Modify Attack Blackboard
+  icon: null
+ModifyAttackMaxTarget:
+  description: Modify Attack Max Target
+  icon: null
+ModifyAttackMaxTileNum:
+  description: Modify Attack Max Tile Num
+  icon: null
+ModifyAttributeDataRangeOverride:
+  description: Modify Attribute Data Range Override
+  icon: null
+ModifyAttributeRawDataByEntity:
+  description: Modify Attribute Raw Data By Entity
+  icon: null
+ModifyBlackboard:
+  description: Modify Blackboard
+  icon: null
+ModifyBlackboardFromTrait:
+  description: Modify Blackboard From Trait
+  icon: null
+ModifyBlackboardMainline12:
+  description: Modify Blackboard Mainline12
+  icon: null
+ModifyBlackboardStr:
+  description: Modify Blackboard Str
+  icon: null
+ModifyBoomberangMaxCnt:
+  description: Modify Boomberang Max Cnt
+  icon: null
+ModifyBossRushBattleAreaData:
+  description: Modify Boss Rush Battle Area Data
+  icon: null
+ModifyCharacterAbilityRange:
+  description: Modify Character Ability Range
+  icon: null
+ModifyCharacterAttackTriggerRangeId:
+  description: Modify Character Attack Trigger Range Id
+  icon: null
+ModifyCharacterLimit:
+  description: Modify Character Limit
+  icon: null
+ModifyCharacterSkillAbilityBlackboard:
+  description: Modify Character Skill Ability Blackboard
+  icon: null
+ModifyCharacterSpineColor:
+  description: Modify Character Spine Color
+  icon: null
+ModifyCost:
+  description: Modify Cost
+  icon: null
+ModifyCostIncreaseTime:
+  description: Modify Cost Increase Time
+  icon: null
+ModifyDynamicVar:
+  description: Modify Dynamic Var
+  icon: null
+ModifyEnemyGraphicScale:
+  description: Modify Enemy Graphic Scale
+  icon: null
+ModifyEnemySkillMaxTarget:
+  description: Modify Enemy Skill Max Target
+  icon: null
+ModifyEnemySpUIFlag:
+  description: Modify Enemy Sp U I Flag
+  icon: null
+ModifyFootballKickValue:
+  description: Modify Football Kick Value
+  icon: null
+ModifyFunnelMaxAtkScaleMultiplier:
+  description: Modify Funnel Max Atk Scale Multiplier
+  icon: null
+ModifyGlobalBuffBlackboard:
+  description: Modify Global Buff Blackboard
+  icon: null
+ModifyGraphicHolderHeight:
+  description: Modify Graphic Holder Height
+  icon: null
+ModifyLifePoint:
+  description: Modify Life Point
+  icon: null
+ModifyMaxCost:
+  description: Modify Max Cost
+  icon: null
+ModifyOverlapSourceId:
+  description: Modify Overlap Source Id
+  icon: null
+ModifyOverlapSourceIdWithAllCardId:
+  description: Modify Overlap Source Id With All Card Id
+  icon: null
+ModifyOverlapTakeEffect:
+  description: Modify Overlap Take Effect
+  icon: null
+ModifyRuntimeRouteUseBranchRoute:
+  description: Modify Runtime Route Use Branch Route
+  icon: null
+ModifySp:
+  description: Modify Sp
+  icon: null
+ModifySpData:
+  description: Modify Sp Data
+  icon: null
+ModifyTileBlackboard:
+  description: Modify Tile Blackboard
+  icon: null
+MoveNextLevelBranch:
+  description: Move Next Level Branch
+  icon: null
+NoSourceDamage:
+  description: 造成无来源伤害
+  icon: null
+NoSourceDamageNew:
+  description: No Source Damage New
+  icon: null
+NoSourceGlobalDamageScaleByBuffCnt:
+  description: No Source Global Damage Scale By Buff Cnt
+  icon: null
+OnRallyPointLikeReborn:
+  description: On Rally Point Like Reborn
+  icon: null
+PalsyBuffAdd:
+  description: Palsy Buff Add
+  icon: null
+PalsyBuffMaxCntUpdate:
+  description: Palsy Buff Max Cnt Update
+  icon: null
+PickRandomBranchPhase:
+  description: Pick Random Branch Phase
+  icon: null
+PlayAudio:
+  description: 播放音效
+  icon: null
+PlayBGM:
+  description: Play B G M
+  icon: null
+PlayMeshAnimation:
+  description: Play Mesh Animation
+  icon: null
+PlayUnitAnimation:
+  description: Play Unit Animation
+  icon: null
+RO4DLC2EndBossSealTileSkill:
+  description: R O4 D L C2 End Boss Seal Tile Skill
+  icon: null
+RO4DLC2TriggerBossSealTileSkill:
+  description: R O4 D L C2 Trigger Boss Seal Tile Skill
+  icon: null
+RacingCameraZoomIn:
+  description: Racing Camera Zoom In
+  icon: null
+RacingEnemyAddAttribute:
+  description: Racing Enemy Add Attribute
+  icon: null
+RacingEnemyBleeding:
+  description: Racing Enemy Bleeding
+  icon: null
+RacingEnemyFilterByMode:
+  description: Racing Enemy Filter By Mode
+  icon: null
+RacingEnemyFilterByRanking:
+  description: Racing Enemy Filter By Ranking
+  icon: null
+RacingEnemyIsMine:
+  description: Racing Enemy Is Mine
+  icon: null
+RacingEnemyLockMagnet:
+  description: Racing Enemy Lock Magnet
+  icon: null
+RacingEnemyRecover:
+  description: Racing Enemy Recover
+  icon: null
+RaiseDialogue:
+  description: Raise Dialogue
+  icon: null
+RallyPointReborn:
+  description: Rally Point Reborn
+  icon: null
+RandomAction:
+  description: Random Action
+  icon: null
+RandomCreateBuff:
+  description: Random Create Buff
+  icon: null
+RandomSetter:
+  description: Random Setter
+  icon: null
+ReInitEnemySkillCoolDown:
+  description: Re Init Enemy Skill Cool Down
+  icon: null
+RebuildCharacterOnTileInRange:
+  description: Rebuild Character On Tile In Range
+  icon: null
+RecalculateDamage:
+  description: Recalculate Damage
+  icon: null
+RechargeToken:
+  description: 补充召唤物
+  icon: null
+RecordAbilityRemainingTime:
+  description: Record Ability Remaining Time
+  icon: null
+RecordCurrentHpRatio:
+  description: Record Current Hp Ratio
+  icon: null
+RecordDamageModifier:
+  description: Record Damage Modifier
+  icon: null
+RefreshAttachListenerToTileAbility:
+  description: Refresh Attach Listener To Tile Ability
+  icon: null
+RefreshMagicCircuitRoute:
+  description: Refresh Magic Circuit Route
+  icon: null
+RefreshTokenDeployAndStackCnt:
+  description: Refresh Token Deploy And Stack Cnt
+  icon: null
+RefreshextraTileGraphic:
+  description: Refreshextra Tile Graphic
+  icon: null
+RegistProgressBuff:
+  description: Regist Progress Buff
+  icon: null
+RegistTaskUI:
+  description: Regist Task U I
+  icon: null
+RegisterAsStand:
+  description: Register As Stand
+  icon: null
+RegisterMagicCircuitRoute:
+  description: Register Magic Circuit Route
+  icon: null
+RegisterMagicCircuitSpAffect:
+  description: Register Magic Circuit Sp Affect
+  icon: null
+ReleaseEnemyFromCurrentWave:
+  description: Release Enemy From Current Wave
+  icon: null
+ReleaseFromBlocker:
+  description: Release From Blocker
+  icon: null
+RemainingRatioToAttributeModifier:
+  description: Remaining Ratio To Attribute Modifier
+  icon: null
+RemoveCostTimerModifier:
+  description: Remove Cost Timer Modifier
+  icon: null
+RemoveFearTargetTiles:
+  description: Remove Fear Target Tiles
+  icon: null
+RemoveGameFinishBlockerByKey:
+  description: Remove Game Finish Blocker By Key
+  icon: null
+RemoveRootTileFromBB:
+  description: Remove Root Tile From B B
+  icon: null
+RemoveTileBindingGlobalBuff:
+  description: Remove Tile Binding Global Buff
+  icon: null
+ReplaceAbilityDamageType:
+  description: Replace Ability Damage Type
+  icon: null
+ResetAbilityAtkScale:
+  description: Reset Ability Atk Scale
+  icon: null
+ResetAllBuffsTriggerTimer:
+  description: Reset All Buffs Trigger Timer
+  icon: null
+ResetBuffAbilityAtkScaleWithBuffCnt:
+  description: Reset Buff Ability Atk Scale With Buff Cnt
+  icon: null
+ResetCardRespawnTime:
+  description: Reset Card Respawn Time
+  icon: null
+ResetDataFunLiveModeOnly:
+  description: Reset Data Fun Live Mode Only
+  icon: null
+RespawnCharacter:
+  description: Respawn Character
+  icon: null
+RespawnCharacterByCardUid:
+  description: Respawn Character By Card Uid
+  icon: null
+RestartAuraAbilityBySideType:
+  description: Restart Aura Ability By Side Type
+  icon: null
+ReturnDeployCost:
+  description: Return Deploy Cost
+  icon: null
+RewriteDynamicBuffTileOptionsInRangeWhenSpecialMode:
+  description: Rewrite Dynamic Buff Tile Options In Range When Special Mode
+  icon: null
+RewriteDynamicBuffTileOptionsOneLine:
+  description: Rewrite Dynamic Buff Tile Options One Line
+  icon: null
+RewriteTileOptions:
+  description: Rewrite Tile Options
+  icon: null
+RewriteTileOptionsInRange:
+  description: Rewrite Tile Options In Range
+  icon: null
+RistarInVerticalMovement:
+  description: Ristar In Vertical Movement
+  icon: null
+RistarRecordDirection:
+  description: Ristar Record Direction
+  icon: null
+RoguelikeCheckZoneType:
+  description: Roguelike Check Zone Type
+  icon: null
+RoguelikeDeifyModeCheckStage:
+  description: Roguelike Deify Mode Check Stage
+  icon: null
+RoguelikeDeifyModeRegisterChosenCharacter:
+  description: Roguelike Deify Mode Register Chosen Character
+  icon: null
+RoguelikeDeifyModeRegisterDeifyTrap:
+  description: Roguelike Deify Mode Register Deify Trap
+  icon: null
+RoguelikeFilterCharacterInCandleHolder:
+  description: Roguelike Filter Character In Candle Holder
+  icon: null
+RoguelikeFilterFragmentCarryChar:
+  description: Roguelike Filter Fragment Carry Char
+  icon: null
+RoguelikeInheritEnemyHp:
+  description: Roguelike Inherit Enemy Hp
+  icon: null
+RoguelikeLogExp:
+  description: Roguelike Log Exp
+  icon: null
+RoguelikeRecordUnitStatus:
+  description: Roguelike Record Unit Status
+  icon: null
+RoguelikeShowToastRL04:
+  description: Roguelike Show Toast R L04
+  icon: null
+RoguelikeShowToastRL05:
+  description: Roguelike Show Toast R L05
+  icon: null
+RollRogueDice:
+  description: Roll Rogue Dice
+  icon: null
+RoundBuffBlackboard:
+  description: Round Buff Blackboard
+  icon: null
+RunActionsToWdslmAbilityTarget:
+  description: Run Actions To Wdslm Ability Target
+  icon: null
+SandboxAssignCharacterCountWithFoodToBlackboard:
+  description: Sandbox Assign Character Count With Food To Blackboard
+  icon: null
+SandboxAssignDayCountToBb:
+  description: Sandbox Assign Day Count To Bb
+  icon: null
+SandboxCheckCurrentMode:
+  description: Sandbox Check Current Mode
+  icon: null
+SandboxCheckEnemyCanTraceTarget:
+  description: Sandbox Check Enemy Can Trace Target
+  icon: null
+SandboxCheckHasFoodBuff:
+  description: Sandbox Check Has Food Buff
+  icon: null
+SandboxCheckHasResource:
+  description: Sandbox Check Has Resource
+  icon: null
+SandboxCheckSpecialUniEnemy:
+  description: Sandbox Check Special Uni Enemy
+  icon: null
+SandboxCollectPackedRes:
+  description: Sandbox Collect Packed Res
+  icon: null
+SandboxDisableClickCharacterInfo:
+  description: Sandbox Disable Click Character Info
+  icon: null
+SandboxEnableTraceTarget:
+  description: Sandbox Enable Trace Target
+  icon: null
+SandboxEntityDropItem:
+  description: Sandbox Entity Drop Item
+  icon: null
+SandboxHunterDropItem:
+  description: Sandbox Hunter Drop Item
+  icon: null
+SandboxHunterKillEnemy:
+  description: Sandbox Hunter Kill Enemy
+  icon: null
+SandboxIsRushEnemy:
+  description: Sandbox Is Rush Enemy
+  icon: null
+SandboxIsRushEnemyMode:
+  description: Sandbox Is Rush Enemy Mode
+  icon: null
+SandboxMarkRushEnemyDead:
+  description: Sandbox Mark Rush Enemy Dead
+  icon: null
+SandboxMarkRushEnemyReachExit:
+  description: Sandbox Mark Rush Enemy Reach Exit
+  icon: null
+SandboxMarkTraceReached:
+  description: Sandbox Mark Trace Reached
+  icon: null
+SandboxProcessSpecialEnemy:
+  description: Sandbox Process Special Enemy
+  icon: null
+SandboxRecordBossState:
+  description: Sandbox Record Boss State
+  icon: null
+SandboxRecordUniEnemyStatus:
+  description: Sandbox Record Uni Enemy Status
+  icon: null
+SandboxRefreshBossState:
+  description: Sandbox Refresh Boss State
+  icon: null
+SandboxSetEnemyTraceTarget:
+  description: Sandbox Set Enemy Trace Target
+  icon: null
+SandboxSetUniEnemyStatus:
+  description: Sandbox Set Uni Enemy Status
+  icon: null
+SandboxShowToast:
+  description: Sandbox Show Toast
+  icon: null
+SandboxTransferRes:
+  description: Sandbox Transfer Res
+  icon: null
+SaveHpToDynamicVar:
+  description: Save Hp To Dynamic Var
+  icon: null
+SetAtkScaleZero:
+  description: Set Atk Scale Zero
+  icon: null
+SetBodyDirection:
+  description: Set Body Direction
+  icon: null
+SetBuffLifeTimeAndRemainingTime:
+  description: Set Buff Life Time And Remaining Time
+  icon: null
+SetBuildCntToBlackboard:
+  description: Set Build Cnt To Blackboard
+  icon: null
+SetCameraMoveDirectlyDisableState:
+  description: Set Camera Move Directly Disable State
+  icon: null
+SetCastSkillCost:
+  description: Set Cast Skill Cost
+  icon: null
+SetCharacterDontOccupyDeployCntFlag:
+  description: Set Character Dont Occupy Deploy Cnt Flag
+  icon: null
+SetCharacterMaxEs:
+  description: Set Character Max Es
+  icon: null
+SetCostIncreaseTime:
+  description: Set Cost Increase Time
+  icon: null
+SetDisableClickCharacterInfo:
+  description: Set Disable Click Character Info
+  icon: null
+SetDisappear:
+  description: Set Disappear
+  icon: null
+SetEnemySpecialBlockCondition:
+  description: Set Enemy Special Block Condition
+  icon: null
+SetExternWithdrawGainCostFlag:
+  description: Set Extern Withdraw Gain Cost Flag
+  icon: null
+SetHpSameToSource:
+  description: Set Hp Same To Source
+  icon: null
+SetIgnoreCancelReasonMask:
+  description: Set Ignore Cancel Reason Mask
+  icon: null
+SetIgnoreMissFlag:
+  description: Set Ignore Miss Flag
+  icon: null
+SetMagicCircuitLikeObstacleInRange:
+  description: Set Magic Circuit Like Obstacle In Range
+  icon: null
+SetMaxMinusHpRatio:
+  description: Set Max Minus Hp Ratio
+  icon: null
+SetMultiAppearSkillPendingToCast:
+  description: Set Multi Appear Skill Pending To Cast
+  icon: null
+SetSharedFlag:
+  description: Set Shared Flag
+  icon: null
+SetSpineSkin:
+  description: Set Spine Skin
+  icon: null
+SetStackCountViaBlockNum:
+  description: Set Stack Count Via Block Num
+  icon: null
+SetTilesEnableOverlap:
+  description: Set Tiles Enable Overlap
+  icon: null
+SetUnitAnimatorTransform:
+  description: Set Unit Animator Transform
+  icon: null
+SetWithdrawCostRecoverRatio:
+  description: Set Withdraw Cost Recover Ratio
+  icon: null
+ShakeCamera:
+  description: Shake Camera
+  icon: null
+ShowRoutePreviewCursor:
+  description: Show Route Preview Cursor
+  icon: null
+ShowToast:
+  description: Show Toast
+  icon: null
+SkipCursorCheckPoint:
+  description: Skip Cursor Check Point
+  icon: null
+SkipStage:
+  description: Skip Stage
+  icon: null
+SortDeck:
+  description: Sort Deck
+  icon: null
+SpShowBuff:
+  description: Sp Show Buff
+  icon: null
+SpawnCharacterByUid:
+  description: Spawn Character By Uid
+  icon: null
+SpawnTokenInCharacterRangeById:
+  description: Spawn Token In Character Range By Id
+  icon: null
+SpawnTokenOnRangeTile:
+  description: Spawn Token On Range Tile
+  icon: null
+SpawnTokenOnTargetTile:
+  description: Spawn Token On Target Tile
+  icon: null
+SpawnTokenOnTargetTileWithCondition:
+  description: Spawn Token On Target Tile With Condition
+  icon: null
+SpawnTokenOnTileByBlackboard:
+  description: Spawn Token On Tile By Blackboard
+  icon: null
+SpawnTokenUseAbilitySelector:
+  description: Spawn Token Use Ability Selector
+  icon: null
+SplashDamage:
+  description: Splash Damage
+  icon: null
+SplitDamageToNearbyOperators:
+  description: Split Damage To Nearby Operators
+  icon: null
+StartTimeline:
+  description: Start Timeline
+  icon: null
+StopBall:
+  description: Stop Ball
+  icon: null
+StopEnemyForceTracePosition:
+  description: Stop Enemy Force Trace Position
+  icon: null
+SummonEnemiesAverageOnTilesToTarget:
+  description: Summon Enemies Average On Tiles To Target
+  icon: null
+SummonEnemiesFollowBranchRoute:
+  description: Summon Enemies Follow Branch Route
+  icon: null
+SummonEnemiesFollowBranchRouteWithTileBlackboard:
+  description: Summon Enemies Follow Branch Route With Tile Blackboard
+  icon: null
+SummonEnemiesFollowMyRoute:
+  description: Summon Enemies Follow My Route
+  icon: null
+SummonEnemiesFollowMyRouteWithBuff:
+  description: Summon Enemies Follow My Route With Buff
+  icon: null
+SummonEnemiesOnAttackRange:
+  description: Summon Enemies On Attack Range
+  icon: null
+SummonEnemiesOnTargetTile:
+  description: Summon Enemies On Target Tile
+  icon: null
+SummonEnemiesOnTileSurroundedByTrapsWithRuntimeNearestEndPointRoute:
+  description: Summon Enemies On Tile Surrounded By Traps With Runtime Nearest End Point Route
+  icon: null
+SummonEnemiesWithRuntimeNearestEndPointRoute:
+  description: Summon Enemies With Runtime Nearest End Point Route
+  icon: null
+SummonEnemyWithRuntimeRoute:
+  description: Summon Enemy With Runtime Route
+  icon: null
+Svash2EmitProjectileFixedDirection:
+  description: Svash2 Emit Projectile Fixed Direction
+  icon: null
+Svash2LRCardPositionSwap:
+  description: Svash2 L R Card Position Swap
+  icon: null
+Svash2RemoveCardOverrideByCardUid:
+  description: Svash2 Remove Card Override By Card Uid
+  icon: null
+SwitchDirection:
+  description: Switch Direction
+  icon: null
+SwitchDynamicBuffTileMode:
+  description: Switch Dynamic Buff Tile Mode
+  icon: null
+SwitchDynamicBuffTileModeInRange:
+  description: Switch Dynamic Buff Tile Mode In Range
+  icon: null
+SwitchDynamicBuffTileModeOneLine:
+  description: Switch Dynamic Buff Tile Mode One Line
+  icon: null
+SwitchDynamicBuffTileModeUseAbilitySelector:
+  description: Switch Dynamic Buff Tile Mode Use Ability Selector
+  icon: null
+SwitchMode:
+  description: 切换模式
+  icon: null
+SwitchRacingMode:
+  description: Switch Racing Mode
+  icon: null
+SwitchRallyPointCategory:
+  description: Switch Rally Point Category
+  icon: null
+SwitchSide:
+  description: Switch Side
+  icon: null
+SwitchSkillRangeIdModeIndex:
+  description: Switch Skill Range Id Mode Index
+  icon: null
+SwitchSourceDirection:
+  description: Switch Source Direction
+  icon: null
+SwitchSubSpineConfig:
+  description: Switch Sub Spine Config
+  icon: null
+SwitchToRebornState:
+  description: Switch To Reborn State
+  icon: null
+SwitchTokenCategory:
+  description: Switch Token Category
+  icon: null
+TargetHpRatioToAtkScale:
+  description: Target Hp Ratio To Atk Scale
+  icon: null
+TrackEnemyInLaterWave:
+  description: Track Enemy In Later Wave
+  icon: null
+TransferRemainingCharacterCntVolume:
+  description: Transfer Remaining Character Cnt Volume
+  icon: null
+TrapRockflSummonLtrock:
+  description: Trap Rockfl Summon Ltrock
+  icon: null
+TriggerAbility:
+  description: 触发能力
+  icon: null
+TriggerAbilityMergeBB:
+  description: Trigger Ability Merge B B
+  icon: null
+TriggerAbilityUseSelector:
+  description: Trigger Ability Use Selector
+  icon: null
+TriggerAbilityUseSelectorMergeBB:
+  description: Trigger Ability Use Selector Merge B B
+  icon: null
+TriggerAttachListenerToTileAbility:
+  description: Trigger Attach Listener To Tile Ability
+  icon: null
+TriggerAutoSkill:
+  description: Trigger Auto Skill
+  icon: null
+TriggerBuff:
+  description: Trigger Buff
+  icon: null
+TriggerBuffsByKeys:
+  description: Trigger Buffs By Keys
+  icon: null
+TriggerEnemySkill:
+  description: Trigger Enemy Skill
+  icon: null
+TriggerEnvSystem:
+  description: Trigger Env System
+  icon: null
+TriggerHostsBuffsByKeys:
+  description: Trigger Hosts Buffs By Keys
+  icon: null
+TriggerPalsy:
+  description: Trigger Palsy
+  icon: null
+TriggerSkill:
+  description: Trigger Skill
+  icon: null
+TriggerSpecifiedAbility:
+  description: Trigger Specified Ability
+  icon: null
+TriggerTileInRange:
+  description: Trigger Tile In Range
+  icon: null
+TriggerTokenSkill:
+  description: Trigger Token Skill
+  icon: null
+TriggerTokenSkillWithinManhattanDistance:
+  description: Trigger Token Skill Within Manhattan Distance
+  icon: null
+TriggerTokensAbility:
+  description: Trigger Tokens Ability
+  icon: null
+TryRemoveRuntimeRoute:
+  description: Try Remove Runtime Route
+  icon: null
+UnitSummonApopsisEnemy:
+  description: Unit Summon Apopsis Enemy
+  icon: null
+UnlockHiddenArea:
+  description: Unlock Hidden Area
+  icon: null
+UnregisterMagicCircuitRoute:
+  description: Unregister Magic Circuit Route
+  icon: null
+UnregisterMagicCircuitSpAffect:
+  description: Unregister Magic Circuit Sp Affect
+  icon: null
+UpdateAbilityCoolDown:
+  description: Update Ability Cool Down
+  icon: null
+UpdateAttributeRawData:
+  description: Update Attribute Raw Data
+  icon: null
+UpdateBuffAttributeModifier:
+  description: Update Buff Attribute Modifier
+  icon: null
+UpdateEnemyCurrentTile:
+  description: Update Enemy Current Tile
+  icon: null
+UpdateFrictionFactor:
+  description: Update Friction Factor
+  icon: null
+UpdateObjectScaleViaRemainingRatio:
+  description: Update Object Scale Via Remaining Ratio
+  icon: null
+UpdateScoreManually:
+  description: Update Score Manually
+  icon: null
+UpdateStackBuffMaxStackCnt:
+  description: Update Stack Buff Max Stack Cnt
+  icon: null
+VerifyTargetWithCertainSource:
+  description: Verify Target With Certain Source
+  icon: null
+VertifyTarget:
+  description: Vertify Target
+  icon: null
+WeakDamage:
+  description: Weak Damage
+  icon: null
+Whitw2Skill3EmitFunnelProjectile:
+  description: Whitw2 Skill3 Emit Funnel Projectile
+  icon: null
+Withdraw:
+  description: Withdraw
+  icon: null
+WithdrawAlltheSameExcludeSource:
+  description: Withdraw Allthe Same Exclude Source
+  icon: null
+WithdrawTokens:
+  description: Withdraw Tokens
+  icon: null
+WriteBossrushWaveCntToBlackboard:
+  description: Write Bossrush Wave Cnt To Blackboard
+  icon: null
+YmgpckTouchTargetGainScoreOrGrade:
+  description: Ymgpck Touch Target Gain Score Or Grade
+  icon: null
+AssignNearestReachableTileWithoutCharOnPath:
+  description: Assign Nearest Reachable Tile Without Char On Path
+  icon: null

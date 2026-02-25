@@ -1,0 +1,78 @@
+actionType: HpRatioToAttributeMul
+fields:
+  _attributeType:
+    type: string
+    description: attribute Type
+    values:
+      -
+        value: ATK
+        display: false
+        parse:
+          type: literal
+          return: ATK
+          generated: true
+      -
+        value: DEF
+        display: false
+        parse:
+          type: literal
+          return: DEF
+          generated: true
+  _hpRatioSource:
+    type: string
+    description: hp Ratio Source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _maxHpRatio:
+    type: number
+    description: max Hp Ratio
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _minHpRatio:
+    type: number
+    description: min Hp Ratio
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _overrideSource:
+    type: boolean
+    description: override Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

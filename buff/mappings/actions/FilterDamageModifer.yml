@@ -1,0 +1,264 @@
+actionType: FilterDamageModifer
+fields:
+  _attackTypeFilter:
+    type: string
+    description: attack Type Filter
+    values:
+      -
+        value: ADDITION
+        display: false
+        parse:
+          type: literal
+          return: ADDITION
+          generated: true
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+          generated: true
+  _checkHasScource:
+    type: boolean
+    description: check Has Scource
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: ANY_ATTACK
+        display: false
+        parse:
+          type: literal
+          return: ANY_ATTACK
+          generated: true
+      -
+        value: ELEMENT
+        display: false
+        parse:
+          type: literal
+          return: ELEMENT
+          generated: true
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+          generated: true
+      -
+        value: PHYSICAL_AND_MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL_AND_MAGICAL
+          generated: true
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+          generated: true
+  _filterAttackType:
+    type: boolean
+    description: filter Attack Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _filterBySourceId:
+    type: boolean
+    description: filter By Source Id
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _filterDamageType:
+    type: boolean
+    description: filter Damage Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _filterModifierCancelled:
+    type: boolean
+    description: filter Modifier Cancelled
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _filterModifierSource:
+    type: boolean
+    description: filter Modifier Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _filterSharedMask:
+    type: boolean
+    description: filter Shared Mask
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isNoSource:
+    type: boolean
+    description: is No Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _sharedFlag:
+    type: string
+    description: shared Flag
+    values:
+      -
+        value: IS_CONTINUOUS
+        display: false
+        parse:
+          type: literal
+          return: IS_CONTINUOUS
+          generated: true
+      -
+        value: IS_ENVIRONMENT_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: IS_ENVIRONMENT_DAMAGE
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _sourceId:
+    type: null
+    description: source Id
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true

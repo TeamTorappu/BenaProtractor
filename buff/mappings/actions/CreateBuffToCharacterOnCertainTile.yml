@@ -1,0 +1,49 @@
+actionType: CreateBuffToCharacterOnCertainTile
+fields:
+  _buffSourceType:
+    type: string
+    description: buff Source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _hasSource:
+    type: boolean
+    description: has Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

@@ -1,0 +1,43 @@
+field: _options
+type: object
+description: options
+actions:
+  SpawnTokenOnTargetTileWithCondition:
+    type: object
+    values:
+      -
+        value: "{\"buildableType\":\"MELEE\",\"allowNoneBuildableType\":false,\"passableMask\":\"ALL\",\"allowNonePassableMask\":false,\"checkBuildableOrPassable\":true,\"checkExtraBuildableCheckers\":false,\"advancedBuildableMask\":\"NONE\",\"advancedBuildableMaskExcept\":false,\"allowAllAdvancedBuildableMask\":false,\"heightType\":\"LOWLAND\",\"checkHeightType\":true,\"checkTileMode\":false,\"modeIndex\":0,\"checkTileMoveCost\":true,\"moveCostCompareType\":\"EQUALS\",\"moveCostThreshold\":1,\"allowedTileBlackboardKey\":null,\"checkTileTypes\":false,\"exceptTileTypes\":false,\"tileTypesMask\":\"NONE\"}"
+        display: false
+        parse:
+          type: fn
+          name: parseoptions
+          args:
+            - $input
+            - $ctx
+          generated: true
+  DywqgsSpawnTokenOnExceptCharacterSurroundedTiles:
+    type: object
+    values:
+      -
+        value: "{\"buildableType\":\"ALL\",\"allowNoneBuildableType\":false,\"passableMask\":\"NONE\",\"allowNonePassableMask\":true,\"checkBuildableOrPassable\":false,\"checkExtraBuildableCheckers\":false,\"advancedBuildableMask\":\"NONE\",\"advancedBuildableMaskExcept\":false,\"allowAllAdvancedBuildableMask\":false,\"heightType\":\"LOWLAND\",\"checkHeightType\":false,\"checkTileMode\":false,\"modeIndex\":0,\"checkTileMoveCost\":false,\"moveCostCompareType\":\"LT\",\"moveCostThreshold\":0,\"allowedTileBlackboardKey\":null,\"checkTileTypes\":false,\"exceptTileTypes\":false,\"tileTypesMask\":\"NONE\"}"
+        display: false
+        parse:
+          type: fn
+          name: parseoptions
+          args:
+            - $input
+            - $ctx
+          generated: true
+  DywqgsCheckChessSiege:
+    type: object
+    values:
+      -
+        value: "{\"buildableType\":\"ALL\",\"allowNoneBuildableType\":false,\"passableMask\":\"ALL\",\"allowNonePassableMask\":true,\"checkBuildableOrPassable\":false,\"checkExtraBuildableCheckers\":false,\"advancedBuildableMask\":\"NONE\",\"advancedBuildableMaskExcept\":false,\"allowAllAdvancedBuildableMask\":false,\"heightType\":\"LOWLAND\",\"checkHeightType\":false,\"checkTileMode\":false,\"modeIndex\":0,\"checkTileMoveCost\":false,\"moveCostCompareType\":\"LT\",\"moveCostThreshold\":0,\"allowedTileBlackboardKey\":null,\"checkTileTypes\":false,\"exceptTileTypes\":false,\"tileTypesMask\":\"NONE\"}"
+        display: false
+        parse:
+          type: fn
+          name: parseoptions
+          args:
+            - $input
+            - $ctx
+          generated: true

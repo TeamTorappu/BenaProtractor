@@ -1,0 +1,27 @@
+field: _typesNeedtoModify
+type: object
+description: types Needto Modify
+actions:
+  ModifyAttributeRawDataByEntity:
+    type: array
+    values:
+      -
+        value: "[\"ATK\",\"DEF\",\"MAGIC_RESISTANCE\",\"BLOCK_CNT\",\"BASE_ATTACK_TIME\",\"MAX_HP\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"MAX_HP\",\"ATK\",\"DEF\",\"MAGIC_RESISTANCE\",\"BLOCK_CNT\",\"BASE_ATTACK_TIME\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

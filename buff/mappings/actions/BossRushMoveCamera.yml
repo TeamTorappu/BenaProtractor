@@ -1,0 +1,13 @@
+actionType: BossRushMoveCamera
+fields:
+  _useAnotherColEnd:
+    type: boolean
+    description: use Another Col End
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

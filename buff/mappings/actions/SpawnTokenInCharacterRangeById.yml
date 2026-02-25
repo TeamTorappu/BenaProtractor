@@ -1,0 +1,90 @@
+actionType: SpawnTokenInCharacterRangeById
+fields:
+  _checkTokenMaxDeployCnt:
+    type: boolean
+    description: check Token Max Deploy Cnt
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _hostType:
+    type: string
+    description: host Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _maxTileCnt:
+    type: number
+    description: max Tile Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _targetCategory:
+    type: string
+    description: target Category
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+          generated: true
+  _targetMotion:
+    type: string
+    description: target Motion
+    values:
+      -
+        value: WALK_ONLY
+        display: false
+        parse:
+          type: literal
+          return: WALK_ONLY
+          generated: true
+  _targetSide:
+    type: string
+    description: target Side
+    values:
+      -
+        value: ENEMY
+        display: false
+        parse:
+          type: literal
+          return: ENEMY
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _tokenId:
+    type: string
+    description: token Id
+    values:
+      -
+        value: token_10012_rosmon_shield
+        display: false
+        parse:
+          type: literal
+          return: token_10012_rosmon_shield
+          generated: true

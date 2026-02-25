@@ -1,0 +1,31 @@
+actionType: ClearCharacterSp
+fields:
+  _charFrom:
+    type: string
+    description: char From
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _forceFlag:
+    type: boolean
+    description: force Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

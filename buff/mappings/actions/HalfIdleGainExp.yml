@@ -1,0 +1,35 @@
+actionType: HalfIdleGainExp
+fields:
+  _gainExpTargetOptions:
+    type: object
+    description: gain Exp Target Options
+    schema: action_subschema/_gainExpTargetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _upgradedBuff:
+    type: object
+    description: upgraded Buff
+    schema: action_subschema/_upgradedBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

@@ -1,0 +1,13 @@
+actionType: ClearEnemySp
+fields:
+  _enemy:
+    type: string
+    description: enemy
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

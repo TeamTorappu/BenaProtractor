@@ -1,0 +1,31 @@
+actionType: AssignModifierRealDeltaToBB
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _modifierTargetType:
+    type: string
+    description: modifier Target Type
+    values:
+      -
+        value: HP
+        display: false
+        parse:
+          type: literal
+          return: HP
+          generated: true
+      -
+        value: LIFE_POINT
+        display: false
+        parse:
+          type: literal
+          return: LIFE_POINT
+          generated: true

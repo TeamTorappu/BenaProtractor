@@ -1,0 +1,68 @@
+actionType: DurBusAbilityReleasePassenger
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: GetEnmey
+        display: false
+        parse:
+          type: literal
+          return: GetEnmey
+          generated: true
+  _releaseLastOnly:
+    type: boolean
+    description: release Last Only
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _releaseMarkedOnly:
+    type: boolean
+    description: release Marked Only
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _releaseOnProjectileCurrentPos:
+    type: boolean
+    description: release On Projectile Current Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _releaseOnProjectileTracePos:
+    type: boolean
+    description: release On Projectile Trace Pos
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

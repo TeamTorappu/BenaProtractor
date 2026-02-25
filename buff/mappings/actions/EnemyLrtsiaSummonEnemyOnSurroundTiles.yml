@@ -1,0 +1,178 @@
+actionType: EnemyLrtsiaSummonEnemyOnSurroundTiles
+fields:
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _assignTileBBAfterSummon:
+    type: boolean
+    description: assign Tile B B After Summon
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _checkCharIdBeforeSummon:
+    type: boolean
+    description: check Char Id Before Summon
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkTileBBBeforeSummon:
+    type: boolean
+    description: check Tile B B Before Summon
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+  _enemyKey:
+    type: string
+    description: enemy Key
+    values:
+      -
+        value: enemy_1432_lrccon
+        display: false
+        parse:
+          type: literal
+          return: enemy_1432_lrccon
+          generated: true
+  _forbiddenIds:
+    type: array
+    description: forbidden Ids
+    schema: action_subschema/_forbiddenIds.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _host:
+    type: string
+    description: host
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useSpecialHost:
+    type: boolean
+    description: use Special Host
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _valueToAssign:
+    type: number
+    description: value To Assign
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _valueToCompare:
+    type: number
+    description: value To Compare
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _waitTime:
+    type: number
+    description: wait Time
+    values:
+      -
+        value: 9999
+        display: false
+        parse:
+          type: literal
+          return: 9999
+          generated: true

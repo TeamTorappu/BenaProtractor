@@ -1,0 +1,134 @@
+actionType: RespawnCharacter
+fields:
+  _addSharedBlackboardValueIfExists:
+    type: boolean
+    description: add Shared Blackboard Value If Exists
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _canRespawnInPlace:
+    type: boolean
+    description: can Respawn In Place
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _colKey:
+    type: string
+    description: col Key
+    values:
+      -
+        value: col
+        display: false
+        parse:
+          type: literal
+          return: col
+          generated: true
+  _forceRespawnInPlace:
+    type: boolean
+    description: force Respawn In Place
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ignoreAdvancedBuildableMask:
+    type: boolean
+    description: ignore Advanced Buildable Mask
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _recordRespawnToSharedData:
+    type: boolean
+    description: record Respawn To Shared Data
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _respawnBBKey:
+    type: string
+    description: respawn B B Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+  _respawnBlackboardKeys:
+    type: array
+    description: respawn Blackboard Keys
+    schema: action_subschema/_respawnBlackboardKeys.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _respawnInPlaceBBKey:
+    type: string
+    description: respawn In Place B B Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+  _respawnInSameTile:
+    type: boolean
+    description: respawn In Same Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _rowKey:
+    type: string
+    description: row Key
+    values:
+      -
+        value: row
+        display: false
+        parse:
+          type: literal
+          return: row
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

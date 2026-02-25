@@ -1,0 +1,27 @@
+field: _mapTags
+type: object
+description: map Tags
+actions:
+  CheckConatinsMapTags:
+    type: array
+    values:
+      -
+        value: "[\"act25side_extra\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[\"main_12\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

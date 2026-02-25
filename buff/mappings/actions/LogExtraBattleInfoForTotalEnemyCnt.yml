@@ -1,0 +1,24 @@
+actionType: LogExtraBattleInfoForTotalEnemyCnt
+fields:
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: sky_total_count
+        display: false
+        parse:
+          type: literal
+          return: sky_total_count
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

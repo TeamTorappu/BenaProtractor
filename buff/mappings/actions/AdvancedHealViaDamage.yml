@@ -1,0 +1,35 @@
+actionType: AdvancedHealViaDamage
+fields:
+  _healAbilityName:
+    type: string
+    description: heal Ability Name
+    values:
+      -
+        value: Heal
+        display: false
+        parse:
+          type: literal
+          return: Heal
+          generated: true
+  _owner:
+    type: string
+    description: owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _scaleKey:
+    type: string
+    description: scale Key
+    values:
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+          generated: true

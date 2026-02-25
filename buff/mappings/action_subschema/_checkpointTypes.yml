@@ -1,0 +1,17 @@
+field: _checkpointTypes
+type: object
+description: checkpoint Types
+actions:
+  CheckEnemyCurrentCheckpoint:
+    type: array
+    values:
+      -
+        value: "[\"WAIT_FOR_SECONDS\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

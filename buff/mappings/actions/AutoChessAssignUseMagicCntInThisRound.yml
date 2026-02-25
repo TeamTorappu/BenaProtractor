@@ -1,0 +1,13 @@
+actionType: AutoChessAssignUseMagicCntInThisRound
+fields:
+  _blackboardKeys:
+    type: string
+    description: blackboard Keys
+    values:
+      -
+        value: buff_cnt
+        display: false
+        parse:
+          type: literal
+          return: buff_cnt
+          generated: true

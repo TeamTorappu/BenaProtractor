@@ -1,0 +1,13 @@
+actionType: StartTimeline
+fields:
+  _timelineKey:
+    type: string
+    description: timeline Key
+    values:
+      -
+        value: time_attack
+        display: false
+        parse:
+          type: literal
+          return: time_attack
+          generated: true

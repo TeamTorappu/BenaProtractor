@@ -1,0 +1,60 @@
+actionType: AssignUidToBlackBoard
+fields:
+  _assignAsInt:
+    type: boolean
+    description: assign As Int
+    values:
+      - value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _blackBoardKey:
+    type: string
+    description: black Board Key
+    values:
+      - value: atk_target_uid
+        display: false
+        parse:
+          type: literal
+          return: atk_target_uid
+          generated: true
+      - value: uid
+        display: false
+        parse:
+          type: literal
+          return: uid
+          generated: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      - value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      - value: token_radian_tower3_s_3[trigger_link]
+        display: false
+        parse:
+          type: literal
+          return: token_radian_tower3_s_3[trigger_link]
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      - value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      - value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true

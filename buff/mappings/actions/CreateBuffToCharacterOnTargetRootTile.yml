@@ -1,0 +1,57 @@
+actionType: CreateBuffToCharacterOnTargetRootTile
+fields:
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

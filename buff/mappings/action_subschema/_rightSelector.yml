@@ -1,0 +1,17 @@
+field: _rightSelector
+type: object
+description: right Selector
+actions:
+  Svash2LRCardPositionSwap:
+    type: object
+    values:
+      -
+        value: "{\"categoryMask\":\"WARRIOR, SNIPER, CASTER\",\"filterTag\":null,\"subprofessionTag\":null,\"onlySelectMe\":false,\"excludeMe\":false,\"mapTags\":[],\"enableOverride\":false,\"excludeNotInHand\":false,\"excludeNotShowInCardList\":true,\"excludeHiddenByCardState\":false}"
+        display: false
+        parse:
+          type: fn
+          name: parserightSelector
+          args:
+            - $input
+            - $ctx
+          generated: true

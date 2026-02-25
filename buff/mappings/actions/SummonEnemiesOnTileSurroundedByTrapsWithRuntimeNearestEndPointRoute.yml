@@ -1,0 +1,134 @@
+actionType: SummonEnemiesOnTileSurroundedByTrapsWithRuntimeNearestEndPointRoute
+fields:
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _enemyKey:
+    type: string
+    description: enemy Key
+    values:
+      -
+        value: enemy_2101_dyspll
+        display: false
+        parse:
+          type: literal
+          return: enemy_2101_dyspll
+          generated: true
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: FLY
+        display: false
+        parse:
+          type: literal
+          return: FLY
+          generated: true
+  _randomOffsetBound:
+    type: number
+    description: random Offset Bound
+    schema: action_subschema/_randomOffsetBound.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _summonCount:
+    type: number
+    description: summon Count
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _surroundTilesOptions:
+    type: object
+    description: surround Tiles Options
+    schema: action_subschema/_surroundTilesOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _trapKey:
+    type: string
+    description: trap Key
+    values:
+      -
+        value: trap_226_dychss
+        display: false
+        parse:
+          type: literal
+          return: trap_226_dychss
+          generated: true
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _waitTime:
+    type: number
+    description: wait Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true

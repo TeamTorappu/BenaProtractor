@@ -1,0 +1,755 @@
+actionType: AdvancedApplyDamage
+fields:
+  _applyWay:
+    type: string
+    description: apply Way
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+          generated: true
+      -
+        value: MELEE
+        display: false
+        parse:
+          type: literal
+          return: MELEE
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+      -
+        value: RANGED
+        display: false
+        parse:
+          type: literal
+          return: RANGED
+          generated: true
+  _assignRealDamageToBB:
+    type: boolean
+    description: assign Real Damage To B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _atkScaleVar:
+    type: string
+    description: atk Scale Var
+    values:
+      -
+        value: aoe_scale
+        display: false
+        parse:
+          type: literal
+          return: aoe_scale
+          generated: true
+      -
+        value: atk_scale
+        display: false
+        parse:
+          type: literal
+          return: atk_scale
+          generated: true
+      -
+        value: "atk_scale[bigAttack2]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[bigAttack2]"
+          generated: true
+      -
+        value: "atk_scale[drone]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[drone]"
+          generated: true
+      -
+        value: "atk_scale[normal]"
+        display: false
+        parse:
+          type: literal
+          return: "atk_scale[normal]"
+          generated: true
+      -
+        value: atk_scale_1
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_1
+          generated: true
+      -
+        value: atk_scale_2
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_2
+          generated: true
+      -
+        value: atk_scale_aura
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_aura
+          generated: true
+      -
+        value: atk_scale_collide
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_collide
+          generated: true
+      -
+        value: atk_scale_cur
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_cur
+          generated: true
+      -
+        value: atk_scale_extra
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_extra
+          generated: true
+      -
+        value: atk_scale_init
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_init
+          generated: true
+      -
+        value: atk_scale_magic
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_magic
+          generated: true
+      -
+        value: atk_scale_pure
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_pure
+          generated: true
+      -
+        value: atk_scale_s
+        display: false
+        parse:
+          type: literal
+          return: atk_scale_s
+          generated: true
+      -
+        value: blockee_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: blockee_atk_scale
+          generated: true
+      -
+        value: bomb_scale
+        display: false
+        parse:
+          type: literal
+          return: bomb_scale
+          generated: true
+      -
+        value: boom_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: boom_atk_scale
+          generated: true
+      -
+        value: burn.atk_scale
+        display: false
+        parse:
+          type: literal
+          return: burn.atk_scale
+          generated: true
+      -
+        value: damage_magic
+        display: false
+        parse:
+          type: literal
+          return: damage_magic
+          generated: true
+      -
+        value: dot_scale
+        display: false
+        parse:
+          type: literal
+          return: dot_scale
+          generated: true
+      -
+        value: element_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: element_atk_scale
+          generated: true
+      -
+        value: "enemy_ltniak[skill_1_AOE].damage_scale"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ltniak[skill_1_AOE].damage_scale"
+          generated: true
+      -
+        value: ep_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: ep_damage_scale
+          generated: true
+      -
+        value: extra_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: extra_atk_scale
+          generated: true
+      -
+        value: extra_damage_ratio
+        display: false
+        parse:
+          type: literal
+          return: extra_damage_ratio
+          generated: true
+      -
+        value: extra_ep_damage_scale
+        display: false
+        parse:
+          type: literal
+          return: extra_ep_damage_scale
+          generated: true
+      -
+        value: final_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: final_atk_scale
+          generated: true
+      -
+        value: magic_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: magic_atk_scale
+          generated: true
+      -
+        value: prism_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: prism_atk_scale
+          generated: true
+      -
+        value: ray_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: ray_atk_scale
+          generated: true
+      -
+        value: s2_magic_scale
+        display: false
+        parse:
+          type: literal
+          return: s2_magic_scale
+          generated: true
+      -
+        value: s3_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: s3_atk_scale
+          generated: true
+      -
+        value: shield_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: shield_atk_scale
+          generated: true
+      -
+        value: skill.atk_scale
+        display: false
+        parse:
+          type: literal
+          return: skill.atk_scale
+          generated: true
+      -
+        value: snow_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: snow_atk_scale
+          generated: true
+      -
+        value: sword_end_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: sword_end_atk_scale
+          generated: true
+      -
+        value: talent_magic_scale
+        display: false
+        parse:
+          type: literal
+          return: talent_magic_scale
+          generated: true
+      -
+        value: trigger_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: trigger_atk_scale
+          generated: true
+      -
+        value: vigil_s_3.atk_scale
+        display: false
+        parse:
+          type: literal
+          return: vigil_s_3.atk_scale
+          generated: true
+      -
+        value: vigil_wolf_s_3.atk_scale
+        display: false
+        parse:
+          type: literal
+          return: vigil_wolf_s_3.atk_scale
+          generated: true
+  _attackType:
+    type: string
+    description: attack Type
+    values:
+      -
+        value: ADDITION
+        display: false
+        parse:
+          type: literal
+          return: ADDITION
+          generated: true
+      -
+        value: BUFF
+        display: false
+        parse:
+          type: literal
+          return: BUFF
+          generated: true
+      -
+        value: NORMAL
+        display: false
+        parse:
+          type: literal
+          return: NORMAL
+          generated: true
+      -
+        value: SPLASH
+        display: false
+        parse:
+          type: literal
+          return: SPLASH
+          generated: true
+  _baseOnHostAtk:
+    type: boolean
+    description: base On Host Atk
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _cachedAtkKey:
+    type: string
+    description: cached Atk Key
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+          generated: true
+      -
+        value: dmg
+        display: false
+        parse:
+          type: literal
+          return: dmg
+          generated: true
+  _damageType:
+    type: string
+    description: damage Type
+    values:
+      -
+        value: ELEMENT
+        display: false
+        parse:
+          type: literal
+          return: ELEMENT
+          generated: true
+      -
+        value: MAGICAL
+        display: false
+        parse:
+          type: literal
+          return: MAGICAL
+          generated: true
+      -
+        value: PHYSICAL
+        display: false
+        parse:
+          type: literal
+          return: PHYSICAL
+          generated: true
+      -
+        value: PURE
+        display: false
+        parse:
+          type: literal
+          return: PURE
+          generated: true
+  _defaultAtkScale:
+    type: number
+    description: default Atk Scale
+    values:
+      -
+        value: 0.800000011920929
+        display: false
+        parse:
+          type: literal
+          return: 0.800000011920929
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _emitSourceOnCalculateDamage:
+    type: boolean
+    description: emit Source On Calculate Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _forceUseProjectileCachedAtk:
+    type: boolean
+    description: force Use Projectile Cached Atk
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _getCachedAtkFromBlackboard:
+    type: boolean
+    description: get Cached Atk From Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ignoreCancelReasonMask:
+    type: string
+    description: ignore Cancel Reason Mask
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+  _ignoreForSp:
+    type: boolean
+    description: ignore For Sp
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ignoreMissFlag:
+    type: string
+    description: ignore Miss Flag
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+  _modifierKey:
+    type: string
+    description: modifier Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: WANG_STONE
+        display: false
+        parse:
+          type: literal
+          return: WANG_STONE
+          generated: true
+      -
+        value: act1autochess_debuff_1
+        display: false
+        parse:
+          type: literal
+          return: act1autochess_debuff_1
+          generated: true
+      -
+        value: blkkgt_s2_dot
+        display: false
+        parse:
+          type: literal
+          return: blkkgt_s2_dot
+          generated: true
+      -
+        value: "graceb_sk2[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "graceb_sk2[mark]"
+          generated: true
+      -
+        value: vendla_s_2
+        display: false
+        parse:
+          type: literal
+          return: vendla_s_2
+          generated: true
+      -
+        value: "wscoot_t[extra_atk]"
+        display: false
+        parse:
+          type: literal
+          return: "wscoot_t[extra_atk]"
+          generated: true
+  _noSource:
+    type: boolean
+    description: no Source
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _onlyUseSourceOnCalculateDamage:
+    type: boolean
+    description: only Use Source On Calculate Damage
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _setSharedFlag:
+    type: boolean
+    description: set Shared Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sharedFlagIndex:
+    type: string
+    description: shared Flag Index
+    values:
+      -
+        value: IS_CONTINUOUS
+        display: false
+        parse:
+          type: literal
+          return: IS_CONTINUOUS
+          generated: true
+      -
+        value: IS_ENVIRONMENT_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: IS_ENVIRONMENT_DAMAGE
+          generated: true
+  _skipModifierEvent:
+    type: boolean
+    description: skip Modifier Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+          generated: true
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

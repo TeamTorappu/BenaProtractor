@@ -1,0 +1,13 @@
+actionType: SetIgnoreCancelReasonMask
+fields:
+  _ignoreCancelReasonMask:
+    type: string
+    description: ignore Cancel Reason Mask
+    values:
+      -
+        value: MISS
+        display: false
+        parse:
+          type: literal
+          return: MISS
+          generated: true

@@ -1,0 +1,49 @@
+actionType: SetMagicCircuitLikeObstacleInRange
+fields:
+  _isLikeObstacle:
+    type: boolean
+    description: is Like Obstacle
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _rangeId:
+    type: null | string
+    description: range Id
+    values:
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

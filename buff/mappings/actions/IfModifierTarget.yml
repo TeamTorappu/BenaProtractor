@@ -1,0 +1,13 @@
+actionType: IfModifierTarget
+fields:
+  _motionMask:
+    type: string
+    description: motion Mask
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+          generated: true

@@ -1,0 +1,46 @@
+actionType: AssignNodeCountToBb
+fields:
+  _assignKey:
+    type: string
+    description: assign Key
+    values:
+      -
+        value: count
+        display: false
+        parse:
+          type: literal
+          return: count
+          generated: true
+  _isMainMap:
+    type: boolean
+    description: is Main Map
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _isNotChoosedState:
+    type: boolean
+    description: is Not Choosed State
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _state:
+    type: string
+    description: state
+    values:
+      -
+        value: LOCKED
+        display: false
+        parse:
+          type: literal
+          return: LOCKED
+          generated: true

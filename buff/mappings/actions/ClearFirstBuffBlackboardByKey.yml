@@ -1,0 +1,31 @@
+actionType: ClearFirstBuffBlackboardByKey
+fields:
+  _buffKey:
+    type: null | string
+    description: buff Key
+    values:
+      -
+        value: "enemy_mukfub_rage_logic[record]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_mukfub_rage_logic[record]"
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

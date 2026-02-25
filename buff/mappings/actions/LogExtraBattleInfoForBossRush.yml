@@ -1,0 +1,63 @@
+actionType: LogExtraBattleInfoForBossRush
+fields:
+  _infoType:
+    type: string
+    description: info Type
+    values:
+      -
+        value: CURRENT_BOSS_WAVE
+        display: false
+        parse:
+          type: literal
+          return: CURRENT_BOSS_WAVE
+          generated: true
+      -
+        value: CURRENT_WAVE_CHAR_USE
+        display: false
+        parse:
+          type: literal
+          return: CURRENT_WAVE_CHAR_USE
+          generated: true
+      -
+        value: MAX_BOSS_WAVE
+        display: false
+        parse:
+          type: literal
+          return: MAX_BOSS_WAVE
+          generated: true
+  _key:
+    type: null | string
+    description: key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: level_max_wave
+        display: false
+        parse:
+          type: literal
+          return: level_max_wave
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

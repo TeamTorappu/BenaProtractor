@@ -1,0 +1,67 @@
+actionType: CreateBuffToCertainProfession
+fields:
+  _buffData:
+    type: object
+    description: buff Data
+    schema: action_subschema/_buffData.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _professionMask:
+    type: string
+    description: profession Mask
+    values:
+      -
+        value: "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER"
+        display: false
+        parse:
+          type: literal
+          return: "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER"
+          generated: true
+      -
+        value: "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER"
+        display: false
+        parse:
+          type: literal
+          return: "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER"
+          generated: true
+      -
+        value: "WARRIOR, TANK"
+        display: false
+        parse:
+          type: literal
+          return: "WARRIOR, TANK"
+          generated: true

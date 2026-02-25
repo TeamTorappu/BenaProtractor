@@ -1,0 +1,24 @@
+actionType: HideCard
+fields:
+  _cardKey:
+    type: string
+    description: card Key
+    values:
+      -
+        value: trap_790_dytswd
+        display: false
+        parse:
+          type: literal
+          return: trap_790_dytswd
+          generated: true
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

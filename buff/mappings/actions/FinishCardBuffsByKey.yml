@@ -1,0 +1,155 @@
+actionType: FinishCardBuffsByKey
+fields:
+  _cardBuffKey:
+    type: string
+    description: card Buff Key
+    values:
+      -
+        value: PassengerStorage
+        display: false
+        parse:
+          type: literal
+          return: PassengerStorage
+          generated: true
+      -
+        value: char_249_mlyss
+        display: false
+        parse:
+          type: literal
+          return: char_249_mlyss
+          generated: true
+      -
+        value: eagle_valid
+        display: false
+        parse:
+          type: literal
+          return: eagle_valid
+          generated: true
+      -
+        value: enemy_mjcdog_respawn
+        display: false
+        parse:
+          type: literal
+          return: enemy_mjcdog_respawn
+          generated: true
+      -
+        value: gamecity_draw_buff_2
+        display: false
+        parse:
+          type: literal
+          return: gamecity_draw_buff_2
+          generated: true
+      -
+        value: irene_e_004
+        display: false
+        parse:
+          type: literal
+          return: irene_e_004
+          generated: true
+      -
+        value: "prosts_t_1[raw_born]"
+        display: false
+        parse:
+          type: literal
+          return: "prosts_t_1[raw_born]"
+          generated: true
+      -
+        value: "rogue_2_enroll_3_attribute[card]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_2_enroll_3_attribute[card]"
+          generated: true
+      -
+        value: rogue_3_relic_book_9
+        display: false
+        parse:
+          type: literal
+          return: rogue_3_relic_book_9
+          generated: true
+      -
+        value: "svrash_e_002_t[aura]"
+        display: false
+        parse:
+          type: literal
+          return: "svrash_e_002_t[aura]"
+          generated: true
+      -
+        value: token_10030_mlyss_wtrman
+        display: false
+        parse:
+          type: literal
+          return: token_10030_mlyss_wtrman
+          generated: true
+  _findAllCard:
+    type: boolean
+    description: find All Card
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ignoreOwner:
+    type: boolean
+    description: ignore Owner
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _onlyOwner:
+    type: boolean
+    description: only Owner
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useUid:
+    type: boolean
+    description: use Uid
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

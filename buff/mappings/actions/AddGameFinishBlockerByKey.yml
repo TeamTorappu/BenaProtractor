@@ -1,0 +1,13 @@
+actionType: AddGameFinishBlockerByKey
+fields:
+  _blockerKey:
+    type: string
+    description: blocker Key
+    values:
+      -
+        value: trap_bldore_block_game
+        display: false
+        parse:
+          type: literal
+          return: trap_bldore_block_game
+          generated: true

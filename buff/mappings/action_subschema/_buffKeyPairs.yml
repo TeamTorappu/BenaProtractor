@@ -1,0 +1,27 @@
+field: _buffKeyPairs
+type: object
+description: buff Key Pairs
+actions:
+  SetEnemySpecialBlockCondition:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[{\"blockerBuffKey\":\"highland_block_mark\",\"blockeeBuffKey\":\"highland_block_mark\"}]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

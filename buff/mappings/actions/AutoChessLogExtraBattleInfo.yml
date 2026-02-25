@@ -1,0 +1,49 @@
+actionType: AutoChessLogExtraBattleInfo
+fields:
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: acarm024_gold
+        display: false
+        parse:
+          type: literal
+          return: acarm024_gold
+          generated: true
+      -
+        value: act1vautochess_char_alive_before_fog
+        display: false
+        parse:
+          type: literal
+          return: act1vautochess_char_alive_before_fog
+          generated: true
+      -
+        value: act1vautochess_enemy_reach_exit_before_fog
+        display: false
+        parse:
+          type: literal
+          return: act1vautochess_enemy_reach_exit_before_fog
+          generated: true
+  _logType:
+    type: string
+    description: log Type
+    values:
+      -
+        value: DEFAULT
+        display: false
+        parse:
+          type: literal
+          return: DEFAULT
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

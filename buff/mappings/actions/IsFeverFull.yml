@@ -1,0 +1,13 @@
+actionType: IsFeverFull
+fields:
+  _feverKey:
+    type: string
+    description: fever Key
+    values:
+      -
+        value: env_033_fever
+        display: false
+        parse:
+          type: literal
+          return: env_033_fever
+          generated: true

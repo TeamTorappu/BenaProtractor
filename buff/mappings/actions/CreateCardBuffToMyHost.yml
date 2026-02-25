@@ -1,0 +1,89 @@
+actionType: CreateCardBuffToMyHost
+fields:
+  _cardBuffKey:
+    type: null | string
+    description: card Buff Key
+    values:
+      -
+        value: nasti_nstbld_m3_build_lock
+        display: false
+        parse:
+          type: literal
+          return: nasti_nstbld_m3_build_lock
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: ALL_THE_TIME
+        display: false
+        parse:
+          type: literal
+          return: ALL_THE_TIME
+          generated: true
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+          generated: true
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

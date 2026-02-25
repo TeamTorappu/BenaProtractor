@@ -1,0 +1,154 @@
+effectKey:
+  type: string
+  description: effect Key
+  values:
+    -
+      value: ""
+      display: false
+      parse:
+        type: literal
+        return: ""
+        generated: true
+    -
+      value: blitz_skill_01_buff_01
+      display: false
+      parse:
+        type: literal
+        return: blitz_skill_01_buff_01
+        generated: true
+    -
+      value: blitz_skill_01_buff_02
+      display: false
+      parse:
+        type: literal
+        return: blitz_skill_01_buff_02
+        generated: true
+    -
+      value: blitz_skill_01_buff_03
+      display: false
+      parse:
+        type: literal
+        return: blitz_skill_01_buff_03
+        generated: true
+    -
+      value: buff_violent
+      display: false
+      parse:
+        type: literal
+        return: buff_violent
+        generated: true
+    -
+      value: common_combustion_buff_02
+      display: false
+      parse:
+        type: literal
+        return: common_combustion_buff_02
+        generated: true
+    -
+      value: common_shield_01
+      display: false
+      parse:
+        type: literal
+        return: common_shield_01
+        generated: true
+    -
+      value: enemy_dsfull_buff_01
+      display: false
+      parse:
+        type: literal
+        return: enemy_dsfull_buff_01
+        generated: true
+    -
+      value: enemy_dsfull_buff_04
+      display: false
+      parse:
+        type: literal
+        return: enemy_dsfull_buff_04
+        generated: true
+    -
+      value: indigo_skill_02_buff_03
+      display: false
+      parse:
+        type: literal
+        return: indigo_skill_02_buff_03
+        generated: true
+    -
+      value: lava2_skill02_buff
+      display: false
+      parse:
+        type: literal
+        return: lava2_skill02_buff
+        generated: true
+onEventPriority:
+  type: string
+  description: on Event Priority
+  values:
+    -
+      value: DEFAULT
+      display: false
+      parse:
+        type: literal
+        return: DEFAULT
+        generated: true
+    -
+      value: HIGHER_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: HIGHER_PRIORITY
+        generated: true
+    -
+      value: HIGH_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: HIGH_PRIORITY
+        generated: true
+    -
+      value: LOWER_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: LOWER_PRIORITY
+        generated: true
+    -
+      value: LOWEST_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: LOWEST_PRIORITY
+        generated: true
+    -
+      value: LOW_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: LOW_PRIORITY
+        generated: true
+    -
+      value: TITI_DOZE_PRIORITY
+      display: false
+      parse:
+        type: literal
+        return: TITI_DOZE_PRIORITY
+        generated: true
+templateKey:
+  type: string
+  description: 模板标识
+  display: false
+  default:
+    parse:
+      type: fn
+      name: parseTemplateKey
+      args:
+        - $input
+        - $ctx
+      generated: true
+eventToActions:
+  type: record
+  key:
+    file: event_list.yml
+  value:
+    file:
+      - action_keys.yml
+      - actions/*.yml

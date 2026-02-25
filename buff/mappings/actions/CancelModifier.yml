@@ -1,0 +1,27 @@
+actionType: CancelModifier
+fields:
+  _reason:
+    type: string
+    description: reason
+    values:
+      -
+        value: INTERRUPT
+        display: false
+        parse:
+          type: literal
+          return: INTERRUPT
+          generated: true
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+      -
+        value: UNHURTABLE
+        display: false
+        parse:
+          type: literal
+          return: UNHURTABLE
+          generated: true

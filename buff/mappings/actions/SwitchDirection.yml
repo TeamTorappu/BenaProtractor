@@ -1,0 +1,86 @@
+actionType: SwitchDirection
+fields:
+  _direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: UP
+        display: false
+        parse:
+          type: literal
+          return: UP
+          generated: true
+  _downNodes:
+    type: array
+    description: down Nodes
+    schema: action_subschema/_downNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _leftNodes:
+    type: array
+    description: left Nodes
+    schema: action_subschema/_leftNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _rightNodes:
+    type: array
+    description: right Nodes
+    schema: action_subschema/_rightNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _upNodes:
+    type: array
+    description: up Nodes
+    schema: action_subschema/_upNodes.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _useCustomDirection:
+    type: boolean
+    description: use Custom Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

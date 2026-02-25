@@ -1,0 +1,35 @@
+actionType: DuelSyncChosenInfoToGameMode
+fields:
+  _excludeIds:
+    type: array
+    description: exclude Ids
+    schema: action_subschema/_excludeIds.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: x-4
+        display: false
+        parse:
+          type: literal
+          return: x-4
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

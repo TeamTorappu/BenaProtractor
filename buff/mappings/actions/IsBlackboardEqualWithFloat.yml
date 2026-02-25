@@ -1,0 +1,52 @@
+actionType: IsBlackboardEqualWithFloat
+fields:
+  _compareValue:
+    type: number
+    description: compare Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _var:
+    type: string
+    description: var
+    values:
+      -
+        value: already_add_sp
+        display: false
+        parse:
+          type: literal
+          return: already_add_sp
+          generated: true
+      -
+        value: flag
+        display: false
+        parse:
+          type: literal
+          return: flag
+          generated: true
+      -
+        value: move_slow_mark
+        display: false
+        parse:
+          type: literal
+          return: move_slow_mark
+          generated: true
+      -
+        value: need_frozen_mark
+        display: false
+        parse:
+          type: literal
+          return: need_frozen_mark
+          generated: true

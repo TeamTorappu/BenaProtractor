@@ -1,0 +1,31 @@
+actionType: TriggerTokenSkill
+fields:
+  _hostType:
+    type: string
+    description: host Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _isAutoSkill:
+    type: boolean
+    description: is Auto Skill
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

@@ -1,0 +1,133 @@
+actionType: LegionModeOnlyCreateCardBuffToOneCardByCost
+fields:
+  _cardBuffKey:
+    type: null
+    description: card Buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _cardLibraryType:
+    type: string
+    description: card Library Type
+    values:
+      -
+        value: USING
+        display: false
+        parse:
+          type: literal
+          return: USING
+          generated: true
+  _createDeckBuff:
+    type: boolean
+    description: create Deck Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _deckBuff:
+    type: object
+    description: deck Buff
+    schema: action_subschema/_deckBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _filterMinCost:
+    type: boolean
+    description: filter Min Cost
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+          generated: true
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

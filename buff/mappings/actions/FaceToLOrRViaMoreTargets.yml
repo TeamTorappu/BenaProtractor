@@ -1,0 +1,24 @@
+actionType: FaceToLOrRViaMoreTargets
+fields:
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

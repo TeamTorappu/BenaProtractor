@@ -1,0 +1,68 @@
+actionType: CreateBuffOnTileInRange
+fields:
+  _buffSourceType:
+    type: string
+    description: buff Source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _hasSource:
+    type: boolean
+    description: has Source
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: 0-1
+        display: false
+        parse:
+          type: literal
+          return: 0-1
+          generated: true
+  _side:
+    type: string
+    description: side
+    values:
+      -
+        value: ALLY
+        display: false
+        parse:
+          type: literal
+          return: ALLY
+          generated: true
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

@@ -1,0 +1,24 @@
+actionType: RacingCameraZoomIn
+fields:
+  _cameraFollowSpeedFactor:
+    type: number
+    description: camera Follow Speed Factor
+    values:
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+          generated: true
+  _zoomDuration:
+    type: number
+    description: zoom Duration
+    values:
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+          generated: true

@@ -1,0 +1,103 @@
+actionType: ModifyBlackboardFromTrait
+fields:
+  _addBasedOriginValue:
+    type: boolean
+    description: add Based Origin Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _blackboardKeys:
+    type: string
+    description: blackboard Keys
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+          generated: true
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+          generated: true
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+          generated: true
+  _checkFromBlackboardValue:
+    type: boolean
+    description: check From Blackboard Value
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _fromBlackboardKeys:
+    type: string
+    description: from Blackboard Keys
+    values:
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+          generated: true
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+          generated: true
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true

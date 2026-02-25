@@ -1,0 +1,90 @@
+actionType: RewriteDynamicBuffTileOptionsOneLine
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "prtrop_s[tile_storage]"
+        display: false
+        parse:
+          type: literal
+          return: "prtrop_s[tile_storage]"
+          generated: true
+  _direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: LEFT
+        display: false
+        parse:
+          type: literal
+          return: LEFT
+          generated: true
+  _exceptCurrentTile:
+    type: boolean
+    description: except Current Tile
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isObstacleLike:
+    type: boolean
+    description: is Obstacle Like
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _keepCurrentObstacleLike:
+    type: boolean
+    description: keep Current Obstacle Like
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _useCurrentTileDirection:
+    type: boolean
+    description: use Current Tile Direction
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useLocationFromBBAsCurrentTile:
+    type: boolean
+    description: use Location From B B As Current Tile
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

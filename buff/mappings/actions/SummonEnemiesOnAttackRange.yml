@@ -1,0 +1,189 @@
+actionType: SummonEnemiesOnAttackRange
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: SelectEnemy
+        display: false
+        parse:
+          type: literal
+          return: SelectEnemy
+          generated: true
+  _alwaysCountAsKilled:
+    type: boolean
+    description: always Count As Killed
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _buffs:
+    type: array
+    description: buffs
+    schema: action_subschema/_buffs.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffsUseTargetAsSource:
+    type: array
+    description: buffs Use Target As Source
+    schema: action_subschema/_buffsUseTargetAsSource.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _enemyKey:
+    type: string
+    description: enemy Key
+    values:
+      -
+        value: enemy_5601_entlec
+        display: false
+        parse:
+          type: literal
+          return: enemy_5601_entlec
+          generated: true
+  _meanwhileNearestTileToTarget:
+    type: boolean
+    description: meanwhile Nearest Tile To Target
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+          generated: true
+  _noEndPosition:
+    type: boolean
+    description: no End Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _selectTheNearestTileToSource:
+    type: boolean
+    description: select The Nearest Tile To Source
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _spawnOffset:
+    type: number
+    description: spawn Offset
+    values:
+      -
+        value: 0.3499999940395355
+        display: false
+        parse:
+          type: literal
+          return: 0.3499999940395355
+          generated: true
+  _summonCount:
+    type: number
+    description: summon Count
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useAttackRangeTilesDirectly:
+    type: boolean
+    description: use Attack Range Tiles Directly
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useTargetAbilitySelector:
+    type: boolean
+    description: use Target Ability Selector
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _waitTime:
+    type: number
+    description: wait Time
+    values:
+      -
+        value: 99999
+        display: false
+        parse:
+          type: literal
+          return: 99999
+          generated: true

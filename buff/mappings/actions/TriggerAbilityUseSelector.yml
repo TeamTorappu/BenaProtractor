@@ -1,0 +1,204 @@
+actionType: TriggerAbilityUseSelector
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: ActiveRandom
+        display: false
+        parse:
+          type: literal
+          return: ActiveRandom
+          generated: true
+      -
+        value: Aim
+        display: false
+        parse:
+          type: literal
+          return: Aim
+          generated: true
+      -
+        value: DysuihSummonFire
+        display: false
+        parse:
+          type: literal
+          return: DysuihSummonFire
+          generated: true
+      -
+        value: Flag
+        display: false
+        parse:
+          type: literal
+          return: Flag
+          generated: true
+      -
+        value: HealToken
+        display: false
+        parse:
+          type: literal
+          return: HealToken
+          generated: true
+      -
+        value: M3_Fire
+        display: false
+        parse:
+          type: literal
+          return: M3_Fire
+          generated: true
+      -
+        value: MultiAttack
+        display: false
+        parse:
+          type: literal
+          return: MultiAttack
+          generated: true
+      -
+        value: Pull
+        display: false
+        parse:
+          type: literal
+          return: Pull
+          generated: true
+      -
+        value: S2SecondShot
+        display: false
+        parse:
+          type: literal
+          return: S2SecondShot
+          generated: true
+      -
+        value: TraceEnemy
+        display: false
+        parse:
+          type: literal
+          return: TraceEnemy
+          generated: true
+      -
+        value: blitz_s_2_attack
+        display: false
+        parse:
+          type: literal
+          return: blitz_s_2_attack
+          generated: true
+      -
+        value: charge
+        display: false
+        parse:
+          type: literal
+          return: charge
+          generated: true
+      -
+        value: lasso
+        display: false
+        parse:
+          type: literal
+          return: lasso
+          generated: true
+      -
+        value: pallas_e_heal
+        display: false
+        parse:
+          type: literal
+          return: pallas_e_heal
+          generated: true
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

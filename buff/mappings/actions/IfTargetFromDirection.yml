@@ -1,0 +1,53 @@
+actionType: IfTargetFromDirection
+fields:
+  _checkTargetIsFromDirection:
+    type: boolean
+    description: check Target Is From Direction
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: LEFT
+        display: false
+        parse:
+          type: literal
+          return: LEFT
+          generated: true
+      -
+        value: RIGHT
+        display: false
+        parse:
+          type: literal
+          return: RIGHT
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: MODIFIER_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true

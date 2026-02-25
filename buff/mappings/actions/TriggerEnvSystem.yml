@@ -1,0 +1,176 @@
+actionType: TriggerEnvSystem
+fields:
+  _envKey:
+    type: null | string
+    description: env Key
+    values:
+      -
+        value: env_005_mainline12_sightSystem
+        display: false
+        parse:
+          type: literal
+          return: env_005_mainline12_sightSystem
+          generated: true
+      -
+        value: env_006_act25side_extra
+        display: false
+        parse:
+          type: literal
+          return: env_006_act25side_extra
+          generated: true
+      -
+        value: env_007_act27side
+        display: false
+        parse:
+          type: literal
+          return: env_007_act27side
+          generated: true
+      -
+        value: env_010_cooperate
+        display: false
+        parse:
+          type: literal
+          return: env_010_cooperate
+          generated: true
+      -
+        value: env_017_act35side
+        display: false
+        parse:
+          type: literal
+          return: env_017_act35side
+          generated: true
+      -
+        value: env_020_act38side
+        display: false
+        parse:
+          type: literal
+          return: env_020_act38side
+          generated: true
+      -
+        value: env_040_act48side
+        display: false
+        parse:
+          type: literal
+          return: env_040_act48side
+          generated: true
+      -
+        value: env_act42side_level_ctrl
+        display: false
+        parse:
+          type: literal
+          return: env_act42side_level_ctrl
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _eventName:
+    type: null | string
+    description: event Name
+    values:
+      -
+        value: event_on_carnival_finish
+        display: false
+        parse:
+          type: literal
+          return: event_on_carnival_finish
+          generated: true
+      -
+        value: event_on_carnival_start
+        display: false
+        parse:
+          type: literal
+          return: event_on_carnival_start
+          generated: true
+      -
+        value: event_take_damage_clear
+        display: false
+        parse:
+          type: literal
+          return: event_take_damage_clear
+          generated: true
+      -
+        value: in_sleep_state
+        display: false
+        parse:
+          type: literal
+          return: in_sleep_state
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: out_sleep_state
+        display: false
+        parse:
+          type: literal
+          return: out_sleep_state
+          generated: true
+      -
+        value: trap_full
+        display: false
+        parse:
+          type: literal
+          return: trap_full
+          generated: true
+      -
+        value: trap_not_full
+        display: false
+        parse:
+          type: literal
+          return: trap_not_full
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _triggerWithBlackboard:
+    type: boolean
+    description: trigger With Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _triggerWithEvent:
+    type: boolean
+    description: trigger With Event
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

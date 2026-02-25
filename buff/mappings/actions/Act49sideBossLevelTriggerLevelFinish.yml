@@ -1,0 +1,35 @@
+actionType: Act49sideBossLevelTriggerLevelFinish
+fields:
+  _delayToFinishLevel:
+    type: number
+    description: delay To Finish Level
+    values:
+      -
+        value: 3.5
+        display: false
+        parse:
+          type: literal
+          return: 3.5
+          generated: true
+  _delayToKillAll:
+    type: number
+    description: delay To Kill All
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

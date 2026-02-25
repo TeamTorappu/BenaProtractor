@@ -1,0 +1,82 @@
+actionType: Act31SideCheckRootTilePolluteValue
+fields:
+  _checkSourceBehindTile:
+    type: boolean
+    description: check Source Behind Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _checkValue:
+    type: number
+    description: check Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 100
+        display: false
+        parse:
+          type: literal
+          return: 100
+          generated: true
+  _checkValueKey:
+    type: string
+    description: check Value Key
+    values:
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+  _needAreaPV:
+    type: boolean
+    description: need Area P V
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

@@ -1,0 +1,24 @@
+actionType: ResetCardRespawnTime
+fields:
+  _blackBoardKey:
+    type: string
+    description: black Board Key
+    values:
+      -
+        value: card_uid
+        display: false
+        parse:
+          type: literal
+          return: card_uid
+          generated: true
+  _waitFirstPeriod:
+    type: boolean
+    description: wait First Period
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

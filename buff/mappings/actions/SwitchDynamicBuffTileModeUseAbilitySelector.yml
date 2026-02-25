@@ -1,0 +1,82 @@
+actionType: SwitchDynamicBuffTileModeUseAbilitySelector
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: Blink
+        display: false
+        parse:
+          type: literal
+          return: Blink
+          generated: true
+      -
+        value: DoomSelector
+        display: false
+        parse:
+          type: literal
+          return: DoomSelector
+          generated: true
+  _audioSignal:
+    type: string
+    description: audio Signal
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: tile_pollute
+        display: false
+        parse:
+          type: literal
+          return: tile_pollute
+          generated: true
+  _modeIndex:
+    type: number
+    description: mode Index
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _operation:
+    type: string
+    description: operation
+    values:
+      -
+        value: INDEX
+        display: false
+        parse:
+          type: literal
+          return: INDEX
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

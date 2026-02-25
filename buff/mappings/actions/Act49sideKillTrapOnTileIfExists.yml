@@ -1,0 +1,46 @@
+actionType: Act49sideKillTrapOnTileIfExists
+fields:
+  _noSource:
+    type: boolean
+    description: no Source
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _skipReborn:
+    type: boolean
+    description: skip Reborn
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _trapId:
+    type: string
+    description: trap Id
+    values:
+      -
+        value: trap_285_tjggt
+        display: false
+        parse:
+          type: literal
+          return: trap_285_tjggt
+          generated: true

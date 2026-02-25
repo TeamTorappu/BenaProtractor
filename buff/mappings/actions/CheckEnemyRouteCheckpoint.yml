@@ -1,0 +1,24 @@
+actionType: CheckEnemyRouteCheckpoint
+fields:
+  _routeCheckpointMask:
+    type: string
+    description: route Checkpoint Mask
+    values:
+      -
+        value: MOVE
+        display: false
+        parse:
+          type: literal
+          return: MOVE
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

@@ -1,0 +1,112 @@
+actionType: CreateCardBuffByDeckSequenceOrder
+fields:
+  _cardBuffKey:
+    type: null
+    description: card Buff Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _count:
+    type: number
+    description: count
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _deckSelector:
+    type: object
+    description: deck Selector
+    schema: action_subschema/_deckSelector.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _enableMaxStackCount:
+    type: boolean
+    description: enable Max Stack Count
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _filterIsInHand:
+    type: boolean
+    description: filter Is In Hand
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _isRatio:
+    type: boolean
+    description: is Ratio
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _lifeType:
+    type: string
+    description: life Type
+    values:
+      -
+        value: UNTIL_NEXT_SPAWN
+        display: false
+        parse:
+          type: literal
+          return: UNTIL_NEXT_SPAWN
+          generated: true
+  _selectOrder:
+    type: string
+    description: select Order
+    values:
+      -
+        value: FROM_RIGHT
+        display: false
+        parse:
+          type: literal
+          return: FROM_RIGHT
+          generated: true
+  _useCardBuffKey:
+    type: boolean
+    description: use Card Buff Key
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useTokenAsSourceCard:
+    type: boolean
+    description: use Token As Source Card
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

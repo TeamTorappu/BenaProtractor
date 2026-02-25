@@ -1,0 +1,56 @@
+actionType: ChangeMotionMode
+fields:
+  _motionMode:
+    type: string
+    description: motion Mode
+    values:
+      -
+        value: FLY
+        display: false
+        parse:
+          type: literal
+          return: FLY
+          generated: true
+      -
+        value: WALK
+        display: false
+        parse:
+          type: literal
+          return: WALK
+          generated: true
+  _resetToDefault:
+    type: boolean
+    description: reset To Default
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

@@ -1,0 +1,24 @@
+actionType: LogExtraBattleInfoForBuff
+fields:
+  _infoType:
+    type: string
+    description: info Type
+    values:
+      -
+        value: EXISTING_TIME
+        display: false
+        parse:
+          type: literal
+          return: EXISTING_TIME
+          generated: true
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: enemy_1265_durcar
+        display: false
+        parse:
+          type: literal
+          return: enemy_1265_durcar
+          generated: true

@@ -1,0 +1,13 @@
+actionType: RoguelikeDeifyModeCheckStage
+fields:
+  gameStage:
+    type: string
+    description: game Stage
+    values:
+      -
+        value: STAGE_BATTLE
+        display: false
+        parse:
+          type: literal
+          return: STAGE_BATTLE
+          generated: true

@@ -1,0 +1,46 @@
+actionType: AssignHighestBlackboardValueFromBuffs
+fields:
+  _blackboardKey:
+    type: array
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: oblvns_t_1
+        display: false
+        parse:
+          type: literal
+          return: oblvns_t_1
+          generated: true
+  _getMax:
+    type: boolean
+    description: get Max
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

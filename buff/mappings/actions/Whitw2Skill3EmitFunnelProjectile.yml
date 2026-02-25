@@ -1,0 +1,35 @@
+actionType: Whitw2Skill3EmitFunnelProjectile
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: WolvesDispersed
+        display: false
+        parse:
+          type: literal
+          return: WolvesDispersed
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

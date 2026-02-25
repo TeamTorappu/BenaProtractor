@@ -1,0 +1,17 @@
+field: _flagBuff
+type: object
+description: flag Buff
+actions:
+  DywqgsCheckChessSiege:
+    type: object
+    values:
+      -
+        value: "{\"attributes\":{\"abnormalFlags\":[\"NOT_WITHDRAWABLE\"],\"abnormalImmunes\":[],\"abnormalAntis\":[],\"abnormalCombos\":[],\"abnormalComboImmunes\":[],\"attributeModifiers\":[]},\"buffKey\":\"enemy_dywqgs_be_sieged\",\"loadFromDB\":false,\"isDurableBuff\":false,\"isDamageMissable\":false,\"isSilenceable\":false,\"isStunnable\":false,\"isFreezable\":false,\"isLevitatable\":false,\"statusResistable\":\"AUTOMATIC\",\"templateKey\":\"enemy_dywqgs_be_sieged\",\"disableOverride\":false,\"overrideKey\":null,\"overrideType\":\"EXTEND\",\"maxStackCnt\":1,\"refreshRemainingTimeWhenStackMax\":false,\"clearAllStackCntWhenTimeUp\":false,\"maxValidStackCnt\":-1,\"independentCharacterSource\":false,\"overrideEffectKey\":\"enemy_dywqgs_skill_1_B_ground_01\",\"overrideOnEventPriority\":false,\"onEventPriority\":\"DEFAULT\",\"audioSignal\":null,\"lifeTimeType\":\"LIMITED\",\"takeSnapshotWhenExtend\":false,\"durationKey\":\"\",\"lifeTime\":0.20000000298023224,\"triggerLifeType\":\"IMMEDIATELY\",\"triggerCnt\":0,\"triggerInterval\":-1,\"waitFirstTriggerInterval\":true,\"firstTriggerInterval\":-1,\"priority\":-1,\"priorityBBKeys\":[],\"stripBlackboardParamsWithBuffKey\":false,\"blackboard\":[]}"
+        display: false
+        parse:
+          type: fn
+          name: parseflagBuff
+          args:
+            - $input
+            - $ctx
+          generated: true

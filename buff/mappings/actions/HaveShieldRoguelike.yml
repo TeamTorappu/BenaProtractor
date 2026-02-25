@@ -1,0 +1,13 @@
+actionType: HaveShieldRoguelike
+fields:
+  _onlyCheckWhetherHaveShieldWhenEnteringBattle:
+    type: boolean
+    description: only Check Whether Have Shield When Entering Battle
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

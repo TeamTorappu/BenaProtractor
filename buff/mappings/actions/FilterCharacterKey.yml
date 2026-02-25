@@ -1,0 +1,38 @@
+actionType: FilterCharacterKey
+fields:
+  _key:
+    type: string
+    description: key
+    values:
+      -
+        value: token_10027_ironmn_pile3
+        display: false
+        parse:
+          type: literal
+          return: token_10027_ironmn_pile3
+          generated: true
+      -
+        value: token_10055_phatm2_mndclv
+        display: false
+        parse:
+          type: literal
+          return: token_10055_phatm2_mndclv
+          generated: true
+      -
+        value: trap_148_amblls
+        display: false
+        parse:
+          type: literal
+          return: trap_148_amblls
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

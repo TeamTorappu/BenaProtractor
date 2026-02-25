@@ -1,0 +1,17 @@
+field: _targetBBKeys
+type: object
+description: target B B Keys
+actions:
+  AssignAbilityBlackboardFromOthers:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

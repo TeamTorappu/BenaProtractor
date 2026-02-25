@@ -1,0 +1,90 @@
+actionType: Act49sideHeadBossSetParams
+fields:
+  _doomCountDownKey:
+    type: string
+    description: doom Count Down Key
+    values:
+      -
+        value: doom
+        display: false
+        parse:
+          type: literal
+          return: doom
+          generated: true
+  _dotAttackAtkScaleKey:
+    type: string
+    description: dot Attack Atk Scale Key
+    values:
+      -
+        value: dot_attack_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: dot_attack_atk_scale
+          generated: true
+  _dotAttackDurationKey:
+    type: string
+    description: dot Attack Duration Key
+    values:
+      -
+        value: dot_attack_duration
+        display: false
+        parse:
+          type: literal
+          return: dot_attack_duration
+          generated: true
+  _dotAttackEleAtkScaleKey:
+    type: string
+    description: dot Attack Ele Atk Scale Key
+    values:
+      -
+        value: dot_attack_ele_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: dot_attack_ele_atk_scale
+          generated: true
+  _dotAttackTriggerIntervalKey:
+    type: string
+    description: dot Attack Trigger Interval Key
+    values:
+      -
+        value: dot_attack_trigger_interval
+        display: false
+        parse:
+          type: literal
+          return: dot_attack_trigger_interval
+          generated: true
+  _mainAttackAtkScaleKey:
+    type: string
+    description: main Attack Atk Scale Key
+    values:
+      -
+        value: main_attack_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: main_attack_atk_scale
+          generated: true
+  _mainAttackEleAtkScaleKey:
+    type: string
+    description: main Attack Ele Atk Scale Key
+    values:
+      -
+        value: main_attack_ele_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: main_attack_ele_atk_scale
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

@@ -1,0 +1,24 @@
+actionType: RistarInVerticalMovement
+fields:
+  _ignoredOffset:
+    type: number
+    description: ignored Offset
+    values:
+      -
+        value: 0.30000001192092896
+        display: false
+        parse:
+          type: literal
+          return: 0.30000001192092896
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

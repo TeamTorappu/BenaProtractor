@@ -1,0 +1,57 @@
+actionType: RO4DLC2TriggerBossSealTileSkill
+fields:
+  _endColKey:
+    type: string
+    description: end Col Key
+    values:
+      -
+        value: endCol
+        display: false
+        parse:
+          type: literal
+          return: endCol
+          generated: true
+  _evnSysKey:
+    type: string
+    description: evn Sys Key
+    values:
+      -
+        value: env_020_ro4dlc2_boss5
+        display: false
+        parse:
+          type: literal
+          return: env_020_ro4dlc2_boss5
+          generated: true
+  _intervalKey:
+    type: string
+    description: interval Key
+    values:
+      -
+        value: interval
+        display: false
+        parse:
+          type: literal
+          return: interval
+          generated: true
+  _startColKey:
+    type: string
+    description: start Col Key
+    values:
+      -
+        value: startCol
+        display: false
+        parse:
+          type: literal
+          return: startCol
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

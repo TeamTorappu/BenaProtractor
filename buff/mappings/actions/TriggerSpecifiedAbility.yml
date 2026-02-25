@@ -1,0 +1,128 @@
+actionType: TriggerSpecifiedAbility
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: AromaticProjectile
+        display: false
+        parse:
+          type: literal
+          return: AromaticProjectile
+          generated: true
+      -
+        value: blacksteel_energy
+        display: false
+        parse:
+          type: literal
+          return: blacksteel_energy
+          generated: true
+  _checkCanUseAblityFlag:
+    type: boolean
+    description: check Can Use Ablity Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _triggerEnergyBuffAbility:
+    type: boolean
+    description: trigger Energy Buff Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _triggerProjectileToTileOnceAbilityBySubSelector:
+    type: boolean
+    description: trigger Projectile To Tile Once Ability By Sub Selector
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _triggerStealAttrAbility:
+    type: boolean
+    description: trigger Steal Attr Ability
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

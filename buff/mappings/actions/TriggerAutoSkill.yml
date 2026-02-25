@@ -1,0 +1,24 @@
+actionType: TriggerAutoSkill
+fields:
+  _checkBeforeTrigger:
+    type: boolean
+    description: check Before Trigger
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

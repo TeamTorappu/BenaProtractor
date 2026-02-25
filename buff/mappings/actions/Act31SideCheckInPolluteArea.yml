@@ -1,0 +1,13 @@
+actionType: Act31SideCheckInPolluteArea
+fields:
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

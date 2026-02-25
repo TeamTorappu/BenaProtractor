@@ -1,0 +1,71 @@
+actionType: WithdrawTokens
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+  _checkContainsBuff:
+    type: boolean
+    description: check Contains Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _force:
+    type: boolean
+    description: force
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _needLog:
+    type: boolean
+    description: need Log
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _switchToDeadState:
+    type: boolean
+    description: switch To Dead State
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

@@ -1,0 +1,102 @@
+actionType: CheckHasSp
+fields:
+  _checkHasSp:
+    type: number
+    description: check Has Sp
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _checkKey:
+    type: string
+    description: check Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: skill_cost_min_sp
+        display: false
+        parse:
+          type: literal
+          return: skill_cost_min_sp
+          generated: true
+      -
+        value: sp
+        display: false
+        parse:
+          type: literal
+          return: sp
+          generated: true
+      -
+        value: sp_warning
+        display: false
+        parse:
+          type: literal
+          return: sp_warning
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: EQUALS
+        display: false
+        parse:
+          type: literal
+          return: EQUALS
+          generated: true
+      -
+        value: GE
+        display: false
+        parse:
+          type: literal
+          return: GE
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true
+      -
+        value: LT
+        display: false
+        parse:
+          type: literal
+          return: LT
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true

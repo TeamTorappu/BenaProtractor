@@ -1,0 +1,13 @@
+actionType: CheckContainsEnvSystem
+fields:
+  _envSysKey:
+    type: string
+    description: env Sys Key
+    values:
+      -
+        value: env_008_act29side_audio_type_switcher
+        display: false
+        parse:
+          type: literal
+          return: env_008_act29side_audio_type_switcher
+          generated: true

@@ -1,0 +1,31 @@
+actionType: CheckBuildCnt
+fields:
+  _checkBuildCnt:
+    type: number
+    description: check Build Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _condType:
+    type: string
+    description: cond Type
+    values:
+      -
+        value: GT
+        display: false
+        parse:
+          type: literal
+          return: GT
+          generated: true
+      -
+        value: LE
+        display: false
+        parse:
+          type: literal
+          return: LE
+          generated: true

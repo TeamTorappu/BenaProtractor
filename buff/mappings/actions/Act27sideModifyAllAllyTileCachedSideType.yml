@@ -1,0 +1,13 @@
+actionType: Act27sideModifyAllAllyTileCachedSideType
+fields:
+  _effectKey:
+    type: string
+    description: effect Key
+    values:
+      -
+        value: enemy_shpkg_skill_02_white_die_01
+        display: false
+        parse:
+          type: literal
+          return: enemy_shpkg_skill_02_white_die_01
+          generated: true

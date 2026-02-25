@@ -1,0 +1,35 @@
+actionType: Act49sideBossTailChargeSummonCnt
+fields:
+  _cnt:
+    type: number
+    description: cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _scaleKey:
+    type: string
+    description: scale Key
+    values:
+      -
+        value: scale
+        display: false
+        parse:
+          type: literal
+          return: scale
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

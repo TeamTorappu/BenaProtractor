@@ -1,0 +1,38 @@
+actionType: AssignProfessionCntToBlackboard
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _professionCategory:
+    type: string
+    description: profession Category
+    values:
+      -
+        value: CASTER
+        display: false
+        parse:
+          type: literal
+          return: CASTER
+          generated: true
+      -
+        value: MEDIC
+        display: false
+        parse:
+          type: literal
+          return: MEDIC
+          generated: true
+      -
+        value: TANK
+        display: false
+        parse:
+          type: literal
+          return: TANK
+          generated: true

@@ -1,0 +1,85 @@
+actionType: ModifyEnemyGraphicScale
+fields:
+  _isAdd:
+    type: boolean
+    description: is Add
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _maxValue:
+    type: number
+    description: max Value
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.27000001072883606
+        display: false
+        parse:
+          type: literal
+          return: 0.27000001072883606
+          generated: true
+  _needMax:
+    type: boolean
+    description: need Max
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _ownerType:
+    type: string
+    description: owner Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _scaleValue:
+    type: number
+    description: scale Value
+    values:
+      -
+        value: -0.009999999776482582
+        display: false
+        parse:
+          type: literal
+          return: -0.009999999776482582
+          generated: true
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.009999999776482582
+        display: false
+        parse:
+          type: literal
+          return: 0.009999999776482582
+          generated: true

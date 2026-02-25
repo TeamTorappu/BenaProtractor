@@ -1,0 +1,27 @@
+field: _beginPosition
+type: object
+description: begin Position
+actions:
+  Main16ChangeTileShadowViaRange:
+    type: object
+    values:
+      -
+        value: "{\"row\":0,\"col\":0}"
+        display: false
+        parse:
+          type: fn
+          name: parsebeginPosition
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "{\"row\":0,\"col\":15}"
+        display: false
+        parse:
+          type: fn
+          name: parsebeginPosition
+          args:
+            - $input
+            - $ctx
+          generated: true

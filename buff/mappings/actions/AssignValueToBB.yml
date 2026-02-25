@@ -1,0 +1,389 @@
+actionType: AssignValueToBB
+fields:
+  _assignString:
+    type: boolean
+    description: assign String
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _copyFromKey:
+    type: null | string
+    description: copy From Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: atk
+        display: false
+        parse:
+          type: literal
+          return: atk
+          generated: true
+      -
+        value: atk_wave
+        display: false
+        parse:
+          type: literal
+          return: atk_wave
+          generated: true
+      -
+        value: attack@times
+        display: false
+        parse:
+          type: literal
+          return: attack@times
+          generated: true
+      -
+        value: attack@trigger_time
+        display: false
+        parse:
+          type: literal
+          return: attack@trigger_time
+          generated: true
+      -
+        value: attack_speed
+        display: false
+        parse:
+          type: literal
+          return: attack_speed
+          generated: true
+      -
+        value: attack_speed_ally
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_ally
+          generated: true
+      -
+        value: attack_speed_ally_extra
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_ally_extra
+          generated: true
+      -
+        value: attack_speed_enemy
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_enemy
+          generated: true
+      -
+        value: attack_speed_enemy_extra
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_enemy_extra
+          generated: true
+      -
+        value: attack_speed_wave
+        display: false
+        parse:
+          type: literal
+          return: attack_speed_wave
+          generated: true
+      -
+        value: back_move_speed
+        display: false
+        parse:
+          type: literal
+          return: back_move_speed
+          generated: true
+      -
+        value: block_damage_max_times
+        display: false
+        parse:
+          type: literal
+          return: block_damage_max_times
+          generated: true
+      -
+        value: consume_count
+        display: false
+        parse:
+          type: literal
+          return: consume_count
+          generated: true
+      -
+        value: consumed_cnt
+        display: false
+        parse:
+          type: literal
+          return: consumed_cnt
+          generated: true
+      -
+        value: damage_resistance
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance
+          generated: true
+      -
+        value: damage_resistance_max
+        display: false
+        parse:
+          type: literal
+          return: damage_resistance_max
+          generated: true
+      -
+        value: damage_scale
+        display: false
+        parse:
+          type: literal
+          return: damage_scale
+          generated: true
+      -
+        value: disarmed_duration
+        display: false
+        parse:
+          type: literal
+          return: disarmed_duration
+          generated: true
+      -
+        value: duration
+        display: false
+        parse:
+          type: literal
+          return: duration
+          generated: true
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+          generated: true
+      -
+        value: heal_value_s1
+        display: false
+        parse:
+          type: literal
+          return: heal_value_s1
+          generated: true
+      -
+        value: hit_times_to_switch
+        display: false
+        parse:
+          type: literal
+          return: hit_times_to_switch
+          generated: true
+      -
+        value: init_max_hp
+        display: false
+        parse:
+          type: literal
+          return: init_max_hp
+          generated: true
+      -
+        value: init_shield
+        display: false
+        parse:
+          type: literal
+          return: init_shield
+          generated: true
+      -
+        value: interval
+        display: false
+        parse:
+          type: literal
+          return: interval
+          generated: true
+      -
+        value: interval_damage
+        display: false
+        parse:
+          type: literal
+          return: interval_damage
+          generated: true
+      -
+        value: isPalsyingCur
+        display: false
+        parse:
+          type: literal
+          return: isPalsyingCur
+          generated: true
+      -
+        value: lose_hp_scale
+        display: false
+        parse:
+          type: literal
+          return: lose_hp_scale
+          generated: true
+      -
+        value: main_atk_scale
+        display: false
+        parse:
+          type: literal
+          return: main_atk_scale
+          generated: true
+      -
+        value: max_free_respawn_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_free_respawn_cnt
+          generated: true
+      -
+        value: max_hit_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_hit_cnt
+          generated: true
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+          generated: true
+      -
+        value: normal_cnt
+        display: false
+        parse:
+          type: literal
+          return: normal_cnt
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: power_cost_scale
+        display: false
+        parse:
+          type: literal
+          return: power_cost_scale
+          generated: true
+      -
+        value: power_respawn_time
+        display: false
+        parse:
+          type: literal
+          return: power_respawn_time
+          generated: true
+      -
+        value: prism_max_target
+        display: false
+        parse:
+          type: literal
+          return: prism_max_target
+          generated: true
+      -
+        value: random_result
+        display: false
+        parse:
+          type: literal
+          return: random_result
+          generated: true
+      -
+        value: shield_amount
+        display: false
+        parse:
+          type: literal
+          return: shield_amount
+          generated: true
+      -
+        value: sniper_level
+        display: false
+        parse:
+          type: literal
+          return: sniper_level
+          generated: true
+      -
+        value: stun_duration_add
+        display: false
+        parse:
+          type: literal
+          return: stun_duration_add
+          generated: true
+      -
+        value: times
+        display: false
+        parse:
+          type: literal
+          return: times
+          generated: true
+      -
+        value: value
+        display: false
+        parse:
+          type: literal
+          return: value
+          generated: true
+  _value:
+    type: number
+    description: value
+    values:
+      -
+        value: -1
+        display: false
+        parse:
+          type: literal
+          return: -1
+          generated: true
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+      -
+        value: 0.10000000149011612
+        display: false
+        parse:
+          type: literal
+          return: 0.10000000149011612
+          generated: true
+      -
+        value: 0.20000000298023224
+        display: false
+        parse:
+          type: literal
+          return: 0.20000000298023224
+          generated: true
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+      -
+        value: 2
+        display: false
+        parse:
+          type: literal
+          return: 2
+          generated: true
+      -
+        value: 5
+        display: false
+        parse:
+          type: literal
+          return: 5
+          generated: true

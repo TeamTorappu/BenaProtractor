@@ -1,0 +1,434 @@
+actionType: SummonEnemiesFollowMyRouteWithBuff
+fields:
+  _addNoSourceBuffImmediately:
+    type: boolean
+    description: add No Source Buff Immediately
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _additionalBuff:
+    type: array
+    description: additional Buff
+    schema: action_subschema/_additionalBuff.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffSource:
+    type: string
+    description: buff Source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _checkMotionMode:
+    type: string
+    description: check Motion Mode
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+          generated: true
+  _delayTime:
+    type: number
+    description: delay Time
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _dontBlockWave:
+    type: boolean
+    description: dont Block Wave
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _enemyKey:
+    type: null | string
+    description: enemy Key
+    values:
+      -
+        value: enemy_1436_dsdivi
+        display: false
+        parse:
+          type: literal
+          return: enemy_1436_dsdivi
+          generated: true
+      -
+        value: enemy_1436_dsdivi_2
+        display: false
+        parse:
+          type: literal
+          return: enemy_1436_dsdivi_2
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _ignoreOffset:
+    type: boolean
+    description: ignore Offset
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _managedByScheduler:
+    type: boolean
+    description: managed By Scheduler
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _noSourceBuff:
+    type: object
+    description: no Source Buff
+    schema: action_subschema/_noSourceBuff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _offset:
+    type: object
+    description: offset
+    schema: action_subschema/_offset.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _offsetXKey:
+    type: null | string
+    description: offset X Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: offset_x
+        display: false
+        parse:
+          type: literal
+          return: offset_x
+          generated: true
+  _offsetYKey:
+    type: null | string
+    description: offset Y Key
+    values:
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: offset_y
+        display: false
+        parse:
+          type: literal
+          return: offset_y
+          generated: true
+  _onlySummonOneInTheSamePlace:
+    type: boolean
+    description: only Summon One In The Same Place
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _passableMask:
+    type: string
+    description: passable Mask
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+      -
+        value: WALK_ONLY
+        display: false
+        parse:
+          type: literal
+          return: WALK_ONLY
+          generated: true
+  _randomDelayRange:
+    type: number
+    description: random Delay Range
+    values:
+      -
+        value: 0.5
+        display: false
+        parse:
+          type: literal
+          return: 0.5
+          generated: true
+  _randomOffsetBound:
+    type: number
+    description: random Offset Bound
+    schema: action_subschema/_randomOffsetBound.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _skipCheckPoint:
+    type: boolean
+    description: skip Check Point
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _source:
+    type: string
+    description: source
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _spawnOnHostRootTile:
+    type: boolean
+    description: spawn On Host Root Tile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _stopSummonIfHostDead:
+    type: boolean
+    description: stop Summon If Host Dead
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _summonCount:
+    type: number
+    description: summon Count
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true
+  _trySummonOutsideWhenInObstacle:
+    type: boolean
+    description: try Summon Outside When In Obstacle
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _unharmful:
+    type: boolean
+    description: unharmful
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useLocalUnharmfulFlag:
+    type: boolean
+    description: use Local Unharmful Flag
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useMapPosition:
+    type: boolean
+    description: use Map Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useOffsetForEach:
+    type: boolean
+    description: use Offset For Each
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useOffsetInBB:
+    type: boolean
+    description: use Offset In B B
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useRandomDelay:
+    type: boolean
+    description: use Random Delay
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _useTargetPosition:
+    type: boolean
+    description: use Target Position
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

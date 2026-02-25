@@ -1,0 +1,27 @@
+field: _includedBuffIds
+type: object
+description: included Buff Ids
+actions:
+  CheckHasEnemyInRange:
+    type: array
+    values:
+      -
+        value: "[\"enemy_hlslp_self_mark\"]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

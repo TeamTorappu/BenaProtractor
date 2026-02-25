@@ -1,0 +1,101 @@
+actionType: DamageScaleAccordingToHpRatio
+fields:
+  _applyWayFilter:
+    type: string
+    description: apply Way Filter
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+  _damageMask:
+    type: string
+    description: damage Mask
+    values:
+      -
+        value: NONE
+        display: false
+        parse:
+          type: literal
+          return: NONE
+          generated: true
+  _filterApplyWay:
+    type: boolean
+    description: filter Apply Way
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _filterDamageType:
+    type: boolean
+    description: filter Damage Type
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _hpRatioSource:
+    type: string
+    description: hp Ratio Source
+    values:
+      -
+        value: MODIFIER_TARGET
+        display: false
+        parse:
+          type: literal
+          return: MODIFIER_TARGET
+          generated: true
+  _maxAddOnScaleKey:
+    type: string
+    description: max Add On Scale Key
+    values:
+      -
+        value: max_add_on_scale
+        display: false
+        parse:
+          type: literal
+          return: max_add_on_scale
+          generated: true
+  _maxHpRatio:
+    type: number
+    description: max Hp Ratio
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _minAddOnScaleKey:
+    type: string
+    description: min Add On Scale Key
+    values:
+      -
+        value: min_add_on_scale
+        display: false
+        parse:
+          type: literal
+          return: min_add_on_scale
+          generated: true
+  _minHpRatio:
+    type: number
+    description: min Hp Ratio
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true

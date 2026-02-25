@@ -1,0 +1,90 @@
+actionType: AddBuffToRandomCharacterWithSpecificBuff
+fields:
+  _buff:
+    type: object
+    description: buff
+    schema: action_subschema/_buff.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: "rogue_3_spChain[coreflag]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_3_spChain[coreflag]"
+          generated: true
+  _excludeSpecificTarget:
+    type: boolean
+    description: exclude Specific Target
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _excludeToken:
+    type: boolean
+    description: exclude Token
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _excludeTrap:
+    type: boolean
+    description: exclude Trap
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _finishDerivedBuffIfParentFinish:
+    type: boolean
+    description: finish Derived Buff If Parent Finish
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _isDerivedBuff:
+    type: boolean
+    description: is Derived Buff
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true

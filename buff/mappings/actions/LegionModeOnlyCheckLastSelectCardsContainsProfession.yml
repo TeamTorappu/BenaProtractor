@@ -1,0 +1,24 @@
+actionType: LegionModeOnlyCheckLastSelectCardsContainsProfession
+fields:
+  _professionCategory:
+    type: string
+    description: profession Category
+    values:
+      -
+        value: SNIPER
+        display: false
+        parse:
+          type: literal
+          return: SNIPER
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

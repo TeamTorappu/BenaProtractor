@@ -1,0 +1,68 @@
+actionType: AssignValueToBBWithWeight
+fields:
+  _blackboardKey:
+    type: string
+    description: blackboard Key
+    schema: action_subschema/_blackboardKey.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _maxWeight:
+    type: number
+    description: max Weight
+    values:
+      -
+        value: 100
+        display: false
+        parse:
+          type: literal
+          return: 100
+          generated: true
+  _useNum2:
+    type: boolean
+    description: use Num2
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _weightNum:
+    type: number
+    description: weight Num
+    values:
+      -
+        value: 20
+        display: false
+        parse:
+          type: literal
+          return: 20
+          generated: true
+  _weightNum2:
+    type: number
+    description: weight Num2
+    values:
+      -
+        value: 70
+        display: false
+        parse:
+          type: literal
+          return: 70
+          generated: true
+  _weightNum2Key:
+    type: string
+    description: weight Num2 Key
+    values:
+      -
+        value: value_2
+        display: false
+        parse:
+          type: literal
+          return: value_2
+          generated: true

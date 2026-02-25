@@ -1,0 +1,111 @@
+actionType: Act35SideSummonGemsInRange
+fields:
+  _envSystemKey:
+    type: string
+    description: env System Key
+    values:
+      -
+        value: env_017_act35side
+        display: false
+        parse:
+          type: literal
+          return: env_017_act35side
+          generated: true
+  _gemsType:
+    type: string
+    description: gems Type
+    values:
+      -
+        value: Polluted
+        display: false
+        parse:
+          type: literal
+          return: Polluted
+          generated: true
+  _isCircleRange:
+    type: boolean
+    description: is Circle Range
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _rangeId:
+    type: string
+    description: range Id
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: x-5
+        display: false
+        parse:
+          type: literal
+          return: x-5
+          generated: true
+  _rangeRadius:
+    type: number
+    description: range Radius
+    values:
+      -
+        value: 0
+        display: false
+        parse:
+          type: literal
+          return: 0
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: PROJECTILE_TRACETARGET
+        display: false
+        parse:
+          type: literal
+          return: PROJECTILE_TRACETARGET
+          generated: true
+  _useInProjectile:
+    type: boolean
+    description: use In Projectile
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  direction:
+    type: string
+    description: direction
+    values:
+      -
+        value: UP
+        display: false
+        parse:
+          type: literal
+          return: UP
+          generated: true

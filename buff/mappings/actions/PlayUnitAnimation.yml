@@ -1,0 +1,24 @@
+actionType: PlayUnitAnimation
+fields:
+  _animation:
+    type: string
+    description: animation
+    values:
+      -
+        value: Idle
+        display: false
+        parse:
+          type: literal
+          return: Idle
+          generated: true
+  _target:
+    type: string
+    description: target
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

@@ -1,0 +1,101 @@
+actionType: Svash2EmitProjectileFixedDirection
+fields:
+  _actions:
+    type: array
+    description: actions
+    schema: action_subschema/_actions.yml
+    parse:
+      type: fn
+      name: parseActionArray
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _buffData:
+    type: array
+    description: buff Data
+    schema: action_subschema/_buffData.yml
+    parse:
+      type: fn
+      name: parseArrayDefault
+      args:
+        - $input
+        - $ctx
+      generated: true
+  _ev:
+    type: string
+    description: ev
+    values:
+      -
+        value: ON_HIT_OBJECT
+        display: false
+        parse:
+          type: literal
+          return: ON_HIT_OBJECT
+          generated: true
+  _filterType:
+    type: string
+    description: filter Type
+    values:
+      -
+        value: ALL
+        display: false
+        parse:
+          type: literal
+          return: ALL
+          generated: true
+  _overwriteActions:
+    type: boolean
+    description: overwrite Actions
+    values:
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _rangeIdProjectileSize:
+    type: string
+    description: range Id Projectile Size
+    values:
+      -
+        value: emit_count
+        display: false
+        parse:
+          type: literal
+          return: emit_count
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _startPositionType:
+    type: string
+    description: start Position Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _targetOptions:
+    type: object
+    description: target Options
+    schema: action_subschema/_targetOptions.yml
+    parse:
+      type: fn
+      name: parseObjectDefault
+      args:
+        - $input
+        - $ctx
+      generated: true

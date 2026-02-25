@@ -1,0 +1,35 @@
+actionType: UpdateStackBuffMaxStackCnt
+fields:
+  _buffOwner:
+    type: string
+    description: buff Owner
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+  _defaultMaxStackCnt:
+    type: number
+    description: default Max Stack Cnt
+    values:
+      -
+        value: 1
+        display: false
+        parse:
+          type: literal
+          return: 1
+          generated: true
+  _maxStackCntKey:
+    type: string
+    description: max Stack Cnt Key
+    values:
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
+          generated: true

@@ -1,0 +1,118 @@
+actionType: CheckContainsDerviedBuff
+fields:
+  _derviedBuffKey:
+    type: null | string
+    description: dervied Buff Key
+    values:
+      -
+        value: "enemy_cbshld_t[effect_1]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_cbshld_t[effect_1]"
+          generated: true
+      -
+        value: "enemy_cbterm_t[effect_1]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_cbterm_t[effect_1]"
+          generated: true
+      -
+        value: "enemy_ftprg[branch]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ftprg[branch]"
+          generated: true
+      -
+        value: "enemy_ristar_def_reduce[effect_1]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_ristar_def_reduce[effect_1]"
+          generated: true
+      -
+        value: "gnosis_s_3[checked]"
+        display: false
+        parse:
+          type: literal
+          return: "gnosis_s_3[checked]"
+          generated: true
+      -
+        value: "halfidle_damage_scale[input]"
+        display: false
+        parse:
+          type: literal
+          return: "halfidle_damage_scale[input]"
+          generated: true
+      -
+        value: "halfidle_periodic_damage[pure]"
+        display: false
+        parse:
+          type: literal
+          return: "halfidle_periodic_damage[pure]"
+          generated: true
+      -
+        value: "mheagl_frozen[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "mheagl_frozen[mark]"
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: "parrot_frozen[mark]"
+        display: false
+        parse:
+          type: literal
+          return: "parrot_frozen[mark]"
+          generated: true
+      -
+        value: "rockr_t_1[effect_1]"
+        display: false
+        parse:
+          type: literal
+          return: "rockr_t_1[effect_1]"
+          generated: true
+      -
+        value: "rogue_1_atk_up[skill]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_1_atk_up[skill]"
+          generated: true
+      -
+        value: "rogue_2_atk_speed[skill]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_2_atk_speed[skill]"
+          generated: true
+      -
+        value: "rogue_2_atk_up[skill]"
+        display: false
+        parse:
+          type: literal
+          return: "rogue_2_atk_up[skill]"
+          generated: true
+      -
+        value: trap_ads_mark
+        display: false
+        parse:
+          type: literal
+          return: trap_ads_mark
+          generated: true
+      -
+        value: "trap_ads_mark[shield]"
+        display: false
+        parse:
+          type: literal
+          return: "trap_ads_mark[shield]"
+          generated: true

@@ -1,0 +1,17 @@
+field: _respawnBlackboardKeys
+type: object
+description: respawn Blackboard Keys
+actions:
+  RespawnCharacter:
+    type: array
+    values:
+      -
+        value: "[]"
+        display: false
+        parse:
+          type: fn
+          name: parseArrayDefault
+          args:
+            - $input
+            - $ctx
+          generated: true

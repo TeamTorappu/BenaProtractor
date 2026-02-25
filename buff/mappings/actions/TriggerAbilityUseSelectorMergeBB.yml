@@ -1,0 +1,167 @@
+actionType: TriggerAbilityUseSelectorMergeBB
+fields:
+  _abilityName:
+    type: string
+    description: ability Name
+    values:
+      -
+        value: AOE
+        display: false
+        parse:
+          type: literal
+          return: AOE
+          generated: true
+      -
+        value: AdditionalHeal
+        display: false
+        parse:
+          type: literal
+          return: AdditionalHeal
+          generated: true
+      -
+        value: Phase2_T_Effector
+        display: false
+        parse:
+          type: literal
+          return: Phase2_T_Effector
+          generated: true
+      -
+        value: PrismAttack
+        display: false
+        parse:
+          type: literal
+          return: PrismAttack
+          generated: true
+      -
+        value: S1_Effector
+        display: false
+        parse:
+          type: literal
+          return: S1_Effector
+          generated: true
+      -
+        value: S2_Effector
+        display: false
+        parse:
+          type: literal
+          return: S2_Effector
+          generated: true
+      -
+        value: TalentBomb
+        display: false
+        parse:
+          type: literal
+          return: TalentBomb
+          generated: true
+      -
+        value: UpgradeDragon
+        display: false
+        parse:
+          type: literal
+          return: UpgradeDragon
+          generated: true
+  _castDirectly:
+    type: boolean
+    description: cast Directly
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkAbilityIsReady:
+    type: boolean
+    description: check Ability Is Ready
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _checkSrcCastable:
+    type: boolean
+    description: check Src Castable
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _excludeTarget:
+    type: boolean
+    description: exclude Target
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _excludeTargetType:
+    type: string
+    description: exclude Target Type
+    values:
+      -
+        value: SOURCE
+        display: false
+        parse:
+          type: literal
+          return: SOURCE
+          generated: true
+  _sourceType:
+    type: string
+    description: source Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: TARGET
+        display: false
+        parse:
+          type: literal
+          return: TARGET
+          generated: true

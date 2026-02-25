@@ -1,0 +1,127 @@
+actionType: IsBlackboardEqualWithString
+fields:
+  _buffKey:
+    type: string
+    description: buff Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+  _compareBBKey:
+    type: null | string
+    description: compare B B Key
+    values:
+      -
+        value: char_id2
+        display: false
+        parse:
+          type: literal
+          return: char_id2
+          generated: true
+      -
+        value: char_id_check
+        display: false
+        parse:
+          type: literal
+          return: char_id_check
+          generated: true
+      -
+        value: current_position
+        display: false
+        parse:
+          type: literal
+          return: current_position
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+  _compareValue:
+    type: null | string
+    description: compare Value
+    values:
+      -
+        value: aura_on
+        display: false
+        parse:
+          type: literal
+          return: aura_on
+          generated: true
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _useBuffBlackboard:
+    type: boolean
+    description: use Buff Blackboard
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+  _var:
+    type: string
+    description: var
+    values:
+      -
+        value: char_id
+        display: false
+        parse:
+          type: literal
+          return: char_id
+          generated: true
+      -
+        value: is_first_state
+        display: false
+        parse:
+          type: literal
+          return: is_first_state
+          generated: true
+      -
+        value: is_hard_level
+        display: false
+        parse:
+          type: literal
+          return: is_hard_level
+          generated: true
+      -
+        value: isenabled
+        display: false
+        parse:
+          type: literal
+          return: isenabled
+          generated: true
+      -
+        value: location
+        display: false
+        parse:
+          type: literal
+          return: location
+          generated: true

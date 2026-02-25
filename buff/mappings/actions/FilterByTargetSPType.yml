@@ -1,0 +1,31 @@
+actionType: FilterByTargetSPType
+fields:
+  _spType:
+    type: string
+    description: sp Type
+    values:
+      -
+        value: INCREASE_WHEN_ATTACK
+        display: false
+        parse:
+          type: literal
+          return: INCREASE_WHEN_ATTACK
+          generated: true
+      -
+        value: INCREASE_WHEN_TAKEN_DAMAGE
+        display: false
+        parse:
+          type: literal
+          return: INCREASE_WHEN_TAKEN_DAMAGE
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true

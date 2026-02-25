@@ -1,0 +1,194 @@
+actionType: CalculateTraitAbilityBlackboard
+fields:
+  _addBlackboardKey:
+    type: null | string
+    description: add Blackboard Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+          generated: true
+      -
+        value: dynamic
+        display: false
+        parse:
+          type: literal
+          return: dynamic
+          generated: true
+      -
+        value: dynamic_extra
+        display: false
+        parse:
+          type: literal
+          return: dynamic_extra
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: reload_interval
+        display: false
+        parse:
+          type: literal
+          return: reload_interval
+          generated: true
+      -
+        value: times_2
+        display: false
+        parse:
+          type: literal
+          return: times_2
+          generated: true
+  _fromBlackboardKey:
+    type: null | string
+    description: from Blackboard Key
+    values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+          generated: true
+      -
+        value: dynamic_extra
+        display: false
+        parse:
+          type: literal
+          return: dynamic_extra
+          generated: true
+      -
+        value: max_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_cnt
+          generated: true
+      -
+        value: null
+        display: false
+        parse:
+          type: literal
+          return: null
+          generated: true
+      -
+        value: reload_interval
+        display: false
+        parse:
+          type: literal
+          return: reload_interval
+          generated: true
+      -
+        value: times_2
+        display: false
+        parse:
+          type: literal
+          return: times_2
+          generated: true
+  _isSub:
+    type: boolean
+    description: is Sub
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true
+  _targetBlackboardKey:
+    type: string
+    description: target Blackboard Key
+    values:
+      -
+        value: cnt
+        display: false
+        parse:
+          type: literal
+          return: cnt
+          generated: true
+      -
+        value: dynamic_extra
+        display: false
+        parse:
+          type: literal
+          return: dynamic_extra
+          generated: true
+      -
+        value: reload_interval
+        display: false
+        parse:
+          type: literal
+          return: reload_interval
+          generated: true
+      -
+        value: times_2
+        display: false
+        parse:
+          type: literal
+          return: times_2
+          generated: true
+  _targetType:
+    type: string
+    description: target Type
+    values:
+      -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
+          generated: true
+  _useTraitBBToAdd:
+    type: boolean
+    description: use Trait B B To Add
+    values:
+      -
+        value: false
+        display: false
+        parse:
+          type: literal
+          return: false
+          generated: true
+      -
+        value: true
+        display: false
+        parse:
+          type: literal
+          return: true
+          generated: true

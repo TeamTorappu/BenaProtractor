@@ -1,0 +1,31 @@
+actionType: LegionModeOnlyDrawCardViaID
+fields:
+  _cardType:
+    type: string
+    description: card Type
+    values:
+      -
+        value: PENDING
+        display: false
+        parse:
+          type: literal
+          return: PENDING
+          generated: true
+      -
+        value: USED
+        display: false
+        parse:
+          type: literal
+          return: USED
+          generated: true
+  _id:
+    type: string
+    description: id
+    values:
+      -
+        value: trap_737_merchaa
+        display: false
+        parse:
+          type: literal
+          return: trap_737_merchaa
+          generated: true
