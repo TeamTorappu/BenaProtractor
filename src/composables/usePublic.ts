@@ -18,7 +18,10 @@ async function _loadPublicText(path: string): Promise<string> {
         }
     }
 
-    const url = path.startsWith("/") ? path : `/${path}`;
+    const baseUrl = import.meta.env.BASE_URL || "/";
+    const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
+    const url = baseUrl.endsWith("/") ? `${baseUrl}${normalizedPath}` : `${baseUrl}/${normalizedPath}`;
+    
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`读取资源失败: ${response.status} ${response.statusText} (${url})`);
