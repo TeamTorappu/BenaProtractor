@@ -7,7 +7,7 @@ const host = process.env.TAURI_DEV_HOST;
 
 // https://vite.dev/config/
 export default defineConfig(async () => ({
-    base: process.env.TAURI_ENV_PLATFORM ? "" : (process.env.GITHUB_ACTIONS ? "/BenaProtractor" : "/"),
+    base: process.env.TAURI_ENV_PLATFORM ? "" : (process.env.GITHUB_ACTIONS ? "/BenaProtractor/" : "/"),
     plugins: [
         vue(),
         UnoCSS(),
