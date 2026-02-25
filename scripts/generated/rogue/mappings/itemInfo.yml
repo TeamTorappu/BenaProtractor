@@ -1,60 +1,75 @@
 canSacrifice:
   type: boolean
   description: can Sacrifice
+  display: true
   generated: true
 description:
   type: null | string
   description: description
+  display: true
   generated: true
 iconId:
   type: string
   description: icon Id
+  display: true
   generated: true
 id:
   type: string
   description: id
+  display: true
   generated: true
 itemIconGroupId:
   type: null | string
   description: item Icon Group Id
+  display: true
   generated: true
 name:
   type: string
   description: name
+  display: true
   generated: true
 obtainApproach:
   type: string
   description: obtain Approach
+  display: true
   generated: true
 rarity:
   type: string
   description: rarity
+  display: true
   generated: true
 shortUsage:
   type: null | string
   description: short Usage
+  display: true
   generated: true
 sortId:
   type: number
   description: sort Id
+  display: true
   generated: true
 subType:
   type: string
   description: sub Type
+  display: true
   generated: true
 tinyIconColor:
   type: null
   description: tiny Icon Color
+  display: true
   generated: true
 type:
   type: string
   description: type
+  display: true
   generated: true
 unlockCondDesc:
   type: null | string
   description: unlock Cond Desc
+  display: true
   generated: true
 usage:
   type: string
   description: usage
+  display: true
   generated: true

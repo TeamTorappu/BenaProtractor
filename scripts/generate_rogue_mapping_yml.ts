@@ -250,7 +250,7 @@ for (const key of buffKeys) {
     keysDoc[key] = {
         description: descFromSnakeCase(key),
         icon: null,
-        display: false,
+        // display: false,
         generated: true,
     };
 }

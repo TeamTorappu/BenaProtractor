@@ -2086,18 +2086,6 @@ portal_only:
         - value
         - valueStr
       generated: true
-portal_only :
-  type: number
-  description: "portal_only "
-  icon: null
-  default:
-    parse:
-      type: template
-      return: "{0}({1})"
-      args:
-        - value
-        - valueStr
-      generated: true
 pr:
   type: number
   description: pr
@@ -2626,18 +2614,6 @@ selector.side:
         - value
         - valueStr
       generated: true
-selector.side :
-  type: number
-  description: "selector.side "
-  icon: null
-  default:
-    parse:
-      type: template
-      return: "{0}({1})"
-      args:
-        - value
-        - valueStr
-      generated: true
 selector.sub_profession:
   type: number
   description: selector.sub_profession
@@ -3097,18 +3073,6 @@ upper_bound@respawn_time:
 validator.roguelike_event_type:
   type: number
   description: validator.roguelike_event_type
-  icon: null
-  default:
-    parse:
-      type: template
-      return: "{0}({1})"
-      args:
-        - value
-        - valueStr
-      generated: true
-validator.roguelike_event_type :
-  type: number
-  description: "validator.roguelike_event_type "
   icon: null
   default:
     parse:

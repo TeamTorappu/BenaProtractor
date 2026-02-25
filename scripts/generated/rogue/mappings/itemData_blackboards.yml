@@ -12464,20 +12464,6 @@ portal_only:
           - value
           - valueStr
         generated: true
-portal_only :
-  type: number
-  description: "portal_only "
-  values:
-    -
-      value: 1
-      valueStr: null
-      parse:
-        type: template
-        return: "{0}({1})"
-        args:
-          - value
-          - valueStr
-        generated: true
 pr:
   type: number
   description: pr
@@ -14367,20 +14353,6 @@ selector.side:
     -
       value: 0
       valueStr: enemy
-      parse:
-        type: template
-        return: "{0}({1})"
-        args:
-          - value
-          - valueStr
-        generated: true
-selector.side :
-  type: number
-  description: "selector.side "
-  values:
-    -
-      value: 0
-      valueStr: " ally"
       parse:
         type: template
         return: "{0}({1})"
@@ -16976,6 +16948,16 @@ validator.roguelike_event_type:
         generated: true
     -
       value: 0
+      valueStr: BATTLE_ELITE|BATTLE_BOSS
+      parse:
+        type: template
+        return: "{0}({1})"
+        args:
+          - value
+          - valueStr
+        generated: true
+    -
+      value: 0
       valueStr: DUEL
       parse:
         type: template
@@ -16987,20 +16969,6 @@ validator.roguelike_event_type:
     -
       value: 0
       valueStr: EVENTS
-      parse:
-        type: template
-        return: "{0}({1})"
-        args:
-          - value
-          - valueStr
-        generated: true
-validator.roguelike_event_type :
-  type: number
-  description: "validator.roguelike_event_type "
-  values:
-    -
-      value: 0
-      valueStr: " BATTLE_ELITE|BATTLE_BOSS"
       parse:
         type: template
         return: "{0}({1})"

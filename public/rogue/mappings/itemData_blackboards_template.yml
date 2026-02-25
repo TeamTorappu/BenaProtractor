@@ -572,7 +572,6 @@ def:
       return: "{0}"
       args:
         - parseToPercent(value)
-      generated: true
 def_down[stack].def:
   type: number
   description: def_down[stack].def
@@ -1207,8 +1206,6 @@ key:
       name: parseBlackboardKey
       args:
         - valueStr
-      return: "{0}({1})"
-      generated: true
 level:
   type: number
   description: level
@@ -2075,7 +2072,7 @@ portal:
       generated: true
 portal_only:
   type: number
-  description: "portal_only "
+  description: portal_only
   icon: null
   default:
     parse:
@@ -2144,7 +2141,6 @@ profession:
       args:
         - valueStr
       return: "{0}({1})"
-      generated: true
 range_id:
   type: number
   description: range_id
@@ -2181,7 +2177,6 @@ rarity:
         - value
         - valueStr
       return: "{0}({1})"
-      generated: true
 rate:
   type: number
   description: rate
@@ -2604,7 +2599,7 @@ selector.profession:
       generated: true
 selector.side:
   type: number
-  description: "selector.side "
+  description: selector.side
   icon: null
   default:
     parse:
@@ -3072,7 +3067,7 @@ upper_bound@respawn_time:
       generated: true
 validator.roguelike_event_type:
   type: number
-  description: "validator.roguelike_event_type "
+  description: validator.roguelike_event_type
   icon: null
   default:
     parse:
