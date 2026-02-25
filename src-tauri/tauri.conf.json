@@ -34,14 +34,6 @@
     "resources": [
       "../public/**/*",
       "../public/**/*"
-    ],
-    "windows": {
-      "nsis": {
-        "languages": [
-          "zh-CN"
-        ],
-        "installerIcon": "icons/icon.ico"
-      }
-    }
+    ]
   }
 }
