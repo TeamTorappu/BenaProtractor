@@ -70,7 +70,7 @@ jobs:
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
-          args: ${{ matrix.args }} --no-bundle --features portable
+          args: ${{ matrix.args }}
           uploadWorkflowArtifacts: true
           uploadPlainBinary: true
           uploadUpdaterSignatures: false
