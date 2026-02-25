@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["tile_yinyang_road","tile_yinyang_wall"]"
+        value: "[\"tile_yinyang_road\",\"tile_yinyang_wall\"]"
         display: false
         parse:
           type: fn

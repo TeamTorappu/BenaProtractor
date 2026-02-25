@@ -493,6 +493,9 @@ AssignModifierRealDeltaToBB:
 AssignModifierValueIntoBlackboard:
   description: Assign Modifier Value Into Blackboard
   icon: null
+AssignNearestReachableTileWithoutCharOnPath:
+  description: Assign Nearest Reachable Tile Without Char On Path
+  icon: null
 AssignNodeCountToBb:
   description: Assign Node Count To Bb
   icon: null

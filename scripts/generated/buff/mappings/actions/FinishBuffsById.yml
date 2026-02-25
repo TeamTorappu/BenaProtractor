@@ -1661,6 +1661,27 @@ fields:
           return: "enemy_minima_shield[aura]"
           generated: true
       -
+        value: "enemy_misery_s_assassinate[hit]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_misery_s_assassinate[hit]"
+          generated: true
+      -
+        value: "enemy_misery_s_assassinate[on]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_misery_s_assassinate[on]"
+          generated: true
+      -
+        value: "enemy_misery_t_heal[ready]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_misery_t_heal[ready]"
+          generated: true
+      -
         value: enemy_mjcdog_big
         display: false
         parse:

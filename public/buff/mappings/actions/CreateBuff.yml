@@ -15,50 +15,43 @@ fields:
     type: string
     description: buff Owner
     values:
-      -
-        value: BUFF_OWNER
+      - value: BUFF_OWNER
         display: false
         parse:
           type: literal
           return: BUFF_OWNER
           generated: true
-      -
-        value: BUFF_SOURCE
+      - value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
           generated: true
-      -
-        value: MAIN_TARGET
+      - value: MAIN_TARGET
         display: false
         parse:
           type: literal
           return: MAIN_TARGET
           generated: true
-      -
-        value: MODIFIER_SOURCE
+      - value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
           generated: true
-      -
-        value: MODIFIER_TARGET
+      - value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
           return: MODIFIER_TARGET
           generated: true
-      -
-        value: SOURCE
+      - value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
           generated: true
-      -
-        value: TARGET
+      - value: TARGET
         display: false
         parse:
           type: literal
@@ -68,15 +61,13 @@ fields:
     type: boolean
     description: finish Derived Buff If Parent Finish
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -86,15 +77,13 @@ fields:
     type: boolean
     description: hook Effect Key From Source Projectile
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -104,15 +93,13 @@ fields:
     type: boolean
     description: inherate Source Projectile From Parent Buff
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -122,15 +109,13 @@ fields:
     type: boolean
     description: is Derived Buff
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -140,22 +125,25 @@ fields:
     type: string
     description: special Buff Source
     values:
-      -
-        value: BUFF_SOURCE
+      - value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      - value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
           generated: true
-      -
-        value: MODIFIER_SOURCE
+      - value: MODIFIER_SOURCE
         display: false
         parse:
           type: literal
           return: MODIFIER_SOURCE
           generated: true
-      -
-        value: MODIFIER_TARGET
+      - value: MODIFIER_TARGET
         display: false
         parse:
           type: literal
@@ -165,15 +153,13 @@ fields:
     type: boolean
     description: use Special Buff Source
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal

@@ -315,7 +315,7 @@ global_buff_layer:
   icon: null
   generated: true
 global_buff_normal:
-  description: 全局Buff(常规)
+  description: Global Buff Normal
   icon: null
   generated: true
 global_buff_override_blackboard:

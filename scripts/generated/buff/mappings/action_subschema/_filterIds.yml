@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["enemy_10025_vtmstr","enemy_10025_vtmstr_2"]"
+        value: "[\"enemy_10025_vtmstr\",\"enemy_10025_vtmstr_2\"]"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_10092_hlslp"]"
+        value: "[\"enemy_10092_hlslp\"]"
         display: false
         parse:
           type: fn
@@ -26,7 +26,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_1040_bombd","enemy_1040_bombd_2"]"
+        value: "[\"enemy_1040_bombd\",\"enemy_1040_bombd_2\"]"
         display: false
         parse:
           type: fn
@@ -36,7 +36,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_1235_dsbskr"]"
+        value: "[\"enemy_1235_dsbskr\"]"
         display: false
         parse:
           type: fn
@@ -46,7 +46,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_1262_durplc","enemy_1262_durplc_2"]"
+        value: "[\"enemy_1262_durplc\",\"enemy_1262_durplc_2\"]"
         display: false
         parse:
           type: fn
@@ -56,7 +56,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_1369_bmbcar1"]"
+        value: "[\"enemy_1369_bmbcar1\"]"
         display: false
         parse:
           type: fn
@@ -66,7 +66,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_2065_skzjs"]"
+        value: "[\"enemy_2065_skzjs\"]"
         display: false
         parse:
           type: fn
@@ -76,7 +76,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_2101_dyspll","enemy_2121_dyspl2"]"
+        value: "[\"enemy_2101_dyspll\",\"enemy_2121_dyspl2\"]"
         display: false
         parse:
           type: fn
@@ -86,7 +86,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_2101_dyspll"]"
+        value: "[\"enemy_2101_dyspll\"]"
         display: false
         parse:
           type: fn
@@ -96,7 +96,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_2118_dylbhm"]"
+        value: "[\"enemy_2118_dylbhm\"]"
         display: false
         parse:
           type: fn
@@ -106,7 +106,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_2124_dyjsfg"]"
+        value: "[\"enemy_2124_dyjsfg\"]"
         display: false
         parse:
           type: fn
@@ -116,7 +116,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_3001_upeopl","enemy_1313_wdfmr","enemy_3005_lpeopl"]"
+        value: "[\"enemy_3001_upeopl\",\"enemy_1313_wdfmr\",\"enemy_3005_lpeopl\"]"
         display: false
         parse:
           type: fn
@@ -126,7 +126,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_5507_arctolm"]"
+        value: "[\"enemy_5507_arctolm\"]"
         display: false
         parse:
           type: fn
@@ -136,7 +136,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_9022_acdumm"]"
+        value: "[\"enemy_9022_acdumm\"]"
         display: false
         parse:
           type: fn
@@ -149,7 +149,7 @@ actions:
     type: array
     values:
       -
-        value: "["trap_1520_lhcolb"]"
+        value: "[\"trap_1520_lhcolb\"]"
         display: false
         parse:
           type: fn

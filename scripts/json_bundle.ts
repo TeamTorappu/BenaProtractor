@@ -46,6 +46,10 @@ const tasks: CopyTask[] = [
         to: "public/gamedata/battle/buff_template_data.json",
     },
     {
+        from: "ArknightsGameData/zh_CN/gamedata/excel/enemy_handbook_table.json",
+        to: "public/gamedata/excel/enemy_handbook_table.json",
+    },
+    {
         from: "ArknightsGameData/zh_CN/gamedata/excel/character_table.json",
         to: "public/gamedata/excel/character_table.json",
     },

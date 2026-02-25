@@ -6,7 +6,7 @@ actions:
     type: object
     values:
       -
-        value: "{"loopType":"RANDOM","mountPoints":["SPECIAL_0","SPECIAL_1","SPECIAL_2","SPECIAL_3","SPECIAL_4","SPECIAL_5"]}"
+        value: "{\"loopType\":\"RANDOM\",\"mountPoints\":[\"SPECIAL_0\",\"SPECIAL_1\",\"SPECIAL_2\",\"SPECIAL_3\",\"SPECIAL_4\",\"SPECIAL_5\"]}"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"loopType":"RANDOM","mountPoints":[]}"
+        value: "{\"loopType\":\"RANDOM\",\"mountPoints\":[]}"
         display: false
         parse:
           type: fn
@@ -26,7 +26,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"loopType":"RANDOM","mountPoints":null}"
+        value: "{\"loopType\":\"RANDOM\",\"mountPoints\":null}"
         display: false
         parse:
           type: fn

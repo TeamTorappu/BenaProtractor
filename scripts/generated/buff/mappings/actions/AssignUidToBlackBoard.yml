@@ -22,10 +22,24 @@ fields:
           type: literal
           return: atk_target_uid
           generated: true
+      -
+        value: uid
+        display: false
+        parse:
+          type: literal
+          return: uid
+          generated: true
   _buffKey:
     type: string
     description: buff Key
     values:
+      -
+        value: ""
+        display: false
+        parse:
+          type: literal
+          return: ""
+          generated: true
       -
         value: "token_radian_tower3_s_3[trigger_link]"
         display: false
@@ -43,4 +57,11 @@ fields:
         parse:
           type: literal
           return: BUFF_OWNER
+          generated: true
+      -
+        value: BUFF_SOURCE
+        display: false
+        parse:
+          type: literal
+          return: BUFF_SOURCE
           generated: true

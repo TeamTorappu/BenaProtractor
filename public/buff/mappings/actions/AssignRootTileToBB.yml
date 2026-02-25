@@ -4,15 +4,13 @@ fields:
     type: boolean
     description: assign As String
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -22,15 +20,13 @@ fields:
     type: boolean
     description: assign Target Token Or Host
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -40,22 +36,19 @@ fields:
     type: null | string
     description: bb Key
     values:
-      -
-        value: currentPos
+      - value: currentPos
         display: false
         parse:
           type: literal
           return: currentPos
           generated: true
-      -
-        value: current_position
+      - value: current_position
         display: false
         parse:
           type: literal
           return: current_position
           generated: true
-      -
-        value: null
+      - value: null
         display: false
         parse:
           type: literal
@@ -65,15 +58,19 @@ fields:
     type: null | string
     description: col Key
     values:
-      -
-        value: col
+      - value: col
         display: false
         parse:
           type: literal
           return: col
           generated: true
-      -
-        value: null
+      - value: cur_col
+        display: false
+        parse:
+          type: literal
+          return: cur_col
+          generated: true
+      - value: null
         display: false
         parse:
           type: literal
@@ -83,15 +80,19 @@ fields:
     type: null | string
     description: row Key
     values:
-      -
-        value: null
+      - value: cur_row
+        display: false
+        parse:
+          type: literal
+          return: cur_row
+          generated: true
+      - value: null
         display: false
         parse:
           type: literal
           return: null
           generated: true
-      -
-        value: row
+      - value: row
         display: false
         parse:
           type: literal
@@ -101,22 +102,19 @@ fields:
     type: string
     description: target Type
     values:
-      -
-        value: BUFF_OWNER
+      - value: BUFF_OWNER
         display: false
         parse:
           type: literal
           return: BUFF_OWNER
           generated: true
-      -
-        value: BUFF_SOURCE
+      - value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
           generated: true
-      -
-        value: TARGET
+      - value: TARGET
         display: false
         parse:
           type: literal

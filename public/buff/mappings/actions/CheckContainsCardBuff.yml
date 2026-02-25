@@ -4,15 +4,13 @@ fields:
     type: boolean
     description: check Source Uid
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -22,54 +20,53 @@ fields:
     type: string
     description: key
     values:
-      -
-        value: nasti_nstbld_m3456_exist
+      - value: enemy_misery_t_respawn
+        display: false
+        parse:
+          type: literal
+          return: enemy_misery_t_respawn
+          generated: true
+      - value: nasti_nstbld_m3456_exist
         display: false
         parse:
           type: literal
           return: nasti_nstbld_m3456_exist
           generated: true
-      -
-        value: nasti_nstbld_m3_build_lock
+      - value: nasti_nstbld_m3_build_lock
         display: false
         parse:
           type: literal
           return: nasti_nstbld_m3_build_lock
           generated: true
-      -
-        value: nearl2_t_1
+      - value: nearl2_t_1
         display: false
         parse:
           type: literal
           return: nearl2_t_1
           generated: true
-      -
-        value: "slent2_e_003_t2[mark]"
+      - value: slent2_e_003_t2[mark]
         display: false
         parse:
           type: literal
-          return: "slent2_e_003_t2[mark]"
+          return: slent2_e_003_t2[mark]
           generated: true
-      -
-        value: "svrash_e_002_t[aura]"
+      - value: svrash_e_002_t[aura]
         display: false
         parse:
           type: literal
-          return: "svrash_e_002_t[aura]"
+          return: svrash_e_002_t[aura]
           generated: true
-      -
-        value: "svrash_e_002_t[self]"
+      - value: svrash_e_002_t[self]
         display: false
         parse:
           type: literal
-          return: "svrash_e_002_t[self]"
+          return: svrash_e_002_t[self]
           generated: true
   _readBuffKeyFromBlackboard:
     type: boolean
     description: read Buff Key From Blackboard
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
@@ -79,15 +76,13 @@ fields:
     type: boolean
     description: select Target Host Or Token
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -97,15 +92,13 @@ fields:
     type: string
     description: source Type
     values:
-      -
-        value: BUFF_SOURCE
+      - value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
           generated: true
-      -
-        value: TARGET
+      - value: TARGET
         display: false
         parse:
           type: literal
@@ -115,8 +108,7 @@ fields:
     type: string
     description: target
     values:
-      -
-        value: BUFF_OWNER
+      - value: BUFF_OWNER
         display: false
         parse:
           type: literal

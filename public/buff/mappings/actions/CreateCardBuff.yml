@@ -4,43 +4,43 @@ fields:
     type: null | string
     description: card Buff Key
     values:
-      -
-        value: ""
+      - value: ""
         display: false
         parse:
           type: literal
           return: ""
           generated: true
-      -
-        value: PassengerStorage
+      - value: PassengerStorage
         display: false
         parse:
           type: literal
           return: PassengerStorage
           generated: true
-      -
-        value: eagle_valid
+      - value: eagle_valid
         display: false
         parse:
           type: literal
           return: eagle_valid
           generated: true
-      -
-        value: null
+      - value: enemy_misery_t_respawn
+        display: false
+        parse:
+          type: literal
+          return: enemy_misery_t_respawn
+          generated: true
+      - value: null
         display: false
         parse:
           type: literal
           return: null
           generated: true
-      -
-        value: "prosts_t_1[raw_born]"
+      - value: prosts_t_1[raw_born]
         display: false
         parse:
           type: literal
-          return: "prosts_t_1[raw_born]"
+          return: prosts_t_1[raw_born]
           generated: true
-      -
-        value: respawn_buff
+      - value: respawn_buff
         display: false
         parse:
           type: literal
@@ -50,8 +50,7 @@ fields:
     type: boolean
     description: enable Max Stack Count
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
@@ -61,8 +60,7 @@ fields:
     type: boolean
     description: filter Is In Hand
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
@@ -72,15 +70,13 @@ fields:
     type: boolean
     description: is Ratio
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -90,29 +86,25 @@ fields:
     type: string
     description: life Type
     values:
-      -
-        value: ALL_THE_TIME
+      - value: ALL_THE_TIME
         display: false
         parse:
           type: literal
           return: ALL_THE_TIME
           generated: true
-      -
-        value: HOLD_BY_BUFF
+      - value: HOLD_BY_BUFF
         display: false
         parse:
           type: literal
           return: HOLD_BY_BUFF
           generated: true
-      -
-        value: IMMEDIATELY
+      - value: IMMEDIATELY
         display: false
         parse:
           type: literal
           return: IMMEDIATELY
           generated: true
-      -
-        value: UNTIL_NEXT_SPAWN
+      - value: UNTIL_NEXT_SPAWN
         display: false
         parse:
           type: literal
@@ -122,29 +114,25 @@ fields:
     type: string
     description: target
     values:
-      -
-        value: BUFF_OWNER
+      - value: BUFF_OWNER
         display: false
         parse:
           type: literal
           return: BUFF_OWNER
           generated: true
-      -
-        value: BUFF_SOURCE
+      - value: BUFF_SOURCE
         display: false
         parse:
           type: literal
           return: BUFF_SOURCE
           generated: true
-      -
-        value: SOURCE
+      - value: SOURCE
         display: false
         parse:
           type: literal
           return: SOURCE
           generated: true
-      -
-        value: TARGET
+      - value: TARGET
         display: false
         parse:
           type: literal
@@ -154,15 +142,13 @@ fields:
     type: boolean
     description: use Card Buff Key
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal

@@ -95,53 +95,8 @@ function detectParseFn(fieldName: string, actionType?: string): string {
     return types.has('array') ? 'parseArrayDefault' : 'parseObjectDefault';
 }
 
-function toYaml(obj: any, indent = 0): string {
-    const spaces = " ".repeat(indent);
-    function yamlString(str: string): string {
-        if (str === "" || /[\[\]:#",\n]/.test(str) || str.startsWith(" ") || str.endsWith(" ") || str.includes("  ") || (str.includes("-") && str.trim() === "-")) {
-            return '"' + str.replace(/"/g, '\"') + '"';
-        }
-        return str;
-    }
+import { toYaml } from "./yaml_utils";
 
-    if (Array.isArray(obj)) {
-        return obj
-            .map((item) => {
-                if (typeof item === "string") {
-                    return `${spaces}- ${yamlString(item)}`;
-                }
-                if (typeof item === "object" && item !== null) {
-                    const block = toYaml(item, indent + 2);
-                    return `${spaces}-\n${block}`;
-                }
-                return `${spaces}- ${yamlString(String(item))}`;
-            })
-            .join("\n");
-    }
-
-    if (typeof obj === "object" && obj !== null) {
-        const lines: string[] = [];
-        const keys = Object.keys(obj);
-        for (const key of keys) {
-            const value = obj[key];
-            if (typeof value === "object" && value !== null) {
-                const block = toYaml(value, indent + 2);
-                lines.push(`${spaces}${key}:`);
-                lines.push(block);
-            } else if (typeof value === "string") {
-                lines.push(`${spaces}${key}: ${yamlString(value)}`);
-            } else {
-                lines.push(`${spaces}${key}: ${String(value)}`);
-            }
-        }
-        return lines.join("\n");
-    }
-
-    if (typeof obj === "string") {
-        return `${spaces}${yamlString(obj)}`;
-    }
-    return `${spaces}${String(obj)}`;
-}
 
 // 统计基础字段与 eventToActions
 for (const value of Object.values(buffData)) {

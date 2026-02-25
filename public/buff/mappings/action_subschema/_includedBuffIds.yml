@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["enemy_hlslp_self_mark"]"
+        value: "[\"enemy_hlslp_self_mark\"]"
         display: false
         parse:
           type: fn

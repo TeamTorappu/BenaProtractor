@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["enemy_minima_drone_1","enemy_minima_drone_2","enemy_minima_drone_3","enemy_minima_drone_4"]"
+        value: "[\"enemy_minima_drone_1\",\"enemy_minima_drone_2\",\"enemy_minima_drone_3\",\"enemy_minima_drone_4\"]"
         display: false
         parse:
           type: fn
@@ -19,7 +19,7 @@ actions:
     type: array
     values:
       -
-        value: "["enemy_trcerb_common_die_01"]"
+        value: "[\"enemy_trcerb_common_die_01\"]"
         display: false
         parse:
           type: fn
@@ -29,7 +29,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["enemy_trcerb_common_die_02"]"
+        value: "[\"enemy_trcerb_common_die_02\"]"
         display: false
         parse:
           type: fn

@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["WAIT_FOR_SECONDS"]"
+        value: "[\"WAIT_FOR_SECONDS\"]"
         display: false
         parse:
           type: fn

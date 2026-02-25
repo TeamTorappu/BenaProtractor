@@ -6,7 +6,7 @@ actions:
     type: object
     values:
       -
-        value: "{"categoryMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","filterTag":null,"subprofessionTag":null,"onlySelectMe":false,"excludeMe":false,"mapTags":[],"enableOverride":false,"excludeNotInHand":false,"excludeNotShowInCardList":true,"excludeHiddenByCardState":false}"
+        value: "{\"categoryMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"filterTag\":null,\"subprofessionTag\":null,\"onlySelectMe\":false,\"excludeMe\":false,\"mapTags\":[],\"enableOverride\":false,\"excludeNotInHand\":false,\"excludeNotShowInCardList\":true,\"excludeHiddenByCardState\":false}"
         display: false
         parse:
           type: fn

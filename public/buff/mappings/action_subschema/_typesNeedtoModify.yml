@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["ATK","DEF","MAGIC_RESISTANCE","BLOCK_CNT","BASE_ATTACK_TIME","MAX_HP"]"
+        value: "[\"ATK\",\"DEF\",\"MAGIC_RESISTANCE\",\"BLOCK_CNT\",\"BASE_ATTACK_TIME\",\"MAX_HP\"]"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["MAX_HP","ATK","DEF","MAGIC_RESISTANCE","BLOCK_CNT","BASE_ATTACK_TIME"]"
+        value: "[\"MAX_HP\",\"ATK\",\"DEF\",\"MAGIC_RESISTANCE\",\"BLOCK_CNT\",\"BASE_ATTACK_TIME\"]"
         display: false
         parse:
           type: fn

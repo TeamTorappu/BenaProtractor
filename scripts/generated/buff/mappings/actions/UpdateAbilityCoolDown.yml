@@ -12,6 +12,20 @@ fields:
           return: ""
           generated: true
       -
+        value: Attack
+        display: false
+        parse:
+          type: literal
+          return: Attack
+          generated: true
+      -
+        value: Combat
+        display: false
+        parse:
+          type: literal
+          return: Combat
+          generated: true
+      -
         value: Flame
         display: false
         parse:

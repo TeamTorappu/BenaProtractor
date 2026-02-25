@@ -23,6 +23,13 @@ fields:
     description: key
     values:
       -
+        value: enemy_misery_t_respawn
+        display: false
+        parse:
+          type: literal
+          return: enemy_misery_t_respawn
+          generated: true
+      -
         value: nasti_nstbld_m3456_exist
         display: false
         parse:

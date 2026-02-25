@@ -6,7 +6,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALL","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALL\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -26,7 +26,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -36,7 +36,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -46,7 +46,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -56,7 +56,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -66,7 +66,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -76,7 +76,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"TRAP_OR_ITEM","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"TRAP_OR_ITEM\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -86,7 +86,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -99,7 +99,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -109,7 +109,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"DAMAGE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"DAMAGE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -119,7 +119,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -129,7 +129,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"BOTH_ALLY_AND_ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"BOTH_ALLY_AND_ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -139,7 +139,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -149,7 +149,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"DAMAGE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"DAMAGE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -159,7 +159,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"DAMAGE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"DAMAGE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -169,7 +169,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -179,7 +179,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":true,"excludeAbnormalFlag":"CAMOUFLAGE","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":true,\"excludeAbnormalFlag\":\"CAMOUFLAGE\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -189,7 +189,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"DAMAGE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"DAMAGE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -199,7 +199,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT, TRAP_OR_ITEM","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"DAMAGE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"E_NUM","abnormalCombo":"E_NUM"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT, TRAP_OR_ITEM\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"DAMAGE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"E_NUM\",\"abnormalCombo\":\"E_NUM\"}"
         display: false
         parse:
           type: fn
@@ -209,7 +209,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"NONE","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"NONE\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -219,7 +219,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -229,7 +229,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"DAMAGE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"DAMAGE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -239,7 +239,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -249,7 +249,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"NONE","targetMotion":"NONE","targetCategory":"NONE","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"NONE\",\"targetMotion\":\"NONE\",\"targetCategory\":\"NONE\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -262,7 +262,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -272,7 +272,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"HEAL","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"HEAL\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -282,7 +282,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"HEAL","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"HEAL\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -292,7 +292,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -302,7 +302,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"HEAL","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"HEAL\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -315,7 +315,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -325,7 +325,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -335,7 +335,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -345,7 +345,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -355,7 +355,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":true,"abnormalFlag":"INVISIBLE","abnormalCombo":"E_NUM"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":true,\"abnormalFlag\":\"INVISIBLE\",\"abnormalCombo\":\"E_NUM\"}"
         display: false
         parse:
           type: fn
@@ -365,7 +365,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -378,7 +378,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -388,7 +388,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -398,7 +398,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -408,7 +408,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -418,7 +418,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":true,"abnormalFlag":"CAMOUFLAGE","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":true,\"abnormalFlag\":\"CAMOUFLAGE\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -428,7 +428,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"TOKEN","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"TOKEN\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -438,7 +438,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -448,7 +448,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":true,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":true,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -458,7 +458,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"TRAP","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"TRAP\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -468,7 +468,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"HEAL","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"HEAL\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -478,7 +478,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -488,7 +488,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -498,7 +498,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -508,7 +508,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":true,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":true,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -518,7 +518,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -528,7 +528,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"TRAP","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"TRAP\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -538,7 +538,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -548,7 +548,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":true,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":true,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -558,7 +558,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -568,7 +568,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"BOTH_ALLY_AND_ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"BOTH_ALLY_AND_ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -578,7 +578,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"BOTH_ALLY_AND_ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"TOKEN","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"INVISIBLE","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"BOTH_ALLY_AND_ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"TOKEN\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"INVISIBLE\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -588,7 +588,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"BOTH_ALLY_AND_ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT, TRAP_OR_ITEM","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":true,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"BOTH_ALLY_AND_ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT, TRAP_OR_ITEM\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":true,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -598,7 +598,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -608,7 +608,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"E_NUM","abnormalCombo":"E_NUM"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"E_NUM\",\"abnormalCombo\":\"E_NUM\"}"
         display: false
         parse:
           type: fn
@@ -618,7 +618,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -628,7 +628,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -638,7 +638,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -648,7 +648,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":true,"excludeAbnormalFlag":"CAMOUFLAGE","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":true,\"excludeAbnormalFlag\":\"CAMOUFLAGE\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -658,7 +658,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -668,7 +668,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -678,7 +678,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -688,7 +688,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT, TRAP_OR_ITEM","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT, TRAP_OR_ITEM\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -698,7 +698,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT, TRAP_OR_ITEM","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"CAMOUFLAGE","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT, TRAP_OR_ITEM\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"CAMOUFLAGE\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -708,7 +708,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT, TRAP_OR_ITEM","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"INVISIBLE","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT, TRAP_OR_ITEM\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"INVISIBLE\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -718,7 +718,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -728,7 +728,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"E_NUM","abnormalCombo":"E_NUM"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"E_NUM\",\"abnormalCombo\":\"E_NUM\"}"
         display: false
         parse:
           type: fn
@@ -738,7 +738,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -748,7 +748,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":true,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":true,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -761,7 +761,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -774,7 +774,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"EP_DAMAGE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"EP_DAMAGE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -784,7 +784,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -797,7 +797,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -810,7 +810,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -820,7 +820,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"FROZEN","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"FROZEN\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -830,7 +830,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -840,7 +840,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -850,7 +850,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":true,"excludeAbnormalFlag":"FROZEN","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"FROZEN","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":true,\"excludeAbnormalFlag\":\"FROZEN\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"FROZEN\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -860,7 +860,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"NONE","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"NONE\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -870,7 +870,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -880,7 +880,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -890,7 +890,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -900,7 +900,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -913,7 +913,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":true,"excludeAbnormalFlag":"MOTION_TARGET_FREE","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"E_NUM","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":true,\"excludeAbnormalFlag\":\"MOTION_TARGET_FREE\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"E_NUM\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -926,7 +926,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"TRAP_OR_ITEM","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"TRAP_OR_ITEM\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -939,7 +939,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"WALK_ONLY","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"WALK_ONLY\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -952,7 +952,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -965,7 +965,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -978,7 +978,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -991,7 +991,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -1004,7 +1004,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -1014,7 +1014,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"targetSide":"ALLY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALLY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn
@@ -1027,7 +1027,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT, TRAP_OR_ITEM","enableAdvancedOptions":true,"ignoreTargetFree":true,"ignoreAllyTargetFree":true,"ignoreHealFree":true,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"CAMOUFLAGE","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT, TRAP_OR_ITEM\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":true,\"ignoreAllyTargetFree\":true,\"ignoreHealFree\":true,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"CAMOUFLAGE\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn

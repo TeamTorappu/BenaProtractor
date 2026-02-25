@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["CAMOUFLAGE","INVISIBLE"]"
+        value: "[\"CAMOUFLAGE\",\"INVISIBLE\"]"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["FROZEN","STUNNED"]"
+        value: "[\"FROZEN\",\"STUNNED\"]"
         display: false
         parse:
           type: fn
@@ -26,7 +26,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["FROZEN"]"
+        value: "[\"FROZEN\"]"
         display: false
         parse:
           type: fn
@@ -36,7 +36,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["INVINCIBLE","TARGET_FREE","INVISIBLE"]"
+        value: "[\"INVINCIBLE\",\"TARGET_FREE\",\"INVISIBLE\"]"
         display: false
         parse:
           type: fn
@@ -46,7 +46,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["LEVITATE","FORCE_LEVITATE"]"
+        value: "[\"LEVITATE\",\"FORCE_LEVITATE\"]"
         display: false
         parse:
           type: fn
@@ -56,7 +56,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["LEVITATE"]"
+        value: "[\"LEVITATE\"]"
         display: false
         parse:
           type: fn
@@ -66,7 +66,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["STUNNED","FROZEN","COLD","FEARED","ATTRACTED"]"
+        value: "[\"STUNNED\",\"FROZEN\",\"COLD\",\"FEARED\",\"ATTRACTED\"]"
         display: false
         parse:
           type: fn
@@ -76,7 +76,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["STUNNED","FROZEN","LEVITATE"]"
+        value: "[\"STUNNED\",\"FROZEN\",\"LEVITATE\"]"
         display: false
         parse:
           type: fn
@@ -86,7 +86,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["STUNNED","FROZEN","UNMOVABLE"]"
+        value: "[\"STUNNED\",\"FROZEN\",\"UNMOVABLE\"]"
         display: false
         parse:
           type: fn
@@ -96,7 +96,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["STUNNED","FROZEN"]"
+        value: "[\"STUNNED\",\"FROZEN\"]"
         display: false
         parse:
           type: fn
@@ -106,7 +106,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["STUNNED","LEVITATE","FROZEN","UNMOVABLE","FEARED"]"
+        value: "[\"STUNNED\",\"LEVITATE\",\"FROZEN\",\"UNMOVABLE\",\"FEARED\"]"
         display: false
         parse:
           type: fn
@@ -116,7 +116,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["STUNNED","LEVITATE","FROZEN"]"
+        value: "[\"STUNNED\",\"LEVITATE\",\"FROZEN\"]"
         display: false
         parse:
           type: fn
@@ -126,7 +126,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["STUNNED","UNMOVABLE"]"
+        value: "[\"STUNNED\",\"UNMOVABLE\"]"
         display: false
         parse:
           type: fn
@@ -136,7 +136,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["TARGET_FREE","ALLY_TARGET_FREE","INVINCIBLE"]"
+        value: "[\"TARGET_FREE\",\"ALLY_TARGET_FREE\",\"INVINCIBLE\"]"
         display: false
         parse:
           type: fn
@@ -146,7 +146,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["TARGET_FREE","INVINCIBLE","INVISIBLE"]"
+        value: "[\"TARGET_FREE\",\"INVINCIBLE\",\"INVISIBLE\"]"
         display: false
         parse:
           type: fn
@@ -156,7 +156,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["TARGET_FREE","INVINCIBLE"]"
+        value: "[\"TARGET_FREE\",\"INVINCIBLE\"]"
         display: false
         parse:
           type: fn
@@ -169,7 +169,7 @@ actions:
     type: array
     values:
       -
-        value: "["STUNNED","FROZEN"]"
+        value: "[\"STUNNED\",\"FROZEN\"]"
         display: false
         parse:
           type: fn
@@ -182,7 +182,7 @@ actions:
     type: array
     values:
       -
-        value: "["STUNNED"]"
+        value: "[\"STUNNED\"]"
         display: false
         parse:
           type: fn

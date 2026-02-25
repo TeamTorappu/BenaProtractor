@@ -586,6 +586,13 @@ fields:
           return: enemy_ltniak_clear_mark
           generated: true
       -
+        value: "enemy_misery_s_mark[audio]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_misery_s_mark[audio]"
+          generated: true
+      -
         value: enemy_mjcbln_drop
         display: false
         parse:

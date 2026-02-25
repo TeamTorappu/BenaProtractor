@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["magic_resist_penetrate","def_penetrate"]"
+        value: "[\"magic_resist_penetrate\",\"def_penetrate\"]"
         display: false
         parse:
           type: fn

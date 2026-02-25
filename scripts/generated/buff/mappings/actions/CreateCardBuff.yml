@@ -26,6 +26,13 @@ fields:
           return: eagle_valid
           generated: true
       -
+        value: enemy_misery_t_respawn
+        display: false
+        parse:
+          type: literal
+          return: enemy_misery_t_respawn
+          generated: true
+      -
         value: null
         display: false
         parse:

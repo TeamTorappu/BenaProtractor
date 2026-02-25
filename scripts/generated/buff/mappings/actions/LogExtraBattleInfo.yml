@@ -598,6 +598,13 @@ fields:
           return: ltstatBeDestroyed
           generated: true
       -
+        value: misery_s_assassinate
+        display: false
+        parse:
+          type: literal
+          return: misery_s_assassinate
+          generated: true
+      -
         value: neonlamp_use
         display: false
         parse:

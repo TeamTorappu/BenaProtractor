@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["PIONEER"]"
+        value: "[\"PIONEER\"]"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["SNIPER, CASTER"]"
+        value: "[\"SNIPER, CASTER\"]"
         display: false
         parse:
           type: fn

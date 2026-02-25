@@ -432,7 +432,7 @@ _additionalBuff:
   schema: action_subschema/_additionalBuff.yml
   parse:
     type: fn
-    name: parsebuffArray
+    name: parseArrayDefault
     args:
       - $input
       - $ctx
@@ -1334,6 +1334,7 @@ _buff:
     args:
       - $input
       - $ctx
+    generated: true
 _buffAsSource:
   type: boolean
   description: buff As Source
@@ -1366,7 +1367,7 @@ _buffData:
   schema: action_subschema/_buffData.yml
   parse:
     type: fn
-    name: parsebuffArray
+    name: parseArrayDefault
     args:
       - $input
       - $ctx
@@ -1563,6 +1564,7 @@ _buffs:
     args:
       - $input
       - $ctx
+    generated: true
 _buffsUseTargetAsSource:
   type: array
   description: buffs Use Target As Source
@@ -5356,7 +5358,7 @@ _flagBuff:
   schema: action_subschema/_flagBuff.yml
   parse:
     type: fn
-    name: parsebuff
+    name: parseObjectDefault
     args:
       - $input
       - $ctx
@@ -9146,12 +9148,12 @@ _noSource:
       generated: true
 _noSourceBuff:
   type: object
-  description: 无来源 Buff
+  description: no Source Buff
   icon: null
   schema: action_subschema/_noSourceBuff.yml
   parse:
     type: fn
-    name: parsebuff
+    name: parseObjectDefault
     args:
       - $input
       - $ctx
@@ -12909,7 +12911,7 @@ _upgradedBuff:
   schema: action_subschema/_upgradedBuff.yml
   parse:
     type: fn
-    name: parsebuff
+    name: parseObjectDefault
     args:
       - $input
       - $ctx
@@ -14978,6 +14980,19 @@ originalMaxCount:
 useIdToFindHost:
   type: boolean
   description: use Id To Find Host
+  icon: null
+  default:
+    display: false
+    parse:
+      type: fn
+      name: parseBoolean
+      args:
+        - $input
+        - $ctx
+      generated: true
+_filterBuildableMask:
+  type: boolean
+  description: filter Buildable Mask
   icon: null
   default:
     display: false

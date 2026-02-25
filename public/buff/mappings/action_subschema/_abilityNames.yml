@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["M0FunnelsNormalAttack","M1FunnelRemoteAttack"]"
+        value: "[\"M0FunnelsNormalAttack\",\"M1FunnelRemoteAttack\"]"
         display: false
         parse:
           type: fn

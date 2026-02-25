@@ -530,6 +530,13 @@ _abilityName:
         return: CollapseWarning
         generated: true
     -
+      value: Combat
+      display: false
+      parse:
+        type: literal
+        return: Combat
+        generated: true
+    -
       value: ConvertToPark
       display: false
       parse:
@@ -7666,6 +7673,13 @@ _audioSignal:
         return: enemy_ltniak_clear_mark
         generated: true
     -
+      value: "enemy_misery_s_mark[audio]"
+      display: false
+      parse:
+        type: literal
+        return: "enemy_misery_s_mark[audio]"
+        generated: true
+    -
       value: enemy_mjcbln_drop
       display: false
       parse:
@@ -9053,6 +9067,13 @@ _blackBoardKey:
       parse:
         type: literal
         return: raw_speed
+        generated: true
+    -
+      value: uid
+      display: false
+      parse:
+        type: literal
+        return: uid
         generated: true
     -
       value: unique_id
@@ -12327,6 +12348,27 @@ _buffKey:
       parse:
         type: literal
         return: "enemy_minima_shield[aura]"
+        generated: true
+    -
+      value: "enemy_misery_s_assassinate[hit]"
+      display: false
+      parse:
+        type: literal
+        return: "enemy_misery_s_assassinate[hit]"
+        generated: true
+    -
+      value: "enemy_misery_s_assassinate[on]"
+      display: false
+      parse:
+        type: literal
+        return: "enemy_misery_s_assassinate[on]"
+        generated: true
+    -
+      value: "enemy_misery_t_heal[ready]"
+      display: false
+      parse:
+        type: literal
+        return: "enemy_misery_t_heal[ready]"
         generated: true
     -
       value: enemy_mjcbln_value
@@ -17755,6 +17797,13 @@ _buildableMask:
         type: literal
         return: DEFAULT
         generated: true
+    -
+      value: NIGHT
+      display: false
+      parse:
+        type: literal
+        return: NIGHT
+        generated: true
 _buildableType:
   type: string
   description: buildable Type
@@ -18045,6 +18094,13 @@ _cardBuffKey:
       parse:
         type: literal
         return: eagle_valid
+        generated: true
+    -
+      value: enemy_misery_t_respawn
+      display: false
+      parse:
+        type: literal
+        return: enemy_misery_t_respawn
         generated: true
     -
       value: enemy_mjcdog_respawn
@@ -19889,6 +19945,13 @@ _colKey:
       parse:
         type: literal
         return: col
+        generated: true
+    -
+      value: cur_col
+      display: false
+      parse:
+        type: literal
+        return: cur_col
         generated: true
     -
       value: null
@@ -29025,6 +29088,17 @@ _filterBuffSource:
         type: literal
         return: true
         generated: true
+_filterBuildableMask:
+  type: boolean
+  description: filter Buildable Mask
+  values:
+    -
+      value: true
+      display: false
+      parse:
+        type: literal
+        return: true
+        generated: true
 _filterByBondIds:
   type: array
   description: filter By Bond Ids
@@ -36328,6 +36402,13 @@ _key:
         return: enemy_9023_acdums
         generated: true
     -
+      value: enemy_misery_t_respawn
+      display: false
+      parse:
+        type: literal
+        return: enemy_misery_t_respawn
+        generated: true
+    -
       value: enemy_mnctur_stun
       display: false
       parse:
@@ -36599,6 +36680,20 @@ _key:
       parse:
         type: literal
         return: min_atk_scale
+        generated: true
+    -
+      value: misery_retreat
+      display: false
+      parse:
+        type: literal
+        return: misery_retreat
+        generated: true
+    -
+      value: misery_s_assassinate
+      display: false
+      parse:
+        type: literal
+        return: misery_s_assassinate
         generated: true
     -
       value: mizuki_t_1
@@ -45601,6 +45696,13 @@ _rowKey:
   description: row Key
   values:
     -
+      value: cur_row
+      display: false
+      parse:
+        type: literal
+        return: cur_row
+        generated: true
+    -
       value: null
       display: false
       parse:
@@ -48859,6 +48961,13 @@ _specialBuffSource:
   type: string
   description: special Buff Source
   values:
+    -
+      value: BUFF_OWNER
+      display: false
+      parse:
+        type: literal
+        return: BUFF_OWNER
+        generated: true
     -
       value: BUFF_SOURCE
       display: false

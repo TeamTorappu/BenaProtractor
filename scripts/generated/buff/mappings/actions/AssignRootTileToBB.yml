@@ -73,6 +73,13 @@ fields:
           return: col
           generated: true
       -
+        value: cur_col
+        display: false
+        parse:
+          type: literal
+          return: cur_col
+          generated: true
+      -
         value: null
         display: false
         parse:
@@ -83,6 +90,13 @@ fields:
     type: null | string
     description: row Key
     values:
+      -
+        value: cur_row
+        display: false
+        parse:
+          type: literal
+          return: cur_row
+          generated: true
       -
         value: null
         display: false

@@ -6,7 +6,7 @@ actions:
     type: object
     values:
       -
-        value: "{"row":0,"col":0}"
+        value: "{\"row\":0,\"col\":0}"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"row":7,"col":29}"
+        value: "{\"row\":7,\"col\":29}"
         display: false
         parse:
           type: fn

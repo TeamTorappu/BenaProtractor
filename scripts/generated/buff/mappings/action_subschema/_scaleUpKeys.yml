@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["stack_cnt","ep_heal_ratio","heal_scale"]"
+        value: "[\"stack_cnt\",\"ep_heal_ratio\",\"heal_scale\"]"
         display: false
         parse:
           type: fn

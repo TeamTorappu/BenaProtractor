@@ -121,6 +121,13 @@ fields:
           return: "enemy_lrmm[stormCtrl]"
           generated: true
       -
+        value: "enemy_misery_s_assassinate[hit]"
+        display: false
+        parse:
+          type: literal
+          return: "enemy_misery_s_assassinate[hit]"
+          generated: true
+      -
         value: "enemy_nstmom[skill_counter]"
         display: false
         parse:
@@ -695,6 +702,13 @@ fields:
         parse:
           type: literal
           return: max_point
+          generated: true
+      -
+        value: max_stack_cnt
+        display: false
+        parse:
+          type: literal
+          return: max_stack_cnt
           generated: true
       -
         value: mid_cost

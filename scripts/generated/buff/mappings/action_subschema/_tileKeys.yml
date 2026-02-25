@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["tile_hole"]"
+        value: "[\"tile_hole\"]"
         display: false
         parse:
           type: fn
@@ -19,7 +19,7 @@ actions:
     type: array
     values:
       -
-        value: "["tile_reed","tile_reedw"]"
+        value: "[\"tile_reed\",\"tile_reedw\"]"
         display: false
         parse:
           type: fn
@@ -42,7 +42,7 @@ actions:
     type: array
     values:
       -
-        value: "["tile_woodrd"]"
+        value: "[\"tile_woodrd\"]"
         display: false
         parse:
           type: fn

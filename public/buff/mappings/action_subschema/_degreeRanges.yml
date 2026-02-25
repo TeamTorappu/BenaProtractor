@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "[{"x":180,"y":360}]"
+        value: "[{\"x\":180,\"y\":360}]"
         display: false
         parse:
           type: fn

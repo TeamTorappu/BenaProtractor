@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["sargonShip","maniShip"]"
+        value: "[\"sargonShip\",\"maniShip\"]"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["sargonShip"]"
+        value: "[\"sargonShip\"]"
         display: false
         parse:
           type: fn
@@ -26,7 +26,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["steadShip"]"
+        value: "[\"steadShip\"]"
         display: false
         parse:
           type: fn
@@ -49,7 +49,7 @@ actions:
     type: array
     values:
       -
-        value: "["yanShip"]"
+        value: "[\"yanShip\"]"
         display: false
         parse:
           type: fn

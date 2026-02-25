@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["AMMO"]"
+        value: "[\"AMMO\"]"
         display: false
         parse:
           type: fn

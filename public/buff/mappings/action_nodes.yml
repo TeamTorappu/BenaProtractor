@@ -3025,3 +3025,6 @@ WriteBossrushWaveCntToBlackboard:
 YmgpckTouchTargetGainScoreOrGrade:
   description: Ymgpck Touch Target Gain Score Or Grade
   icon: null
+AssignNearestReachableTileWithoutCharOnPath:
+  description: Assign Nearest Reachable Tile Without Char On Path
+  icon: null

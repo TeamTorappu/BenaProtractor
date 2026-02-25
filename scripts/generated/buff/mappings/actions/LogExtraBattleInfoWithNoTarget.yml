@@ -36,6 +36,13 @@ fields:
           type: literal
           return: mcnrsh_s_hit
           generated: true
+      -
+        value: misery_retreat
+        display: false
+        parse:
+          type: literal
+          return: misery_retreat
+          generated: true
   _loadKeyFromBlackBoard:
     type: boolean
     description: load Key From Black Board

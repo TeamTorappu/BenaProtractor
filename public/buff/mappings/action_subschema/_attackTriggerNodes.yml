@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "[{"$type":"Torappu.Battle.Action.Nodes+CheckContainsTargetsInRangeId, Assembly-CSharp","_sourceType":"BUFF_OWNER","_rangeIdKey":"range_id","_targetOptions":{"targetSide":"ENEMY","targetMotion":"ALL","targetCategory":"DEFAULT","enableAdvancedOptions":true,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}}]"
+        value: "[{\"$type\":\"Torappu.Battle.Action.Nodes+CheckContainsTargetsInRangeId, Assembly-CSharp\",\"_sourceType\":\"BUFF_OWNER\",\"_rangeIdKey\":\"range_id\",\"_targetOptions\":{\"targetSide\":\"ENEMY\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT\",\"enableAdvancedOptions\":true,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}}]"
         display: false
         parse:
           type: fn

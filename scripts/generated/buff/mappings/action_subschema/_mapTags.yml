@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["act25side_extra"]"
+        value: "[\"act25side_extra\"]"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "["main_12"]"
+        value: "[\"main_12\"]"
         display: false
         parse:
           type: fn

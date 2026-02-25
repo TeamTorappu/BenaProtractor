@@ -141,6 +141,13 @@ fields:
     description: special Buff Source
     values:
       -
+        value: BUFF_OWNER
+        display: false
+        parse:
+          type: literal
+          return: BUFF_OWNER
+          generated: true
+      -
         value: BUFF_SOURCE
         display: false
         parse:

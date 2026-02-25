@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["trap_047_mandrablock"]"
+        value: "[\"trap_047_mandrablock\"]"
         display: false
         parse:
           type: fn

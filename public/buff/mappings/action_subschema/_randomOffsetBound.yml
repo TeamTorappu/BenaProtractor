@@ -6,7 +6,7 @@ actions:
     type: object
     values:
       -
-        value: "{"_serializedValue":0}"
+        value: "{\"_serializedValue\":0}"
         display: false
         parse:
           type: fn

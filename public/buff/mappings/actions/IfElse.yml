@@ -10,6 +10,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _failNodes:
     type: array | null
     description: 若否
@@ -20,6 +21,7 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true
   _succeedNodes:
     type: array | null
     description: 若是
@@ -30,3 +32,4 @@ fields:
       args:
         - $input
         - $ctx
+      generated: true

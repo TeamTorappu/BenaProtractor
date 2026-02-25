@@ -6,7 +6,7 @@ actions:
     type: object
     values:
       -
-        value: "{"targetSide":"ALL","targetMotion":"ALL","targetCategory":"DEFAULT, TRAP_OR_ITEM","enableAdvancedOptions":false,"ignoreTargetFree":false,"ignoreAllyTargetFree":false,"ignoreHealFree":false,"ignoreTargetSide":false,"excludeSomeAbnormalFlags":false,"excludeAbnormalFlag":"STUNNED","purposeMask":"NONE","professionMask":"NONE","checkUnitType":false,"unitTypeMask":"NONE","onlyIgnoreSomeOfTargetFreeCase":false,"abnormalFlag":"STUNNED","abnormalCombo":"SLEEPING"}"
+        value: "{\"targetSide\":\"ALL\",\"targetMotion\":\"ALL\",\"targetCategory\":\"DEFAULT, TRAP_OR_ITEM\",\"enableAdvancedOptions\":false,\"ignoreTargetFree\":false,\"ignoreAllyTargetFree\":false,\"ignoreHealFree\":false,\"ignoreTargetSide\":false,\"excludeSomeAbnormalFlags\":false,\"excludeAbnormalFlag\":\"STUNNED\",\"purposeMask\":\"NONE\",\"professionMask\":\"NONE\",\"checkUnitType\":false,\"unitTypeMask\":\"NONE\",\"onlyIgnoreSomeOfTargetFreeCase\":false,\"abnormalFlag\":\"STUNNED\",\"abnormalCombo\":\"SLEEPING\"}"
         display: false
         parse:
           type: fn

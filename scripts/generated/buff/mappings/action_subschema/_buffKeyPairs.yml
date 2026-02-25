@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "[{"blockerBuffKey":"highland_block_mark","blockeeBuffKey":"highland_block_mark"}]"
+        value: "[{\"blockerBuffKey\":\"highland_block_mark\",\"blockeeBuffKey\":\"highland_block_mark\"}]"
         display: false
         parse:
           type: fn

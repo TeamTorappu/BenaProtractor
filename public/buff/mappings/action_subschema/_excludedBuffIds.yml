@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "["enemy_sggem_t[link]"]"
+        value: "[\"enemy_sggem_t[link]\"]"
         display: false
         parse:
           type: fn

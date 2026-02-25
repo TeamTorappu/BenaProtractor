@@ -4872,6 +4872,19 @@ _filterBuffSource:
         - $input
         - $ctx
       generated: true
+_filterBuildableMask:
+  type: boolean
+  description: filter Buildable Mask
+  icon: null
+  default:
+    display: false
+    parse:
+      type: fn
+      name: parseBoolean
+      args:
+        - $input
+        - $ctx
+      generated: true
 _filterByBondIds:
   type: array
   description: filter By Bond Ids

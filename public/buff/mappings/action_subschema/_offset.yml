@@ -6,7 +6,7 @@ actions:
     type: object
     values:
       -
-        value: "{"row":1,"col":0}"
+        value: "{\"row\":1,\"col\":0}"
         display: false
         parse:
           type: fn
@@ -19,7 +19,7 @@ actions:
     type: object
     values:
       -
-        value: "{"x":-1,"y":0}"
+        value: "{\"x\":-1,\"y\":0}"
         display: false
         parse:
           type: fn
@@ -29,7 +29,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"x":0,"y":0}"
+        value: "{\"x\":0,\"y\":0}"
         display: false
         parse:
           type: fn
@@ -39,7 +39,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"x":0.10000000149011612,"y":-0.10000000149011612}"
+        value: "{\"x\":0.10000000149011612,\"y\":-0.10000000149011612}"
         display: false
         parse:
           type: fn
@@ -49,7 +49,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"x":0.5,"y":-0.5}"
+        value: "{\"x\":0.5,\"y\":-0.5}"
         display: false
         parse:
           type: fn
@@ -59,7 +59,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "{"x":1,"y":0}"
+        value: "{\"x\":1,\"y\":0}"
         display: false
         parse:
           type: fn
@@ -72,7 +72,7 @@ actions:
     type: object
     values:
       -
-        value: "{"x":0,"y":0}"
+        value: "{\"x\":0,\"y\":0}"
         display: false
         parse:
           type: fn

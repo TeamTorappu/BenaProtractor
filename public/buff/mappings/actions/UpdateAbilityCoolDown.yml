@@ -4,71 +4,73 @@ fields:
     type: string
     description: ability Name
     values:
-      -
-        value: ""
+      - value: ""
         display: false
         parse:
           type: literal
           return: ""
           generated: true
-      -
-        value: Flame
+      - value: Attack
+        display: false
+        parse:
+          type: literal
+          return: Attack
+          generated: true
+      - value: Combat
+        display: false
+        parse:
+          type: literal
+          return: Combat
+          generated: true
+      - value: Flame
         display: false
         parse:
           type: literal
           return: Flame
           generated: true
-      -
-        value: M2Attack
+      - value: M2Attack
         display: false
         parse:
           type: literal
           return: M2Attack
           generated: true
-      -
-        value: PetrifiedRay
+      - value: PetrifiedRay
         display: false
         parse:
           type: literal
           return: PetrifiedRay
           generated: true
-      -
-        value: PrismAttack
+      - value: PrismAttack
         display: false
         parse:
           type: literal
           return: PrismAttack
           generated: true
-      -
-        value: S2Ability
+      - value: S2Ability
         display: false
         parse:
           type: literal
           return: S2Ability
           generated: true
-      -
-        value: S2MultiMeleeAttack
+      - value: S2MultiMeleeAttack
         display: false
         parse:
           type: literal
           return: S2MultiMeleeAttack
           generated: true
-      -
-        value: SummonDupilr
+      - value: SummonDupilr
         display: false
         parse:
           type: literal
           return: SummonDupilr
           generated: true
-      -
-        value: fire
+      - value: fire
         display: false
         parse:
           type: literal
           return: fire
           generated: true
-      -
-        value: lock
+      - value: lock
         display: false
         parse:
           type: literal
@@ -78,54 +80,47 @@ fields:
     type: string
     description: cool Down Key
     values:
-      -
-        value: ""
+      - value: ""
         display: false
         parse:
           type: literal
           return: ""
           generated: true
-      -
-        value: PetrifiedRay_CD
+      - value: PetrifiedRay_CD
         display: false
         parse:
           type: literal
           return: PetrifiedRay_CD
           generated: true
-      -
-        value: SummonDupilr_CD
+      - value: SummonDupilr_CD
         display: false
         parse:
           type: literal
           return: SummonDupilr_CD
           generated: true
-      -
-        value: "mandra_ray_p2[cd]"
+      - value: mandra_ray_p2[cd]
         display: false
         parse:
           type: literal
-          return: "mandra_ray_p2[cd]"
+          return: mandra_ray_p2[cd]
           generated: true
-      -
-        value: "summon_dupilr_p2[cd]"
+      - value: summon_dupilr_p2[cd]
         display: false
         parse:
           type: literal
-          return: "summon_dupilr_p2[cd]"
+          return: summon_dupilr_p2[cd]
           generated: true
   _keepPassedTime:
     type: boolean
     description: keep Passed Time
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -135,15 +130,13 @@ fields:
     type: boolean
     description: load Ability From Blackboard
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -153,15 +146,13 @@ fields:
     type: boolean
     description: load From Blackboard
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -171,8 +162,7 @@ fields:
     type: number
     description: new Period
     values:
-      -
-        value: 0
+      - value: 0
         display: false
         parse:
           type: literal
@@ -182,8 +172,7 @@ fields:
     type: string
     description: owner Type
     values:
-      -
-        value: BUFF_OWNER
+      - value: BUFF_OWNER
         display: false
         parse:
           type: literal
@@ -193,8 +182,7 @@ fields:
     type: boolean
     description: use Ability Blackboard
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
@@ -204,15 +192,13 @@ fields:
     type: boolean
     description: use New Period
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -222,15 +208,13 @@ fields:
     type: boolean
     description: use Original Cooldown
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal
@@ -240,15 +224,13 @@ fields:
     type: boolean
     description: wait First Period
     values:
-      -
-        value: false
+      - value: false
         display: false
         parse:
           type: literal
           return: false
           generated: true
-      -
-        value: true
+      - value: true
         display: false
         parse:
           type: literal

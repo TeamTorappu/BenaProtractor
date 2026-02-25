@@ -28,7 +28,24 @@ async function _loadPublicText(path: string): Promise<string> {
 
 async function _loadPublicJSON(path: string) {
     const text = await _loadPublicText(path);
-    return JSON.parse(text);
+    const data = JSON.parse(text);
+    function trimStrings<T>(obj: T): T {
+        if (typeof obj === "string") {
+            return obj.trim() as unknown as T;
+        }
+        if (Array.isArray(obj)) {
+            return obj.map(item => trimStrings(item)) as unknown as T;
+        }
+        if (obj && typeof obj === "object") {
+            const res: any = {};
+            for (const [k, v] of Object.entries(obj as any)) {
+                res[k] = trimStrings(v as any);
+            }
+            return res;
+        }
+        return obj;
+    }
+    return trimStrings(data);
 }
 
 async function _loadPublicYAML(path: string) {

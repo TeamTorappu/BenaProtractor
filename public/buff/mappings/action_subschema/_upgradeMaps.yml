@@ -6,7 +6,7 @@ actions:
     type: array
     values:
       -
-        value: "[{"trapTag":"LHGrassSeries","direvedTrapID":"trap_1533_lhcampc"},{"trapTag":"LHVlgSeries","direvedTrapID":"trap_1525_lhswer"},{"trapTag":"LHTreeSeries","direvedTrapID":"trap_1531_lhcampa"},{"trapTag":"LHRockSeries","direvedTrapID":"trap_1532_lhcampb"},{"trapTag":"LHDoorSeries","direvedTrapID":"trap_1519_lhrift"}]"
+        value: "[{\"trapTag\":\"LHGrassSeries\",\"direvedTrapID\":\"trap_1533_lhcampc\"},{\"trapTag\":\"LHVlgSeries\",\"direvedTrapID\":\"trap_1525_lhswer\"},{\"trapTag\":\"LHTreeSeries\",\"direvedTrapID\":\"trap_1531_lhcampa\"},{\"trapTag\":\"LHRockSeries\",\"direvedTrapID\":\"trap_1532_lhcampb\"},{\"trapTag\":\"LHDoorSeries\",\"direvedTrapID\":\"trap_1519_lhrift\"}]"
         display: false
         parse:
           type: fn
@@ -16,7 +16,7 @@ actions:
             - $ctx
           generated: true
       -
-        value: "[{"trapTag":"lhtown","direvedTrapID":"trap_1526_lharen"}]"
+        value: "[{\"trapTag\":\"lhtown\",\"direvedTrapID\":\"trap_1526_lharen\"}]"
         display: false
         parse:
           type: fn
