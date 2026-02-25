@@ -299,7 +299,7 @@ AdjustVisualObjectHeight:
   description: Adjust Visual Object Height
   icon: null
 AdvancedApplyDamage:
-  description: Advanced Apply Damage
+  description: 造成伤害
   icon: null
 AdvancedApplyHeal:
   description: Advanced Apply Heal
@@ -311,7 +311,7 @@ AlwaysExecuteNodeList:
   description: Always Execute Node List
   icon: null
 AlwaysNext:
-  description: Always Next
+  description: 不论前一个节点是否成功，始终继续执行
   icon: null
 AmmoSkillCountModifier:
   description: Ammo Skill Count Modifier
@@ -533,7 +533,7 @@ AssignSubSpineConfigIndexToBB:
   description: Assign Sub Spine Config Index To B B
   icon: null
 AssignTokenCardCntToBB:
-  description: Assign Token Card Cnt To B B
+  description: 将召唤物数量记录到黑板
   icon: null
 AssignTokenCntToBB:
   description: Assign Token Cnt To B B
@@ -554,7 +554,7 @@ AtkAdditionUpBeforeCalcDamage:
   description: Atk Addition Up Before Calc Damage
   icon: null
 AtkScaleUp:
-  description: Atk Scale Up
+  description: 临时提升攻击力倍率
   icon: null
 AtkToHpRecovery:
   description: Atk To Hp Recovery
@@ -671,7 +671,7 @@ BlinkNode:
   description: Blink Node
   icon: null
 BlockDamage:
-  description: Block Damage
+  description: 格挡/护盾/屏障
   icon: null
 BlockElementDamage:
   description: Block Element Damage
@@ -683,7 +683,7 @@ BuildCharacterInRange:
   description: Build Character In Range
   icon: null
 CalculateBlackboardValueViaParams:
-  description: Calculate Blackboard Value Via Params
+  description: 用参数计算黑板值
   icon: null
 CalculateFeverSpShowBuffRemainingProgress:
   description: Calculate Fever Sp Show Buff Remaining Progress
@@ -794,7 +794,7 @@ CheckCharacterDefaultDirection:
   description: Check Character Default Direction
   icon: null
 CheckCharacterGroupTag:
-  description: Check Character Group Tag
+  description: 检查阵营标签
   icon: null
 CheckCharacterInBornState:
   description: Check Character In Born State
@@ -812,7 +812,7 @@ CheckConatinsMapTags:
   description: Check Conatins Map Tags
   icon: null
 CheckContainsBuff:
-  description: Check Contains Buff
+  description: 检查是否持有某Buff
   icon: null
 CheckContainsCardBuff:
   description: Check Contains Card Buff
@@ -1190,7 +1190,7 @@ CreateBuffUseCardUidAsSource:
   description: Create Buff Use Card Uid As Source
   icon: null
 CreateBuffUseHostAsSource:
-  description: Create Buff Use Host As Source
+  description: 创建Buff（以召唤物主人为来源）
   icon: null
 CreateBuffUseTargetAsSource:
   description: Create Buff Use Target As Source
@@ -1310,7 +1310,7 @@ DamageFixedValueResistance:
   description: Damage Fixed Value Resistance
   icon: null
 DamageScale:
-  description: Damage Scale
+  description: 伤害倍率
   icon: null
 DamageScaleAccordingToHpRatio:
   description: Damage Scale According To Hp Ratio
@@ -1319,7 +1319,7 @@ DamageScaleBaseOnDistance:
   description: Damage Scale Base On Distance
   icon: null
 DamageSplit:
-  description: Damage Split
+  description: 分摊伤害
   icon: null
 DamageSplitToBuffKeySources:
   description: Damage Split To Buff Key Sources
@@ -1556,7 +1556,7 @@ FilterByTargetHpRatio:
   description: Filter By Target Hp Ratio
   icon: null
 FilterByTargetMassLevel:
-  description: Filter By Target Mass Level
+  description: 检查目标重量
   icon: null
 FilterByTargetSPType:
   description: Filter By Target S P Type
@@ -1628,7 +1628,7 @@ FinishAllStatusResistableBuffs:
   description: Finish All Status Resistable Buffs
   icon: null
 FinishBuff:
-  description: Finish Buff
+  description: 结束Buff
   icon: null
 FinishBuffsById:
   description: 根据ID结束Buffs
@@ -1664,10 +1664,10 @@ FinishDeckBuffByKey:
   description: Finish Deck Buff By Key
   icon: null
 FinishDerivedBuff:
-  description: Finish Derived Buff
+  description: 结束所有子Buff
   icon: null
 FinishDerivedBuffById:
-  description: Finish Derived Buff By Id
+  description: 根据ID结束子Buff
   icon: null
 FinishGame:
   description: Finish Game
@@ -1946,7 +1946,7 @@ InterruptEnemyCombat:
   description: Interrupt Enemy Combat
   icon: null
 InterruptTokenSkill:
-  description: Interrupt Token Skill
+  description: 中断召唤物技能
   icon: null
 InverseDamage:
   description: Inverse Damage
@@ -2360,7 +2360,7 @@ MoveNextLevelBranch:
   description: Move Next Level Branch
   icon: null
 NoSourceDamage:
-  description: No Source Damage
+  description: 造成无来源伤害
   icon: null
 NoSourceDamageNew:
   description: No Source Damage New
@@ -2381,7 +2381,7 @@ PickRandomBranchPhase:
   description: Pick Random Branch Phase
   icon: null
 PlayAudio:
-  description: Play Audio
+  description: 播放音效
   icon: null
 PlayBGM:
   description: Play B G M
@@ -2447,7 +2447,7 @@ RecalculateDamage:
   description: Recalculate Damage
   icon: null
 RechargeToken:
-  description: Recharge Token
+  description: 补充召唤物
   icon: null
 RecordAbilityRemainingTime:
   description: Record Ability Remaining Time
@@ -2867,7 +2867,7 @@ SwitchDynamicBuffTileModeUseAbilitySelector:
   description: Switch Dynamic Buff Tile Mode Use Ability Selector
   icon: null
 SwitchMode:
-  description: Switch Mode
+  description: 切换模式
   icon: null
 SwitchRacingMode:
   description: Switch Racing Mode
@@ -2906,7 +2906,7 @@ TrapRockflSummonLtrock:
   description: Trap Rockfl Summon Ltrock
   icon: null
 TriggerAbility:
-  description: Trigger Ability
+  description: 触发能力
   icon: null
 TriggerAbilityMergeBB:
   description: Trigger Ability Merge B B

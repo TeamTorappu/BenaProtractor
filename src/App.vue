@@ -38,21 +38,31 @@
                 </n-tabs>
               </template>
               <template #header-extra>
-                <n-badge :value="activeTab === 'buff' ? filteredKeys.length : filteredRogueItems.length"
+                <n-badge :value="activeTab === 'buff' ? filteredBuffItems.length : filteredRogueItems.length"
                   color="#18a058" />
               </template>
-              <div v-if="activeTab === 'buff'" class="flex-grow overflow-auto min-h-0">
-                <n-input v-model:value="searchQuery" placeholder="搜索 Buff..." clearable>
-                  <template #prefix><n-icon>
-                      <Search />
-                    </n-icon></template>
-                </n-input>
-                <n-virtual-list :items="filteredKeys" :item-size="34" class="h-full">
+              <div v-if="activeTab === 'buff'" class="flex-grow overflow-auto min-h-0 flex flex-col gap-3">
+                <div class="space-y-2 flex-shrink-0">
+                  <div class="flex gap-2">
+                    <n-select v-model:value="buffFilterCategory" placeholder="分类" clearable
+                      :options="buffCategoryOptions" size="small" class="flex-grow" />
+                    <n-button size="small" @click="buffShowId = !buffShowId" :type="buffShowId ? 'primary' : 'default'"
+                      ghost>
+                      {{ buffShowId ? 'ID' : '名' }}
+                    </n-button>
+                  </div>
+                  <n-input v-model:value="searchQuery" placeholder="搜索 Buff..." clearable size="small">
+                    <template #prefix><n-icon>
+                        <Search />
+                      </n-icon></template>
+                  </n-input>
+                </div>
+                <n-virtual-list :items="filteredBuffItems" :item-size="34" class="h-full">
                   <template #default="{ item }">
                     <div
                       :class="['px-3 py-1.5 my-0.5 rounded cursor-pointer transition-colors',
-                        selectedKey === item.key && activeTab === 'buff' ? 'bg-blue-500/20 text-blue-500' : 'hover:bg-gray-100 dark:hover:bg-gray-800']"
-                      @click="selectKey(item.key)">
+                        selectedBuffKey === item.key && activeTab === 'buff' ? 'bg-blue-500/20 text-blue-500' : 'hover:bg-gray-100 dark:hover:bg-gray-800']"
+                      @click="selectBuffItem(item.key)">
                       {{ item.label }}
                     </div>
                   </template>
@@ -88,7 +98,8 @@
             <n-card size="small" class="h-full overflow-auto min-h-0" :segmented="{ content: true }">
               <template #header>
                 <div>
-                  数据结构 {{ activeTab === 'buff' && selectedKey ? ` - ${selectedKey}` : '' }}{{ activeTab === 'rogue' &&
+                  数据结构 {{ activeTab === 'buff' && selectedBuffKey ? ` - ${selectedBuffKey}` : '' }}{{ activeTab ===
+                    'rogue' &&
                     selectedRogueId ? ` - ${selectedRogueId}` : '' }}
                 </div>
               </template>
@@ -156,8 +167,8 @@ import {
 import { LogoGithub, Search, Moon, Sun } from '@vicons/carbon'
 import hljs from 'highlight.js/lib/core'
 import json from 'highlight.js/lib/languages/json'
-import { loadPublicJSON } from '@/composables/usePublic'
 import { buildRogueObjects, loadRogueSeasons, type RogueItem } from '@/composables/useRogue'
+import { buildBuffObjects, type BuffItem, BuffCategory } from '@/composables/useBuff'
 import { parseBuffsToTree } from '@/parser/buff';
 import { parseRogueToTree } from '@/parser/rogue'
 import { computedAsync, useDebounceFn } from '@vueuse/core'
@@ -172,13 +183,13 @@ const railStyle = ({ checked }: { focused: boolean; checked: boolean }) => ({
   background: checked ? '#18a058' : '#ddd'
 })
 
-const allBuffdata = ref<Record<string, Record<string, any>>>({})
-loadPublicJSON('gamedata/battle/buff_template_data.json')
-  .then((d) => {
-    allBuffdata.value = d as Record<string, Record<string, any>>
+const buffItems = ref<BuffItem[]>([])
+buildBuffObjects()
+  .then((items) => {
+    buffItems.value = items
   })
   .catch(() => {
-    allBuffdata.value = {}
+    buffItems.value = []
   })
 
 
@@ -227,20 +238,34 @@ const codeContent = ref('')
 const isJsonEmpty = computed(() => !codeContent.value || codeContent.value.trim() === '{}')
 
 const showAll = ref(false)
+const selectedBuffKey = ref<string | null>(null)
 
-const selectedKey = ref<string | null>(null)
+const buffShowId = ref(false)
+const buffFilterCategory = ref<string | null>(null)
 
-const filteredKeys = computed(() => {
-  const keys = Object.keys(allBuffdata.value || {})
-  const q = searchQuery.value.trim()
-  const filtered = !q ? keys : keys.filter(k => k.includes(q))
-  return filtered.map(k => ({ label: k, key: k }))
+const buffCategoryOptions = computed(() => {
+  return Object.values(BuffCategory).map(c => ({ label: c, value: c }))
 })
 
-const selectKey = useDebounceFn(async (key: string) => {
-  selectedKey.value = key
+const filteredBuffItems = computed(() => {
+  const q = searchQuery.value.trim().toLowerCase()
+  return buffItems.value
+    .filter(item => {
+      const matchCategory = !buffFilterCategory.value || item.category === buffFilterCategory.value
+      const matchSearch = !q || item.id.toLowerCase().includes(q) || item.parsedName.toLowerCase().includes(q)
+      return matchCategory && matchSearch
+    })
+    .map(item => ({
+      label: buffShowId.value ? item.id : item.parsedName,
+      key: item.id
+    }))
+})
+
+const selectBuffItem = useDebounceFn(async (key: string) => {
+  selectedBuffKey.value = key
   treeData.value = []
-  const obj = allBuffdata.value ? allBuffdata.value[key] : undefined
+  const item = buffItems.value.find(i => i.id === key)
+  const obj = item?.data
   codeContent.value = obj ? JSON.stringify(obj, null, 2) : '{}'
   treeData.value = await parseBuffsToTree(obj, showAll.value)
   updateExpandedKeys()
@@ -257,8 +282,9 @@ const selectRogue = useDebounceFn(async (id: string) => {
 }, 100)
 
 const refreshTree = async () => {
-  if (activeTab.value === 'buff' && selectedKey.value) {
-    const obj = allBuffdata.value ? allBuffdata.value[selectedKey.value] : undefined
+  if (activeTab.value === 'buff' && selectedBuffKey.value) {
+    const item = buffItems.value.find(i => i.id === selectedBuffKey.value)
+    const obj = item?.data
     treeData.value = await parseBuffsToTree(obj, showAll.value)
     updateExpandedKeys()
   } else if (activeTab.value === 'rogue' && selectedRogueId.value) {

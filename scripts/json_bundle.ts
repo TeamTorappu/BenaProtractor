@@ -57,6 +57,10 @@ const tasks: CopyTask[] = [
         from: "ArknightsGameData/zh_CN/gamedata/excel/roguelike_topic_table.json",
         to: "public/gamedata/excel/roguelike_topic_table.json",
     },
+    {
+        from: "ArknightsGameData/zh_CN/gamedata/levels/enemydata/enemy_database.json",
+        to: "public/gamedata/levels/enemydata/enemy_database.json",
+    },
 ];
 
 jsonBundle(tasks).catch((error) => logger.error(error));

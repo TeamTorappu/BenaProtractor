@@ -1,4 +1,5 @@
 import { loadPublicJSON } from "./usePublic";
+import { useMemoize } from "@vueuse/core";
 
 interface RogueData {
     itemKey: string;
@@ -21,11 +22,12 @@ export const typeNameMap: Record<string, string> = {
     RECRUIT_TICKET: "招募券",
     UPGRADE_TICKET: "进阶券",
     ACTIVE_TOOL: "支援装置",
-    FEATURE: "精通",
+    FEATURE: "机制",
     COPPER_BUFF: "钱",
+    WRATH: "岁时",
 };
 
-export async function loadRogueSeasons(): Promise<Record<string, string>> {
+async function _loadRogueSeasons(): Promise<Record<string, string>> {
     const rogue_table = await loadPublicJSON("gamedata/excel/roguelike_topic_table.json");
     return Object.fromEntries(
         Object.entries(rogue_table.topics as Record<string, { name: string }>).map(
@@ -34,7 +36,9 @@ export async function loadRogueSeasons(): Promise<Record<string, string>> {
     );
 }
 
-export async function buildRogueObjects(): Promise<RogueItem[]> {
+export const loadRogueSeasons = useMemoize(async () => await _loadRogueSeasons());
+
+async function _buildRogueObjects(): Promise<RogueItem[]> {
     const rogue_table = await loadPublicJSON("gamedata/excel/roguelike_topic_table.json");
     const rogue_seasons = await loadRogueSeasons();
     const result: RogueItem[] = [];
@@ -71,3 +75,4 @@ export async function buildRogueObjects(): Promise<RogueItem[]> {
 
     return result;
 }
+export const buildRogueObjects = useMemoize(async () => await _buildRogueObjects());

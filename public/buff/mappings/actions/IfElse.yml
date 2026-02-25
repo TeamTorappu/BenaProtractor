@@ -13,7 +13,7 @@ fields:
       generated: true
   _failNodes:
     type: array | null
-    description: 若否
+    description: 如果不是/没有/不可行/无法处理
     schema: action_subschema/_failNodes.yml
     parse:
       type: fn
@@ -24,7 +24,7 @@ fields:
       generated: true
   _succeedNodes:
     type: array | null
-    description: 若是
+    description: 如果是/有/可行/可处理
     schema: action_subschema/_succeedNodes.yml
     parse:
       type: fn

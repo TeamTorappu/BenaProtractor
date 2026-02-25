@@ -275,6 +275,29 @@ async function buildAction(
 	const desc = nodes?.[nodeType]?.description ?? humanize(nodeType)
 	const label = prefix ? `${prefix} ${desc}` : desc
 
+	/* ── 整体 action 级 fn 解析（优先于字段级） ── */
+	const actionFnName = `parseNode${nodeType}`
+	const actionFn = fnMap.get(actionFnName)
+	if (actionFn) {
+		const pctx: ParseCtx = {
+			showAll,
+			baseKey,
+			action,
+			buildAction: (a, k, p) => buildAction(a, k, showAll, p),
+			buildNested: (v, k, l) => buildNested(v, k, l, showAll),
+		}
+		const fnResult = await actionFn(action, pctx) as TreeOption
+		const resultChildren: TreeOption[] = fnResult.children ? [...fnResult.children] : []
+		const fnLabel = fnResult.label ? `${label}: ${fnResult.label}` : label
+		if (showAll) {
+			const rawTree = await buildNested(action, `${baseKey}/raw`, '原始属性', showAll)
+			if (rawTree.children) resultChildren.push(...rawTree.children.map((c: TreeOption) => ({ ...c, display: false })))
+		}
+		return resultChildren.length
+			? { key: baseKey, label: fnLabel, children: resultChildren }
+			: { key: baseKey, label: fnLabel, isLeaf: true }
+	}
+
 	/* 一次加载当前 action 需要的所有 schema 文件 */
 	const [def, keys, tpl] = await Promise.all([
 		loadActionDef(nodeType),
@@ -283,6 +306,7 @@ async function buildAction(
 	])
 
 	const children: TreeOption[] = []
+
 
 	for (const [key, value] of Object.entries(action)) {
 		if (key === '$type') continue
