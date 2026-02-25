@@ -2,7 +2,9 @@ name: 'publish'
 
 on:
   workflow_dispatch:
-
+  push:
+    branches:
+      - feat-tauri
 
 jobs:
   publish-tauri:
