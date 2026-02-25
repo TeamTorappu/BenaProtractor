@@ -118,6 +118,7 @@ function deepMerge(pub: unknown, gen: unknown): unknown {
 
 		for (const key of Object.keys(genObj)) {
 			if (!(key in pubObj)) {
+				if (["generated", "display", "return", "fn"].includes(key)) continue;
 				/* 新字段：直接添加 */
 				result[key] = genObj[key];
 				continue;
