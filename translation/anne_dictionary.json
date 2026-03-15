@@ -22,10 +22,14 @@
 	"event" : {
 		"ON_BUFF_START" : "当Buff开始时",
 		"ON_BUFF_FINISH" : "当Buff结束时",
-		"ON_BUFF_TRIGGER" : "当Buff每次触发时",
-		"ON_CALCULATE_DAMAGE" : "当持有者计算伤害时",
-		"ON_OUTPUT_DAMAGE" : "当持有者输出伤害时",
-		"ON_TAKE_DAMAGE" : "当持有者受到伤害时"
+		"ON_BUFF_TRIGGER" : "在Buff每次触发时",
+		"ON_CALCULATE_DAMAGE" : "持有者计算伤害时",
+		"ON_OUTPUT_DAMAGE" : "持有者输出伤害时",
+		"ON_TAKE_DAMAGE" : "持有者受到伤害时",
+		"ON_ABNORMAL_FLAG_DIRTY" : "异常系列数据变动时",
+		"ON_OWNER_BLOCKEE_CHANGED" : "持有者阻挡的对象变动时",
+		"ON_SKILL_FINISH" : "技能开启时",
+		"ON_SKILL_CAST_SUCCEED" : "技能释放成功时"
 	},
 	"abnormal" : {
 		"STUNNED" : "晕眩",
@@ -124,7 +128,7 @@
 		"NORMAL" : "普通",
 		"SPLASH" : "溅射",
 		"BUFF" : "持续",
-		"ADDITION" : "ADDITION"
+		"ADDITION" : "附加"
 	},
 	"cancel_reason" : {
 		"NONE" : "无",

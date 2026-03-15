@@ -1,3 +1,4 @@
+import json
 '''
 类定义
 '''
@@ -29,7 +30,9 @@ class Node:
             node_name = node_name[28:-17]
         self.node_name = node_name
         self.node_data = node_data
+        self.node_data["$type"] = node_name
         self.translation = None
+        # 预处理
         #if node_data.has_key("_buff"):
         #    # 获取子buff
         #    self.node_config["_buff"] = Buff(node_data._buff)
@@ -49,6 +52,7 @@ class BuffTemplate:
     def __init__(self, buff_key, buff_data):
         self.buff_key = buff_key
         self.display_name = buff_key
+        self.raw_buff_data = json.dumps(buff_data,indent=4,ensure_ascii=False)
         self.buff_data = buff_data
         self.template_key = buff_data["templateKey"] # 虽然不知道有啥区别，总之留着吧
         #self.effect_key = buff_data["effectKey"] # 特效没啥处理的必要

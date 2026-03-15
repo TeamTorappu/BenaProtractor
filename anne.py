@@ -58,6 +58,29 @@ class AnneNode:
         # 返回译文
         return node.translation
     
+    # 全部翻译，包含对一些上下文Node的特殊处理
+    # 可以选择性的要求返回一个列表
+    def translate_all(self,node_list,return_list = False):
+        children = []
+        for node in node_list:
+            # 特别处理一下这个Node：IfNot，效果是反转前面的处理状态
+            if len(children) > 0 and node.node_name == "IfNot" :
+                if "true" in children[-1] and "false" in children[-1]:
+                    true_flag = children[-1]["true"]
+                    false_flag = children[-1]["false"]
+                    children[-1]["true"] = false_flag
+                    children[-1]["false"] = true_flag
+                elif "true" in children[-1]:
+                    children[-1]["false"] = children[-1]["true"] 
+                    children[-1]["true"] = "若非\""+children[-1]["true"]+"\"" 
+                else: # 拿来检查前面处理不了？
+                    children.append({"main" : "若前面的逻辑无法处理"})
+            else:
+                children.append(self.translate(node))
+        if return_list:
+            return children
+        else:
+            return {"main" : "","children" : children}
 
     # 统一解析伤害类的详细信息
     # 返回字符串
@@ -330,7 +353,9 @@ class AnneNode:
     # 逻辑 如果+否则
     def node_IfElse(self,node):
         # 判断节点
-        struct = ANNE_NODE.translate(node["condition_node"])
+        struct = self.translate(node["condition_node"])
+        if struct["main"].endswith("（未翻译）"): # 未翻译，增加标识符
+            struct["main"] = "尝试判断: "+struct["main"]
         true_flag = "如果是/有/可行/可处理："
         false_flag = "如果不是/没有/不可行/无法处理："
         if "true" in struct:
@@ -344,15 +369,15 @@ class AnneNode:
         # 成功时执行的节点
         success_node_lines = []
         if len(node["succeed_nodes"]) > 0:
-            for sub_node in node["succeed_nodes"]:
-                success_node_lines.append(ANNE_NODE.translate(sub_node))
-            struct["children"].append({"main" : true_flag,"children" : success_node_lines})
+            success_translation = self.translate_all(node["succeed_nodes"])
+            success_translation["main"] = true_flag
+            struct["children"].append(success_translation)
         # 失败时执行的节点
         fail_node_lines = []
-        if len(node["succeed_nodes"]) > 0:
-            for sub_node in node["fail_nodes"]:
-                fail_node_lines.append(ANNE_NODE.translate(sub_node))
-            struct["children"].append({"main" : false_flag,"children" : fail_node_lines})
+        if len(node["fail_nodes"]) > 0:
+            fail_translation = self.translate_all(node["fail_nodes"])
+            fail_translation["main"] = false_flag
+            struct["children"].append(fail_translation)
         return struct
     
     # 否则（但不在这里翻译）
@@ -484,6 +509,19 @@ class AnneNode:
             "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}{damage_name}",
             "description" : f"会读取黑板中的{node['_atkScaleVar']}作为攻击力倍率使用"
         }
+    
+    # 记录黑板值
+    def node_AssignValueToBB(self,node):
+        result = {
+            "main" : f"设黑板值{node['_blackboardKey']} = "
+        }
+        if node["_copyFromKey"] != None:
+            result["main"] += node['_copyFromKey']
+        else:
+            result["main"] += str(node['_value'])
+        if node["_assignString"]:
+            result["main"] += "（字符串格式）"
+        return result
         
     # 触发某个能力
     def node_TriggerAbility(self,node):
@@ -655,6 +693,62 @@ class AnneNode:
     #----------------------------------------
     # 检查类Node
     #----------------------------------------
+    # 检查黑板
+    def node_FilterByBlackboardValue(self,node):
+        left_var = node["_blackboardKey"]
+        right_var = node["_valueToCompare"]
+        compare = read_dictionary("compare",node["_condType"])
+        compare_not = read_dictionary("compare_not",node["_condType"])
+        if node["_anotherKeyToCompare"] != None: # 比对另一个黑板值
+            right_var = node["_anotherKeyToCompare"]
+            if node["_anotherBuff"] and node["_buffKey"] != None: # 比对另一个Buff的黑板值
+                if node["_targetType"] != "BUFF_OWNER":
+                    target_name = read_dictionary("target",node["_target"])
+                    return {
+                        "main" : f"比对黑板上的{left_var}与{target_name}的另一buff({node['_buffKey']})的{right_var}",
+                        "true" : f"若{left_var} {compare} {right_var}",
+                        "false" : f"若{left_var} {compare_not} {right_var}"
+                    }
+                else:
+                    return {
+                        "main" : f"比对黑板上的{left_var}与另一buff({node['_buffKey']})的{right_var}",
+                        "true" : f"若{left_var} {compare} {right_var}",
+                        "false" : f"若{left_var} {compare_not} {right_var}"
+                    }
+            else:
+                return {
+                    "main" : f"比对黑板上的{left_var}与{right_var}",
+                    "true" : f"若{left_var} {compare} {right_var}",
+                    "false" : f"若{left_var} {compare_not} {right_var}"
+                }
+        else:
+            return {
+                "main" : f"检查黑板上的{left_var}",
+                "true" : f"若{left_var} {compare} {right_var}",
+                "false" : f"若{left_var} {compare_not} {right_var}"
+            }
+    
+    # 检查异常效果（带免疫）
+    def node_CheckAbnormalFlag(self,node):
+        target_name = read_dictionary("target",node["_targetType"])
+        abnormal_flag = ""
+        if node["_abnormalFlagKey"]:
+            abnormal_flag = f"记录在黑板({node['_abnormalFlagKey']})的异常效果"
+        else:
+            abnormal_flag = read_dictionary("abnormal",node["_abnormalFlag"])+"异常"
+        if node["_isUnset"]:
+            return {
+                "main" : f"检查{target_name}是否持有{abnormal_flag}",
+                "true" : f"若不持有{abnormal_flag}或免疫该异常",
+                "true" : f"若持有{abnormal_flag}"
+            }
+        else:
+            return {
+                "main" : f"检查{target_name}是否持有{abnormal_flag}",
+                "true" : f"若持有{abnormal_flag}",
+                "true" : f"若不持有{abnormal_flag}或免疫该异常"
+            }
+        
     # 检查阵营
     def node_CheckCharacterGroupTag(self,node):
         target_name = read_dictionary("target",node["_targetType"])
@@ -674,9 +768,36 @@ class AnneNode:
         return {
             #"main" : f"检查{target_name}的重量是否{compare}X",
             "main" : f"检查{target_name}的重量",
-            "true" : f"若其重量{compare}X",
-            "false" : f"若其重量{compare_not}X"
+            "true" : f"若其重量 {compare} X",
+            "false" : f"若其重量 {compare_not} X"
         }
+
+    # 检查阻挡状态
+    def node_CheckBlocked(self,node):
+        target_name = read_dictionary("target",node["_targetType"])
+        if node["_checkBlockedBySource"]:
+            source_name = read_dictionary("target",node["_sourceType"])
+            if node["_checkBlockedBySourceToken"]:
+                source_name += "或其召唤物"
+            return {
+                "main" : f"检查{target_name}的阻挡状态（角色类与敌人类处理逻辑不同）",
+                "true" : f"若其正被{source_name}阻挡，或阻挡着{source_name}",
+                "false" : f"若其未被{source_name}阻挡，且未阻挡{source_name}"
+            }
+        elif node["_checkBlockedBySourceToken"]:
+            source_name = read_dictionary("target",node["_sourceType"])+"的召唤物"
+            return {
+                "main" : f"检查{target_name}的阻挡状态（角色类与敌人类处理逻辑不同）",
+                "true" : f"若其正被{source_name}阻挡，或阻挡着{source_name}",
+                "false" : f"若其未被{source_name}阻挡且未阻挡{source_name}"
+            }
+        else:
+            return {
+                "main" : f"检查{target_name}的阻挡状态（角色类与敌人类处理逻辑不同）",
+                "true" : f"若其正被任意单位阻挡，或阻挡着任意单位",
+                "false" : f"若其未阻挡且未被阻挡"
+            }
+            
 
     # 检查是否持有某Buff
     def node_CheckContainsBuff(self,node):
@@ -725,8 +846,36 @@ class AnneNode:
             return {
                 "main" : "检查Buff，但给定条件无法检查（写法有误？）",
                 "true" : "（始终不执行）",
-                "true" : "（始终不执行）"
+                "false" : "（始终不执行）"
             }
+    
+    # 检查是否持有本Buff的某个子Buff
+    def node_CheckContainsDerviedBuff(self,node):
+        return {
+            "main" : f"检查本Buff的子Buff {node['_derviedBuffKey']}",
+            "true" : "若Buff持有者同时还持有该子Buff",
+            "false" : "若Buff持有者不持有该子Buff"
+        }
+            
+    #----------------------------------------
+    # 概率类Node
+    #----------------------------------------
+    # 100面骰
+    def node_Dice(self,node):
+        return {
+            "main" : "取1~100之内的随机整数（投掷100面骰，类似COC规则）",
+            "true" : f"若出值 ≤ {node['_probKey']}（检定成功)",
+            "false" : f"若出值 ＞ {node['_probKey']}（检定失败）"
+        }
+
+    # 100面骰，伪随机分布算法
+    def node_DicePRD(self,node):
+        return {
+            "main" : f"取1~100之内的随机整数（投掷100面骰，类似COC规则）",
+            "description" : f"初始概率为零，每未通过一次检定概率加一倍直至成功时重置；记录于全局黑板{node['_prdKey']}",
+            "true" : f"若出值 ≤ {node['_probKey']}（检定成功)",
+            "false" : f"若出值 ＞ {node['_probKey']}（检定失败）"
+        }
 
 '''
 #----------------------------------------
@@ -773,6 +922,18 @@ class AnneRelic:
                         rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
         # 返回译文
         return rogue_effect.translation
+    
+    # 全部翻译
+    # 可以选择性的要求返回一个列表
+    def translate_all(self,rogue_effect_list,return_list = False):
+        children = []
+        for rogue_effect in rogue_effect_list:
+            children.append(self.translate(rogue_effect))
+        if return_list:
+            return children
+        else:
+            return {"main" : "","children" : children}
+        
     
     # 生效时点的处理
     # 返回生效时间的字符串。
@@ -1063,26 +1224,8 @@ def translate_whole_buff_template(buff_template: BuffTemplate):
     for event in buff_template.events:
         event_key = event.event_key
         event_name = read_dictionary("event",event_key)
-        event_translation = {
-            "main" : f"{event_name}（{event_key}）",
-            "children" : []
-        }
-        # 逐个节点翻译
-        for node in event.node_list:
-            # 特别处理一下这个Node：IfNot，效果是反转前面的处理状态
-            if len(event_translation["children"]) > 0 and node.node_name == "IfNot" :
-                if "true" in event_translation["children"][-1] and "false" in event_translation["children"][-1]:
-                    true_flag = event_translation["children"][-1]["true"]
-                    false_flag = event_translation["children"][-1]["false"]
-                    event_translation["children"][-1]["true"] = false_flag
-                    event_translation["children"][-1]["false"] = true_flag
-                elif "true" in event_translation["children"][-1]:
-                    event_translation["children"][-1]["false"] = event_translation["children"][-1]["true"] 
-                    event_translation["children"][-1]["true"] = "若非\""+event_translation["children"][-1]["true"]+"\"" 
-                else: # 拿来检查前面处理不了？
-                    event_translation["children"].append({"main" : "若前面的逻辑无法处理"})
-            else:
-                event_translation["children"].append(ANNE_NODE.translate(node))
+        event_translation = ANNE_NODE.translate_all(event.node_list);
+        event_translation["main"] = f"{event_name}（{event_key}）"
         translation["children"].append(event_translation)
     return translation
 
@@ -1132,13 +1275,8 @@ def translate_whole_rogue_item(rogue_item: RogueItem):
     
     # 效果文本
     if rogue_item.has_effect:
-        effect_translation = {
-            "main" : rogue_item.display_type+"效果：",
-            "children" : []
-        }
-        # 逐个效果翻译
-        for effect in rogue_item.effect_list:
-            effect_translation["children"].append(ANNE_RELIC.translate(effect))
+        effect_translation = ANNE_RELIC.translate_all(rogue_item.effect_list)
+        effect_translation["main"] = rogue_item.display_type+"效果："
         translation["children"].append(effect_translation)
 
     return translation

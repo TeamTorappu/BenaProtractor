@@ -148,7 +148,7 @@ class Protractor:
                     if linked.data_type == "buff_template":
                         translation = anne.translate_whole_buff_template(obj)
                         self.display(translation)
-                        self.display_origin(obj.buff_data)
+                        self.display_origin(obj.raw_buff_data) 
                     elif linked.data_type == "rogue_item":
                         translation = anne.translate_whole_rogue_item(obj)
                         self.display(translation)
@@ -261,9 +261,11 @@ class Protractor:
             for data_dict in data_dict_or_dicts:
                 data_strs.append(json.dumps(data_dict,indent=4,ensure_ascii=False))
             self.origin_area.insert("end",",\n".join(data_strs))
-        else:
+        elif isinstance(data_dict_or_dicts,dict):
             data_str = json.dumps(data_dict_or_dicts,indent=4,ensure_ascii=False)
             self.origin_area.insert("end",data_str)
+        else: # 尝试直接显示
+            self.origin_area.insert("end",data_dict_or_dicts)
 
     # 显示区域的左键点击事件
     def display_area_left_clicked(self,event=None):
