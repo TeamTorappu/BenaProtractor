@@ -109,8 +109,12 @@ def load_buff_template_data():
     # 开始解析
     for buff_template_key in json_data.keys():
         buff_template = BuffTemplate(buff_template_key,json_data[buff_template_key])
-        # 制作翻译版称呼，先处理特征明显的敌人类
-        if buff_template_key.startswith("enemy_"):
+        # 制作翻译版称呼，先处理特征明显的
+        if buff_template_key.startswith("act1autochess_"): # 卫戍协议：盟约
+            buff_template.display_name = "卫戍盟约_"+buff_template.display_name[14:]
+        elif buff_template_key.startswith("act2autochess_"): # 卫戍协议：盟约 下半
+            buff_template.display_name = "卫戍下半_"+buff_template.display_name[14:]
+        elif buff_template_key.startswith("enemy_"): # 敌人类
             display_name = ""
             keys = buff_template_key[6:].replace("[","_[").split("_")
             rest = []

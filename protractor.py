@@ -16,13 +16,13 @@ PROTRACTOR = None
 class Protractor:
     def __init__(self):
         self.window = tk.Tk()
-        self.window.geometry("800x600")
+        self.window.geometry("1000x800")
         self.window.title('贝娜的量角器')
         self.style = ttk.Style()
         self.frame = ttk.Frame(self.window, padding=10)
         self.frame.pack(fill="both",expand=True)
         # 控制区域
-        self.control_panel = ttk.Frame(self.frame,width=300)
+        self.control_panel = ttk.Frame(self.frame,width=400)
         self.control_panel.pack(fill="y",side="left")
         # 目录
         self.directory_items = []
@@ -48,6 +48,7 @@ class Protractor:
         self.main_panel.add(self.display_panel, text="译文")
         self.display_links = {}
         self.display_area = Displayview(self.display_panel,selectmode="browse",show="tree")
+        self.display_area.column(f"#0", stretch=True)
         # 滚动条
         self.display_area_scrollbar_x = ttk.Scrollbar(self.display_panel,orient=tk.HORIZONTAL,command=self.display_area.xview)
         self.display_area_scrollbar_y = ttk.Scrollbar(self.display_panel,orient=tk.VERTICAL,command=self.display_area.yview)
@@ -179,7 +180,7 @@ class Protractor:
             self.display_links = {}
             self.display_area.set_children([])
         # 递归处理
-        if "main" in struct:
+        if isinstance(struct,dict) and "main" in struct:
             text = struct.get("main","")
             link = struct.get("link","")
             if text == None: # 空指针，直接返回
@@ -189,10 +190,10 @@ class Protractor:
             if "style_closed" in struct and struct["style_closed"]:
                 tree_open = False
             # 真值结果，如果留到这一步，说明只有可以缩写
-            if "true" in struct:
+            if "true" in struct and struct['true'] != "":
                 text += f"，{struct['true']}："
             label = self.display_area.insert(master,"end",text=text,open=tree_open,values=(link))
-            if "description" in struct:
+            if "description" in struct and struct['description'] != "":
                 self.display_area.insert(label,"end",text=f"（{struct['description']}）",open=tree_open)
             #self.display_area.rowheight(label, self.default_line_height * text.count('\n'))
             if "children" in struct:
@@ -202,7 +203,7 @@ class Protractor:
             for child in struct:
                 self.display(child,master)
         else: # 纯文本之类的？
-            label = self.display_area.insert(master,"end",text=str(struct),open=tree_open,values=(""))
+            label = self.display_area.insert(master,"end",text=str(struct),values=(""))
 
     
     # 将json数据展示至展示区，用于无法解析的情况
@@ -301,8 +302,6 @@ class Protractor:
                     keys[1] = keys[1][28:-17]
                 context_menu.add_command(label="复制Key", command=lambda: self.copy_selection(keys[0]))
                 context_menu.add_command(label="复制Value", command=lambda: self.copy_selection(keys[1]))
-            elif selected_text.endswith("（未翻译）"): # 复制未翻译文本
-                context_menu.add_command(label="复制未翻译文本", command=lambda: self.copy_selection(selected_text[:-5]))
             elif "（" in selected_text and selected_text.endswith("）"): # 如果是 A（B） 的括号格式，选择复制前后哪边
                 keys = [key.strip() for key in selected_text.split("（")]
                 keys[1] = keys[1][:-1].strip()

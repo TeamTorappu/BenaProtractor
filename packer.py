@@ -12,7 +12,7 @@ if __name__ == "__main__":
     if not os.path.exists("output"):
         os.makedirs("output")
     with zipfile.ZipFile("output/贝娜的量角器.zip", 'w') as _z:
-        _z.write("./dist/main.exe","./Benas Protractor.exe")
+        _z.write("./dist/main.exe","./贝娜的量角器.exe")
         _z.write("./icon/icon.ico","./icon/icon.ico")
         add_folder_to_zip(_z,"data")
         add_folder_to_zip(_z,"tables")

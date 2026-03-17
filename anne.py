@@ -47,13 +47,55 @@ class AnneNode:
         if node.translation == None:
             print(f"[安妮]尝试翻译节点 {node_name}")
             method = getattr(self, "node_"+node_name, "")
-            if method != "" :
-                node.translation = method(node.node_data)
-            else: # 无法翻译，把所有数据搓成可阅读的格式
+            try:
+                if method != "" :
+                    node.translation = method(node.node_data)
+                else: # 无法翻译，把所有数据搓成可阅读的格式
+                    children = []
+                    for key,content in node.node_data.items():
+                        if isinstance(content,dict): # 如果是子节点或者buff，还是要嵌套翻译一下试试的
+                            if "attributes" in content: # buff
+                                children.append(self.analyze_buff(content))
+                            elif "$type" in content: # 子节点
+                                children.append(self.translate(content))
+                            else: # 解析不了没办法
+                                children_children = []
+                                for skey,scontent in content.items():
+                                    children_children.append({"main" : str(skey) + ": " + str(scontent)})
+                                children.append({
+                                    "main" : str(key) + " : {",
+                                    "children" : children_children
+                                })
+                                children.append({"main" : "}"})
+                        elif isinstance(content,list): # 可能是子节点列表或者buff列表？
+                            if len(content) > 0 and "$type" in content[0]: # 子节点列表
+                                child_list = self.translate_all(content,True)
+                                for child in child_list:
+                                    children.append(child)
+                            if len(content) > 0 and "attributes" in content[0]: # 子buff列表
+                                for scontent in conten:
+                                    children.append(self.analyze_buff(scontent))
+                            else:
+                                children_children = []
+                                for scontent in content:
+                                    children_children.append({"main" : str(scontent)})
+                                children.append({
+                                    "main" : str(key) + " : [",
+                                    "children" : children_children
+                                })
+                                children.append({"main" : "]"})
+                        else:
+                            children.append({"main": str(key) + " : "+str(content)})
+                    node.translation = {
+                        "main" : node_name+"（未翻译）",
+                        "style_closed" : True,
+                        "children" : children
+                    }
+            except:
+                print(f"[安妮]... {node_name} 节点翻译失败了")
                 node.translation = {
-                    "main" : node_name+"（未翻译）",
-                    "style_closed" : True,
-                    "children" : [{"main": str(key) + " : "+str(content)} for key,content in node.node_data.items()]
+                    "main" : node_name+"（翻译失败）",
+                    "style_closed" : True
                 }
         # 返回译文
         return node.translation
@@ -433,6 +475,19 @@ class AnneNode:
         # 返回完整公式
         return {"main" : f"{place_name}计算黑板值。将 {output_key} 设置为 {formula}"}
     
+    # 记录黑板值
+    def node_AssignValueToBB(self,node):
+        result = {
+            "main" : f"设黑板值{node['_blackboardKey']} = "
+        }
+        if node["_copyFromKey"] != None:
+            result["main"] += node['_copyFromKey']
+        else:
+            result["main"] += str(node['_value'])
+        if node["_assignString"]:
+            result["main"] += "（字符串格式）"
+        return result
+    
     # 将召唤物的数量或最大数量记录到黑板中
     def node_AssignTokenCardCntToBB(self,node):
         target_name = read_dictionary("target",node["_targetType"])
@@ -509,19 +564,6 @@ class AnneNode:
             "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}{damage_name}",
             "description" : f"会读取黑板中的{node['_atkScaleVar']}作为攻击力倍率使用"
         }
-    
-    # 记录黑板值
-    def node_AssignValueToBB(self,node):
-        result = {
-            "main" : f"设黑板值{node['_blackboardKey']} = "
-        }
-        if node["_copyFromKey"] != None:
-            result["main"] += node['_copyFromKey']
-        else:
-            result["main"] += str(node['_value'])
-        if node["_assignString"]:
-            result["main"] += "（字符串格式）"
-        return result
         
     # 触发某个能力
     def node_TriggerAbility(self,node):
@@ -607,6 +649,12 @@ class AnneNode:
         if node["_cancelIfAtkScaleZero"]:
             result["description"] += "；若乘算后本次伤害的攻击力倍率为0，则取消此次伤害"
         return result
+    
+    # 调整本buff提供的属性增益
+    def node_AttributeModifierWithBB(self,node):
+        target_name = read_dictionary("target",node["_targetType"])
+        attribute_type = read_dictionary("attribute",node["_attributeType"])
+        formula_type = read_dictionary("formula",node["_formulaType"])
     
     # 切换模式
     def node_SwitchMode(self,node):
@@ -748,6 +796,78 @@ class AnneNode:
                 "true" : f"若持有{abnormal_flag}",
                 "true" : f"若不持有{abnormal_flag}或免疫该异常"
             }
+    
+    # 检查职业
+    def CheckTargetProfession(self,node):
+        target_name = read_dictionary("target",node["_targetType"])
+        if node["_readProfessionFromBlackboard"]:
+            return {
+                "main" : f"检查{target_name}的职业是否隶属于黑板记录的职业之一",
+                "true" : "若其隶属于这些职业之一",
+                "false" : "若其不属于这些职业中的任何一个"
+            }
+        else:
+            professions = [read_dictionary("profession",p) for p in node["_profession"]]
+            sub_professions = []
+            if node["_checkSubProfession"] and node["_subProfessions"] != None:
+                sub_professions = [read_dictionary("sub_profession",p) for p in node["_subProfessions"]]
+            if len(professions) > 1:
+                if len(sub_professions) > 1: # 一般不会用到
+                    return {
+                        "main" : f"检查{target_name}是否为"+"/".join(professions)+"职业，且是否为"+"/".join(sub_professions)+"分支",
+                        "true" : "若其满足职业条件，且属于上述分支之一",
+                        "false" : "若其不满足职业条件或不属于上述分支之一"
+                    }
+                elif len(sub_professions) == 1:
+                    return {
+                        "main" : f"检查{target_name}是否为"+"/".join(professions)+"职业，且是否为"+sub_professions[0]+"分支",
+                        "true" : "若其满足职业条件，且属于该分支",
+                        "false" : "若其不满足职业条件，或不属于该分支"
+                    }
+                else:
+                    return {
+                        "main" : f"检查{target_name}是否为"+"/".join(professions)+"职业",
+                        "true" : "若其满足职业条件",
+                        "false" : "若其不满足职业条件"
+                    }
+            elif len(professions) == 1:
+                if len(sub_professions) > 1: # 一般不会用到
+                    return {
+                        "main" : f"检查{target_name}是否为"+professions[0]+"职业，且是否为"+"/".join(sub_professions)+"分支",
+                        "true" : "若其为该职业，且属于上述分支之一",
+                        "false" : "若其不为该职业，或不属于上述分支之一"
+                    }
+                elif len(sub_professions) == 1:
+                    return {
+                        "main" : f"检查{target_name}是否为"+"/".join(professions)+"职业，且是否为"+sub_professions[0]+"分支",
+                        "true" : "若其为该职业，且属于该分支",
+                        "false" : "若其不为该职业，或不属于该分支"
+                    }
+                else:
+                    return {
+                        "main" : f"检查{target_name}是否为"+professions[0]+"职业",
+                        "true" : "若其为"+professions[0],
+                        "false" : "若其不为"+professions[0]
+                    }
+            else:
+                if len(sub_professions) > 1:
+                    return {
+                        "main" : f"检查{target_name}是否为"+"/".join(sub_professions)+"分支",
+                        "true" : "若其属于上述分支之一",
+                        "false" : "若其不属于上述分支之一"
+                    }
+                elif len(sub_professions) == 1:
+                    return {
+                        "main" : f"检查{target_name}是否为"+sub_professions[0]+"分支",
+                        "true" : "若其属于该分支",
+                        "false" : "若其不属于该分支"
+                    }
+                else:
+                    return {
+                        "main" : f"检查{target_name}职业，但未配置职业条件",
+                        "true" : "始终通过",
+                        "false" : "始终不通过"
+                    }
         
     # 检查阵营
     def node_CheckCharacterGroupTag(self,node):
@@ -856,6 +976,14 @@ class AnneNode:
             "true" : "若Buff持有者同时还持有该子Buff",
             "false" : "若Buff持有者不持有该子Buff"
         }
+    
+    # 检查黑板是否为0或未定义
+    def node_IsBlackboardZero(self,node):
+        return {
+            "main" : f"检查黑板{node['_var']}的值",
+            "true" : f"若不存在或{node['_var']} = 0",
+            "false" : f"若存在且{node['_var']} ≠ 0"
+        }
             
     #----------------------------------------
     # 概率类Node
@@ -876,6 +1004,109 @@ class AnneNode:
             "true" : f"若出值 ≤ {node['_probKey']}（检定成功)",
             "false" : f"若出值 ＞ {node['_probKey']}（检定失败）"
         }
+            
+    #----------------------------------------
+    # 卫戍协议Node
+    #----------------------------------------
+    # 在黑板记录盟约生效人数
+    def node_AutoChessAssignBondCharCntToBB(self,node):
+        # 未解析参数：_target、_filterAllSides
+        bond_id = read_dictionary("bond_id",node["_bondId"])
+        if node["_filterCount"]: # 判断模式
+            compare = read_dictionary("compare",node["_condType"])
+            compare_not = read_dictionary("compare_not",node["_condType"])
+            return {
+                "main" : f"将{bond_id}盟约生效人数记录至黑板{node['_keyToStoreCnt']}，并判断人数：",
+                "true" : f"若生效人数 {compare} {node['_keyToCompare']}",
+                "false" : f"若生效人数 {compare_not} {node['_keyToCompare']}"
+            }
+        else:
+            return {
+                "main" : f"将{bond_id}盟约生效人数记录至黑板{node['_keyToStoreCnt']}。"
+            }
+
+    # 在黑板记录盟约生效层数
+    def node_AutoChessAssignBondStackCntToBB(self,node):
+        # 未解析参数：_target、_assignAllPlayerIndex
+        bond_id = read_dictionary("bond_id",node["_bondId"])+"盟约"
+        descriptions = []
+        if node["_assignCurrentMaxBond"]:
+            bond_id = "最高层数的盟约"
+        elif node["_bondBlackboardKey"] != None and node["_bondBlackboardKey"] not in ["","none"]: # 没有人类了
+            descriptions.append(f"读取黑板{node['_bondBlackboardKey']}替换读取的盟约")
+        if node["_checkDiffWithOldStoreCnt"]:
+            return {
+                "main" : f"读取{bond_id}叠加层数，并记录至黑板{node['_keyToStoreCnt']}，随后检查层数",
+                "description" : ";".join(descriptions),
+                "true" : f"若{bond_id}层数比之前记录的值更大",
+                "false" : f"若{bond_id}层数与之前记录的值相同"
+            }
+        else:
+            return {
+                "main" : f"读取{bond_id}叠加层数，并记录至黑板{node['_keyToStoreCnt']}",
+                "description" : ";".join(descriptions)
+            }
+
+    # 在黑板记录装备数量
+    def node_AutochessAssignEquipCntToBlackboard(self,node):
+        target_name = read_dictionary("target",node["_targetType"])
+        if node["_onlyGoldenEquip"]:
+            return {
+                "main" : f"读取{target_name}携带的已进阶装备数量，并记录至黑板{node['_keyToStoreCnt']}",
+                "description" : "此处所指的装备为卫戍协议的装备"
+            }
+        else:
+            return {
+                "main" : f"读取{target_name}携带的装备数量，并记录至黑板{node['_keyToStoreCnt']}",
+                "description" : "此处所指的装备为卫戍协议的装备"
+            }
+    
+    # 检查角色是否已进阶
+    def node_AutoChessFilterChess(self,node):
+        target_name = read_dictionary("target",node["_targetType"])
+        if node["_filterGolden"]:
+            return {
+                "main" : f"检查{target_name}进阶状态",
+                "true" : f"若{target_name}已进阶",
+                "false" : f"若{target_name}还未进阶",
+            }
+        else:
+            return {
+                "main" : f"检查{target_name}进阶状态",
+                "true" : f"若{target_name}还未进阶",
+                "false" : f"若{target_name}已进阶",
+            }
+
+    # 检查角色/范围内角色是否属于XX盟约
+    def node_AutoChessFilterCharacterBondIds(self,node):
+        bond_ids = [read_dictionary("bond_id",bond) for bond in node["_bondIds"]]
+        bond_filter = ""
+        if len(bond_ids) > 1:
+            bond_filter = "同时隶属于"+"、".join(bond_ids)+"盟约"
+        elif len(bond_ids) == 1:
+            bond_filter = f"隶属{bond_ids[0]}盟约"
+        else: # 0个，你在检查什么？
+            return {
+                "main" : "检查盟约，但未配置盟约条件",
+                "true" : "始终通过",
+                "false" : "始终不通过"
+            }
+        if node["_considerManiShip"]:
+            bond_filter += "（或是隶属调和盟约）"
+        # 处理对象
+        target_name = read_dictionary("target",node["_target"])
+        if node["_checkTargetInRangeId"]: # 检查目标范围内是否存在符合盟约单位
+            return {
+                "main" : f"检查{target_name}的{node['_checkTargetInRangeId']}范围内所有角色的盟约",
+                "true" : f"若任一角色{bond_filter}",
+                "false" : f"若所有角色均不{bond_filter}"
+            }
+        else: # 检查目标盟约
+            return {
+                "main" : f"检查{target_name}的盟约",
+                "true" : f"若其{bond_filter}",
+                "false" : f"若其不{bond_filter}"
+            }
 
 '''
 #----------------------------------------

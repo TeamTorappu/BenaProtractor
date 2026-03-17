@@ -158,6 +158,12 @@
 		"SKIP_MODIFIER_CONSIDER_UNHURTABLE" : "类强制生命流失(无计算/事件，无法取消)",
 		"IS_NOT_CHANGEABLE_VALUE_MODIFIER" : "无法被其他方式增/减/免伤"
 	},
+	"formula" : {
+		"ADDITION" : "直接加算",
+		"MULTIPLIER" : "直接乘算",
+		"FINAL_ADDITION" : "最终加算",
+		"FINAL_SCALER" : "最终乘算"
+	},
 	"profession" : {
 		"PIONEER" : "先锋",
 		"WARRIOR" : "近卫",
@@ -182,5 +188,29 @@
 		"GAIN" : "获得时",
 		"TAKE_OUT" : "投出时",
 		"PUT_BACK" : "放回钱盒后"
+	},
+	"bond_id" : {
+		"emptyship" : "【协防干员】",
+		"yanShip" : "【炎】",
+		"sargonShip" : "【萨尔贡】",
+		"kjeragShip" : "【谢拉格】",
+		"lateranoShip" : "【拉特兰】",
+		"victoriaShip" : "【维多利亚】",
+		"egirShip" : "【阿戈尔】",
+		"kazimierzShip" : "【卡西米尔】",
+		"siracusaShip" : "【叙拉古】",
+		"maniShip" : "【调和】",
+		"soloShip" : "【独行】",
+		"suntShip" : "【绝技】",
+		"arcaneShip" : "【奥术】",
+		"swiftShip" : "【迅捷】",
+		"skillfulShip" : "【灵巧】",
+		"deputShip" : "【助力】",
+		"indomShip" : "【不屈】",
+		"steadShip" : "【坚守】",
+		"raidShip" : "【突袭】",
+		"miraShip" : "【奇迹】",
+		"visiShip" : "【远见】",
+		"investShip" : "【投资人】"
 	}
 }
