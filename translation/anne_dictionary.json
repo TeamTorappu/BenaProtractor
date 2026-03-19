@@ -28,10 +28,28 @@
 		"ON_OUTPUT_DAMAGE" : "持有者输出伤害时",
 		"ON_OUTPUT_MODIFIER" : "持有者输出调整值时",
 		"ON_TAKE_DAMAGE" : "持有者受到伤害时",
-		"ON_ABNORMAL_FLAG_DIRTY" : "异常系列数据变动时",
+		"ON_AFTER_ATTACK" : "在持有者每次攻击之后",
+		"ON_AFTER_OUTPUT_DAMAGE" : "持有者成功造成伤害后",
+		"ON_ABNORMAL_FLAG_DIRTY" : "持有者异常系列数据变动时",
 		"ON_OWNER_BLOCKEE_CHANGED" : "持有者阻挡的对象变动时",
-		"ON_SKILL_FINISH" : "技能开启时",
-		"ON_SKILL_CAST_SUCCEED" : "技能释放成功时"
+		"ON_SKILL_START" : "持有者技能开启时",
+		"ON_SKILL_FINISH" : "持有者技能结束时",
+		"ON_SKILL_CAST_SUCCEED" : "持有者技能释放成功时",
+		"ON_OWNER_FINISH" : "当持有者退场/死亡时"
+	},
+	"buildable_type" : {
+		"NONE" : "无",
+		"MELEE" : "近战位",
+		"RANGED" : "远程位",
+		"ALL" : "全部位"
+	},
+	"sp_type" : {
+		"NONE" : "不回复",
+		"INCREASE_WITH_TIME" : "自动回复",
+		"INCREASE_WHEN_ATTACK" : "攻击回复",
+		"INCREASE_WHEN_TAKEN_DAMAGE" : "受击回复",
+		"ATTACK_OR_DAMAGE" : "攻击/受击回复",
+		"ALL" : "全部"
 	},
 	"abnormal" : {
 		"STUNNED" : "晕眩",
@@ -132,6 +150,33 @@
 		"BUFF" : "持续",
 		"ADDITION" : "附加"
 	},
+	"side_type" : {
+		"NONE" : "无阵营",
+		"ALLY" : "我方",
+		"ENEMY" : "敌方",
+		"BOTH_ALLY_AND_ENEMY" : "我方/敌方",
+		"NEUTRAL" : "中立",
+		"ALL" : "我方/中立/敌方"
+	},
+	"side_type_relative" : {
+		"NONE" : "无阵营",
+		"ALLY" : "同阵营",
+		"ENEMY" : "敌对阵营",
+		"BOTH_ALLY_AND_ENEMY" : "同阵营/敌对阵营",
+		"NEUTRAL" : "中立阵营",
+		"ALL" : "同阵营/中立阵营/敌对阵营"
+	},
+	"motion" : {
+		"WALK" : "地面",
+		"FLY" : "飞行",
+		"ALL" : ""
+	},
+	"entity_category" : {
+		"NONE" : "无类型",
+		"DEFAULT" : "默认类",
+		"TRAP_OR_ITEM" : "装置类",
+		"OBSTACLE" : "障碍物类"
+	},
 	"cancel_reason" : {
 		"NONE" : "无",
 		"UNHURTABLE" : "不受伤",
@@ -190,6 +235,26 @@
 		"GAIN" : "获得时",
 		"TAKE_OUT" : "投出时",
 		"PUT_BACK" : "放回钱盒后"
+	},
+	"finish_reason" : {
+		"REACH_EXIT" : "抵达路径终点",
+		"HP_ZERO" : "生命值归零",
+		"FALLDOWN" : "坠入地穴/类似地形",
+		"WITHDRAW" : "撤退",
+		"DEADLIKE_WITHDRAW" : "类死亡的强制撤退（余烬逻辑）",
+		"SILENT_WITHDRAW" : "无音效提示的撤退",
+		"OTHER" : "其他",
+		"HP_ZERO_WITH_NO_SOURCE" : "无来源击杀（生命值归零）",
+		"REPLACED" : "被替换/接力（保全派驻）",
+		"RESPAWN_SELF" : "重新部署",
+		"MOVE_LIKE_RESPAWN_SELF" : "术语移动的重新部署"
+	},
+	"purpose" : {
+		"NONE" : "无类型行为",
+		"DAMAGE" : "伤害行为",
+		"HEAL" : "治疗行为",
+		"EP_DAMAGE" : "损伤行为",
+		"EP_HEAL" : "损伤恢复行为"
 	},
 	"bond_id" : {
 		"emptyship" : "【协防干员】",

@@ -6,7 +6,8 @@ GAP = 0.000000001
 
 # 读取字典数据
 def set_dictionary(dictionary):
-    ANNE_DICTIONARY = dictionary
+    global ANNE_DICTIONARY
+    ANNE_DICTIONARY = dictionary.copy()
         
 # 安妮的查字典方法
 # 如果查不到会返回原文

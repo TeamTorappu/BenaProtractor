@@ -272,4 +272,57 @@ def node_IsBlackboardZero(node):
         "true" : f"若不存在或{node['_var']} = 0",
         "false" : f"若存在且{node['_var']} ≠ 0"
     }
-        
+    
+# 检查行动类型
+def node_CheckMotionMode(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    motion = anne_dictionary("motion",node["_mode"])
+    return {
+        "main" : f"检查{target_name}的行动模式",
+        "true" : f"若其当前为{motion}单位",
+        "false" : f"若其当前为{motion}单位"
+    }
+
+# 检查单位死亡原因
+def node_FilterCharacterLastDeathReason(node):
+    target_name = anne_dictionary("target",node["_characterType"])
+    finish_reason = anne_dictionary("finish_reason",node["_finishReason"])
+    return {
+        "main" : f"检查{target_name}（角色类）的退场/死亡原因",
+        "true" : f"若退场/死亡原因为\"{finish_reason}\"",
+        "false" : f"若退场/死亡原因不为\"{finish_reason}\""
+    }
+
+# 检查角色部署类型
+def node_CheckBuildableType(node):
+    target_name = anne_dictionary("target",node["_characterType"])
+    buildable_type = anne_dictionary("buildable_type",node["_buildableType"])
+    if node["_checkOriginCondition"]:
+        return {
+            "main" : f"检查{target_name}（角色类）的原始部署类型（不受舞鞋等效果影响）",
+            "true" : f"若其原始部署类型为{buildable_type}",
+            "false" : f"若其原始部署类型不为{buildable_type}"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}（角色类）的部署类型",
+            "true" : f"若其部署类型为{buildable_type}",
+            "false" : f"若其部署类型不为{buildable_type}"
+        }
+
+# 检查角色技能状态
+def node_CheckCharSkillAffecting(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_checkTargetHost"]:
+        return {
+            "main" : f"检查{target_name}（角色类）的技能状态（若对方为召唤物，改为检查其主人）",
+            "true" : "若检查对象处于技能期间",
+            "true" : "若检查对象不处于技能期间"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}（角色类）的技能状态",
+            "true" : "若其处于技能期间",
+            "true" : "若其不处于技能期间"
+        }
+    

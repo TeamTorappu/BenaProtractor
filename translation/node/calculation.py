@@ -1,6 +1,7 @@
 #----------------------------------------
 # 计算类Node
 #----------------------------------------
+from .analyzer import anne_dictionary, to_delta
 # 用各种参数计算黑板值
 def node_CalculateBlackboardValueViaParams(node):
     # 未解析参数：
@@ -41,4 +42,22 @@ def node_CalculateBlackboardValueViaParams(node):
     elif node["_finalRound"]: # 向上取整
         formula += "（就近取整，四舍六入五成双）"
     # 返回完整公式
-    return {"main" : f"{place_name}计算黑板值。将 {output_key} 设置为 {formula}"}
+    return {"main" : f"{place_name}将 {output_key} 设置为 {formula}"}
+
+# 令黑板值+X
+def node_BlackboardAdd(node):
+    bb_key = node["_blackboardKey"]
+    if node["_additionKey"] != None and ode["_additionKey"] != "":
+        if node["_isFloat"]: # 这玩意是“不向下取整”的意思
+            return {"main" : f"令 {bb_key} += {node['_additionKey']}"}
+        else:
+            return {"main" : f"令 {bb_key} += floor({node['_additionKey']})"}
+    else:
+        amount = node["_addition"]
+        if not node["_isFloat"]: # 这玩意是“不向下取整”的意思
+            amount = floor(node["_addition"])
+        if amount > 0:
+            return {"main" : f"令 {bb_key} += {amount}"}
+        elif amount < 0:
+            return {"main" : f"令 {bb_key} -= {abs(amount)}"}
+    return {"main" : f"修改 {bb_key} ，但是无事发生"}

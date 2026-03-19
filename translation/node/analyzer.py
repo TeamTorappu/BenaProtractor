@@ -4,7 +4,8 @@ import os
 ANNE_DICTIONARY = None
 # 继承字典数据
 def set_dictionary(dictionary):
-    ANNE_DICTIONARY = dictionary
+    global ANNE_DICTIONARY
+    ANNE_DICTIONARY = dictionary.copy()
         
 # 安妮的查字典方法
 # 如果查不到会返回原文
@@ -238,7 +239,7 @@ def analyze_buff(buff_data):
         if buff_data["durationKey"] != "none" :
             results.append(f"持续({buff_data['durationKey']})秒")
         elif buff_data["lifeTime"] == 0.0:
-            results.append("持续一瞬间")
+            results.append("瞬间效果")
         else:
             results.append(f"持续{str(buff_data['lifeTime'])}秒")
     # 触发配置
@@ -307,10 +308,11 @@ def analyze_buff(buff_data):
     # 暂时不知道有什么用的东西
     #if buff_data["independentCharacterSource"]:
     #    results.append("independentCharacterSource")
-    #if buff_data["priority"]:
-    #    results.append("priority")
-    #if buff_data["priorityBBKeys"]:
-    #    results.append("priorityBBKeys")
+    if buff_data["priorityBBKeys"] != None and len(buff_data["priorityBBKeys"]) > 0:
+        bb_keys = "、".join(node['priorityBBKeys'])
+        results.append(f"根据黑板值{bb_keys}计算叠加优先级")
+    elif buff_data["priority"] > 0:
+        results.append(f"叠加优先级{buff_data['priority']}")
     #if buff_data["stripBlackboardParamsWithBuffKey"]:
     #    results.append("stripBlackboardParamsWithBuffKey")
     # 最后写入黑板数据
@@ -321,3 +323,76 @@ def analyze_buff(buff_data):
         "main" : buff_key, # 可能需翻译
         "description" : ";".join(results)
     }
+
+# 解析目标选项的详细信息
+# 返回结构体
+def analyze_target_options(option,relative_side=True):
+    conditions = []
+    # 阵营
+    if not option["enableAdvancedOptions"] or not option["ignoreTargetSide"]:
+        if relative_side:
+            conditions.append(anne_dictionary("side_type_relative",option["targetSide"]))
+        else:
+            conditions.append(anne_dictionary("side_type",option["targetSide"]))
+    # 实体类型
+    if option["targetCategory"] != "DEFAULT":
+        conditions.append(anne_dictionary("entity_category",option["targetCategory"]))
+    # 行动方式
+    if option["targetMotion"] != "ALL":
+        conditions.append(anne_dictionary("motion",option["targetMotion"]))
+    # 如果没有额外选项，这就是要展示的全部了
+    if not option["enableAdvancedOptions"]:
+        return {
+            "main" : "选择"+"".join(conditions)+"单位",
+            "description" : "直接选择，无视目标可选性"
+        }
+    # 开始处理剩下的所有
+    descriptions = []
+    # 无视无法选择
+    if option["ignoreTargetFree"]:
+        if option["onlyIgnoreSomeOfTargetFreeCase"]:
+            abnormal_flag = anne_dictionary("abnormal",option["abnormalFlag"])
+            abnormal_combo = anne_dictionary("abnormal",option["abnormalCombo"])
+            descriptions.append("无视"+abnormal_flag+"/"+abnormal_combo)
+        else:
+            descriptions.append("无视无法选择")
+    # 无视孤立
+    if option["ignoreAllyTargetFree"]:
+        descriptions.append("无视孤立")
+    # 无视禁疗
+    if option["ignoreHealFree"]:
+        descriptions.append("无视禁疗")
+    # 排除特定有异常效果单位
+    if option["excludeSomeAbnormalFlags"]:
+        abnormal_flag = anne_dictionary("abnormal",option["excludeAbnormalFlag"])
+        descriptions.append(f"不选择处于{abnormal_flag}的单位")
+    # 行为覆写
+    if option["purposeMask"] != "NONE":
+        purpose = anne_dictionary("purpose",option["purposeMask"])
+        descriptions.append(f"视为一次{purpose}")
+    # 职业筛选
+    if option["professionMask"] != "NONE":
+        if option["professionMask"] == "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER":
+            descriptions.append(f"必须是干员")
+        elif option["professionMask"] == "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER":
+            descriptions.append(f"必须是干员或召唤物")
+        elif option["professionMask"] == "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TRAP, PIONEER":
+            descriptions.append(f"必须是干员或装置")
+        elif option["professionMask"] != "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, TRAP, PIONEER":
+            classes = "/".join([anne_dictionary("class",_cls) for _cls in option["professionMask"].split(", ")])
+            descriptions.append(f"必须是{classes}单位")
+    # 单位类型
+    if option["checkUnitType"]:
+        unit_type = anne_dictionary("unit_type",option["unitTypeMask"])
+        descriptions.append(f"必须是{unit_type}")
+        
+    if len(descriptions) > 0:
+        return {
+            "main" : "选择"+"".join(conditions)+"单位，采用额外选项判定可选",
+            "description" : ";".join(descriptions)
+        }
+    #最朴实无华的选择，没有任何附加条件
+    return {
+        "main" : "选择"+"".join(conditions)+"单位，采用常规可选性判定"
+    }
+        

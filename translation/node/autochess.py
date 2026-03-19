@@ -3,6 +3,27 @@
 #----------------------------------------
 from .analyzer import anne_dictionary
 
+# 检查难度
+def node_AutoChessCheckDifficulty(node):
+    if node["_difficultyMode"] == "TRAINING":
+        return {
+            "main" : "检查当前卫戍协议的关卡难度",
+            "true" : "若当前为入门协议（教学模式）",
+            "false" : "若当前不为入门协议（教学模式）"
+        }
+    elif node["_difficultyMode"] == "FUNNY":
+        return {
+            "main" : "检查当前卫戍协议的关卡难度",
+            "true" : "若当前为标准模拟（简单难度）",
+            "false" : "若当前为标准模拟（简单难度）"
+        }
+    elif node["_difficultyMode"] == "NORMAL":
+        return {
+            "main" : "检查当前卫戍协议的关卡难度",
+            "true" : "若当前为险境模拟/绝境模拟/终极模拟（普通/困难/极限难度）",
+            "false" : "若当前不为险境模拟/绝境模拟/终极模拟（普通/困难/极限难度）"
+        }
+
 # 在黑板记录盟约生效人数
 def node_AutoChessAssignBondCharCntToBB(node):
     # 未解析参数：_target、_filterAllSides
@@ -38,7 +59,7 @@ def node_AutoChessAssignBondStackCntToBB(node):
         "main" : f"读取{bond_id}的叠加层数，并记录至黑板{node['_keyToStoreCnt']}"
     }
     if node["_checkDiffWithOldStoreCnt"]: # 写作差异，读作”更大“
-        result["main"] += ",随后检查层数"
+        result["main"] += "，随后检查层数"
         result["true"] = f"若{bond_id}的层数比之前记录的值更大"
         result["false"] = f"若{bond_id}的层数与之前记录的值相同"
     return result
@@ -48,12 +69,12 @@ def node_AutochessAssignEquipCntToBlackboard(node):
     target_name = anne_dictionary("target",node["_targetType"])
     if node["_onlyGoldenEquip"]:
         return {
-            "main" : f"读取{target_name}携带的已进阶装备数量，并记录至黑板{node['_keyToStoreCnt']}",
+            "main" : f"读取{target_name}携带的已进阶装备数量，并记录至黑板{node['_blackboardKey']}",
             "description" : "此处所指的装备为卫戍协议的装备"
         }
     else:
         return {
-            "main" : f"读取{target_name}携带的装备数量，并记录至黑板{node['_keyToStoreCnt']}",
+            "main" : f"读取{target_name}携带的装备数量，并记录至黑板{node['_blackboardKey']}",
             "description" : "此处所指的装备为卫戍协议的装备"
         }
 

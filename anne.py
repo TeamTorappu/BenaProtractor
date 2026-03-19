@@ -41,71 +41,76 @@ class AnneNode:
         if node.translation == None:
             print(f"[安妮]尝试翻译节点 {node_name}")
             method = getattr(self.translator, "node_"+node_name, "")
-            #try:
-            if method != "" :
-                node.translation = method(node.node_data)
-            else: # 无法翻译，把所有数据搓成可阅读的格式
-                children = []
-                for key,content in node.node_data.items():
-                    if isinstance(content,dict): # 如果是子节点或者buff，还是要嵌套翻译一下试试的
-                        if "attributes" in content: # buff
-                            buff = self.analyze_buff(content)
-                            buff["main"] = str(key) + " : " + buff["main"]
-                            children.append()
-                        elif "$type" in content: # 子节点
-                            sub_node = self.translate(content)
-                            sub_node["main"] = str(key) + " : " + sub_node["main"]
-                            children.append(sub_node)
-                        else: # 解析不了没办法
-                            children_children = []
-                            for skey,scontent in content.items():
-                                children_children.append({"main" : str(skey) + " : " + str(scontent)})
-                            if len(children_children) > 0:
+            try:
+                if method != "" :
+                    node.translation = method(node.node_data)
+                else: # 无法翻译，把所有数据搓成可阅读的格式
+                    children = []
+                    for key,content in node.node_data.items():
+                        if isinstance(content,dict): # 如果是子节点或者buff，还是要嵌套翻译一下试试的
+                            if "attributes" in content: # buff
+                                buff = self.translator.analyze_buff(content)
+                                buff["main"] = str(key) + " : " + buff["main"]
+                                children.append()
+                            elif "$type" in content: # 子节点
+                                sub_node = self.translate(Node(content))
+                                sub_node["main"] = str(key) + " : " + sub_node["main"]
+                                children.append(sub_node)
+                            else: # 解析不了没办法
+                                children_children = []
+                                for skey,scontent in content.items():
+                                    children_children.append({"main" : str(skey) + " : " + str(scontent)})
+                                if len(children_children) > 0:
+                                    children.append({
+                                        "main" : str(key) + " : {",
+                                        "children" : children_children
+                                    })
+                                    children.append({"main" : "}"})
+                                else:
+                                    children.append({"main" : str(key) + " : {}"})
+                        elif isinstance(content,list): # 可能是子节点列表或者buff列表？
+                            if len(content) > 0 and "$type" in content[0]: # 子节点列表
+                                sub_content_list = []
+                                for sub_content in content:
+                                    new_node = Node(sub_content)
+                                    if new_node != None:
+                                        sub_content_list.append(new_node)
+                                sub_node_list = self.translate_all(sub_content_list)
+                                sub_node_list["main"] = str(key) + " : " + sub_node_list["main"]
+                                children.append(sub_node_list)
+                            elif len(content) > 0 and "attributes" in content[0]: # 子buff列表
+                                children_children = []
+                                for scontent in content:
+                                    children_children.append(self.translator.analyze_buff(scontent))
                                 children.append({
-                                    "main" : str(key) + " : {",
+                                    "main" : str(key) + " : [",
                                     "children" : children_children
                                 })
-                                children.append({"main" : "}"})
+                                children.append({"main" : "]"})
+                            elif len(content) > 0:
+                                children_children = []
+                                for scontent in content:
+                                    children_children.append({"main" : str(scontent)})
+                                children.append({
+                                    "main" : str(key) + " : [",
+                                    "children" : children_children
+                                })
+                                children.append({"main" : "]"})
                             else:
-                                children.append({"main" : str(key) + " : {}"})
-                    elif isinstance(content,list): # 可能是子节点列表或者buff列表？
-                        if len(content) > 0 and "$type" in content[0]: # 子节点列表
-                            sub_node_list = self.translate_all(content)
-                            sub_node_list["main"] = str(key) + " : " + sub_node_list["main"]
-                            children.append(sub_node_list)
-                        if len(content) > 0 and "attributes" in content[0]: # 子buff列表
-                            children_children = []
-                            for scontent in content:
-                                children_children.append(self.analyze_buff(scontent))
-                            children.append({
-                                "main" : str(key) + " : [",
-                                "children" : children_children
-                            })
-                            children.append({"main" : "]"})
-                        elif len(content) > 0:
-                            children_children = []
-                            for scontent in content:
-                                children_children.append({"main" : str(scontent)})
-                            children.append({
-                                "main" : str(key) + " : [",
-                                "children" : children_children
-                            })
-                            children.append({"main" : "]"})
+                                children.append({"main" : str(key) + " : []"})
                         else:
-                            children.append({"main" : str(key) + " : []"})
-                    else:
-                        children.append({"main": str(key) + " : "+str(content)})
+                            children.append({"main": str(key) + " : "+str(content)})
+                    node.translation = {
+                        "main" : node_name+"（未翻译）",
+                        "style_closed" : True,
+                        "children" : children
+                    }
+            except Exception as e:
+                print(f"[安妮]... {node_name} 节点翻译失败了",e)
                 node.translation = {
-                    "main" : node_name+"（未翻译）",
-                    "style_closed" : True,
-                    "children" : children
+                    "main" : node_name+"（翻译失败）",
+                    "style_closed" : True
                 }
-            #except:
-            #    print(f"[安妮]... {node_name} 节点翻译失败了")
-            #    node.translation = {
-            #        "main" : node_name+"（翻译失败）",
-            #        "style_closed" : True
-            #    }
         # 返回译文
         return node.translation
     

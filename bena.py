@@ -108,6 +108,10 @@ def load_buff_template_data():
         json_data = json.load(_f)
     # 开始解析
     for buff_template_key in json_data.keys():
+        # 测试用，先不加载别的东西
+        #if not buff_template_key.startswith("act1autochess") or not buff_template_key.startswith("act2autochess"):
+        #    continue
+
         buff_template = BuffTemplate(buff_template_key,json_data[buff_template_key])
         # 制作翻译版称呼，先处理特征明显的
         if buff_template_key.startswith("act1autochess_"): # 卫戍协议：盟约
