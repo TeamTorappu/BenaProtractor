@@ -2,3 +2,5 @@
 /build
 /dist
 /output
+/translation/node/__pycache__
+/translation/relic/__pycache__

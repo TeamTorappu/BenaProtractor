@@ -1,5 +1,6 @@
 import zipfile
 import os
+import datetime
 
 def add_folder_to_zip(zip_file, folder_name):
     for root, dirs, files in os.walk("./"+folder_name):
@@ -11,7 +12,11 @@ def add_folder_to_zip(zip_file, folder_name):
 if __name__ == "__main__":
     if not os.path.exists("output"):
         os.makedirs("output")
-    with zipfile.ZipFile("output/贝娜的量角器.zip", 'w') as _z:
+    now = datetime.datetime.now()
+    year = now.year
+    month = now.month
+    day = now.day
+    with zipfile.ZipFile(f"output/贝娜的量角器 {year}.{month}.{day}.zip", 'w') as _z:
         _z.write("./dist/main.exe","./贝娜的量角器.exe")
         _z.write("./icon/icon.ico","./icon/icon.ico")
         add_folder_to_zip(_z,"data")
