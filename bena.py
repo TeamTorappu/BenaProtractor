@@ -15,13 +15,13 @@ CHARACTER_TABLE = {}
 CHARACTER_TABLE_PATH = "./tables/character_table.json"
 CHARACTER_SHORT_NAMES = {}
 CHARACTER_NAMES = {}
-CHARACTER_NAMES_PATH = "./data/character_names.json"
+CHARACTER_NAMES_PATH = "./tables/character_names.json"
 ENEMY_DATABASE_KEYS = []
 ENEMY_DATABASE = {}
 ENEMY_DATABASE_PATH = "./tables/enemy_database.json"
 ENEMY_SHORT_NAMES = {}
 ENEMY_NAMES = {}
-ENEMY_NAMES_PATH = "./data/enemy_names.json"
+ENEMY_NAMES_PATH = "./tables/enemy_names.json"
 ROGUELIKE_TOPIC_SEASONS = ["rogue_5"]#["rogue_1","rogue_2","rogue_3","rogue_4","rogue_5"]
 ROGUELIKE_TOPIC_KEYS = []
 ROGUELIKE_TOPIC_TABLE = {}
@@ -56,12 +56,11 @@ def load_character_names():
         make_character_name_table()
     else:
         # 获取文件数据
-        print("[贝娜]让我看看character_names.json？")
         with open(CHARACTER_NAMES_PATH,'r',encoding="UTF-8") as _f:
             json_data = json.load(_f)
         for key,name in json_data.items():
             CHARACTER_NAMES[key] = name
-        print("[贝娜]之前的character_names.json读取完毕！")
+        print("[贝娜]character_names.json读取完毕！")
 
 # 读取enemy_database.json，将获取到的名称制作成一个单独的json以供使用。
 def make_enemy_name_table():
@@ -92,12 +91,11 @@ def load_enemy_names():
         make_enemy_name_table()
     else:
         # 获取文件数据
-        print("[贝娜]让我看看enemy_names.json？")
         with open(ENEMY_NAMES_PATH,'r',encoding="UTF-8") as _f:
             json_data = json.load(_f)
         for key,name in json_data.items():
             ENEMY_NAMES[key] = name
-        print("[贝娜]之前的enemy_names.json读取完毕！")
+        print("[贝娜]enemy_names.json读取完毕！")
 
 # 读取buff_template_data.json，并解析
 def load_buff_template_data():

@@ -180,7 +180,7 @@ class AnneRelic:
     import translation.relic as translator
     def __init__(self):
         self.translator.set_dictionary(get_anne_dictionary())
-        print("[安妮]好的。")
+        #print("[安妮]好的。")
         
     # 翻译重定向器，本质switch case
     # 翻译返回的结果始终是一层一层的结构体
