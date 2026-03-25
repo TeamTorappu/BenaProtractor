@@ -238,7 +238,7 @@
 		"IS_CONTINUOUS" : "IS_CONTINUOUS",
 		"FORCE_TO_DISPLAY_NUMBER" : "强制显示数字",
 		"FORCE_NOT_TO_DISPLAY_SP" : "强制显示SP+X",
-		"DAMAGE_IS_UNDEADABLE_THIS_TIME" : "不会致命",
+		"DAMAGE_IS_UNDEADABLE_THIS_TIME" : "非致命",
 		"DAMAGE_WITHOUT_MODIFY" : "不进行计算",
 		"IS_ENVIRONMENT_DAMAGE" : "环境伤害",
 		"FORCE_TO_DISPLAY_NEGATIVE_NUMER" : "强制显示负数字",
@@ -248,10 +248,19 @@
 		"HEAL_CAN_GENERAL_SHIELD" : "溢出部分可产生屏障的治疗",
 		"FORCE_TO_DISPLAY_CRITICAL_NUMBER" : "强制显示红字",
 		"ALLOW_ADD_TEMP_LIFE_POINT_FLAG" : "溢出部分可转变为临时目标生命值",
-		"INSTANT_KILL_LIKE_DAMAGE" : "斩杀伤害",
+		"INSTANT_KILL_LIKE_DAMAGE" : "类斩杀伤害",
 		"IS_ENVIRONMENT_ELEMENT_DAMAGE" : "环境元素损伤",
 		"SKIP_MODIFIER_CONSIDER_UNHURTABLE" : "强制生命流失(无计算/事件，无法取消)",
 		"IS_NOT_CHANGEABLE_VALUE_MODIFIER" : "无法被其他方式增/减/免伤"
+	},
+	"cancel_reason" : {
+		"NONE" : "无原因",
+		"UNHURTABLE" : "无法受伤",
+		"MISS" : "被闪避",
+		"BLOCKED" : "被格挡",
+		"BLOCKED_WITH_DAMAGE_NUMBER" : "被格挡(带数字)",
+		"INTERRUPT" : "被打断",
+		"HIT_FAILED " : "命中率判定失败"
 	},
 	"formula" : {
 		"ADDITION" : "直接加算",
@@ -335,5 +344,15 @@
 		"miraShip" : "【奇迹】",
 		"visiShip" : "【远见】",
 		"investShip" : "【投资人】"
+	},
+	"bond_can_mani" : {
+		"yanShip" : "true",
+		"sargonShip" : "true",
+		"kjeragShip" : "true",
+		"lateranoShip" : "true",
+		"victoriaShip" : "true",
+		"egirShip" : "true",
+		"kazimierzShip" : "true",
+		"siracusaShip" : "true"
 	}
 }

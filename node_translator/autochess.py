@@ -60,8 +60,8 @@ def node_AutoChessAssignBondStackCntToBB(node):
     }
     if node["_checkDiffWithOldStoreCnt"]: # 写作差异，读作”更大“
         result["main"] += "，随后检查层数"
-        result["true"] = f"若{bond_id}的层数比之前记录的值更大"
-        result["false"] = f"若{bond_id}的层数与之前记录的值相同"
+        result["true"] = f"若层数大于之前记录的值（或者之前未记录）"
+        result["false"] = f"若层数小于等于之前记录的值"
     return result
 
 # 在黑板记录装备数量
@@ -98,6 +98,7 @@ def node_AutoChessFilterChess(node):
 def node_AutoChessFilterCharacterBondIds(node):
     bond_ids = [anne_dictionary("bond_id",bond) for bond in node["_bondIds"]]
     bond_filter = ""
+    
     if len(bond_ids) > 1:
         bond_filter = "同时隶属于"+"、".join(bond_ids)+"盟约"
     elif len(bond_ids) == 1:
@@ -108,8 +109,12 @@ def node_AutoChessFilterCharacterBondIds(node):
             "true" : "始终通过",
             "false" : "始终不通过"
         }
+    #考虑调和盟约
     if node["_considerManiShip"]:
-        bond_filter += "（或是隶属调和盟约）"
+        for bond in node["_bondIds"]:
+            if anne_dictionary("bond_can_mani",bond) == "true": #字典里有就行
+                bond_filter += "/隶属调和盟约"
+                break
     # 处理对象
     target_name = anne_dictionary("target",node["_target"])
     if node["_checkTargetInRangeId"]: # 检查目标范围内是否存在符合盟约单位

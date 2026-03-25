@@ -276,7 +276,7 @@ def node_IfTarget(node):
     if node["_checkTargetFree"]:
         conditions.append("对于来源而言可选")
         last_type = "对于来源而言是否可选"
-    if node["_unitType"] != "NONE":
+    if node["_checkTargetUnitType"]:
         conditions.append("单位类型为"+anne_dictionary("unit_type",node["_unitType"]))
         last_type = "单位类型是否为"+anne_dictionary("unit_type",node["_unitType"])
     if node["_motionMask"] != "ALL":
@@ -484,9 +484,9 @@ def node_CheckCharSkillAffecting(node):
             "true" : "若其处于技能期间",
             "false" : "若其不处于技能期间"
         }
-
+    
 # 检查携带的技能（仅限角色类可用）
-def node_CheckCharSkillAffecting(node):
+def node_CheckSkillIndex(node):
     target_name = anne_dictionary("target",node["_targetType"])
     return {
         "main" : f"检查{target_name}（角色类）携带的技能",

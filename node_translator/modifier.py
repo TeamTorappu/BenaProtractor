@@ -37,3 +37,8 @@ def node_FilterModifierByRealDelta(node):
         "true" : f"若 {modifier_target} {compare} 原先的{modifier_target}",
         "false" : f"若 {modifier_target} {compare_not} 原先的{modifier_target}"
     }
+
+# 取消调整值
+def node_CancelModifier(node):
+    reason = anne_dictionary("cancel_reason",node["_reason"])
+    return {"main" : "取消本次调整值，原因："+reason}

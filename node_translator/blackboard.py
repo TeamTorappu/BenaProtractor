@@ -34,6 +34,17 @@ def node_AssignTokenCardCntToBB(node):
     else:
         return {"main" : f"在黑板上将{target_name}的召唤物当前持有数记录为 {count_key}"}
 
+# 三合一节点：记录伤害值、记录模拟的计算伤害值、记录伤害影响差值
+def node_AssignDamageValueToBlackboard(node):
+    owner_name = anne_dictionary("target",node["_owner"])
+    if node["_assignRealDelta"]:
+        return {"main" : "设黑板值 damage 为 本次伤害实际造成的生命值减少量（最低为0）"}
+    elif node["_assignValueWithoutCalculate"]:
+        return {"main" : f"设黑板值 damage 为 {owner_name}的攻击力 × {node['_scaleKey']}"}
+    else:
+        damage_type = anne_dictionary("damage_type",node["_damageType"])
+        return {"main" : f"设黑板值 damage 为 本次{damage_type}伤害的值（类型不对则为0）"}
+
 # 确保黑板默认值，防止出错
 def node_EnsureBlackboardDefaultValue(node):
     results = []

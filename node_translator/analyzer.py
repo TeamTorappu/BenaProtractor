@@ -110,7 +110,17 @@ def analyze_damage(damage_data,prefix="",suffix=""):
             features.append("乘以黑板值"+damage_data["_multiplierKey"])
     # 无视闪避/格挡那些的掩码，不过yj只用几个特定掩码，所以没必要做掩码解析
     if "_ignoreCancelReasonMask" in damage_data and damage_data["_ignoreCancelReasonMask"] != "NONE":
-        features.append("无视"+anne_dictionary("cancel_reason",damage_data["_ignoreCancelReasonMask"]))
+        if damage_data["_ignoreCancelReasonMask"] == "MISS":
+            features.append("无视闪避")
+        elif damage_data["_ignoreCancelReasonMask"] == "BLOCK":
+            features.append("无视格挡")
+        elif damage_data["_ignoreCancelReasonMask"] == "HIT_FAILED":
+            features.append("不受命中率判定影响")
+        else: # 不行的话全展示吧
+            reasons = []
+            for reason in damage_data["_ignoreCancelReasonMask"]:
+                reasons.append(anne_dictionary("cancel_reason",reason))
+            features.append("不受"+"/".join(reasons)+"影响")
     if len(features) > 0:
         suffix += "（"+"；".join(features)+"）"
     return prefix+damage_type_name+attack_type_name+"伤害"+suffix
