@@ -1,6 +1,7 @@
 #----------------------------------------
 # 计算类Node
 #----------------------------------------
+import math
 from .analyzer import anne_dictionary, to_delta
 # 用各种参数计算黑板值
 def node_CalculateBlackboardValueViaParams(node):
@@ -55,7 +56,7 @@ def node_BlackboardAdd(node):
     else:
         amount = node["_addition"]
         if not node["_isFloat"]: # 这玩意是“不向下取整”的意思
-            amount = floor(node["_addition"])
+            amount = math.floor(node["_addition"])
         if amount > 0:
             return {"main" : f"令 {bb_key} += {amount}"}
         elif amount < 0:

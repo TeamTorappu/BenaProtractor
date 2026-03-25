@@ -4,7 +4,7 @@ import os
 ANNE_DICTIONARY = None
 GAP = 0.000000001
 
-# 读取字典数据
+# 继承字典数据
 def set_dictionary(dictionary):
     global ANNE_DICTIONARY
     ANNE_DICTIONARY = dictionary.copy()
@@ -13,6 +13,11 @@ def set_dictionary(dictionary):
 # 如果查不到会返回原文
 def anne_dictionary(catalogue,type_str):
     return ANNE_DICTIONARY[catalogue].get(type_str,type_str)
+
+# 获取key是否是属性值的方法
+# 属性字典里存了所有属性类型，因此直接用了
+def is_attribute_key(key):
+    return (key.upper() in ANNE_DICTIONARY["attribute"])
     
 #----------------------------------------
 # 数值文本化逻辑
