@@ -196,22 +196,22 @@ def node_CheckBlocked(node):
         if node["_checkBlockedBySourceToken"]:
             source_name += "或其召唤物"
         return {
-            "main" : f"检查{target_name}的阻挡状态（角色类与敌人类处理逻辑不同）",
-            "true" : f"若其正被{source_name}阻挡，或阻挡着{source_name}",
-            "false" : f"若其未被{source_name}阻挡，且未阻挡{source_name}"
+            "main" : f"根据单位类型，检查{target_name}的阻挡/被阻挡状态",
+            "true" : f"若其正被{source_name}阻挡/阻挡着{source_name}",
+            "false" : f"若其未被{source_name}阻挡/未阻挡{source_name}"
         }
     elif node["_checkBlockedBySourceToken"]:
         source_name = anne_dictionary("target",node["_sourceType"])+"的召唤物"
         return {
-            "main" : f"检查{target_name}的阻挡状态（角色类与敌人类处理逻辑不同）",
-            "true" : f"若其正被{source_name}阻挡，或阻挡着{source_name}",
-            "false" : f"若其未被{source_name}阻挡且未阻挡{source_name}"
+            "main" : f"根据单位类型，检查{target_name}的阻挡/被阻挡状态",
+            "true" : f"若其正被{source_name}阻挡/阻挡着{source_name}",
+            "false" : f"若其未被{source_name}阻挡/未阻挡{source_name}"
         }
     else:
         return {
-            "main" : f"检查{target_name}的阻挡状态（角色类与敌人类处理逻辑不同）",
-            "true" : f"若其正被任意单位阻挡，或阻挡着任意单位",
-            "false" : f"若其未阻挡且未被阻挡"
+            "main" : f"根据单位类型，检查{target_name}的阻挡/被阻挡状态",
+            "true" : f"若其正被任意单位阻挡/阻挡着任意单位",
+            "false" : f"若其未阻挡/未被阻挡"
         }
         
 
@@ -305,6 +305,49 @@ def node_IfTarget(node):
             "main" : f"检查{target_name}，但未配置条件",
             "true" : "始终通过",
             "false" : "始终不通过"
+        }
+
+# 检查单位是否存活
+def node_CheckUnitAlive(node):
+    owner_name = anne_dictionary("target",node["_ownerType"])
+    return {
+        "main" : f"检查{owner_name}目前是否存活",
+        "true" : f"若{owner_name}仍存活（生命值不为0且不处于死亡状态机）",
+        "false" : f"若{owner_name}已被击倒/死亡"
+    }
+
+# 检查异常免疫
+def node_CheckAbnormalFlag(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    abnormal = anne_dictionary("abnormal",node["_abnormalFlag"])
+    if node["_isUnset"]:
+        return {
+            "main" : f"检查{target_name}的异常效果",
+            "true" : f"若{target_name}没有{abnormal}异常",
+            "false" : f"若{target_name}具有{abnormal}异常"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}的异常效果",
+            "true" : f"若{target_name}具有{abnormal}异常",
+            "false" : f"若{target_name}没有{abnormal}异常"
+        }
+
+# 检查异常免疫
+def node_CheckAbnormalImmune(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    abnormal = anne_dictionary("abnormal",node["_abnormalFlag"])
+    if node["_isUnset"]:
+        return {
+            "main" : f"检查{target_name}的异常免疫",
+            "true" : f"若{target_name}没有{abnormal}免疫",
+            "false" : f"若{target_name}具有{abnormal}免疫"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}的异常免疫",
+            "true" : f"若{target_name}具有{abnormal}免疫",
+            "false" : f"若{target_name}没有{abnormal}免疫"
         }
 
 # 检查绝对阵营
