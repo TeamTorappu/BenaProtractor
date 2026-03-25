@@ -206,7 +206,10 @@ def load_buff_template_data():
                             rest.pop(0)
                 # 无法翻译的部分退回去
                 if len(rest) > 0:
-                    display_name += "_" + "_".join(rest)
+                    if rest[0].startswith("["):
+                        display_name += "_".join(rest)
+                    else:
+                        display_name += "_" + "_".join(rest)
                 buff_template.display_name = display_name
         BUFF_TEMPLATE_KEYS.append(buff_template_key)
         BUFF_TEMPLATE_DATA[buff_template_key] = buff_template

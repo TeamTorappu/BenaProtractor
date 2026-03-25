@@ -1,6 +1,7 @@
 #----------------------------------------
 # Buff类Node
 #----------------------------------------
+import math
 from .analyzer import anne_dictionary, analyze_buff
 
 # 创建Buff
@@ -29,6 +30,19 @@ def node_CreateBuffUseHostAsSource(node):
         "main" : f"让{source_name}为{target_name}创建一个{buff_name}：",
         "children" : [analyze_buff(node['_buffData'])]
     }
+
+# 触发此Buff（常用于循环或控制子Buff）
+def node_TriggerBuff(node):
+    if node["_force"]:
+        if node["_triggerDerivedBuffs"]:
+            return {"main" : "强制触发此Buff与旗下所有子Buff"}
+        else:
+            return {"main" : "强制触发此Buff"}
+    else:
+        if node["_triggerDerivedBuffs"]:
+            return {"main" : "触发此Buff与旗下所有子Buff"}
+        else:
+            return {"main" : "触发此Buff"}
 
 # 结束此Buff
 def node_FinishBuff(node):

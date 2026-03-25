@@ -18,7 +18,13 @@
 		"BUFF_SOURCE" : "来源",
 		"SOURCE" : "来源",
 		"TARGET" : "目标",
-		"MODIFIER_TARGET" : "调整对象"
+		"MODIFIER_TARGET" : "调整值对象",
+		"MODIFIER_SOURCE" : "调整值来源",
+		"MAIN_TARGET" : "单位的主目标",
+		"MAINBUFF_SOURCE" : "父Buff来源",
+		"PROJECTILE_SOURCE" : "弹道来源",
+		"PROJECTILE_TRACETARGET" : "弹道追踪目标",
+		"ABILITY_OWNER" : "能力持有者"
 	},
 	"event" : {
 		"ON_BUFF_START" : "当Buff开始时",
@@ -35,7 +41,10 @@
 		"ON_SKILL_START" : "持有者技能开启时",
 		"ON_SKILL_FINISH" : "持有者技能结束时",
 		"ON_SKILL_CAST_SUCCEED" : "持有者技能释放成功时",
-		"ON_OWNER_FINISH" : "当持有者退场/死亡时"
+		"ON_APPLIED_MODIFIER" : "持有者施加调整值后",
+		"ON_OWNER_BLOCK_MODE_CHANGED" : "持有者阻挡模式变化时",
+		"ON_OWNER_FINISH" : "持有者退场/死亡时",
+		"ON_OWNER_REACH_EXIT" : "持有者抵达自身路径终点时"
 	},
 	"buildable_type" : {
 		"NONE" : "无",
@@ -141,7 +150,8 @@
 		"ANY_ATTACK" : "物理/法术/真实/元素",
 		"ANY_HEAL" : "治疗",
 		"PHYSICAL_AND_MAGICAL" : "物理/法术",
-		"ANY_ATTACK_EXCEPT_ELEMENT" : "物理/法术/真实"
+		"ANY_ATTACK_EXCEPT_ELEMENT" : "物理/法术/真实",
+		"ALL" : "全部"
 	},
 	"attack_type" : {
 		"NONE" : "无攻击类型",
@@ -149,6 +159,18 @@
 		"SPLASH" : "溅射",
 		"BUFF" : "持续",
 		"ADDITION" : "附加"
+	},
+	"element" : {
+		"NONE" : "无",
+		"SANITY" : "神经",
+		"WATER" : "侵蚀",
+		"FIRE" : "灼燃",
+		"DARK" : "凋亡"
+	},
+	"unit_type" : {
+		"CHARACTER" : "角色类",
+		"ENEMY" : "敌人类",
+		"PROJECTILE" : "弹道类"
 	},
 	"side_type" : {
 		"NONE" : "无阵营",
@@ -166,16 +188,42 @@
 		"NEUTRAL" : "中立阵营",
 		"ALL" : "同阵营/中立阵营/敌对阵营"
 	},
+	"modifier_target_type": {
+		"HP" : "生命值",
+		"SP" : "技力",
+		"COST" : "部署费用",
+		"CHARCTER_LIMIT" : "部署数",
+		"LIFE_POINT" : "目标生命",
+		"EP" : "元素值",
+		"MAX_COST" : "部署费用上限",
+		"TRY_SET_HP_ZERO" : "TRY_SET_HP_ZERO"
+	},
 	"motion" : {
 		"WALK" : "地面",
 		"FLY" : "飞行",
+		"WALK_ONLY" : "地面",
+		"FLY_ONLY" : "飞行",
 		"ALL" : ""
+	},
+	"block_mode" : {
+		"WALK" : "\"阻挡地面敌人\"",
+		"FLY" : "\"阻挡飞行敌人\"",
+		"ALL" : "\"地面敌人/飞行敌人\"均可阻挡"
 	},
 	"entity_category" : {
 		"NONE" : "无类型",
 		"DEFAULT" : "默认类",
 		"TRAP_OR_ITEM" : "装置类",
 		"OBSTACLE" : "障碍物类"
+	},
+	"enemy_level" : {
+		"NONE" : "无",
+		"NORMAL" : "普通",
+		"ELITE" : "精英",
+		"BOSS" : "领袖",
+		"ELITE_AND_NORMAL" : "普通/精英",
+		"ELITE_AND_BOSS" : "精英/领袖",
+		"ALL" : "普通/精英/领袖"
 	},
 	"cancel_reason" : {
 		"NONE" : "无",
@@ -194,15 +242,15 @@
 		"DAMAGE_WITHOUT_MODIFY" : "不进行计算",
 		"IS_ENVIRONMENT_DAMAGE" : "环境伤害",
 		"FORCE_TO_DISPLAY_NEGATIVE_NUMER" : "强制显示负数字",
-		"SKIP_MODIFIER_EVENT" : "类生命流失(无计算/事件)",
+		"SKIP_MODIFIER_EVENT" : "生命流失(无计算/事件)",
 		"DAMAGE_CAN_HURT_SLEEPING_ENTITY" : "可影响沉睡单位",
 		"LIFE_POINT_LOSS_BY_REACH_EXIT" : "因到达路径终点而损失的目标生命值",
 		"HEAL_CAN_GENERAL_SHIELD" : "溢出部分可产生屏障的治疗",
 		"FORCE_TO_DISPLAY_CRITICAL_NUMBER" : "强制显示红字",
 		"ALLOW_ADD_TEMP_LIFE_POINT_FLAG" : "溢出部分可转变为临时目标生命值",
-		"INSTANT_KILL_LIKE_DAMAGE" : "类斩杀伤害",
+		"INSTANT_KILL_LIKE_DAMAGE" : "斩杀伤害",
 		"IS_ENVIRONMENT_ELEMENT_DAMAGE" : "环境元素损伤",
-		"SKIP_MODIFIER_CONSIDER_UNHURTABLE" : "类强制生命流失(无计算/事件，无法取消)",
+		"SKIP_MODIFIER_CONSIDER_UNHURTABLE" : "强制生命流失(无计算/事件，无法取消)",
 		"IS_NOT_CHANGEABLE_VALUE_MODIFIER" : "无法被其他方式增/减/免伤"
 	},
 	"formula" : {
@@ -255,6 +303,14 @@
 		"HEAL" : "治疗行为",
 		"EP_DAMAGE" : "损伤行为",
 		"EP_HEAL" : "损伤恢复行为"
+	},
+	"group_tag" : {
+	},
+	"map_tag" : {
+		"act25side_extra" : "\"孤星小游戏关卡\"",
+		"main_12" : "\"十二章\"",
+		"main_13" : "\"十三章\"",
+		"water" : "\"水地形\""
 	},
 	"bond_id" : {
 		"emptyship" : "【协防干员】",

@@ -2,8 +2,8 @@
 /build
 /dist
 /output
-/translation/node/__pycache__
-/translation/relic/__pycache__
 /tables
 /data
 main.spec
+/node_translator/__pycache__
+/relic_translator/__pycache__

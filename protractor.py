@@ -191,7 +191,10 @@ class Protractor:
                 tree_open = False
             # 真值结果，如果留到这一步，说明只有可以缩写
             if "true" in struct and struct['true'] != "":
-                text += f"，{struct['true']}："
+                if len("text") == 0:
+                    text = f"{struct['true']}："
+                else:
+                    text += f"，{struct['true']}："
             label = self.display_area.insert(master,"end",text=text,open=tree_open,values=(link))
             if "description" in struct and struct['description'] != "":
                 self.display_area.insert(label,"end",text=f"（{struct['description']}）",open=tree_open)

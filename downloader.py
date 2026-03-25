@@ -21,7 +21,10 @@ def prepare_files():
         progress = min(float(block_num * block_size) / float(total_size),1.0) * 100.0
         sys.stdout.write("\r[贝娜]下载进度" + "{:.2f}%".format(progress))
         sys.stdout.flush()
-        
+    # 创建文件夹
+    if not os.path.exists("./tables"):
+        os.mkdir("./tables")
+    
     # 遍历所需文件
     for name, url in FILES.items():
         if not os.path.exists("./tables/"+name):
@@ -33,4 +36,6 @@ def prepare_files():
                 print("[贝娜]"+name+" 下载完成！")
             except:
                 print("[贝娜]"+name+" 下载失败... 请检查联网状态")
+                if os.path.exists("./tables/"+name):
+                    os.remove("./tables/"+name)
                 raise IOError("[贝娜]缺少文件，无法处理")

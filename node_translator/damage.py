@@ -6,7 +6,7 @@ from .analyzer import anne_dictionary, analyze_damage, analyze_target_options, t
 # 造成无来源伤害
 def node_NoSourceDamage(node):
     damage_name = analyze_damage(node,"无来源的") # 直接把整个node传参进去
-    return {"main" : "对持有者造成X点"+damage_name}
+    return {"main" : f"对持有者造成{node['_damageKey']}点{damage_name}"}
     
 # 造成伤害
 def node_AdvancedApplyDamage(node):

@@ -56,17 +56,19 @@ def node_DamageScale(node):
 def node_BlockDamage(node):
     # 未解析参数：_useSource _sourceType
     #source_name = anne_dictionary("target",node["_sourceType"])
-    name = "处理概率格挡/计次护盾效果"
+    name = "概率格挡/计次护盾"
     features = []
+    description = "若无法响应/伤害已被无效化将不会消耗次数（若有），本节点视为无法处理；格挡失败也会视为无法处理，但会消耗次数（若有）"
     # 使用动态值，说明是屏障
     if node["_useDynamicVar"]:
-        name = "处理屏障效果"
+        name = "屏障"
+        description = "若无法响应/伤害已被无效化本节点视为无法处理"
         if node["_allowNegativeDynamicVar"]:
             features.append("允许负屏障值")
         if node["_showShieldUI"]:
             features.append("在血条上显示屏障值")
     elif node["_useFixedValue"]: # 使用定值，说明是林式阈值盾
-        name = "处理干员林的阈值格挡效果"
+        name = "干员林的阈值格挡"
     if node["_showDamageNumber"]:
         features.append("即使成功格挡也显示伤害数值")
     if node["_specifyBlockEffect"] != None:
@@ -74,13 +76,48 @@ def node_BlockDamage(node):
     # 检查伤害的施加方式
     if node["_filterApplyWay"]:
         if node["_applyWayFilter"] == "NONE": # 仅无类型
-            features.append("仅格挡施加方式为“无”的伤害")
+            features.append("仅响应施加方式为“无”的伤害")
         elif node["_applyWayFilter"] == "MELEE": # 无类型与近战
-            features.append("仅格挡施加方式为“近战”或“无”的伤害")
+            features.append("仅响应施加方式为“近战”或“无”的伤害")
         elif node["_applyWayFilter"] == "RANGED": # 无类型与远程
-            features.append("仅格挡施加方式为“远程”或“无”的伤害")
+            features.append("仅响应施加方式为“远程”或“无”的伤害")
         #elif node["_applyWayFilter"] == "ALL": # 全部都可以就不用写了
     if len(features) > 0:
-        return {"main" : name + "（"+",".join(features)+"）"}
+        return {
+            "main" : name + "（"+",".join(features)+"）",
+            "description" : description
+        }
     else:
-        return {"main" : name}
+        return {
+            "main" : name,
+            "description" : description
+        }
+
+# 闪避伤害
+def node_Evade(node):
+    name = "概率/计次闪避"
+    features = []
+    # 检查伤害类型
+    if node["_damageMask"] != "ALL":
+        damage_type = anne_dictionary("damage_type",node["_damageMask"])
+        features.append(f"伤害类型为{damage_type}")
+    # 检查伤害的施加方式
+    if node["_applyWayFilter"] == "NONE": # 仅无类型
+        features.append("施加方式为“无”")
+    elif node["_applyWayFilter"] == "MELEE": # 无类型与近战
+        features.append("施加方式为“近战”或“无”")
+    elif node["_applyWayFilter"] == "RANGED": # 无类型与远程
+        features.append("施加方式为“远程”或“无”")
+    #elif node["_applyWayFilter"] == "ALL": # 全部都可以就不用写了
+    if len(features) > 0:
+        return {
+            "main" : name + "（仅响应"+",".join(features)+"的伤害）",
+            "description" : "若无法响应/伤害已被无效化将不会消耗次数（若有），本节点视为无法处理；闪避失败也会视为无法处理，但会消耗次数（若有）"
+        }
+    else:
+        return {
+            "main" : name,
+            "description" : "若无法响应/伤害已被无效化将不会消耗次数（若有），本节点视为无法处理；闪避失败也会视为无法处理，但会消耗次数（若有）"
+        }
+    
+    

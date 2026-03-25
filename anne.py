@@ -29,7 +29,7 @@ ANNE_RELIC = None
 #----------------------------------------
 '''
 class AnneNode:
-    import translation.node as translator
+    import node_translator as translator
     def __init__(self):
         self.translator.set_dictionary(get_anne_dictionary())
         print("[安妮]嗯。")
@@ -51,7 +51,7 @@ class AnneNode:
                             if "attributes" in content: # buff
                                 buff = self.translator.analyze_buff(content)
                                 buff["main"] = str(key) + " : " + buff["main"]
-                                children.append()
+                                children.append(buff)
                             elif "$type" in content: # 子节点
                                 sub_node = self.translate(Node(content))
                                 sub_node["main"] = str(key) + " : " + sub_node["main"]
@@ -141,35 +141,40 @@ class AnneNode:
             return {"main" : "","children" : children}
     
     # IfElse的特殊处理
-    def translate_ifelse(self,node_class):
-        node = node_class.node_data
-        # 判断节点
-        struct = self.translate(node["condition_node"])
-        if struct["main"].endswith("（未翻译）"): # 未翻译，增加标识符
-            struct["main"] = "尝试判断: "+struct["main"]
-        true_flag = "如果是/有/可行/可处理："
-        false_flag = "如果不是/没有/不可行/无法处理："
-        if "true" in struct:
-             true_flag = struct["true"]+"："
-             struct.pop("true") # 因为IfElse只影响内圈，对外圈逻辑不影响
-        if "false" in struct:
-             false_flag = struct["false"]+"："
-             struct.pop("false") # 因为IfElse只影响内圈，对外圈逻辑不影响
-        if "children" not in struct:
-            struct["children"] = []
-        # 成功时执行的节点
-        success_node_lines = []
-        if len(node["succeed_nodes"]) > 0:
-            success_translation = self.translate_all(node["succeed_nodes"])
-            success_translation["main"] = true_flag
-            struct["children"].append(success_translation)
-        # 失败时执行的节点
-        fail_node_lines = []
-        if len(node["fail_nodes"]) > 0:
-            fail_translation = self.translate_all(node["fail_nodes"])
-            fail_translation["main"] = false_flag
-            struct["children"].append(fail_translation)
-        return struct
+    def translate_ifelse(self,node):
+        if node.translation == None:
+            node_data = node.node_data
+            # 判断节点
+            struct = self.translate(node_data["condition_node"])
+            if struct["main"].endswith("（未翻译）"): # 未翻译，增加标识符
+                struct["main"] = "尝试判断: "+struct["main"]
+            true_flag = "如果是/有/可行/可处理："
+            false_flag = "如果不是/没有/不可行/无法处理："
+            if "true" in struct:
+                 true_flag = struct["true"]+"："
+                 struct.pop("true") # 因为IfElse只影响内圈，对外圈逻辑不影响
+            if "false" in struct:
+                 false_flag = struct["false"]+"："
+                 struct.pop("false") # 因为IfElse只影响内圈，对外圈逻辑不影响
+            if "children" not in struct:
+                struct["children"] = []
+            # 成功时执行的节点
+            success_node_lines = []
+            if len(node_data["succeed_nodes"]) > 0:
+                success_translation = self.translate_all(node_data["succeed_nodes"])
+                success_translation["main"] = true_flag
+                struct["children"].append(success_translation)
+            # 失败时执行的节点
+            fail_node_lines = []
+            if len(node_data["fail_nodes"]) > 0:
+                fail_translation = self.translate_all(node_data["fail_nodes"])
+                fail_translation["main"] = false_flag
+                struct["children"].append(fail_translation)
+            # 存储翻译
+            node.translation = struct
+            return struct
+        else:
+            return node.translation
 
 '''
 #----------------------------------------
@@ -177,7 +182,7 @@ class AnneNode:
 #----------------------------------------
 '''
 class AnneRelic:
-    import translation.relic as translator
+    import relic_translator as translator
     def __init__(self):
         self.translator.set_dictionary(get_anne_dictionary())
         #print("[安妮]好的。")

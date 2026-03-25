@@ -157,15 +157,14 @@ def node_CheckModifierContainsKey(node):
         "false" : f"若没有{node['_customKey']}标记"
     }
 
-# 检查阵营
+# 检查势力
 def node_CheckCharacterGroupTag(node):
     target_name = anne_dictionary("target",node["_targetType"])
-    group_name = node["_groupTag"] # 需要翻译
+    group_name = anne_dictionary("group_tag",node["_groupTag"])
     return {
-        #"main" : f"检查{target_name}阵营标签：{group_name}",
-        "main" : f"检查{target_name}阵营标签",
-        "true" : f"若其为{group_name}阵营",
-        "false" : f"若其不为{group_name}阵营"
+        "main" : f"检查{target_name}的势力标签",
+        "true" : f"若其隶属于{group_name}势力",
+        "false" : f"若其不隶属于{group_name}势力"
     }
 
 # 检查重量
@@ -174,10 +173,19 @@ def node_FilterByTargetMassLevel(node):
     compare = anne_dictionary("compare",node["_condType"])
     compare_not = anne_dictionary("compare_not",node["_condType"])
     return {
-        #"main" : f"检查{target_name}的重量是否{compare}X",
         "main" : f"检查{target_name}的重量",
         "true" : f"若其重量 {compare} X",
         "false" : f"若其重量 {compare_not} X"
+    }
+
+# 检查阻挡模式
+def node_CheckBlockMode(node):
+    target_name = anne_dictionary("target",node["_target"])
+    block_mode = anne_dictionary("block_mode",node["_blockMode"])
+    return {
+        "main" : f"检查{target_name}的阻挡模式",
+        "true" : f"若其阻挡模式为 {block_mode}",
+        "false" : f"若其阻挡模式为 {block_mode}"
     }
 
 # 检查阻挡状态
@@ -257,6 +265,65 @@ def node_CheckContainsBuff(node):
             "false" : "（始终不执行）"
         }
 
+# 通用目标检查
+def node_IfTarget(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    conditions = []
+    last_type = ""
+    if node["_checkTargetAlive"]:
+        conditions.append("存活")
+        last_type = "是否存活"
+    if node["_checkTargetFree"]:
+        conditions.append("对于来源而言可选")
+        last_type = "对于来源而言是否可选"
+    if node["_unitType"] != "NONE":
+        conditions.append("单位类型为"+anne_dictionary("unit_type",node["_unitType"]))
+        last_type = "单位类型是否为"+anne_dictionary("unit_type",node["_unitType"])
+    if node["_motionMask"] != "ALL":
+        conditions.append("行动类型为"+anne_dictionary("motion",node["_motionMask"]))
+        last_type = "行动类型是否为"+anne_dictionary("motion",node["_motionMask"])
+    if node["_checkApplyWay"] == "MELEE": # 这个不是检查本次攻击的类型，是检查目标的
+        conditions.append("属于\"近战\"单位")
+        last_type = "是否属于\"近战\"单位"
+    elif node["_checkApplyWay"] == "RANGED":
+        conditions.append("属于\"远程\"单位")
+        last_type = "是否属于\"远程\"单位"
+    if len(conditions) > 1:
+        return {
+            "main" : f"检查{target_name}是否"+"、".join(conditions),
+            "true" : f"若{target_name}均满足上述条件",
+            "false" : f"若{target_name}不满足上述任一条件"
+        }
+    elif len(conditions) == 1:
+        return {
+            "main" : f"检查"+target_name+last_type,
+            "true" : "若"+target_name+conditions[0],
+            "false" : "若"+target_name+conditions[0].replace("属于","不属于").replace("为","不为")
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}，但未配置条件",
+            "true" : "始终通过",
+            "false" : "始终不通过"
+        }
+
+# 检查绝对阵营
+def node_IfTargetSide(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_sideMask"] in ["BOTH_ALLY_AND_ENEMY","ALL","NONE"]: # 无法判断的阵营类型
+        #是的，沟槽的yj写的是全等于，因此这几个判定必定失败
+        return {
+            "main" : f"检查{target_name}的阵营（绝对阵营），但给入了错误的参数",
+            "true" : f"始终不通过",
+            "false" : f"始终通过"
+        }
+    side_type = anne_dictionary("side_type",node["_sideMask"])
+    return {
+        "main" : f"检查{target_name}的阵营（绝对阵营）",
+        "true" : f"若其为{side_type}单位",
+        "false" : f"若其不为{side_type}单位"
+    }
+
 # 检查是否持有本Buff的某个子Buff
 def node_CheckContainsDerviedBuff(node):
     return {
@@ -272,6 +339,55 @@ def node_IsBlackboardZero(node):
         "true" : f"若不存在或{node['_var']} = 0",
         "false" : f"若存在且{node['_var']} ≠ 0"
     }
+    
+# 是否属于角色类
+def node_IsCaharcter(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {
+        "main" : f"检查{target_name}的单位类型",
+        "true" : f"若其为角色类单位",
+        "false" : f"若其不为角色类单位"
+    }
+    
+# 是否属于敌人类
+def node_IsEnemy(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {
+        "main" : f"检查{target_name}的单位类型",
+        "true" : f"若其为敌人类单位",
+        "false" : f"若其不为敌人类单位"
+    }
+
+# 是否为同一人
+def node_IfTargetEqual(node):
+    left_target = anne_dictionary("target",node["_target1"])
+    right_target = anne_dictionary("target",node["_target2"])
+    if node["_equalIfBothNull"]:
+        if left_target == right_target:
+            return {
+                "main" : f"检查{left_target}是否是自己",
+                "true" : "始终通过",
+                "false" : "始终不通过"
+            }
+        else:
+            return {
+                "main" : f"检查{left_target}和{right_target}",
+                "true" : "若两者为同一个单位（或均不存在）",
+                "false" : "若两者为不同单位（或一方存在一方不存在）"
+            }
+    else:
+        if left_target == right_target: # 也就是说，不考虑两边对不对等，只考虑存不存在了
+            return {
+                "main" : f"检查{left_target}是否存在",
+                "true" : f"若存在{left_target}",
+                "false" : f"若不存在{left_target}"
+            }
+        else:
+            return {
+                "main" : f"检查{left_target}和{right_target}",
+                "true" : "若两者为同一个单位",
+                "false" : "若两者为不同单位（或任意一方不存在）"
+            }
     
 # 检查行动类型
 def node_CheckMotionMode(node):
@@ -295,7 +411,7 @@ def node_FilterCharacterLastDeathReason(node):
 
 # 检查角色部署类型
 def node_CheckBuildableType(node):
-    target_name = anne_dictionary("target",node["_characterType"])
+    target_name = anne_dictionary("target",node["_target"])
     buildable_type = anne_dictionary("buildable_type",node["_buildableType"])
     if node["_checkOriginCondition"]:
         return {
@@ -317,12 +433,58 @@ def node_CheckCharSkillAffecting(node):
         return {
             "main" : f"检查{target_name}（角色类）的技能状态（若对方为召唤物，改为检查其主人）",
             "true" : "若检查对象处于技能期间",
-            "true" : "若检查对象不处于技能期间"
+            "false" : "若检查对象不处于技能期间"
         }
     else:
         return {
             "main" : f"检查{target_name}（角色类）的技能状态",
             "true" : "若其处于技能期间",
-            "true" : "若其不处于技能期间"
+            "false" : "若其不处于技能期间"
         }
-    
+
+# 检查携带的技能（仅限角色类可用）
+def node_CheckCharSkillAffecting(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {
+        "main" : f"检查{target_name}（角色类）携带的技能",
+        "true" : f"若{target_name}携带的是{node['_skillIndex'] + 1}技能", # Index从0开始，技能序号从1开始
+        "false" : f"若{target_name}携带的是其他技能"
+    }
+
+# 检查敌人地位级别
+def node_CheckEnemyLevelMask(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    enemy_level = anne_dictionary("enemy_level",node["_targetLevelMask"])
+    return {
+        "main" : f"检查{target_name}（敌人类）的地位级别",
+        "true" : f"若其为{enemy_level}地位的敌人",
+        "false" : f"若其不为{enemy_level}地位的敌人"
+    }
+
+# 检查地图标签（水地形、肉鸽、十三章等）
+def node_CheckConatinsMapTags(node):
+    map_tags = []
+    if isinstance(node["_mapTags"],list):
+        for tag in node["_mapTags"]:
+            map_tags.append(anne_dictionary("map_tag",tag))
+    # 虽然看着像和模式，但其实是写死的或模式
+    map_tag = ""
+    if len(map_tags) > 1:
+        all_map_tag = "、".join(map_tags)
+        return {
+            "main" : f"检查当前关卡的地图TAG",
+            "true" : f"若当前关卡具有{all_map_tag}TAG中的任意一个",
+            "false" : f"若当前关卡均不具有{all_map_tag}TAG"
+        }
+    elif len(map_tags) == 1:
+        return {
+            "main" : f"检查当前关卡的地图TAG",
+            "true" : f"若当前关卡具有{map_tags[0]}TAG",
+            "false" : f"若当前关卡没有{map_tags[0]}TAG"
+        }
+    else:
+        return {
+            "main" : "检查当前关卡的地图TAG，但未配置检查对象",
+            "true" : "始终通过",
+            "false" : "始终不通过"
+        }

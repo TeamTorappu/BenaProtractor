@@ -1,6 +1,18 @@
 {
 	"buff_prefix" : {
 		"act1autochess" : "卫戍盟约",
-		"act2autochess" : "卫戍下半"
+		"act2autochess" : "卫戍下半",
+		"legion" : "保全派驻",
+		
+		"amiya3" : "医阿米娅",
+		"tyohon" : "提丰",
+		"dmtpos" : "牵绊",
+		"token" : {
+			"wisdel" : "魂灵之影",
+			"phatm2" : {
+				"mndclv" : "迷狂牢笼",
+				"encdool" : "本能的召唤"
+			}
+		}
 	}
 }

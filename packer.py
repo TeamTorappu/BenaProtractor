@@ -19,6 +19,8 @@ if __name__ == "__main__":
     with zipfile.ZipFile(f"output/贝娜的量角器 {year}.{month}.{day}.zip", 'w') as _z:
         _z.write("./dist/main.exe","./贝娜的量角器.exe")
         _z.write("./icon/icon.ico","./icon/icon.ico")
+        _z.write("./translation/bena_dictionary.json","./translation/bena_dictionary.json")
+        _z.write("./translation/anne_dictionary.json","./translation/anne_dictionary.json")
         #add_folder_to_zip(_z,"data")
         #add_folder_to_zip(_z,"tables")
-        add_folder_to_zip(_z,"translation")
+        #add_folder_to_zip(_z,"translation")

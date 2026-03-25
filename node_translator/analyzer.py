@@ -1,7 +1,9 @@
 import json
 import os
+import math
 
 ANNE_DICTIONARY = None
+GAP = 0.000000001
 # 继承字典数据
 def set_dictionary(dictionary):
     global ANNE_DICTIONARY
@@ -110,7 +112,7 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     if "_ignoreCancelReasonMask" in damage_data and damage_data["_ignoreCancelReasonMask"] != "NONE":
         features.append("无视"+anne_dictionary("cancel_reason",damage_data["_ignoreCancelReasonMask"]))
     if len(features) > 0:
-        suffix += "（"+";".join(features)+"）"
+        suffix += "（"+"；".join(features)+"）"
     return prefix+damage_type_name+attack_type_name+"伤害"+suffix
     
 # 统一解析Buff的详细信息
@@ -233,10 +235,10 @@ def analyze_buff(buff_data):
     if buff_data["overrideOnEventPriority"]:
         results.append(f"事件优先级覆写为{buff_data['onEventPriority']}")
     # 持续时间配置
-    if buff_data["lifeTimeType"] == "INFINITY" :
+    if buff_data["lifeTimeType"] == "INFINITY":
         results.append("永久")
-    elif buff_data["lifeTimeType"] == "LIMITED" :
-        if buff_data["durationKey"] != "none" :
+    elif buff_data["lifeTimeType"] == "LIMITED":
+        if buff_data["durationKey"] != None and buff_data["durationKey"] != "none":
             results.append(f"持续({buff_data['durationKey']})秒")
         elif buff_data["lifeTime"] == 0.0:
             results.append("瞬间效果")
@@ -283,26 +285,41 @@ def analyze_buff(buff_data):
             elif buff_data["triggerInterval"] >= 0:
                 ticks = math.ceil(buff_data['triggerInterval'] * 30)
                 results.append(f"{ticks}帧后触发")
-    # 叠加类型配置
-    if buff_data["overrideType"] != "DEFAULT" :
+    # 覆盖类型配置
+    if buff_data["disableOverride"]:
+        results.append(f"多个buff间互相独立，不处理覆盖")
+    elif buff_data["overrideType"] != "DEFAULT":
         if buff_data["overrideType"] == "STACK" :
+            stack_info = ""
             max_stack = buff_data['maxStackCnt']
             if buff_data["refreshRemainingTimeWhenStackMax"]:
-                if buff_data["clearAllStackCntWhenTimeUp"]:
-                    results.append(f"可叠加{max_stack}，叠满后仅刷新时间，到时间时Buff直接结束")
+                if max_stack == 1:
+                    stack_info = f"再次施加仅刷新时间"
+                elif max_stack == 0:
+                    stack_info = f"可无限叠加"
                 else:
-                    results.append(f"可叠加{max_stack}，叠满后仅刷新时间，到时间降低一层并刷新时间")
-            else:
+                    stack_info = f"可叠加{max_stack}层，溢出层数仅能刷新时间"
+            elif max_stack > 1:
+                stack_info = f"可叠加{max_stack}层，溢出层数无效"
+            elif max_stack == 0:
+                stack_info = f"可无限叠加"
+            if max_stack != 1: # 对于1层而言两者没区别
                 if buff_data["clearAllStackCntWhenTimeUp"]:
-                    results.append(f"可叠加{max_stack}，叠满后无法再施加，到时间时Buff直接结束")
+                    stack_info += "，到时间失去全部层数"
                 else:
-                    results.append(f"可叠加{max_stack}，叠满后无法再施加，到时间降低一层并刷新时间")
+                    stack_info += "，到时间失去一层并刷新时间"
+            if stack_info != "":
+                results.append(stack_info)
             
         elif buff_data["overrideType"] == "EXTEND" :
             if buff_data["takeSnapshotWhenExtend"]:
                 results.append(f"重复施加时仅延长原有Buff并更新数据")
             else:
                 results.append(f"重复施加时仅延长原有Buff")
+            
+        elif buff_data["overrideType"] == "UNIQUE" :
+            results.append(f"若已存在则无法重复施加")
+
         else:
             results.append(f"叠加类型{buff_data['overrideType']}")
     # 暂时不知道有什么用的东西
@@ -321,7 +338,7 @@ def analyze_buff(buff_data):
     # 返回buff的各项属性
     return {
         "main" : buff_key, # 可能需翻译
-        "description" : ";".join(results)
+        "description" : "；".join(results)
     }
 
 # 解析目标选项的详细信息
@@ -389,7 +406,7 @@ def analyze_target_options(option,relative_side=True):
     if len(descriptions) > 0:
         return {
             "main" : "选择"+"".join(conditions)+"单位，采用额外选项判定可选",
-            "description" : ";".join(descriptions)
+            "description" : "；".join(descriptions)
         }
     #最朴实无华的选择，没有任何附加条件
     return {

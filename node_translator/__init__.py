@@ -6,10 +6,11 @@ from .damage import *
 from .damage_modify import *
 from .heal import *
 from .logic import *
-from .dice import *
+from .random import *
 from .blackboard import *
 from .calculation import *
 from .check import *
+from .modifier import *
 from .util import *
 
 from .autochess import *
