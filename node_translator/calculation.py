@@ -48,7 +48,7 @@ def node_CalculateBlackboardValueViaParams(node):
 # 令黑板值+X
 def node_BlackboardAdd(node):
     bb_key = node["_blackboardKey"]
-    if node["_additionKey"] != None and ode["_additionKey"] != "":
+    if node["_additionKey"] != None and node["_additionKey"] != "":
         if node["_isFloat"]: # 这玩意是“不向下取整”的意思
             return {"main" : f"令 {bb_key} += {node['_additionKey']}"}
         else:

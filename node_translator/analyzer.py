@@ -95,7 +95,9 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     if "_isUndeadable" in damage_data and damage_data["_instantKillLikeDamage"]:
         features.append("类斩杀伤害")
     if "_isNotChangeableValue" in damage_data and damage_data["_isNotChangeableValue"]:
-        features.append("无法被其他方式增/减/免伤")
+        features.append("无法增/减/免伤/重设")
+    elif "_damageWithoutModify" in damage_data and damage_data["_damageWithoutModify"]:
+        features.append("无法增/减/免伤/重设")
     if "_setSharedFlag" in damage_data and damage_data["_setSharedFlag"]:
         if "_sharedFlagIndex" in damage_data:
             shared_flag_name = anne_dictionary("sharedflag",damage_data["_sharedFlagIndex"])
@@ -336,7 +338,7 @@ def analyze_buff(buff_data):
     #if buff_data["independentCharacterSource"]:
     #    results.append("independentCharacterSource")
     if buff_data["priorityBBKeys"] != None and len(buff_data["priorityBBKeys"]) > 0:
-        bb_keys = "、".join(node['priorityBBKeys'])
+        bb_keys = "、".join(buff_data['priorityBBKeys'])
         results.append(f"根据黑板值{bb_keys}计算叠加优先级")
     elif buff_data["priority"] > 0:
         results.append(f"叠加优先级{buff_data['priority']}")

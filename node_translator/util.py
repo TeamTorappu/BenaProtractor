@@ -113,7 +113,7 @@ def node_ApplyElementDamage(node):
     source_name = anne_dictionary("target",node["_sourceType"])
     target_name = anne_dictionary("target",node["_targetType"])
     element_type = anne_dictionary("element",node["_elementDamageType"])
-    scale_key = node["_epDamageScale"]
+    scale = " × " + node["_epDamageScale"]
     result = {"main" : ""}
     descriptions = []
     if node["_loadElementTypeFromBb"]: # 读取黑板
@@ -123,34 +123,36 @@ def node_ApplyElementDamage(node):
     if node["_isFixedEpDamage"]: # 固定值的损伤
         descriptions.append(f"无损伤计算时事件")
         if node["_fixedEpDamageScale"] != None and node["_fixedEpDamageScale"] != "": # 覆盖倍率黑板值
-            scale_key = node["_fixedEpDamageScale"]
+            scale = " × " + node["_fixedEpDamageScale"]
+        else:
+            scale = ""
         if node["_noSource"]:
             descriptions.append("视为无来源")
             if node["_fixedEpDamageKey"] != None and node["_fixedEpDamageKey"] != "":
-                result["main"] = f"对{target_name}造成 {node['_fixedEpDamageKey']} × {scale_key} 点{element_type}损伤"
+                result["main"] = f"对{target_name}造成 {node['_fixedEpDamageKey']}{scale} 点{element_type}损伤"
                 if node["_fixedEpDamage"] != 0:
                     result["main"] += f"（默认{node['_fixedEpDamage']}点）"
             else:
-                result["main"] = f"对{target_name}造成 {node['_fixedEpDamage']} × {scale_key} 点{element_type}损伤"
+                result["main"] = f"对{target_name}造成 {node['_fixedEpDamage']}{scale} 点{element_type}损伤"
         else:
             if node["_fixedEpDamageKey"] != None and node["_fixedEpDamageKey"] != "":
-                result["main"] = f"令{source_name}对{target_name}造成 {node['_fixedEpDamageKey']} × {scale_key} 点{element_type}损伤"
+                result["main"] = f"令{source_name}对{target_name}造成 {node['_fixedEpDamageKey']}{scale} 点{element_type}损伤"
                 if node["_fixedEpDamage"] != 0:
                     result["main"] += f"（默认{node['_fixedEpDamage']}点）"
             else:
-                result["main"] = f"令{source_name}对{target_name}造成 {node['_fixedEpDamage']} × {scale_key} 点{element_type}损伤"
+                result["main"] = f"令{source_name}对{target_name}造成 {node['_fixedEpDamage']}{scale} 点{element_type}损伤"
     else: 
         if node["_multiplyWithBuffValidStackCnt"] and node["_buffKey"] != None and node["_buffKey"] != "":
-            scale_key += " × 层数"
+            scale += " × 层数"
             descriptions.append(f"层数指的是Buff来源持有的{node['_buffKey']}的叠加层数")
         if node["_baseOnHostAtk"] or node["_baseOnEnemyHostAtk"]: #这俩参数完全没区别，基于攻击力的损伤
-            result["main"] = f"令{source_name}对{target_name}造成 攻击力 × {scale_key} 点{element_type}损伤"
+            result["main"] = f"令{source_name}对{target_name}造成 攻击力{scale} 点{element_type}损伤"
             if node["_noSource"]:
                 descriptions.append("视为无来源")
             if node["_forceUseProjectileCachedAtk"]:
                 descriptions.append("强制使用来自弹道的缓存攻击力")
         else: # 貌似是基于伤害
-            result["main"] = f"令{source_name}对{target_name}造成 本次伤害 × {scale_key} 点{element_type}损伤"
+            result["main"] = f"令{source_name}对{target_name}造成 本次伤害{scale} 点{element_type}损伤"
     # 返回结果
     if len(descriptions) > 0:
         result["description"] = "；".join(descriptions)

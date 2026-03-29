@@ -383,8 +383,17 @@ def node_IsBlackboardZero(node):
         "false" : f"若存在且{node['_var']} ≠ 0"
     }
     
-# 是否属于角色类
-def node_IsCaharcter(node):
+# 是否属于干员
+def node_IsCharacter(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {
+        "main" : f"检查{target_name}的单位是否为干员（为角色类且为八大职业之一）",
+        "true" : f"若其为干员",
+        "false" : f"若其不为干员"
+    }
+
+# 是否属于角色类（干员、召唤物、装置）
+def node_IsCharacterOrTokenOrTrap(node):
     target_name = anne_dictionary("target",node["_targetType"])
     return {
         "main" : f"检查{target_name}的单位类型",

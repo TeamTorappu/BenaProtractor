@@ -5,6 +5,7 @@
 import os
 import json
 from data_class import *
+from translator import bena_dictionary
 
 # 表格数据
 BUFF_TEMPLATE_KEYS = []
@@ -111,106 +112,8 @@ def load_buff_template_data():
         #    continue
 
         buff_template = BuffTemplate(buff_template_key,json_data[buff_template_key])
-        # 制作翻译版称呼，先处理特征明显的
-        if buff_template_key.startswith("act1autochess_"): # 卫戍协议：盟约
-            buff_template.display_name = "卫戍盟约_"+buff_template.display_name[14:]
-        elif buff_template_key.startswith("act2autochess_"): # 卫戍协议：盟约 下半
-            buff_template.display_name = "卫戍下半_"+buff_template.display_name[14:]
-        elif buff_template_key.startswith("enemy_"): # 敌人类
-            display_name = ""
-            keys = buff_template_key[6:].replace("[","_[").split("_")
-            rest = []
-            processed = False
-            # 处理敌方单位名称的使用
-            if len(keys) > 1 and keys[1] == "2": # 那种名字带_2的敌人，不过一般不会出现
-                info_key = keys[0]+"_"+keys[1]
-                if info_key in ENEMY_NAMES:
-                    display_name = "敌_" + ENEMY_NAMES[info_key]
-                    processed = True
-                    if len(keys) > 2:
-                        rest = keys[2:]
-            if not processed and len(keys) > 0 and keys[0] in ENEMY_NAMES: # 敌人名字为首的buff
-                display_name = "敌_" + ENEMY_NAMES[keys[0]]
-                processed = True
-                if len(keys) > 1:
-                    rest = keys[1:]
-            
-            if processed and len(rest) > 0: # 处理剩下的部分，可能是天赋或技能？
-                if rest[0] == "t":
-                    display_name += "天赋"
-                    rest.pop(0)
-                elif rest[0] == "s":
-                    if len(rest) > 1 and rest[1] in ["1","2","3"]:
-                        display_name += rest[1]+"技能"
-                        rest.pop(0)
-                        rest.pop(0)
-                    else:
-                        display_name += "技能"
-                        rest.pop(0)
-                # 无法翻译的部分退回去
-                if len(rest) > 0:
-                    display_name += "_" + "_".join(rest)
-                buff_template.display_name = display_name
-        elif "_" in buff_template_key: # 然后碰碰运气，看看是不是干员的
-            display_name = ""
-            keys = buff_template_key.replace("[","_[").split("_")
-            # 名字为首的buff
-            if keys[0] in CHARACTER_NAMES:
-                display_name = CHARACTER_NAMES[keys[0]]
-                if len(keys) > 1: # 处理剩下的部分，可能是天赋或技能？
-                    rest = keys[1:]
-                    if rest[0] == "t":
-                        if len(rest) > 1 and rest[1] in ["1","2","3"]:
-                            display_name += rest[1]+"天赋"
-                            rest.pop(0)
-                            rest.pop(0)
-                        else:
-                            display_name += "天赋"
-                            rest.pop(0)
-                    elif rest[0] == "t1":
-                        display_name += "1天赋"
-                        rest.pop(0)
-                    elif rest[0] == "t2":
-                        display_name += "2天赋"
-                        rest.pop(0)
-                    elif rest[0] == "tr":
-                        display_name += "特性"
-                        rest.pop(0)
-                    elif rest[0] == "trait":
-                        display_name += "特性"
-                        rest.pop(0)
-                    elif rest[0] == "s":
-                        if len(rest) > 1 and rest[1] in ["1","2","3"]:
-                            display_name += rest[1]+"技能"
-                            rest.pop(0)
-                            rest.pop(0)
-                        else:
-                            display_name += "技能"
-                            rest.pop(0)
-                    elif rest[0] == "s1":
-                        display_name += "1技能"
-                        rest.pop(0)
-                    elif rest[0] == "s2":
-                        display_name += "2技能"
-                        rest.pop(0)
-                    elif rest[0] == "s3":
-                        display_name += "3技能"
-                        rest.pop(0)
-                    elif rest[0] == "e":
-                        if len(rest) > 1:
-                            display_name += "模组"+rest[1]
-                            rest.pop(0)
-                            rest.pop(0)
-                        else:
-                            display_name += "模组"
-                            rest.pop(0)
-                # 无法翻译的部分退回去
-                if len(rest) > 0:
-                    if rest[0].startswith("["):
-                        display_name += "_".join(rest)
-                    else:
-                        display_name += "_" + "_".join(rest)
-                buff_template.display_name = display_name
+        # 制作翻译版称呼
+        buff_template.display_name = translate_buff_name(buff_template_key)
         BUFF_TEMPLATE_KEYS.append(buff_template_key)
         BUFF_TEMPLATE_DATA[buff_template_key] = buff_template
         print(f"[贝娜]已读取Buff模板 {buff_template.display_name}（{buff_template_key}）")
@@ -255,3 +158,114 @@ def ask_bena(_type,input_id):
         if input_id in ROGUELIKE_TOPIC_KEYS:
             return ROGUELIKE_TOPIC_TABLE[input_id]
     return None
+
+
+
+# 字典深查询
+# 返回可处理部分和不可处理部分
+def deep_translate(catalogue,keys):
+    read_value = bena_dictionary(catalogue,keys[0])
+    if read_value != "":
+        index = 1 # 0号已经用掉了
+        if isinstance(read_value,dict): # 字典，尝试遍历
+            while(len(keys) > index):
+                if keys[index] in read_value:
+                    read_value = read_value[keys[index]] # 深入
+                    index += 1
+                    if isinstance(read_value,str): # 已是文本，返回
+                        break
+                elif "" in read_value: # 没有合适的key了，尝试取此处的默认值
+                    read_value = read_value[""]
+                    break
+                else:
+                    break
+                
+        if isinstance(read_value,dict) and "" in read_value: # 如果此时还是个结构体，尝试取此处的默认值
+            read_value = read_value[""]
+
+        if isinstance(read_value,str):
+            if len(keys) > index:
+                return (read_value,keys[index:])
+            else:
+                return (read_value,[])
+    return ("",keys) # 原路返回
+            
+
+# 尝试翻译buff的名字
+def translate_buff_name(key):
+    if key.startswith("["): # 这种暂时处理不了
+        return key
+    if key == "empty": # 使用率最高的模板，给点排面
+        return "空白"
+    keys = []
+    extras = []
+    result = []
+    extra_result = []
+    if "[" in key and "]" in key:
+        keys = key.split("[")
+        for extra in keys[1].replace("[","").split("]"):
+            if extra != "":
+                extras.append(extra)
+        keys = keys[0].split("_")
+    elif "_" in key:
+        keys = key.split("_")
+    else: # 单词语，直接查询一下返回
+        read_value = bena_dictionary("buff_prefix",key)
+        if read_value == "":
+            read_value = bena_dictionary("buff_element",key)
+        if read_value != "":
+            return read_value
+    
+    # 开头部分
+    if len(keys) > 0:
+        if keys[0] == "enemy": # 敌方单位名称前缀
+            keys.pop(0)
+            if len(keys) >= 2 and keys[0] == "rogue" and keys[1] == "football" : # 你是肉鸽单位吗？双持剑士：我觉得我是
+                result.append("仅剩的创意")
+            elif len(keys) >= 2 and keys[1] == "2" and keys[0]+"_"+keys[1] in ENEMY_NAMES: # 那种带_2的敌人名字，虽然一般不会存在
+                result.append(ENEMY_NAMES[keys.pop(0)+"_"+keys.pop(0)])
+            elif len(keys) >= 1 and keys[0] in ENEMY_NAMES: # 敌人名字
+                result.append(ENEMY_NAMES[keys.pop(0)])
+            elif len(keys) >= 1:
+                trans, keys = deep_translate("buff_prefix",["enemy"] + keys)
+                if trans != "":
+                    result.append(trans)
+        elif keys[0] == "trap" and len(keys) > 1 and keys[1] in CHARACTER_NAMES: # 一部分装置名称前缀
+            keys.pop(0)
+            result.append(CHARACTER_NAMES[keys.pop(0)])
+        elif keys[0] in CHARACTER_NAMES: # 角色类单位名称
+            result.append(CHARACTER_NAMES[keys.pop(0)])
+        else: # 尝试读取prefix字典
+            trans, keys = deep_translate("buff_prefix",keys)
+            if trans != "":
+                result.append(trans)
+    
+    # 中间部分
+    if len(keys) > 0:
+        # 循环处理
+        while(len(keys) > 0):
+            trans, keys = deep_translate("buff_element",keys)
+            if trans != "":
+                result.append(trans)
+            else: # 无法翻译了，将剩余部分返还回去
+                result += keys
+                break
+    
+    # 附加部分
+    if len(extras) > 0:
+        # 循环处理
+        while(len(extras) > 0):
+            extra = extras.pop(0)
+            extra_split = extra.split("_")
+            sub_result = []
+            while(len(extra_split) > 0):
+                trans, extra_split = deep_translate("buff_element",extra_split)
+                if trans != "":
+                    sub_result.append(trans)
+                else: # 无法翻译了，将剩余部分返还回去
+                    sub_result += extra_split
+                    break
+            extra_result.append("_".join(sub_result))
+    
+    # 最后，返回
+    return "_".join(result) + "".join(["["+extra+"]" for extra in extra_result])

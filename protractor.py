@@ -24,6 +24,12 @@ class Protractor:
         # 控制区域
         self.control_panel = ttk.Frame(self.frame,width=400)
         self.control_panel.pack(fill="y",side="left")
+        # 顶边菜单
+        self.menu_bar = tk.Menu(self.window)
+        self.window.config(menu=self.menu_bar)
+        self.menu_load = tk.Menu(self.menu_bar, tearoff=0)
+        self.menu_bar.add_cascade(label="加载", menu=self.menu_load)
+        self.menu_load.add_command(label="Buff模板")
         # 目录
         self.directory_items = []
         self.directory_index = 0 # 用于为每个目录编号
@@ -112,7 +118,7 @@ class Protractor:
     # 搜索
     def try_search(self,event=None):
         #try:
-        keywords = self.search_entry.get().strip().lower().split(" ")
+        keywords = self.search_entry.get().strip().split(" ")
         if len(keywords) == 0 and self.searching:
             # 恢复列表
             self.directory.set_children([])

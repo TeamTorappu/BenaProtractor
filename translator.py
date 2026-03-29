@@ -15,9 +15,9 @@ if ANNE_DICTIONARY == None:
         ANNE_DICTIONARY = json.load(_f)
         
 # 贝娜的查字典方法
-# 如果查不到会返回原文
+# 如果查不到会返回空
 def bena_dictionary(catalogue,type_str):
-    return BENA_DICTIONARY[catalogue].get(type_str,type_str)
+    return BENA_DICTIONARY[catalogue].get(type_str,"")
     
 # 安妮的查字典方法
 # 如果查不到会返回原文

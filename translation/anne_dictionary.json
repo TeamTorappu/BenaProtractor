@@ -44,7 +44,8 @@
 		"ON_APPLIED_MODIFIER" : "持有者施加调整值后",
 		"ON_OWNER_BLOCK_MODE_CHANGED" : "持有者阻挡模式变化时",
 		"ON_OWNER_FINISH" : "持有者退场/死亡时",
-		"ON_OWNER_REACH_EXIT" : "持有者抵达自身路径终点时"
+		"ON_OWNER_REACH_EXIT" : "持有者抵达自身路径终点时",
+		"ON_OWNER_LOCATE" : "持有者部署完成时"
 	},
 	"buildable_type" : {
 		"NONE" : "无",
@@ -253,15 +254,6 @@
 		"SKIP_MODIFIER_CONSIDER_UNHURTABLE" : "强制生命流失(无计算/事件，无法取消)",
 		"IS_NOT_CHANGEABLE_VALUE_MODIFIER" : "无法被其他方式增/减/免伤"
 	},
-	"cancel_reason" : {
-		"NONE" : "无原因",
-		"UNHURTABLE" : "无法受伤",
-		"MISS" : "被闪避",
-		"BLOCKED" : "被格挡",
-		"BLOCKED_WITH_DAMAGE_NUMBER" : "被格挡(带数字)",
-		"INTERRUPT" : "被打断",
-		"HIT_FAILED " : "命中率判定失败"
-	},
 	"formula" : {
 		"ADDITION" : "直接加算",
 		"MULTIPLIER" : "直接乘算",
@@ -304,7 +296,7 @@
 		"HP_ZERO_WITH_NO_SOURCE" : "无来源击杀（生命值归零）",
 		"REPLACED" : "被替换/接力（保全派驻）",
 		"RESPAWN_SELF" : "重新部署",
-		"MOVE_LIKE_RESPAWN_SELF" : "术语移动的重新部署"
+		"MOVE_LIKE_RESPAWN_SELF" : "类移动的重新部署"
 	},
 	"purpose" : {
 		"NONE" : "无类型行为",

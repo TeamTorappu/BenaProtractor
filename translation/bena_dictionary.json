@@ -1,18 +1,273 @@
 {
 	"buff_prefix" : {
 		"act1autochess" : "卫戍盟约",
+		"act1vautochess" : "卫戍废案",
 		"act2autochess" : "卫戍下半",
 		"legion" : "保全派驻",
+		"cooperate" : "促融共竞",
+		"sandbox" : {
+			"2" : "生息沙洲",
+			"" : "生息沙火"
+		},
 		
+		"amiya2" : "剑阿米娅",
 		"amiya3" : "医阿米娅",
 		"tyohon" : "提丰",
+		"greey2" : "承曦格雷伊",
+		"motter" : "机械水獭",
+		
 		"dmtpos" : "牵绊",
+		"dlancer" : "萨卡兹穿刺手",
+		"dscout" : "萨卡兹哨兵",
+		"pbank" : "移动电源",
+		"lslime" : "“庞贝”",
+		"mousek" : "鼠王",
+
 		"token" : {
 			"wisdel" : "魂灵之影",
 			"phatm2" : {
 				"mndclv" : "迷狂牢笼",
 				"encdool" : "本能的召唤"
 			}
+		},
+		"enemy" : {
+			"common" : "敌方通用",
+			"trace" : "敌方追踪",
+			"blord2" : "杜卡雷，“君主之红”",
+			"" : "敌方"
+		},
+		
+		"rogue" : {
+			"1" : "傀影肉鸽",
+			"2" : "水月肉鸽",
+			"3" : "萨米肉鸽",
+			"4" : "萨卡兹肉鸽",
+			"5" : "界园肉鸽"
+		},
+		
+		"dragon" : {
+			"fire" : "烈焚灼息"
+		},
+		"e2c" : {
+			"frozen" : "冻结(敌→友)",
+			"cold" : "寒冷(敌→友)"
+		},
+		
+		"critical" : "概率暴击",
+		"buff" : {
+			"yin" : "晦属性",
+			"yang" : "明属性",
+			"yinyang" : "明晦属性",
+			"mire" : "沼泽地段",
+			"read" : {
+				"extinct" : "通常的芦苇丛",
+				"flaming" : "燃烧的芦苇丛",
+				"" : "芦苇丛"
+			},
+			"finish" : {
+				"effect" : "敌_探矿机_结束时特效",
+				"self" : {
+					"destory" : "敌_探矿机_结束时自毁"
+				}
+			}
+		},
+		"ep" : {
+			"break" : {
+				"sanity" : "神经损伤爆发",
+				"water" : "侵蚀损伤爆发",
+				"fire" : "灼燃损伤爆发",
+				"dark" : "凋亡损伤爆发"
+			},
+			"" : "元素爆发"
 		}
+	},
+	"buff_element" : {
+		"s" : {
+			"1" : "一技能",
+			"2" : "二技能",
+			"3" : "三技能",
+			"" : "技能"
+		},
+		"t" : {
+			"1" : "一天赋",
+			"2" : "二天赋",
+			"3" : "三天赋",
+			"" : "天赋"
+		},
+		"e" : {
+			"001" : "一模组",
+			"002" : "二模组",
+			"003" : "三模组",
+			"004" : "四模组",
+			"" : "模组"
+		},
+		"skill" : "技能",
+		"s1" : "一技能",
+		"s2" : "二技能",
+		"s3" : "三技能",
+		"talent" : "天赋",
+		"t1" : "一天赋",
+		"t2" : "二天赋",
+		"t3" : "三天赋",
+		"tr" : "特性",
+		"trait" : "特性",
+		
+		"periodic" : {
+			"damage" : "每秒受到伤害",
+			"heal" : "每秒获得治疗",
+			"magic" : {
+				"damage" : "每秒受到法术伤害"
+			},
+			"sp" : "每秒获得技力",
+			"" : "每秒"
+		},
+		"sp" : "技力",
+		"modify" : {
+			"sp" : "修改技力",
+			"" : "修改"
+		},
+		"heal" : "治疗",
+		"magic" : {
+			"damage" : "法术伤害",
+			"" : "法术"
+		},
+		"mag" : "法术",
+		"pure" : "真实",
+		"phy" : "物理",
+		"phys" : "物理",
+		"physic" : "物理",
+		"physical" : "物理",
+		"melee" : "近战",
+		"ranged" : "远程",
+		"atkscale" : "攻击倍率",
+		"damage" : {
+			"block" : "伤害格挡",
+			"scale" : "伤害倍率",
+			"resistance" : "伤害抗性",
+			"" : "伤害"
+		},
+		"by" : {
+			"hp" : {
+				"ratio" : "基于生命比例"
+			},
+			"" : "基于"
+		},
+		"via" : {
+			"source" : {
+				"atk" : "基于来源攻击力"
+			},
+			"" : "基于"
+		},
+		"ignore" : {
+			"evade" : "无视闪避",
+			"" : "无视"
+		},
+		"instant" : {
+			"damage" : "瞬间伤害",
+			"heal" : "瞬间治疗",
+			"" : "瞬间"
+		},
+		"inverse" : {
+			"damage" : "反伤",
+			"" : "反转"
+		},
+		"without" : {
+			"modify" : "伤害不可变",
+			"" : "不带"
+		},
+		
+		"aoe" : "群体",
+		"weak" : "脆弱",
+		"cold" : "寒冷",
+		"critical" : "暴击",
+		"cirtical" : "暴击",
+		"fly" : "飞行",
+		"speed" : "速度",
+		"summon" : "召唤",
+		"evade" : "闪避",
+		
+		"init" : "初始化",
+		"reset" : "重置",
+		"core" : "核心",
+		"common" : "通常",
+		"inf" : "永久",
+		"check" : "检测",
+		"checker" : "检测器",
+		"listener" : "监听器",
+		"trigger" : "触发",
+		"switch" : "切换",
+		"passive" : "被动",
+		"input" : "输入",
+		"output" : "输出",
+		"out" : "输出",
+		"mark" : "标记",
+		"aura" : "光环",
+		"bonus" : "增益",
+		"shield" : "盾",
+		"recover" : "恢复",
+		"recovery" : "恢复",
+		"mode" : "模式",
+		"unblocked" : "非阻挡",
+		"scale" : "倍率",
+		
+		"same" : "同",
+		"diff" : "异",
+		"real" : "真",
+		"fake" : "假",
+		"and" : "并",
+		"or" : "或",
+		"add" : "增加",
+		"minus" : "减少",
+		"to" : "至",
+		"equal" : "相同",
+		"opposite" : "相反",
+		"vertical" : "垂直",
+		
+		"self" : "自身",
+		"ally" : "友方",
+		"char" : "角色",
+		"character" : "角色",
+		"enemy" : "敌人",
+		"token" : "召唤物",
+		"projectile" : "弹道",
+		
+		"born" : "出场",
+		"finish" : "退场",
+		"deploy" : "部署",
+		"die" : {
+			"to" : "死亡时",
+			"" : "死亡"
+		},
+		"suicide" : "自杀",
+		"withdraw" : "撤退",
+		"kill" : {
+			"to" : "击杀时",
+			"" : "击杀"
+		},
+		"end" : "结束",
+		"log" : "记录",
+
+		"on" : {
+			"buff" : {
+				"finish" : "Buff结束时"
+			}
+		},
+		
+		
+		"max" : {
+			"hp" : "最大生命"
+		},
+		"maxhp" : "最大生命",
+		"hp" : {
+			"recovery" : "生命恢复"
+		},
+		"atk" : "攻击",
+		"def" : "防御",
+		"cost" : "费用",
+		
+		"stun" : "晕眩",
+		"camouflage" : "迷彩",
+
+		"blord2" : "杜卡雷"
 	}
 }
