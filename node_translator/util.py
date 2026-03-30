@@ -191,10 +191,8 @@ def node_SwitchMode(node):
 
 # 强制击倒
 def node_InstantKill(node):
-    target = "Buff持有者"
+    target = "Buff来源" if node["_killSource"] else "Buff持有者"
     features = []
-    if node["_killSource"]:
-        target = "Buff来源"
     result = {"main" : "强制击倒"+target}
     if node["_skipReborn"]: # 无视二阶段
         features.append("无视重生能力")
@@ -215,6 +213,17 @@ def node_InstantKill(node):
     # 返回
     if len(features) > 0:
         result["description"] = "；".join(features)
+    return result
+
+# 撤退/强制撤退
+def node_Withdraw(node):
+    # 未解析参数：_needLog
+    target = "Buff来源" if node["_withdrawSource"] else "Buff持有者"
+    result = {"main" : "撤退"+target}
+    if node["_force"]:
+        result["main"] = "强制"+result["main"]
+    if node["_switchToDeadState"]: # 史尔特尔的伪击倒
+        result["main"] += "，但令其进入\"死亡\"状态机（会播放被击倒的动画）"
     return result
 
 # 播放音效

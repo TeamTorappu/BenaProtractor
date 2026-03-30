@@ -34,7 +34,7 @@ class Node:
         self.translation = None
         # 预处理
         #if node_data.has_key("_buff"):
-        #    # 获取子buff
+        #    # 获取附属Buff
         #    self.node_config["_buff"] = Buff(node_data._buff)
         if node_name == "IfElse":
             self.node_data["condition_node"] = Node(node_data["_conditionNode"])

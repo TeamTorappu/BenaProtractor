@@ -197,7 +197,7 @@ class Protractor:
                 tree_open = False
             # 真值结果，如果留到这一步，说明只有可以缩写
             if "true" in struct and struct['true'] != "":
-                if len("text") == 0:
+                if len(text) == 0:
                     text = f"{struct['true']}："
                 else:
                     text += f"，{struct['true']}："

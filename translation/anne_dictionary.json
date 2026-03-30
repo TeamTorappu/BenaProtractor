@@ -45,7 +45,9 @@
 		"ON_OWNER_BLOCK_MODE_CHANGED" : "持有者阻挡模式变化时",
 		"ON_OWNER_FINISH" : "持有者退场/死亡时",
 		"ON_OWNER_REACH_EXIT" : "持有者抵达自身路径终点时",
-		"ON_OWNER_LOCATE" : "持有者部署完成时"
+		"ON_OWNER_LOCATE" : "持有者部署完成时",
+		"ON_ENTER_LEVITATE_STATE" : "持有者状态机切至\"浮空\"时",
+		"ON_BEFORE_EXIT_LEVITATE_STATE" : "持有者状态机即将切出\"浮空\"时"
 	},
 	"buildable_type" : {
 		"NONE" : "无",

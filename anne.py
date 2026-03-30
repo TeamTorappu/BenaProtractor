@@ -78,7 +78,7 @@ class AnneNode:
                                 sub_node_list = self.translate_all(sub_content_list)
                                 sub_node_list["main"] = str(key) + " : " + sub_node_list["main"]
                                 children.append(sub_node_list)
-                            elif len(content) > 0 and "attributes" in content[0]: # 子buff列表
+                            elif len(content) > 0 and "attributes" in content[0]: # 附属Buff列表
                                 children_children = []
                                 for scontent in content:
                                     children_children.append(self.translator.analyze_buff(scontent))

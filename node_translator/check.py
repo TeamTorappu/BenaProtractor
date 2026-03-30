@@ -9,7 +9,7 @@ def node_FilterByBlackboardValue(node):
     right_var = node["_valueToCompare"]
     compare = anne_dictionary("compare",node["_condType"])
     compare_not = anne_dictionary("compare_not",node["_condType"])
-    if node["_anotherKeyToCompare"] != None: # 比对另一个黑板值
+    if node["_anotherKeyToCompare"] != None and node["_anotherKeyToCompare"] != "": # 比对另一个黑板值
         right_var = node["_anotherKeyToCompare"]
         if node["_anotherBuff"] and node["_buffKey"] != None: # 比对另一个Buff的黑板值
             if node["_targetType"] != "BUFF_OWNER":
@@ -148,14 +148,22 @@ def CheckTargetProfession(node):
                     "true" : "始终通过",
                     "false" : "始终不通过"
                 }
-    
-# 检查调整值是否带有标记
-def node_CheckModifierContainsKey(node):
-    return {
-        "main" : f"检查事件调整值是否具有{node['_customKey']}标记",
-        "true" : f"若具有{node['_customKey']}标记",
-        "false" : f"若没有{node['_customKey']}标记"
-    }
+
+# 检查标签
+def node_CheckFilterTag(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_bbKey"] != None and node["_bbKey"] != "":
+        return {
+            "main" : "",
+            "true" : f"若{target_name}具有黑板({node['_bbKey']})上记录的标签",
+            "false" : f"若{target_name}不具有黑板({node['_bbKey']})上记录的标签"
+        }
+    else:
+        return {
+            "main" : "",
+            "true" : f"若{target_name}具有\"{node['_filterTag']}\"标签",
+            "false" : f"若{target_name}不具有\"{node['_filterTag']}\"标签"
+        }
 
 # 检查势力
 def node_CheckCharacterGroupTag(node):
@@ -226,32 +234,32 @@ def node_CheckContainsBuff(node):
         if len(node["_buffKeys"]) > 1:
             if node["_checkBuffSource"]:
                 source_name = anne_dictionary("target",node["_buffSourceType"])
-                condition += f"同时持有来自{source_name}的 {'、'.join(node['_buffKeys'])}"
+                condition += f"同时持有来自{source_name}的 {'、'.join(node['_buffKeys'])} Buff"
             else:
-                condition += f"同时持有 {'、'.join(node['_buffKeys'])}"
+                condition += f"同时持有 {'、'.join(node['_buffKeys'])} Buff"
             true_flag = "若其全部持有"
             false_flag = "若其少了其中任意一个"
         elif len(node["_buffKeys"]) == 1:
             if node["_checkBuffSource"]:
                 source_name = anne_dictionary("target",node["_buffSourceType"])
-                condition += f"持有来自{source_name}的 {node['_buffKeys'][0]}"
+                condition += f"持有来自{source_name}的 {node['_buffKeys'][0]} Buff"
             else:
-                condition += f"持有 {node['_buffKeys'][0]}"
+                condition += f"持有 {node['_buffKeys'][0]} Buff"
     else: # 或模式
         if len(node["_buffKeys"]) > 1:
             if node["_checkBuffSource"]:
                 source_name = anne_dictionary("target",node["_buffSourceType"])
-                condition += f"持有来自{source_name}的 {'、'.join(node['_buffKeys'])} 中的任意一个"
+                condition += f"持有来自{source_name}的 {'、'.join(node['_buffKeys'])} 中的任意一个Buff"
             else:
-                condition += f"持有 {'、'.join(node['_buffKeys'])} 中的任意一个"
+                condition += f"持有 {'、'.join(node['_buffKeys'])} 中的任意一个Buff"
             true_flag = "若其持有其中任意一个"
             false_flag = "若其全部都没有"
         elif len(node["_buffKeys"]) == 1:
             if node["_checkBuffSource"]:
                 source_name = anne_dictionary("target",node["_buffSourceType"])
-                condition += f"持有来自{source_name}的 {node['_buffKeys'][0]}"
+                condition += f"持有来自{source_name}的 {node['_buffKeys'][0]} Buff"
             else:
-                condition += f"持有 {node['_buffKeys'][0]}"
+                condition += f"持有 {node['_buffKeys'][0]} Buff"
     if condition != "" :
         return {
             "main" : condition,
@@ -260,7 +268,7 @@ def node_CheckContainsBuff(node):
         }
     else:
         return {
-            "main" : "检查Buff，但给定条件无法检查（写法有误？）",
+            "main" : "检查持有的Buff，但给定条件无法检查（写法有误？）",
             "true" : "（始终不执行）",
             "false" : "（始终不执行）"
         }
@@ -367,12 +375,12 @@ def node_IfTargetSide(node):
         "false" : f"若其不为{side_type}单位"
     }
 
-# 检查是否持有本Buff的某个子Buff
+# 检查是否持有本Buff的某个附属Buff
 def node_CheckContainsDerviedBuff(node):
     return {
-        "main" : f"检查本Buff的子Buff {node['_derviedBuffKey']}",
-        "true" : "若Buff持有者同时还持有该子Buff",
-        "false" : "若Buff持有者不持有该子Buff"
+        "main" : f"检查本Buff的附属Buff {node['_derviedBuffKey']}",
+        "true" : "若Buff持有者同时还持有该附属Buff",
+        "false" : "若Buff持有者不持有该附属Buff"
     }
 
 # 检查黑板是否为0或未定义
@@ -540,3 +548,59 @@ def node_CheckConatinsMapTags(node):
             "true" : "始终通过",
             "false" : "始终不通过"
         }
+
+# 检查对象所在地块的相对位置（普罗旺斯专属）
+def node_CheckModifierDirectionOffset(node):
+    # 未解析参数：_offset.col
+    source_name = anne_dictionary("target",node["_source"])
+    target_name = anne_dictionary("target",node["_target"])
+    row = node["_offset"]["row"]
+    #col = node["_offset"]["col"]
+    condition = f"部署方向正前方的第{row}个地块"
+    if node["_targetToSource"]:
+        source_name,target_name = target_name,source_name
+    if node["_exceptThisOffset"]:
+        return {
+            "main" : f"检查{target_name}所处的地块",
+            "true" : f"若{target_name}位于{source_name}{condition}",
+            "false" : f"若{target_name}位于{source_name}{condition}以外的地块"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}所处的地块",
+            "true" : f"若{target_name}位于{source_name}{condition}以外的地块",
+            "false" : f"若{target_name}位于{source_name}{condition}"
+        }
+
+# 检查对象所处地块是否位于某个攻击范围/半径内
+def node_CheckTargetInRange(node):
+    source_name = anne_dictionary("target",node["_soureceType"]) #对的yj真的多打了个e
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_autoRange"]:
+        return {
+            "main" : f"检查{target_name}是否位于{source_name}当前的攻击范围内（不考虑攻击范围延伸；中心判定）",
+            "true" : f"若{target_name}位于攻击范围内",
+            "false" : f"若{target_name}位于攻击范围外"
+        }
+    elif node["_checkRadius"]:
+        return {
+            "main" : f"检查{target_name}是否位于{source_name}半径{node['_rangeRadius']}格内（中心判定）",
+            "true" : f"若{target_name}位于此半径内",
+            "false" : f"若{target_name}位于此半径外"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}是否位于{source_name}部署位置与方向的特定范围（ID：{node['_rangeId']}）内（中心判定）",
+            "true" : f"若{target_name}位于该范围内",
+            "false" : f"若{target_name}位于该范围外"
+        }
+
+# 检查特定范围内是否存在其他友方“可点选”单位
+def node_CheckOtherCharacterInRange(node):
+    source_name = anne_dictionary("target",node["_source"])
+    return {
+        "main" : f"检查{source_name}部署位置与方向的特定范围（ID：{node['_rangeId']}）内是否存在其他同阵营\"可点选\"的单位",
+        "description" : "\"可点选\"的判定方式如同博士亲手点击该地块中央时可以点击到的所有单位",
+        "true" : "若该范围内存在至少一个此类单位",
+        "false" : "若该范围内不存在此类单位"
+    }

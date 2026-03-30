@@ -23,7 +23,6 @@ ENEMY_DATABASE_PATH = "./tables/enemy_database.json"
 ENEMY_SHORT_NAMES = {}
 ENEMY_NAMES = {}
 ENEMY_NAMES_PATH = "./tables/enemy_names.json"
-ROGUELIKE_TOPIC_SEASONS = ["rogue_5"]#["rogue_1","rogue_2","rogue_3","rogue_4","rogue_5"]
 ROGUELIKE_TOPIC_KEYS = []
 ROGUELIKE_TOPIC_TABLE = {}
 ROGUELIKE_TOPIC_TABLE_PATH = "./tables/roguelike_topic_table.json"
@@ -120,33 +119,33 @@ def load_buff_template_data():
     print(f"[贝娜]已完成对buff_template_data.json的读取！")
 
 # 读取roguelike_topic_table.json，并解析
-def load_roguelike_topic_table():
+def load_roguelike_topic_table(season=5):
     print(f"[贝娜]开始读取roguelike_topic_table.json")
     json_data = {}
     # 获取文件数据
     with open(ROGUELIKE_TOPIC_TABLE_PATH,'r',encoding="UTF-8") as _f:
         json_data = json.load(_f)
     # 按季度读取需要的数据表
-    for season in ROGUELIKE_TOPIC_SEASONS:
-        # 需要的东西都在details里，其他部分就不需要解析了
-        season_data = json_data["details"].get(season,None)
-        if season_data == None:
-            print(f"[贝娜]找不到肉鸽季度"+season)
-            continue
-        # 读取藏品数据
-        item_data = season_data.get("relics",{})
-        item_list = season_data.get("items",{})
-        for item_key,item_info in item_list.items():
-            if item_key in item_data: # 有藏品数据，说明是藏品或者类似的东西
-                item = RogueItem(season,item_key,item_info,item_data[item_key])
-                ROGUELIKE_TOPIC_KEYS.append(item_key)
-                ROGUELIKE_TOPIC_TABLE[item_key] = item
-                print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
-            else: # 非藏品
-                item = RogueItem(season,item_key,item_info)
-                ROGUELIKE_TOPIC_KEYS.append(item_key)
-                ROGUELIKE_TOPIC_TABLE[item_key] = item
-                print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
+    season = "rogue_" + str(season)
+    # 需要的东西都在details里，其他部分就不需要解析了
+    season_data = json_data["details"].get(season,None)
+    if season_data == None:
+        print(f"[贝娜]找不到肉鸽季度"+season)
+        return
+    # 读取藏品数据
+    item_data = season_data.get("relics",{})
+    item_list = season_data.get("items",{})
+    for item_key,item_info in item_list.items():
+        if item_key in item_data: # 有藏品数据，说明是藏品或者类似的东西
+            item = RogueItem(season,item_key,item_info,item_data[item_key])
+            ROGUELIKE_TOPIC_KEYS.append(item_key)
+            ROGUELIKE_TOPIC_TABLE[item_key] = item
+            print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
+        else: # 非藏品
+            item = RogueItem(season,item_key,item_info)
+            ROGUELIKE_TOPIC_KEYS.append(item_key)
+            ROGUELIKE_TOPIC_TABLE[item_key] = item
+            print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
     print(f"[贝娜]已完成对roguelike_topic_table.json的读取！")
 
 # 询问贝娜一个ID有没有对应的译名，若没有将原路返回

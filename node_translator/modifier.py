@@ -38,6 +38,14 @@ def node_FilterModifierByRealDelta(node):
         "false" : f"若 {modifier_target} {compare_not} 原先的{modifier_target}"
     }
 
+# 检查调整值是否带有标记
+def node_CheckModifierContainsKey(node):
+    return {
+        "main" : f"检查事件调整值是否具有\"{node['_customKey']}\"标记",
+        "true" : f"若具有\"{node['_customKey']}\"标记",
+        "false" : f"若没有\"{node['_customKey']}\"标记"
+    }
+
 # 取消调整值
 def node_CancelModifier(node):
     reason = anne_dictionary("cancel_reason",node["_reason"])

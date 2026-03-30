@@ -87,16 +87,21 @@ def analyze_damage(damage_data,prefix="",suffix=""):
             features.append(f"使用黑板中({damage_data['_cachedAtkKey']})作为缓存攻击力")
     # 各种SharedFlags处理（两种写法都有，因此两种写法都判断一遍）
     if "_skipModifierEvent" in damage_data and damage_data["_skipModifierEvent"]:
-        features.append("类生命流失(无计算/事件)")
+        if "_considerUnhurtable" in damage_data and damage_data["_considerUnhurtable"]:
+            features.append("生命流失+强制生命流失")
+        else:
+            features.append("生命流失")
     if "_isEnvDamage" in damage_data and damage_data["_isEnvDamage"]:
         features.append("环境伤害")
     if "_isUndeadable" in damage_data and damage_data["_isUndeadable"]:
         features.append("不会致命")
-    if "_isUndeadable" in damage_data and damage_data["_instantKillLikeDamage"]:
+    if "_instantKillLikeDamage" in damage_data and damage_data["_instantKillLikeDamage"]:
         features.append("类斩杀伤害")
     if "_isNotChangeableValue" in damage_data and damage_data["_isNotChangeableValue"]:
         features.append("无法增/减/免伤/重设")
-    elif "_damageWithoutModify" in damage_data and damage_data["_damageWithoutModify"]:
+    elif "_forceDisplayDamageNum" in damage_data and damage_data["_forceDisplayDamageNum"]:
+        features.append("强制红字")
+    if "_damageWithoutModify" in damage_data and damage_data["_damageWithoutModify"]:
         features.append("无法增/减/免伤/重设")
     if "_setSharedFlag" in damage_data and damage_data["_setSharedFlag"]:
         if "_sharedFlagIndex" in damage_data:
@@ -125,7 +130,7 @@ def analyze_damage(damage_data,prefix="",suffix=""):
             features.append("不受"+"/".join(reasons)+"影响")
     if len(features) > 0:
         suffix += "（"+"；".join(features)+"）"
-    return prefix+damage_type_name+attack_type_name+"伤害"+suffix
+    return prefix + damage_type_name + attack_type_name + "伤害"+suffix
     
 # 统一解析Buff的详细信息
 # 返回结构体
@@ -313,9 +318,9 @@ def analyze_buff(buff_data):
                     stack_info = f"可叠加{max_stack}层，溢出层数仅能刷新时间"
             elif max_stack > 1:
                 stack_info = f"可叠加{max_stack}层，溢出层数无效"
-            elif max_stack == 0:
+            elif max_stack <= 0:
                 stack_info = f"可无限叠加"
-            if max_stack != 1: # 对于1层而言两者没区别
+            if max_stack != 1 and buff_data["lifeTimeType"] != "INFINITY": # 对于1层和永久Buff而言，两者没区别
                 if buff_data["clearAllStackCntWhenTimeUp"]:
                     stack_info += "，到时间失去全部层数"
                 else:
