@@ -74,3 +74,16 @@ def node_EnsureBlackboardDefaultValue(node):
                 "children" : results
             }
     return {"main" : "为黑板记录数据，但无事发生"}
+
+# 从其他Buff的黑板中获取黑板值
+def node_AssignBuffBlackboardFromOthers(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    buff_name = " " + node["_buffKey"] + " Buff"
+    if node["_filterBuffSource"]:
+        if node["_sourceType"]:
+            buff_name = "由同一来源提供的" + buff_name
+        else:
+            buff_name = "由" + anne_dictionary("target",node["_sourceType"]) + "提供的" + buff_name
+    return {
+        "main" : f"尝试寻找{target_name}持有的首个{buff_name}，设自己黑板上的 {node['_blackboardKey']} = 该Buff黑板上的{node['_valueKey']}"
+    }

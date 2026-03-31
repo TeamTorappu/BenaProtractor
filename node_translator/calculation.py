@@ -50,15 +50,32 @@ def node_BlackboardAdd(node):
     bb_key = node["_blackboardKey"]
     if node["_additionKey"] != None and node["_additionKey"] != "":
         if node["_isFloat"]: # 这玩意是“不向下取整”的意思
-            return {"main" : f"令 {bb_key} += {node['_additionKey']}"}
+            return {"main" : f"设 {bb_key} = {bb_key} + {node['_additionKey']}"}
         else:
-            return {"main" : f"令 {bb_key} += floor({node['_additionKey']})"}
+            return {"main" : f"设 {bb_key} = {bb_key} - floor({node['_additionKey']})"}
     else:
         amount = node["_addition"]
         if not node["_isFloat"]: # 这玩意是“不向下取整”的意思
             amount = math.floor(node["_addition"])
         if amount > 0:
-            return {"main" : f"令 {bb_key} += {amount}"}
+            return {"main" : f"设 {bb_key} = {bb_key} + {amount}"}
         elif amount < 0:
-            return {"main" : f"令 {bb_key} -= {abs(amount)}"}
+            return {"main" : f"设 {bb_key} = {bb_key} - {abs(amount)}"}
     return {"main" : f"修改 {bb_key} ，但是无事发生"}
+
+# 修改黑板值/检查黑板值后再修改
+def node_ModifyBlackboard(node):
+    bb_key = node["_blackboardKeys"]
+    if node["_fromBlackboardKeys"] != None and node["_fromBlackboardKeys"] != "":
+        from_key = node["_fromBlackboardKeys"]
+        result = {"main" : f"设 {bb_key} = {from_key}"}
+        if node["_addBasedOriginValue"]: # 原始值加上对象值
+            result["main"] = f"设 {bb_key} = {bb_key} + {from_key}"
+        if node["_checkFromBlackboardValue"]: # 开启这个会在处理前增加一次检查，检查不通过则处理失败
+            result["true"] = f"若上述逻辑能正常处理"
+            result["false"] = f"若 {from_key} 不存在"
+        return result
+    else: # 就和直接设置数值没区别了
+        return {
+            "main" : f"设 {bb_key} = {node['_value']}"
+        }
