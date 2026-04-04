@@ -97,3 +97,16 @@ def node_FinishDerivedBuffById(node):
         return {"main" : f"结束{node['_buffKey']}的所有无叠层的附属Buff；可叠层的附属Buff减少一层叠层，若减少至0层则其结束"}
     else:
         return {"main" : f"结束{node['_buffKey']}的所有附属Buff"}
+
+# 将自己挂载为其他Buff的附属Buff
+# 实际逻辑是挂一个附属Buff，然后结束自身
+def node_AttachAsDerivedBuffById(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    target_name = anne_dictionary("target",node["_sourceType"])
+    if node["_attachToSourceHost"]:
+        target_name += "(召唤物)的主人"
+    buff_key = "特定Buff（取决于黑板）" if node["_loadFromBlackboard"] else node["_buffKey"]
+    result = {"main" : f"若此Buff不是附属Buff，复制一个相同数据的Buff作为{target_name}下{buff_key}的附属Buff，然后结束此Buff"}
+    if node["_finishDerivedBuffIfNoParent"]:
+        result["description"] = "若不存在目标Buff，仅结束此Buff"
+    return result

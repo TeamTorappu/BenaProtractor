@@ -70,6 +70,29 @@ def node_DamageViaAttr(node):
             "main" : f"取{source_name}的 {attribute}{multiplier} 作为\"攻击力\"，令{source_name}对{target_name}依此造成{scale}倍率的{damage_name}"
         }
 
+# 根据记录生命值，制造一次伤害来匹配记录的生命值
+def node_FetchHpToBlackboard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    damage_type = anne_dictionary("damage_type",node["_damageType"])
+    if node["_skipModifierEvent"]:
+        if node["_damageType"] == "PURE":
+            damage_type = "生命流失"
+        else:
+            damage_type += "流失"
+    else:
+        damage_type = damage_type + "普通伤害"
+    hp_type = "生命比例（伤害值 = 当前比例 - 目标比例）" if node["_isHpRatio"] else "生命值（伤害值 = 当前生命值 - 目标生命值）"
+    if node["_buffNameOfBlackboard"] != None and node["_buffNameOfBlackboard"] != "":
+        return {
+            "main" : f"对{target_name}造成一次{damage_type}，以此来匹配记录的{hp_type}",
+            "description" : f"使用{target_name}的 {node['_buffNameOfBlackboard']} Buff黑板上的{node['_blackboardStr']}的值作为{hp_type}"
+        }
+    else:
+        return {
+            "main" : f"对{target_name}造成一次{damage_type}，以此来匹配记录黑板上（{node['_blackboardStr']}）记录的{hp_type}"
+        }
+
+
 # 造成群体伤害
 #def node_AOEDamage(node):
 #    return analyze_target_options(node["_targetOptions"])

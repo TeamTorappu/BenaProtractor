@@ -78,6 +78,18 @@ def node_AutochessAssignEquipCntToBlackboard(node):
             "description" : "此处所指的装备为卫戍协议的装备"
         }
 
+# 在黑板记录同名/精锐人数
+def node_AutoChessAssignChessCntToBB(node):
+    bb_key = node["_assignKey"]
+    if node["_assignGoldenChess"]: # 罗素队的检查
+        return {"main" : f"统计在场精锐单位，将数量记录至黑板{bb_key}"}
+    elif node["_assignSameId"]: # 夕队的检查同名单位
+        target_name = anne_dictionary("target",node["_targetType"])
+        return {"main" : f"统计在场与{target_name}同名的单位（包括其自身），将数量记录至黑板{bb_key}"}
+    else: # 记录0
+        return {"main" : f"尝试统计在场同名/精锐单位数，但未给定检查条件，因此设 {bb_key} = 0"}
+        
+
 # 检查角色是否已进阶
 def node_AutoChessFilterChess(node):
     target_name = anne_dictionary("target",node["_targetType"])
@@ -129,3 +141,31 @@ def node_AutoChessFilterCharacterBondIds(node):
             "true" : f"若其{bond_filter}",
             "false" : f"若其不{bond_filter}"
         }
+
+# 检查目标的InstID，或者检查黑板里是否有目标的UID
+def node_AutochessCheckTarget(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_checkCardUidInBlackboard"]:
+        return {
+            "main" : f"检查本Buff的黑板上是否记录有{target_name}的UID",
+            "description" : "通常是以AssignCardUIDToBlackBoard，格式为{\"UID\" : 1.0}的格式记录",
+            "true" : f"若黑板中存在{target_name}的UID",
+            "false" : f"若黑板中不存在{target_name}的UID"
+        }
+    elif node["_checkTargetIsBlackboardInstID"]: # 这个我也没看懂
+        return {
+            "main" : f"检查{target_name}的InstID是否为黑板中记载的InsId",
+            "true" : f"若其InstID正确",
+            "false" : f"若其不InstID不正确"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}，但未配置条件",
+            "true" : f"始终通过",
+            "false" : f"始终不通过"
+        }
+
+# 触发核心盟约能力
+def node_AutoChessTriggerGarrisonAbility(node):
+    target_name = anne_dictionary("target",node["_target"])
+    return {"main" : f"触发{target_name}的核心盟约能力（不是盟约特质）"}

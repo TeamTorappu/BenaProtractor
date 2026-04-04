@@ -226,6 +226,14 @@ def node_Withdraw(node):
         result["main"] += "，但令其进入\"死亡\"状态机（会播放被击倒的动画）"
     return result
 
+# 清空技力（减少等同于当前技力值的技力）
+def node_ClearCharacterSp(node):
+    target_name = anne_dictionary("target",node["_charFrom"])
+    if node["_forceFlag"]:
+        return {"main" : f"令{target_name}清空技力（强制流失等同于当前技力值的技力）"}
+    else:
+        return {"main" : f"令{target_name}清空技力（减少等同于当前技力值的技力，受阻回影响）"}
+
 # 播放音效
 def node_PlayAudio(node):
     target_name = anne_dictionary("target",node["_target"])
@@ -236,4 +244,4 @@ def node_CreateEffect(node):
     # 暂不详细翻译
     target_name = anne_dictionary("target",node["_targetType"])
     effect_id = node["_effectKey"]
-    return {"main" : f"为{target_name}创建特效{effect_id}（暂不翻译）"}
+    return {"main" : f"为{target_name}创建特效 {effect_id}（暂不翻译）"}

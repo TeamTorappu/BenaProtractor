@@ -44,6 +44,15 @@ class AnneNode:
             try:
                 if method != "" :
                     node.translation = method(node.node_data)
+                    # 检查是否有需要嵌套的内容
+                    if "sub_nodes" in node.translation:
+                        sub_content_list = []
+                        for sub_content in node.translation["sub_nodes"]:
+                            sub_content_list.append(Node(sub_content))
+                        if "children" not in node.translation:
+                            node.translation["children"] = []
+                        node.translation["children"] += self.translate_all(sub_content_list,True)
+                        del node.translation["sub_nodes"]
                 else: # 无法翻译，把所有数据搓成可阅读的格式
                     children = []
                     for key,content in node.node_data.items():
@@ -158,6 +167,8 @@ class AnneNode:
                  struct.pop("false") # 因为IfElse只影响内圈，对外圈逻辑不影响
             if "children" not in struct:
                 struct["children"] = []
+            if "style_closed" in struct:
+                del struct["style_closed"]
             # 成功时执行的节点
             success_node_lines = []
             if len(node_data["succeed_nodes"]) > 0:

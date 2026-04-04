@@ -28,11 +28,15 @@ def node_AssignAttributeToBB(node):
 # 将召唤物的数量或最大数量记录到黑板中
 def node_AssignTokenCardCntToBB(node):
     target_name = anne_dictionary("target",node["_targetType"])
-    count_key = node["_countKey"]
     if node["_assignMaxCount"]:
-        return {"main" : f"在黑板上将{target_name}的召唤物最大持有数记录为 {count_key}"}
+        return {"main" : f"设 {node['_countKey']} = {target_name}的召唤物最大持有数"}
     else:
-        return {"main" : f"在黑板上将{target_name}的召唤物当前持有数记录为 {count_key}"}
+        return {"main" : f"设 {node['_countKey']} = {target_name}的召唤物当前持有数"}
+
+# 将生命比例记录到黑板中
+def node_AssignHpRatioToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {"main" : f"设 {node['_blackboardKey']} = {target_name}的当前生命比例"}
 
 # 三合一节点：记录伤害值、记录模拟的计算伤害值、记录伤害影响差值
 def node_AssignDamageValueToBlackboard(node):
@@ -85,5 +89,88 @@ def node_AssignBuffBlackboardFromOthers(node):
         else:
             buff_name = "由" + anne_dictionary("target",node["_sourceType"]) + "提供的" + buff_name
     return {
-        "main" : f"尝试寻找{target_name}持有的首个{buff_name}，设自己黑板上的 {node['_blackboardKey']} = 该Buff黑板上的{node['_valueKey']}"
+        "main" : f"尝试寻找{target_name}持有的首个{buff_name}，设本Buff黑板上的 {node['_blackboardKey']} = 该Buff黑板上的{node['_valueKey']}"
     }
+
+# 设置其他Buff的黑板值
+def node_AssignBuffBlackboard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    source_buff_name = "本Buff"
+    target_buff_name = node["_buffKey"]
+    target_bb = node["_blackboardKey"]
+    if node["_valueKey"] != None and node["_valueKey"] != "":
+        source_bb = "本黑板上的" + node["_valueKey"]
+        if node["_buffKeyAssignFrom"] != None and node["_buffKeyAssignFrom"] != "":
+            source_buff_name = node["_buffKeyAssignFrom"]
+            target_bb = target_buff_name + " 黑板上的 " + target_bb
+            source_bb = node["_buffKeyAssignFrom"] + " 黑板上的 " + node["_valueKey"]
+            if node["_assignFirstBuff"]:
+                return {"main" : f"尝试寻找{target_name}持有的首个 {source_buff_name} 与 {target_buff_name} Buff，设{target_bb} = {source_bb}"}
+            else:
+                return {"main" : f"尝试寻找{target_name}持有的首个 {source_buff_name} Buff，设该单位的所有 {target_buff_name} 黑板上的 {target_bb} = {source_bb}"}      
+    # 默认处理
+    value = node["_defaultValue"]
+    if node["_assignFirstBuff"]:
+        return {"main" : f"尝试寻找{target_name}持有的首个 {target_buff_name} Buff，设该Buff的 {target_bb} = {value}"}
+    else:
+        return {"main" : f"设{target_name}的所有 {target_buff_name} 黑板上的 {target_bb} = {value}"}
+
+# 记录末影黑板（同UID单位间互通）
+def node_AddCharacterSharedBlackboard(node):
+    target_name = anne_dictionary("target",node["_target"])
+    target_value = None
+    action = f"将 {node['_blackboardKey']} 设置为"
+    # 获取目标值
+    if node["_useValueKey"]:
+        target_value = "本Buff黑板上"+node["_valueKey"] +"的值"
+    elif node["_isStringBB"]:
+        target_value = node["_valueStr"]
+    else:
+        if not node["_isOverwrite"]: # 如果类型为数值，且不启用覆写，改为加算数值
+            action = f"令 {node['_blackboardKey']} 增加"
+        target_value = node["_value"]
+    return {
+        "main" : f"在{target_name}的末影黑板上，{action} {target_value}",
+        "style_closed" : True,
+        "description" : "\"末影黑板\"为同一UID的干员实例间互通的数据"
+    }
+
+# 将一项基础数据记录到黑板中（计算过符文与直接加算后的数值）
+def node_AssignAttributeRawDataIntoBlackboard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    attribute = anne_dictionary("attribute",node["_attributeType"])
+    return {
+        "main" : f"将{target_name}的基础{attribute}记录至黑板 {node['_blackBoardKey']}",
+        "style_closed" : True,
+        "description" : "\"基础值\"为计算过符文、直接加算后的面板值"
+    }
+
+# 从末影黑板拉取数据（同UID单位间互通）
+def node_AssignCharacterSharedBBToBlackboard(node):
+    character_name = anne_dictionary("target",node["_character"])
+    if node["_sourceBBKey"] != node["_targetBBKey"]:
+        return {
+            "main" : f"令本Buff黑板上的 {node['_targetBBKey']} = {character_name}的末影黑板上的 {node['_sourceBBKey']} 的值",
+            "style_closed" : True,
+            "description" : "\"末影黑板\"为同一UID的干员实例间互通的数据"
+        }
+    else:
+        return {
+            "main" : f"令本Buff黑板上的 {node['_targetBBKey']} = {character_name}的末影黑板上同名黑板的值",
+            "style_closed" : True,
+            "description" : "\"末影黑板\"为同一UID的干员实例间互通的数据"
+        }
+
+# 将UID记录到黑板上
+# 有两种模式，一种是记录在特定黑板上，一种是把黑板当字典（本来就是），把UID作为Key记录进去占位。
+def node_AssignCardUIDToBlackBoard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_assignHostOrToken"]:
+        target_name = target_name+"的召唤物/主人"
+    if node["_assignAsKey"]: # 字典模式
+        return {"main" : f"将{target_name}的UID作为黑板Key值，记录至本Buff的黑板中（相应的Value为1.0)"}
+    # 字符串/数值模式
+    if node["_assignAsString"]:
+        return {"main" : f"将{target_name}的UID记录至本Buff的黑板 {node['_blackBoardKey']} 中（字符串格式）"}
+    else:
+        return {"main" : f"将{target_name}的UID记录至本Buff的黑板 {node['_blackBoardKey']} 中（整数格式）"}

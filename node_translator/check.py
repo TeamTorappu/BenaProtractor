@@ -3,41 +3,6 @@
 #----------------------------------------
 from .analyzer import anne_dictionary
 
-# 检查黑板
-def node_FilterByBlackboardValue(node):
-    left_var = node["_blackboardKey"]
-    right_var = node["_valueToCompare"]
-    compare = anne_dictionary("compare",node["_condType"])
-    compare_not = anne_dictionary("compare_not",node["_condType"])
-    if node["_anotherKeyToCompare"] != None and node["_anotherKeyToCompare"] != "": # 比对另一个黑板值
-        right_var = node["_anotherKeyToCompare"]
-        if node["_anotherBuff"] and node["_buffKey"] != None: # 比对另一个Buff的黑板值
-            if node["_targetType"] != "BUFF_OWNER":
-                target_name = anne_dictionary("target",node["_target"])
-                return {
-                    "main" : f"比对黑板上的{left_var}与{target_name}的另一buff({node['_buffKey']})的{right_var}",
-                    "true" : f"若{left_var} {compare} {right_var}",
-                    "false" : f"若{left_var} {compare_not} {right_var}"
-                }
-            else:
-                return {
-                    "main" : f"比对黑板上的{left_var}与另一buff({node['_buffKey']})的{right_var}",
-                    "true" : f"若{left_var} {compare} {right_var}",
-                    "false" : f"若{left_var} {compare_not} {right_var}"
-                }
-        else:
-            return {
-                "main" : f"比对黑板上的{left_var}与{right_var}",
-                "true" : f"若{left_var} {compare} {right_var}",
-                "false" : f"若{left_var} {compare_not} {right_var}"
-            }
-    else:
-        return {
-            "main" : f"检查黑板上的{left_var}",
-            "true" : f"若{left_var} {compare} {right_var}",
-            "false" : f"若{left_var} {compare_not} {right_var}"
-        }
-
 # 检查异常效果（带免疫）
 def node_CheckAbnormalFlag(node):
     target_name = anne_dictionary("target",node["_targetType"])
@@ -59,6 +24,44 @@ def node_CheckAbnormalFlag(node):
             "false" : f"若不持有{abnormal_flag}或免疫该异常"
         }
 
+# 检查异常免疫
+def node_CheckAbnormalImmune(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    abnormal = anne_dictionary("abnormal",node["_abnormalFlag"])
+    if node["_isUnset"]:
+        return {
+            "main" : f"检查{target_name}的异常免疫",
+            "true" : f"若{target_name}没有{abnormal}免疫",
+            "false" : f"若{target_name}具有{abnormal}免疫"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}的异常免疫",
+            "true" : f"若{target_name}具有{abnormal}免疫",
+            "false" : f"若{target_name}没有{abnormal}免疫"
+        }
+
+# 检查持有多个异常效果之一（带免疫）
+def node_CheckAbnormalFlags(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    abnormal_flags = []
+    if node["_abnormalFlags"] != None:
+        for abf in node["_abnormalFlags"]:
+            abnormal_flags.append(anne_dictionary("abnormal",abf))
+    if len(abnormal_flags) > 1:
+        return {
+            "main" : f"检查{target_name}是否持有"+"、".join(abnormal_flags[:-1]) + "、或" + abnormal_flags[-1]+"异常",
+            "true" : f"若持有上述异常之一",
+            "false" : f"若不持有这些异常或免疫于这些异常"
+        }
+    else:
+        
+        return {
+            "main" : f"检查{target_name}是否持有{abnormal_flags[0]}异常",
+            "true" : f"若持有{abnormal_flags[0]}",
+            "false" : f"若不持有{abnormal_flags[0]}或免疫该异常"
+        }
+
 # 检查异常组合（带免疫）
 def node_CheckAbnormalCombo(node):
     target_name = anne_dictionary("target",node["_targetType"])
@@ -75,7 +78,6 @@ def node_CheckAbnormalCombo(node):
             "true" : f"若持有{abnormal_combo}",
             "false" : f"若不持有{abnormal_combo}或免疫该异常组合"
         }
-
 
 # 检查职业
 def CheckTargetProfession(node):
@@ -228,8 +230,8 @@ def node_CheckContainsBuff(node):
     # 未解析参数：_loadFromBlackboard _checkSourceHost
     target_name = anne_dictionary("target",node["_targetType"])
     condition = f"检查{target_name}是否"
-    true_flag = "若其持有"
-    false_flag = "若其没有"
+    true_flag = "若其持有Buff"
+    false_flag = "若其没有Buff"
     if node["isAND"]: # 与模式
         if len(node["_buffKeys"]) > 1:
             if node["_checkBuffSource"]:
@@ -237,8 +239,8 @@ def node_CheckContainsBuff(node):
                 condition += f"同时持有来自{source_name}的 {'、'.join(node['_buffKeys'])} Buff"
             else:
                 condition += f"同时持有 {'、'.join(node['_buffKeys'])} Buff"
-            true_flag = "若其全部持有"
-            false_flag = "若其少了其中任意一个"
+            true_flag = "若其持有全部这些Buff"
+            false_flag = "若其少了其中任意一个Buff"
         elif len(node["_buffKeys"]) == 1:
             if node["_checkBuffSource"]:
                 source_name = anne_dictionary("target",node["_buffSourceType"])
@@ -252,8 +254,8 @@ def node_CheckContainsBuff(node):
                 condition += f"持有来自{source_name}的 {'、'.join(node['_buffKeys'])} 中的任意一个Buff"
             else:
                 condition += f"持有 {'、'.join(node['_buffKeys'])} 中的任意一个Buff"
-            true_flag = "若其持有其中任意一个"
-            false_flag = "若其全部都没有"
+            true_flag = "若其持有其中任意一个Buff"
+            false_flag = "若其全部Buff都没有"
         elif len(node["_buffKeys"]) == 1:
             if node["_checkBuffSource"]:
                 source_name = anne_dictionary("target",node["_buffSourceType"])
@@ -269,8 +271,8 @@ def node_CheckContainsBuff(node):
     else:
         return {
             "main" : "检查持有的Buff，但给定条件无法检查（写法有误？）",
-            "true" : "（始终不执行）",
-            "false" : "（始终不执行）"
+            "true" : "始终不通过",
+            "false" : "始终通过"
         }
 
 # 通用目标检查
@@ -324,40 +326,6 @@ def node_CheckUnitAlive(node):
         "false" : f"若{owner_name}已被击倒/死亡"
     }
 
-# 检查异常免疫
-def node_CheckAbnormalFlag(node):
-    target_name = anne_dictionary("target",node["_targetType"])
-    abnormal = anne_dictionary("abnormal",node["_abnormalFlag"])
-    if node["_isUnset"]:
-        return {
-            "main" : f"检查{target_name}的异常效果",
-            "true" : f"若{target_name}没有{abnormal}异常",
-            "false" : f"若{target_name}具有{abnormal}异常"
-        }
-    else:
-        return {
-            "main" : f"检查{target_name}的异常效果",
-            "true" : f"若{target_name}具有{abnormal}异常",
-            "false" : f"若{target_name}没有{abnormal}异常"
-        }
-
-# 检查异常免疫
-def node_CheckAbnormalImmune(node):
-    target_name = anne_dictionary("target",node["_targetType"])
-    abnormal = anne_dictionary("abnormal",node["_abnormalFlag"])
-    if node["_isUnset"]:
-        return {
-            "main" : f"检查{target_name}的异常免疫",
-            "true" : f"若{target_name}没有{abnormal}免疫",
-            "false" : f"若{target_name}具有{abnormal}免疫"
-        }
-    else:
-        return {
-            "main" : f"检查{target_name}的异常免疫",
-            "true" : f"若{target_name}具有{abnormal}免疫",
-            "false" : f"若{target_name}没有{abnormal}免疫"
-        }
-
 # 检查绝对阵营
 def node_IfTargetSide(node):
     target_name = anne_dictionary("target",node["_targetType"])
@@ -381,14 +349,6 @@ def node_CheckContainsDerviedBuff(node):
         "main" : f"检查本Buff的附属Buff {node['_derviedBuffKey']}",
         "true" : "若Buff持有者同时还持有该附属Buff",
         "false" : "若Buff持有者不持有该附属Buff"
-    }
-
-# 检查黑板是否为0或未定义
-def node_IsBlackboardZero(node):
-    return {
-        "main" : f"检查黑板{node['_var']}的值",
-        "true" : f"若不存在或{node['_var']} = 0",
-        "false" : f"若存在且{node['_var']} ≠ 0"
     }
     
 # 是否属于干员
@@ -448,6 +408,24 @@ def node_IfTargetEqual(node):
                 "true" : "若两者为同一个单位",
                 "false" : "若两者为不同单位（或任意一方不存在）"
             }
+
+# 另一种是否为同一人
+# 没有任何“多余”的处理
+def node_CheckEntityEquals(node):
+    left_target = anne_dictionary("target",node["_lhsType"])
+    right_target = anne_dictionary("target",node["_rhsType"])
+    if left_target == right_target:
+        return {
+            "main" : f"检查单位，但配置有误",
+            "true" : "始终通过",
+            "false" : "始终不通过"
+        }
+    else:
+        return {
+            "main" : f"检查{left_target}和{right_target}",
+            "true" : "若两者为同一个单位（或均不存在）",
+            "false" : "若两者为不同单位（或一方存在一方不存在）"
+        }
     
 # 检查行动类型
 def node_CheckMotionMode(node):
@@ -459,12 +437,22 @@ def node_CheckMotionMode(node):
         "false" : f"若其当前为{motion}单位"
     }
 
-# 检查单位死亡原因
+# 追溯角色类单位死亡原因
 def node_FilterCharacterLastDeathReason(node):
     target_name = anne_dictionary("target",node["_characterType"])
     finish_reason = anne_dictionary("finish_reason",node["_finishReason"])
     return {
-        "main" : f"检查{target_name}（角色类）的退场/死亡原因",
+        "main" : f"追溯{target_name}（角色类）最近一次退场/死亡的原因",
+        "true" : f"若该次退场/死亡原因为\"{finish_reason}\"",
+        "false" : f"若该次退场/死亡原因不为\"{finish_reason}\"，或没有退场/死亡"
+    }
+
+# 检查单位本次死亡原因
+def node_FilterDeathReason(node):
+    target_name = anne_dictionary("target",node["_source"])
+    finish_reason = anne_dictionary("finish_reason",node["_finishReason"])
+    return {
+        "main" : f"检查{target_name}的本次退场/死亡原因",
         "true" : f"若退场/死亡原因为\"{finish_reason}\"",
         "false" : f"若退场/死亡原因不为\"{finish_reason}\""
     }
