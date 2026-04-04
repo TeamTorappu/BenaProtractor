@@ -46,6 +46,19 @@ class Node:
             if node_data["_failNodes"] != None:
                 for sub_node in node_data["_failNodes"]:
                     self.node_data["fail_nodes"].append(Node(sub_node))
+        if node_name == "IfConditions":
+            self.node_data["condition_nodes"] = []
+            self.node_data["succeed_nodes"] = []
+            self.node_data["fail_nodes"] = []
+            if node_data["_conditionsNode"] != None:
+                for sub_node in node_data["_conditionsNode"]:
+                    self.node_data["condition_nodes"].append(Node(sub_node))
+            if node_data["_succeedNodes"] != None:
+                for sub_node in node_data["_succeedNodes"]:
+                    self.node_data["succeed_nodes"].append(Node(sub_node))
+            if node_data["_failNodes"] != None:
+                for sub_node in node_data["_failNodes"]:
+                    self.node_data["fail_nodes"].append(Node(sub_node))
 
 # BuffTemplate类
 class BuffTemplate:

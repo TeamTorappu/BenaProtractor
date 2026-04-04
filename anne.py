@@ -10,6 +10,8 @@ from translator import anne_dictionary, get_anne_dictionary
 ANNE_NODE = None
 ANNE_RELIC = None
 
+DEX = "①②③④⑤⑥⑦⑧⑨"
+
 
 # 任何翻译器的返回数据结构大概都长这样：
 #{
@@ -142,6 +144,8 @@ class AnneNode:
                     children.append({"main" : "若前面的逻辑无法处理"})
             elif node.node_name == "IfElse":
                 children.append(self.translate_ifelse(node))
+            elif node.node_name == "IfConditions":
+                children.append(self.translate_ifconditions(node))
             else:
                 children.append(self.translate(node))
         if return_list:
@@ -154,29 +158,102 @@ class AnneNode:
         if node.translation == None:
             node_data = node.node_data
             # 判断节点
+            true_flag = "如果是/有/可行/可处理："
+            false_flag = "如果不是/没有/不可行/无法处理："
             struct = self.translate(node_data["condition_node"])
             if struct["main"].endswith("（未翻译）"): # 未翻译，增加标识符
                 struct["main"] = "尝试判断: "+struct["main"]
-            true_flag = "如果是/有/可行/可处理："
-            false_flag = "如果不是/没有/不可行/无法处理："
+            # 因为IfElse只影响内圈，对外圈逻辑不影响，修改逻辑
             if "true" in struct:
                  true_flag = struct["true"]+"："
-                 struct.pop("true") # 因为IfElse只影响内圈，对外圈逻辑不影响
+                 struct.pop("true") 
             if "false" in struct:
                  false_flag = struct["false"]+"："
-                 struct.pop("false") # 因为IfElse只影响内圈，对外圈逻辑不影响
+                 struct.pop("false")
             if "children" not in struct:
                 struct["children"] = []
             if "style_closed" in struct:
                 del struct["style_closed"]
             # 成功时执行的节点
-            success_node_lines = []
             if len(node_data["succeed_nodes"]) > 0:
                 success_translation = self.translate_all(node_data["succeed_nodes"])
                 success_translation["main"] = true_flag
                 struct["children"].append(success_translation)
             # 失败时执行的节点
-            fail_node_lines = []
+            if len(node_data["fail_nodes"]) > 0:
+                fail_translation = self.translate_all(node_data["fail_nodes"])
+                fail_translation["main"] = false_flag
+                struct["children"].append(fail_translation)
+            # 存储翻译
+            node.translation = struct
+            return struct
+        else:
+            return node.translation
+    
+    # IfConditions的特殊处理
+    def translate_ifconditions(self,node):
+        if node.translation == None:
+            node_data = node.node_data
+            # 检查条件数量
+            if len(node_data["condition_nodes"]) == 1: # 如果只有一个，那你tmd为什么不用IfElse呢？？？
+                node_data["condition_node"] = node_data["condition_nodes"][0]
+                return self.translate_ifelse(node_data["condition_node"])
+            # 判断节点
+            struct = {
+                "main" : "",
+                "children" : []
+            }
+            structs = []
+            true_flag = "如果是/有/可行/可处理："
+            false_flag = "如果不是/没有/不可行/无法处理："
+            #开始处理
+            for sub_node in node_data["condition_nodes"]:
+                structs.append(self.translate(sub_node))
+            true_flags = []
+            false_flags = []
+            index = 0
+            for _struct in structs:
+                _struct["main"] = DEX[index] + _struct["main"]
+                if "true" in _struct:
+                    text = _struct["true"]
+                    if text[0] == "若":
+                        text = text[1:]
+                    if text[0] == "如果":
+                        text = text[2:]
+                    text = DEX[index] + text
+                    true_flags.append(text)
+                    del _struct["true"]
+                else:
+                    true_flags.append(_struct["main"]+"处理成功")
+                if "false" in _struct:
+                    text = _struct["false"]
+                    if text[0] == "若":
+                        text = text[1:]
+                    if text[0] == "如果":
+                        text = text[2:]
+                    text = DEX[index] + text
+                    false_flags.append(text)
+                    del _struct["false"]
+                else:
+                    false_flags.append(_struct["main"]+"处理成功")
+                index += 1
+            # IfConditions同样只影响内圈，对外圈逻辑不影响
+            if node_data["_isAnd"]:
+                struct["main"] = "尝试判断多个条件，是否同时满足："
+                true_flag = "若 " + " 且 ".join(true_flags)+"："
+                false_flag = "若 " + " 或 ".join(false_flags)+"："
+            else:
+                struct["main"] = "尝试判断多个条件，是否满足其中任意一个："
+                true_flag = "若 " + " 或 ".join(true_flags)+"："
+                false_flag = "若 " + " 且 ".join(false_flags)+"："
+            # 条件节点
+            struct["children"] += structs
+            # 成功时执行的节点
+            if len(node_data["succeed_nodes"]) > 0:
+                success_translation = self.translate_all(node_data["succeed_nodes"])
+                success_translation["main"] = true_flag
+                struct["children"].append(success_translation)
+            # 失败时执行的节点
             if len(node_data["fail_nodes"]) > 0:
                 fail_translation = self.translate_all(node_data["fail_nodes"])
                 fail_translation["main"] = false_flag

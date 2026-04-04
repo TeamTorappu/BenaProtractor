@@ -1,5 +1,5 @@
 #----------------------------------------
-# 逻辑类Node（都需要特别处理，因此均不在这里处理）
+# 逻辑类Node（通常不在这里处理）
 #----------------------------------------
 from .analyzer import anne_dictionary
 
@@ -7,7 +7,11 @@ from .analyzer import anne_dictionary
 def node_IfElse(node):
     return {"main" : "如果...","true":"如果是...","false":"如果不是..."}
 
-# 否则（但不在这里翻译）
+# 逻辑 如果全部+否则
+def node_IfConditions(node):
+    return {"main" : "如果全部...","true":"如果是...","false":"如果不是..."}
+
+# 否则
 def node_IfNot(node):
     return {"main" : "否则"}
 

@@ -190,7 +190,7 @@ def node_FilterByTargetMassLevel(node):
 
 # 检查阻挡模式
 def node_CheckBlockMode(node):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = anne_dictionary("target",node["_targetType"])
     block_mode = anne_dictionary("block_mode",node["_blockMode"])
     return {
         "main" : f"检查{target_name}的阻挡模式",
@@ -230,8 +230,8 @@ def node_CheckContainsBuff(node):
     # 未解析参数：_loadFromBlackboard _checkSourceHost
     target_name = anne_dictionary("target",node["_targetType"])
     condition = f"检查{target_name}是否"
-    true_flag = "若其持有Buff"
-    false_flag = "若其没有Buff"
+    true_flag = "若其持有该Buff"
+    false_flag = "若其没有该Buff"
     if node["isAND"]: # 与模式
         if len(node["_buffKeys"]) > 1:
             if node["_checkBuffSource"]:
