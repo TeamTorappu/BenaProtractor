@@ -133,10 +133,7 @@ class AnneNode:
             # IfNot：反转前面的处理状态
             if len(children) > 0 and node.node_name == "IfNot" :
                 if "true" in children[-1] and "false" in children[-1]:
-                    true_flag = children[-1]["true"]
-                    false_flag = children[-1]["false"]
-                    children[-1]["true"] = false_flag
-                    children[-1]["false"] = true_flag
+                    children[-1]["true"], children[-1]["false"] = children[-1]["false"], children[-1]["true"]
                 elif "true" in children[-1]:
                     children[-1]["false"] = children[-1]["true"] 
                     children[-1]["true"] = "若非\""+children[-1]["true"]+"\"" 

@@ -125,7 +125,7 @@ def node_AutoChessFilterCharacterBondIds(node):
     if node["_considerManiShip"]:
         for bond in node["_bondIds"]:
             if anne_dictionary("bond_can_mani",bond) == "true": #字典里有就行
-                bond_filter += "/隶属调和盟约"
+                bond_filter += "/【调和】盟约"
                 break
     # 处理对象
     target_name = anne_dictionary("target",node["_target"])
