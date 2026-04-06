@@ -80,6 +80,21 @@ class BuffTemplate:
         if self.display_name == "":
             return self.buff_key
         return self.display_name
+    
+# Buff类
+class Buff:
+    def __init__(self, buff_key, buff_data):
+        self.buff_key = buff_key
+        self.display_name = buff_key
+        self.raw_buff_data = json.dumps(buff_data,indent=4,ensure_ascii=False)
+        self.buff_data = buff_data
+        self.hidden = False
+    
+    # 获取显示名
+    def get_display_name(self):
+        if self.display_name == "":
+            return self.buff_key
+        return self.display_name
         
 
 # Buff的伪代码承载类

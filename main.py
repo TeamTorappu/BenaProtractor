@@ -24,6 +24,9 @@ DEFAULT_LOAD = ["buff","buff_template","rogue_5"]
 
 # 直接打开
 def start_with(loads):
+    if "buff" in loads:
+        bena.load_buff_table()
+        PROTRACTOR.load_directory("buff",bena.BUFF_TABLE)
     if "buff_template" in loads:
         bena.load_buff_template_data()
         PROTRACTOR.load_directory("buff_template",bena.BUFF_TEMPLATE_DATA)

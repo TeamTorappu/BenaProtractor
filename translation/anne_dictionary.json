@@ -71,7 +71,7 @@
 		"ON_APPLYING_SKIPPED_MODIFIER" : "持有者应用生命流失类调整值时",
 		"ON_ABILITY_INTERRUPTED" : "持有者的能力被中断时",
 		"ON_BEFORE_APPEAR" : "持有者即将进入出现状态机时",
-		"ON_OWNER_ROOT_TILE_CHANGED" : "作为促融共竞的足球，持有者进入新的地块时",
+		"ON_OWNER_ROOT_TILE_CHANGED" : "持有者进入新的地块时",
 		"ON_OTHER_RESISTABLE_BUFF_START" : "当持有者身上的另一可抵抗Buff开始时",
 		"ON_BEFORE_TRY_SET_EP_ZERO" : "持有者即将受到可致爆的损伤时",
 		"ON_ES_OVER_ZERO" : "持有者得到的治疗量溢出时",
@@ -177,7 +177,7 @@
 		"PALSYING" : "麻痹震颤",
 		"ATTRACTED" : "诱导",
 		"FEARED_PRIVATE" : "自惧",
-		"DOZE" : "封护",
+		"DOZE" : "小睡",
 		"SLEEPING" : "沉睡",
 		"SHELTERING" : "闭锁"
 	},

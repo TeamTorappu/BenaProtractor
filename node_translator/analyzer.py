@@ -134,19 +134,35 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     
 # 统一解析Buff的详细信息
 # 返回结构体
-def analyze_buff(buff_data):
+def analyze_buff(buff_data,full_information=False):
     buff_key = buff_data["buffKey"]
+    # 开始解析
+    features = []
+    blackboard = {}
+    template = "empty"
+    has_resistable_flag = False
+
     # 读取自数据库，一般是眩晕、寒冷那些，不管他
     if buff_data["loadFromDB"]:
-        return {"main" : buff_key+"(读取自数据库)"}
-    # 开始解析
-    results = []
-    blackboard = {}
-    has_resistable_flag = False
+        if full_information:
+            features.append("读取自数据库："+buff_key)
+        else:
+            return {"main" : buff_key+"(读取自数据库)"}
     
     # 检查模板
     if buff_data["templateKey"] != "empty" :
-        results.append(f"使用{buff_data['templateKey']}模板")
+        template = buff_data["templateKey"]
+        # 覆写事件优先级
+        if buff_data["overrideOnEventPriority"]:
+            if full_information:
+                features.append(f"事件优先级：{buff_data['onEventPriority']}（覆盖模板的数据）")
+            else:
+                features.append(f"事件优先级覆写为{buff_data['onEventPriority']}")
+    elif buff_data["overrideOnEventPriority"] or buff_data['onEventPriority'] != "DEFAULT":
+        if full_information:
+            features.append(f"事件优先级：{buff_data['onEventPriority']}")
+        else:
+            features.append(f"事件优先级为{buff_data['onEventPriority']}")
     # 检查黑板
     if buff_data["blackboard"] and len(buff_data["blackboard"]) > 0:
         for bb_data in buff_data["blackboard"]:
@@ -155,39 +171,106 @@ def analyze_buff(buff_data):
                 blackboard[bb_key] = bb_data["value"]
             elif bb_data["valueStr"]:
                 blackboard[bb_key] = bb_data["valueStr"]
+
+    # 持续时间配置
+    if full_information: # 完整时间显示
+        if buff_data["lifeTimeType"] == "INFINITY":
+            features.append("持续时间：无限")
+        elif buff_data["lifeTimeType"] == "LIMITED":
+            if buff_data["durationKey"] != None and buff_data["durationKey"] != "none":
+                features.append(f"持续时间：{buff_data['durationKey']} 秒")
+            elif buff_data["lifeTime"] == 0.0:
+                features.append("持续时间：0秒（即Buff开始时事件结束后立刻结束）")
+            else:
+                seconds = math.floor(buff_data['lifeTime'])
+                ticks = math.ceil((buff_data['lifeTime'] % 1.0) * 30)
+                if seconds > 0:
+                    features.append(f"持续时间：{str(seconds)}秒 {str(ticks)}帧")
+                else:
+                    features.append(f"持续时间：{str(ticks)}帧")
+    else: # 简短时间
+        if buff_data["lifeTimeType"] == "INFINITY":
+            features.append("永久")
+        elif buff_data["lifeTimeType"] == "LIMITED":
+            if buff_data["durationKey"] != None and buff_data["durationKey"] != "none":
+                features.append(f"持续 {buff_data['durationKey']} 秒")
+            elif buff_data["lifeTime"] == 0.0:
+                features.append("瞬间效果")
+            else:
+                seconds = math.floor(buff_data['lifeTime'])
+                ticks = math.ceil((buff_data['lifeTime'] % 1.0) * 30)
+                if seconds > 0:
+                    features.append(f"持续{str(seconds)}秒 {str(ticks)}帧")
+                else:
+                    features.append(f"持续{str(ticks)}帧")
         
     # 异常效果家族与属性增减
     attrs = buff_data["attributes"]
-    features = []
     # 以下内容yj都写过[]和null的格式，泥岩的recharge居然同时两种都用，绝了
     # 异常效果
     if attrs["abnormalFlags"] != None and len(attrs["abnormalFlags"]) > 0:
-        for flag in attrs["abnormalFlags"]:
-            flag_name = anne_dictionary("abnormal",flag)
-            features.append(flag_name)
-            # 包含可抵抗状态
-            if flag in ["STUNNED","COLD","FROZEN"]:
-                has_resistable_flag = True
+        if full_information:
+            flags = []
+            for flag in attrs["abnormalFlags"]:
+                flags.append(anne_dictionary("abnormal",flag))
+                # 包含可抵抗状态
+                if flag in ["STUNNED","COLD","FROZEN"]:
+                    has_resistable_flag = True
+            features.append("包含异常效果："+"、".join(flags))
+        else:
+            for flag in attrs["abnormalFlags"]:
+                flag_name = anne_dictionary("abnormal",flag)
+                features.append(flag_name)
+                # 包含可抵抗状态
+                if flag in ["STUNNED","COLD","FROZEN"]:
+                    has_resistable_flag = True
     # 异常免疫
     if attrs["abnormalImmunes"] != None and len(attrs["abnormalImmunes"]) > 0:
-        for flag in attrs["abnormalImmunes"]:
-            flag_name = anne_dictionary("abnormal",flag)
-            features.append(flag_name+"免疫")
+        if full_information:
+            flags = []
+            for flag in attrs["abnormalImmunes"]:
+                flags.append(anne_dictionary("abnormal",flag))
+            features.append("包含异常免疫："+"、".join(flags))
+        else:
+            for flag in attrs["abnormalImmunes"]:
+                flag_name = anne_dictionary("abnormal",flag)
+                if full_information:
+                    features.append("包含异常免疫："+flag_name)
+                else:
+                    features.append(flag_name+"免疫")
     # 异常反制
     if attrs["abnormalAntis"] != None and len(attrs["abnormalAntis"]) > 0:
-        for flag in attrs["abnormalAntis"]:
-            flag_name = anne_dictionary("abnormal",flag)
-            features.append(flag_name+"反制")
+        if full_information:
+            flags = []
+            for flag in attrs["abnormalAntis"]:
+                flags.append(anne_dictionary("abnormal",flag))
+            features.append("包含异常反制："+"、".join(flags))
+        else:
+            for flag in attrs["abnormalAntis"]:
+                flag_name = anne_dictionary("abnormal",flag)
+                features.append(flag_name+"反制")
     # 异常组合
     if attrs["abnormalCombos"] != None and len(attrs["abnormalCombos"]) > 0:
-        for combo in attrs["abnormalCombos"]:
-            combo_name = anne_dictionary("abnormal",combo)
-            features.append(combo_name)
+        if full_information:
+            combos = []
+            for combo in attrs["abnormalCombos"]:
+                combos.append(anne_dictionary("abnormal",combo))
+            features.append("包含异常组合："+"、".join(combos))
+        else:
+            for combo in attrs["abnormalCombos"]:
+                combo_name = anne_dictionary("abnormal",combo)
+                features.append(combo_name)
     # 异常组合免疫
     if attrs["abnormalComboImmunes"] != None and len(attrs["abnormalComboImmunes"]) > 0:
-        for combo in attrs["abnormalComboImmunes"]:
-            combo_name = anne_dictionary("abnormal",combo)
-            features.append(combo_name+"免疫")
+        if full_information:
+            combos = []
+            for combo in attrs["abnormalComboImmunes"]:
+                combos.append(anne_dictionary("abnormal",combo))
+            features.append("包含异常组合免疫："+"、".join(combos))
+        else:
+            for combo in attrs["abnormalComboImmunes"]:
+                combo_name = anne_dictionary("abnormal",combo)
+                features.append(combo_name+"免疫")
     # 属性加成（四 则 运 算）
     if attrs["attributeModifiers"] != None and len(attrs["attributeModifiers"]) > 0:
         for modify in attrs["attributeModifiers"]:
@@ -203,9 +286,9 @@ def analyze_buff(buff_data):
                     value_str = "X"
                 #
                 if formula == "ADDITION":
-                    value_str = "+"+value_str
+                    value_str = "+"+value_str+"(直加)"
                 elif formula == "MULTIPLIER":
-                    value_str = "+"+value_str+"%"
+                    value_str = "+"+value_str+"%(直乘)"
                 elif formula == "FINAL_ADDITION":
                     value_str = "+"+value_str+"(终加)"
                 elif formula == "FINAL_SCALER":
@@ -214,97 +297,93 @@ def analyze_buff(buff_data):
                 if formula == "FINAL_SCALER": # yj的小巧思会让终乘在负的情况下+1，实际徒增学习和排错成本
                     value_str = to_percent(value,True) + "(终乘)"
                 elif formula == "MULTIPLIER": # 直乘就没有这种小巧思
-                    value_str = to_delta_percent(value)
+                    value_str = to_delta_percent(value) + "(直乘)"
                 elif formula == "ADDITION": # 剩下两个只看正负号
-                    value_str = to_delta(value)
+                    value_str = to_delta(value) + "(直加)"
                 elif formula == "FINAL_ADDITION": # 剩下两个只看正负号
                     value_str = to_delta(value) + "(终加)"
             # 根据算法
             features.append(attr_name+value_str)
-    # 写入results
-    if len(features) > 0:
-        results.append("提供"+",".join(features))
     # 耐久buff
     if buff_data["isDurableBuff"]:
-        results.append("不可清除")
+        if full_information:
+            features.append("不可清除（重生、傀儡师切换等情况下的清除；仍能被结束）")
+        else:
+            features.append("不可清除")
     # 其伤害可未命中
     if buff_data["isDamageMissable"]:
-        results.append("受命中率影响")
+        if full_information:
+            features.append("该Buff下属的节点中产生的伤害受命中率影响（即使其为无来源）")
+        else:
+            features.append("受命中率影响")
     # 几个失效条件，一起展示
     stopby = []
     if buff_data["isSilenceable"]:
-        stopby.append("沉默")
+        stopby.append("沉默时失效")
     if buff_data["isStunnable"]:
-        stopby.append("晕眩")
+        stopby.append("晕眩时失效")
     if buff_data["isFreezable"]:
-        stopby.append("冻结")
+        stopby.append("冻结时失效")
     if buff_data["isLevitatable"]:
-        stopby.append("浮空")
+        stopby.append("浮空时失效")
     if len(stopby) > 0:
-        results.append("/".join(stopby)+"期间失效")
+        features.append("/".join(stopby)+"期间失效")
     # 属于状态可抵抗Buff？
-    if buff_data["statusResistable"] == "YES" or (buff_data["statusResistable"] == "AUTOMATIC" and has_resistable_flag):
-        results.append("可抵抗")
+    if buff_data["statusResistable"] == "YES":
+        if full_information:
+            features.append("可抵抗（模式为YES）")
+        else:
+            features.append("可抵抗")
+    elif (buff_data["statusResistable"] == "AUTOMATIC" and has_resistable_flag):
+        if full_information:
+            features.append("可抵抗（模式为AUTOMATIC；因包含可抵抗异常效果而可抵抗）")
+        else:
+            features.append("可抵抗")
+    elif full_information:
+        if buff_data["statusResistable"] == "AUTOMATIC": # and not has_resistable_flag
+            features.append("不可抵抗（模式为AUTOMATIC；但不包含可抵抗异常效果）")
+        else:
+            features.append("不可抵抗（模式为NO）")
     # 处理覆盖时使用的Key
     if buff_data["overrideKey"] and buff_data["overrideKey"] != "empty" :
-        results.append(f"处理覆盖时视为{buff_data['overrideKey']}") 
-    # 覆写事件优先级
-    if buff_data["overrideOnEventPriority"]:
-        results.append(f"事件优先级覆写为{buff_data['onEventPriority']}")
-    # 持续时间配置
-    if buff_data["lifeTimeType"] == "INFINITY":
-        results.append("永久")
-    elif buff_data["lifeTimeType"] == "LIMITED":
-        if buff_data["durationKey"] != None and buff_data["durationKey"] != "none":
-            results.append(f"持续({buff_data['durationKey']})秒")
-        elif buff_data["lifeTime"] == 0.0:
-            results.append("瞬间效果")
-        else:
-            results.append(f"持续{str(buff_data['lifeTime'])}秒")
+        features.append(f"处理覆盖时视为{buff_data['overrideKey']}") 
     # 触发配置
     if buff_data["triggerLifeType"] == "IMMEDIATELY" : # 立即触发或不触发
-        if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
-            ticks = math.ceil(buff_data['firstTriggerInterval'] * 30)
-            results.append(f"{ticks}帧后触发")
-        elif buff_data["triggerInterval"] >= 0:
-            ticks = math.ceil(buff_data['triggerInterval'] * 30)
-            results.append(f"{ticks}帧后触发")
-        #else:
-        #    results.append("立即触发")
+        if buff_data["triggerCnt"] >= 1:
+            features.append(f"施加后立刻触发")
     elif buff_data["triggerLifeType"] == "INFINITY" : # 无限次触发
         if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
             start_ticks = buff_data["firstTriggerInterval"]
             if buff_data["triggerInterval"] >= 0:
                 ticks = math.ceil(buff_data['triggerInterval'] * 30)
-                results.append(f"{start_ticks}帧后及后续每{ticks}帧触发一次")
+                features.append(f"{start_ticks}帧后及后续每{ticks}帧触发一次")
             else:
-                results.append(f"{start_ticks}帧后触发")
+                features.append(f"{start_ticks}帧后触发仅一次")
         elif buff_data["triggerInterval"] >= 0:
             ticks = math.ceil(buff_data['triggerInterval'] * 30)
-            results.append(f"每{ticks}帧触发一次")
+            features.append(f"施加时及后续每{ticks}帧触发一次")
     elif buff_data["triggerLifeType"] == "LIMITED" : # 有限次触发
-        if buff_data["triggerCnt"] > 1:
-            trigget_cnt = buff_data["triggerCnt"]
+        trigget_cnt = buff_data["triggerCnt"]
+        if trigget_cnt > 1:
             if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
                 start_ticks = buff_data["firstTriggerInterval"]
                 if buff_data["triggerInterval"] >= 0:
                     ticks = math.ceil(buff_data['triggerInterval'] * 30)
-                    results.append(f"{start_ticks}帧后及后续每{ticks}帧触发一次，上限{trigget_cnt}次")
+                    features.append(f"{start_ticks}帧后及后续每{ticks}帧触发一次，上限{trigget_cnt}次")
                 else:
-                    results.append(f"{start_ticks}帧后触发")
+                    features.append(f"{start_ticks}帧后触发仅一次")
             elif buff_data["triggerInterval"] >= 0:
                 ticks = math.ceil(buff_data['triggerInterval'] * 30)
-                results.append(f"{ticks}帧后触发")
-        elif buff_data["triggerCnt"] == 1:
+                features.append(f"施加时及后续每{ticks}帧触发一次，上限{trigget_cnt}次")
+        elif trigget_cnt == 1:
             if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
                 ticks = math.ceil(buff_data['firstTriggerInterval'] * 30)
-                results.append(f"{ticks}帧后触发")
-            elif buff_data["triggerInterval"] >= 0:
-                ticks = math.ceil(buff_data['triggerInterval'] * 30)
-                results.append(f"{ticks}帧后触发")
+                features.append(f"{ticks}帧后触发")
+            else:
+                features.append(f"施加后立刻触发")
     # 覆盖类型配置
     if buff_data["disableOverride"]:
-        results.append(f"多个buff间互相独立，不处理覆盖")
+        features.append(f"多个buff间互相独立，不处理覆盖")
     elif buff_data["overrideType"] != "DEFAULT":
         if buff_data["overrideType"] == "STACK" :
             stack_info = ""
@@ -326,37 +405,62 @@ def analyze_buff(buff_data):
                 else:
                     stack_info += "，到时间失去一层并刷新时间"
             if stack_info != "":
-                results.append(stack_info)
+                features.append(stack_info)
             
         elif buff_data["overrideType"] == "EXTEND" :
             if buff_data["takeSnapshotWhenExtend"]:
-                results.append(f"重复施加时仅延长原有Buff并更新数据")
+                features.append(f"重复施加时仅延长原有Buff并更新数据")
             else:
-                results.append(f"重复施加时仅延长原有Buff")
+                features.append(f"重复施加时仅延长原有Buff")
             
         elif buff_data["overrideType"] == "UNIQUE" :
-            results.append(f"若已存在则无法重复施加")
+            features.append(f"若已存在则无法重复施加")
 
         else:
-            results.append(f"叠加类型{buff_data['overrideType']}")
+            features.append(f"叠加类型{buff_data['overrideType']}")
     # 暂时不知道有什么用的东西
     #if buff_data["independentCharacterSource"]:
     #    results.append("independentCharacterSource")
     if buff_data["priorityBBKeys"] != None and len(buff_data["priorityBBKeys"]) > 0:
         bb_keys = "、".join(buff_data['priorityBBKeys'])
-        results.append(f"根据黑板值{bb_keys}计算叠加优先级")
+        features.append(f"根据黑板值{bb_keys}计算叠加优先级")
     elif buff_data["priority"] > 0:
-        results.append(f"叠加优先级{buff_data['priority']}")
-    #if buff_data["stripBlackboardParamsWithBuffKey"]:
-    #    results.append("stripBlackboardParamsWithBuffKey")
+        features.append(f"叠加优先级{buff_data['priority']}")
+    if buff_data["stripBlackboardParamsWithBuffKey"]:
+        features.append("stripBlackboardParamsWithBuffKey")
+
+    # 准备返回buff
+    result = {"main" : buff_key} # 需翻译
+    if buff_data["loadFromDB"]:
+        result["link"] = "buff."+buff_key
+    elif template != "empty":
+        if full_information: # 完整显示
+            result["children"] = [{
+                "main" : f"使用模板：{template}",
+                "link" : "buff_template."+template
+            }]
+        else: # 简短显示
+            if template == buff_key:
+                result["main"] += "（使用同名模板）"
+            else:
+                result["main"] += f"（使用模板{template}）"
+            result["link"] = "buff_template."+template
+    if full_information: # 按需返回子列表
+        if "children" not in result:
+            result["children"] = []
+        result["children"] += [{"main" : feature} for feature in features]
+    else: # 按需返回合并后的列表
+        result["description"] = "；".join(features)
+    
     # 最后写入黑板数据
     if len(blackboard) > 0:
-        results.append(str(blackboard))
-    # 返回buff的各项属性
-    return {
-        "main" : buff_key, # 可能需翻译
-        "description" : "；".join(results)
-    }
+        bb_children = []
+        for key,value in blackboard.items():
+            bb_children.append({"main" : key + " : "+str(value)})
+        if "children" not in result:
+            result["children"] = []
+        result["children"].append({"main" : "黑板数据：","children" : bb_children})
+    return result
 
 # 解析目标选项的详细信息
 # 返回结构体

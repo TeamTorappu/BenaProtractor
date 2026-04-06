@@ -327,20 +327,41 @@ ANNE_RELIC = AnneRelic()
 #以下是供调用的方法
 #----------------------------------------
 
+# 翻译一整个Buff
+def translate_whole_buff(buff: Buff):
+    print("[安妮]尝试翻译Buff "+buff.buff_key)
+    translation = ANNE_NODE.translator.analyze_buff(buff.buff_data,True)
+    # 如果内部有自己的小巧思BuffKey
+    if buff.buff_key != buff.buff_data["buffKey"]: 
+        translation["description"] = "这个Buff的卡名在规则上被视为"+buff.buff_data["buffKey"]
+        if "（" in translation["main"]:
+            translation["main"] = buff.buff_key + "（" + translation["main"].split("（",1)[1]
+        else:
+            translation["main"] = buff.buff_key
+    # 如果显示名不一样
+    if buff.display_name != buff.buff_key:
+        if "（" in translation["main"]:
+            translation["main"] = f"{buff.display_name}（{buff.buff_key}；" + translation["main"].split("（",1)[1]
+        else:
+            translation["main"] = f"{buff.display_name}（{buff.buff_key}）"
+    return translation
+
 # 翻译一整个BuffTemplate
 def translate_whole_buff_template(buff_template: BuffTemplate):
     print("[安妮]尝试翻译Buff模板 "+buff_template.buff_key)
     translation = {
-        "main" : f"{buff_template.display_name}（{buff_template.buff_key}）",
+        "main" : buff_template.buff_key,
         "children" : []
     }
+    if buff_template.display_name != buff_template.buff_key:
+        translation["main"] = f"{buff_template.display_name}（{buff_template.buff_key}）"
     if buff_template.on_event_priority != "DEFAULT":
         translation["description"] = "事件优先级："+buff_template.on_event_priority
     # 逐个事件进行翻译
     for event in buff_template.events:
         event_key = event.event_key
         event_name = anne_dictionary("event",event_key)
-        event_translation = ANNE_NODE.translate_all(event.node_list);
+        event_translation = ANNE_NODE.translate_all(event.node_list)
         event_translation["main"] = f"{event_name}（{event_key}）"
         translation["children"].append(event_translation)
     return translation

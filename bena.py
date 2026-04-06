@@ -8,6 +8,9 @@ from data_class import *
 from translator import bena_dictionary
 
 # 表格数据
+BUFF_KEYS = []
+BUFF_TABLE = {}
+BUFF_TABLE_PATH = "./tables/buff_table.json"
 BUFF_TEMPLATE_KEYS = []
 BUFF_TEMPLATE_DATA = {}
 BUFF_TEMPLATE_DATA_PATH = "./tables/buff_template_data.json"
@@ -96,6 +99,28 @@ def load_enemy_names():
         for key,name in json_data.items():
             ENEMY_NAMES[key] = name
         print("[贝娜]enemy_names.json读取完毕！")
+        
+
+# 读取buff_table.json，并解析
+def load_buff_table():
+    print(f"[贝娜]开始读取buff_table.json")
+    json_data = {}
+    # 获取文件数据
+    with open(BUFF_TABLE_PATH,'r',encoding="UTF-8") as _f:
+        json_data = json.load(_f)
+    # 开始解析
+    for buff_key in json_data.keys():
+        # 测试用，先不加载别的东西
+        #if not buff_template_key.startswith("act1autochess") or not buff_template_key.startswith("act2autochess"):
+        #    continue
+
+        buff = Buff(buff_key,json_data[buff_key])
+        # 制作翻译版称呼
+        buff.display_name = translate_buff_name(buff_key)
+        BUFF_KEYS.append(buff_key)
+        BUFF_TABLE[buff_key] = buff
+        print(f"[贝娜]已读取Buff模板 {buff.display_name}（{buff_key}）")
+    print(f"[贝娜]已完成对buff_table.json的读取！")
 
 # 读取buff_template_data.json，并解析
 def load_buff_template_data():
@@ -191,33 +216,37 @@ def deep_translate(catalogue,keys):
             
 
 # 尝试翻译buff的名字
-def translate_buff_name(key):
-    if key.startswith("["): # 这种暂时处理不了
-        return key
-    if key == "empty": # 使用率最高的模板，给点排面
+def translate_buff_name(buff_key: str):
+    prefix = ""
+    if buff_key.startswith("["): #大前缀，一般是[g]
+        right = buff_key.find("]")+1
+        prefix = buff_key[:right]
+        buff_key = buff_key[right:]
+    if buff_key == "empty": # 使用率最高的模板，给点排面
         return "空白"
     keys = []
     extras = []
     result = []
     extra_result = []
-    if "[" in key and "]" in key:
-        keys = key.split("[")
+    if "[" in buff_key and "]" in buff_key:
+        keys = buff_key.split("[")
         for extra in keys[1].replace("[","").split("]"):
             if extra != "":
                 extras.append(extra)
         keys = keys[0].split("_")
-    elif "_" in key:
-        keys = key.split("_")
+    elif "_" in buff_key:
+        keys = buff_key.split("_")
     else: # 单词语，直接查询一下返回
-        read_value = bena_dictionary("buff_prefix",key)
+        read_value = bena_dictionary("buff_prefix",buff_key)
         if read_value == "":
-            read_value = bena_dictionary("buff_element",key)
+            read_value = bena_dictionary("buff_element",buff_key)
         if read_value != "":
             return read_value
+        return buff_key
     
     # 开头部分
     if len(keys) > 0:
-        if keys[0] == "enemy": # 敌方单位名称前缀
+        if keys[0] == "enemy": # 敌人类单位名称前缀
             keys.pop(0)
             if len(keys) >= 2 and keys[0] == "rogue" and keys[1] == "football" : # 你是肉鸽单位吗？双持剑士：我觉得我是
                 result.append("仅剩的创意")
@@ -232,8 +261,14 @@ def translate_buff_name(key):
         elif keys[0] == "trap" and len(keys) > 1 and keys[1] in CHARACTER_NAMES: # 一部分装置名称前缀
             keys.pop(0)
             result.append(CHARACTER_NAMES[keys.pop(0)])
+        elif keys[0] in ENEMY_NAMES: # 敌人类单位名称
+            result.append(ENEMY_NAMES[keys.pop(0)])
         elif keys[0] in CHARACTER_NAMES: # 角色类单位名称
-            result.append(CHARACTER_NAMES[keys.pop(0)])
+            # 检查是否是 主人+召唤物 格式的名字
+            if len(keys) >= 2 and (keys[0] + "_" + keys[1]) in CHARACTER_NAMES:
+                result.append(CHARACTER_NAMES[keys.pop(0)+"_"+keys.pop(0)])
+            else:
+                result.append(CHARACTER_NAMES[keys.pop(0)])
         else: # 尝试读取prefix字典
             trans, keys = deep_translate("buff_prefix",keys)
             if trans != "":
@@ -267,4 +302,4 @@ def translate_buff_name(key):
             extra_result.append("_".join(sub_result))
     
     # 最后，返回
-    return "_".join(result) + "".join(["["+extra+"]" for extra in extra_result])
+    return prefix + "_".join(result) + "".join(["["+extra+"]" for extra in extra_result])

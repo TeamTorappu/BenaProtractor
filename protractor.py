@@ -141,44 +141,70 @@ class Protractor:
         #except:
         #    print("[量角器]尝试搜索，但是失败了。")
     
+    # 搜索特定内容
+    def search_by(self,things):
+        self.search_entry.delete(0,"end")
+        self.search_entry.insert("end",str(things))
+        self.try_search()
+    
     # 展示选择查看的内容（使用安妮来翻译）
     def display_directory_selected_item(self,event=None):
         selected = self.directory.selection()
         if selected:
             linked_index = int(self.directory.item(selected[0],"values")[0])
             linked = self.directory_items[linked_index]
-            if self.displaying != linked.data_key: #如果相同说明是同一个，不需要显示
-                self.displaying = linked.data_key
-                obj = linked.data_reference
-                if obj:
-                    # 使用安妮进行翻译
-                    if linked.data_type == "buff_template":
-                        translation = anne.translate_whole_buff_template(obj)
-                        self.display(translation)
-                        self.display_origin(obj.raw_buff_data) 
-                    elif linked.data_type == "rogue_item":
-                        translation = anne.translate_whole_rogue_item(obj)
-                        self.display(translation)
-                        if obj.has_effect:
-                            self.display_origin([obj.item_info,obj.item_data])
-                        else:
-                            self.display_origin(obj.item_info)
-                    else: # 无法处理，那先尝试直接展示优化的原文？
-                        if isinstance(obj,dict) or isinstance(obj,list):
-                            self.display_raw(obj)
-                            self.display_origin(obj)
+            #如果相同说明是同一个，不需要显示
+            if self.displaying == linked.data_key:
+                return
+            self.displaying = linked.data_key
+            if not linked.data_reference:
+                return
+            obj = linked.data_reference
+            translation = None
+            # 使用安妮进行翻译
+            if linked.data_type == "buff":
+                translation = anne.translate_whole_buff(obj)
+                self.display(translation)
+                self.display_origin("\"" + obj.buff_key + "\" :" + obj.raw_buff_data) 
+            elif linked.data_type == "buff_template":
+                translation = anne.translate_whole_buff_template(obj)
+                self.display(translation)
+                self.display_origin("\"" + obj.buff_key + "\" :" + obj.raw_buff_data) 
+            elif linked.data_type == "rogue_item":
+                translation = anne.translate_whole_rogue_item(obj)
+                self.display(translation)
+                if obj.has_effect:
+                    self.display_origin([obj.item_info,obj.item_data])
+                else:
+                    self.display_origin(obj.item_info)
+            else: # 无法处理，那先尝试直接展示优化的原文？
+                if isinstance(obj,dict) or isinstance(obj,list):
+                    self.display_raw(obj)
+                    self.display_origin(obj)
     
     # 展示特定ID的内容（使用贝娜获取数据，然后由安妮来翻译）
     def display_by_id(self,item_id=""):
+        translation = None
+        _cat = ""
+        # 前缀模式？尝试匹配
+        if "." in item_id:
+            item_ids = item_id.split(".",1)
+            _cat = item_ids[0]
+            item_id = item_ids[1]
+        # 逐个匹配
         # 优先搜索肉鸽物品
-        if item_id in bena.ROGUELIKE_TOPIC_KEYS:
-            data = bena.ROGUELIKE_TOPIC_TABLE[item_id]
-            translation = anne.translate_whole_rogue_item(data)
+        if (_cat in ["","rogue_item"]) and item_id in bena.ROGUELIKE_TOPIC_KEYS:
+            translation = anne.translate_whole_rogue_item(bena.ROGUELIKE_TOPIC_TABLE[item_id])
+        elif (_cat in ["","buff"]) and item_id in bena.BUFF_KEYS:
+            translation = anne.translate_whole_buff(bena.BUFF_TABLE[item_id])
+        elif (_cat in ["","buff_template"]) and item_id in bena.BUFF_TEMPLATE_KEYS:
+            translation = anne.translate_whole_buff_template(bena.BUFF_TEMPLATE_DATA[item_id])
+        # 如果找到了翻译，返回之
+        if translation != None:
             self.display(translation)
-        elif item_id in bena.BUFF_TEMPLATE_KEYS:
-            data = bena.BUFF_TEMPLATE_DATA[item_id]
-            translation = anne.translate_whole_rogue_item(data)
-            self.display(translation)
+            return True
+        # 如果找不到...
+        return False
     
     # 将结构体展示至展示区
     def display(self,struct,master=""):
@@ -303,27 +329,54 @@ class Protractor:
             # 转跳
             if len(selected_link) != None and selected_link != "":
                 context_menu.add_command(label="转跳到至 "+selected_link, command=lambda: self.display_by_id(selected_link))
+                if "." in selected_link:
+                    search_key = selected_link.split(".",1)[1]
+                    context_menu.add_command(label="搜索 "+search_key, command=lambda: self.search_by(search_key))
+                else:
+                    context_menu.add_command(label="搜索 "+selected_link, command=lambda: self.search_by(selected_link))
+                context_menu.add_separator()
             # 复制文本
-            context_menu.add_command(label="复制", command=lambda: self.copy_selection(selected_text))
+            context_menu.add_command(label="复制", command=lambda: self.copy(selected_text))
             if ":" in selected_text: # 如果是 A : B 的json格式，选择复制前后哪边
                 keys = [key.strip() for key in selected_text.split(":")]
                 if keys[1].startswith("$type"):  # 只要内容，不要Node的那一大段
                     keys[1] = keys[1][28:-17]
-                context_menu.add_command(label="复制Key", command=lambda: self.copy_selection(keys[0]))
-                context_menu.add_command(label="复制Value", command=lambda: self.copy_selection(keys[1]))
+                context_menu.add_command(label="复制Key", command=lambda: self.copy(keys[0]))
+                context_menu.add_command(label="复制Value", command=lambda: self.copy(keys[1]))
+            elif "：" in selected_text: # 如果是 A : B 的json格式，选择复制前后哪边
+                keys = [key.strip() for key in selected_text.split("：")]
+                context_menu.add_command(label="复制Key", command=lambda: self.copy(keys[0]))
+                context_menu.add_command(label="复制Value", command=lambda: self.copy(keys[1]))
             elif "（" in selected_text and selected_text.endswith("）"): # 如果是 A（B） 的括号格式，选择复制前后哪边
                 keys = [key.strip() for key in selected_text.split("（")]
                 keys[1] = keys[1][:-1].strip()
-                context_menu.add_command(label="复制前半内容", command=lambda: self.copy_selection(keys[0]))
-                context_menu.add_command(label="复制括号内内容", command=lambda: self.copy_selection(keys[1]))
+                context_menu.add_command(label="复制外部内容", command=lambda: self.copy(keys[0]))
+                context_menu.add_command(label="复制括号内内容", command=lambda: self.copy(keys[1]))
+            # 分割线
+            context_menu.add_separator()
+            # 复制全文
+            context_menu.add_command(label="复制全文", command=lambda: self.copy_all())
             context_menu.post(event.x_root, event.y_root)
     
-    # 复制所选条目整个文本
-    # 开发用功能，方便写翻译器用的
-    def copy_selection(self,given_text):
+    # 复制文本
+    def copy(self,given_text):
         self.window.clipboard_clear()
         self.window.clipboard_append(given_text)
         print("已复制："+given_text)
+
+    # 复制全部文本
+    def copy_all(self):
+        data = []
+        def get_label(label,depth = 0):
+            text = self.display_area.item(label,"text")
+            data.append(("    " * depth) + text)
+            for child in self.display_area.get_children(label):
+                get_label(child,depth+1)
+        for label in self.display_area.get_children():
+            get_label(label)
+        self.window.clipboard_clear()
+        self.window.clipboard_append("\n".join(data))
+        print("已复制全部翻译文本")
             
     # 开启界面
     def open(self):

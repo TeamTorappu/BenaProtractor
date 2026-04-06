@@ -1,5 +1,6 @@
 {
 	"buff_prefix" : {
+		"autochess" : "卫戍协议",
 		"act1autochess" : "卫戍盟约",
 		"act1vautochess" : "卫戍废案",
 		"act2autochess" : "卫戍下半",
@@ -9,19 +10,29 @@
 			"2" : "生息沙洲",
 			"" : "生息沙火"
 		},
+		"act28side" : {
+			"energy" : {
+				"buff" : "不义之财_能量控制"
+			},
+			"over" : {
+				"energy" : {
+					"buff" : "不义之财_能量过载"
+				}
+			},
+			"" : "不义之财"
+		},
+		"racing" : {
+			"mode" : "源石虫庆典拉力赛"
+		},
 		
-		"amiya2" : "剑阿米娅",
-		"amiya3" : "医阿米娅",
+		"slow3" : "地灵",
+		"amiya2" : "近卫阿米娅",
+		"amiya3" : "医疗阿米娅",
 		"tyohon" : "提丰",
 		"greey2" : "承曦格雷伊",
 		"motter" : "机械水獭",
 		
 		"dmtpos" : "牵绊",
-		"dlancer" : "萨卡兹穿刺手",
-		"dscout" : "萨卡兹哨兵",
-		"pbank" : "移动电源",
-		"lslime" : "“庞贝”",
-		"mousek" : "鼠王",
 
 		"token" : {
 			"wisdel" : "魂灵之影",
@@ -50,10 +61,19 @@
 		},
 		"e2c" : {
 			"frozen" : "冻结(敌→友)",
-			"cold" : "寒冷(敌→友)"
+			"freeze" : "冻结(敌→友)",
+			"cold" : "寒冷(敌→友)",
+			"" : "敌→友"
 		},
-		
+		"c2e" : {
+			"frozen" : "冻结(友→敌)",
+			"freeze" : "冻结(友→敌)",
+			"cold" : "寒冷(友→敌)",
+			"" : "友→敌"
+		},
 		"critical" : "概率暴击",
+		"spRecover" : "技力光环",
+		"spareShot" : "节弹",
 		"buff" : {
 			"yin" : "晦属性",
 			"yang" : "明属性",
@@ -69,6 +89,35 @@
 				"self" : {
 					"destory" : "敌_探矿机_结束时自毁"
 				}
+			},
+			"swim" : "免疫水蚀"
+		},
+		"status" : {
+			"resistance" : "抵抗",
+			"resistable" : {
+				"anti" : "可抵抗状态免疫"
+			}
+		},
+		"peak" : {
+			"performance" : "精力充沛检测"
+		},
+		"mass" : {
+			"loss" : "失重"
+		},
+		"disarmed" : {
+			"and" : {
+				"cant" : {
+					"use" : {
+						"skill" : "缴械+沉默"
+					}
+				}
+			}
+		},
+		"resistable" : {
+			"abnormal" : {
+				"flag" : {
+					"anti" : "可抵抗效果反制集"
+				}
 			}
 		},
 		"ep" : {
@@ -78,7 +127,8 @@
 				"fire" : "灼燃损伤爆发",
 				"dark" : "凋亡损伤爆发"
 			},
-			"" : "元素爆发"
+			"damage" : "元素损伤",
+			"" : "元素"
 		}
 	},
 	"buff_element" : {
@@ -121,13 +171,22 @@
 			"sp" : "每秒获得技力",
 			"" : "每秒"
 		},
-		"sp" : "技力",
+		"sp" : {
+			"recover" : "技力恢复速度",
+			"loss" : "技力流失",
+			"" : "技力"
+		},
 		"modify" : {
 			"sp" : "修改技力",
 			"" : "修改"
 		},
+		"attack" : {
+			"speed" : "攻击速度",
+			"" : "攻击"
+		},
 		"heal" : "治疗",
 		"magic" : {
+			"resistance" : "法术抗性",
 			"damage" : "法术伤害",
 			"" : "法术"
 		},
@@ -144,6 +203,7 @@
 			"block" : "伤害格挡",
 			"scale" : "伤害倍率",
 			"resistance" : "伤害抗性",
+			"value" : "伤害值",
 			"" : "伤害"
 		},
 		"by" : {
@@ -156,6 +216,10 @@
 			"source" : {
 				"atk" : "基于来源攻击力"
 			},
+			"" : "基于"
+		},
+		"based" : {
+			"on" : "基于",
 			"" : "基于"
 		},
 		"ignore" : {
@@ -175,6 +239,10 @@
 			"modify" : "伤害不可变",
 			"" : "不带"
 		},
+		"limit" : {
+			"bonus" : "坚忍",
+			"" : "有限"
+		},
 		
 		"aoe" : "群体",
 		"weak" : "脆弱",
@@ -185,6 +253,7 @@
 		"speed" : "速度",
 		"summon" : "召唤",
 		"evade" : "闪避",
+		"peak" : "精力充沛",
 		
 		"init" : "初始化",
 		"reset" : "重置",
@@ -209,6 +278,7 @@
 		"mode" : "模式",
 		"unblocked" : "非阻挡",
 		"scale" : "倍率",
+		"attr" : "属性",
 		
 		"same" : "同",
 		"diff" : "异",
@@ -218,6 +288,8 @@
 		"or" : "或",
 		"add" : "增加",
 		"minus" : "减少",
+		"up" : "提升",
+		"down" : "降低",
 		"to" : "至",
 		"equal" : "相同",
 		"opposite" : "相反",
@@ -225,6 +297,7 @@
 		
 		"self" : "自身",
 		"ally" : "友方",
+		"target" : "目标",
 		"char" : "角色",
 		"character" : "角色",
 		"enemy" : "敌人",
@@ -264,9 +337,29 @@
 		"atk" : "攻击",
 		"def" : "防御",
 		"cost" : "费用",
+		"mass" : "重量",
+		"penetrate" : "穿透",
 		
+		"encourage" : "鼓舞",
+		"sluggish" : "停顿",
+		"steal" : "偷取",
 		"stun" : "晕眩",
+		"silence" : "沉默",
 		"camouflage" : "迷彩",
+		"palsy" : "麻痹",
+		"palsying" : "麻痹震颤",
+		"disarmed" : {
+			"combat" : "战栗"
+		},
+		"fear" : "恐惧",
+		"doze" : "小睡",
+		"sleep" : "沉睡",
+
+		"purify" : "净化",
+		"charge" : {
+			"token" : "获得召唤物",
+			"" : "蓄力"
+		},
 
 		"blord2" : "杜卡雷"
 	}
