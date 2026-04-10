@@ -1,11 +1,11 @@
 #----------------------------------------
 # 伤害类Node
 #----------------------------------------
-from .analyzer import anne_dictionary, analyze_damage, analyze_target_options, to_percent
+from .analyzer import analyze_buff, anne_dictionary, analyze_damage, analyze_target_options, to_percent
     
 # 造成伤害
 def node_AdvancedApplyDamage(node):
-    # 未解析参数：_modifierKey _emitSourceOnCalculateDamage
+    # 未解析参数：_emitSourceOnCalculateDamage
     source_name = anne_dictionary("target",node["_sourceType"])
     target_name = anne_dictionary("target",node["_targetType"])
     damage_name = analyze_damage(node) # 直接把整个node传参进去
@@ -38,8 +38,6 @@ def node_FixedValueDamage(node):
         features.append("将产生的生命值变化量记录至黑板")
     elif node["_assignRealDamageToBB"]: # 和上一个是平行的，不过开了前面那个这里这个会被覆盖掉...
         features.append("将计算后伤害记录至黑板")
-    if node["_modifierKey"]:
-        features.append(f"带有\"{node['_modifierKey']}\"标记")
     
     if len(features) > 0:
         result["description"] = "；".join(features)
@@ -92,7 +90,80 @@ def node_FetchHpToBlackboard(node):
             "main" : f"对{target_name}造成一次{damage_type}，以此来匹配记录黑板上（{node['_blackboardStr']}）记录的{hp_type}"
         }
 
+# 根据当前生命值，制造一次伤害
+def node_DamageViaCurHpRatio(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    damage_num = "造成 来源当前生命值 × [hp_ratio] "
+    damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
+    features = []
+    if node["_damageNoLessThanValueBasedOnSourceAtk"]:
+        if node["_atkScaleKey"] != "":
+            damage_num += f"或 来源攻击力 × [{node['_atkScaleKey']}] "
+        else:
+            damage_num += f"或 来源攻击力 × 100% "
+        features.append("伤害在两者间取高")
+    if node["_ceilingDamageToInt"]:
+        features.append("伤害量向上取整")
+    if node["_triggerOnCalculateDamage"]:
+        features.append("会触发伤害计算时事件")
+    result = {
+        "main" : f"对{target_name}造成{damage_num}的{damage_name}"
+    }
+    if len(features) > 0:
+        result["description"] = "；".join(features)
+    return result
+
 
 # 造成群体伤害
-#def node_AOEDamage(node):
-#    return analyze_target_options(node["_targetOptions"])
+def node_AOEDamage(node):
+    # 未解析参数：_createEffect、_hitEffectKey、_hitEffectUseSourceFaceTo
+    source_name = anne_dictionary("target",node["_sourceType"])
+    target_name = anne_dictionary("target",node["_targetType"])
+    damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
+    damage = f" [{node['_damageKey']}] × [{node['_damageScale']}] " if node["_useDamageFromBB"] else f" {source_name}攻击力 × [{node['_damageScale']}] "
+    features = []
+    buffs = []
+    selector = ""
+    # 处理“用什么选择目标”
+    if node["_useRadius"]:
+        target_option = analyze_target_options(node["_targetOptions"])
+        selector = f"对位于{target_name}半径{node['_radius']}内的{target_option['main']}"
+        features.append(target_options["description"])
+        features.append("中点判定")
+    elif node["_useAbilitySelector"]:
+        if node["_abilityName"] != None:
+            selector = f"使用来源的{node['_abilityName']}选择器，对选中的目标"
+        else:
+            selector = f"使用来源的默认选择器，对选中的目标"
+    else: # 使用网格范围
+        target_options = analyze_target_options(node["_targetOptions"])
+        selector = f"对位于{target_name}周边特定范围({node['_rangeId']})的{target_options['main']}"
+        features.append(target_options["description"])
+        features.append("中点判定")
+    result = {
+        "main" : selector + "分别造成" + damage + damage_name
+    }
+    # 额外特性
+    if node["_maxTargetCountKey"]:
+        features.append(f"最大目标数取自[{node['_maxTargetCountKey']}]")
+    if node["_excludeTarget"]:
+        features.append(f"排除{target_name}")
+    if node["_checkTargetAlive"]:
+        features.append(f"生效前检查{target_name}是否存活")
+    if node["_filterType"] not in ["ALL",""] and (node["_useRadius"] or not node["_useAbilitySelector"]):
+        features.append(f"使用 {node['_filterType']} 过滤器排序")
+    if len(features) > 0:
+        result["description"] = "；".join(features)
+    # 附加buff
+    if node["_buffs"] != None and len(node["_buffs"]) > 0:
+        if len(node["_buffs"]) > 1:
+            result["children"] = [{"main" : "...并对每个目标创建以下这些Buff："}]
+            for buff in node["_buffs"]:
+                result["children"].append(analyze_buff(buff))
+        else:
+            buff = analyze_buff(node["_buffs"][0])
+            buff["main"] = "...并对每个目标创建Buff："+buff["main"]
+            result["children"] = [buff]
+    # 返回
+    return result
+

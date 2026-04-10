@@ -48,3 +48,10 @@ def node_EmitProjectile(node):
         result["main"] += f"；当{projectile_event}，执行："
         result["sub_nodes"] = node["_actions"]
     return result
+
+# 结束所有目标的弹道
+def node_FinishManagedProjectiles(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {
+        "main" : f"结束所有{target_name}发出的弹道"
+    }

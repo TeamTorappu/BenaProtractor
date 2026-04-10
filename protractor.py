@@ -153,10 +153,11 @@ class Protractor:
         if selected:
             linked_index = int(self.directory.item(selected[0],"values")[0])
             linked = self.directory_items[linked_index]
+            full_key = linked.data_type + "." + linked.data_key
             #如果相同说明是同一个，不需要显示
-            if self.displaying == linked.data_key:
+            if self.displaying == full_key:
                 return
-            self.displaying = linked.data_key
+            self.displaying = full_key
             if not linked.data_reference:
                 return
             obj = linked.data_reference
@@ -227,10 +228,17 @@ class Protractor:
                     text = f"{struct['true']}："
                 else:
                     text += f"，{struct['true']}："
+            # buff名处理
+            if "<" in text and ">" in text:
+                text = bena.translate_buff_name_in_text(text)
             label = self.display_area.insert(master,"end",text=text,open=tree_open,values=(link))
             if "description" in struct and struct['description'] != "":
-                self.display_area.insert(label,"end",text=f"（{struct['description']}）",open=tree_open)
+                description = struct["description"]
+                if "<" in description and ">" in description:
+                    description = bena.translate_buff_name_in_text(description)
+                self.display_area.insert(label,"end",text=f"（{description}）",open=tree_open)
             #self.display_area.rowheight(label, self.default_line_height * text.count('\n'))
+            # 嵌套循环
             if "children" in struct:
                 for child in struct["children"]:
                     self.display(child,label)

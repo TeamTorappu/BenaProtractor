@@ -32,9 +32,9 @@ def node_AutoChessAssignBondCharCntToBB(node):
         compare = anne_dictionary("compare",node["_condType"])
         compare_not = anne_dictionary("compare_not",node["_condType"])
         return {
-            "main" : f"将{bond_id}盟约生效人数记录至黑板{node['_keyToStoreCnt']}，并判断人数",
-            "true" : f"若生效人数 {compare} {node['_keyToCompare']}",
-            "false" : f"若生效人数 {compare_not} {node['_keyToCompare']}"
+            "main" : f"将{bond_id}盟约生效人数记录至黑板[{node['_keyToStoreCnt']}]，并判断人数",
+            "true" : f"若生效人数 {compare} [{node['_keyToCompare']}]",
+            "false" : f"若生效人数 {compare_not} [{node['_keyToCompare']}]"
         }
     else:
         return {
@@ -50,13 +50,13 @@ def node_AutoChessAssignBondStackCntToBB(node):
     elif node["_bondId"] != None and node["_bondId"] not in ["","none"]:
         bond_id = anne_dictionary("bond_id",node["_bondId"])+"盟约"
         if node["_bondBlackboardKey"] != None and node["_bondBlackboardKey"] not in ["","none"]: # 没有人类了
-            result["description"] =f"会读取黑板上的{node['_bondBlackboardKey']}，以黑板指定的盟约为准"
+            result["description"] =f"会读取黑板上的[{node['_bondBlackboardKey']}]，以黑板指定的盟约为准"
     elif node["_bondBlackboardKey"] != None and node["_bondBlackboardKey"] not in ["","none"]: # 没有人类了
-        bond_id = f"黑板{node['_bondBlackboardKey']}记录的盟约"
+        bond_id = f"黑板[{node['_bondBlackboardKey']}]所记述的盟约"
         
     
     result = {
-        "main" : f"读取{bond_id}的叠加层数，并记录至黑板{node['_keyToStoreCnt']}"
+        "main" : f"读取{bond_id}的叠加层数，并记录至黑板[{node['_keyToStoreCnt']}]"
     }
     if node["_checkDiffWithOldStoreCnt"]: # 写作差异，读作”更大“
         result["main"] += "，随后检查层数"
@@ -69,12 +69,12 @@ def node_AutochessAssignEquipCntToBlackboard(node):
     target_name = anne_dictionary("target",node["_targetType"])
     if node["_onlyGoldenEquip"]:
         return {
-            "main" : f"读取{target_name}携带的已进阶装备数量，并记录至黑板{node['_blackboardKey']}",
+            "main" : f"读取{target_name}携带的已进阶装备数量，并记录至黑板[{node['_blackboardKey']}]",
             "description" : "此处所指的装备为卫戍协议的装备"
         }
     else:
         return {
-            "main" : f"读取{target_name}携带的装备数量，并记录至黑板{node['_blackboardKey']}",
+            "main" : f"读取{target_name}携带的装备数量，并记录至黑板[{node['_blackboardKey']}]",
             "description" : "此处所指的装备为卫戍协议的装备"
         }
 
@@ -82,12 +82,12 @@ def node_AutochessAssignEquipCntToBlackboard(node):
 def node_AutoChessAssignChessCntToBB(node):
     bb_key = node["_assignKey"]
     if node["_assignGoldenChess"]: # 罗素队的检查
-        return {"main" : f"统计在场精锐单位，将数量记录至黑板{bb_key}"}
+        return {"main" : f"统计在场精锐单位，将数量记录至黑板[{bb_key}]"}
     elif node["_assignSameId"]: # 夕队的检查同名单位
         target_name = anne_dictionary("target",node["_targetType"])
-        return {"main" : f"统计在场与{target_name}同名的单位（包括其自身），将数量记录至黑板{bb_key}"}
+        return {"main" : f"统计在场与{target_name}同名的单位（包括其自身），将数量记录至黑板[{bb_key}]"}
     else: # 记录0
-        return {"main" : f"尝试统计在场同名/精锐单位数，但未给定检查条件，因此设 {bb_key} = 0"}
+        return {"main" : f"尝试统计在场同名/精锐单位数，但未给定检查条件，因此设 [{bb_key}] = 0"}
         
 
 # 检查角色是否已进阶
@@ -168,4 +168,4 @@ def node_AutochessCheckTarget(node):
 # 触发核心盟约能力
 def node_AutoChessTriggerGarrisonAbility(node):
     target_name = anne_dictionary("target",node["_target"])
-    return {"main" : f"触发{target_name}的核心盟约能力（不是盟约特质）"}
+    return {"main" : f"触发{target_name}自身的盟约特质（通常为叠层效果）"}

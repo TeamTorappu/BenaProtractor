@@ -27,3 +27,9 @@ def node_CreateCardBuff(node):
         return {
             "main" : f"尝试为待部署区的{target_name}(以UID为准)创建{cardbuff_type}（无名）"
         }
+
+# 结束CardBuff
+def node_FinishCardBuff(node):
+    return {
+        "main" : f"结束本Buff相关的CardBuff"
+    }

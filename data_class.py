@@ -68,7 +68,7 @@ class BuffTemplate:
         self.raw_buff_data = json.dumps(buff_data,indent=4,ensure_ascii=False)
         self.buff_data = buff_data
         self.template_key = buff_data["templateKey"] # 虽然不知道有啥区别，总之留着吧
-        #self.effect_key = buff_data["effectKey"] # 特效没啥处理的必要
+        self.effect_key = buff_data["effectKey"] # 特效没啥处理的必要
         self.hidden = False
         self.on_event_priority = buff_data["onEventPriority"]
         self.events = []

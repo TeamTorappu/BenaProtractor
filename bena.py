@@ -29,6 +29,7 @@ ENEMY_NAMES_PATH = "./tables/enemy_names.json"
 ROGUELIKE_TOPIC_KEYS = []
 ROGUELIKE_TOPIC_TABLE = {}
 ROGUELIKE_TOPIC_TABLE_PATH = "./tables/roguelike_topic_table.json"
+
 print("[贝娜]我叫贝娜，来找一个出门就忘了回家的笨蛋。听说她还有些活要干，没办法，我也在这陪她一会好了。")
 
 # 读取character_table.json，将获取到的名称制作成一个单独的json以供使用。
@@ -173,15 +174,53 @@ def load_roguelike_topic_table(season=5):
             print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
     print(f"[贝娜]已完成对roguelike_topic_table.json的读取！")
 
-# 询问贝娜一个ID有没有对应的译名，若没有将原路返回
+# 询问贝娜一个ID有没有对应的数据，若没有将原路返回
 def ask_bena(_type,input_id):
-    if _type == "buff_template":
+    if _type == "buff":
+        if input_id in BUFF_KEYS:
+            return BUFF_TABLE[input_id]
+    elif _type == "buff_template":
         if input_id in BUFF_TEMPLATE_KEYS:
             return BUFF_TEMPLATE_DATA[input_id]
     elif _type == "rogue_item":
         if input_id in ROGUELIKE_TOPIC_KEYS:
             return ROGUELIKE_TOPIC_TABLE[input_id]
     return None
+
+# 询问贝娜一个ID有没有对应的数据，若没有将原路返回
+def ask_bena_translation(_type,input_id):
+    if _type == "buff":
+        if input_id in BUFF_KEYS:
+            return BUFF_TABLE[input_id].display_name
+        else:
+            return translate_buff_name(input_id) #现场进行翻译
+    elif _type == "buff_template":
+        if input_id in BUFF_TEMPLATE_KEYS:
+            return BUFF_TEMPLATE_DATA[input_id].display_name
+        else:
+            return translate_buff_name(input_id) #现场进行翻译
+    elif _type == "rogue_item":
+        if input_id in ROGUELIKE_TOPIC_KEYS:
+            return ROGUELIKE_TOPIC_TABLE[input_id]
+    return ""
+
+# 将一段文本中所有以<>框起来的文本进行“翻译”
+def translate_buff_name_in_text(text: str):
+    while "<" in text and ">" in text:
+        left_place = text.find("<")
+        right_place = text.find(">")
+        middle = text[left_place+1:right_place]
+        while "<" in middle:
+            left_place = text.find("<",left_place+1)
+            middle = text[left_place+1:right_place]
+        if middle in BUFF_KEYS:
+            middle = BUFF_TABLE[middle].display_name
+        elif middle in BUFF_TEMPLATE_KEYS:
+            middle = BUFF_TEMPLATE_DATA[middle].display_name
+        else:
+            middle = translate_buff_name(middle) #现场进行翻译
+        text = text[:left_place] + middle + text[right_place+1:]
+    return text
 
 
 
@@ -229,7 +268,7 @@ def translate_buff_name(buff_key: str):
     result = []
     extra_result = []
     if "[" in buff_key and "]" in buff_key:
-        keys = buff_key.split("[")
+        keys = buff_key.split("[",1)
         for extra in keys[1].replace("[","").split("]"):
             if extra != "":
                 extras.append(extra)
@@ -241,7 +280,11 @@ def translate_buff_name(buff_key: str):
         if read_value == "":
             read_value = bena_dictionary("buff_element",buff_key)
         if read_value != "":
-            return read_value
+            if isinstance(read_value,dict):
+                if "" in read_value:
+                    return read_value[""]
+            else:
+                return read_value
         return buff_key
     
     # 开头部分
@@ -261,7 +304,7 @@ def translate_buff_name(buff_key: str):
         elif keys[0] == "trap" and len(keys) > 1 and keys[1] in CHARACTER_NAMES: # 一部分装置名称前缀
             keys.pop(0)
             result.append(CHARACTER_NAMES[keys.pop(0)])
-        elif keys[0] in ENEMY_NAMES: # 敌人类单位名称
+        elif keys[0] in ENEMY_NAMES and keys[0] != "rogue": # 敌人类单位名称
             result.append(ENEMY_NAMES[keys.pop(0)])
         elif keys[0] in CHARACTER_NAMES: # 角色类单位名称
             # 检查是否是 主人+召唤物 格式的名字
@@ -290,16 +333,23 @@ def translate_buff_name(buff_key: str):
         # 循环处理
         while(len(extras) > 0):
             extra = extras.pop(0)
-            extra_split = extra.split("_")
-            sub_result = []
-            while(len(extra_split) > 0):
-                trans, extra_split = deep_translate("buff_element",extra_split)
+            if "_" in extra:
+                extra_split = extra.split("_")
+                sub_result = []
+                while(len(extra_split) > 0):
+                    trans, extra_split = deep_translate("buff_element",extra_split)
+                    if trans != "":
+                        sub_result.append(trans)
+                    else: # 无法翻译了，将剩余部分返还回去
+                        sub_result += extra_split
+                        break
+                extra_result.append("_".join(sub_result))
+            else:
+                trans, rest = deep_translate("buff_element",[extra])
                 if trans != "":
-                    sub_result.append(trans)
-                else: # 无法翻译了，将剩余部分返还回去
-                    sub_result += extra_split
-                    break
-            extra_result.append("_".join(sub_result))
+                    extra_result.append(trans+"_".join(rest))
+                else:
+                    extra_result.append(extra)
     
     # 最后，返回
     return prefix + "_".join(result) + "".join(["["+extra+"]" for extra in extra_result])

@@ -184,8 +184,8 @@ def node_FilterByTargetMassLevel(node):
     compare_not = anne_dictionary("compare_not",node["_condType"])
     return {
         "main" : f"检查{target_name}的重量",
-        "true" : f"若其重量 {compare} X",
-        "false" : f"若其重量 {compare_not} X"
+        "true" : f"若其重量 {compare} [value]",
+        "false" : f"若其重量 {compare_not} [value]"
     }
 
 # 检查阻挡模式
@@ -592,3 +592,23 @@ def node_CheckOtherCharacterInRange(node):
         "true" : "若该范围内存在至少一个此类单位",
         "false" : "若该范围内不存在此类单位"
     }
+
+# 检查目标属性
+def node_FilterByTargetAttribute(node):
+    target_name = anne_dictionary("target",node["_target"])
+    compare = anne_dictionary("compare",node["_condType"])
+    compare_not = anne_dictionary("compare_not",node["_condType"])
+    attribute = anne_dictionary("attribute",node["_attributeType"])
+    right_value = node["_value"] if node["_useFloat"] else node["_valueFP"] # 我寻思怎么取都是float，为什么还得分这个？
+    if right_value != 0:
+        return {
+            "main" : f"检查{target_name}的{attribute}",
+            "true" : f"若其{attribute} {compare} [value]",
+            "false" : f"若其{attribute} {compare_not} [value]"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}的{attribute}",
+            "true" : f"若其{attribute} {compare} [value]（默认{right_value}）",
+            "false" : f"若其{attribute} {compare_not} [value]（默认{right_value}）"
+        }

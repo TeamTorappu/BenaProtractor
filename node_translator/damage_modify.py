@@ -27,13 +27,13 @@ def node_DamageScale(node):
     action = "提升"
     # 需要把减伤值改为*(1-X)
     if node["_isOneMinus"]:
-        damage_scale = "(1-X)"
+        damage_scale = "(1 - damage_resistance)"
         action = "降低"
     else:
-        damage_scale = "(1+X)"
+        damage_scale = "(1 + damage_scale)"
     # 根据Buff层数加倍
     if node["_isStackable"]:
-        damage_scale = f"({damage_scale}×Buff层数)"
+        damage_scale = f"({damage_scale} × Buff层数)"
     text = f"令本次伤害{action}至{damage_scale}倍"
     # 检查伤害类型与施加方式
     conditions = []
@@ -50,8 +50,8 @@ def node_DamageScale(node):
     if len(conditions) > 0:
         text = f"若{'且'.join(conditions)}，{text}"
     # 差值记录，一般是拿来算“减少部分的伤害”的
-    if node["_cachedDeltaValueToBBKey"]:
-        text += "，并将减少/增加的部分记在黑板上"
+    if node["_cachedDeltaValueToBBKey"] != None and node["_cachedDeltaValueToBBKey"] != "":
+        text += "，并将减少/增加的部分记为 [" + node["_cachedDeltaValueToBBKey"] + "]"
     return {"main" : text}
 
 # 格挡/护盾/屏障（还得具体情况具体分析）
@@ -70,7 +70,7 @@ def node_BlockDamage(node):
         if node["_showShieldUI"]:
             features.append("在血条上显示屏障值")
     elif node["_useFixedValue"]: # 使用定值，说明是林式阈值盾
-        name = "干员林的阈值格挡"
+        name = "琉璃壁"
     if node["_showDamageNumber"]:
         features.append("即使成功格挡也显示伤害数值")
     if node["_specifyBlockEffect"] != None:

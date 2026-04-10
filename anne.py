@@ -157,9 +157,23 @@ class AnneNode:
             # 判断节点
             true_flag = "如果是/有/可行/可处理："
             false_flag = "如果不是/没有/不可行/无法处理："
-            struct = self.translate(node_data["condition_node"])
+            struct = None
+            if "condition_node" in node_data:
+                struct = self.translate(node_data["condition_node"])
+            elif "condition_nodes" in node_data:
+                struct = self.translate(node_data["condition_nodes"][0])
+            else:
+                return {"main" : "无效的判断节点"}
             if struct["main"].endswith("（未翻译）"): # 未翻译，增加标识符
                 struct["main"] = "尝试判断: "+struct["main"]
+            # 若main是空的，补一个尝试判断
+            if struct["main"] == "":
+                if "true" in struct:
+                    struct["main"] = "尝试判断："+struct["true"]
+                elif "false" in struct:
+                    struct["main"] = "尝试判断："+struct["false"]
+                else:
+                    struct["main"] = "尝试进行未知的判断"
             # 因为IfElse只影响内圈，对外圈逻辑不影响，修改逻辑
             if "true" in struct:
                  true_flag = struct["true"]+"："
@@ -193,8 +207,7 @@ class AnneNode:
             node_data = node.node_data
             # 检查条件数量
             if len(node_data["condition_nodes"]) == 1: # 如果只有一个，那你tmd为什么不用IfElse呢？？？
-                node_data["condition_node"] = node_data["condition_nodes"][0]
-                return self.translate_ifelse(node_data["condition_node"])
+                return self.translate_ifelse(node)
             # 判断节点
             struct = {
                 "main" : "",
@@ -210,6 +223,13 @@ class AnneNode:
             false_flags = []
             index = 0
             for _struct in structs:
+                if _struct["main"] == "":
+                    if "true" in _struct:
+                        _struct["main"] = "检查：" + _struct["true"]
+                    elif "false" in _struct:
+                        _struct["main"] = "检查：" + _struct["false"]
+                    else:
+                        _struct["main"] = "进行未知的检查"
                 _struct["main"] = DEX[index] + _struct["main"]
                 if "true" in _struct:
                     text = _struct["true"]
@@ -333,7 +353,7 @@ def translate_whole_buff(buff: Buff):
     translation = ANNE_NODE.translator.analyze_buff(buff.buff_data,True)
     # 如果内部有自己的小巧思BuffKey
     if buff.buff_key != buff.buff_data["buffKey"]: 
-        translation["description"] = "这个Buff的卡名在规则上被视为"+buff.buff_data["buffKey"]
+        translation["description"] = "这个Buff的卡名在规则上被视为 <"+buff.buff_data["buffKey"]+"> "
         if "（" in translation["main"]:
             translation["main"] = buff.buff_key + "（" + translation["main"].split("（",1)[1]
         else:
@@ -356,7 +376,9 @@ def translate_whole_buff_template(buff_template: BuffTemplate):
     if buff_template.display_name != buff_template.buff_key:
         translation["main"] = f"{buff_template.display_name}（{buff_template.buff_key}）"
     if buff_template.on_event_priority != "DEFAULT":
-        translation["description"] = "事件优先级："+buff_template.on_event_priority
+        translation["children"].append("事件优先级："+buff_template.on_event_priority)
+    if buff_template.effect_key != "":
+        translation["children"].append("特效："+buff_template.effect_key)
     # 逐个事件进行翻译
     for event in buff_template.events:
         event_key = event.event_key

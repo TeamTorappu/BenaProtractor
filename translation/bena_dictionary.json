@@ -6,6 +6,7 @@
 		"act2autochess" : "卫戍下半",
 		"legion" : "保全派驻",
 		"cooperate" : "促融共竞",
+		"halfidle" : "次生预案",
 		"sandbox" : {
 			"2" : "生息沙洲",
 			"" : "生息沙火"
@@ -31,8 +32,12 @@
 		"tyohon" : "提丰",
 		"greey2" : "承曦格雷伊",
 		"motter" : "机械水獭",
+		"char" : {
+			"chilc" : "齐尔查克"
+		},
 		
 		"dmtpos" : "牵绊",
+		"upeople" : "乌萨斯平民",
 
 		"token" : {
 			"wisdel" : "魂灵之影",
@@ -45,6 +50,7 @@
 			"common" : "敌方通用",
 			"trace" : "敌方追踪",
 			"blord2" : "杜卡雷，“君主之红”",
+			"confinement" : "禁锢状态",
 			"" : "敌方"
 		},
 		
@@ -73,7 +79,10 @@
 		},
 		"critical" : "概率暴击",
 		"spRecover" : "技力光环",
-		"spareShot" : "节弹",
+		"spareShot" : {
+			"dynamic" : "动态概率节弹",
+			"" : "概率节弹"
+		},
 		"buff" : {
 			"yin" : "晦属性",
 			"yang" : "明属性",
@@ -98,6 +107,7 @@
 				"anti" : "可抵抗状态免疫"
 			}
 		},
+		"shield" : "护盾",
 		"peak" : {
 			"performance" : "精力充沛检测"
 		},
@@ -118,6 +128,58 @@
 				"flag" : {
 					"anti" : "可抵抗效果反制集"
 				}
+			}
+		},
+		"common" : {
+			"weak" : {
+				"damage" : {
+					"buff" : "弱点伤害机制",
+					"" : "弱点伤害机制"
+				}
+			},
+			"cold" : {
+				"immune" : "通用寒冷免疫"
+			},
+			"disarmed_combat" : {
+				"immune" : "通用战栗免疫"
+			},
+			"feared" : {
+				"immune" : "通用恐惧免疫"
+			},
+			"levitate" : {
+				"immune" : "通用浮空免疫"
+			},
+			"stun" : {
+				"immune" : "通用晕眩免疫"
+			},
+			"unmovable" : {
+				"immune" : "通用束缚免疫"
+			},
+			"sluggish" : {
+				"immune" : "通用停顿免疫"
+			},
+			"frozen" : {
+				"immune" : "通用冻结免疫"
+			},
+			"sleep" : {
+				"immune" : "通用沉睡免疫"
+			},
+			"attracted" : {
+				"immune" : "通用诱导免疫"
+			},
+			"palsy" : {
+				"immune" : "通用麻痹免疫"
+			}
+		},
+		"immune" : {
+			"common" : "通用异常免疫",
+			"by" : {
+				"respawn" : {
+					"cnt" : "阶段性多项免疫"
+				}
+			},
+			"env" : {
+				"damage" : "环境伤害免疫"
 			}
 		},
 		"ep" : {
@@ -142,6 +204,11 @@
 			"1" : "一天赋",
 			"2" : "二天赋",
 			"3" : "三天赋",
+			"4" : "四天赋",
+			"001" : "一天赋",
+			"002" : "二天赋",
+			"003" : "三天赋",
+			"004" : "三天赋",
 			"" : "天赋"
 		},
 		"e" : {
@@ -198,25 +265,28 @@
 		"physical" : "物理",
 		"melee" : "近战",
 		"ranged" : "远程",
+		"splash" : "溅射",
 		"atkscale" : "攻击倍率",
 		"damage" : {
 			"block" : "伤害格挡",
 			"scale" : "伤害倍率",
 			"resistance" : "伤害抗性",
 			"value" : "伤害值",
+			"reduce" : {
+				"all" : "全种类伤害减免",
+				"magic" : "法术伤害减免",
+				"pure" : "真实伤害减免",
+				"physical" : "物理伤害减免",
+				"" : "伤害减免"
+			},
 			"" : "伤害"
 		},
-		"by" : {
-			"hp" : {
-				"ratio" : "基于生命比例"
-			},
-			"" : "基于"
-		},
+		"by" : "基于",
 		"via" : {
 			"source" : {
 				"atk" : "基于来源攻击力"
 			},
-			"" : "基于"
+			"" : "依"
 		},
 		"based" : {
 			"on" : "基于",
@@ -245,8 +315,14 @@
 		},
 		
 		"aoe" : "群体",
-		"weak" : "脆弱",
+		"weak" : {
+			"damage" : "弱点伤害",
+			"" : "脆弱"
+		},
 		"cold" : "寒冷",
+		"double" : {
+			"cold" : "双寒冷"
+		},
 		"critical" : "暴击",
 		"cirtical" : "暴击",
 		"fly" : "飞行",
@@ -258,7 +334,8 @@
 		"init" : "初始化",
 		"reset" : "重置",
 		"core" : "核心",
-		"common" : "通常",
+		"common" : "常规",
+		"derived" : "附属",
 		"inf" : "永久",
 		"check" : "检测",
 		"checker" : "检测器",
@@ -279,6 +356,8 @@
 		"unblocked" : "非阻挡",
 		"scale" : "倍率",
 		"attr" : "属性",
+		"stack" : "叠层",
+		"durable" : "耐久",
 		
 		"same" : "同",
 		"diff" : "异",
@@ -292,17 +371,23 @@
 		"down" : "降低",
 		"to" : "至",
 		"equal" : "相同",
+		"sample" : "例",
+		"normal" : "普通",
 		"opposite" : "相反",
 		"vertical" : "垂直",
 		
 		"self" : "自身",
 		"ally" : "友方",
-		"target" : "目标",
+		"target" : {
+			"free" : "不可选中",
+			"" : "目标"
+		},
 		"char" : "角色",
 		"character" : "角色",
 		"enemy" : "敌人",
 		"token" : "召唤物",
 		"projectile" : "弹道",
+		"drone" : "无人机",
 		
 		"born" : "出场",
 		"finish" : "退场",
@@ -317,14 +402,25 @@
 			"to" : "击杀时",
 			"" : "击杀"
 		},
+		"killed" : "击杀数",
 		"end" : "结束",
 		"log" : "记录",
 
 		"on" : {
 			"buff" : {
-				"finish" : "Buff结束时"
-			}
+				"finish" : "结束时"
+			},
+			"take" : {
+				"damage" : "受伤时"
+			},
+			"killed" : "被击杀时"
 		},
+
+		"fx" : "特效",
+		"no" : {
+			"fx" : "无特效"
+		},
+		"audio" : "音效",
 		
 		
 		"max" : {
@@ -332,9 +428,14 @@
 		},
 		"maxhp" : "最大生命",
 		"hp" : {
-			"recovery" : "生命恢复"
+			"recovery" : "生命恢复",
+			"ratio" : "生命比例",
+			"" : "生命值"
 		},
-		"atk" : "攻击",
+		"atk" : {
+			"scale" : "攻击力倍率",
+			"" : "攻击"
+		},
 		"def" : "防御",
 		"cost" : "费用",
 		"mass" : "重量",
@@ -352,15 +453,50 @@
 			"combat" : "战栗"
 		},
 		"fear" : "恐惧",
+		"feared" : "恐惧",
 		"doze" : "小睡",
 		"sleep" : "沉睡",
+		"levitate" : "浮空",
+		"frozen" : "冻结",
 
 		"purify" : "净化",
+		"atkorcbt" : "攻击/阻挡攻击",
 		"charge" : {
 			"token" : "获得召唤物",
 			"" : "蓄力"
 		},
+		"poison" : "中毒",
+		"spareShot" : "节弹",
+		"devour" : "吞噬",
 
-		"blord2" : "杜卡雷"
+		"blord2" : "杜卡雷",
+
+		"bond" : {
+			"eff" : {
+				"assis" : "协防盟约",
+				"yan" : "炎盟约",
+				"sargon" : "萨尔贡盟约",
+				"kjerag" : "谢拉格盟约",
+				"laterano" : "拉特兰盟约",
+				"victoria" : "维多利亚盟约",
+				"egir" : "阿戈尔盟约",
+				"kazimierz" : "卡西米尔盟约",
+				"siracusa" : "叙拉古盟约",
+				"mani" : "调和盟约",
+				"solo" : "独行盟约",
+				"sunt" : "绝技盟约",
+				"arcane" : "奥术盟约",
+				"preci" : "精准盟约",
+				"swift" : "迅捷盟约",
+				"skillful" : "灵巧盟约",
+				"deput" : "助力盟约",
+				"indom" : "不屈盟约",
+				"stead" : "坚守盟约",
+				"raid" : "突袭盟约",
+				"mira" : "奇迹盟约",
+				"visi" : "远见盟约",
+				"invest" : "投资人盟约"
+			}
+		}
 	}
 }

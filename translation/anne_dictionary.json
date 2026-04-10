@@ -30,7 +30,7 @@
 		"ON_BUFF_START" : "当Buff开始时",
 		"ON_BUFF_FINISH" : "当Buff结束时",
 		"ON_BUFF_TRIGGER" : "在Buff每次触发时",
-		"ON_OWNER_KILLED" : "持有者因被击倒而退场/死亡时",
+		"ON_OWNER_KILLED" : "持有者被击倒时",
 		"ON_OWNER_FINISH" : "持有者退场/死亡时",
 		"ON_BEFORE_APPLYING_MODIFIER" : "持有者即将应用被施加的调整值时",
 		"ON_APPLYING_MODIFIER" : "持有者应用被施加的调整值时",
@@ -39,7 +39,7 @@
 		"ON_TARGET_KILLED" : "持有者击倒目标时",
 		"ON_TAKE_DAMAGE" : "持有者受到伤害时",
 		"ON_OUTPUT_DAMAGE" : "持有者输出伤害时",
-		"ON_OWNER_BORN" : "持有者部署时",
+		"ON_OWNER_BORN" : "持有者部署/出场时",
 		"ON_OWNER_LOCATE" : "持有者部署完成时",
 		"ON_CALCULATE_DAMAGE" : "持有者计算伤害时",
 		"ON_EVADE_DAMAGE" : "持有者闪避伤害成功时",
@@ -112,7 +112,22 @@
 		"ON_POST_TRY_SET_HP_ZERO" : "持有者的生命值在处理后确定要变为0时",
 		"ON_AFTER_OUTPUT_ELEMENT_DAMAGE" : "持有者成功造成元素损伤后",
 		"ON_BEFORE_ABILITY_SPELL_ON" : "持有者的能力准备施加前",
-		"ON_OWNER_BLOCK_MODE_CHANGED" : "持有者阻挡模式变化时"
+		"ON_AFTER_OUTPUT_HEAL" : "成功产生治疗后",
+		"ON_LEGION_MODE_DANGER_LEVEL_REFRESH" : "保全派驻中，危险等级提升时",
+		"ON_HALF_IDLE_TRAP_CHECK_UPGRADE" : "次生预案中，装置检查升级时",
+		"ON_HALF_IDLE_KAWA_CLEANED" : "次生预案中，河流被清洁时",
+		"ON_HALF_IDLE_KAWA_POLLUTED" : "次生预案中，河流被污染时",
+		"HALF_IDLE_GAIN_EQUIP" : "次生预案中，获得装备时",
+		"HALF_IDLE_GAIN_TRAP" : "次生预案中，获得装置时",
+		"ON_OUTPUT_ATK_OR_HEAL_EACH_SPELL" : "持有者每次输出攻击与治疗时",
+		"ON_PALSY_OVERFLOW" : "存在溢出麻痹层数时，每层触发一次",
+		"ON_TRIGGER_PALSY" : "持有者触发麻痹震颤而打断攻击时",
+		"ON_SKILL_RETRIGGERED" : "持有者使用技能的装备应变时",
+		"ON_AUTO_CHESS_MODE_CHANGED" : "卫戍协议中，战斗正式开始时",
+		"ON_OWNER_BLOCK_MODE_CHANGED" : "持有者阻挡模式变化时",
+		"ON_OWNER_HP_FULL" : "持有者生命值变动后，生命比例大于等于1时",
+		"ON_PROJECTILE_SELECT_TARGETS" : "弹道抵达目的地或停止后，选择/过滤目标前",
+		"ON_OWNER_REBORN" : "持有者进入重生状态机时（存疑）"
 	},
 	"projectile_event" : {
 		"ON_HIT_OBJECT" : "弹道击中单位时",
@@ -326,7 +341,9 @@
 		"INSTANT_KILL_LIKE_DAMAGE" : "类斩杀伤害",
 		"IS_ENVIRONMENT_ELEMENT_DAMAGE" : "环境元素损伤",
 		"SKIP_MODIFIER_CONSIDER_UNHURTABLE" : "强制生命流失(无计算/事件，无法取消)",
-		"IS_NOT_CHANGEABLE_VALUE_MODIFIER" : "无法被其他方式增/减/免伤"
+		"IS_NOT_CHANGEABLE_VALUE_MODIFIER" : "无法被其他方式增/减/免伤",
+		"APPLY_TO_HAMMER_SUBCLASS_MAIN_TARGET" : "应用于撼地者攻击主目标的",
+		"APPLY_TO_HAMMER_SUBCLASS_SPLASH_TARGET" : "应用于撼地者攻击溅射目标的"
 	},
 	"formula" : {
 		"ADDITION" : "直接加算",
@@ -348,6 +365,17 @@
 	},
 	"sub_profession" : {
 		"" : ""
+	},
+	"ability_family" : {
+		"NONE" : "无类别",
+		"ATTACK" : "常规攻击",
+		"COMBAT" : "阻挡攻击",
+		"SKILL" : "技能",
+		"TALENT" : "天赋",
+		"GENERAL" : "无特定类别",
+		"ATTACK_OR_COMBAT" : "常规攻击/阻挡攻击",
+		"ALL" : "任意",
+		"EXCEPT_GENERAL" : "常规攻击/阻挡攻击/技能/天赋"
 	},
 	"trig_type" : {
 		"GAIN" : "获得时",
@@ -412,7 +440,7 @@
 		"SPECIAL_15" : "21号"
 	},
 	"bond_id" : {
-		"emptyship" : "【协防干员】",
+		"emptyShip" : "【协防干员】",
 		"yanShip" : "【炎】",
 		"sargonShip" : "【萨尔贡】",
 		"kjeragShip" : "【谢拉格】",
@@ -425,6 +453,7 @@
 		"soloShip" : "【独行】",
 		"suntShip" : "【绝技】",
 		"arcaneShip" : "【奥术】",
+		"preciShip" : "【精准】",
 		"swiftShip" : "【迅捷】",
 		"skillfulShip" : "【灵巧】",
 		"deputShip" : "【助力】",

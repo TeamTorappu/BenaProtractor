@@ -50,3 +50,11 @@ def node_CheckModifierContainsKey(node):
 def node_CancelModifier(node):
     reason = anne_dictionary("cancel_reason",node["_reason"])
     return {"main" : "取消本次调整值，原因："+reason}
+
+# 确保伤害或治疗量至少有...
+def node_EnsureDmgOrHeal(node):
+    return {
+        "main" : f"确保本次伤害或治疗量至少有 持有者攻击力 × [{node['_key']}] 点（若低于则设置为这个值）",
+        "true" : "若此次调整值是伤害或治疗",
+        "false" : "若此次调整值不是伤害也不是治疗"
+    }

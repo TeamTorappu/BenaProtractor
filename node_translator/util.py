@@ -34,7 +34,7 @@ def node_AtkScaleUp(node):
         "main" : ""
     }
     if node["_atkScaleKey"] != None and node["_atkScaleKey"] != "":
-        result["main"] = f"令攻击力倍率提升至{node['_atkScaleKey']}"
+        result["main"] = f"令攻击力倍率提升至{node['_atkScaleKey']}倍"
         if node["_defaultValue"] != 1:
             result["main"] += f"（默认提升至{node['_defaultValue']}倍）"
     else:
@@ -57,7 +57,10 @@ def node_AtkScaleUp(node):
         result["main"] = "若"+"且".join(conditions)+"，"+result["main"]
     # 乘后若攻击倍率为0时，取消本次伤害
     if node["_cancelIfAtkScaleZero"]:
-        result["description"] += "；若乘算后本次伤害的攻击力倍率为0，则取消此次伤害"
+        if "description" not in result:
+            result["description"] = "若乘算后本次伤害的攻击力倍率为0，则取消此次伤害"
+        else:
+            result["description"] += "；若乘算后本次伤害的攻击力倍率为0，则取消此次伤害"
     return result
 
 # 修改技力
@@ -184,7 +187,7 @@ def node_SwitchMode(node):
     if node["_restoreDefault"]:
         action = "切换回默认模式"
     elif node["_loadModeFromBlackboard"]:
-        action = "切换至特定编号的模式，编号由黑板值mode决定"
+        action = "切换至特定编号的模式，编号由黑板值 [mode] 决定"
     else:
         action = f"切换至第{node['_modeIndex']}号模式"
     return {"main" : f"令{target_name}{action}"}
@@ -233,6 +236,17 @@ def node_ClearCharacterSp(node):
         return {"main" : f"令{target_name}清空技力（强制流失等同于当前技力值的技力）"}
     else:
         return {"main" : f"令{target_name}清空技力（减少等同于当前技力值的技力，受阻回影响）"}
+
+# 修改目标生命值
+def node_ModifyLifePoint(node):
+    source_name = anne_dictionary("target",node["_sourceType"])
+    value = " - ["+node["_blackboardKey"]+"]" if node["_isSub"] else " + ["+node["_blackboardKey"]+"]"
+    if node["_isReachExit"]:
+        return {"main" : f"令关卡目标生命值{value}，视为由{source_name}\"抵达路径终点\"导致的修改"}
+    elif node["_sourceType"] != "BUFF_OWNER":
+        return {"main" : f"令关卡目标生命值{value}，视为由{source_name}导致的修改"}
+    else:
+        return {"main" : f"令关卡目标生命值{value}"}
 
 # 播放音效
 def node_PlayAudio(node):

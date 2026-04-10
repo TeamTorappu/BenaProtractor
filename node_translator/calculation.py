@@ -9,26 +9,26 @@ def node_CalculateBlackboardValueViaParams(node):
     place_name = ""
     input_key = node["_inputKey"]
     output_key = node["_outputKey"]
-    formula = input_key
+    formula = "[" + input_key + "]"
     # 确认处理上下文
     if node["_useAbilityBlackboard"] and node["_abilityName"] != "":
         place_name = f"在能力{node['_abilityName']}的黑板中，"
     # 解析计算方式
     if node["_multiplyParamKey"] != None and node["_multiplyParamKey"] != "": # 乘法运算
-        formula += " × " + node["_multiplyParamKey"]
+        formula += " × [" + node["_multiplyParamKey"] + "]"
     if node["_dividedParamKey"] != None and node["_dividedParamKey"] != "": # 除法运算
         if node["_useRemainder"]: # 取余
-            formula += " rem " + node["_dividedParamKey"]
+            formula += " rem [" + node["_dividedParamKey"] + "]"
         else:
-            formula += " ÷ " + node["_dividedParamKey"]
+            formula += " ÷ [" + node["_dividedParamKey"] + "]"
     if node["_addParamKey"] != None and node["_addParamKey"] != "": # 加法运算
-        formula += " + " + node["_addParamKey"]
+        formula += " + [" + node["_addParamKey"] + "]"
     if node["_minusParamKey"] != None and node["_minusParamKey"] != "": # 减法运算
-        formula += " - " + node["_minusParamKey"]
+        formula += " - [" + node["_minusParamKey"] + "]"
     # 上下限
     if node["_minValueKey"] != None and node["_minValueKey"] != "": # 下限
         if node["_maxValueKey"] != None and node["_maxValueKey"] != "":
-            formula = "clamp("+formula+","+node["_minValueKey"]+","+node["_maxValueKey"]+")"
+            formula = "clamp("+formula+", ["+node["_minValueKey"]+"] , ["+node["_maxValueKey"]+"])"
         else:
             formula = "max("+formula+","+node["_minValueKey"]+")"
     elif node["_maxValueKey"] != None and node["_maxValueKey"] != "": # 上限
@@ -43,37 +43,37 @@ def node_CalculateBlackboardValueViaParams(node):
     elif node["_finalRound"]: # 向上取整
         formula += "（就近取整，四舍六入五成双）"
     # 返回完整公式
-    return {"main" : f"{place_name}将 {output_key} 设置为 {formula}"}
+    return {"main" : f"{place_name}将 [{output_key}] 设置为 {formula}"}
 
 # 令黑板值+X
 def node_BlackboardAdd(node):
     bb_key = node["_blackboardKey"]
     if node["_additionKey"] != None and node["_additionKey"] != "":
         if node["_isFloat"]: # 这玩意是“不向下取整”的意思
-            return {"main" : f"设 {bb_key} = {bb_key} + {node['_additionKey']}"}
+            return {"main" : f"设 [{bb_key}] = [{bb_key}] + [{node['_additionKey']}]"}
         else:
-            return {"main" : f"设 {bb_key} = {bb_key} - floor({node['_additionKey']})"}
+            return {"main" : f"设 [{bb_key}] = [{bb_key}] - floor([{node['_additionKey']}])"}
     else:
         amount = node["_addition"]
         if not node["_isFloat"]: # 这玩意是“不向下取整”的意思
             amount = math.floor(node["_addition"])
         if amount > 0:
-            return {"main" : f"设 {bb_key} = {bb_key} + {amount}"}
+            return {"main" : f"设 [{bb_key}] = [{bb_key}] + {amount}"}
         elif amount < 0:
-            return {"main" : f"设 {bb_key} = {bb_key} - {abs(amount)}"}
-    return {"main" : f"修改 {bb_key} ，但是无事发生"}
+            return {"main" : f"设 [{bb_key}] = [{bb_key}] - {abs(amount)}"}
+    return {"main" : f"尝试修改 [{bb_key}] ，但是无事发生"}
 
 # 修改黑板值/检查黑板值后再修改
 def node_ModifyBlackboard(node):
     bb_key = node["_blackboardKeys"]
     if node["_fromBlackboardKeys"] != None and node["_fromBlackboardKeys"] != "":
         from_key = node["_fromBlackboardKeys"]
-        result = {"main" : f"设 {bb_key} = {from_key}"}
+        result = {"main" : f"设 [{bb_key}] = [{from_key}]"}
         if node["_addBasedOriginValue"]: # 原始值加上对象值
-            result["main"] = f"设 {bb_key} = {bb_key} + {from_key}"
+            result["main"] = f"设 [{bb_key}] = [{bb_key}] + [{from_key}]"
         if node["_checkFromBlackboardValue"]: # 开启这个会在处理前增加一次检查，检查不通过则处理失败
             result["true"] = f"若上述逻辑能正常处理"
-            result["false"] = f"若 {from_key} 不存在"
+            result["false"] = f"若 [{from_key}] 不存在"
         return result
     else: # 就和直接设置数值没区别了
         return {

@@ -115,6 +115,9 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     if "_multiplierByKey" in damage_data and damage_data["_multiplierByKey"]:
         if "_multiplierKey" in damage_data and damage_data["_multiplierKey"]:
             features.append("乘以黑板值"+damage_data["_multiplierKey"])
+    # 伤害标签
+    if "_modifierKey" in damage_data and damage_data["_modifierKey"] != "":
+        suffix = suffix + f"（具有 {damage_data['_modifierKey']} 标记）"
     # 无视闪避/格挡那些的掩码，不过yj只用几个特定掩码，所以没必要做掩码解析
     if "_ignoreCancelReasonMask" in damage_data and damage_data["_ignoreCancelReasonMask"] != "NONE":
         if damage_data["_ignoreCancelReasonMask"] == "MISS":
@@ -145,9 +148,9 @@ def analyze_buff(buff_data,full_information=False):
     # 读取自数据库，一般是眩晕、寒冷那些，不管他
     if buff_data["loadFromDB"]:
         if full_information:
-            features.append("读取自数据库："+buff_key)
+            features.append("读取自数据库：[" + buff_key + "]")
         else:
-            return {"main" : buff_key+"(读取自数据库)"}
+            return {"main" : "<" + buff_key + "> (读取自数据库)","link" : "buff." + buff_key}
     
     # 检查模板
     if buff_data["templateKey"] != "empty" :
@@ -158,7 +161,8 @@ def analyze_buff(buff_data,full_information=False):
                 features.append(f"事件优先级：{buff_data['onEventPriority']}（覆盖模板的数据）")
             else:
                 features.append(f"事件优先级覆写为{buff_data['onEventPriority']}")
-    elif buff_data["overrideOnEventPriority"] or buff_data['onEventPriority'] != "DEFAULT":
+    # 事件优先级
+    if buff_data["overrideOnEventPriority"] or buff_data['onEventPriority'] != "DEFAULT":
         if full_information:
             features.append(f"事件优先级：{buff_data['onEventPriority']}")
         else:
@@ -193,7 +197,7 @@ def analyze_buff(buff_data,full_information=False):
             features.append("永久")
         elif buff_data["lifeTimeType"] == "LIMITED":
             if buff_data["durationKey"] != None and buff_data["durationKey"] != "none":
-                features.append(f"持续 {buff_data['durationKey']} 秒")
+                features.append(f"持续 [{buff_data['durationKey']}] 秒")
             elif buff_data["lifeTime"] == 0.0:
                 features.append("瞬间效果")
             else:
@@ -283,7 +287,7 @@ def analyze_buff(buff_data,full_information=False):
                 if modify["fetchBaseValueFromSourceEntity"]:
                     value_str = "(来源同值)"
                 else:
-                    value_str = "X"
+                    value_str = "[" + modify["attributeType"].lower() + "]" # 理论上是和type同名的黑板值
                 #
                 if formula == "ADDITION":
                     value_str = "+"+value_str+"(直加)"
@@ -348,36 +352,33 @@ def analyze_buff(buff_data,full_information=False):
     if buff_data["overrideKey"] and buff_data["overrideKey"] != "empty" :
         features.append(f"处理覆盖时视为{buff_data['overrideKey']}") 
     # 触发配置
-    if buff_data["triggerLifeType"] == "IMMEDIATELY" : # 立即触发或不触发
-        if buff_data["triggerCnt"] >= 1:
-            features.append(f"施加后立刻触发")
-    elif buff_data["triggerLifeType"] == "INFINITY" : # 无限次触发
+    if buff_data["triggerLifeType"] == "INFINITY" : # 无限次触发
         if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
             start_ticks = buff_data["firstTriggerInterval"]
             if buff_data["triggerInterval"] >= 0:
-                ticks = math.ceil(buff_data['triggerInterval'] * 30)
+                ticks = buff_data['triggerInterval'] * 30
                 features.append(f"{start_ticks}帧后及后续每{ticks}帧触发一次")
             else:
                 features.append(f"{start_ticks}帧后触发仅一次")
         elif buff_data["triggerInterval"] >= 0:
-            ticks = math.ceil(buff_data['triggerInterval'] * 30)
+            ticks = buff_data['triggerInterval'] * 30
             features.append(f"施加时及后续每{ticks}帧触发一次")
-    elif buff_data["triggerLifeType"] == "LIMITED" : # 有限次触发
+    else: #if buff_data["triggerLifeType"] in ["LIMITED","IMMEDIATELY"] : # 有限次触发
         trigget_cnt = buff_data["triggerCnt"]
         if trigget_cnt > 1:
             if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
-                start_ticks = buff_data["firstTriggerInterval"]
+                start_ticks = math.ceil(buff_data["firstTriggerInterval"])
                 if buff_data["triggerInterval"] >= 0:
-                    ticks = math.ceil(buff_data['triggerInterval'] * 30)
+                    ticks = buff_data['triggerInterval'] * 30
                     features.append(f"{start_ticks}帧后及后续每{ticks}帧触发一次，上限{trigget_cnt}次")
                 else:
                     features.append(f"{start_ticks}帧后触发仅一次")
             elif buff_data["triggerInterval"] >= 0:
-                ticks = math.ceil(buff_data['triggerInterval'] * 30)
+                ticks = buff_data['triggerInterval'] * 30
                 features.append(f"施加时及后续每{ticks}帧触发一次，上限{trigget_cnt}次")
         elif trigget_cnt == 1:
             if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
-                ticks = math.ceil(buff_data['firstTriggerInterval'] * 30)
+                ticks = buff_data['firstTriggerInterval'] * 30
                 features.append(f"{ticks}帧后触发")
             else:
                 features.append(f"施加后立刻触发")
@@ -406,45 +407,47 @@ def analyze_buff(buff_data,full_information=False):
                     stack_info += "，到时间失去一层并刷新时间"
             if stack_info != "":
                 features.append(stack_info)
-            
         elif buff_data["overrideType"] == "EXTEND" :
             if buff_data["takeSnapshotWhenExtend"]:
                 features.append(f"重复施加时仅延长原有Buff并更新数据")
             else:
                 features.append(f"重复施加时仅延长原有Buff")
-            
         elif buff_data["overrideType"] == "UNIQUE" :
             features.append(f"若已存在则无法重复施加")
-
         else:
             features.append(f"叠加类型{buff_data['overrideType']}")
     # 暂时不知道有什么用的东西
-    #if buff_data["independentCharacterSource"]:
-    #    results.append("independentCharacterSource")
+    if buff_data["independentCharacterSource"]:
+        features.append("independentCharacterSource")
+    # 叠加优先级，鼓舞之类的用的
     if buff_data["priorityBBKeys"] != None and len(buff_data["priorityBBKeys"]) > 0:
         bb_keys = "、".join(buff_data['priorityBBKeys'])
-        features.append(f"根据黑板值{bb_keys}计算叠加优先级")
+        features.append(f"根据黑板值 [{bb_keys}] 计算叠加优先级")
     elif buff_data["priority"] > 0:
         features.append(f"叠加优先级{buff_data['priority']}")
+    # 黑板前缀
     if buff_data["stripBlackboardParamsWithBuffKey"]:
-        features.append("stripBlackboardParamsWithBuffKey")
+        features.append(f"使用有以BuffKey为前缀的黑板Key")
 
     # 准备返回buff
-    result = {"main" : buff_key} # 需翻译
+    result = {"main" : "<" + buff_key + ">"}
     if buff_data["loadFromDB"]:
         result["link"] = "buff."+buff_key
     elif template != "empty":
         if full_information: # 完整显示
             result["children"] = [{
-                "main" : f"使用模板：{template}",
+                "main" : f"使用模板：<{template}>",
                 "link" : "buff_template."+template
             }]
         else: # 简短显示
             if template == buff_key:
                 result["main"] += "（使用同名模板）"
+                result["link"] = "buff_template."+template
+            elif template == "empty":
+                result["main"] += "（不使用模板）"
             else:
-                result["main"] += f"（使用模板{template}）"
-            result["link"] = "buff_template."+template
+                result["main"] += f"（使用模板<{template}>）"
+                result["link"] = "buff_template."+template
     if full_information: # 按需返回子列表
         if "children" not in result:
             result["children"] = []
@@ -456,7 +459,7 @@ def analyze_buff(buff_data,full_information=False):
     if len(blackboard) > 0:
         bb_children = []
         for key,value in blackboard.items():
-            bb_children.append({"main" : key + " : "+str(value)})
+            bb_children.append({"main" : "[" + key + "] = " + str(value)})
         if "children" not in result:
             result["children"] = []
         result["children"].append({"main" : "黑板数据：","children" : bb_children})
@@ -481,8 +484,8 @@ def analyze_target_options(option,relative_side=True):
     # 如果没有额外选项，这就是要展示的全部了
     if not option["enableAdvancedOptions"]:
         return {
-            "main" : "选择"+"".join(conditions)+"单位",
-            "description" : "直接选择，无视目标可选性"
+            "main" : "".join(conditions)+"单位",
+            "description" : "直接选择，无视可选性"
         }
     # 开始处理剩下的所有
     descriptions = []
@@ -526,11 +529,11 @@ def analyze_target_options(option,relative_side=True):
         
     if len(descriptions) > 0:
         return {
-            "main" : "选择"+"".join(conditions)+"单位，采用额外选项判定可选",
+            "main" : "".join(conditions)+"单位",
             "description" : "；".join(descriptions)
         }
     #最朴实无华的选择，没有任何附加条件
     return {
-        "main" : "选择"+"".join(conditions)+"单位，采用常规可选性判定"
+        "main" : "".join(conditions)+"单位"
     }
         
