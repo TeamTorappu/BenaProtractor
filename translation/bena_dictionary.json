@@ -7,6 +7,7 @@
 		"legion" : "保全派驻",
 		"cooperate" : "促融共竞",
 		"halfidle" : "次生预案",
+		"halfIdle" : "次生预案",
 		"sandbox" : {
 			"2" : "生息沙洲",
 			"" : "生息沙火"
@@ -32,8 +33,15 @@
 		"tyohon" : "提丰",
 		"greey2" : "承曦格雷伊",
 		"motter" : "机械水獭",
+		"prost" : "重构体",
+		"prosts" : "重构体",
 		"char" : {
 			"chilc" : "齐尔查克"
+		},
+		"skchr" : {
+			"alanna" : "阿兰娜_技能效果",
+			"kichi" : "吉星_技能效果",
+			"acmedc" : "Touch_技能效果"
 		},
 		
 		"dmtpos" : "牵绊",
@@ -102,7 +110,10 @@
 			"swim" : "免疫水蚀"
 		},
 		"status" : {
-			"resistance" : "抵抗",
+			"resistance" : {
+				"reduction" : "反抵抗",
+				"" : "抵抗"
+			},
 			"resistable" : {
 				"anti" : "可抵抗状态免疫"
 			}
@@ -169,6 +180,16 @@
 			},
 			"palsy" : {
 				"immune" : "通用麻痹免疫"
+			},
+			"damage" : {
+				"on" : {
+					"output" : {
+						"damage" : "驭法铁卫X模组_附加伤害"
+					},
+					"take" : {
+						"damage" : "驭法铁卫X模组_反弹伤害"
+					}
+				}
 			}
 		},
 		"immune" : {
@@ -180,6 +201,11 @@
 			},
 			"env" : {
 				"damage" : "环境伤害免疫"
+			}
+		},
+		"palsy" : {
+			"prob" : {
+				"retain" : "麻痹_概率不消耗"
 			}
 		},
 		"ep" : {
@@ -277,12 +303,17 @@
 			"value" : "伤害值",
 			"reduce" : {
 				"all" : "全种类伤害减免",
-				"magic" : "法术伤害减免",
+				"magical" : "法术伤害减免",
 				"pure" : "真实伤害减免",
 				"physical" : "物理伤害减免",
+				"element" : "元素伤害减免",
 				"" : "伤害减免"
 			},
 			"" : "伤害"
+		},
+		"dmg" : {
+			"up" : "增伤",
+			"" : "伤"
 		},
 		"by" : "基于",
 		"via" : {
@@ -363,6 +394,7 @@
 		"attr" : "属性",
 		"stack" : "叠层",
 		"durable" : "耐久",
+		"recharge" : "补充",
 		
 		"same" : "同",
 		"diff" : "异",
@@ -414,6 +446,9 @@
 		"on" : {
 			"buff" : {
 				"finish" : "结束时"
+			},
+			"output" : {
+				"damage" : "出伤时"
 			},
 			"take" : {
 				"damage" : "受伤时"
@@ -475,6 +510,7 @@
 		"poison" : "中毒",
 		"spareShot" : "节弹",
 		"devour" : "吞噬",
+		"vampire" : "吸血",
 
 		"blord2" : "杜卡雷",
 

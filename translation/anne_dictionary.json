@@ -150,6 +150,11 @@
 		"ATTACK_OR_DAMAGE" : "攻击回复 或 受击回复",
 		"ALL" : "全部"
 	},
+	"skill_type" : {
+		"PASSIVE" : "被动技能",
+		"MANUAL" : "手动技能",
+		"AUTO" : "自动触发"
+	},
 	"abnormal" : {
 		"STUNNED" : "晕眩",
 		"SP_RECOVER_STOPPED" : "阻回",

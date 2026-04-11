@@ -231,10 +231,10 @@ def node_IfTarget(node):
     if node["_motionMask"] != "ALL":
         conditions.append("行动类型为"+anne_dictionary("motion",node["_motionMask"]))
         last_type = "行动类型是否为"+anne_dictionary("motion",node["_motionMask"])
-    if node["_checkApplyWay"] == "MELEE": # 这个不是检查本次攻击的类型，是检查目标的
+    if node["_checkApplyWay"] and node["_applyWay"] == "MELEE": # 这个不是检查本次攻击的类型，是检查目标的
         conditions.append("属于\"近战\"单位")
         last_type = "是否属于\"近战\"单位"
-    elif node["_checkApplyWay"] == "RANGED":
+    elif node["_checkApplyWay"] and node["_applyWay"] == "RANGED":
         conditions.append("属于\"远程\"单位")
         last_type = "是否属于\"远程\"单位"
     if len(conditions) > 1:
@@ -643,9 +643,38 @@ def node_FilterByTargetDataLevel(node):
 # 检查技力类型
 def node_FilterByTargetSPType(node):
     target_name = anne_dictionary("target",node["_targetType"])
-    sp_type = anne_dictionary("sp_type",node["_spMask"])
+    sp_type = anne_dictionary("sp_type",node["_spType"])
     return {
         "main" : f"检查{target_name}的技力类型",
         "true" : f"若其技力类型为 {sp_type} ",
         "false" : f"若其技力类型为 {sp_type} "
     }
+
+# 检查技能触发类型
+def node_CheckCharacterSkillType(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    skill_type = anne_dictionary("skill_type",node["_skillType"])
+    return {
+        "main" : f"检查{target_name}（角色类）携带技能的触发类型",
+        "true" : f"若其为 {skill_type} 技能",
+        "false" : f"若其不为 {skill_type} 技能"
+    }
+
+# 检查所处地块
+def node_CheckCurrentTileKey(node):
+    target_name = anne_dictionary("target",node["_target"])
+    tile_keys = []
+    for tile_key in node["_tileKey"]:
+        tile_keys.append(tile_key)
+    if node["_isExclude"]:
+        return {
+            "main" : f"检查{target_name}所处的地块是否为"+"、".join(tile_keys),
+            "true" : f"若其不位于此类地块",
+            "false" : f"若其位于此类地块之一"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}所处的地块是否为"+"、".join(tile_keys),
+            "true" : f"若其位于此类地块之一",
+            "false" : f"若其不位于此类地块"
+        }

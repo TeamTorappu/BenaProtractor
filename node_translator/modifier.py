@@ -19,6 +19,14 @@ def node_IsHeal(node):
         "false" : f"若本次调整值不为治疗（治疗类型的伤害）"
     }
 
+# 是否为元素损伤？最早明日方舟没有元素伤害这一概念，因此ElementDamage一直都是元素损伤
+def node_IsElementDamage(node):
+    return {
+        "main" : "",
+        "true" : f"若本次调整值为元素损伤",
+        "false" : f"若本次调整值不为元素损伤"
+    }
+
 # 伤害的攻击力倍率是否为0？
 def node_IsAtkScaleZero(node):
     return {
@@ -112,11 +120,11 @@ def node_FilterDamageModifer(node):
     if can_short:
         result["main"] = f"检查本次伤害"
         result["true"] = "若为"+"".join(short_conditions)+"伤害"
-        result["false"] = "若不是伤害或不为"+"".join(short_conditions)+"伤害"
+        result["false"] = "若不为"+"".join(short_conditions)+"伤害（或不是伤害）"
     else:
         result["main"] = f"检查本次伤害是否满足：{'、'.join(conditions)}"
         result["true"] = "若伤害满足上述所有条件"
-        result["false"] = "若不是伤害或伤害不满足上述条件"
+        result["false"] = "若伤害不满足上述条件（或不是伤害）"
     # 检查未被取消
     if node["_filterModifierCancelled"]:
         result["true"] += "且未被取消"
