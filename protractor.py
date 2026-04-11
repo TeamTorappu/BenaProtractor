@@ -22,7 +22,7 @@ class Protractor:
         self.frame = ttk.Frame(self.window, padding=10)
         self.frame.pack(fill="both",expand=True)
         # 控制区域
-        self.control_panel = ttk.Frame(self.frame,width=400)
+        self.control_panel = ttk.Frame(self.frame,width=500)
         self.control_panel.pack(fill="y",side="left")
         # 顶边菜单
         self.menu_bar = tk.Menu(self.window)
@@ -33,9 +33,13 @@ class Protractor:
         # 目录
         self.directory_items = []
         self.directory_index = 0 # 用于为每个目录编号
-        self.search_entry = ttk.Entry(self.control_panel,text="按回车键搜索...")
+        self.search_frame = tk.Frame(self.control_panel)
+        self.search_frame.pack(fill="x",side="top")
+        self.search_button = ttk.Button(self.search_frame,text="搜索",command=self.try_search,width=4,padding=-1)
+        self.search_button.pack(side="right")
+        self.search_entry = ttk.Entry(self.search_frame)
         self.search_entry.bind("<Return>", self.try_search)
-        self.search_entry.pack(fill="x",side="top")
+        self.search_entry.pack(fill="both")
         self.searching = False
         self.directory = ttk.Treeview(self.control_panel,selectmode="browse",show="tree")
         self.directory_scrollbar_x = ttk.Scrollbar(self.control_panel,orient=tk.HORIZONTAL,command=self.directory.yview)

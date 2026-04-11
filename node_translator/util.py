@@ -25,7 +25,7 @@ def node_RechargeToken(node):
     if node["_refreshRemainingCnt"]:
         return {"main" : "将Buff持有者的召唤物数量恢复至默认值"}
     else:
-        return {"main" : f"根据黑板上 {node['_cntKey']} 的数值，为Buff持有者补充召唤物（不会超过上限）"}
+        return {"main" : f"根据黑板上 [{node['_cntKey']}] 的数值，为Buff持有者补充召唤物（不会超过上限）"}
 
 # 临时提升攻击力倍率
 def node_AtkScaleUp(node):
@@ -34,7 +34,7 @@ def node_AtkScaleUp(node):
         "main" : ""
     }
     if node["_atkScaleKey"] != None and node["_atkScaleKey"] != "":
-        result["main"] = f"令攻击力倍率提升至{node['_atkScaleKey']}倍"
+        result["main"] = f"令攻击力倍率提升至[{node['_atkScaleKey']}]倍"
         if node["_defaultValue"] != 1:
             result["main"] += f"（默认提升至{node['_defaultValue']}倍）"
     else:
@@ -51,7 +51,7 @@ def node_AtkScaleUp(node):
             conditions.append("目标攻击方式为\"远程\"")
     # 筛选弹道Key
     if node["_filterProjectileKey"] != "":
-        conditions.append(f"伤害来自{node['_filterProjectileKey']}弹道")
+        conditions.append(f"伤害来自[{node['_filterProjectileKey']}]弹道")
     # 写入条件
     if len(conditions) > 0:
         result["main"] = "若"+"且".join(conditions)+"，"+result["main"]
@@ -72,7 +72,7 @@ def node_ModifySp(node):
     result = {"main" : ""}
     descriptions = []
     if node["_spString"] != "":
-        amount = node['_spString']+"点"
+        amount = "["+node['_spString']+"]点"
         if node["_modifyValue"] != 0:
             descriptions.append(f"默认{modify_type}{node['_modifyValue']}点")
     if node["_modifyByRatio"]:
@@ -90,7 +90,7 @@ def node_ModifySp(node):
     # 修改技力
     if not node["_dontCheckSpType"] and node["_spMask"] != "ALL":
         sp_type = anne_dictionary("sp_type",node["_spMask"])
-        result["main"] = f"若{target_name}携带了{sp_type}的技能，令其技力{modify_type}{amount}"
+        result["main"] = f"若{target_name}技力类型为 {sp_type} ，令其技力{modify_type}{amount}"
     if len(descriptions) > 0:
         result["description"] = "；".join(descriptions)
     return result

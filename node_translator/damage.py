@@ -11,14 +11,14 @@ def node_AdvancedApplyDamage(node):
     damage_name = analyze_damage(node) # 直接把整个node传参进去
     default_atk_scale = to_percent(node["_defaultAtkScale"])
     return {
-        "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}{damage_name}",
-        "description" : f"会读取黑板中的{node['_atkScaleVar']}作为攻击力倍率使用"
+        "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}的{damage_name}",
+        "description" : f"会读取黑板中的 [{node['_atkScaleVar']}] 覆盖此处的攻击力倍率"
     }
 
 # 造成无来源伤害
 def node_NoSourceDamage(node):
     damage_name = analyze_damage(node,"无来源的") # 直接把整个node传参进去
-    return {"main" : f"对持有者造成{node['_damageKey']}点{damage_name}"}
+    return {"main" : f"对持有者造成 [{node['_damageKey']}] 点{damage_name}"}
 
 # 造成固定值伤害
 def node_FixedValueDamage(node):
@@ -26,6 +26,7 @@ def node_FixedValueDamage(node):
     source_name = anne_dictionary("target",node["_damageSourceType"])
     target_name = anne_dictionary("target",node["_damageTargetType"])
     damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
+    damage_key = node["_damageKey"]
     result = {}
     features = []
     multiplier = ""
@@ -42,9 +43,9 @@ def node_FixedValueDamage(node):
     if len(features) > 0:
         result["description"] = "；".join(features)
     if node["_noSourceDamage"]:
-        result["main"] = f"对{target_name}造成damage点{damage_name}"
+        result["main"] = f"对{target_name}造成 [{damage_key}] 点{damage_name}"
     else:
-        result["main"] = f"令{source_name}对{target_name}造成damage点的{damage_name}"
+        result["main"] = f"令{source_name}对{target_name}造成 [{damage_key}] 点的{damage_name}"
     return result
 
 # 造成基于某种属性的伤害（主要由刻俄柏与泡泡使用）

@@ -239,10 +239,13 @@
 			"" : "每秒"
 		},
 		"sp" : {
-			"recover" : "技力恢复速度",
+			"recover" : "技力恢复",
 			"loss" : "技力流失",
 			"" : "技力"
 		},
+		"sp-recover" : "技力恢复",
+		"sp-onattack" : "攻击技力",
+		"sp+" : "技力+",
 		"modify" : {
 			"sp" : "修改技力",
 			"" : "修改"
@@ -321,7 +324,7 @@
 		},
 		"cold" : "寒冷",
 		"double" : {
-			"cold" : "双寒冷"
+			"cold" : "寒冷成对"
 		},
 		"critical" : "暴击",
 		"cirtical" : "暴击",
@@ -335,6 +338,8 @@
 		"reset" : "重置",
 		"core" : "核心",
 		"common" : "常规",
+		"enhanced" : "强化",
+		"advanced" : "加强",
 		"derived" : "附属",
 		"inf" : "永久",
 		"check" : "检测",
@@ -434,6 +439,7 @@
 		},
 		"atk" : {
 			"scale" : "攻击力倍率",
+			"speed" : "攻击速度",
 			"" : "攻击"
 		},
 		"def" : "防御",
@@ -458,6 +464,7 @@
 		"sleep" : "沉睡",
 		"levitate" : "浮空",
 		"frozen" : "冻结",
+		"invisible" : "隐匿",
 
 		"purify" : "净化",
 		"atkorcbt" : "攻击/阻挡攻击",

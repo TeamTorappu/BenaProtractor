@@ -24,7 +24,7 @@ def node_HealViaMaxHpRatio(node):
 
     result = {
         "main" : "",
-        "description" : "治疗来源为Buff的来源；决定治疗量的生命值比例读取自黑板hp_ratio"
+        "description" : "治疗来源为Buff的来源；决定治疗量的生命值比例读取自黑板[hp_ratio]"
     }
     if node["_healTarget"] == "BUFF_SOURCE": # 这种情况下是否取目标的生命值已经不重要了
         result["main"] = f"来源恢复相当于其自身最大生命值一定比例的生命值{extra}"

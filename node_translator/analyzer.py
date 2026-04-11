@@ -60,6 +60,14 @@ def to_delta_percent(power_value):
 #----------------------------------------
 # 解析逻辑
 #----------------------------------------
+# 解析定点数
+# 返回浮点数
+def analyze_FP(FP: dict):
+    if "_serializedValue" not in FP:
+        return 0.
+    serialized_value = FP["_serializedValue"]
+    return float(serialized_value) / 4294967296.
+
 # 解析伤害类的详细信息
 # 返回字符串
 def analyze_damage(damage_data,prefix="",suffix=""):
@@ -317,9 +325,9 @@ def analyze_buff(buff_data,full_information=False):
     # 其伤害可未命中
     if buff_data["isDamageMissable"]:
         if full_information:
-            features.append("该Buff下属的节点中产生的伤害受命中率影响（即使其为无来源）")
+            features.append("该Buff的处理可能受命中率判定影响")
         else:
-            features.append("受命中率影响")
+            features.append("受命中率判定影响")
     # 几个失效条件，一起展示
     stopby = []
     if buff_data["isSilenceable"]:

@@ -6,11 +6,14 @@ from .analyzer import anne_dictionary, analyze_buff
 
 # 创建Buff
 def node_CreateBuff(node):
-    # 未解析参数：_useSpecialBuffSource _specialBuffSource _finishDerivedBuffIfParentFinish
+    # 未解析参数：_finishDerivedBuffIfParentFinish
     target_name = anne_dictionary("target",node["_buffOwner"])
     buff_name = "本Buff的附属Buff" if node["_isDerivedBuff"] else "Buff"
     result = analyze_buff(node['_buff'])
     result["main"] = f"为{target_name}创建一个{buff_name}：" + result["main"]
+    if node["_useSpecialBuffSource"]:
+        buff_source = anne_dictionary("target",node["_specialBuffSource"])
+        result["main"] = "令" + buff_source + result["main"]
     return result
 
 # 创建多个独立但同名的Buff
@@ -28,6 +31,19 @@ def node_CreateBuffs(node):
         num = num + node["_buffPair"]["peeling"]
     result["main"] = f"为{target_name}创建 {num} 个{buff_name}：" + result["main"]
     return result
+
+# 依照ID创建数据库Buff
+def node_CreateBuffById(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    target_name = anne_dictionary("target",node["_buffOwner"])
+    buff_name = "本Buff的附属Buff" if node["_isDerivedBuff"] else "Buff"
+    if node["_loadFromBlackboard"]:
+        return {"main" : f"为{target_name}创建一个{buff_name}（读取自数据库中 [buff_key] 所记述的Buff）"}
+    else:
+        return {
+            "main" : f"为{target_name}创建一个{buff_name}：<{node['_buffKey']}>（读取自数据库）",
+            "link" : "buff."+node["_buffKey"]
+        }
     
 # 创建Buff，带召唤物主人处理
 def node_CreateBuffUseHostAsSource(node):
@@ -42,6 +58,57 @@ def node_CreateBuffUseHostAsSource(node):
         target_name = target_name + "(召唤物)的持有者"
     result["main"] = f"让{source_name}为{target_name}创建一个{buff_name}：" + result["main"]
     return result
+
+# 随机创建以下Buff之一
+def node_RandomCreateBuff(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    if len(node["_datas"]) == 0:
+        return {"main" : "随机创建Buff，但是随机列表为空"}
+    result = {
+        "main" : "随机创建以下Buff之一：",
+        "children" : []
+    }
+    same_target = True
+    target = ""
+    # 预处理，先检查一下是不是所有Buff都上给同一个人
+    for _data in node["_datas"]:
+        if target == "":
+            target = _data["buffOwner"]
+        elif target != _data["buffOwner"]:
+            same_target = False
+            break
+    if same_target:
+        if node["_isDerivedBuff"]:
+            result["main"] = f"为{anne_dictionary('target',target)}随机创建下列附属Buff之一（均为本Buff的附属Buff）："
+        else:
+            result["main"] = f"为{anne_dictionary('target',target)}随机创建下列Buff之一："
+    else:
+        if node["_isDerivedBuff"]:
+            result["main"] = f"随机进行以下一项Buff的创建："
+        else:
+            result["main"] = f"随机进行以下一项附属Buff的创建（均为本Buff的附属Buff）："
+    # 创建Buff列表
+    if node["_buffWithWeight"]: # 带权重
+        result["description"] = "将根据权重分配概率"
+        for _data in node["_datas"]:
+            buff = analyze_buff(_data["buff"])
+            weight = _data["weight"]
+            if _data["weightKey"] != None and _data["weightKey"] != "":
+                weight = "[" + _data["weightKey"] + "]"
+            if not same_target:
+                owner = anne_dictionary("target",_data["buffOwner"])
+                buff["main"] = "为"+owner+"创建："+buff["main"]
+            buff["main"] = weight+" - "+buff["main"]
+            result["children"].append(buff)
+    else:
+        for _data in node["_datas"]:
+            buff = analyze_buff(_data["buff"])
+            if not same_target:
+                owner = anne_dictionary("target",_data["buffOwner"])
+                buff["main"] = "为"+owner+"创建："+buff["main"]
+            result["children"].append(buff)
+    return result
+
 
 # 触发此Buff（常用于循环或控制附属Buff）
 def node_TriggerBuff(node):

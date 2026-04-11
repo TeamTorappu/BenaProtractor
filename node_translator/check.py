@@ -1,7 +1,7 @@
 #----------------------------------------
 # 检查类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from .analyzer import analyze_FP, anne_dictionary
 
 # 检查异常效果（带免疫）
 def node_CheckAbnormalFlag(node):
@@ -80,7 +80,7 @@ def node_CheckAbnormalCombo(node):
         }
 
 # 检查职业
-def CheckTargetProfession(node):
+def node_CheckTargetProfession(node):
     target_name = anne_dictionary("target",node["_targetType"])
     if node["_readProfessionFromBlackboard"]:
         return {
@@ -177,16 +177,6 @@ def node_CheckCharacterGroupTag(node):
         "false" : f"若其不隶属于{group_name}势力"
     }
 
-# 检查重量
-def node_FilterByTargetMassLevel(node):
-    target_name = anne_dictionary("target",node["_target"])
-    compare = anne_dictionary("compare",node["_condType"])
-    compare_not = anne_dictionary("compare_not",node["_condType"])
-    return {
-        "main" : f"检查{target_name}的重量",
-        "true" : f"若其重量 {compare} [value]",
-        "false" : f"若其重量 {compare_not} [value]"
-    }
 
 # 检查阻挡模式
 def node_CheckBlockMode(node):
@@ -222,57 +212,6 @@ def node_CheckBlocked(node):
             "main" : f"根据单位类型，检查{target_name}的阻挡/被阻挡状态",
             "true" : f"若其正被任意单位阻挡/阻挡着任意单位",
             "false" : f"若其未阻挡/未被阻挡"
-        }
-        
-
-# 检查是否持有某Buff
-def node_CheckContainsBuff(node):
-    # 未解析参数：_loadFromBlackboard _checkSourceHost
-    target_name = anne_dictionary("target",node["_targetType"])
-    condition = f"检查{target_name}是否"
-    true_flag = "若其持有该Buff"
-    false_flag = "若其没有该Buff"
-    if node["isAND"]: # 与模式
-        if len(node["_buffKeys"]) > 1:
-            if node["_checkBuffSource"]:
-                source_name = anne_dictionary("target",node["_buffSourceType"])
-                condition += f"同时持有来自{source_name}的 {'、'.join(node['_buffKeys'])} Buff"
-            else:
-                condition += f"同时持有 {'、'.join(node['_buffKeys'])} Buff"
-            true_flag = "若其持有全部这些Buff"
-            false_flag = "若其少了其中任意一个Buff"
-        elif len(node["_buffKeys"]) == 1:
-            if node["_checkBuffSource"]:
-                source_name = anne_dictionary("target",node["_buffSourceType"])
-                condition += f"持有来自{source_name}的 {node['_buffKeys'][0]} Buff"
-            else:
-                condition += f"持有 {node['_buffKeys'][0]} Buff"
-    else: # 或模式
-        if len(node["_buffKeys"]) > 1:
-            if node["_checkBuffSource"]:
-                source_name = anne_dictionary("target",node["_buffSourceType"])
-                condition += f"持有来自{source_name}的 {'、'.join(node['_buffKeys'])} 中的任意一个Buff"
-            else:
-                condition += f"持有 {'、'.join(node['_buffKeys'])} 中的任意一个Buff"
-            true_flag = "若其持有其中任意一个Buff"
-            false_flag = "若其全部Buff都没有"
-        elif len(node["_buffKeys"]) == 1:
-            if node["_checkBuffSource"]:
-                source_name = anne_dictionary("target",node["_buffSourceType"])
-                condition += f"持有来自{source_name}的 {node['_buffKeys'][0]} Buff"
-            else:
-                condition += f"持有 {node['_buffKeys'][0]} Buff"
-    if condition != "" :
-        return {
-            "main" : condition,
-            "true" : true_flag,
-            "false" : false_flag
-        }
-    else:
-        return {
-            "main" : "检查持有的Buff，但给定条件无法检查（写法有误？）",
-            "true" : "始终不通过",
-            "false" : "始终通过"
         }
 
 # 通用目标检查
@@ -341,14 +280,6 @@ def node_IfTargetSide(node):
         "main" : f"检查{target_name}的阵营（绝对阵营）",
         "true" : f"若其为{side_type}单位",
         "false" : f"若其不为{side_type}单位"
-    }
-
-# 检查是否持有本Buff的某个附属Buff
-def node_CheckContainsDerviedBuff(node):
-    return {
-        "main" : f"检查本Buff的附属Buff {node['_derviedBuffKey']}",
-        "true" : "若Buff持有者同时还持有该附属Buff",
-        "false" : "若Buff持有者不持有该附属Buff"
     }
     
 # 是否属于干员
@@ -593,14 +524,82 @@ def node_CheckOtherCharacterInRange(node):
         "false" : "若该范围内不存在此类单位"
     }
 
+# 检查目标重量
+def node_FilterByTargetMassLevel(node):
+    target_name = anne_dictionary("target",node["_target"])
+    compare = anne_dictionary("compare",node["_condType"])
+    compare_not = anne_dictionary("compare_not",node["_condType"])
+    return {
+        "main" : f"检查{target_name}的重量",
+        "true" : f"若其重量 {compare} [value]",
+        "false" : f"若其重量 {compare_not} [value]"
+    }
+
+# 检查目标生命
+def node_FilterByTargetHp(node):
+    target_name = anne_dictionary("target",node["_target"])
+    compare = anne_dictionary("compare",node["_condType"])
+    compare_not = anne_dictionary("compare_not",node["_condType"])
+    default_value = analyze_FP(node["_hpValue"])
+    return {
+        "main" : f"检查{target_name}当前生命值",
+        "true" : f"若其当前生命值 {compare} [hp]（默认{default_value}）",
+        "false" : f"若其当前生命值 {compare_not} [hp]（默认{default_value}）"
+    }
+
+# 检查目标生命比例
+def node_FilterByTargetHpRatio(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    compare = anne_dictionary("compare",node["_condType"])
+    compare_not = anne_dictionary("compare_not",node["_condType"])
+    if node["_useSourceHpRatio"]:
+        source_name = anne_dictionary("target",node["_sourceType"])
+        return {
+            "main" : f"检查{target_name}与{source_name}当前生命比例（生命/最大生命值）",
+            "true" : f"若{target_name}的生命比例 {compare} {source_name}的生命比例",
+            "false" : f"若{target_name}的生命比例 {compare_not} {source_name}的生命比例"
+        }
+    else:
+        default_value = node["_value"]
+        prefix = node["_blackboardPrefix"] # 对的这玩意自带一次小写化
+        return {
+            "main" : f"检查{target_name}当前生命比例（生命/最大生命值）",
+            "true" : f"若其生命比例 {compare} [{prefix}hp_ratio]（默认{default_value}）",
+            "false" : f"若其生命比例 {compare_not} [{prefix}hp_ratio]（默认{default_value}）"
+        }
+
+# 检查目标技力比例
+def node_FilterByTargetSpRatio(node):
+    target_name = anne_dictionary("target",node["_target"])
+    compare = anne_dictionary("compare",node["_condType"])
+    compare_not = anne_dictionary("compare_not",node["_condType"])
+    default_value = node["_spRatio"]
+    return {
+        "main" : f"检查{target_name}当前技力比例（技力/技力上限）",
+        "true" : f"若其技力比例 {compare} [sp_ratio]（默认{default_value}）",
+        "false" : f"若其技力比例 {compare_not} [sp_ratio]（默认{default_value}）"
+    }
+
+# 检查目标当前损伤元素的比例
+def node_FilterByTargetEpRatio(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    compare = anne_dictionary("compare",node["_condType"])
+    compare_not = anne_dictionary("compare_not",node["_condType"])
+    default_value = node["_epRatio"]
+    return {
+        "main" : f"检查{target_name}当前元素损伤程度（当前损伤元素的元素值/元素上限，\"爆条\"期间视为100%）",
+        "true" : f"若其元素损伤程度 {compare} [ep_ratio]（默认{default_value}）",
+        "false" : f"若其元素损伤程度 {compare_not} [ep_ratio]（默认{default_value}）"
+    }
+
 # 检查目标属性
 def node_FilterByTargetAttribute(node):
     target_name = anne_dictionary("target",node["_target"])
     compare = anne_dictionary("compare",node["_condType"])
     compare_not = anne_dictionary("compare_not",node["_condType"])
     attribute = anne_dictionary("attribute",node["_attributeType"])
-    right_value = node["_value"] if node["_useFloat"] else node["_valueFP"] # 我寻思怎么取都是float，为什么还得分这个？
-    if right_value != 0:
+    default_value = node["_value"] if node["_useFloat"] else node["_valueFP"] # 我寻思怎么取都是float，为什么还得分这个？
+    if default_value != 0:
         return {
             "main" : f"检查{target_name}的{attribute}",
             "true" : f"若其{attribute} {compare} [value]",
@@ -609,6 +608,44 @@ def node_FilterByTargetAttribute(node):
     else:
         return {
             "main" : f"检查{target_name}的{attribute}",
-            "true" : f"若其{attribute} {compare} [value]（默认{right_value}）",
-            "false" : f"若其{attribute} {compare_not} [value]（默认{right_value}）"
+            "true" : f"若其{attribute} {compare} [value]（默认{default_value}）",
+            "false" : f"若其{attribute} {compare_not} [value]（默认{default_value}）"
         }
+
+# 检查目标元素值是否为全满/特定元素值是否为满
+def node_CheckTargetEpIsFull(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_elementType"] != None and node["_elementType"] != "":
+        element = anne_dictionary("element",node["_elementType"])
+        return {
+            "main" : f"检查{target_name}的{element}元素值",
+            "true" : f"若其{element}元素值 ≥ 其元素上限且不处于\"爆条\"状态",
+            "false" : f"若其{element}元素值 < 其元素上限或处于\"爆条\"状态"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}的所有类型的元素值",
+            "true" : f"若其所有元素值均 ≥ 其元素上限且不处于\"爆条\"状态",
+            "false" : f"若其任何一项元素值 < 其元素上限，或其处于\"爆条\"状态"
+        }
+
+# 检查目标等级
+def node_FilterByTargetDataLevel(node):
+    target_name = anne_dictionary("target",node["_target"])
+    compare = anne_dictionary("compare",node["_condType"])
+    compare_not = anne_dictionary("compare_not",node["_condType"])
+    return {
+        "main" : f"检查{target_name}的等级数据（不考虑精英化）",
+        "true" : f"若其等级 {compare} {node['_level']}",
+        "false" : f"若其等级 {compare_not} {node['_level']}"
+    }
+
+# 检查技力类型
+def node_FilterByTargetSPType(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    sp_type = anne_dictionary("sp_type",node["_spMask"])
+    return {
+        "main" : f"检查{target_name}的技力类型",
+        "true" : f"若其技力类型为 {sp_type} ",
+        "false" : f"若其技力类型为 {sp_type} "
+    }

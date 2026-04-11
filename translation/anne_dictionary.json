@@ -147,7 +147,7 @@
 		"INCREASE_WITH_TIME" : "自动回复",
 		"INCREASE_WHEN_ATTACK" : "攻击回复",
 		"INCREASE_WHEN_TAKEN_DAMAGE" : "受击回复",
-		"ATTACK_OR_DAMAGE" : "攻击/受击回复",
+		"ATTACK_OR_DAMAGE" : "攻击回复 或 受击回复",
 		"ALL" : "全部"
 	},
 	"abnormal" : {
@@ -249,6 +249,12 @@
 		"SPLASH" : "溅射",
 		"BUFF" : "持续",
 		"ADDITION" : "附加"
+	},
+	"apply_way" : {
+		"NONE" : "无途径",
+		"MELEE" : "近战",
+		"RANGED" : "远程",
+		"ALL" : "全部"
 	},
 	"element" : {
 		"NONE" : "无",
