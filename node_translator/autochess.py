@@ -3,6 +3,14 @@
 #----------------------------------------
 from .analyzer import anne_dictionary
 
+# 检查战斗中
+def node_AutoChessIsInBattle(node):
+    return {
+        "main" : "检查当前是否处于卫戍协议的战斗中（战斗未正式开始或已结束不计数）",
+        "true" : "若当前处于战斗中",
+        "false" : "若当前不处于战斗中"
+    }
+
 # 检查难度
 def node_AutoChessCheckDifficulty(node):
     if node["_difficultyMode"] == "TRAINING":
@@ -20,8 +28,8 @@ def node_AutoChessCheckDifficulty(node):
     elif node["_difficultyMode"] == "NORMAL":
         return {
             "main" : "检查当前卫戍协议的关卡难度",
-            "true" : "若当前为险境模拟/绝境模拟/终极模拟（普通/困难/极限难度）",
-            "false" : "若当前不为险境模拟/绝境模拟/终极模拟（普通/困难/极限难度）"
+            "true" : "若当前为险境模拟/绝境模拟/终极模拟（普通/困难/深渊难度）",
+            "false" : "若当前不为险境模拟/绝境模拟/终极模拟（普通/困难/深渊难度）"
         }
 
 # 在黑板记录盟约生效人数

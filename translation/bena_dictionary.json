@@ -119,6 +119,7 @@
 			}
 		},
 		"shield" : "护盾",
+		"cripple" : "重伤",
 		"peak" : {
 			"performance" : "精力充沛检测"
 		},
@@ -379,6 +380,7 @@
 		"trigger" : "触发",
 		"switch" : "切换",
 		"passive" : "被动",
+		"delay" : "延迟",
 		"input" : "输入",
 		"output" : "输出",
 		"out" : "输出",
@@ -389,12 +391,15 @@
 		"recover" : "恢复",
 		"recovery" : "恢复",
 		"mode" : "模式",
-		"unblocked" : "非阻挡",
+		"blocked" : "阻挡状态",
+		"unblocked" : "非阻挡状态",
+		"combat" : "阻挡中",
 		"scale" : "倍率",
 		"attr" : "属性",
 		"stack" : "叠层",
 		"durable" : "耐久",
 		"recharge" : "补充",
+		"overload" : "过载",
 		
 		"same" : "同",
 		"diff" : "异",

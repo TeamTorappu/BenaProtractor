@@ -136,10 +136,34 @@
 		"ON_PROJECTILE_STOP" : "弹道停止时",
 		"ON_PROJECTILE_ELIMINATE" : "弹道被消除时"
 	},
+	"on_event_priority" : {
+		"HIGHER_PRIORITY" : 2000,
+		"HIGH_PRIORITY" : 1000,
+		"DEFAULT" : 0,
+		"LOW_PRIORITY" : -1000,
+		"LOWER_PRIORITY" : -2000,
+		"LOWEST_PRIORITY" : -3000,
+		"TITI_DOZE_PRIORITY" : -4000
+	},
+	"event_priority" : {
+		"HIGHER_PRIORITY" : "极高（2000）",
+		"HIGH_PRIORITY" : "高（1000）",
+		"DEFAULT" : "普通（0）",
+		"LOW_PRIORITY" : "低（-1000）",
+		"LOWER_PRIORITY" : "极低（-2000）",
+		"LOWEST_PRIORITY" : "最低（-3000）",
+		"TITI_DOZE_PRIORITY" : "缇缇\"小睡\"（-4000）"
+	},
 	"buildable_type" : {
 		"NONE" : "无",
 		"MELEE" : "近战位",
 		"RANGED" : "远程位",
+		"ALL" : "全部位"
+	},
+	"buildable_type_filter" : {
+		"NONE" : "无",
+		"MELEE" : "近战位或全部位",
+		"RANGED" : "远程位或全部位",
 		"ALL" : "全部位"
 	},
 	"sp_type" : {
@@ -282,12 +306,10 @@
 		"ALL" : "我方/中立/敌方"
 	},
 	"side_type_relative" : {
-		"NONE" : "无阵营",
-		"ALLY" : "同阵营",
-		"ENEMY" : "敌对阵营",
-		"BOTH_ALLY_AND_ENEMY" : "同阵营/敌对阵营",
-		"NEUTRAL" : "中立阵营",
-		"ALL" : "同阵营/中立阵营/敌对阵营"
+		"NONE" : "无阵营关系",
+		"ALLY" : "相同阵营",
+		"ENEMY" : "对立阵营",
+		"ALL" : "相同阵营/对立阵营"
 	},
 	"modifier_target_type": {
 		"HP" : "生命值",

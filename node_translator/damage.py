@@ -127,8 +127,8 @@ def node_AOEDamage(node):
     selector = ""
     # 处理“用什么选择目标”
     if node["_useRadius"]:
-        target_option = analyze_target_options(node["_targetOptions"])
-        selector = f"对位于{target_name}半径{node['_radius']}内的{target_option['main']}"
+        target_options = analyze_target_options(node["_targetOptions"])
+        selector = f"对位于{target_name}半径{node['_radius']}内的{target_options['main']}"
         features.append(target_options["description"])
         features.append("中点判定")
     elif node["_useAbilitySelector"]:
@@ -139,7 +139,8 @@ def node_AOEDamage(node):
     else: # 使用网格范围
         target_options = analyze_target_options(node["_targetOptions"])
         selector = f"对位于{target_name}周边特定范围({node['_rangeId']})的{target_options['main']}"
-        features.append(target_options["description"])
+        if "description" in target_options:
+            features.append(target_options["description"])
         features.append("中点判定")
     result = {
         "main" : selector + "分别造成" + damage + damage_name

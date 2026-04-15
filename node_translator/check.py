@@ -1,6 +1,8 @@
 #----------------------------------------
 # 检查类Node
 #----------------------------------------
+from bena import ENEMY_NAMES
+
 from .analyzer import analyze_FP, anne_dictionary
 
 # 检查异常效果（带免疫）
@@ -405,31 +407,6 @@ def node_CheckBuildableType(node):
             "false" : f"若其部署类型不为{buildable_type}"
         }
 
-# 检查角色技能状态
-def node_CheckCharSkillAffecting(node):
-    target_name = anne_dictionary("target",node["_targetType"])
-    if node["_checkTargetHost"]:
-        return {
-            "main" : f"检查{target_name}（角色类）的技能状态（若对方为召唤物，改为检查其主人）",
-            "true" : "若检查对象处于技能期间",
-            "false" : "若检查对象不处于技能期间"
-        }
-    else:
-        return {
-            "main" : f"检查{target_name}（角色类）的技能状态",
-            "true" : "若其处于技能期间",
-            "false" : "若其不处于技能期间"
-        }
-    
-# 检查携带的技能（仅限角色类可用）
-def node_CheckSkillIndex(node):
-    target_name = anne_dictionary("target",node["_targetType"])
-    return {
-        "main" : f"检查{target_name}（角色类）携带的技能",
-        "true" : f"若{target_name}携带的是{node['_skillIndex'] + 1}技能", # Index从0开始，技能序号从1开始
-        "false" : f"若{target_name}携带的是其他技能"
-    }
-
 # 检查敌人地位级别
 def node_CheckEnemyLevelMask(node):
     target_name = anne_dictionary("target",node["_targetType"])
@@ -537,7 +514,7 @@ def node_FilterByTargetMassLevel(node):
 
 # 检查目标生命
 def node_FilterByTargetHp(node):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = anne_dictionary("target",node["_targetType"])
     compare = anne_dictionary("compare",node["_condType"])
     compare_not = anne_dictionary("compare_not",node["_condType"])
     default_value = analyze_FP(node["_hpValue"])
@@ -561,7 +538,7 @@ def node_FilterByTargetHpRatio(node):
         }
     else:
         default_value = node["_value"]
-        prefix = node["_blackboardPrefix"] # 对的这玩意自带一次小写化
+        prefix = node["_blackboardPrefix"].lower() if node["_blackboardPrefix"] else "" # 对的这玩意自带一次小写化
         return {
             "main" : f"检查{target_name}当前生命比例（生命/最大生命值）",
             "true" : f"若其生命比例 {compare} [{prefix}hp_ratio]（默认{default_value}）",
@@ -650,31 +627,70 @@ def node_FilterByTargetSPType(node):
         "false" : f"若其技力类型为 {sp_type} "
     }
 
-# 检查技能触发类型
-def node_CheckCharacterSkillType(node):
-    target_name = anne_dictionary("target",node["_targetType"])
-    skill_type = anne_dictionary("skill_type",node["_skillType"])
-    return {
-        "main" : f"检查{target_name}（角色类）携带技能的触发类型",
-        "true" : f"若其为 {skill_type} 技能",
-        "false" : f"若其不为 {skill_type} 技能"
-    }
-
 # 检查所处地块
 def node_CheckCurrentTileKey(node):
     target_name = anne_dictionary("target",node["_target"])
     tile_keys = []
     for tile_key in node["_tileKey"]:
-        tile_keys.append(tile_key)
+        tile_keys.append(tile_key) # 需翻译
+    result ={
+        "main" : f"检查{target_name}所处的地块是否为"+"、".join(tile_keys),
+        "true" : f"若其位于此类地块之一",
+        "false" : f"若其不位于此类地块"
+    }
     if node["_isExclude"]:
+        result["true"],result["false"] = result["false"],result["true"]
+    return result
+
+# 检查敌人类单位的ID
+def node_CheckEnemyId(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    enemy_names = []
+    if not node["_loadIdFromBb"]:
+        for enemy_id in node["_filterIds"]:
+            if "_" in enemy_id and enemy_id.startswith("enemy_"):
+                enemy_name = enemy_id.split("_")[2] # 这是实际ID，就看这个就好
+                if enemy_name in ENEMY_NAMES:
+                    enemy_names.append(ENEMY_NAMES[enemy_name])
+                else:
+                    enemy_names.append(enemy_id)
+    result = None
+    if node["_loadIdFromBb"]:
+        result = {
+            "main" : f"检查{target_name}（敌人类）的ID是否为黑板[enemy_key]记述的ID",
+            "true" : f"若该敌人为该ID的敌人",
+            "false" : f"若该敌人不为该ID的敌人"
+        }
+    elif len(enemy_names) > 1:
+        result = {
+            "main" : f"检查{target_name}（敌人类）是否为 "+"、".join(enemy_names) + " 之一",
+            "description" : "即检查ID是否为："+"；".join(node["_filterIds"]),
+            "true" : f"若该敌人在上述敌人之一",
+            "false" : f"若该敌人不为上述敌人之一"
+        }
+    else:
+        result = {
+            "main" : f"检查{target_name}（敌人类）是否为 "+enemy_names[0],
+            "description" : "即检查ID是否为："+node["_filterIds"][0],
+            "true" : f"若该敌人为 {enemy_names[0]}",
+            "false" : f"若该敌人不为 {enemy_names[0]}"
+        }
+    if node["_isUnset"]:
+        result["true"],result["false"] = result["false"],result["true"]
+    return result
+
+# 检查当前单位模式
+def node_CheckUnitCurrentMode(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_loadCurModeBbKey"] != None:
         return {
-            "main" : f"检查{target_name}所处的地块是否为"+"、".join(tile_keys),
-            "true" : f"若其不位于此类地块",
-            "false" : f"若其位于此类地块之一"
+            "main" : f"检查{target_name}当前的模式编号是否为黑板[{node['_loadCurModeBbKey']}]记述的编号",
+            "true" : f"若其单位当前模式为[{node['_loadCurModeBbKey']}]号模式",
+            "false" : f"若其单位当前模式不为[{node['_loadCurModeBbKey']}]号模式"
         }
     else:
         return {
-            "main" : f"检查{target_name}所处的地块是否为"+"、".join(tile_keys),
-            "true" : f"若其位于此类地块之一",
-            "false" : f"若其不位于此类地块"
+            "main" : f"检查{target_name}当前的模式编号",
+            "true" : f"若其单位当前模式为{node['_checkCurModeIndex']}号模式",
+            "false" : f"若其单位当前模式不为{node['_checkCurModeIndex']}号模式"
         }

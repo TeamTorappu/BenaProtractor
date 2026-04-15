@@ -340,30 +340,36 @@ class Protractor:
             context_menu = tk.Menu(self.window, tearoff=0)
             # 转跳
             if len(selected_link) != None and selected_link != "":
-                context_menu.add_command(label="转跳到至 "+selected_link, command=lambda: self.display_by_id(selected_link))
-                if "." in selected_link:
-                    search_key = selected_link.split(".",1)[1]
-                    context_menu.add_command(label="搜索 "+search_key, command=lambda: self.search_by(search_key))
-                else:
-                    context_menu.add_command(label="搜索 "+selected_link, command=lambda: self.search_by(selected_link))
-                context_menu.add_separator()
+                links = selected_link.split(",")
+                for link in links:
+                    context_menu.add_command(label="转跳到至 "+link, command=lambda: self.display_by_id(link))
+                    if "." in link:
+                        search_key = link.split(".",1)[1]
+                        context_menu.add_command(label="搜索 "+search_key, command=lambda: self.search_by(search_key))
+                    else:
+                        context_menu.add_command(label="搜索 "+link, command=lambda: self.search_by(link))
+                    context_menu.add_separator()
             # 复制文本
-            context_menu.add_command(label="复制", command=lambda: self.copy(selected_text))
+            context_menu.add_command(label="复制整行", command=lambda: self.copy(selected_text))
+            copy_keys = []
             if ":" in selected_text: # 如果是 A : B 的json格式，选择复制前后哪边
                 keys = [key.strip() for key in selected_text.split(":")]
                 if keys[1].startswith("$type"):  # 只要内容，不要Node的那一大段
                     keys[1] = keys[1][28:-17]
-                context_menu.add_command(label="复制Key", command=lambda: self.copy(keys[0]))
-                context_menu.add_command(label="复制Value", command=lambda: self.copy(keys[1]))
+                copy_keys.append(keys[0])
+                copy_keys.append(keys[1])
             elif "：" in selected_text: # 如果是 A : B 的json格式，选择复制前后哪边
                 keys = [key.strip() for key in selected_text.split("：")]
-                context_menu.add_command(label="复制Key", command=lambda: self.copy(keys[0]))
-                context_menu.add_command(label="复制Value", command=lambda: self.copy(keys[1]))
+                copy_keys.append(keys[0])
+                copy_keys.append(keys[1])
             elif "（" in selected_text and selected_text.endswith("）"): # 如果是 A（B） 的括号格式，选择复制前后哪边
                 keys = [key.strip() for key in selected_text.split("（")]
                 keys[1] = keys[1][:-1].strip()
-                context_menu.add_command(label="复制外部内容", command=lambda: self.copy(keys[0]))
-                context_menu.add_command(label="复制括号内内容", command=lambda: self.copy(keys[1]))
+                copy_keys.append(keys[0])
+                copy_keys.append(keys[1])
+            for copy_key in copy_keys:
+                if copy_key not in ["","未翻译","$type"]:
+                    context_menu.add_command(label="复制 " + copy_key, command=lambda key=copy_key: self.copy(key))
             # 分割线
             context_menu.add_separator()
             # 复制全文

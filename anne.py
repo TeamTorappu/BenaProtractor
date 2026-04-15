@@ -376,7 +376,8 @@ def translate_whole_buff_template(buff_template: BuffTemplate):
     if buff_template.display_name != buff_template.buff_key:
         translation["main"] = f"{buff_template.display_name}（{buff_template.buff_key}）"
     if buff_template.on_event_priority != "DEFAULT":
-        translation["children"].append("事件优先级："+buff_template.on_event_priority)
+        priority = anne_dictionary("event_priority",buff_template.on_event_priority)
+        translation["children"].append("事件优先级："+priority)
     if buff_template.effect_key != "":
         translation["children"].append("特效："+buff_template.effect_key)
     # 逐个事件进行翻译

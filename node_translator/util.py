@@ -2,22 +2,6 @@
 # 效果类Node（或者叫未分类更好）
 #----------------------------------------
 from .analyzer import anne_dictionary, analyze_damage, to_percent
-    
-# 触发某个能力
-def node_TriggerAbility(node):
-    # 未解析参数：_checkCanUseAblityFlag
-    target_name = anne_dictionary("target",node["_targetType"])
-    ability_name = node["_abilityName"]
-    if node["_ownerType"] == node["_targetType"]:
-        return {"main" :f"让{target_name}触发{ability_name}能力"}
-    else:
-        owner_name = anne_dictionary("target",node["_ownerType"])
-        return {"main" :f"让{owner_name}向{target_name}触发{ability_name}能力"}
-
-# 中断召唤物的技能
-def node_InterruptTokenSkill(node):
-    host_name = anne_dictionary("target",node["_hostType"])
-    return {"main" : f"由{host_name}终止Buff持有者的技能（通常来说，持有者应该是{host_name}的召唤物）"}
 
 # 补充召唤物数量
 def node_RechargeToken(node):
@@ -75,12 +59,13 @@ def node_ModifySp(node):
         amount = "["+node['_spString']+"]点"
         if node["_modifyValue"] != 0:
             descriptions.append(f"默认{modify_type}{node['_modifyValue']}点")
+
     if node["_modifyByRatio"]:
-        amount = to_percent(node["_modifyRatio"])
+        amount = to_percent(node["_modifyRatio"]) if node["_spString"] == "" else "["+node['_spString']+"]%"
         if node["_modifyByRatioBasedOnCurSP"]: #按当前技力
-            modify_type = "当前技力的"+amount
+            modify_type = "增加当前技力的"
         else: #按技力消耗量
-            modify_type = "技力消耗量的"+amount
+            modify_type = "增加技力消耗量的"
     # 额外内容
     if node["_forceFlag"]:
         modify_type = "强制"+modify_type
@@ -189,7 +174,7 @@ def node_SwitchMode(node):
     elif node["_loadModeFromBlackboard"]:
         action = "切换至特定编号的模式，编号由黑板值 [mode] 决定"
     else:
-        action = f"切换至第{node['_modeIndex']}号模式"
+        action = f"切换至{node['_modeIndex']}号模式"
     return {"main" : f"令{target_name}{action}"}
 
 # 强制击倒

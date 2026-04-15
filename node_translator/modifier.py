@@ -67,6 +67,32 @@ def node_EnsureDmgOrHeal(node):
         "false" : "若此次调整值不是伤害也不是治疗"
     }
 
+# “消耗”致命伤害调整值的处理权
+def node_ConsumeTrySetHpZeroModifier(node):
+    result = {
+        "main" : "尝试\"消耗\"本次致命伤害的处理权",
+        "description" : f"意在\"确保同一时间只有一个致命伤害相关的效果被处理\"",
+        "style_closed" : True,
+        "true" : "若\"消耗\"成功（即尚未被处理过）",
+        "false" : "若\"消耗\"失败（即已被其他效果处理）"
+    }
+    if node["_dontConsumeWhenUndeadable"]:
+        result["main"] = f"若持有者不持有不死异常效果，" + result["main"]
+        result["false"] = "若持有不死异常或\"消耗\"失败（即已被其他效果处理）"
+    if node["_blockThisHpSet"]:
+        result["true"] += "，且阻止本次HP修改"
+    return result
+
+# 致命伤害调整值处理权“消耗”者
+def node_IsConsumerOfTrySetHpZeroModifier(node):
+    return {
+        "main" : "检查本Buff是否为\"消耗\"了致命伤害的处理权",
+        "description" : f"意在\"确保同一时间只有一个致命伤害相关的效果被处理\"",
+        "style_closed" : True,
+        "true" : "若是处理权的\"消耗\"者（即由本Buff\"拦截\"致命伤害时）",
+        "false" : "若不是处理权的\"消耗\"者"
+    }
+
 # 检查伤害的详细信息
 def node_FilterDamageModifer(node):
     short_conditions = []

@@ -160,21 +160,22 @@ def analyze_buff(buff_data,full_information=False):
         else:
             return {"main" : "<" + buff_key + "> (读取自数据库)","link" : "buff." + buff_key}
     
-    # 检查模板
+    # 检查模板与事件优先级
     if buff_data["templateKey"] != "empty" :
         template = buff_data["templateKey"]
+        priority = anne_dictionary("event_priority",buff_data['onEventPriority'])
         # 覆写事件优先级
         if buff_data["overrideOnEventPriority"]:
             if full_information:
-                features.append(f"事件优先级：{buff_data['onEventPriority']}（覆盖模板的数据）")
+                features.append(f"事件优先级：{priority}（覆盖模板的数据）")
             else:
-                features.append(f"事件优先级覆写为{buff_data['onEventPriority']}")
-    # 事件优先级
-    if buff_data["overrideOnEventPriority"] or buff_data['onEventPriority'] != "DEFAULT":
+                features.append(f"事件优先级覆写为 {priority}")
+    elif buff_data["overrideOnEventPriority"] or buff_data['onEventPriority'] != "DEFAULT":
+        priority = anne_dictionary("event_priority",buff_data['onEventPriority'])
         if full_information:
-            features.append(f"事件优先级：{buff_data['onEventPriority']}")
+            features.append(f"事件优先级：{priority}")
         else:
-            features.append(f"事件优先级为{buff_data['onEventPriority']}")
+            features.append(f"事件优先级为 {priority}")
     # 检查黑板
     if buff_data["blackboard"] and len(buff_data["blackboard"]) > 0:
         for bb_data in buff_data["blackboard"]:
