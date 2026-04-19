@@ -4,7 +4,8 @@
 '''
 import math
 from data_class import *
-from bena import ask_bena
+from bena import ask_bena, translate_buff_name
+from relic_translator.analyzer import analyze_timing
 from translator import anne_dictionary, get_anne_dictionary
 
 ANNE_NODE = None
@@ -298,8 +299,20 @@ class AnneRelic:
         if rogue_effect.translation == None:
             effect_key = rogue_effect.key
             print(f"[安妮]尝试翻译藏品效果 {effect_key}")
-            # 全局buff有二级结构所以拆开来解析
+
+            # 全局buff使用转跳
             if effect_key == "global_buff_normal": 
+                prefix = analyze_timing(rogue_effect.type,rogue_effect.blackboard)
+                global_buff_key = rogue_effect.blackboard["key"]
+                rogue_effect.translation = {
+                    "main" : prefix+"生效全局Buff："+translate_buff_name(rogue_effect.blackboard["key"]),
+                    "link" : "global_buff."+global_buff_key,
+                    "children" : []
+                }
+                for key,bb in rogue_effect.blackboard.items():
+                    if key != "key" and key != "trig_type":
+                        rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
+                '''
                 buff_key = rogue_effect.blackboard["key"] # 这个才是buff的名字
                 method = getattr(self.translator, "gb_"+buff_key.replace("[","_").replace("]",""), "")
                 if method != "" :
@@ -313,14 +326,16 @@ class AnneRelic:
                     }
                     for key,bb in rogue_effect.blackboard.items():
                         rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
+                '''
             else: # 其他的效果
                 method = getattr(self.translator, "rogue_"+effect_key, "")
                 if method != "" :
                     rogue_effect.translation = method(rogue_effect.type,rogue_effect.blackboard)
                     return rogue_effect.translation
                 else: # 无法翻译，把所有数据搓成可阅读的格式
+                    prefix = analyze_timing(rogue_effect.type,rogue_effect.blackboard)
                     rogue_effect.translation = {
-                        "main" : effect_key+"（未翻译）",
+                        "main" : prefix+effect_key+"（未翻译）",
                         "style_closed" : True,
                         "children" : []
                     }
@@ -366,6 +381,42 @@ def translate_whole_buff(buff: Buff):
             translation["main"] = f"{buff.display_name}（{buff.buff_key}）"
     return translation
 
+# 翻译一整个GlobalBuff
+def translate_whole_global_buff(gbuff: GlobalBuff):
+    print("[安妮]尝试翻译GlobalBuff "+gbuff.buff_key)
+    translation = {
+        "main" : gbuff.buff_key,
+        "children" : []
+    }
+    if gbuff.display_name != gbuff.buff_key:
+        translation["main"] = f"{gbuff.display_name}（{gbuff.buff_key}）"
+    # 主类
+    translation["children"].append({"main" : "类别："+gbuff.prefab_data["m_Script"]})
+    translation["children"].append({"main" : "阵营："+("敌方" if gbuff.prefab_data["_sourceType"] == "ENEMY" else "我方")})
+    if gbuff.prefab_data["_overrideCameraEffect"] != "":
+        translation["children"].append({"main" : "覆写镜头特效："+gbuff.prefab_data["_overrideCameraEffect"]})
+    # 目标筛选逻辑
+    options_translation = ANNE_NODE.translator.analyze_target_options(gbuff.target_options,False)
+    options_translation["main"] = "筛选所有" + options_translation["main"]
+    translation["children"].append(options_translation)
+    # 逐Buff添加至列表
+    if len(gbuff.buff_datas) > 0:
+        buffs_translation = {"main" : "为场上的那些单位施加以下Buff：","children" : []}
+        for buff_data in gbuff.buff_datas:
+            buffs_translation["children"].append(ANNE_NODE.translator.analyze_buff(buff_data))
+        translation["children"].append(buffs_translation)
+    # 逐DeckBuff添加至列表
+    if len(gbuff.deck_buff_datas) > 0:
+        deck_buffs_translation = {"main" : "为待部署区的那些单位施加以下DeckBuff：","children" : []}
+        for deck_buff_data in gbuff.deck_buff_datas:
+            buffs_translation["children"].append(ANNE_NODE.translator.analyze_deck_buff(deck_buff_data))
+        translation["children"].append(deck_buffs_translation)
+    # 剩下无法翻译的部分先直接展示
+    for key, value in gbuff.prefab_data.items():
+        if key not in ["m_Script","_key","_options","_buffs","_deckBuffs","_sourceType","_overrideCameraEffect"]:
+            translation["children"].append(key+" : "+str(value))
+    return translation
+
 # 翻译一整个BuffTemplate
 def translate_whole_buff_template(buff_template: BuffTemplate):
     print("[安妮]尝试翻译Buff模板 "+buff_template.buff_key)
@@ -383,7 +434,7 @@ def translate_whole_buff_template(buff_template: BuffTemplate):
     # 逐个事件进行翻译
     for event in buff_template.events:
         event_key = event.event_key
-        event_name = anne_dictionary("event",event_key)
+        event_name = anne_dictionary("buff_event",event_key)
         event_translation = ANNE_NODE.translate_all(event.node_list)
         event_translation["main"] = f"{event_name}（{event_key}）"
         translation["children"].append(event_translation)

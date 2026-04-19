@@ -107,15 +107,17 @@ def node_AssignBuffBlackboard(node):
             target_bb = target_buff_name + " 的 [" + target_bb + "]"
             source_bb = node["_buffKeyAssignFrom"] + " 的 [" + node["_valueKey"] + "]"
             if node["_assignFirstBuff"]:
-                return {"main" : f"尝试寻找{target_name}持有的首个<{source_buff_name}>与<{target_buff_name}>Buff，设 {target_bb} = {source_bb}"}
+                return {"main" : f"尝试寻找{target_name}持有的首个 <{source_buff_name}> 与 <{target_buff_name}> Buff，设 {target_bb} = {source_bb}"}
             else:
-                return {"main" : f"尝试寻找{target_name}持有的首个<{source_buff_name}>Buff，设该单位的所有<{target_buff_name}>黑板上的 {target_bb} = {source_bb}"}      
+                return {"main" : f"尝试寻找{target_name}持有的首个 <{source_buff_name}> Buff，设该单位的所有<{target_buff_name}>黑板上的 {target_bb} = {source_bb}"}      
     # 默认处理
     value = node["_defaultValue"]
+    if node["_valueKey"] != None and node["_valueKey"] != "":
+        value = f"[{node['_valueKey']}]（默认{value}）"
     if node["_assignFirstBuff"]:
-        return {"main" : f"尝试寻找{target_name}持有的首个<{target_buff_name}>Buff，设该Buff的 {target_bb} = {value}"}
+        return {"main" : f"尝试寻找{target_name}持有的首个 <{target_buff_name}> Buff，设该Buff的 {target_bb} = {value}"}
     else:
-        return {"main" : f"设{target_name}的所有<{target_buff_name}>黑板上的 {target_bb} = {value}"}
+        return {"main" : f"设{target_name}的所有 <{target_buff_name}> Buff黑板上的 {target_bb} = {value}"}
 
 # 记录末影黑板（同UID单位间互通）
 def node_AddCharacterSharedBlackboard(node):
@@ -181,3 +183,7 @@ def node_AssignCardUIDToBlackBoard(node):
 def node_AssignRespawnCntToBlackboard(node):
     target_name = anne_dictionary("target",node["_targetType"])
     return {"main" : f"将{target_name}目前已重生的次数记录至黑板 [{node['_blackboardKey']}] 中"}
+
+# 添加Buff黑板
+#def node_AddBuffBlackboard(node):
+#

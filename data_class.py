@@ -106,7 +106,23 @@ class BuffEvent:
         for node_data in node_data_list:
             self.node_list.append(Node(node_data))
 
-
+# GlobalBuff类
+class GlobalBuff:
+    def __init__(self, buff_key, prefab_data):
+        self.buff_key = buff_key
+        self.display_name = buff_key
+        self.raw_prefab_data = json.dumps(prefab_data,indent=4,ensure_ascii=False)
+        self.prefab_data = prefab_data
+        self.target_options = prefab_data["_options"]
+        self.buff_datas = prefab_data["_buffs"]
+        self.deck_buff_datas = prefab_data["_deckBuffs"]
+        self.hidden = False
+    
+    # 获取显示名
+    def get_display_name(self):
+        if self.display_name == "":
+            return self.buff_key
+        return self.display_name
 
 # 肉鸽的Buff数据类，未来可能可以统一度量衡，目前还是算了
 class RogueBuffData:

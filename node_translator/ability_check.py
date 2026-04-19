@@ -32,11 +32,11 @@ def node_CheckCharSkillAffecting(node):
     
 # 检查携带的技能（仅限角色类可用）
 def node_CheckSkillIndex(node):
-    target_name = anne_dictionary("target",node["_targetType"])
+    owner_name = anne_dictionary("target",node["_ownerType"])
     return {
-        "main" : f"检查{target_name}（角色类）携带的技能",
-        "true" : f"若{target_name}携带的是{node['_skillIndex'] + 1}技能", # Index从0开始，技能序号从1开始
-        "false" : f"若{target_name}携带的是其他技能"
+        "main" : f"检查{owner_name}（角色类）携带的技能",
+        "true" : f"若{owner_name}携带的是{node['_skillIndex'] + 1}技能", # Index从0开始，技能序号从1开始
+        "false" : f"若{owner_name}携带的是其他技能"
     }
 
 # 检查技能触发类型
@@ -51,7 +51,6 @@ def node_CheckCharacterSkillType(node):
 
 # 检查上下文能力的当前目标数
 def node_FilterAbilityValidCastTargetCnt(node):
-    target_name = anne_dictionary("target",node["_targetType"])
     compare = anne_dictionary("compare",node["_condType"])
     compare_not = anne_dictionary("compare_not",node["_condType"])
     return {

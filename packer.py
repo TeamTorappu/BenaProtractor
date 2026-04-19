@@ -21,6 +21,8 @@ if __name__ == "__main__":
         _z.write("./icon/icon.ico","./icon/icon.ico")
         _z.write("./translation/bena_dictionary.json","./translation/bena_dictionary.json")
         _z.write("./translation/anne_dictionary.json","./translation/anne_dictionary.json")
+        # 临时：直接加入global_buff_dummy.json
+        _z.write("./tables/global_buff_dummy.json","./translation/global_buff_dummy.json")
         #add_folder_to_zip(_z,"data")
         #add_folder_to_zip(_z,"tables")
         #add_folder_to_zip(_z,"translation")

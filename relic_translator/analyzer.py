@@ -1,5 +1,8 @@
 import json
+import math
 import os
+
+from bena import ask_bena
 
 ANNE_DICTIONARY = None
 GAP = 0.000000001
@@ -69,18 +72,18 @@ def to_delta_percent(power_value):
 # 返回生效时间的字符串。
 def analyze_timing(item_type,blackboard):
     # 根据触发类型...
-    trig_type = "GAIN"
-    if "trig_type" in blackboard:
-        trig_type = blackboard["trig_type"]
+    if "trig_type" not in blackboard:
+        return ""
+    trig_type = blackboard["trig_type"]
     # 界园钱特殊处理
     if item_type == "COPPER_BUFF":
-        return anne_dictionary("trig_type_copper",trig_type)
+        return anne_dictionary("trig_type_copper",trig_type)+"，"
     # 返回时点文本
-    return anne_dictionary("trig_type",trig_type)
+    return anne_dictionary("trig_type",trig_type)+"，"
 
 # 职业筛选的处理
 # 返回职业的字符串。说明筛选的职业以及“干员”和“召唤物”这样的称呼
-def analyze_profession(self,profession_mask):
+def analyze_profession(profession_mask):
     profession_mask = profession_mask.upper()
     masked_list = [profession_mask]
     if "," in profession_mask:
@@ -109,7 +112,7 @@ def analyze_profession(self,profession_mask):
 
 # 整个选择器的处理
 # 返回选择器称呼的字符串。说明筛选的职业、部署类型以及“干员”和“召唤物”这样的称呼
-def analyze_selector(self,blackboard,prefix="",suffix=""):
+def analyze_selector(blackboard,prefix="",suffix=""):
     # 部署类型处理
     place = ""
     if "selector.buildable" in blackboard:
@@ -126,7 +129,7 @@ def analyze_selector(self,blackboard,prefix="",suffix=""):
 
 # 道具的处理
 # 返回结构体，可能会带有链接
-def analyze_item(self,blackboard):
+def analyze_item(blackboard):
     if "id" in blackboard:
         item = ask_bena("rogue_item",blackboard["id"])
         if item != None:

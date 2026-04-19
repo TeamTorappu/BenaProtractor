@@ -68,7 +68,7 @@ def node_CreateBuffUseHostAsSource(node):
     buff_name = "Buff"
     result = analyze_buff(node['_buffData'])
     if node["_isDerivedBuff"]: # 属于附属Buff
-        buff_name = "本Buff的附属Buff",
+        buff_name = "本Buff的附属Buff"
     if node["_createOnTargetHost"]: # 对目标召唤物的本尊
         target_name = target_name + "（召唤物）的持有者"
     result["main"] = f"让{source_name}为{target_name}创建一个{buff_name}：" + result["main"]
@@ -81,7 +81,7 @@ def node_CreateBuffToHost(node):
     buff_name = "Buff"
     result = analyze_buff(node['_buffData'])
     if node["_isDerivedBuff"]: # 属于附属Buff
-        buff_name = "本Buff的附属Buff",
+        buff_name = "本Buff的附属Buff"
     result["main"] = f"让{source_name}（召唤物）为其持有者创建一个{buff_name}：" + result["main"]
     return result
 
@@ -211,9 +211,9 @@ def node_CreateBuffInRange(node):
         result["description"] += "；" + target_options["description"]
     # 排序
     if node["_randomTarget"]:
-        result["main"] = result["main"][:-1] + "（施加顺序随机）："
+        result["main"] = f"选择{range_name}随机一名{target_options['main']}，为该单位创建以下Buff：" ,
     elif node["_filterTargets"] and node["_filterType"] != "ALL":
-        result["main"] = result["main"][:-1] + f"（施加顺序使用 {node['_filterType']} 过滤器排序）："
+        result["main"] = result["main"][:-1] + f"（使用 {node['_filterType']} 过滤器）："
     return result
 
 # 为自己的所有召唤物创建Buff
@@ -224,7 +224,7 @@ def node_CreateBuffToToken(node):
     conditions = []
     buff_name = "Buff"
     if node["_isDerivedBuff"]: # 属于附属Buff
-        buff_name = "本Buff的附属Buff",
+        buff_name = "本Buff的附属Buff"
     result = analyze_buff(node["_buffData"])
     if node["_excludeTarget"]: # 排除目标召唤物
         target_name = anne_dictionary("target",node["_targetType"])
@@ -234,6 +234,42 @@ def node_CreateBuffToToken(node):
         if "link" in result:
             result["link"] = "buff." + node['_excludeBuffKey'] + "," + result["link"]
     result["main"] = f"为{source_name}{target_num}{'且'.join(conditions)}召唤物创建{buff_name}：" + result["main"]
+    return result
+
+# 使用能力选择器创建Buff
+def node_CreateBuffUseAbilitySelector(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    buff_source_name = anne_dictionary("target",node["_buffSourceType"] if node["_overrideBuffSourceType"] else node["_sourceType"]) # 覆写Buff来源
+    ability_source_name = anne_dictionary("target",node["_abilityFromTargetType"] if node["_useAbilityFromTarget"] else node["_sourceType"]) # 覆写能力来源  
+    ability_name = node["_abilityName"]
+    if buff_source_name != ability_source_name:
+        ability_name = f"{ability_source_name}的{ability_name}"
+    result = analyze_buff(node['_buff'])
+    buff_name = "Buff"
+    if node["_isDerivedBuff"]: # 属于附属Buff
+        buff_name = "本Buff的附属Buff"
+    if node["_actionFailedIfNoTarget"]:
+        result["true"] = "若该选择器存在可选目标"
+        result["false"] = "若该选择器不存在可选目标"
+    if node["_targetType"] != node["_sourceType"]: # 起点
+        position_name = anne_dictionary("target",node["_targetType"])
+        result["main"] = f"让{buff_source_name}借用{position_name}所在位置和部署方向，使用{ability_name}能力的选择器，对选中目标创建{buff_name}：" + result["main"]
+    else:
+        result["main"] = f"让{buff_source_name}使用{ability_name}能力的选择器，对选中目标创建{buff_name}：" + result["main"]
+    return result
+
+# 向特定阵营的所有单位创建Buff
+def node_CreateBuffToCertainSideUnits(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    side_name = anne_dictionary("side_type",node["_sideMask"])
+    buff_name = "Buff"
+    result = analyze_buff(node['_buff'])
+    if node["_isDerivedBuff"]: # 属于附属Buff
+        buff_name = "本Buff的附属Buff"
+    if node["_noSource"]:
+        result["main"] = f"为所有{side_name}单位创建{buff_name}（无来源）：" + result["main"]
+    else:
+        result["main"] = f"让持有者为所有{side_name}单位创建{buff_name}：" + result["main"]
     return result
 
 

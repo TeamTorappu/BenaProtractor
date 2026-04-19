@@ -143,7 +143,7 @@ def analyze_damage(damage_data,prefix="",suffix=""):
         suffix += "（"+"；".join(features)+"）"
     return prefix + damage_type_name + attack_type_name + "伤害"+suffix
     
-# 统一解析Buff的详细信息
+# 解析Buff的详细信息
 # 返回结构体
 def analyze_buff(buff_data,full_information=False):
     buff_key = buff_data["buffKey"]
@@ -445,7 +445,7 @@ def analyze_buff(buff_data,full_information=False):
     elif template != "empty":
         if full_information: # 完整显示
             result["children"] = [{
-                "main" : f"使用模板：<{template}>",
+                "main" : f"Buff模板：<{template}>",
                 "link" : "buff_template."+template
             }]
         else: # 简短显示
@@ -455,7 +455,7 @@ def analyze_buff(buff_data,full_information=False):
             elif template == "empty":
                 result["main"] += "（不使用模板）"
             else:
-                result["main"] += f"（使用模板<{template}>）"
+                result["main"] += f"（模板：<{template}>）"
                 result["link"] = "buff_template."+template
     if full_information: # 按需返回子列表
         if "children" not in result:
@@ -474,6 +474,30 @@ def analyze_buff(buff_data,full_information=False):
         result["children"].append({"main" : "黑板数据：","children" : bb_children})
     return result
 
+# 解析Buff的详细信息
+# 返回结构体
+def analyze_deck_buff(deck_buff_data,full_information=False):
+    # 未解析参数：showToastWhenAffect
+    result = analyze_buff(deck_buff_data["buff"],full_information)
+    if full_information:
+        if deck_buff_data["lifeType"] == "ALL_THE_TIME":
+            result["children"].append({"main" : "每次对象部署时生效"})
+        else:
+            result["children"].append({"main" : "下一次对象部署时生效，仅生效一次"})
+        if deck_buff_data["affectInHand"]:
+            result["children"].append({"main" : "仅生效于\"位于手卡中\"的对象（即未被隐藏的单位）"})
+        if deck_buff_data["affectOutOfHand"]:
+            result["children"].append({"main" : "仅生效于\"不位于手卡中\"的对象（即被隐藏的单位）"})
+        if deck_buff_data["cardEffectType"] != "NONE":
+            result["children"].append({"main" : "为对象增加头像特效" + deck_buff_data["cardEffectType"]})
+        if deck_buff_data["cardAnimWhenDeckbuffAdd"] != "":
+            result["children"].append({"main" : "添加时增加头像动画" + deck_buff_data["cardAnimWhenDeckbuffAdd"]})
+        if deck_buff_data["wontSpawnWhenRallyPointSwitch"]:
+            result["children"].append({"main" : "wontSpawnWhenRallyPointSwitch"})
+        if deck_buff_data["ignoreSpecialBuild"]:
+            result["children"].append({"main" : "ignoreSpecialBuild"})
+    return result
+
 # 解析目标选项的详细信息
 # 返回结构体
 def analyze_target_options(option,relative_side=True):
@@ -490,11 +514,14 @@ def analyze_target_options(option,relative_side=True):
     # 行动方式
     if option["targetMotion"] != "ALL":
         conditions.append(anne_dictionary("motion",option["targetMotion"]))
+    # 单位类型
+    if option["checkUnitType"]:
+        conditions.append(anne_dictionary("unit_type",option["unitTypeMask"]))
     # 如果没有额外选项，这就是要展示的全部了
     if not option["enableAdvancedOptions"]:
         return {
             "main" : "".join(conditions)+"单位",
-            "description" : "直接选择，无视可选性"
+            "description" : "不启用额外判定"
         }
     # 开始处理剩下的所有
     descriptions = []
@@ -520,29 +547,30 @@ def analyze_target_options(option,relative_side=True):
     if option["purposeMask"] != "NONE":
         purpose = anne_dictionary("purpose",option["purposeMask"])
         descriptions.append(f"视为一次{purpose}")
+    unit_name = "单位"
     # 职业筛选
     if option["professionMask"] != "NONE":
         if option["professionMask"] == "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER":
-            descriptions.append(f"必须是干员")
+            #descriptions.append(f"必须是干员")
+            unit_name = f"干员"
         elif option["professionMask"] == "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, PIONEER":
-            descriptions.append(f"必须是干员或召唤物")
+            #descriptions.append(f"必须是干员或召唤物")
+            unit_name = f"干员/召唤物"
         elif option["professionMask"] == "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TRAP, PIONEER":
-            descriptions.append(f"必须是干员或装置")
+            #descriptions.append(f"必须是干员或装置")
+            unit_name = f"干员/装置"
         elif option["professionMask"] != "WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, TOKEN, TRAP, PIONEER":
-            classes = "/".join([anne_dictionary("class",_cls) for _cls in option["professionMask"].split(", ")])
-            descriptions.append(f"必须是{classes}单位")
-    # 单位类型
-    if option["checkUnitType"]:
-        unit_type = anne_dictionary("unit_type",option["unitTypeMask"])
-        descriptions.append(f"必须是{unit_type}")
+            classes = "/".join([anne_dictionary("profession",_cls) for _cls in option["professionMask"].split(", ")])
+            #descriptions.append(f"必须是{classes}单位")
+            unit_name = f"{classes}单位"
         
     if len(descriptions) > 0:
         return {
-            "main" : "".join(conditions)+"单位",
+            "main" : "".join(conditions)+unit_name,
             "description" : "；".join(descriptions)
         }
     #最朴实无华的选择，没有任何附加条件
     return {
-        "main" : "".join(conditions)+"单位"
+        "main" : "".join(conditions)+unit_name
     }
         

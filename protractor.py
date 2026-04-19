@@ -56,7 +56,6 @@ class Protractor:
         # 译文区
         self.display_panel = ttk.Frame(self.main_panel)
         self.main_panel.add(self.display_panel, text="译文")
-        self.display_links = {}
         self.display_area = Displayview(self.display_panel,selectmode="browse",show="tree")
         self.display_area.column(f"#0", stretch=True)
         # 滚动条
@@ -71,6 +70,8 @@ class Protractor:
         self.display_area.bind('<Button-3>',self.display_area_right_clicked)
         self.display_area.pack(fill="both",expand=True)
         self.displaying = ""
+        self.display_index = -1
+        self.link_stacks = []
         # 原文区
         self.origin_panel = ttk.Frame(self.main_panel)
         self.main_panel.add(self.origin_panel, text="原文")
@@ -102,6 +103,8 @@ class Protractor:
                 self.display_name = "[模板]"+data_reference.display_name
             elif self.data_type == "buff":
                 self.display_name = "[Buff]"+data_reference.display_name
+            elif self.data_type == "global_buff":
+                self.display_name = "[GBuff]"+data_reference.display_name
             elif self.data_type == "rogue_item":
                 self.display_name = "["+data_reference.display_type+"]"+data_reference.display_name
             else:
@@ -155,8 +158,8 @@ class Protractor:
     def display_directory_selected_item(self,event=None):
         selected = self.directory.selection()
         if selected:
-            linked_index = int(self.directory.item(selected[0],"values")[0])
-            linked = self.directory_items[linked_index]
+            self.display_index = int(self.directory.item(selected[0],"values")[0])
+            linked = self.directory_items[self.display_index]
             full_key = linked.data_type + "." + linked.data_key
             #如果相同说明是同一个，不需要显示
             if self.displaying == full_key:
@@ -165,12 +168,18 @@ class Protractor:
             if not linked.data_reference:
                 return
             obj = linked.data_reference
-            translation = None
+            # 清空链接链
+            self.link_stacks = []
             # 使用安妮进行翻译
+            translation = None
             if linked.data_type == "buff":
                 translation = anne.translate_whole_buff(obj)
                 self.display(translation)
                 self.display_origin("\"" + obj.buff_key + "\" :" + obj.raw_buff_data) 
+            elif linked.data_type == "global_buff":
+                translation = anne.translate_whole_global_buff(obj)
+                self.display(translation)
+                self.display_origin("\"" + obj.buff_key + "\" :" + obj.raw_prefab_data) 
             elif linked.data_type == "buff_template":
                 translation = anne.translate_whole_buff_template(obj)
                 self.display(translation)
@@ -190,6 +199,7 @@ class Protractor:
     # 展示特定ID的内容（使用贝娜获取数据，然后由安妮来翻译）
     def display_by_id(self,item_id=""):
         translation = None
+        raw = None
         _cat = ""
         # 前缀模式？尝试匹配
         if "." in item_id:
@@ -199,14 +209,28 @@ class Protractor:
         # 逐个匹配
         # 优先搜索肉鸽物品
         if (_cat in ["","rogue_item"]) and item_id in bena.ROGUELIKE_TOPIC_KEYS:
-            translation = anne.translate_whole_rogue_item(bena.ROGUELIKE_TOPIC_TABLE[item_id])
+            obj = bena.ROGUELIKE_TOPIC_TABLE[item_id]
+            translation = anne.translate_whole_rogue_item(obj)
+            if obj.has_effect:
+                self.display_origin([obj.item_info,obj.item_data])
+            else:
+                self.display_origin(obj.item_info)
         elif (_cat in ["","buff"]) and item_id in bena.BUFF_KEYS:
-            translation = anne.translate_whole_buff(bena.BUFF_TABLE[item_id])
+            obj = bena.BUFF_TABLE[item_id]
+            translation = anne.translate_whole_buff(obj)
+            raw = "\"" + obj.buff_key + "\" :" + obj.raw_buff_data
+        elif (_cat in ["","global_buff"]) and item_id in bena.GLOBAL_BUFF_KEYS:
+            obj = bena.GLOBAL_BUFF_DUMMY[item_id]
+            translation = anne.translate_whole_global_buff(obj)
+            raw = "\"" + obj.buff_key + "\" :" + obj.raw_prefab_data
         elif (_cat in ["","buff_template"]) and item_id in bena.BUFF_TEMPLATE_KEYS:
-            translation = anne.translate_whole_buff_template(bena.BUFF_TEMPLATE_DATA[item_id])
+            obj = bena.BUFF_TEMPLATE_DATA[item_id]
+            translation = anne.translate_whole_buff_template(obj)
+            raw = "\"" + obj.buff_key + "\" :" + obj.raw_buff_data
         # 如果找到了翻译，返回之
         if translation != None:
             self.display(translation)
+            self.display_origin(raw)
             return True
         # 如果找不到...
         return False
@@ -214,8 +238,11 @@ class Protractor:
     # 将结构体展示至展示区
     def display(self,struct,master=""):
         if master == "":
-            self.display_links = {}
             self.display_area.set_children([])
+            # 路径链接
+            if len(self.link_stacks) > 0:
+                link_text = "> " + " > ".join(self.link_stacks)
+                self.display_area.insert(master,"end",text=link_text,open=False,values=(",".join(self.link_stacks)))
         # 递归处理
         if isinstance(struct,dict) and "main" in struct:
             text = struct.get("main","")
@@ -256,7 +283,6 @@ class Protractor:
     # 将json数据展示至展示区，用于无法解析的情况
     def display_raw(self,datas,master=""):
         if master == "":
-            self.display_links = {}
             self.display_area.set_children([])
         # 字典与列表将递归处理；剩下的按需返回
         if isinstance(datas,dict):
@@ -342,7 +368,9 @@ class Protractor:
             if len(selected_link) != None and selected_link != "":
                 links = selected_link.split(",")
                 for link in links:
-                    context_menu.add_command(label="转跳到至 "+link, command=lambda: self.display_by_id(link))
+                    linked = self.directory_items[self.display_index]
+                    now = linked.data_type + "." + linked.data_key
+                    context_menu.add_command(label="转跳到至 "+link, command=lambda: self.link_jump(now,link))
                     if "." in link:
                         search_key = link.split(".",1)[1]
                         context_menu.add_command(label="搜索 "+search_key, command=lambda: self.search_by(search_key))
@@ -375,6 +403,19 @@ class Protractor:
             # 复制全文
             context_menu.add_command(label="复制全文", command=lambda: self.copy_all())
             context_menu.post(event.x_root, event.y_root)
+    
+    # 链接转跳
+    def link_jump(self,now,link):
+        if link in self.link_stacks:
+            index = 0
+            for _link in self.link_stacks:
+                if _link == link:
+                    break
+                index += 1
+            self.link_stacks = self.link_stacks[:index]
+        else:
+            self.link_stacks.append(now)
+        self.display_by_id(link)
     
     # 复制文本
     def copy(self,given_text):

@@ -15,15 +15,15 @@ def node_CheckAbnormalFlag(node):
         abnormal_flag = anne_dictionary("abnormal",node["_abnormalFlag"])+"异常"
     if node["_isUnset"]:
         return {
-            "main" : f"检查{target_name}是否持有{abnormal_flag}",
-            "true" : f"若不持有{abnormal_flag}或免疫该异常",
+            "main" : f"检查{target_name}是否持有{abnormal_flag}（考虑免疫）",
+            "true" : f"若不持有{abnormal_flag}",
             "false" : f"若持有{abnormal_flag}"
         }
     else:
         return {
-            "main" : f"检查{target_name}是否持有{abnormal_flag}",
+            "main" : f"检查{target_name}是否持有{abnormal_flag}（考虑免疫）",
             "true" : f"若持有{abnormal_flag}",
-            "false" : f"若不持有{abnormal_flag}或免疫该异常"
+            "false" : f"若不持有{abnormal_flag}"
         }
 
 # 检查异常免疫
@@ -52,16 +52,15 @@ def node_CheckAbnormalFlags(node):
             abnormal_flags.append(anne_dictionary("abnormal",abf))
     if len(abnormal_flags) > 1:
         return {
-            "main" : f"检查{target_name}是否持有"+"、".join(abnormal_flags[:-1]) + "、或" + abnormal_flags[-1]+"异常",
+            "main" : f"检查{target_name}是否持有"+"、".join(abnormal_flags[:-1]) + "或" + abnormal_flags[-1]+"异常（考虑免疫）",
             "true" : f"若持有上述异常之一",
-            "false" : f"若不持有这些异常或免疫于这些异常"
+            "false" : f"若不持有这些异常"
         }
     else:
-        
         return {
-            "main" : f"检查{target_name}是否持有{abnormal_flags[0]}异常",
+            "main" : f"检查{target_name}是否持有{abnormal_flags[0]}异常（考虑免疫）",
             "true" : f"若持有{abnormal_flags[0]}",
-            "false" : f"若不持有{abnormal_flags[0]}或免疫该异常"
+            "false" : f"若不持有{abnormal_flags[0]}"
         }
 
 # 检查异常组合（带免疫）

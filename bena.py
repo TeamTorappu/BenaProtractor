@@ -29,6 +29,9 @@ ENEMY_NAMES_PATH = "./tables/enemy_names.json"
 ROGUELIKE_TOPIC_KEYS = []
 ROGUELIKE_TOPIC_TABLE = {}
 ROGUELIKE_TOPIC_TABLE_PATH = "./tables/roguelike_topic_table.json"
+GLOBAL_BUFF_KEYS = []
+GLOBAL_BUFF_DUMMY = {}
+GLOBAL_BUFF_DUMMY_PATH = "./tables/global_buff_dummy.json"
 
 print("[贝娜]我叫贝娜，来找一个出门就忘了回家的笨蛋。听说她还有些活要干，没办法，我也在这陪她一会好了。")
 
@@ -104,38 +107,39 @@ def load_enemy_names():
 
 # 读取buff_table.json，并解析
 def load_buff_table():
-    print(f"[贝娜]开始读取buff_table.json")
+    if not os.path.exists(BUFF_TEMPLATE_DATA_PATH):
+        print(f"[贝娜]未能找到buff_table.json，取消读取...")
+        return
+    print(f"[贝娜]开始读取buff_table.json...")
     json_data = {}
     # 获取文件数据
     with open(BUFF_TABLE_PATH,'r',encoding="UTF-8") as _f:
         json_data = json.load(_f)
     # 开始解析
     for buff_key in json_data.keys():
-        # 测试用，先不加载别的东西
-        #if not buff_template_key.startswith("act1autochess") or not buff_template_key.startswith("act2autochess"):
-        #    continue
-
         buff = Buff(buff_key,json_data[buff_key])
         # 制作翻译版称呼
         buff.display_name = translate_buff_name(buff_key)
         BUFF_KEYS.append(buff_key)
         BUFF_TABLE[buff_key] = buff
-        print(f"[贝娜]已读取Buff模板 {buff.display_name}（{buff_key}）")
+        print(f"[贝娜]已读取Buff {buff.display_name}（{buff_key}）")
     print(f"[贝娜]已完成对buff_table.json的读取！")
 
 # 读取buff_template_data.json，并解析
 def load_buff_template_data():
-    print(f"[贝娜]开始读取buff_template_data.json")
+    if not os.path.exists(BUFF_TEMPLATE_DATA_PATH):
+        print(f"[贝娜]未能找到buff_template_data.json，取消读取...")
+        return
+    print(f"[贝娜]开始读取buff_template_data.json...")
     json_data = {}
     # 获取文件数据
     with open(BUFF_TEMPLATE_DATA_PATH,'r',encoding="UTF-8") as _f:
         json_data = json.load(_f)
     # 开始解析
     for buff_template_key in json_data.keys():
-        # 测试用，先不加载别的东西
+        # 测试用，仅加载部分内容
         #if not buff_template_key.startswith("act1autochess") or not buff_template_key.startswith("act2autochess"):
         #    continue
-
         buff_template = BuffTemplate(buff_template_key,json_data[buff_template_key])
         # 制作翻译版称呼
         buff_template.display_name = translate_buff_name(buff_template_key)
@@ -146,7 +150,10 @@ def load_buff_template_data():
 
 # 读取roguelike_topic_table.json，并解析
 def load_roguelike_topic_table(season=5):
-    print(f"[贝娜]开始读取roguelike_topic_table.json")
+    if not os.path.exists(ROGUELIKE_TOPIC_TABLE_PATH):
+        print(f"[贝娜]未能找到roguelike_topic_table.json，取消读取...")
+        return
+    print(f"[贝娜]开始读取roguelike_topic_table.json...")
     json_data = {}
     # 获取文件数据
     with open(ROGUELIKE_TOPIC_TABLE_PATH,'r',encoding="UTF-8") as _f:
@@ -173,6 +180,26 @@ def load_roguelike_topic_table(season=5):
             ROGUELIKE_TOPIC_TABLE[item_key] = item
             print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
     print(f"[贝娜]已完成对roguelike_topic_table.json的读取！")
+    
+# 读取global_buff_dummy.json，并解析
+def load_global_buff_dummy():
+    if not os.path.exists(GLOBAL_BUFF_DUMMY_PATH):
+        print(f"[贝娜]未能找到global_buff_dummy.json，取消读取...")
+        return
+    print(f"[贝娜]开始读取global_buff_dummy.json...")
+    json_data = {}
+    # 获取文件数据
+    with open(GLOBAL_BUFF_DUMMY_PATH,'r',encoding="UTF-8") as _f:
+        json_data = json.load(_f)
+    # 开始解析
+    for buff_key in json_data.keys():
+        buff = GlobalBuff(buff_key,json_data[buff_key])
+        # 制作翻译版称呼
+        buff.display_name = translate_buff_name(buff_key)
+        GLOBAL_BUFF_KEYS.append(buff_key)
+        GLOBAL_BUFF_DUMMY[buff_key] = buff
+        print(f"[贝娜]已读取GBuff {buff.display_name}（{buff_key}）")
+    print(f"[贝娜]已完成对global_buff_dummy.json的读取！")
 
 # 询问贝娜一个ID有没有对应的数据，若没有将原路返回
 def ask_bena(_type,input_id):

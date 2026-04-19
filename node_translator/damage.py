@@ -43,9 +43,9 @@ def node_FixedValueDamage(node):
     if len(features) > 0:
         result["description"] = "；".join(features)
     if node["_noSourceDamage"]:
-        result["main"] = f"对{target_name}造成 [{damage_key}] 点{damage_name}"
+        result["main"] = f"对{target_name}造成 [{damage_key}] × [atk_scale] 点{damage_name}"
     else:
-        result["main"] = f"令{source_name}对{target_name}造成 [{damage_key}] 点的{damage_name}"
+        result["main"] = f"令{source_name}对{target_name}造成 [{damage_key}] × [atk_scale] 点的{damage_name}"
     return result
 
 # 造成基于某种属性的伤害（主要由刻俄柏与泡泡使用）
@@ -60,14 +60,14 @@ def node_DamageViaAttr(node):
         scale = node["_blackboardKey"]
     if node["_multiplierByKey"]:
         multiplier = " × " + node["_multiplierKey"]
+    result = {
+            "main" : f"依此令{source_name}对{target_name}造成 [{scale}] 倍率的{damage_name}"
+        }
     if not node["_getAttrFromTarget"]: #这个参数是反的，关了才FromTarget，开了就FromSource，神经病
-        return {
-            "main" : f"取{target_name}的 {attribute}{multiplier} 作为\"攻击力\"，令{source_name}对{target_name}依此造成{scale}倍率的{damage_name}"
-        }
-    else:
-        return {
-            "main" : f"取{source_name}的 {attribute}{multiplier} 作为\"攻击力\"，令{source_name}对{target_name}依此造成{scale}倍率的{damage_name}"
-        }
+        result["main"] = f"取{target_name}的 {attribute}{multiplier} 作为\"攻击力\"，" + result["main"]
+    elif node["_attributeType"] != "ATK" or multiplier != "":
+        result["main"] = f"取{source_name}的 {attribute}{multiplier} 作为\"攻击力\"，" + result["main"]
+    return result
 
 # 根据记录生命值，制造一次伤害来匹配记录的生命值
 def node_FetchHpToBlackboard(node):
@@ -129,7 +129,8 @@ def node_AOEDamage(node):
     if node["_useRadius"]:
         target_options = analyze_target_options(node["_targetOptions"])
         selector = f"对位于{target_name}半径{node['_radius']}内的{target_options['main']}"
-        features.append(target_options["description"])
+        if "description" in target_options:
+            features.append(target_options["description"])
         features.append("中点判定")
     elif node["_useAbilitySelector"]:
         if node["_abilityName"] != None:
@@ -138,7 +139,10 @@ def node_AOEDamage(node):
             selector = f"使用来源的默认选择器，对选中的目标"
     else: # 使用网格范围
         target_options = analyze_target_options(node["_targetOptions"])
-        selector = f"对位于{target_name}周边特定范围({node['_rangeId']})的{target_options['main']}"
+        range_id = "[range_id]"
+        if node["_rangeId"] != None:
+            range_id += f"（默认{node['_rangeId']}）"
+        selector = f"对位于{target_name}周边{range_id}范围的{target_options['main']}"
         if "description" in target_options:
             features.append(target_options["description"])
         features.append("中点判定")
@@ -169,3 +173,52 @@ def node_AOEDamage(node):
     # 返回
     return result
 
+# 持续流血 - 重置
+def node_BleedingDamageIncreasingReset(node):
+    return {"main" : "\"持续流血\"逻辑：重置流血计算时间（设 [dynamic] = 0.0）"}
+
+# 持续流血
+def node_BleedingDamagePerSec(node):
+    damage_prefix = ""
+    damage = ""
+    if node["_elementDamageType"] != "NONE": # 损伤模式
+        damage = anne_dictionary("element",node["_elementDamageType"]) + "损伤" # 那我问你环境元素损伤呢？
+    else:
+        damage = analyze_damage(node)
+    damage_formula = ""
+    if node["_isRatioToMaxHp"]: # 基于生命值上限
+        damage_prefix = "生命值一定比例的"
+        if node["_isIncreasingToCap"]: # 逐渐提升
+            damage_prefix = "随时间逐渐增加的、" + damage_prefix
+            if node["_baseDamageKey"] != None and node["_baseDamageKey"] != "":
+                damage_formula = f"([{node['_damageKey']}] × min([dynamic] / [{node['_durationToIncreaseKey']}] , 1) + {node['_baseDamageKey']}) × 持有者的最大生命值"
+            else:
+                damage_formula = f"[{node['_damageKey']}] × min([dynamic] / [{node['_durationToIncreaseKey']}] , 1) × 持有者的最大生命值"
+        else:
+            if node["_baseDamageKey"] != None and node["_baseDamageKey"] != "":
+                damage_formula = f"([{node['_damageKey']}] + {node['_baseDamageKey']}) × 持有者的最大生命值"
+            else:
+                damage_formula = f"[{node['_damageKey']}] × 持有者的最大生命值"
+    else: # 普通数值
+        if node["_isIncreasingToCap"]: # 逐渐提升
+            damage_prefix = "随时间逐渐增加的"
+            if node["_baseDamageKey"] != None and node["_baseDamageKey"] != "":
+                damage_formula = f"[{node['_damageKey']}] × min([dynamic] / [{node['_durationToIncreaseKey']}] , 1) + {node['_baseDamageKey']}"
+            else:
+                damage_formula = f"[{node['_damageKey']}] × min([dynamic] / [{node['_durationToIncreaseKey']}] , 1)"
+        else:
+            if node["_baseDamageKey"] != None and node["_baseDamageKey"] != "":
+                damage_formula = f"[{node['_damageKey']}] + {node['_baseDamageKey']}"
+            else:
+                damage_formula = f"[{node['_damageKey']}]"
+    result = {
+        "main" : f"\"持续流血\"逻辑：令持有者受到{damage_prefix}{damage}：",
+        "children" : [
+            {"main" : f"造成 {damage_formula} 的伤害"}
+        ]
+    }
+    if node["_isIncreasingToCap"]:
+        result["children"] = [{"main" : "令 [dynamic] += 本Buff的触发间隔","description" : "因此该黑板值在\"Buff每次触发时\"通常等效于\"Buff直至现在已经过时间\""}] + result["children"]
+    return result
+
+    

@@ -22,15 +22,22 @@ def node_DamageSplit(node):
 
 # 伤害倍率
 def node_DamageScale(node):
-    # 未解析参数：_customKey _isValidStackCnt
+    # 未解析参数：_isValidStackCnt
     damage_scale = ""
     action = "提升"
     # 需要把减伤值改为*(1-X)
-    if node["_isOneMinus"]:
-        damage_scale = "(1 - damage_resistance)"
-        action = "降低"
+    if node["_customKey"] != None and node["_customKey"] != "":
+        if node["_isOneMinus"]:
+            damage_scale = f"(1 - [{node['_customKey']}])"
+            action = "降低"
+        else:
+            damage_scale = f"(1 + [{node['_customKey']}])"
     else:
-        damage_scale = "(1 + damage_scale)"
+        if node["_isOneMinus"]:
+            damage_scale = "(1 - [damage_resistance])"
+            action = "降低"
+        else:
+            damage_scale = "(1 + [damage_scale])"
     # 根据Buff层数加倍
     if node["_isStackable"]:
         damage_scale = f"({damage_scale} × Buff层数)"

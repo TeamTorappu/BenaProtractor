@@ -13,6 +13,7 @@ CACHE = "./.cache"
 LOAD_TYPES = {
     "buff" : "常见Buff",
     "buff_template" : "Buff模板（机制底层）",
+    "global_buff" : "全局Buff（藏品、关卡、活动机制）",
     "rogue_1" : "傀影肉鸽物品（藏品、剧目等）",
     "rogue_2" : "水月肉鸽物品（藏品、启示等）",
     "rogue_3" : "萨米肉鸽物品（藏品、密文板等）",
@@ -30,6 +31,9 @@ def start_with(loads):
     if "buff_template" in loads:
         bena.load_buff_template_data()
         PROTRACTOR.load_directory("buff_template",bena.BUFF_TEMPLATE_DATA)
+    if "global_buff" in loads:
+        bena.load_global_buff_dummy()
+        PROTRACTOR.load_directory("global_buff",bena.GLOBAL_BUFF_DUMMY)
     if "rogue_1" in loads:
         bena.load_roguelike_topic_table(1)
         PROTRACTOR.load_directory("rogue_item",bena.ROGUELIKE_TOPIC_TABLE)
