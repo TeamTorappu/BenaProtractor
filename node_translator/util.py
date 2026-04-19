@@ -155,13 +155,13 @@ def node_AttributeModifierWithBB(node):
     #formula_type = anne_dictionary("formula",node["_formulaType"])
     if node["_valueKey"] != None and node["_valueKey"] not in ["","none"]:
         if node["_formulaType"] == "FINAL_SCALER":
-            return {"main" : f"调整本Buff提供的{attribute_type}加成：+{node['_valueKey']}%(终乘)"}
+            return {"main" : f"调整本Buff提供的{attribute_type}加成：+[{node['_valueKey']}]%(终乘)"}
         elif node["_formulaType"] == "MULTIPLIER":
-            return {"main" : f"调整本Buff提供的{attribute_type}加成：+{node['_valueKey']}%(直乘)"}
+            return {"main" : f"调整本Buff提供的{attribute_type}加成：+[{node['_valueKey']}]%(直乘)"}
         elif node["_formulaType"] == "ADDITION":
-            return {"main" : f"调整本Buff提供的{attribute_type}加成：+{node['_valueKey']}(直加)"}
+            return {"main" : f"调整本Buff提供的{attribute_type}加成：+[{node['_valueKey']}](直加)"}
         elif node["_formulaType"] == "FINAL_ADDITION":
-            return {"main" : f"调整本Buff提供的{attribute_type}加成：+{node['_valueKey']}(终加)"}
+            return {"main" : f"调整本Buff提供的{attribute_type}加成：+[{node['_valueKey']}](终加)"}
     return {"main" : f"清除本Buff提供的{attribute_type}加成"}
 
 # 切换模式
