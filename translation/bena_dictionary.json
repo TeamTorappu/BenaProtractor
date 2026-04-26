@@ -193,6 +193,9 @@
 				}
 			}
 		},
+		"damage" : {
+			"resistance" : "庇护"
+		},
 		"immune" : {
 			"common" : "通用异常免疫",
 			"by" : {
@@ -337,11 +340,11 @@
 			"" : "瞬间"
 		},
 		"inverse" : {
-			"damage" : "反伤",
-			"" : "反转"
+			"damage" : "反弹伤害",
+			"" : "反弹"
 		},
 		"without" : {
-			"modify" : "伤害不可变",
+			"modify" : "DWM(废案)",
 			"" : "不带"
 		},
 		"limit" : {

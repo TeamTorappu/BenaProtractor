@@ -114,6 +114,17 @@ def node_DamageViaCurHpRatio(node):
         result["description"] = "；".join(features)
     return result
 
+# 根据移动距离差，制造一次伤害
+def node_DamageByDistance(node):
+    # 未解析参数：_isInit
+    source_name = anne_dictionary("target",node["_sourceType"])
+    target_name = anne_dictionary("target",node["_targetType"])
+    damage_type = anne_dictionary("damage_type",node["_damageType"])
+    attack_type = anne_dictionary("attack_type",node["_attackType"])
+    return {
+        "main" : f"计算两次调用间{target_name}的\"总移动距离\"差，令{source_name}对{target_name}造成一次 [value] × 距离差(格数) 的预计算{attack_type}{damage_type}伤害",
+        "description" : "\"总移动距离\"每5帧更新一次，首次调用、距离差为0、或大于4格时不造成伤害；伤害不受攻击力倍率与附加攻击力影响"
+    }
 
 # 造成群体伤害
 def node_AOEDamage(node):
@@ -175,7 +186,7 @@ def node_AOEDamage(node):
 
 # 持续流血 - 重置
 def node_BleedingDamageIncreasingReset(node):
-    return {"main" : "\"持续流血\"逻辑：重置流血计算时间（设 [dynamic] = 0.0）"}
+    return {"main" : "\"持续流血\"：重置流血计算时间（设 [dynamic] = 0.0）"}
 
 # 持续流血
 def node_BleedingDamagePerSec(node):
@@ -212,7 +223,7 @@ def node_BleedingDamagePerSec(node):
             else:
                 damage_formula = f"[{node['_damageKey']}]"
     result = {
-        "main" : f"\"持续流血\"逻辑：令持有者受到{damage_prefix}{damage}：",
+        "main" : f"\"持续流血\"：令持有者受到{damage_prefix}{damage}：",
         "children" : [
             {"main" : f"造成 {damage_formula} 的伤害"}
         ]
@@ -220,5 +231,35 @@ def node_BleedingDamagePerSec(node):
     if node["_isIncreasingToCap"]:
         result["children"] = [{"main" : "令 [dynamic] += 本Buff的触发间隔","description" : "因此该黑板值在\"Buff每次触发时\"通常等效于\"Buff直至现在已经过时间\""}] + result["children"]
     return result
+
+# 反弹伤害
+def node_InverseDamage(node):
+    source_name = anne_dictionary("target",node["_sourceType"]) if node["_hasSource"] else ""
+    if node["_sourceType"] == "BUFF_SOURCE": # 防止混淆
+        source_name = "BUFF来源"
+    damage = analyze_damage(node)
+    result = {
+        "main" : f"\"反弹伤害\"：寻找此次伤害的来源，",
+        "description" : "反弹的伤害与原本伤害的施加途径相同"
+    }
+    if node["_sideMask"] != "ALL":
+        side_type = anne_dictionary("side_type_relative",node["_sideMask"])
+        result["main"] = result["main"] + f"若伤害来源为{side_type}，"
+    if node["_fixValue"]: # 固定值反伤模式
+        result["main"] = result["main"] + f"对伤害来源造成{node['_damageValueKey']} × [atk_scale] 的无来源、预计算{damage}"
+        if node["_hasSource"]:
+            result["description"] = result["description"] + f"；反弹的伤害来源为{source_name}"
+        else:
+            result["description"] = result["description"] + f"；反弹的伤害为无来源"
+    elif node["_hasSource"]: # 受伤者攻击力一定倍率
+        if node["_skipSourceEvent"]:
+            damage = "预计算" + damage
+        result["main"] = result["main"] + f"对伤害来源造成 {source_name}的攻击力 × [atk_scale] 的{damage}"
+        result["description"] = result["description"] + f"；反弹的伤害来源为{source_name}"
+    else: # 本次伤害的
+        result["main"] = result["main"] + f"对伤害来源造成 此次伤害的当前伤害值 × [atk_scale] 的预计算{damage}"
+        result["description"] = result["description"] + f"；反弹的伤害为无来源"
+    return result
+
 
     

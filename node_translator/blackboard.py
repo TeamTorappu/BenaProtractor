@@ -101,7 +101,7 @@ def node_AssignBuffBlackboard(node):
     target_buff_name = node["_buffKey"]
     target_bb = "[" + node["_blackboardKey"] + "]"
     if node["_valueKey"] != None and node["_valueKey"] != "":
-        source_bb = "本黑板上的 " + node["_valueKey"]
+        source_bb = "本黑板上的 [" + node["_valueKey"] + "]"
         if node["_buffKeyAssignFrom"] != None and node["_buffKeyAssignFrom"] != "":
             source_buff_name = node["_buffKeyAssignFrom"]
             target_bb = target_buff_name + " 的 [" + target_bb + "]"
@@ -118,6 +118,33 @@ def node_AssignBuffBlackboard(node):
         return {"main" : f"尝试寻找{target_name}持有的首个 <{target_buff_name}> Buff，设该Buff的 {target_bb} = {value}"}
     else:
         return {"main" : f"设{target_name}的所有 <{target_buff_name}> Buff黑板上的 {target_bb} = {value}"}
+
+# 添加其他Buff的黑板值
+def node_AddBuffBlackboard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    target_buff_name = node["_buffKey"]
+    target_bb = "[" + node["_blackboardKey"] + "]"
+    addon = node["_addition"]
+    if node["_additionKey"] != None and node["_additionKey"] != "":
+        if node["_useCurBuffBBWhenDoAddition"]: # 用自己的黑板值
+            addon = f"本Buff黑板上的 [{node['_additionKey']}]（默认{node['_addition']}"
+        else:
+            addon = f"该Buff黑板上的 [{node['_additionKey']}]（默认{node['_addition']}"
+    formula = ""
+    if node["_maxValueKey"] != None and node["_maxValueKey"] != "":
+        if node["_isMinus"]:
+            formula = f"{target_bb} = min({target_bb} - {addon},{node['_maxValueKey']})"
+        else:
+            formula = f"{target_bb} = min({target_bb} + {addon},{node['_maxValueKey']})"
+    else:
+        if node["_isMinus"]:
+            formula = f"{target_bb} -= {addon}"
+        else:
+            formula = f"{target_bb} += {addon}"
+    if node["_checkBuffSource"]:
+        return {"main" : f"尝试寻找{target_name}持有的首个同来源的 <{target_buff_name}> Buff，设该Buff的 {formula}"}
+    else:
+        return {"main" : f"尝试寻找{target_name}持有的首个 <{target_buff_name}> Buff，设该Buff的 {formula}"}
 
 # 记录末影黑板（同UID单位间互通）
 def node_AddCharacterSharedBlackboard(node):
@@ -184,6 +211,24 @@ def node_AssignRespawnCntToBlackboard(node):
     target_name = anne_dictionary("target",node["_targetType"])
     return {"main" : f"将{target_name}目前已重生的次数记录至黑板 [{node['_blackboardKey']}] 中"}
 
-# 添加Buff黑板
-#def node_AddBuffBlackboard(node):
-#
+# 将技能剩余冷却时间记录到黑板上
+def node_AssignEnemySkillCoolDownToBB(node):
+    owner_name = anne_dictionary("target",node["_ownerType"])
+    skill_name = node["_skillName"] if node["_skillName"] != "" else "[skill_name]"
+    if node["_checkSkillActive"]:
+        return {
+            "main" : f"获取{owner_name}当前开启中的名为 {skill_name} 技能的\"剩余冷却时间\"，记录至黑板 [{node['_outputKey']}]（单位为秒）",
+            "description" : "非本模式的模式技能、使用次数达上限的技能均无法被识别；若找不到对应技能或技能未开启，视为本节点处理失败"
+        }
+    return {
+        "main" : f"获取{owner_name}名为 {skill_name} 技能的\"剩余冷却时间\"，记录至黑板 [{node['_outputKey']}]（单位为秒）",
+        "description" : "非本模式的模式技能、使用次数达上限的技能均无法被识别；若找不到对应技能，视为本节点处理失败"
+    }
+
+# 将当前阻挡到的单位数量记录到黑板上
+def node_AssignCurrentBlockNumToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {
+        "main" : f"将{target_name}（角色类）当前阻挡的单位数量记录至黑板 [{node['_blackboardKey']}]"
+    }
+

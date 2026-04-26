@@ -109,8 +109,8 @@ def analyze_damage(damage_data,prefix="",suffix=""):
         features.append("无法增/减/免伤/重设")
     elif "_forceDisplayDamageNum" in damage_data and damage_data["_forceDisplayDamageNum"]:
         features.append("强制红字")
-    if "_damageWithoutModify" in damage_data and damage_data["_damageWithoutModify"]:
-        features.append("无法增/减/免伤/重设")
+    #if "_damageWithoutModify" in damage_data and damage_data["_damageWithoutModify"]: #似乎没有任何用途
+    #    features.append("damageWithoutModify")
     if "_setSharedFlag" in damage_data and damage_data["_setSharedFlag"]:
         if "_sharedFlagIndex" in damage_data:
             shared_flag_name = anne_dictionary("sharedflag",damage_data["_sharedFlagIndex"])
@@ -332,13 +332,13 @@ def analyze_buff(buff_data,full_information=False):
     # 几个失效条件，一起展示
     stopby = []
     if buff_data["isSilenceable"]:
-        stopby.append("沉默时失效")
+        stopby.append("沉默")
     if buff_data["isStunnable"]:
-        stopby.append("晕眩时失效")
+        stopby.append("晕眩")
     if buff_data["isFreezable"]:
-        stopby.append("冻结时失效")
+        stopby.append("冻结")
     if buff_data["isLevitatable"]:
-        stopby.append("浮空时失效")
+        stopby.append("浮空")
     if len(stopby) > 0:
         features.append("/".join(stopby)+"期间失效")
     # 属于状态可抵抗Buff？
@@ -468,7 +468,10 @@ def analyze_buff(buff_data,full_information=False):
     if len(blackboard) > 0:
         bb_children = []
         for key,value in blackboard.items():
-            bb_children.append({"main" : "[" + key + "] = " + str(value)})
+            if isinstance(value,str):
+                bb_children.append({"main" : "[" + key + "] = \"" + value + "\""})
+            else:
+                bb_children.append({"main" : "[" + key + "] = " + str(value)})
         if "children" not in result:
             result["children"] = []
         result["children"].append({"main" : "黑板数据：","children" : bb_children})

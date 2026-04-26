@@ -44,7 +44,7 @@ def node_EmitProjectile(node):
         result["description"] = "；".join(features)
     result["main"] = f"从{start_point}，向{target_name}，发射{projectile}弹道"
     # 弹道事件
-    if len(node["_actions"]) > 0:
+    if node["_actions"] != None and len(node["_actions"]) > 0:
         result["main"] += f"；当{projectile_event}，执行："
         result["sub_nodes"] = node["_actions"]
     return result

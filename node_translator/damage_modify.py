@@ -58,7 +58,7 @@ def node_DamageScale(node):
         text = f"若{'且'.join(conditions)}，{text}"
     # 差值记录，一般是拿来算“减少部分的伤害”的
     if node["_cachedDeltaValueToBBKey"] != None and node["_cachedDeltaValueToBBKey"] != "":
-        text += "，并将减少/增加的部分记为 [" + node["_cachedDeltaValueToBBKey"] + "]"
+        text += "，并将减少/增加的部分记入 [" + node["_cachedDeltaValueToBBKey"] + "]"
     return {"main" : text}
 
 # 格挡/护盾/屏障（还得具体情况具体分析）

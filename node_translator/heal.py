@@ -35,3 +35,19 @@ def node_HealViaMaxHpRatio(node):
         else:
             result["main"] = f"{target_name}恢复相当于来源最大生命值一定比例的生命值{extra}"
     return result
+
+# 基于伤害的治疗
+def node_HealViaDamage(node):
+    prefix = ""
+    if node["_filterModifierCancelled"]:
+        prefix = "若此次伤害未被取消，"
+    if node["_healType"] == "FIXED":
+        return {
+            "main" : prefix + "治疗持有者 [value] × [heal_scale] 点生命值",
+            "description" : "治疗来源为伤害的来源；若伤害为无来源则治疗变为无来源治疗"
+        }
+    elif node["_healType"] == "DAMAGE_SCALE":
+        return {
+            "main" : prefix + "治疗持有者 伤害值 × [heal_scale] 点生命值",
+            "description" : "治疗来源为伤害的来源；若伤害为无来源则治疗变为无来源治疗"
+        }

@@ -546,7 +546,7 @@ def node_FilterByTargetHpRatio(node):
 
 # 检查目标技力比例
 def node_FilterByTargetSpRatio(node):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = anne_dictionary("target",node["_targetType"])
     compare = anne_dictionary("compare",node["_condType"])
     compare_not = anne_dictionary("compare_not",node["_condType"])
     default_value = node["_spRatio"]
@@ -684,12 +684,21 @@ def node_CheckUnitCurrentMode(node):
     if node["_loadCurModeBbKey"] != None:
         return {
             "main" : f"检查{target_name}当前的模式编号是否为黑板[{node['_loadCurModeBbKey']}]记述的编号",
-            "true" : f"若其单位当前模式为[{node['_loadCurModeBbKey']}]号模式",
-            "false" : f"若其单位当前模式不为[{node['_loadCurModeBbKey']}]号模式"
+            "true" : f"若其当前模式为[{node['_loadCurModeBbKey']}]号模式",
+            "false" : f"若其当前模式不为[{node['_loadCurModeBbKey']}]号模式"
         }
     else:
         return {
             "main" : f"检查{target_name}当前的模式编号",
-            "true" : f"若其单位当前模式为{node['_checkCurModeIndex']}号模式",
-            "false" : f"若其单位当前模式不为{node['_checkCurModeIndex']}号模式"
+            "true" : f"若其当前模式为{node['_checkCurModeIndex']}号模式",
+            "false" : f"若其当前模式不为{node['_checkCurModeIndex']}号模式"
         }
+
+# 检查敌人是否处于失衡状态机
+def node_CheckEnemyUnbalanced(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {
+        "main" : f"检查{target_name}（敌人类）当前是否处于\"失衡\"状态机",
+        "true" : f"若该单位为敌人类且处于\"失衡\"状态机",
+        "false" : f"若该单位不为敌人类或不处于\"失衡\"状态机"
+    }

@@ -156,3 +156,15 @@ def node_FilterDamageModifer(node):
         result["true"] += "且未被取消"
         result["false"] += "或已被取消"
     return result
+
+# 调整值倍率提升
+def node_ModifierScaleUp(node):
+    if node["_scaleKey"] != None and node["_scaleKey"] != "":
+        return {
+            "main" : f"令本次调整值的基础值提升至原本的 [{node['_scaleKey']}] 倍"
+        }
+    else:
+        return {
+            "main" : f"根据调整值类型，令本次调整值的基础值提升至原本的若干倍",
+            "description" : "若调整值为伤害，使用 [damage_scale]，否则使用 [heal_scale]"
+        }

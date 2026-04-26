@@ -1,7 +1,7 @@
 #----------------------------------------
 # 能力类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from .analyzer import anne_dictionary, to_percent
 
 # 触发某个能力
 def node_TriggerAbility(node):
@@ -74,3 +74,65 @@ def node_CheckAbilityDamageDeadly(node):
         "true" : "若 攻击力 × 其攻击力倍率 ≥ 目标当前生命值 + 目标当前防御力",
         "false" : "若 攻击力 × 其攻击力倍率 < 目标当前生命值 + 目标当前防御力"
     }
+
+# 弹药类技能弹药量修改综合节点
+def node_AmmoSkillCountModifier(node):
+    #未解析参数：_restoreMaxCount
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_modifyMaxCount"]: # 修改最大弹药数模式
+        addon = "增加"
+        if node["_addCountBBKey"] != None and node["_addCountBBKey"] != "":
+            if node["_addCountUsePercent"]:
+                addon += " [" + node["_addCountBBKey"] + "] 倍"
+            else:
+                addon += " [" + node["_addCountBBKey"] + "] 发"
+        else:
+            if node["_addCountUsePercent"]:
+                addon += to_percent(node["_addCount"])
+            else:
+                addon += str(node["_addCount"])+"发"
+        return {
+            "main" : f"令{target_name}（角色类）当前开启的弹药类技能的最大弹药数{addon}"
+        }
+    if node["_recoverEventCount"]: # 恢复弹药模式
+        recover = "恢复"
+        if node["_recoverCountBBKey"] != None and node["_recoverCountBBKey"] != "":
+            if node["_recoverCountUsePercent"]:
+                recover += "最大弹药数一定比例（[" + node["_recoverCountBBKey"] + "]）（发数向上取整）的弹药"
+            else:
+                recover += " [" + node["_recoverCountBBKey"] + "] 发弹药"
+        else:
+            if node["_recoverCountUsePercent"]:
+                recover += "最大弹药数" + to_percent(node["_recoverCount"]) + "(发数向上取整）的弹药"
+            else:
+                recover += str(node["_recoverCount"])+"发弹药"
+        if node["_recoverSkipLimitCheck"]:
+            return {
+                "main" : f"令{target_name}（角色类）当前开启的弹药类技能{recover}（不考虑/计入上限）"
+            }
+        else:
+            return {
+                "main" : f"令{target_name}（角色类）当前开启的弹药类技能{recover}",
+                "true" : "若恢复了至少1发弹药" if not node["_useEvtRetAsReturnValue"] else "不论弹药是否恢复成功",
+                "false" : "若连1发弹药也无法恢复（恢复已达到上限）" if not node["_useEvtRetAsReturnValue"] else "始终不执行"
+            }
+    if node["_consumeEventCount"]: # 消耗弹药模式
+        consume = "消耗"
+        if node["_recoverCountBBKey"] != None and node["_recoverCountBBKey"] != "":
+            consume += " [" + node["_recoverCountBBKey"] + "] 发弹药"
+        else:
+            consume += str(node["_recoverCount"])+"发弹药"
+        return {
+            "main" : f"令{target_name}（角色类）当前开启的弹药类技能{consume}",
+                "true" : "若弹药消耗成功" if not node["_useEvtRetAsReturnValue"] else "不论弹药是否消耗成功",
+                "false" : "若弹药消耗失败" if not node["_useEvtRetAsReturnValue"] else "始终不执行"
+        }
+    if node["_discardRemainingCount"]: # 弃弹模式
+        discard = "抛弃所有弹药"
+        if not node["_discardSoft"]:
+            discard += "，技能视为立刻可终止"
+        if not node["_triggerConsumeEvent"]:
+            discard += "，视为\"弹药被消耗\""
+        return {
+            "main" : f"令{target_name}（角色类）当前开启的弹药类技能{discard}"
+        }
