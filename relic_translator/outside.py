@@ -4,7 +4,8 @@
 import math
 
 from bena import ask_bena
-from .analyzer import anne_dictionary, to_delta, analyze_timing, analyze_item
+from translator import anne_dictionary
+from .analyzer import to_delta, analyze_timing, analyze_item
 
 # 关卡内的可部署人数上限增减
 def rogue_level_char_limit_add(item_type,blackboard):

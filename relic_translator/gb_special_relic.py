@@ -1,7 +1,8 @@
 #----------------------------------------
 # 特殊藏品的专属藏品效果Global Buff
 #----------------------------------------
-from .analyzer import anne_dictionary, analyze_selector
+from translator import anne_dictionary
+from .analyzer import analyze_selector, to_delta, to_delta_percent
 
 # 湖中神盾
 def gb_rogue_3_increaseMaxHPWhenHavingShield(item_type,blackboard):

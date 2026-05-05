@@ -31,3 +31,19 @@ def get_bena_dictionary():
 # 获取安妮的字典
 def get_anne_dictionary():
     return ANNE_DICTIONARY
+
+# 检查贝娜字典是否包含某个类
+def is_bena_catalogue(catalogue):
+    return (catalogue in BENA_DICTIONARY)
+
+# 检查安妮字典是否包含某个类
+def is_anne_catalogue(catalogue):
+    return (catalogue in ANNE_DICTIONARY)
+
+# 检查贝娜字典某一类中是否包含某个值
+def is_bena_key(catalogue,key):
+    return (key in BENA_DICTIONARY[catalogue])
+
+# 检查贝娜字典某一类中是否包含某个值
+def is_anne_key(catalogue,key):
+    return (key in ANNE_DICTIONARY[catalogue])

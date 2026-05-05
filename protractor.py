@@ -253,8 +253,8 @@ class Protractor:
             tree_open = True
             if "style_closed" in struct and struct["style_closed"]:
                 tree_open = False
-            # 真值结果，如果留到这一步，说明只有可以缩写
-            if "true" in struct and struct['true'] != "":
+            # 真值结果（并行）
+            if "children" not in struct and "true" in struct and struct['true'] != "":
                 if len(text) == 0:
                     text = f"{struct['true']}："
                 else:
@@ -269,6 +269,9 @@ class Protractor:
                     description = bena.translate_buff_name_in_text(description)
                 self.display_area.insert(label,"end",text=f"（{description}）",open=tree_open)
             #self.display_area.rowheight(label, self.default_line_height * text.count('\n'))
+            # 真值结果（另起一行）
+            if "children" in struct and "true" in struct and struct['true'] != "":
+                self.display_area.insert(label,"end",text=f"...{struct['true']}：",open=tree_open)
             # 嵌套循环
             if "children" in struct:
                 for child in struct["children"]:

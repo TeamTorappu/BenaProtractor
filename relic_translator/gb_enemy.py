@@ -1,7 +1,9 @@
 #----------------------------------------
 # 敌方的Global Buff
 #----------------------------------------
-from .analyzer import anne_dictionary, to_delta, to_delta_percent
+from translator import anne_dictionary
+from .analyzer import to_delta, to_delta_percent, to_percent
+
 # 敌方最大生命值最终下降
 def gb_enemy_max_hp_down(item_type,blackboard):
     power = to_delta_percent(blackboard["max_hp"])

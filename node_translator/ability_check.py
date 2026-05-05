@@ -1,7 +1,7 @@
 #----------------------------------------
 # 能力相关的检测类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 检查能力用途
 def node_FilterAbilityFamily(node):

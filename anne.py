@@ -34,7 +34,6 @@ DEX = "①②③④⑤⑥⑦⑧⑨"
 class AnneNode:
     import node_translator as translator
     def __init__(self):
-        self.translator.set_dictionary(get_anne_dictionary())
         print("[安妮]嗯。")
         
     # 翻译重定向器，本质switch case
@@ -133,13 +132,16 @@ class AnneNode:
         for node in node_list:
             # IfNot：反转前面的处理状态
             if len(children) > 0 and node.node_name == "IfNot" :
-                if "true" in children[-1] and "false" in children[-1]:
-                    children[-1]["true"], children[-1]["false"] = children[-1]["false"], children[-1]["true"]
-                elif "true" in children[-1]:
-                    children[-1]["false"] = children[-1]["true"] 
-                    children[-1]["true"] = "若非\""+children[-1]["true"]+"\"" 
-                else: # 拿来检查前面处理不了？
-                    children.append({"main" : "若前面的逻辑无法处理"})
+                if "reversed" not in children[-1] or not children[-1]["reversed"]: # 已经翻转过不要再反转
+                    if "true" in children[-1] and "false" in children[-1]:
+                        children[-1]["true"], children[-1]["false"] = children[-1]["false"], children[-1]["true"]
+                        children[-1]["reversed"] = True
+                    elif "true" in children[-1]:
+                        children[-1]["false"] = children[-1]["true"] 
+                        children[-1]["true"] = "若非\""+children[-1]["true"]+"\"" 
+                        children[-1]["reversed"] = True
+                    else: # 拿来检查前面处理不了？
+                        children.append({"main" : "若前面的逻辑无法处理"})
             elif node.node_name == "IfElse":
                 children.append(self.translate_ifelse(node))
             elif node.node_name == "IfConditions":
@@ -290,7 +292,7 @@ class AnneNode:
 class AnneRelic:
     import relic_translator as translator
     def __init__(self):
-        self.translator.set_dictionary(get_anne_dictionary())
+        _ = None
         #print("[安妮]好的。")
         
     # 翻译重定向器，本质switch case

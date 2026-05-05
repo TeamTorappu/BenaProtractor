@@ -2,7 +2,8 @@
 # Buff类Node
 #----------------------------------------
 import math
-from .analyzer import analyze_target_options, anne_dictionary, analyze_buff
+from translator import anne_dictionary
+from .analyzer import analyze_target_options, analyze_buff
 
 # 创建Buff
 def node_CreateBuff(node):
@@ -41,7 +42,9 @@ def node_CreateBuffStacked(node):
     # 只有两种情况下可以创建多层Buff：1. Buff叠层类型为STACK；2. Buff不开启覆盖且"_isDisableOverrideBuff"参数为真
     # 其他情况下与CreateBuff基本相同，创建一个Buff
     if (node["_buff"]["overrideType"] == "STACK") or (node["_isDisableOverrideBuff"] and node["_buff"]["disableOverride"]):
-        stacks = node["_stackCnt"] if node["_stackCntKey"] == None else node["_stackCntKey"]
+        stacks = node["_stackCnt"]
+        if node["_stackCntKey"] != None and node["_stackCntKey"] != "":
+            stacks = f"[{node['_stackCntKey']}]"
         result["main"] = f"为{target_name}创建{stacks}个{buff_name}：" + result["main"]
     else:
         result["main"] = f"为{target_name}创建一个{buff_name}：" + result["main"]
@@ -83,6 +86,20 @@ def node_CreateBuffToHost(node):
     if node["_isDerivedBuff"]: # 属于附属Buff
         buff_name = "本Buff的附属Buff"
     result["main"] = f"让{source_name}（召唤物）为其持有者创建一个{buff_name}：" + result["main"]
+    return result
+
+# 创建具有格式化名称的Buff
+def node_CreateBuffUseOverrideBuffKey(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    target_name = anne_dictionary("target",node["_buffOwner"])
+    buff_name = "本Buff的附属Buff" if node["_isDerivedBuff"] else "Buff"
+    buff_copy = node["_buff"].copy()
+    buff_copy["buffKey"] = node["_overrideBuffKeyFormat"].replace("{0}","(本Buff名)")
+    result = analyze_buff(buff_copy)
+    result["main"] = f"为{target_name}创建一个{buff_name}：" + result["main"]
+    if node["_useSpecialBuffSource"]:
+        buff_source = anne_dictionary("target",node["_specialBuffSource"])
+        result["main"] = "令" + buff_source + result["main"]
     return result
 
 # 随机创建以下Buff之一
@@ -187,8 +204,10 @@ def node_CreateBuffInRange(node):
         range_name = "场上所有"
     elif node["_checkGiantTrapAllLocateTiles"]: # 巨大装置
         range_name += target_name +"（巨型装置）占据的地块上" # 存疑
+    elif node["_rangeId"] != None and node["_rangeId"] != "": # 普通范围制
+        range_name += target_name + "周围"+node["_rangeId"]+"范围内"
     else:
-        range_name = "？"
+        range_name = "周围（逻辑不明）的"
     # 部署类型额外判定
     if node["_filterByBuildableType"]:
         target_options["main"] = "部署类型为"+anne_dictionary("buildable_type_filter",node['_allowedBuildableType'])+"的"+target_options["main"]
@@ -317,6 +336,33 @@ def node_FinishBuffsById(node):
         result["link"] = "buff." + node["_buffKey"]
     return result
 
+# 结束特定来源的特定Buff(s)
+def node_FinishBuffsByIdByBuffSource(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    source = "无来源"
+    # 非无来源的判断
+    if node["_sourceType"] != None:
+        if node["_useSourceHost"]: # 召唤物相关
+            if node["_sourceType"] == "BUFF_SOURCE":
+                source = "来源于本BUFF来源（召唤物）的持有者"
+            else:
+                source = "来源于" + anne_dictionary("target",node["_sourceType"]) + "（召唤物）的持有者"
+        else:
+            if node["_sourceType"] == "BUFF_SOURCE":
+                source = "与本BUFF相同来源"
+            else:
+                source = "来源于" + anne_dictionary("target",node["_sourceType"])
+        if node["_alsoClearNullSource"]:
+            source = source + "的、或是无来源"
+    result = {
+        "main" : f"清除{target_name}身上，所有{source}的 <{node['_buffKey']}> Buff"
+    }
+    if node["_sourceType"] == None and not node["_alsoClearWhenSourceIsNull"]:
+        result["main"] = f"清除{target_name}身上特定来源的Buff，但是未配置来源，也无法清除无来源Buff"
+    elif node["_alsoClearWhenSourceIsNull"] and not node["_alsoClearNullSource"]:
+        result["description"] = "若该来源本身不存在，本节点改为清除无来源的Buff"
+    return result
+
 # 结束此Buff的所有附属Buff
 def node_FinishDerivedBuff(node):
     # 未解析参数：_updateOverrideMap
@@ -327,9 +373,9 @@ def node_FinishDerivedBuffById(node):
     # 未解析参数：_updateOverrideMap _decCntIfStack
     result = {}
     if node["_decCntIfStack"]:
-        result["main"] = f"结束 <{node['_buffKey']}> 的所有无叠层的附属Buff；而可叠层的附属Buff将减少一层叠层（变为0层时将结束）"
+        result["main"] = f"结束本Buff所有名为 <{node['_buffKey']}> 的附属Buff；若为可叠层的附属Buff，改为减少一层叠层（变为0层时仍将结束）"
     else:
-        result["main"] = f"结束 <{node['_buffKey']}> 的所有附属Buff"
+        result["main"] = f"结束本Buff所有名为 <{node['_buffKey']}> 的附属Buff"
     result["link"] = "buff." + node["_buffKey"]
     return result
 
@@ -341,9 +387,34 @@ def node_AttachAsDerivedBuffById(node):
     if node["_attachToSourceHost"]:
         target_name += "(召唤物)的主人"
     buff_key = "黑板[buff_key]指定的Buff" if node["_loadFromBlackboard"] else f" <{node['_buffKey']}> "
-    result = {"main" : f"若此Buff不是附属Buff，复制一个相同数据的Buff作为{target_name}下{buff_key}的附属Buff，然后结束此Buff"}
+    result = {
+        "main" : f"若此Buff不是附属Buff，将自己\"挂载\"为{target_name}下{buff_key}的附属Buff",
+        "description" : "会保留自己下属的附属关系，会保留黑板值等数据",
+        "true" : "若\"挂载\"成功",
+        "false" : "若\"挂载\"失败或已是附属Buff"
+    }
     if node["_finishDerivedBuffIfNoParent"]:
-        result["description"] = "若不存在目标Buff，仅结束此Buff"
+        result["description"] += "；若不存在目标Buff，此Buff仅结束"
     if node["_loadFromBlackboard"]:
         result["link"] = "buff." + node["_buffKey"]
     return result
+
+# 伪叠加逻辑（结束自己，令对方黑板值+1，但并非叠加）
+def node_StackByBuffStart(node):
+    target_name = anne_dictionary("target",node["_target"])
+    return {
+        "main" : f"在Buff开始时尝试\"叠层\"，寻找{target_name}身上与本Buff同名同源的另一个Buff",
+        "description" : "此\"叠层\"非彼Buff叠加，仅仅是令对方黑板值增加的特殊逻辑而已",
+        "children" : [
+            {
+                "main" : f"若存在其他这样的Buff，选择其中首个Buff：",
+                "children" : [
+                    {"main" : f"令该Buff黑板值 [{node['_curStackKey']}] += 1（不超过其 [{node['_maxStackKey']}]）"},
+                    {"main" : "触发该Buff"},
+                    {"main" : "结束本Buff"}
+                ]
+            }
+        ],
+        "true" : "始终不执行",
+        "false" : "若不存在其他这样的Buff",
+    }

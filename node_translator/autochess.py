@@ -1,7 +1,7 @@
 #----------------------------------------
 # 卫戍协议的Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 检查战斗中
 def node_AutoChessIsInBattle(node):

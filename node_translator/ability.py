@@ -1,7 +1,8 @@
 #----------------------------------------
 # 能力类Node
 #----------------------------------------
-from .analyzer import anne_dictionary, to_percent
+from translator import anne_dictionary
+from .analyzer import to_percent
 
 # 触发某个能力
 def node_TriggerAbility(node):
@@ -136,3 +137,6 @@ def node_AmmoSkillCountModifier(node):
         return {
             "main" : f"令{target_name}（角色类）当前开启的弹药类技能{discard}"
         }
+    return {
+        "main" : f"尝试修改{target_name}（角色类）弹药类技能，但无事发生"
+    }

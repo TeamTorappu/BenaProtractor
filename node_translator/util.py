@@ -1,7 +1,8 @@
 #----------------------------------------
 # 效果类Node（或者叫未分类更好）
 #----------------------------------------
-from .analyzer import anne_dictionary, analyze_damage, to_percent
+from translator import anne_dictionary
+from .analyzer import analyze_damage, to_percent
 
 # 补充召唤物数量
 def node_RechargeToken(node):
@@ -79,22 +80,6 @@ def node_ModifySp(node):
     if len(descriptions) > 0:
         result["description"] = "；".join(descriptions)
     return result
-    
-# 修改费用
-def node_ModifyCost(node):
-    source_name = anne_dictionary("target",node["_sourceType"])
-    shared_flags = []
-    if node["_forceToDisplayNumber"]: # 强制显示正数？
-        shared_flags.append(anne_dictionary("shared_flag","FORCE_TO_DISPLAY_NUMBER"))
-    if node["_forceToDisplayNegativeNumber"]: # 强制显示负数？
-        shared_flags.append(anne_dictionary("shared_flag","FORCE_TO_DISPLAY_NEGATIVE_NUMER"))
-    if len(shared_flags) > 0:
-        return {
-            "main" : f"令持有的部署费用+{node['_blackboardKey']}",
-            "description" : "、".join(shared_flags)
-        }
-    else:
-        return {"main" : f"令持有的部署费用+{node['_blackboardKey']}"}
 
 # 施加元素损伤
 def node_ApplyElementDamage(node):
@@ -146,6 +131,13 @@ def node_ApplyElementDamage(node):
         result["description"] = "；".join(descriptions)
     return result
 
+# 增减占用阻挡数
+def node_AddEnemyBlockVolume(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    addon = node["_additionVolume"] * (-1 if node["_isMinus"] else 1)
+    return {"main" : f"让{target_name}（敌人类）的占用阻挡数{addon}"}
+
+
 
 # 调整本buff提供的属性增益
 def node_AttributeModifierWithBB(node):
@@ -179,9 +171,11 @@ def node_SwitchMode(node):
 
 # 强制击倒
 def node_InstantKill(node):
-    target = "Buff来源" if node["_killSource"] else "Buff持有者"
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_killSource"]: # 改为击杀上下文中的来源
+        target_name = "上下文来源"
     features = []
-    result = {"main" : "强制击倒"+target}
+    result = {"main" : "强制击倒"+target_name}
     if node["_skipReborn"]: # 无视二阶段
         features.append("无视重生能力")
     if node["_noSource"]: # 无视击杀来源
@@ -232,6 +226,52 @@ def node_ModifyLifePoint(node):
         return {"main" : f"令关卡目标生命值{value}，视为由{source_name}导致的修改"}
     else:
         return {"main" : f"令关卡目标生命值{value}"}
+
+# 记录战斗LOG（通常用于记录模组任务、藏品掉落、跨关卡生命比例继承等数据）
+def node_LogExtraBattleInfo(node):
+    target_name = anne_dictionary("target",node["_target"])
+    if node["_countInHostIfToken"]:
+        target_name += "（若为召唤物，改为其主人）"
+    key = "[key]" if node["_loadKeyFromBlackBoard"] else node["_key"]
+    log_str = ""
+    log_info = ""
+    addon = f"[{node['_additionValueKey']}]" if (node["_additionValueKey"] != None and node["_additionValueKey"] != "") else node["_additionValue"]
+    if node["_logType"] == "SIMPLE": # 普通记录
+        log_str = f"SIMPLE,(ID),{key}"
+        log_info = f"记录特定ID的单位的数值（以 单位的ID + {key} 为键）"
+    elif node["_logType"] == "DETAILED": # 完整记录
+        log_str = f"DETAILED,(ID),(UID),{key}"
+        log_info = f"记录一个特定UID的单位的数值（以 单位的ID + 战内UID + {key} 为键）"
+    elif node["_logType"] == "ATTRIBUTE": # 记录数值
+        if node["_attributeType"] == "HP_RATIO":
+            log_str = "ATTRIBUTE,(ID),(UID),HP_RATIO,(生命比例)"
+            log_info = f"存储单位此时的生命值比例（保留到小数点后四位）"
+        elif node["_attributeType"] == "SP":
+            log_str = "ATTRIBUTE,(ID),(UID),SP,(技力)"
+            log_info = f"存储单位此时的技力"
+        elif node["_attributeType"] == "COST":
+            log_str = "ATTRIBUTE,(ID),(UID),COST,(部署费用)"
+            log_info = f"存储当前关卡持有的部署费用"
+        else:
+            log_str = "ATTRIBUTE,(ID),(UID),NONE,0"
+            log_info = f"存储该单位存在过的痕迹"
+    elif node["_logType"] == "CHARACTER_SKILL": # 记录技能开启次数
+        log_str = "CHARACTER_SKILL,(ID),(UID)"
+        log_info = f"记录该单位（角色类）使用技能的次数（次数+{addon}）"
+    elif node["_logType"] == "HIDDEN_WAVE_START" or node["_logType"] == "HIDDEN_WAVE_END": # 隐藏波次
+        log_str = f"{node['_logType']},(单位配置的hiddenGroupKey)"
+        if node["_logType"] == "HIDDEN_WAVE_START":
+            log_info = f"记录该单位（敌人类）的隐藏组已出现"
+        elif node["_logType"] == "HIDDEN_WAVE_END":
+            log_info = f"记录该单位（敌人类）的隐藏组已结束"
+    else: # 剩下的
+        log_str = f"{node['_logType']},{key}"
+        log_info = f"存储一个全局性的数值（以 {key} 为键）"
+    return {
+        "main" : f"记录战斗LOG：{log_info}",
+        "description" : f" \"{log_str}\" += {addon} ",
+        "style_closed" : True
+    }
 
 # 播放音效
 def node_PlayAudio(node):

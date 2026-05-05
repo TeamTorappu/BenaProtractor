@@ -1,19 +1,9 @@
 import json
 import os
 import math
+from translator import anne_dictionary
 
-ANNE_DICTIONARY = None
 GAP = 0.000000001
-# 继承字典数据
-def set_dictionary(dictionary):
-    global ANNE_DICTIONARY
-    ANNE_DICTIONARY = dictionary.copy()
-        
-# 安妮的查字典方法
-# 如果查不到会返回原文
-def anne_dictionary(catalogue,type_str):
-    return ANNE_DICTIONARY[catalogue].get(type_str,type_str)
-
 #----------------------------------------
 # 数值文本化逻辑
 #----------------------------------------
@@ -109,6 +99,12 @@ def analyze_damage(damage_data,prefix="",suffix=""):
         features.append("无法增/减/免伤/重设")
     elif "_forceDisplayDamageNum" in damage_data and damage_data["_forceDisplayDamageNum"]:
         features.append("强制红字")
+    if "_noSource" in damage_data and damage_data["_noSource"]:
+        features.append("无来源")
+    elif "_isNoSourceDamage" in damage_data and damage_data["_isNoSourceDamage"]:
+        features.append("无来源")
+    elif "_noSourceDamage" in damage_data and damage_data["_noSourceDamage"]:
+        features.append("无来源")
     #if "_damageWithoutModify" in damage_data and damage_data["_damageWithoutModify"]: #似乎没有任何用途
     #    features.append("damageWithoutModify")
     if "_setSharedFlag" in damage_data and damage_data["_setSharedFlag"]:
@@ -120,9 +116,9 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     if "_ignoreMissFlag" in damage_data and damage_data["_ignoreMissFlag"] != "NONE":
         features.append("无视"+anne_dictionary("damage_type",damage_data["_ignoreMissFlag"])+"闪避")
     # 乘以黑板值
-    if "_multiplierByKey" in damage_data and damage_data["_multiplierByKey"]:
-        if "_multiplierKey" in damage_data and damage_data["_multiplierKey"]:
-            features.append("乘以黑板值"+damage_data["_multiplierKey"])
+    #if "_multiplierByKey" in damage_data and damage_data["_multiplierByKey"]:
+    #    if "_multiplierKey" in damage_data and damage_data["_multiplierKey"]:
+    #        features.append("乘以黑板值"+damage_data["_multiplierKey"])
     # 伤害标签
     if "_modifierKey" in damage_data and damage_data["_modifierKey"] != "":
         suffix = suffix + f"（具有 {damage_data['_modifierKey']} 标记）"
@@ -370,8 +366,12 @@ def analyze_buff(buff_data,full_information=False):
             else:
                 features.append(f"{start_ticks}帧后触发仅一次")
         elif buff_data["triggerInterval"] >= 0:
-            ticks = buff_data['triggerInterval'] * 30
-            features.append(f"施加时及后续每{ticks}帧触发一次")
+            if buff_data["waitFirstTriggerInterval"]:
+                ticks = buff_data['triggerInterval'] * 30
+                features.append(f"每{ticks}帧触发一次")
+            else:
+                ticks = buff_data['triggerInterval'] * 30
+                features.append(f"施加时及后续每{ticks}帧触发一次")
     else: #if buff_data["triggerLifeType"] in ["LIMITED","IMMEDIATELY"] : # 有限次触发
         trigget_cnt = buff_data["triggerCnt"]
         if trigget_cnt > 1:
@@ -543,9 +543,13 @@ def analyze_target_options(option,relative_side=True):
     if option["ignoreHealFree"]:
         descriptions.append("无视禁疗")
     # 排除特定有异常效果单位
-    if option["excludeSomeAbnormalFlags"]:
+    if "excludeSomeAbnormalFlags" in option and option["excludeSomeAbnormalFlags"]:
         abnormal_flag = anne_dictionary("abnormal",option["excludeAbnormalFlag"])
-        descriptions.append(f"不选择处于{abnormal_flag}的单位")
+        descriptions.append(f"不选择持有{abnormal_flag}异常的单位")
+    # 必须特定有异常效果单位
+    if "containSomeAbnormalFlags" in option and option["containSomeAbnormalFlags"]:
+        abnormal_flag = anne_dictionary("abnormal",option["containAbnormalFlag"])
+        descriptions.append(f"必须为持有{abnormal_flag}异常的单位")
     # 行为覆写
     if option["purposeMask"] != "NONE":
         purpose = anne_dictionary("purpose",option["purposeMask"])

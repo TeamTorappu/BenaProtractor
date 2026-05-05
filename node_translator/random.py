@@ -1,9 +1,9 @@
 #----------------------------------------
 # 概率类Node
 #----------------------------------------
-# 骰子
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
+# 骰子
 def node_Dice(node):
     return {
         "main" : "投掷一枚\"骰子\"，进行概率检定（取0.0~100.0之内的随机浮点数，不包括100.0）",

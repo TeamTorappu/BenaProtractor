@@ -120,6 +120,9 @@
 		},
 		"shield" : "护盾",
 		"cripple" : "重伤",
+		"slow" : {
+			"down" : "迟钝"
+		},
 		"peak" : {
 			"performance" : "精力充沛检测"
 		},
@@ -521,6 +524,11 @@
 		"vampire" : "吸血",
 
 		"blord2" : "杜卡雷",
+
+		"douququ" : "斗蛐蛐",
+		"first" : {
+			"step" : "先行一步"
+		},
 
 		"bond" : {
 			"eff" : {

@@ -1,7 +1,8 @@
 #----------------------------------------
 # 修改伤害类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from .analyzer import to_percent
+from translator import anne_dictionary
 
 # 弱点伤害（必须于计算伤害时使用）
 def node_WeakDamage(node):
@@ -60,6 +61,40 @@ def node_DamageScale(node):
     if node["_cachedDeltaValueToBBKey"] != None and node["_cachedDeltaValueToBBKey"] != "":
         text += "，并将减少/增加的部分记入 [" + node["_cachedDeltaValueToBBKey"] + "]"
     return {"main" : text}
+
+# 基于距离的伤害倍率提升
+def node_DamageScaleBaseOnDistance(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    source_name = anne_dictionary("target",node["_sourceType"])
+    condition = ""
+    result = {}
+    if node["_filterDamageType"] and node["_filterApplyWay"]: # 伤害类型与施加途径筛选
+        damage_type = anne_dictionary("damage_type",node["_damageMask"])
+        apply_way = anne_dictionary("apply_way",node["_applyWayFilter"])
+        condition = f"若本次伤害是{apply_way}的{damage_type}伤害，"
+        result["true"] = f"若本次伤害的伤害类型为{damage_type}且施加途径为{apply_way}"
+        result["false"] = f"若本次伤害的伤害类型不为{damage_type}或者施加途径不为{apply_way}"
+    elif node["_filterDamageType"]: # 伤害类型筛选
+        damage_type = anne_dictionary("damage_type",node["_damageMask"])
+        condition = f"若本次伤害是{damage_type}伤害，"
+        result["true"] = f"若本次伤害的伤害类型为{damage_type}"
+        result["false"] = f"若本次伤害的伤害类型不为{damage_type}"
+    elif node["_filterApplyWay"]: # 施加途径筛选
+        apply_way = anne_dictionary("apply_way",node["_applyWayFilter"])
+        if node["_applyWayFilter"] == "NONE":
+            apply_way = "无"
+        condition = f"若本次伤害由{apply_way}途径施加，"
+        result["true"] = f"若本次伤害的施加途径为{apply_way}"
+        result["false"] = f"若本次伤害的施加途径不为{apply_way}"
+    # 距离核心计算逻辑
+    if node["_reverseDistance"]:
+        damage_scale = to_percent(1. + node["_maxScale"])
+        result["main"] = f"{condition}计算{source_name}与{target_name}之间的直线距离，令本次伤害提升至 linearstep(直线距离,[max_dist],[min_dist]) × (1 + [damage_scale])"
+        result["description"] = f"三个黑板值默认为浮点数类型上限、{node['_minTriggerDistance']}、{node['_maxScale']}"
+    else:
+        result["main"] = f"{condition}计算{source_name}与{target_name}之间的直线距离，令本次伤害提升至 linearstep(直线距离,[min_dist],[max_dist]) × (1 + [damage_scale])"
+        result["description"] = f"三个黑板值默认为{node['_minTriggerDistance']}、浮点数类型上限、{node['_maxScale']}"
+    return result
 
 # 格挡/护盾/屏障（还得具体情况具体分析）
 def node_BlockDamage(node):

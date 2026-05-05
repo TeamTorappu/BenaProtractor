@@ -1,7 +1,7 @@
 #----------------------------------------
 # 黑板检查类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 检查黑板
 def node_FilterByBlackboardValue(node):

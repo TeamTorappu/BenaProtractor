@@ -1,7 +1,8 @@
 #----------------------------------------
 # CardBuff类Node
 #----------------------------------------
-from .analyzer import anne_dictionary, analyze_buff
+from translator import anne_dictionary
+from .analyzer import analyze_buff
 
 # 创建CardBuff
 def node_CreateCardBuff(node):

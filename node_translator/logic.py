@@ -1,7 +1,7 @@
 #----------------------------------------
 # 逻辑类Node（通常不在这里处理）
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 逻辑 如果+否则
 def node_IfElse(node):

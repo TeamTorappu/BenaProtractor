@@ -1,7 +1,7 @@
 #----------------------------------------
 # 黑板类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 记录黑板值
 def node_AssignValueToBB(node):
@@ -94,7 +94,7 @@ def node_AssignBuffBlackboardFromOthers(node):
         "main" : f"尝试寻找{target_name}持有的首个{buff_name}，设本Buff的 [{node['_blackboardKey']}] = 该Buff的 [{node['_valueKey']}]"
     }
 
-# 设置其他Buff的黑板值
+# 在Buff之间传递黑板值
 def node_AssignBuffBlackboard(node):
     target_name = anne_dictionary("target",node["_targetType"])
     source_buff_name = "本Buff"
@@ -102,19 +102,28 @@ def node_AssignBuffBlackboard(node):
     target_bb = "[" + node["_blackboardKey"] + "]"
     if node["_valueKey"] != None and node["_valueKey"] != "":
         source_bb = "本黑板上的 [" + node["_valueKey"] + "]"
-        if node["_buffKeyAssignFrom"] != None and node["_buffKeyAssignFrom"] != "":
-            source_buff_name = node["_buffKeyAssignFrom"]
-            target_bb = target_buff_name + " 的 [" + target_bb + "]"
-            source_bb = node["_buffKeyAssignFrom"] + " 的 [" + node["_valueKey"] + "]"
-            if node["_assignFirstBuff"]:
-                return {"main" : f"尝试寻找{target_name}持有的首个 <{source_buff_name}> 与 <{target_buff_name}> Buff，设 {target_bb} = {source_bb}"}
-            else:
-                return {"main" : f"尝试寻找{target_name}持有的首个 <{source_buff_name}> Buff，设该单位的所有<{target_buff_name}>黑板上的 {target_bb} = {source_bb}"}      
-    # 默认处理
+        if (node["_buffKey"] != None and node["_buffKey"] != "") or node["_useCurBuffBB"]:
+            if node["_buffKeyAssignFrom"] != None and node["_buffKeyAssignFrom"] != "":
+                source_buff_name = node["_buffKeyAssignFrom"]
+                source_bb = node["_buffKeyAssignFrom"] + " 的 [" + node["_valueKey"] + "]"
+                return {"main" : f"尝试寻找{target_name}持有的首个 <{source_buff_name}> Buff，设本Buff黑板上的 {target_bb} = {source_bb}"}
+        else:
+            if node["_buffKeyAssignFrom"] != None and node["_buffKeyAssignFrom"] != "":
+                source_buff_name = node["_buffKeyAssignFrom"]
+                target_bb = target_buff_name + " 的 " + target_bb
+                source_bb = node["_buffKeyAssignFrom"] + " 的 [" + node["_valueKey"] + "]"
+                if node["_assignFirstBuff"]:
+                    return {"main" : f"尝试寻找{target_name}持有的首个 <{source_buff_name}> 与 <{target_buff_name}> Buff，设 {target_bb} = {source_bb}"}
+                else:
+                    return {"main" : f"尝试寻找{target_name}持有的首个 <{source_buff_name}> Buff，设该单位的所有<{target_buff_name}>黑板上的 {target_bb} = {source_bb}"}
+    # 固定值
     value = node["_defaultValue"]
     if node["_valueKey"] != None and node["_valueKey"] != "":
         value = f"[{node['_valueKey']}]（默认{value}）"
-    if node["_assignFirstBuff"]:
+
+    if (node["_buffKey"] != None and node["_buffKey"] != "") or node["_useCurBuffBB"]:
+        return {"main" : f"设本Buff黑板上的 {target_bb} = {value}"}
+    elif node["_assignFirstBuff"]:
         return {"main" : f"尝试寻找{target_name}持有的首个 <{target_buff_name}> Buff，设该Buff的 {target_bb} = {value}"}
     else:
         return {"main" : f"设{target_name}的所有 <{target_buff_name}> Buff黑板上的 {target_bb} = {value}"}
@@ -232,3 +241,23 @@ def node_AssignCurrentBlockNumToBB(node):
         "main" : f"将{target_name}（角色类）当前阻挡的单位数量记录至黑板 [{node['_blackboardKey']}]"
     }
 
+# 将两者间的距离记录到黑板上
+def node_AssignDistanceToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    source_name = anne_dictionary("target",node["_sourceType"])
+    if node["_useManhattanDistance"]:
+        return {
+            "main" : f"计算{source_name}与{target_name}两者所在格之间的曼哈顿距离（整数），记录至黑板 [{node['_blackboardKey']}]"
+        }
+    else:
+        return {
+            "main" : f"计算{source_name}与{target_name}两者之间的直线距离（浮点数），记录至黑板 [{node['_blackboardKey']}]"
+        }
+
+# 将两者间的曼哈顿距离记录到黑板上
+def node_AssignManhattanDistanceToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    source_name = anne_dictionary("target",node["_sourceType"])
+    return {
+        "main" : f"计算{source_name}与{target_name}两者所在格之间的曼哈顿距离（整数），记录至黑板 [{node['_blackboardKey']}]"
+    }

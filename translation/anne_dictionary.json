@@ -308,7 +308,9 @@
 		"EP_RESISTANCE" : "损伤抗性",
 		"DAMAGE_HITRATE_PHYSICAL" : "物理命中率",
 		"DAMAGE_HITRATE_MAGICAL" : "法术命中率",
-		"EP_BREAK_RECOVER_SPEED" : "损伤冷却恢复速度"
+		"EP_BREAK_RECOVER_SPEED" : "损伤冷却恢复速度",
+		"SLOW_DOWN" : "迟钝乘数",
+		"BLOCK_RADIUS_SCALE" : "阻挡半径倍率"
 	},
 	"damage_type" : {
 		"NONE" : "无伤害类型",

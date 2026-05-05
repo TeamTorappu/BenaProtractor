@@ -1,7 +1,7 @@
 #----------------------------------------
 # 调整值专用的Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 是否为伤害？实际判定上为检查是否为伤害+伤害类型不为治疗
 def node_IsDamage(node):

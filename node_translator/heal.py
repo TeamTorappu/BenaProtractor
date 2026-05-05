@@ -1,7 +1,7 @@
 #----------------------------------------
 # 治疗类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 固定数值治疗
 def node_FixedValueHeal(node):

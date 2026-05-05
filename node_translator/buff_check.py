@@ -1,7 +1,7 @@
 #----------------------------------------
 # Buff相关的检查类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 检查是否持有某Buff
 def node_CheckContainsBuff(node):
@@ -61,4 +61,13 @@ def node_CheckContainsDerviedBuff(node):
         "main" : f"检查持有者是否持有本Buff的附属Buff <{node['_derviedBuffKey']}>",
         "true" : "若持有者同时持有该附属Buff",
         "false" : "若持有者不持有该附属Buff"
+    }
+
+# 检查Buff剩余持续时间
+def node_CheckRemainTime(node):
+    remaining_time = node["_checkRemainTime"]
+    return {
+        "main" : "检查本Buff的剩余持续时间",
+        "true" : f"若剩余时间 ≤ {remaining_time}秒",
+        "false" : f"若剩余时间 > {remaining_time}秒"
     }

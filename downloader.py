@@ -3,16 +3,17 @@ import sys
 import urllib.request
 
 # Github仓库的根文件夹
-# 使用Kengxxiao老师的仓库，如果有需要可以改用prts或别的数据源，或者选择手动下载所需文件
-WEB = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/"
+#WEB = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/zh_CN/gamedata/"
+#WEB = "https://torappu.prts.wiki/gamedata/latest/"
+WEB = "https://raw.githubusercontent.com/ArknightsAssets/ArknightsGamedata/refs/heads/master/cn/gamedata/"
 # 需要下载的文件
 # 以简体中文版数据为准（通常会是最新的）
 FILES = {
-    "buff_table.json" : "zh_CN/gamedata/buff_table.json",
-    "character_table.json" : "zh_CN/gamedata/excel/character_table.json",
-    "roguelike_topic_table.json" : "zh_CN/gamedata/excel/roguelike_topic_table.json",
-    "buff_template_data.json" : "zh_CN/gamedata/battle/buff_template_data.json",
-    "enemy_database.json" : "zh_CN/gamedata/levels/enemydata/enemy_database.json"
+    "buff_table.json" : "buff_table.json",
+    "character_table.json" : "excel/character_table.json",
+    "roguelike_topic_table.json" : "excel/roguelike_topic_table.json",
+    "buff_template_data.json" : "battle/buff_template_data.json",
+    "enemy_database.json" : "levels/enemydata/enemy_database.json"
 }
 
 # 下载所需文件

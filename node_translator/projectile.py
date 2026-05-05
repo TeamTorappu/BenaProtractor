@@ -1,7 +1,7 @@
 #----------------------------------------
 # 弹道类Node
 #----------------------------------------
-from .analyzer import anne_dictionary
+from translator import anne_dictionary
 
 # 发出弹道
 def node_EmitProjectile(node):

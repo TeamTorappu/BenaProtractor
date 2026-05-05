@@ -2,7 +2,8 @@
 # 计算类Node
 #----------------------------------------
 import math
-from .analyzer import anne_dictionary, to_delta
+from translator import anne_dictionary
+from .analyzer import to_delta
 # 用各种参数计算黑板值
 def node_CalculateBlackboardValueViaParams(node):
     # 未解析参数：
@@ -30,9 +31,9 @@ def node_CalculateBlackboardValueViaParams(node):
         if node["_maxValueKey"] != None and node["_maxValueKey"] != "":
             formula = "clamp("+formula+", ["+node["_minValueKey"]+"] , ["+node["_maxValueKey"]+"])"
         else:
-            formula = "max("+formula+","+node["_minValueKey"]+")"
+            formula = "max("+formula+",["+node["_minValueKey"]+"])"
     elif node["_maxValueKey"] != None and node["_maxValueKey"] != "": # 上限
-        formula = "min("+formula+","+node["_maxValueKey"]+")"
+        formula = "min("+formula+",["+node["_maxValueKey"]+"])"
     # 后续处理
     if node["_finalAbs"]: # 绝对值
         formula = "| "+formula+" |"

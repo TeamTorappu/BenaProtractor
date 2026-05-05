@@ -3,7 +3,8 @@
 #----------------------------------------
 from bena import ENEMY_NAMES
 
-from .analyzer import analyze_FP, anne_dictionary
+from translator import anne_dictionary
+from .analyzer import analyze_FP, analyze_target_options
 
 # 检查异常效果（带免疫）
 def node_CheckAbnormalFlag(node):
@@ -93,7 +94,7 @@ def node_CheckTargetProfession(node):
         professions = [anne_dictionary("profession",p) for p in node["_profession"]]
         sub_professions = []
         if node["_checkSubProfession"] and node["_subProfessions"] != None:
-            sub_professions = [anne_dictionary("sub_profession",p) for p in node["_subProfessions"]]
+            sub_professions = [anne_dictionary("sub_profession",p) for p in node["_subProfessions"].split(", ")]
         if len(professions) > 1:
             if len(sub_professions) > 1: # 一般不会用到
                 return {
@@ -265,6 +266,28 @@ def node_CheckUnitAlive(node):
         "true" : f"若{owner_name}仍存活（生命值不为0且不处于死亡状态机）",
         "false" : f"若{owner_name}已被击倒/死亡"
     }
+
+# 检查单位是否可以被选中
+def node_VertifyTarget(node):
+    source_name = anne_dictionary("target",node["_source"])
+    target_name = anne_dictionary("target",node["_target"])
+    if node["_targetOptions"] == None:
+        return {
+            "main" : f"尝试判断对于{source_name}而言，{target_name}是否可以选择",
+            "description" : "使用上下文中能力的选择器的配置作为选择条件；不受迷彩制约",
+            "true" : f"若{target_name}可被选择",
+            "false" : f"若{target_name}不可被选择"
+        }
+    result = analyze_target_options(node["_targetOptions"])
+    result["main"] = f"尝试判断对于{source_name}而言，{target_name}是否为可选的{result['main']}"
+    if "description" in result:
+        result["description"] = result["description"] + "；不受迷彩制约"
+    else:
+        result["description"] = "不受迷彩制约"
+    result["true"] = f"若{target_name}可被选择且符合条件）"
+    result["false"] = f"若{target_name}不可被选择且符合条件）"
+    return result
+
 
 # 检查绝对阵营
 def node_IfTargetSide(node):
@@ -628,7 +651,7 @@ def node_FilterByTargetSPType(node):
 
 # 检查所处地块
 def node_CheckCurrentTileKey(node):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = anne_dictionary("target",node["_targetType"])
     tile_keys = []
     for tile_key in node["_tileKey"]:
         tile_keys.append(tile_key) # 需翻译
