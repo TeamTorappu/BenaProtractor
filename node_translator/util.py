@@ -56,7 +56,7 @@ def node_ModifySp(node):
     amount = str(node["_modifyValue"])+"点"
     result = {"main" : ""}
     descriptions = []
-    if node["_spString"] != "":
+    if node["_spString"] != None and node["_spString"] != "":
         amount = "["+node['_spString']+"]点"
         if node["_modifyValue"] != 0:
             descriptions.append(f"默认{modify_type}{node['_modifyValue']}点")
@@ -226,6 +226,14 @@ def node_ModifyLifePoint(node):
         return {"main" : f"令关卡目标生命值{value}，视为由{source_name}导致的修改"}
     else:
         return {"main" : f"令关卡目标生命值{value}"}
+    
+# 修改阻挡模式
+def node_ChangeCharBlockMode(node):
+    target_name = anne_dictionary("target",node["_target"])
+    if node["_resetToDefault"]:
+        return {"main" : f"令{target_name}的阻挡模式切换回初始模式（可能是\"地面阻挡\"）"}
+    block_mode = anne_dictionary("block_mode",node["_blockMode"])
+    return {"main" : f"令{target_name}的阻挡模式切换为{block_mode}"}
 
 # 记录战斗LOG（通常用于记录模组任务、藏品掉落、跨关卡生命比例继承等数据）
 def node_LogExtraBattleInfo(node):

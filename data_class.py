@@ -30,42 +30,46 @@ class Node:
             node_name = node_name[28:-17]
         self.node_name = node_name
         self.node_data = node_data
-        self.node_data["$type"] = node_name
+        #self.node_data["$type"] = node_name
         self.translation = None
+        self.condition_nodes = None
+        self.succeed_nodes = None
+        self.fail_nodes = None
         # 预处理
         #if node_data.has_key("_buff"):
         #    # 获取附属Buff
         #    self.node_config["_buff"] = Buff(node_data._buff)
         if node_name == "IfElse":
-            self.node_data["condition_node"] = Node(node_data["_conditionNode"])
-            self.node_data["succeed_nodes"] = []
-            self.node_data["fail_nodes"] = []
+            self.condition_nodes = []
+            self.succeed_nodes = []
+            self.fail_nodes = []
+            if node_data["_conditionNode"] != None:
+                self.condition_nodes.append(Node(node_data["_conditionNode"]))
             if node_data["_succeedNodes"] != None:
                 for sub_node in node_data["_succeedNodes"]:
-                    self.node_data["succeed_nodes"].append(Node(sub_node))
+                    self.succeed_nodes.append(Node(sub_node))
             if node_data["_failNodes"] != None:
                 for sub_node in node_data["_failNodes"]:
-                    self.node_data["fail_nodes"].append(Node(sub_node))
-        if node_name == "IfConditions":
-            self.node_data["condition_nodes"] = []
-            self.node_data["succeed_nodes"] = []
-            self.node_data["fail_nodes"] = []
+                    self.fail_nodes.append(Node(sub_node))
+        elif node_name == "IfConditions":
+            self.condition_nodes = []
+            self.succeed_nodes = []
+            self.fail_nodes = []
             if node_data["_conditionsNode"] != None:
                 for sub_node in node_data["_conditionsNode"]:
-                    self.node_data["condition_nodes"].append(Node(sub_node))
+                    self.condition_nodes.append(Node(sub_node))
             if node_data["_succeedNodes"] != None:
                 for sub_node in node_data["_succeedNodes"]:
-                    self.node_data["succeed_nodes"].append(Node(sub_node))
+                    self.succeed_nodes.append(Node(sub_node))
             if node_data["_failNodes"] != None:
                 for sub_node in node_data["_failNodes"]:
-                    self.node_data["fail_nodes"].append(Node(sub_node))
+                    self.fail_nodes.append(Node(sub_node))
 
 # BuffTemplate类
 class BuffTemplate:
     def __init__(self, buff_key, buff_data):
         self.buff_key = buff_key
         self.display_name = buff_key
-        self.raw_buff_data = json.dumps(buff_data,indent=4,ensure_ascii=False)
         self.buff_data = buff_data
         self.template_key = buff_data["templateKey"] # 虽然不知道有啥区别，总之留着吧
         self.effect_key = buff_data["effectKey"] # 特效没啥处理的必要
@@ -80,13 +84,16 @@ class BuffTemplate:
         if self.display_name == "":
             return self.buff_key
         return self.display_name
+
+    # 获取原文
+    def get_raw_data(self):
+        return json.dumps(self.buff_data,indent=4,ensure_ascii=False)
     
 # Buff类
 class Buff:
     def __init__(self, buff_key, buff_data):
         self.buff_key = buff_key
         self.display_name = buff_key
-        self.raw_buff_data = json.dumps(buff_data,indent=4,ensure_ascii=False)
         self.buff_data = buff_data
         self.hidden = False
     
@@ -95,6 +102,10 @@ class Buff:
         if self.display_name == "":
             return self.buff_key
         return self.display_name
+    
+    # 获取原文
+    def get_raw_data(self):
+        return json.dumps(self.buff_data,indent=4,ensure_ascii=False)
         
 
 # Buff的伪代码承载类
@@ -111,7 +122,6 @@ class GlobalBuff:
     def __init__(self, buff_key, prefab_data):
         self.buff_key = buff_key
         self.display_name = buff_key
-        self.raw_prefab_data = json.dumps(prefab_data,indent=4,ensure_ascii=False)
         self.prefab_data = prefab_data
         self.target_options = prefab_data["_options"]
         self.buff_datas = prefab_data["_buffs"]
@@ -123,6 +133,10 @@ class GlobalBuff:
         if self.display_name == "":
             return self.buff_key
         return self.display_name
+    
+    # 获取原文
+    def get_raw_data(self):
+        return json.dumps(self.prefab_data,indent=4,ensure_ascii=False)
 
 # 肉鸽的Buff数据类，未来可能可以统一度量衡，目前还是算了
 class RogueBuffData:

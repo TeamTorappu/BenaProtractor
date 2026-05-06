@@ -3,6 +3,7 @@
 将得到的topic类或buff的node类根据翻译数据转写成对应“人类语”
 '''
 import math
+import traceback
 from data_class import *
 from bena import ask_bena, translate_buff_name
 from relic_translator.analyzer import analyze_timing
@@ -46,7 +47,7 @@ class AnneNode:
             try:
                 if method != "" :
                     node.translation = method(node.node_data)
-                    # 检查是否有需要嵌套的内容
+                    # 检查是否有需要嵌套翻译的内容
                     if "sub_nodes" in node.translation:
                         sub_content_list = []
                         for sub_content in node.translation["sub_nodes"]:
@@ -109,18 +110,21 @@ class AnneNode:
                                 children.append({"main" : "]"})
                             else:
                                 children.append({"main" : str(key) + " : []"})
+                        elif key == "$type":
+                            children.append({"main": node.node_name})
                         else:
-                            children.append({"main": str(key) + " : "+str(content)})
+                            children.append({"main": str(key) + " : " + str(content)})
                     node.translation = {
                         "main" : node_name+"（未翻译）",
                         "style_closed" : True,
                         "children" : children
                     }
             except Exception as e:
-                print(f"[安妮]... {node_name} 节点翻译失败了",e)
+                print(f"[安妮]... {node_name} 节点翻译失败了")
+                traceback.print_exc()
                 node.translation = {
                     "main" : node_name+"（翻译失败）",
-                    "style_closed" : True
+                    "style_closed" : True,
                 }
         # 返回译文
         return node.translation
@@ -160,13 +164,9 @@ class AnneNode:
             # 判断节点
             true_flag = "如果是/有/可行/可处理："
             false_flag = "如果不是/没有/不可行/无法处理："
-            struct = None
-            if "condition_node" in node_data:
-                struct = self.translate(node_data["condition_node"])
-            elif "condition_nodes" in node_data:
-                struct = self.translate(node_data["condition_nodes"][0])
-            else:
+            if node.condition_nodes == None:
                 return {"main" : "无效的判断节点"}
+            struct = self.translate(node.condition_nodes[0])
             if struct["main"].endswith("（未翻译）"): # 未翻译，增加标识符
                 struct["main"] = "尝试判断: "+struct["main"]
             # 若main是空的，补一个尝试判断
@@ -189,13 +189,13 @@ class AnneNode:
             if "style_closed" in struct:
                 del struct["style_closed"]
             # 成功时执行的节点
-            if len(node_data["succeed_nodes"]) > 0:
-                success_translation = self.translate_all(node_data["succeed_nodes"])
+            if node.succeed_nodes != None and len(node.succeed_nodes) > 0:
+                success_translation = self.translate_all(node.succeed_nodes)
                 success_translation["main"] = true_flag
                 struct["children"].append(success_translation)
             # 失败时执行的节点
-            if len(node_data["fail_nodes"]) > 0:
-                fail_translation = self.translate_all(node_data["fail_nodes"])
+            if node.fail_nodes != None and len(node.fail_nodes) > 0:
+                fail_translation = self.translate_all(node.fail_nodes)
                 fail_translation["main"] = false_flag
                 struct["children"].append(fail_translation)
             # 存储翻译
@@ -209,7 +209,9 @@ class AnneNode:
         if node.translation == None:
             node_data = node.node_data
             # 检查条件数量
-            if len(node_data["condition_nodes"]) == 1: # 如果只有一个，那你tmd为什么不用IfElse呢？？？
+            if node.condition_nodes == None:
+                return {"main" : "无效的判断节点"}
+            if len(node.condition_nodes) == 1: # 如果只有一个，那你tmd为什么不用IfElse呢？？？
                 return self.translate_ifelse(node)
             # 判断节点
             struct = {
@@ -220,7 +222,7 @@ class AnneNode:
             true_flag = "如果是/有/可行/可处理："
             false_flag = "如果不是/没有/不可行/无法处理："
             #开始处理
-            for sub_node in node_data["condition_nodes"]:
+            for sub_node in node.condition_nodes:
                 structs.append(self.translate(sub_node))
             true_flags = []
             false_flags = []
@@ -269,13 +271,13 @@ class AnneNode:
             # 条件节点
             struct["children"] += structs
             # 成功时执行的节点
-            if len(node_data["succeed_nodes"]) > 0:
-                success_translation = self.translate_all(node_data["succeed_nodes"])
+            if node.succeed_nodes != None and len(node.succeed_nodes) > 0:
+                success_translation = self.translate_all(node.succeed_nodes)
                 success_translation["main"] = true_flag
                 struct["children"].append(success_translation)
             # 失败时执行的节点
-            if len(node_data["fail_nodes"]) > 0:
-                fail_translation = self.translate_all(node_data["fail_nodes"])
+            if node.fail_nodes != None and len(node.fail_nodes) > 0:
+                fail_translation = self.translate_all(node.fail_nodes)
                 fail_translation["main"] = false_flag
                 struct["children"].append(fail_translation)
             # 存储翻译

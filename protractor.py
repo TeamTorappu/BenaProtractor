@@ -16,13 +16,13 @@ PROTRACTOR = None
 class Protractor:
     def __init__(self):
         self.window = tk.Tk()
-        self.window.geometry("1000x800")
+        self.window.geometry("1000x600")
         self.window.title('贝娜的量角器')
         self.style = ttk.Style()
         self.frame = ttk.Frame(self.window, padding=10)
         self.frame.pack(fill="both",expand=True)
         # 控制区域
-        self.control_panel = ttk.Frame(self.frame,width=500)
+        self.control_panel = ttk.Frame(self.frame,width=200)
         self.control_panel.pack(fill="y",side="left")
         # 顶边菜单
         self.menu_bar = tk.Menu(self.window)
@@ -33,16 +33,17 @@ class Protractor:
         # 目录
         self.directory_items = []
         self.directory_index = 0 # 用于为每个目录编号
+        self.directory_indexs = []
         self.search_frame = tk.Frame(self.control_panel)
         self.search_frame.pack(fill="x",side="top")
         self.search_button = ttk.Button(self.search_frame,text="搜索",command=self.try_search,width=4,padding=-1)
         self.search_button.pack(side="right")
         self.search_entry = ttk.Entry(self.search_frame)
         self.search_entry.bind("<Return>", self.try_search)
-        self.search_entry.pack(fill="both")
+        self.search_entry.pack(fill="both",expand=True)
         self.searching = False
-        self.directory = ttk.Treeview(self.control_panel,selectmode="browse",show="tree")
-        self.directory_scrollbar_x = ttk.Scrollbar(self.control_panel,orient=tk.HORIZONTAL,command=self.directory.yview)
+        self.directory = tk.Listbox(self.control_panel,selectmode="browse")
+        self.directory_scrollbar_x = ttk.Scrollbar(self.control_panel,orient=tk.HORIZONTAL,command=self.directory.xview)
         self.directory_scrollbar_y = ttk.Scrollbar(self.control_panel,orient=tk.VERTICAL,command=self.directory.yview)
         self.directory.configure(xscrollcommand=self.directory_scrollbar_x.set)
         self.directory.configure(yscrollcommand=self.directory_scrollbar_y.set)
@@ -110,8 +111,8 @@ class Protractor:
             else:
                 self.display_name = data_reference
         # 显示元素，带双向链接
-        def view(self,tree_view):
-            label = tree_view.insert("","end",text=self.display_name,values=(self.index))#,open=True
+        def view(self,listbox):
+            label = listbox.insert("end",self.display_name)#,open=True
             
     # 读取列表
     def load_directory(self,data_type,data_dict):
@@ -119,8 +120,9 @@ class Protractor:
             if not data_reference.hidden: # 隐藏的不加入列表
                 new_item = self.Item(self.directory_index,data_type,data_key,data_reference)
                 self.directory_items.append(new_item)
-                self.directory_index += 1
                 new_item.view(self.directory)
+                self.directory_indexs.append(new_item.index)
+                self.directory_index += 1
     
     # 搜索
     def try_search(self,event=None):
@@ -128,13 +130,16 @@ class Protractor:
         keywords = self.search_entry.get().strip().split(" ")
         if len(keywords) == 0 and self.searching:
             # 恢复列表
-            self.directory.set_children([])
+            self.directory.delete(0,"end")
+            self.directory_indexs.clear()
             for item in self.directory_items:
                 item.view(self.directory)
+                self.directory_indexs.append(item.index)
             self.searching = False
         else:
             # 重新筛选列表（与模式）
-            self.directory.set_children([])
+            self.directory.delete(0,"end")
+            self.directory_indexs.clear()
             for item in self.directory_items:
                 haskey = True 
                 for keyword in keywords:
@@ -143,6 +148,7 @@ class Protractor:
                         break
                 if haskey:
                     item.view(self.directory)
+                    self.directory_indexs.append(item.index)
             self.searching = True
                         
         #except:
@@ -156,12 +162,13 @@ class Protractor:
     
     # 展示选择查看的内容（使用安妮来翻译）
     def display_directory_selected_item(self,event=None):
-        selected = self.directory.selection()
-        if selected:
-            self.display_index = int(self.directory.item(selected[0],"values")[0])
+        selected = self.directory.curselection()
+        if selected and len(selected) > 0:
+            # 获取选中数据
+            self.display_index = self.directory_indexs[selected[0]]
             linked = self.directory_items[self.display_index]
+            # 检查是否为当前显示的内容；如果full_key相同说明是同一个，不需要显示
             full_key = linked.data_type + "." + linked.data_key
-            #如果相同说明是同一个，不需要显示
             if self.displaying == full_key:
                 return
             self.displaying = full_key
@@ -175,15 +182,15 @@ class Protractor:
             if linked.data_type == "buff":
                 translation = anne.translate_whole_buff(obj)
                 self.display(translation)
-                self.display_origin("\"" + obj.buff_key + "\" :" + obj.raw_buff_data) 
+                self.display_origin("\"" + obj.buff_key + "\" :" + obj.get_raw_data()) 
             elif linked.data_type == "global_buff":
                 translation = anne.translate_whole_global_buff(obj)
                 self.display(translation)
-                self.display_origin("\"" + obj.buff_key + "\" :" + obj.raw_prefab_data) 
+                self.display_origin("\"" + obj.buff_key + "\" :" + obj.get_raw_data()) 
             elif linked.data_type == "buff_template":
                 translation = anne.translate_whole_buff_template(obj)
                 self.display(translation)
-                self.display_origin("\"" + obj.buff_key + "\" :" + obj.raw_buff_data) 
+                self.display_origin("\"" + obj.buff_key + "\" :" + obj.get_raw_data()) 
             elif linked.data_type == "rogue_item":
                 translation = anne.translate_whole_rogue_item(obj)
                 self.display(translation)
@@ -218,15 +225,15 @@ class Protractor:
         elif (_cat in ["","buff"]) and item_id in bena.BUFF_KEYS:
             obj = bena.BUFF_TABLE[item_id]
             translation = anne.translate_whole_buff(obj)
-            raw = "\"" + obj.buff_key + "\" :" + obj.raw_buff_data
+            raw = "\"" + obj.buff_key + "\" :" + obj.get_raw_data()
         elif (_cat in ["","global_buff"]) and item_id in bena.GLOBAL_BUFF_KEYS:
             obj = bena.GLOBAL_BUFF_DUMMY[item_id]
             translation = anne.translate_whole_global_buff(obj)
-            raw = "\"" + obj.buff_key + "\" :" + obj.raw_prefab_data
+            raw = "\"" + obj.buff_key + "\" :" + obj.get_raw_data()
         elif (_cat in ["","buff_template"]) and item_id in bena.BUFF_TEMPLATE_KEYS:
             obj = bena.BUFF_TEMPLATE_DATA[item_id]
             translation = anne.translate_whole_buff_template(obj)
-            raw = "\"" + obj.buff_key + "\" :" + obj.raw_buff_data
+            raw = "\"" + obj.buff_key + "\" :" + obj.get_raw_data()
         # 如果找到了翻译，返回之
         if translation != None:
             self.display(translation)

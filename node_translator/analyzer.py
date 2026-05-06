@@ -131,8 +131,9 @@ def analyze_damage(damage_data,prefix="",suffix=""):
         elif damage_data["_ignoreCancelReasonMask"] == "HIT_FAILED":
             features.append("不受命中率判定影响")
         else: # 不行的话全展示吧
+            reason_mask = damage_data["_ignoreCancelReasonMask"].split(", ")
             reasons = []
-            for reason in damage_data["_ignoreCancelReasonMask"]:
+            for reason in reason_mask:
                 reasons.append(anne_dictionary("cancel_reason",reason))
             features.append("不受"+"/".join(reasons)+"影响")
     if len(features) > 0:
