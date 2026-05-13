@@ -8,8 +8,8 @@ GAP = 0.000000001
 
 # 获取key是否是属性值的方法
 # 属性字典里存了所有属性类型，因此直接用了
-def is_attribute_key(key):
-    return is_anne_key("attribute",key)
+def is_attribute_key(key: str):
+    return is_anne_key("attribute",key.upper())
     
 #----------------------------------------
 # 数值文本化逻辑
@@ -121,15 +121,5 @@ def analyze_selector(blackboard,prefix="",suffix=""):
 def analyze_item(blackboard):
     if "id" in blackboard:
         item = ask_bena("rogue_item",blackboard["id"])
-        if item != None:
-            if item.type == "COPPER": # 界园钱的特殊处理
-                return {
-                    "main": f"让 {item.display_name} 加入玩家钱盒。",
-                    "link": blackboard['id']
-                }
-            return {
-                "main": f"给予玩家{item.display_type} {item.display_name} ×{math.floor(blackboard.get('count',0))}",
-                "link": blackboard['id']
-            }
-        return {"main": f"给予玩家 {blackboard['id']} ×{math.floor(blackboard.get('count',0))}"}
-    return {"main": f"尝试给予玩家物品，但因未配置物品ID，没有实际效果。"}
+        return item
+    return None

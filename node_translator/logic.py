@@ -15,6 +15,13 @@ def node_IfConditions(node):
 def node_Dummy(node):
     return {"main" : node["_dummy"]}
 
+# 假节点，带子节点列表，用于嵌套翻译
+def node_DummyWithSubNodes(node):
+    return {
+        "main" : node['_dummy'],
+        "sub_nodes" : node["_subNodes"]
+    }
+
 # 否则
 def node_IfNot(node):
     return {"main" : "（反转前一个节点执行成功/失败的结果）"}
@@ -67,4 +74,28 @@ def node_Loop(node):
         })
     else:
         result["description"] = "若内部任一节点执行失败，仅此次结束循环"
+    return result
+
+# 分区执行
+def node_AlwaysExecuteNodeList(node):
+    result = {
+        "main" : "分区执行以下节点：",
+        "sub_nodes" : []
+    }
+    if node["_failWhenOneFail"]:
+        result["description"] = "若某一分区出现执行中止的情况，后续分区不再处理"
+        result["true"] = "若所有分区均执行成功，无一失败"
+        result["false"] = "若任一分区执行中止"
+    else:
+        result["description"] = "分区之间的运行结果互不干扰，内部失败后直接转跳到下一分区处理"
+    # 分区
+    index = 1
+    for chunk in node["_nodes"]:
+        chunk_node = {
+            "$type" : "Torappu.Battle.Action.Nodes+DummyWithSubNodes, Assembly-CSharp",
+            "_dummy" : f"第{index}分区：",
+            "_subNodes" : chunk
+        }
+        index += 1
+        result["sub_nodes"].append(chunk_node)
     return result

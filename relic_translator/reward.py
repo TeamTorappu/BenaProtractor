@@ -1,6 +1,7 @@
 #----------------------------------------
 # 奖励效果
 #----------------------------------------
+from relic_translator.analyzer import analyze_timing
 from translator import anne_dictionary
 
 # 特定情况下的奖励增加

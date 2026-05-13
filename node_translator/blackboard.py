@@ -241,6 +241,30 @@ def node_AssignCurrentBlockNumToBB(node):
         "main" : f"将{target_name}（角色类）当前阻挡的单位数量记录至黑板 [{node['_blackboardKey']}]"
     }
 
+# 将某个属性记录到黑板上
+def node_AssignAttributeToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    attribute = anne_dictionary("attribute",node["_attributeType"])
+    if node["_scaleVar"] != None and node["_scaleVar"] != "":
+        return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [{node['_blackboardKey']}]，随后将该黑板 ×= [{node['_scaleVar']}]"}
+    else:
+        return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [{node['_blackboardKey']}]"}
+
+# 将某个属性记录到黑板的dynamic上（对就是有这么个奇葩Node）
+def node_AssignAttributeAsDynamicVarToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    attribute = anne_dictionary("attribute",node["_attributeType"])
+    if node["_scaleVar"] != None and node["_scaleVar"] != "":
+        return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [dynamic]，随后将该黑板 ×= [{node['_scaleVar']}]"}
+    else:
+        return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [dynamic]"}
+
+# 将某个属性的原始值记录到黑板上
+def node_AssignAttributeRawDataIntoBlackboard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    attribute = anne_dictionary("attribute",node["_attributeType"])
+    return {"main" : f"将{target_name}的{attribute}的原始数据值记录至黑板 [{node['_blackBoardKey']}]"} # 对，这玩意的B大写了
+
 # 将两者间的距离记录到黑板上
 def node_AssignDistanceToBB(node):
     target_name = anne_dictionary("target",node["_targetType"])
@@ -261,3 +285,17 @@ def node_AssignManhattanDistanceToBB(node):
     return {
         "main" : f"计算{source_name}与{target_name}两者所在格之间的曼哈顿距离（整数），记录至黑板 [{node['_blackboardKey']}]"
     }
+
+# 将部署方向记录到黑板上
+def node_AssignDirectionToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node['_isReverse']:
+        return {
+            "main" : f"将{target_name}朝向的相反方向记录至黑板 [{node['_blackboardKey']}]",
+            "description" : "即 上=2 右=3 下=0 左=1；若为\"无朝向\"，记录4"
+        }
+    else:
+        return {
+            "main" : f"将{target_name}朝向的方向记录至黑板 [{node['_blackboardKey']}]",
+            "description" : "即 上=0 右=1 下=2 左=3；若为\"无朝向\"，记录4"
+        }

@@ -230,7 +230,13 @@ def node_IfTarget(node):
     if node["_checkTargetUnitType"]:
         conditions.append("单位类型为"+anne_dictionary("unit_type",node["_unitType"]))
         last_type = "单位类型是否为"+anne_dictionary("unit_type",node["_unitType"])
-    if node["_motionMask"] != "ALL":
+    if node["_motionMask"] == "NONE":
+        return {
+            "main" : f"检查{target_name}，但行动类型配置有误",
+            "true" : f"始终不执行",
+            "false" : f"始终执行"
+        }
+    elif node["_motionMask"] != "ALL":
         conditions.append("行动类型为"+anne_dictionary("motion",node["_motionMask"]))
         last_type = "行动类型是否为"+anne_dictionary("motion",node["_motionMask"])
     if node["_checkApplyWay"] and node["_applyWay"] == "MELEE": # 这个不是检查本次攻击的类型，是检查目标的
@@ -335,8 +341,8 @@ def node_IsEnemy(node):
 
 # 是否为同一人
 def node_IfTargetEqual(node):
-    left_target = anne_dictionary("target",node["_target1"])
-    right_target = anne_dictionary("target",node["_target2"])
+    left_target = "Buff来源" if node["_target1"] == "BUFF_SOURCE" else anne_dictionary("target",node["_target1"])
+    right_target = "Buff来源" if node["_target1"] == "BUFF_SOURCE" else anne_dictionary("target",node["_target2"])
     if node["_equalIfBothNull"]:
         if left_target == right_target:
             return {
@@ -385,12 +391,19 @@ def node_CheckEntityEquals(node):
 # 检查行动类型
 def node_CheckMotionMode(node):
     target_name = anne_dictionary("target",node["_targetType"])
-    motion = anne_dictionary("motion",node["_mode"])
-    return {
-        "main" : f"检查{target_name}的行动模式",
-        "true" : f"若其当前为{motion}单位",
-        "false" : f"若其当前为{motion}单位"
-    }
+    if node["_mode"] != "ALL":
+        motion = anne_dictionary("motion",node["_mode"])
+        return {
+            "main" : f"检查{target_name}的行动类型",
+            "true" : f"若其当前为{motion}单位",
+            "false" : f"若其当前不为{motion}单位"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}的行动类型",
+            "true" : f"若其当前不为无行动类型的单位",
+            "false" : f"若其当前为无行动类型的单位"
+        }
 
 # 追溯角色类单位死亡原因
 def node_FilterCharacterLastDeathReason(node):
@@ -724,4 +737,14 @@ def node_CheckEnemyUnbalanced(node):
         "main" : f"检查{target_name}（敌人类）当前是否处于\"失衡\"状态机",
         "true" : f"若该单位为敌人类且处于\"失衡\"状态机",
         "false" : f"若该单位不为敌人类或不处于\"失衡\"状态机"
+    }
+
+# 检查所在地块的高度类型
+def node_CheckHeightTypeOfRootTile(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    height_type = anne_dictionary("height_type",node["_heightType"])
+    return {
+        "main" : f"检查{target_name}所处地块的高度类型",
+        "true" : f"若地块高度类型为{height_type}",
+        "false" : f"若地块高度类型不为{height_type}"
     }

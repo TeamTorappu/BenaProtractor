@@ -146,14 +146,30 @@ def analyze_buff(buff_data,full_information=False):
     buff_key = buff_data["buffKey"]
     # 开始解析
     features = []
-    blackboard = {}
+    blackboard = []
     template = "empty"
     has_resistable_flag = False
+
+    # 检查黑板
+    if buff_data["blackboard"] and len(buff_data["blackboard"]) > 0:
+        for bb_data in buff_data["blackboard"]:
+            if bb_data["value"]:
+                #blackboard[bb_data["key"]] = bb_data["value"]
+                blackboard.append({"main" : f"[{bb_data['key']}] = {bb_data['value']}"})
+            elif bb_data["valueStr"]:
+                #blackboard[bb_data["key"]] = bb_data["valueStr"]
+                blackboard.append({"main" : f"[{bb_data['key']}] = \"{bb_data['valueStr']}\""})
 
     # 读取自数据库，一般是眩晕、寒冷那些，不管他
     if buff_data["loadFromDB"]:
         if full_information:
             features.append("读取自数据库：[" + buff_key + "]")
+        elif len(blackboard) > 0:
+            return {
+                "main" : "<" + buff_key + "> (读取自数据库)",
+                "link" : "buff." + buff_key,
+                "children" : blackboard
+            }
         else:
             return {"main" : "<" + buff_key + "> (读取自数据库)","link" : "buff." + buff_key}
     
@@ -173,14 +189,6 @@ def analyze_buff(buff_data,full_information=False):
             features.append(f"事件优先级：{priority}")
         else:
             features.append(f"事件优先级为 {priority}")
-    # 检查黑板
-    if buff_data["blackboard"] and len(buff_data["blackboard"]) > 0:
-        for bb_data in buff_data["blackboard"]:
-            bb_key = bb_data["key"]
-            if bb_data["value"]:
-                blackboard[bb_key] = bb_data["value"]
-            elif bb_data["valueStr"]:
-                blackboard[bb_key] = bb_data["valueStr"]
 
     # 持续时间配置
     if full_information: # 完整时间显示
@@ -356,7 +364,12 @@ def analyze_buff(buff_data,full_information=False):
             features.append("不可抵抗（模式为NO）")
     # 处理覆盖时使用的Key
     if buff_data["overrideKey"] and buff_data["overrideKey"] != "empty" :
-        features.append(f"处理覆盖时视为{buff_data['overrideKey']}") 
+        if buff_data["independentCharacterSource"]: #每个来源独立OverrideKey
+            features.append(f"处理覆盖时视为 (Buff来源名称)+<{buff_data['overrideKey']}>") 
+        else:
+            features.append(f"处理覆盖时视为 <{buff_data['overrideKey']}>") 
+    elif "independentCharacterSource" in buff_data and buff_data["independentCharacterSource"]:
+        features.append(f"处理覆盖时视为 (Buff来源名称)+<{buff_key}>") 
     # 触发配置
     if buff_data["triggerLifeType"] == "INFINITY" : # 无限次触发
         if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
@@ -426,9 +439,6 @@ def analyze_buff(buff_data,full_information=False):
             features.append(f"若已存在则无法重复施加")
         else:
             features.append(f"叠加类型{buff_data['overrideType']}")
-    # 暂时不知道有什么用的东西
-    if buff_data["independentCharacterSource"]:
-        features.append("independentCharacterSource")
     # 叠加优先级，鼓舞之类的用的
     if buff_data["priorityBBKeys"] != None and len(buff_data["priorityBBKeys"]) > 0:
         bb_keys = "、".join(buff_data['priorityBBKeys'])
@@ -436,8 +446,11 @@ def analyze_buff(buff_data,full_information=False):
     elif buff_data["priority"] > 0:
         features.append(f"叠加优先级{buff_data['priority']}")
     # 黑板前缀
-    if buff_data["stripBlackboardParamsWithBuffKey"]:
+    if "stripBlackboardParamsWithBuffKey" in buff_data and buff_data["stripBlackboardParamsWithBuffKey"]:
         features.append(f"使用有以BuffKey为前缀的黑板Key")
+    # 特效方向
+    if "enableInitDirectionFromSource" in buff_data and buff_data["enableInitDirectionFromSource"]:
+        features.append(f"根据来源位置旋转特效方向")
 
     # 准备返回buff
     result = {"main" : "<" + buff_key + ">"}
@@ -467,15 +480,9 @@ def analyze_buff(buff_data,full_information=False):
     
     # 最后写入黑板数据
     if len(blackboard) > 0:
-        bb_children = []
-        for key,value in blackboard.items():
-            if isinstance(value,str):
-                bb_children.append({"main" : "[" + key + "] = \"" + value + "\""})
-            else:
-                bb_children.append({"main" : "[" + key + "] = " + str(value)})
         if "children" not in result:
             result["children"] = []
-        result["children"].append({"main" : "黑板数据：","children" : bb_children})
+        result["children"] += blackboard
     return result
 
 # 解析Buff的详细信息

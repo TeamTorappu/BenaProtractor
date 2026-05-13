@@ -413,7 +413,7 @@ def translate_whole_global_buff(gbuff: GlobalBuff):
     if len(gbuff.deck_buff_datas) > 0:
         deck_buffs_translation = {"main" : "为待部署区的那些单位施加以下DeckBuff：","children" : []}
         for deck_buff_data in gbuff.deck_buff_datas:
-            buffs_translation["children"].append(ANNE_NODE.translator.analyze_deck_buff(deck_buff_data))
+            deck_buffs_translation["children"].append(ANNE_NODE.translator.analyze_deck_buff(deck_buff_data))
         translation["children"].append(deck_buffs_translation)
     # 剩下无法翻译的部分先直接展示
     for key, value in gbuff.prefab_data.items():

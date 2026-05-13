@@ -18,9 +18,34 @@ def rogue_level_char_limit_add(item_type,blackboard):
 # 立即奖励
 def rogue_immediate_reward(item_type,blackboard):
     timing = analyze_timing(item_type,blackboard)
-    translation = analyze_item(blackboard)
-    translation["main"] = timing+translation["main"]
-    return translation
+    item = analyze_item(blackboard)
+    if item != None:
+        if item.type == "COPPER": # 界园钱的特殊处理
+            return {
+                "main": f"{timing}让 {item.display_name} 加入玩家钱盒。",
+                "link": blackboard['id']
+            }
+        return {
+            "main": f"{timing}给予玩家{item.display_type} {item.display_name} × {math.floor(blackboard.get('count',0))}",
+            "link": blackboard['id']
+        }
+    return {"main": f"{timing}给予玩家 {blackboard['id']} × {math.floor(blackboard.get('count',0))}"}
+
+# 立刻消耗
+def rogue_immediate_cost(item_type,blackboard):
+    timing = analyze_timing(item_type,blackboard)
+    item = analyze_item(blackboard)
+    if item != None:
+        if item.type == "COPPER": # 界园钱的特殊处理
+            return {
+                "main": f"{timing}让钱盒内的 {item.display_name} 变为大炎通宝。",
+                "link": blackboard['id']
+            }
+        return {
+            "main": f"{timing}消耗玩家{item.display_type} {item.display_name} × {math.floor(blackboard.get('count',0))}",
+            "link": blackboard['id']
+        }
+    return {"main": f"{timing}消耗玩家 {blackboard['id']} × {math.floor(blackboard.get('count',0))}"}
 
 # 进入特殊节点奖励一次？
 def rogue_secret_into_reward_once(item_type,blackboard):
@@ -46,7 +71,7 @@ def rogue_copper_exchange(item_type,blackboard):
                 if item.type != "COPPER": # 界园钱的特殊处理
                     return {"main" : f"{timing}尝试将钱盒内的该钱替换为 {item.display_name}（非通宝，无法正常运作）"}
                 return {
-                    "main": f"{timing}，尝试将钱盒内的该钱替换为 {item.display_name} 。",
+                    "main": f"{timing}尝试将钱盒内的该钱替换为 {item.display_name} 。",
                     "link": blackboard['id']
                 }
     return {"main" : f"{timing}尝试将钱盒内的该钱替换为空气。"}
@@ -59,5 +84,5 @@ def rogue_battle_extra_recruit_ticket(item_type,blackboard):
 def rogue_level_life_point_add(item_type,blackboard):
     if "trig_type" in blackboard:
         timing = analyze_timing(item_type,blackboard)
-        return {"main" : f"{timing}战斗开始时获得{blackboard['value']}点本局专用的生命值（会影响国王套判断）"}
-    return {"main" : f"战斗开始时获得{blackboard['value']}点本局专用的生命值（会影响国王套判断）"}
+        return {"main" : f"{timing}战斗开始时获得{int(blackboard['value'])}点本局专用的生命值（会影响国王套判断）"}
+    return {"main" : f"战斗开始时获得{int(blackboard['value'])}点本局专用的生命值（会影响国王套判断）"}

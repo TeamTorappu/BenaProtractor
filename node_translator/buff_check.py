@@ -55,13 +55,20 @@ def node_CheckContainsBuff(node):
             "false" : "始终通过"
         }
 
-# 检查是否持有本Buff的某个附属Buff
+# 检查是否持有本Buff的附属Buff
 def node_CheckContainsDerviedBuff(node):
-    return {
-        "main" : f"检查持有者是否持有本Buff的附属Buff <{node['_derviedBuffKey']}>",
-        "true" : "若持有者同时持有该附属Buff",
-        "false" : "若持有者不持有该附属Buff"
-    }
+    if node["_derviedBuffKey"] != None and node["_derviedBuffKey"] != "":
+        return {
+            "main" : f"检查持有者是否同时持有本Buff的附属Buff <{node['_derviedBuffKey']}>",
+            "true" : "若其同时持有该附属Buff",
+            "false" : "若其不持有该附属Buff"
+        }
+    else:
+        return {
+            "main" : f"检查持有者是否同时持有本Buff的任意附属Buff",
+            "true" : "若其同时持有本Buff的任一附属Buff",
+            "false" : "若其不持有本Buff的任何附属Buff"
+        }
 
 # 检查Buff剩余持续时间
 def node_CheckRemainTime(node):

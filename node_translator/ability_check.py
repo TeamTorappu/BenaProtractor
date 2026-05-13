@@ -36,7 +36,7 @@ def node_CheckSkillIndex(node):
     return {
         "main" : f"检查{owner_name}（角色类）携带的技能",
         "true" : f"若{owner_name}携带的是{node['_skillIndex'] + 1}技能", # Index从0开始，技能序号从1开始
-        "false" : f"若{owner_name}携带的是其他技能"
+        "false" : f"若{owner_name}携带的不是{node['_skillIndex'] + 1}技能或没有技能"
     }
 
 # 检查技能触发类型

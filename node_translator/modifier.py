@@ -168,3 +168,19 @@ def node_ModifierScaleUp(node):
             "main" : f"根据调整值类型，令本次调整值的基础值提升至原本的若干倍",
             "description" : "若调整值为伤害，使用 [damage_scale]，否则使用 [heal_scale]"
         }
+    
+# 检查调整值对象行动类型
+def node_IfModifierTarget(node):
+    if node["_mode"] != "ALL":
+        motion = anne_dictionary("motion",node["_mode"])
+        return {
+            "main" : f"检查调整值对象的行动类型",
+            "true" : f"若其当前为{motion}单位",
+            "false" : f"若其当前不为{motion}单位"
+        }
+    else:
+        return {
+            "main" : f"检查调整值对象的行动类型",
+            "true" : f"若其当前不为无行动类型的单位",
+            "false" : f"若其当前为无行动类型的单位"
+        }
