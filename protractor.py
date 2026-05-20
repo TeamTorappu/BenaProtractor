@@ -89,7 +89,11 @@ class Protractor:
         font_name = self.style.lookup("Treeview", "font")
         if not font_name:
             font_name = "TkDefaultFont"
-        self.default_line_height = font.nametofont(font_name).metrics("linespace")
+        try:
+            tree_font = font.nametofont(font_name)
+        except tk.TclError:
+            tree_font = font.Font(font=font_name)
+        self.default_line_height = tree_font.metrics("linespace")
     
     # 定义目录物品类
     # 可选类型有：buff_template buff rogue_item

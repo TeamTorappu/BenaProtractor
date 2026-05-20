@@ -35,7 +35,7 @@ def rogue_layer_char_attribute_add(item_type,blackboard):
     # 依照持有的“物品”数量增加角色属性
     if "stack_by_res" in blackboard:
         need_item_key = blackboard["stack_by_res"]
-        need_item = ask_bena("rogue_item",need_item)
+        need_item = ask_bena("rogue_item",need_item_key)
         need_var = math.floor(blackboard["stack_by_res_cnt"])
         modifiers = []
         for key,value in blackboard.items():
