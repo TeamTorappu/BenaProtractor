@@ -131,7 +131,7 @@
 		"ON_OWNER_DYING" : "持有者陷入濒死状态机时",
 		"ON_GAME_OVER" : "战斗结束时",
 		"ON_MAKE_ENEMY_UNBALANCED" : "持有者令敌人类单位陷入失衡状态机时",
-		"ON_END_PULLING" : "持有者被拖拽期间，此次拖拽结束时",
+		"ON_END_PULLING" : "持有者发动的拖拽的结束时",
 		"ON_BLOCK_DAMAGE" : "持有者成功抵挡伤害时",
 		"ON_OWNER_OVERLAPPED" : "持有者被其他单位重叠部署时",
 		"ON_BOSS_WAVE_WILL_START" : "当BOSS波次即将开始时",
@@ -529,9 +529,9 @@
 		"SPECIAL_14" : "20号",
 		"SPECIAL_15" : "21号"
 	},
-	"act49side_tile_type" : {
-		"None" : "×",
-		"Pure" : "？",
+	"act49side_char" : {
+		"None" : "不是字格",
+		"Pure" : "占",
 		"Empty" : "空",
 		"Fortune" : "财",
 		"Food" : "食",

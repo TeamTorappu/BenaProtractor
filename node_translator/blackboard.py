@@ -299,3 +299,17 @@ def node_AssignDirectionToBB(node):
             "main" : f"将{target_name}朝向的方向记录至黑板 [{node['_blackboardKey']}]",
             "description" : "即 上=0 右=1 下=2 左=3；若为\"无朝向\"，记录4"
         }
+    
+# 将所在地块的网格坐标记录到黑板上
+def node_AssignGridPositionToBlackboard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_useConstLocationKey"]: # 字符串形式，一般用于定义“某个地块”
+        return {
+            "main" : f"将{target_name}所在地块的网格坐标以字符串形式记录至 [location] 中",
+            "description" : "格式为 \"(列,行)\""
+        }
+    else:
+        return {
+            "main" : f"将{target_name}所在地块的网格坐标记录至 [{node['_gridRowKey']}] 与 [{node['_gridColKey']}] 中",
+            "description" : f"[{node['_gridRowKey']}] 为列，[{node['_gridColKey']}] 为行"
+        }

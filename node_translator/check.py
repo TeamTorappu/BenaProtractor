@@ -717,7 +717,7 @@ def node_CheckEnemyId(node):
 # 检查当前单位模式
 def node_CheckUnitCurrentMode(node):
     target_name = anne_dictionary("target",node["_targetType"])
-    if node["_loadCurModeBbKey"] != None:
+    if node["_loadCurModeBbKey"] != None and node["_loadCurModeBbKey"] != "":
         return {
             "main" : f"检查{target_name}当前的模式编号是否为黑板[{node['_loadCurModeBbKey']}]记述的编号",
             "true" : f"若其当前模式为[{node['_loadCurModeBbKey']}]号模式",
@@ -748,3 +748,19 @@ def node_CheckHeightTypeOfRootTile(node):
         "true" : f"若地块高度类型为{height_type}",
         "false" : f"若地块高度类型不为{height_type}"
     }
+
+# 检查所在地块是否被角色类占用
+def node_CheckCharacterOnTile(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_checkProfessionCategories"]:
+        return {
+            "main" : f"检查{target_name}所处地块上是否存在干员（角色类且为八大职业之一）",
+            "true" : f"若该地块上存在任意干员",
+            "false" : f"若该地块上不存在干员"
+        }
+    else:
+        return {
+            "main" : f"检查{target_name}所处地块上是否存在角色类单位",
+            "true" : f"若该地块上存在任意角色类单位",
+            "false" : f"若该地块上不存在角色类单位"
+        }
