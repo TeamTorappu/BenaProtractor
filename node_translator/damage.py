@@ -11,10 +11,16 @@ def node_AdvancedApplyDamage(node):
     target_name = anne_dictionary("target",node["_targetType"])
     damage_name = analyze_damage(node) # 直接把整个node传参进去
     default_atk_scale = to_percent(node["_defaultAtkScale"])
-    return {
+    result = {
         "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}的{damage_name}",
         "description" : f"会读取黑板中的 [{node['_atkScaleVar']}] 覆盖此处的攻击力倍率"
     }
+    # 记录至黑板
+    if node["_assignFinalDamageToBB"]:
+        result["description"] += "；将最终伤害记录至黑板 [value]"
+    elif node["_assignRealDamageToBB"]: # 和上一个是平行的，不过开了前面那个这里这个会被覆盖掉...
+        result["description"] += "；将产生的生命值变化量记录至黑板 [value]"
+    return result
 
 # 造成无来源伤害
 def node_NoSourceDamage(node):
@@ -45,9 +51,9 @@ def node_FixedValueDamage(node):
         multiplier = " × " + node["_multiplierKey"]
     # 记录至黑板
     if node["_assignFinalDamageToBB"]:
-        features.append("将产生的生命值变化量记录至黑板")
+        features.append("将最终伤害记录至黑板 [value]")
     elif node["_assignRealDamageToBB"]: # 和上一个是平行的，不过开了前面那个这里这个会被覆盖掉...
-        features.append("将计算后伤害记录至黑板")
+        features.append("将产生的生命值变化量记录至黑板 [value]")
     
     if len(features) > 0:
         result["description"] = "；".join(features)

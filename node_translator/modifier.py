@@ -184,3 +184,19 @@ def node_IfModifierTarget(node):
             "true" : f"若其当前不为无行动类型的单位",
             "false" : f"若其当前为无行动类型的单位"
         }
+
+# 检查是否为元素损伤/特定类型元素损伤的调整值
+def node_FilterElementDamageModifer(node):
+    if node["_filterEPType"]:
+        ep_type = anne_dictionary("element",node["_epType"])
+        return {
+            "main" : f"检查本次调整值是否为{ep_type}损伤",
+            "true" : f"若为{ep_type}损伤",
+            "false" : f"若不是{ep_type}损伤或根本不是元素损伤"
+        }
+    else:
+        return {
+            "main" : f"检查本次调整值是否为元素损伤",
+            "true" : f"若为元素损伤",
+            "false" : f"若不是元素损伤"
+        }

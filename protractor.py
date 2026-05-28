@@ -8,6 +8,7 @@ import os
 import json
 import bena
 import anne
+import webbrowser
 
 os.environ['PYTHONWARNINGS'] = 'ignore:libpng warning:'
 PROTRACTOR = None
@@ -18,6 +19,12 @@ class Protractor:
         self.window = tk.Tk()
         self.window.geometry("1000x600")
         self.window.title('贝娜的量角器')
+        if os.path.exists("./icon/icon.ico"):
+            self.window.iconbitmap("./icon/icon.ico")
+            self.window.wm_iconbitmap("./icon/icon.ico")
+        elif os.path.exists("./icon.ico"):
+            self.window.iconbitmap("./icon.ico")
+            self.window.wm_iconbitmap("./icon.ico")
         self.style = ttk.Style()
         self.frame = ttk.Frame(self.window, padding=10)
         self.frame.pack(fill="both",expand=True)
@@ -159,6 +166,10 @@ class Protractor:
         self.search_entry.delete(0,"end")
         self.search_entry.insert("end",str(things))
         self.try_search()
+
+    # 打开prts
+    def open_prts(self,page_name):
+        webbrowser.open("https://prts.wiki/w/"+page_name)
     
     # 展示选择查看的内容（使用安妮来翻译）
     def display_directory_selected_item(self,event=None):
@@ -380,11 +391,14 @@ class Protractor:
                 for link in links:
                     linked = self.directory_items[self.display_index]
                     now = linked.data_type + "." + linked.data_key
-                    context_menu.add_command(label="转跳到至 "+link, command=lambda: self.link_jump(now,link))
-                    if "." in link:
+                    if link.startswith("prts."):
+                        context_menu.add_command(label="打开PRTS "+link[5:], command=lambda: self.open_prts(link[5:]))
+                    elif "." in link:
+                        context_menu.add_command(label="转跳到至 "+link, command=lambda: self.link_jump(now,link))
                         search_key = link.split(".",1)[1]
                         context_menu.add_command(label="搜索 "+search_key, command=lambda: self.search_by(search_key))
                     else:
+                        context_menu.add_command(label="转跳到至 "+link, command=lambda: self.link_jump(now,link))
                         context_menu.add_command(label="搜索 "+link, command=lambda: self.search_by(link))
                     context_menu.add_separator()
             # 复制文本

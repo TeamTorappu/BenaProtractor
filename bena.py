@@ -77,15 +77,19 @@ def make_enemy_name_table():
     with open(ENEMY_DATABASE_PATH,'r',encoding="UTF-8") as _f:
         json_data = json.load(_f)
     # 开始解析
-    #for enemy_struct in json_data["enemies"]:
-    #    enemy_key = enemy_struct.get("Key")
-    #    enemy_name = enemy_struct.get("Value")[0]["enemyData"]["name"]["m_value"]
-    for enemy_key, enemy_struct in json_data.items():
-        enemy_name = enemy_struct[0]["enemyData"]["name"]["m_value"]
-        if "_" in enemy_key: # 为了方便，只保留翻译器需要的最后一部分
-            enemy_key = "_".join(enemy_key.split("_")[2:])
-        ENEMY_NAMES[enemy_key] = enemy_name
-        print(f"[贝娜]已读取到敌人 {enemy_name}（{enemy_key}）")
+    if "enemies" in json_data: # Kengxxiao库的格式
+        for enemy_struct in json_data["enemies"]:
+            enemy_key = enemy_struct.get("Key")
+            enemy_name = enemy_struct.get("Value")[0]["enemyData"]["name"]["m_value"]
+            ENEMY_NAMES[enemy_key] = enemy_name
+            print(f"[贝娜]已读取到敌人 {enemy_name}（{enemy_key}）")
+    else: # ArknightsAssets的格式
+        for enemy_key, enemy_struct in json_data.items():
+            enemy_name = enemy_struct[0]["enemyData"]["name"]["m_value"]
+            if "_" in enemy_key: # 为了方便，只保留翻译器需要的最后一部分
+                enemy_key = "_".join(enemy_key.split("_")[2:])
+            ENEMY_NAMES[enemy_key] = enemy_name
+            print(f"[贝娜]已读取到敌人 {enemy_name}（{enemy_key}）")
     print(f"[贝娜]已完成对enemy_table.json的读取！")
     # 写入文件供未来使用
     print(f"[贝娜]现在开始将干员的ID与名称对照记录至enemy_names.json")

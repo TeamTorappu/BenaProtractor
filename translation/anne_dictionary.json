@@ -151,7 +151,7 @@
 		"ON_EP_BREAK_FINISH" : "持有者元素损伤爆发结束时",
 		"ON_BEFORE_FALLDOWN" : "持有者坠入地穴前",
 		"ON_OWNER_BEFORE_DEAD" : "持有者即将死亡时",
-		"ON_BEING_CALCULATE_DAMAGE" : "遇到需要进行伤害计算的情况时",
+		"ON_BEING_CALCULATE_DAMAGE" : "对持有者的伤害即将计算时",
 		"ON_STAGE_END" : "促融共竞中，当前阶段结束时",
 		"ON_UNIT_SWITCH_MODE" : "持有者的模式切换时",
 		"COOPERATE_PLAYER_DYING" : "促融共竞中，持有者所属的玩家被击倒时",

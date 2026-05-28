@@ -44,12 +44,12 @@ def node_AssignHpRatioToBB(node):
 def node_AssignDamageValueToBlackboard(node):
     owner_name = anne_dictionary("target",node["_owner"])
     if node["_assignRealDelta"]:
-        return {"main" : "设 [damage] 为 本次伤害实际造成的生命值减少量（最低为0）"}
+        return {"main" : "设 [value] 为 本次伤害实际造成的生命值变化量（取绝对值）"}
     elif node["_assignValueWithoutCalculate"]:
-        return {"main" : f"设 [damage] 为 {owner_name}的攻击力 × [{node['_scaleKey']}]"}
+        return {"main" : f"设 [value] 为 本次伤害的值 × [{node['_scaleKey']}]"}
     else:
         damage_type = anne_dictionary("damage_type",node["_damageType"])
-        return {"main" : f"设 [damage] 为 本次{damage_type}伤害的值（类型不对则为0）"}
+        return {"main" : f"将本次伤害值以{damage_type}伤害的形式，再次计算，设 [value] 为 所得的二次计算值（类型不对则为0）"}
 
 # 确保黑板默认值，防止出错
 def node_EnsureBlackboardDefaultValue(node):

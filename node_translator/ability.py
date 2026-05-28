@@ -20,6 +20,41 @@ def node_TriggerAutoSkill(node):
     target_name = anne_dictionary("target",node["_targetType"])
     return {"main" : f"尝试让{target_name}触发其自动触发的技能（无视其自动触发条件，其余技能条件不会无视）"}
 
+# 触发敌用技能
+def node_TriggerEnemySkill(node):
+    owner_name = anne_dictionary("target",node["_ownerType"])
+    target_name = anne_dictionary("target",node["_targetType"])
+    skill_name = node["_skillName"] if node["_skillName"] != None and node["_skillName"] != "" else " [skill_name] "
+    # 各项参数
+    conditions = []
+    features = ["不受沉默/缴械制约"]
+    if node["_checkSkillActive"]:
+        conditions.append("技能可用")
+    if node["_checkSkillReady"]:
+        conditions.append("冷却完毕/SP足够")
+    if node["_tryCastDirectlyWhenNoTarget"]:
+        features.append("可无目标直接释放")
+    if node["_clearPalsyingBuffBeforeTrigger"]:
+        features.append("触发前清除麻痹震颤Buff")
+    if node["_interruptCurAbility"]:
+        features.append("打断当前进行中的动画能力")
+    elif node["_interruptCurAbilityUnlessItIsExpectedAbility"]:
+        features.append("打断当前进行中的、非特定动画能力")
+    if node["_assignCombatAbility"]:
+        features.append("本次技能视为\"阻挡攻击\"能力")
+    # 组装结果
+    result = {}
+    if node["_ownerType"] == node["_targetType"]:
+        result["main"] = f"让{owner_name}触发其名为{skill_name}的敌用技能"
+    elif node["_forceFindTargetBySkillSelector"]:
+        result["main"] = f"让{owner_name}触发其名为{skill_name}的敌用技能（使用该技能的选择器进行索敌）"
+    else:
+        result["main"] = f"让{owner_name}触发其名为{skill_name}的敌用技能，以{target_name}为目标"
+    if len(conditions) > 0:
+        result["main"] = "若" + "、".join(conditions) + "，" + result["main"]
+    result["description"] = "；".join(features)
+    return result
+
 # 中断角色类技能
 def node_InterruptCharacterSkill(node):
     target_name = anne_dictionary("target",node["_charFrom"])

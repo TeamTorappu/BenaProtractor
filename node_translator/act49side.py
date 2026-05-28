@@ -41,8 +41,8 @@ def node_Act49SideEnemyTjglyTryFindNextTile(node):
     target_name = anne_dictionary("target",node["_targetType"])
     return {
         "main" : f"若{target_name}处于字形态下，尝试寻找并移动到下一个地块上",
-        "description" : "具体移动逻辑请见prts 浪里玄条 页面",
-        "prts_link" : "浪里玄条"
+        "description" : "具体逻辑请见PRTS的 浪里玄条 页面",
+        "link" : "prts.浪里玄条"
     }
 
 # 浪里玄条绑定字
@@ -50,8 +50,8 @@ def node_Act49SideEnemyTjglyLockSelfWithTile(node):
     target_name = anne_dictionary("target",node["_targetType"])
     return {
         "main" : f"尝试将{target_name}与当前所在字格地块的\"鱼\"字相绑定",
-        "description" : "具体绑定逻辑请见prts 浪里玄条 页面",
-        "prts_link" : "浪里玄条"
+        "description" : "具体逻辑请见PRTS的 浪里玄条 页面",
+        "link" : "prts.浪里玄条"
     }
 
 # 检查所在字格地块是否可部署
