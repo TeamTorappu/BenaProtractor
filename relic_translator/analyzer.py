@@ -132,9 +132,11 @@ def analyze_selector(blackboard,prefix="",suffix=""):
     if "selector.enemy" in blackboard:
         enemy_name = ask_bena_enemy(blackboard["selector.enemy"])
         if enemy_name != blackboard["selector.enemy"]:
-            target_name = f"{enemy_name}（{blackboard['selector.enemy']}）"
+            target_name = f" {enemy_name}（{blackboard['selector.enemy']}）"
         else:
             target_name = f" {blackboard['selector.enemy']} "
+        if "敌方" in prefix:
+            prefix = prefix.replace("敌方","")
     # 敌人ID反向筛选
     if "selector.enemy_exclude" in blackboard:
         enemy_excludes = []
