@@ -303,48 +303,19 @@ class AnneRelic:
         if rogue_effect.translation == None:
             effect_key = rogue_effect.key
             print(f"[安妮]尝试翻译藏品效果 {effect_key}")
-
-            # 全局buff使用转跳
-            if effect_key == "global_buff_normal": 
+            method = getattr(self.translator, "rogue_"+effect_key, "")
+            if method != "" :
+                rogue_effect.translation = method(rogue_effect.type,rogue_effect.blackboard)
+                return rogue_effect.translation
+            else: # 无法翻译，把所有数据搓成可阅读的格式
                 prefix = analyze_timing(rogue_effect.type,rogue_effect.blackboard)
-                global_buff_key = rogue_effect.blackboard["key"]
                 rogue_effect.translation = {
-                    "main" : prefix+"生效全局Buff："+translate_buff_name(rogue_effect.blackboard["key"]),
-                    "link" : "global_buff."+global_buff_key,
+                    "main" : prefix+effect_key+"（未翻译）",
+                    "style_closed" : True,
                     "children" : []
                 }
                 for key,bb in rogue_effect.blackboard.items():
-                    if key != "key" and key != "trig_type":
-                        rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
-                '''
-                buff_key = rogue_effect.blackboard["key"] # 这个才是buff的名字
-                method = getattr(self.translator, "gb_"+buff_key.replace("[","_").replace("]",""), "")
-                if method != "" :
-                    rogue_effect.translation = method(rogue_effect.type,rogue_effect.blackboard)
-                    return rogue_effect.translation
-                else: # 无法翻译，把所有数据搓成可阅读的格式
-                    rogue_effect.translation = {
-                        "main" : "环境效果："+buff_key+"（未翻译）",
-                        "style_closed" : True,
-                        "children" : []
-                    }
-                    for key,bb in rogue_effect.blackboard.items():
-                        rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
-                '''
-            else: # 其他的效果
-                method = getattr(self.translator, "rogue_"+effect_key, "")
-                if method != "" :
-                    rogue_effect.translation = method(rogue_effect.type,rogue_effect.blackboard)
-                    return rogue_effect.translation
-                else: # 无法翻译，把所有数据搓成可阅读的格式
-                    prefix = analyze_timing(rogue_effect.type,rogue_effect.blackboard)
-                    rogue_effect.translation = {
-                        "main" : prefix+effect_key+"（未翻译）",
-                        "style_closed" : True,
-                        "children" : []
-                    }
-                    for key,bb in rogue_effect.blackboard.items():
-                        rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
+                    rogue_effect.translation["children"].append({"main": str(key) + " : "+str(bb)})
         # 返回译文
         return rogue_effect.translation
     
@@ -444,7 +415,7 @@ def translate_whole_buff_template(buff_template: BuffTemplate):
         translation["children"].append(event_translation)
     return translation
 
-LINE_LIMIT = 40
+LINE_LIMIT = 60
 # 翻译一整个RogueItem
 def translate_whole_rogue_item(rogue_item: RogueItem):
     print(f"[安妮]尝试翻译{rogue_item.display_type} {rogue_item.display_name}（{rogue_item.item_key}）")

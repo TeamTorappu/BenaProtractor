@@ -237,6 +237,26 @@ def ask_bena_translation(_type,input_id):
             return ROGUELIKE_TOPIC_TABLE[input_id]
     return ""
 
+# 询问贝娜一个角色ID有没有对应的名字，若没有将原路返回
+def ask_bena_character(character_id: str):
+    if character_id.count("_") > 2:
+        character_name = character_id.split("_")[2:]
+        if character_name in CHARACTER_NAMES:
+            return CHARACTER_NAMES[character_name]
+    if character_id in CHARACTER_NAMES:
+        return CHARACTER_NAMES[character_id]
+    return character_id
+
+# 询问贝娜一个敌人ID有没有对应的名字，若没有将原路返回
+def ask_bena_enemy(enemy_id: str):
+    if enemy_id.count("_") > 2:
+        enemy_name = enemy_id.split("_")[2:]
+        if enemy_name in ENEMY_NAMES:
+            return ENEMY_NAMES[enemy_name]
+    if enemy_id in ENEMY_NAMES:
+        return ENEMY_NAMES[enemy_id]
+    return enemy_id
+
 # 将一段文本中所有以<>框起来的文本进行“翻译”
 def translate_buff_name_in_text(text: str):
     while "<" in text and ">" in text:

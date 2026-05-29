@@ -475,7 +475,8 @@
 	"trig_type_copper" : {
 		"GAIN" : "获得时",
 		"TAKE_OUT" : "投出时",
-		"PUT_BACK" : "放回钱盒后"
+		"PUT_BACK" : "放回钱盒时",
+		"COST" : "离开钱盒时"
 	},
 	"finish_reason" : {
 		"REACH_EXIT" : "抵达路径终点",
