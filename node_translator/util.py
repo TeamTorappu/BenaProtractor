@@ -262,13 +262,13 @@ def node_BlinkNode(node):
             features.append(f"闪现前改用新的Branch（{node['_branchId']}）")
         else:
             features.append(f"闪现前改用黑板 [branch_id] 上记述的新的Branch")
-    
+
     if len(features) > 0:
         if "description" not in result:
             result["description"] = "；".join(features)
         else:
             result["description"] += "；" + "；".join(features)
-    
+
     return result
 
 # 撤退/强制撤退

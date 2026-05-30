@@ -440,11 +440,11 @@ def translate_whole_rogue_item(rogue_item: RogueItem):
     # 界园的钱始终有两套，加个超链接
     if rogue_item.type == "COPPER_BUFF":
         another_key = rogue_item.item_key.replace("copper_buff","copper")
-        if ask_bena(rogue_item,another_key) != None:
+        if ask_bena("rogue_item",another_key) != None:
             translation["children"].append({"main" : f"（这里的鹰文可能与游戏内有出入，文案用的钱请见  {another_key}）","link" : another_key})
     elif rogue_item.type == "COPPER":
         another_key = rogue_item.item_key.replace("copper","copper_buff")
-        if ask_bena(rogue_item,another_key) != None:
+        if ask_bena("rogue_item",another_key) != None:
             translation["children"].append({"main" : f"（这是展示文案用的钱，钱的实际效果请见 {another_key}）","link" : another_key})
 
     # 藏品效果或解释的原文

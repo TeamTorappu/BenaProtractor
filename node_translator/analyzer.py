@@ -221,7 +221,7 @@ def analyze_buff(buff_data,full_information=False):
                     features.append(f"持续{str(seconds)}秒 {str(ticks)}帧")
                 else:
                     features.append(f"持续{str(ticks)}帧")
-        
+
     # 异常效果家族与属性增减
     attrs = buff_data["attributes"]
     # 以下内容yj都写过[]和null的格式，泥岩的recharge居然同时两种都用，绝了
@@ -365,11 +365,11 @@ def analyze_buff(buff_data,full_information=False):
     # 处理覆盖时使用的Key
     if buff_data["overrideKey"] and buff_data["overrideKey"] != "empty" :
         if buff_data["independentCharacterSource"]: #每个来源独立OverrideKey
-            features.append(f"处理覆盖时视为 (Buff来源名称)+<{buff_data['overrideKey']}>") 
+            features.append(f"处理覆盖时视为 (Buff来源名称)+<{buff_data['overrideKey']}>")
         else:
-            features.append(f"处理覆盖时视为 <{buff_data['overrideKey']}>") 
+            features.append(f"处理覆盖时视为 <{buff_data['overrideKey']}>")
     elif "independentCharacterSource" in buff_data and buff_data["independentCharacterSource"]:
-        features.append(f"处理覆盖时视为 (Buff来源名称)+<{buff_key}>") 
+        features.append(f"处理覆盖时视为 (Buff来源名称)+<{buff_key}>")
     # 触发配置
     if buff_data["triggerLifeType"] == "INFINITY" : # 无限次触发
         if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
@@ -588,4 +588,3 @@ def analyze_target_options(option,relative_side=True):
     return {
         "main" : "".join(conditions)+unit_name
     }
-        
