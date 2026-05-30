@@ -36,7 +36,7 @@
 		"ON_SKILL_START" : "技能开始时",
 		"ON_SKILL_FINISH" : "技能结束时",
 		"ON_BEFORE_APPLYING_MODIFIER" : "应用调整值前",
-		"ON_APPLYING_MODIFIER" : "应用调整值时",
+		"ON_APPLYING_MODIFIER" : "即将应用调整值时",
 		"ON_APPLIED_MODIFIER" : "调整值应用后",
 		"ON_OUTPUT_MODIFIER" : "输出调整值时",
 		"ON_TAKE_DAMAGE" : "受到伤害时",
@@ -84,7 +84,7 @@
 		"ON_OWNER_KILLED" : "持有者被击倒时",
 		"ON_OWNER_FINISH" : "持有者退场/死亡时",
 		"ON_BEFORE_APPLYING_MODIFIER" : "持有者即将应用被施加的调整值时",
-		"ON_APPLYING_MODIFIER" : "持有者应用被施加的调整值时",
+		"ON_APPLYING_MODIFIER" : "持有者即将被应用被施加的调整值时",
 		"ON_APPLIED_MODIFIER" : "持有者应用被施加的调整值后",
 		"ON_OUTPUT_MODIFIER" : "持有者输出调整值时",
 		"ON_TARGET_KILLED" : "持有者击倒目标时",
@@ -102,8 +102,8 @@
 		"ON_AFTER_OUTPUT_DAMAGE" : "持有者成功造成伤害后",
 		"ON_OUTPUT_ATK_OR_HEAL" : "持有者输出攻击或治疗时",
 		"ON_AFTER_ATTACK" : "在持有者每次攻击之后",
-		"ON_BUFF_ENABLE" : "Buff起效时/Buff再次起效时",
-		"ON_BUFF_DISABLE" : "Buff失效时（被沉默/无法叠加等）",
+		"ON_BUFF_ENABLE" : "Buff起效时/再次起效时",
+		"ON_BUFF_DISABLE" : "Buff失效时",
 		"ON_BEFORE_ATTACK" : "持有者发动攻击前",
 		"ON_BEFORE_TRY_SET_HP_ZERO" : "持有者即将受到可致命的伤害时",
 		"ON_BEFORE_DISAPPEAR" : "持有者进入消失状态机前",
@@ -131,13 +131,13 @@
 		"ON_OWNER_DYING" : "持有者陷入濒死状态机时",
 		"ON_GAME_OVER" : "战斗结束时",
 		"ON_MAKE_ENEMY_UNBALANCED" : "持有者令敌人类单位陷入失衡状态机时",
-		"ON_END_PULLING" : "持有者被拖拽期间，此次拖拽结束时",
+		"ON_END_PULLING" : "持有者发动的拖拽的结束时",
 		"ON_BLOCK_DAMAGE" : "持有者成功抵挡伤害时",
 		"ON_OWNER_OVERLAPPED" : "持有者被其他单位重叠部署时",
 		"ON_BOSS_WAVE_WILL_START" : "当BOSS波次即将开始时",
 		"ON_LEGION_MODE_DRAW_CARD" : "保全派驻中，当玩家抽卡时",
 		"ON_LEGION_MODE_REFRESH_CARD" : "保全派驻中，当玩家刷新卡池时",
-		"ON_MOTION_MODE_CHANGED" : "持有者的行动模式变化后（地面↔飞行）",
+		"ON_MOTION_MODE_CHANGED" : "持有者的行动类型变化后（地面↔飞行）",
 		"ON_SANDBOX_OWNER_RES_CHANGED" : "生息演算中，当持有者携带资源变化时",
 		"ON_BEFORE_TARGET_APPLY_MODIFIER" : "持有者施加调整值后，在目标即将应用本次调整值时",
 		"ON_ENTER_LEVITATE_STATE" : "持有者切换至浮空状态机时",
@@ -151,7 +151,7 @@
 		"ON_EP_BREAK_FINISH" : "持有者元素损伤爆发结束时",
 		"ON_BEFORE_FALLDOWN" : "持有者坠入地穴前",
 		"ON_OWNER_BEFORE_DEAD" : "持有者即将死亡时",
-		"ON_BEING_CALCULATE_DAMAGE" : "遇到需要进行伤害计算的情况时",
+		"ON_BEING_CALCULATE_DAMAGE" : "对持有者的伤害即将计算时",
 		"ON_STAGE_END" : "促融共竞中，当前阶段结束时",
 		"ON_UNIT_SWITCH_MODE" : "持有者的模式切换时",
 		"COOPERATE_PLAYER_DYING" : "促融共竞中，持有者所属的玩家被击倒时",
@@ -381,6 +381,10 @@
 		"FLY_ONLY" : "飞行",
 		"ALL" : ""
 	},
+	"height_type" : {
+		"LOWLAND" : "低地",
+		"HIGHLAND" : "高地"
+	},
 	"block_mode" : {
 		"WALK" : "\"地面阻挡\"",
 		"FLY" : "\"飞行阻挡\"",
@@ -471,7 +475,8 @@
 	"trig_type_copper" : {
 		"GAIN" : "获得时",
 		"TAKE_OUT" : "投出时",
-		"PUT_BACK" : "放回钱盒后"
+		"PUT_BACK" : "放回钱盒时",
+		"COST" : "离开钱盒时"
 	},
 	"finish_reason" : {
 		"REACH_EXIT" : "抵达路径终点",
@@ -524,6 +529,18 @@
 		"SPECIAL_13" : "19号",
 		"SPECIAL_14" : "20号",
 		"SPECIAL_15" : "21号"
+	},
+	"act49side_char" : {
+		"None" : "不是字格",
+		"Pure" : "占",
+		"Empty" : "空",
+		"Fortune" : "财",
+		"Food" : "食",
+		"Camp" : "兵",
+		"Highland" : "山",
+		"Anchor" : "友",
+		"Trigger" : "印",
+		"Carp" : "鱼"
 	},
 	"bond_id" : {
 		"emptyShip" : "【协防干员】",

@@ -44,12 +44,12 @@ def node_AssignHpRatioToBB(node):
 def node_AssignDamageValueToBlackboard(node):
     owner_name = anne_dictionary("target",node["_owner"])
     if node["_assignRealDelta"]:
-        return {"main" : "设 [damage] 为 本次伤害实际造成的生命值减少量（最低为0）"}
+        return {"main" : "设 [value] 为 本次伤害实际造成的生命值变化量（取绝对值）"}
     elif node["_assignValueWithoutCalculate"]:
-        return {"main" : f"设 [damage] 为 {owner_name}的攻击力 × [{node['_scaleKey']}]"}
+        return {"main" : f"设 [value] 为 本次伤害的值 × [{node['_scaleKey']}]"}
     else:
         damage_type = anne_dictionary("damage_type",node["_damageType"])
-        return {"main" : f"设 [damage] 为 本次{damage_type}伤害的值（类型不对则为0）"}
+        return {"main" : f"将本次伤害值以{damage_type}伤害的形式，再次计算，设 [value] 为 所得的二次计算值（类型不对则为0）"}
 
 # 确保黑板默认值，防止出错
 def node_EnsureBlackboardDefaultValue(node):
@@ -241,6 +241,30 @@ def node_AssignCurrentBlockNumToBB(node):
         "main" : f"将{target_name}（角色类）当前阻挡的单位数量记录至黑板 [{node['_blackboardKey']}]"
     }
 
+# 将某个属性记录到黑板上
+def node_AssignAttributeToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    attribute = anne_dictionary("attribute",node["_attributeType"])
+    if node["_scaleVar"] != None and node["_scaleVar"] != "":
+        return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [{node['_blackboardKey']}]，随后将该黑板 ×= [{node['_scaleVar']}]"}
+    else:
+        return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [{node['_blackboardKey']}]"}
+
+# 将某个属性记录到黑板的dynamic上（对就是有这么个奇葩Node）
+def node_AssignAttributeAsDynamicVarToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    attribute = anne_dictionary("attribute",node["_attributeType"])
+    if node["_scaleVar"] != None and node["_scaleVar"] != "":
+        return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [dynamic]，随后将该黑板 ×= [{node['_scaleVar']}]"}
+    else:
+        return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [dynamic]"}
+
+# 将某个属性的原始值记录到黑板上
+def node_AssignAttributeRawDataIntoBlackboard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    attribute = anne_dictionary("attribute",node["_attributeType"])
+    return {"main" : f"将{target_name}的{attribute}的原始数据值记录至黑板 [{node['_blackBoardKey']}]"} # 对，这玩意的B大写了
+
 # 将两者间的距离记录到黑板上
 def node_AssignDistanceToBB(node):
     target_name = anne_dictionary("target",node["_targetType"])
@@ -261,3 +285,31 @@ def node_AssignManhattanDistanceToBB(node):
     return {
         "main" : f"计算{source_name}与{target_name}两者所在格之间的曼哈顿距离（整数），记录至黑板 [{node['_blackboardKey']}]"
     }
+
+# 将部署方向记录到黑板上
+def node_AssignDirectionToBB(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node['_isReverse']:
+        return {
+            "main" : f"将{target_name}朝向的相反方向记录至黑板 [{node['_blackboardKey']}]",
+            "description" : "即 上=2 右=3 下=0 左=1；若为\"无朝向\"，记录4"
+        }
+    else:
+        return {
+            "main" : f"将{target_name}朝向的方向记录至黑板 [{node['_blackboardKey']}]",
+            "description" : "即 上=0 右=1 下=2 左=3；若为\"无朝向\"，记录4"
+        }
+
+# 将所在地块的网格坐标记录到黑板上
+def node_AssignGridPositionToBlackboard(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_useConstLocationKey"]: # 字符串形式，一般用于定义“某个地块”
+        return {
+            "main" : f"将{target_name}所在地块的网格坐标以字符串形式记录至 [location] 中",
+            "description" : "格式为 \"(列,行)\""
+        }
+    else:
+        return {
+            "main" : f"将{target_name}所在地块的网格坐标记录至 [{node['_gridRowKey']}] 与 [{node['_gridColKey']}] 中",
+            "description" : f"[{node['_gridRowKey']}] 为列，[{node['_gridColKey']}] 为行"
+        }

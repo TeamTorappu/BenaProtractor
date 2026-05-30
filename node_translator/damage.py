@@ -11,10 +11,16 @@ def node_AdvancedApplyDamage(node):
     target_name = anne_dictionary("target",node["_targetType"])
     damage_name = analyze_damage(node) # 直接把整个node传参进去
     default_atk_scale = to_percent(node["_defaultAtkScale"])
-    return {
+    result = {
         "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}的{damage_name}",
         "description" : f"会读取黑板中的 [{node['_atkScaleVar']}] 覆盖此处的攻击力倍率"
     }
+    # 记录至黑板
+    if node["_assignFinalDamageToBB"]:
+        result["description"] += "；将最终伤害记录至黑板 [value]"
+    elif node["_assignRealDamageToBB"]: # 和上一个是平行的，不过开了前面那个这里这个会被覆盖掉...
+        result["description"] += "；将产生的生命值变化量记录至黑板 [value]"
+    return result
 
 # 造成无来源伤害
 def node_NoSourceDamage(node):
@@ -23,7 +29,7 @@ def node_NoSourceDamage(node):
             return {"main" : f"对持有者造成 [{node['_damageKey']}] × [{node['_multiplierKey']}] 点{damage_name}"}
     return {"main" : f"对持有者造成 [{node['_damageKey']}] 点{damage_name}"}
 
-# 造成无来源伤害（新）
+# 造成无来源伤害（新，但毫无区别）
 def node_NoSourceDamageNew(node):
     damage_name = analyze_damage(node,"无来源的") # 直接把整个node传参进去
     if node["_multiplierByKey"] and node["_multiplierKey"] != None and node["_multiplierKey"] != "":
@@ -45,9 +51,9 @@ def node_FixedValueDamage(node):
         multiplier = " × " + node["_multiplierKey"]
     # 记录至黑板
     if node["_assignFinalDamageToBB"]:
-        features.append("将产生的生命值变化量记录至黑板")
+        features.append("将最终伤害记录至黑板 [value]")
     elif node["_assignRealDamageToBB"]: # 和上一个是平行的，不过开了前面那个这里这个会被覆盖掉...
-        features.append("将计算后伤害记录至黑板")
+        features.append("将产生的生命值变化量记录至黑板 [value]")
     
     if len(features) > 0:
         result["description"] = "；".join(features)
@@ -146,9 +152,10 @@ def node_AOEDamage(node):
     source_name = anne_dictionary("target",node["_sourceType"])
     target_name = anne_dictionary("target",node["_targetType"])
     damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
-    damage = f" [{node['_damageKey']}] 点" if node["_useDamageFromBB"] else f" {source_name}攻击力 "
+    damage_key = node['_damageKey'] if node['_damageKey'] != "" else "value"
+    damage = f" [{damage_key}] 点" if node["_useDamageFromBB"] else f" {source_name}攻击力 "
     if node["_damageScale"] != None and node["_damageScale"] != "":
-        damage = f" [{node['_damageKey']}] × [{node['_damageScale']}] 点"
+        damage = damage + f" × [{node['_damageScale']}] 点"
     features = []
     buffs = []
     selector = ""

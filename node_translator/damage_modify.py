@@ -164,4 +164,16 @@ def node_Evade(node):
             "description" : "若无法响应/伤害已被无效化将不会消耗次数（若有），本节点视为无法处理；闪避失败也会视为无法处理，但会消耗次数（若有）"
         }
     
-    
+# 增加附加攻击力（逻哥2天赋）
+def node_AtkAdditionUpBeforeCalcDamage(node):
+    if node["_filterDamageType"]:
+        damage_type = anne_dictionary("damage_type",node["_damageType"])
+        return {
+            "main" : f"若本次伤害类型为{damage_type}，令其附加攻击力增加 {node['_atkAdditionKey']}（默认{node['_defaultValue']}点）",
+            "true" : f"若本次伤害确为{damage_type}伤害",
+            "false" : f"若本次伤害不为{damage_type}伤害"
+        }
+    else:
+        return {
+            "main" : f"令本次伤害的附加攻击力增加 {node['_atkAdditionKey']}（默认{node['_defaultValue']}点）"
+        }

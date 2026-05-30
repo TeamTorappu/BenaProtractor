@@ -158,16 +158,17 @@ def node_AttributeModifierWithBB(node):
 
 # 切换模式
 def node_SwitchMode(node):
-    # 未解析参数：_restartFSM
     target_name = anne_dictionary("target",node["_targetType"])
-    action = ""
+    result = {"main" : f"令{target_name}"}
     if node["_restoreDefault"]:
-        action = "切换回默认模式"
+        result["main"] += "切换回默认模式"
     elif node["_loadModeFromBlackboard"]:
-        action = "切换至特定编号的模式，编号由黑板值 [mode] 决定"
+        result["main"] += "切换至编号为 [mode] 的模式"
     else:
-        action = f"切换至{node['_modeIndex']}号模式"
-    return {"main" : f"令{target_name}{action}"}
+        result["main"] += f"切换至{node['_modeIndex']}号模式"
+    if node["_restartFSM"]: # 刷新状态机
+        result["description"] = "随后会强制重启状态机，可能导致部署状态机的部署保护失效"
+    return result
 
 # 强制击倒
 def node_InstantKill(node):
@@ -195,6 +196,79 @@ def node_InstantKill(node):
     # 返回
     if len(features) > 0:
         result["description"] = "；".join(features)
+    return result
+
+# 闪现或传送
+def node_BlinkNode(node):
+    # 未解析参数：_forceSetDisappear
+    # 这个节点默认是将来源闪现走，但目前来源和持有者都是同一人，因此省略
+    result = {
+        "main" : "[delay] 秒后，",
+        "true" : "若闪现成功",
+        "false" : "若闪现失败"
+    }
+    features = []
+    if node["_useRowAndColAsWorldPosition"]: # 世界坐标传送
+        return {
+            "main" : f"[delay] 秒后，传送至世界坐标 [row],[col] 的位置",
+            "true" : "若目的地所在地块对于自己而言可通行",
+            "false" : "若目的地所在地块对于自己而言不可通行"
+        }
+    elif node["_newRouteStartPointAsTargetPosition"]: # 传送至新Route的初始位置
+        # 这里还有个[action_index]的黑板处理，不知道干什么的
+        if node["_branchId"] != None and node["_branchId"] != "":
+            features.append(f"闪现前改用新的Branch（{node['_branchId']}）")
+            return {
+                "main" : f"[delay] 秒后，改用新的Branch（{node['_branchId']}），随后传送至相应Route的起点",
+                "true" : "若闪现成功",
+                "false" : "若闪现失败"
+            }
+        else:
+            return {
+                "main" : f"[delay] 秒后，改用黑板 [branch_id] 上记述的新的Branch，随后传送至相应Route的起点",
+                "true" : "若闪现成功",
+                "false" : "若闪现失败"
+            }
+    elif node["_useRowAndColOnBlackboard"]: # 网格坐标闪现
+        if node["_failIfTargetGridIsRoot"]:
+            result["main"] += f"闪现至 [row],[col] 地块的中心（若为原地，则取消传送）"
+            result["true"] = "若不为原地，且闪现成功"
+            result["false"] = "若为原地，或闪现失败"
+        else:
+            result["main"] += f"闪现至 [row],[col] 地块的中心"
+    elif node["_forceToMapPosition"]: # 字符串式的网格坐标（强制性）
+        result["main"] += f"强制闪现至 [location] 记述的地块的中心"
+        result["description"] = f"[location] 是字符串，格式通常为 \"(列,行)\""
+    elif node["_toMapPosition"]: # 字符串式的网格坐标
+        result["main"] += f"闪现至 [location] 记述的地块的中心"
+        result["description"] = f"[location] 是字符串，格式通常为 \"(列,行)\""
+    elif node["_toNextCheckpoint"]: # 向下一个检查点闪现
+        result["main"] += f"向自己下一个检查点闪现，距离等同于与下个检查点之间的剩余距离"
+        result["false"] = "若闪现失败或无法获取剩余距离"
+    else: # 未配置
+        return {
+            "main" : f"尝试闪现或传送，但未配置模式",
+            "true" : "始终通过",
+            "false" : "始终不通过"
+        }
+    # 额外特性
+    if node["_withoutSwitchToBlinkState"]:
+        features.append("不采用闪现状态机")
+    if node["_useAnimSpeed"]:
+        features.append("使用动画速度")
+    if not node["_newRouteStartPointAsTargetPosition"] and node["_useNewRouteBeforeBlink"]:
+        # 这里还有个[action_index]的黑板处理，不知道干什么的
+        if node["_branchId"] != None and node["_branchId"] != "":
+            features.append(f"闪现前改用新的Branch（{node['_branchId']}）")
+        else:
+            features.append(f"闪现前改用黑板 [branch_id] 上记述的新的Branch")
+
+    if len(features) > 0:
+        if "description" not in result:
+            result["description"] = "；".join(features)
+        else:
+            result["description"] += "；" + "；".join(features)
+
     return result
 
 # 撤退/强制撤退

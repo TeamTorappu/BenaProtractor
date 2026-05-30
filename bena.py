@@ -77,15 +77,19 @@ def make_enemy_name_table():
     with open(ENEMY_DATABASE_PATH,'r',encoding="UTF-8") as _f:
         json_data = json.load(_f)
     # 开始解析
-    #for enemy_struct in json_data["enemies"]:
-    #    enemy_key = enemy_struct.get("Key")
-    #    enemy_name = enemy_struct.get("Value")[0]["enemyData"]["name"]["m_value"]
-    for enemy_key, enemy_struct in json_data.items():
-        enemy_name = enemy_struct[0]["enemyData"]["name"]["m_value"]
-        if "_" in enemy_key: # 为了方便，只保留翻译器需要的最后一部分
-            enemy_key = "_".join(enemy_key.split("_")[2:])
-        ENEMY_NAMES[enemy_key] = enemy_name
-        print(f"[贝娜]已读取到敌人 {enemy_name}（{enemy_key}）")
+    if "enemies" in json_data: # Kengxxiao库的格式
+        for enemy_struct in json_data["enemies"]:
+            enemy_key = enemy_struct.get("Key")
+            enemy_name = enemy_struct.get("Value")[0]["enemyData"]["name"]["m_value"]
+            ENEMY_NAMES[enemy_key] = enemy_name
+            print(f"[贝娜]已读取到敌人 {enemy_name}（{enemy_key}）")
+    else: # ArknightsAssets的格式
+        for enemy_key, enemy_struct in json_data.items():
+            enemy_name = enemy_struct[0]["enemyData"]["name"]["m_value"]
+            if "_" in enemy_key: # 为了方便，只保留翻译器需要的最后一部分
+                enemy_key = "_".join(enemy_key.split("_")[2:])
+            ENEMY_NAMES[enemy_key] = enemy_name
+            print(f"[贝娜]已读取到敌人 {enemy_name}（{enemy_key}）")
     print(f"[贝娜]已完成对enemy_table.json的读取！")
     # 写入文件供未来使用
     print(f"[贝娜]现在开始将干员的ID与名称对照记录至enemy_names.json")
@@ -232,6 +236,26 @@ def ask_bena_translation(_type,input_id):
         if input_id in ROGUELIKE_TOPIC_KEYS:
             return ROGUELIKE_TOPIC_TABLE[input_id]
     return ""
+
+# 询问贝娜一个角色ID有没有对应的名字，若没有将原路返回
+def ask_bena_character(character_id: str):
+    if character_id.count("_") >= 2:
+        character_name = "_".join(character_id.split("_")[2:])
+        if character_name in CHARACTER_NAMES:
+            return CHARACTER_NAMES[character_name]
+    if character_id in CHARACTER_NAMES:
+        return CHARACTER_NAMES[character_id]
+    return character_id
+
+# 询问贝娜一个敌人ID有没有对应的名字，若没有将原路返回
+def ask_bena_enemy(enemy_id: str):
+    if enemy_id.count("_") >= 2:
+        enemy_name = "_".join(enemy_id.split("_")[2:])
+        if enemy_name in ENEMY_NAMES:
+            return ENEMY_NAMES[enemy_name]
+    if enemy_id in ENEMY_NAMES:
+        return ENEMY_NAMES[enemy_id]
+    return enemy_id
 
 # 将一段文本中所有以<>框起来的文本进行“翻译”
 def translate_buff_name_in_text(text: str):

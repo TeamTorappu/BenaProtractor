@@ -8,9 +8,9 @@ def node_ModifyCost(node):
     source_name = anne_dictionary("target",node["_sourceType"])
     shared_flags = []
     if node["_forceToDisplayNumber"]: # 强制显示正数？
-        shared_flags.append(anne_dictionary("shared_flag","FORCE_TO_DISPLAY_NUMBER"))
+        shared_flags.append(anne_dictionary("sharedflag","FORCE_TO_DISPLAY_NUMBER"))
     if node["_forceToDisplayNegativeNumber"]: # 强制显示负数？
-        shared_flags.append(anne_dictionary("shared_flag","FORCE_TO_DISPLAY_NEGATIVE_NUMER"))
+        shared_flags.append(anne_dictionary("sharedflag","FORCE_TO_DISPLAY_NEGATIVE_NUMER"))
     if len(shared_flags) > 0:
         return {
             "main" : f"令持有的部署费用+{node['_blackboardKey']}",
