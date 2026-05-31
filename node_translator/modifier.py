@@ -200,3 +200,5 @@ def node_FilterElementDamageModifer(node):
             "true" : f"若为元素损伤",
             "false" : f"若不是元素损伤"
         }
+
+# 设置无视闪避效果

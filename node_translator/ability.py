@@ -175,3 +175,12 @@ def node_AmmoSkillCountModifier(node):
     return {
         "main" : f"尝试修改{target_name}（角色类）弹药类技能，但无事发生"
     }
+
+# 战栗的打断Combat的能力
+def node_InterruptEnemyCombat(node):
+    target_name = anne_dictionary("target",node["_ownerType"])
+    return {
+        "main" : f"若{target_name}目前使用中的动画能力为当前模式下的Combat能力（或同名能力），将该能力打断",
+        "true" : "若为该能力且打断成功",
+        "false" : "若不为改能力或打断失败"
+    }

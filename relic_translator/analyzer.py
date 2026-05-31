@@ -164,10 +164,21 @@ def analyze_item(blackboard):
 def analyze_item_reward(blackboard):
     item = analyze_item(blackboard)
     if item == None:
-        return {
-            "main" : "给予玩家 棍木",
-            "link" : "minecraft.air"
-        }
+        if "id" in blackboard:
+            if blackboard["id"].startswith("pool"):
+                return {
+                    "main" : f"给予玩家  {blackboard['id']} 奖池中的随机一个物品"
+                }
+            else:
+                return {
+                    "main" : f"给予玩家  {blackboard['id']} × {math.floor(blackboard.get('count',0))}",
+                    "link" : blackboard['id']
+                }
+        else:
+            return {
+                "main" : "给予玩家 棍木",
+                "link" : "minecraft.air"
+            }
     if item.type == "COPPER": # 界园钱的特殊处理
         return {
             "main" : f"让 {item.display_name} 加入玩家钱盒",

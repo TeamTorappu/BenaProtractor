@@ -200,6 +200,16 @@ def node_AssignCharacterSharedBBToBlackboard(node):
             "style_closed" : True,
             "description" : "\"末影黑板\"为同一UID的干员实例间互通的数据"
         }
+    
+# 在末影黑板上记录目标的EnemyID（同UID单位间互通）
+def node_AddEnemyIdToCharacterSharedBlackboard(node):
+    source_name = anne_dictionary("target",node["_source"])
+    target_name = anne_dictionary("target",node["_target"])
+    return {
+        "main" : f"将{target_name}的EnemyID作为黑板Key值，记录至在{source_name}的末影黑板上（相应的Value设为1.0)",
+        "style_closed" : True,
+        "description" : "\"末影黑板\"为同一UID的干员实例间互通的数据"
+    }
 
 # 将UID记录到黑板上
 # 有两种模式，一种是记录在特定黑板上，一种是把黑板当字典（本来就是），把UID作为Key记录进去占位。
@@ -208,7 +218,7 @@ def node_AssignCardUIDToBlackBoard(node):
     if node["_assignHostOrToken"]:
         target_name = target_name+"的召唤物/主人"
     if node["_assignAsKey"]: # 字典模式
-        return {"main" : f"将{target_name}的UID作为黑板Key值，记录至本Buff的黑板中（相应的Value为1.0)"}
+        return {"main" : f"将{target_name}的UID作为黑板Key值，记录至本Buff的黑板中（相应的Value设为1.0)"}
     # 字符串/数值模式
     if node["_assignAsString"]:
         return {"main" : f"将{target_name}的UID记录至本Buff的黑板 [{node['_blackBoardKey']}] 中（字符串格式）"}

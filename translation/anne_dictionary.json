@@ -530,6 +530,23 @@
 		"SPECIAL_14" : "20号",
 		"SPECIAL_15" : "21号"
 	},
+	"tile_key" : {
+		"tile_empty" : "虚空",
+		"tile_floor" : "地板",
+		"tile_road" : "道路",
+		"tile_fence" : "围栏",
+		"tile_wall" : "墙体",
+		"tile_start" : "侵入点",
+		"tile_end" : "保护目标点",
+		"tile_end_cooperate" : "保护目标点(联机)",
+		"tile_hole" : "地穴",
+		"tile_healing" : "治疗符文",
+		"tile_bigforce" : "推力符文",
+		"tile_dygmny_1" : "化境地面",
+		"tile_dygmny_2" : "化境地面(不可部署)",
+		"tile_dygmny_3" : "化境高台",
+		"tile_character" : "字格"
+	},
 	"act49side_char" : {
 		"None" : "不是字格",
 		"Pure" : "占",

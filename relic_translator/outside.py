@@ -41,9 +41,9 @@ def rogue_immediate_cost(item_type,blackboard):
 # 进入特殊节点奖励一次？
 def rogue_secret_into_reward_once(item_type,blackboard):
     timing = analyze_timing(item_type,blackboard)
-    translation = analyze_item(blackboard)
-    translation["main"] = timing + translation["main"]
-    return translation
+    reward = analyze_item_reward(blackboard)
+    reward["main"] = timing + "进入???节点时" + reward["main"]
+    return reward
 
 # 钱的自变化
 def rogue_copper_exchange(item_type,blackboard):

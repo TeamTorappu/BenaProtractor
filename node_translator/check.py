@@ -1,7 +1,7 @@
 #----------------------------------------
 # 检查类Node
 #----------------------------------------
-from bena import ENEMY_NAMES
+from bena import ENEMY_NAMES, ask_bena_character, ask_bena_enemy
 
 from translator import anne_dictionary
 from .analyzer import analyze_FP, analyze_target_options
@@ -665,13 +665,13 @@ def node_FilterByTargetSPType(node):
 # 检查所处地块
 def node_CheckCurrentTileKey(node):
     target_name = anne_dictionary("target",node["_targetType"])
-    tile_keys = []
+    tiles = []
     for tile_key in node["_tileKey"]:
-        tile_keys.append(tile_key) # 需翻译
+        tiles.append(anne_dictionary("tile_key",tile_key))
     result ={
-        "main" : f"检查{target_name}所处的地块是否为"+"、".join(tile_keys),
-        "true" : f"若其位于此类地块之一",
-        "false" : f"若其不位于此类地块"
+        "main" : f"检查{target_name}所处的是否为"+"/".join(tiles)+"地块",
+        "true" : f"若所处的是这几类地块之一" if len(tiles) > 1 else f"若所处的是此类地块",
+        "false" : f"若所处的均不为这几类地块" if len(tiles) > 1 else f"若所处的不为此类地块"
     }
     if node["_isExclude"]:
         result["true"],result["false"] = result["false"],result["true"]
@@ -764,3 +764,49 @@ def node_CheckCharacterOnTile(node):
             "true" : f"若该地块上存在任意角色类单位",
             "false" : f"若该地块上不存在角色类单位"
         }
+
+# 检查所在地块是否存在特定角色类单位、存在特定敌人类单位、地块Key
+def node_CheckTargetRootTile(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    conditions = []
+    # 检测角色类
+    if node["_hasCharacter"] and node["_characterKeys"] != None:
+        characters = []
+        for id in node["_characterKeys"]:
+            name = ask_bena_character(id)
+            if name != id:
+                characters.append(f"{name}（{id}）")
+            else:
+                characters.append(f"{id}")
+        if node["_checkTargetTopBuiltInTile"]:
+            conditions.append("部署着 "+"/".join(characters)+"（重叠部署时仅判断最上方单位）")
+        else:
+            conditions.append("部署着 "+"/".join(characters))
+    # 检测敌人类
+    if node["_hasCertainEnemy"] and node["_enemyKeys"] != None:
+        enemys = []
+        for id in node["_enemyKeys"]:
+            name = ask_bena_enemy(id)
+            if name != id:
+                enemys.append(f"{name}（{id}）")
+            else:
+                enemys.append(f"{id}")
+        conditions.append("存在敌人 "+"/".join(enemys))
+    
+    condition = "、".join(conditions)
+    # 检查地块ID
+    if node["_checkTileKey"] and node["_tileKeys"] != None:
+        tiles = []
+        for id in node["_tileKeys"]:
+            tiles.append(anne_dictionary("tile_key",id))
+        if condition != "":
+            condition += "的"+ "/".join(tiles)
+        else:
+            condition = "/".join(tiles)
+    return {
+        "main" : f"检查{target_name}所在的地块",
+        "true" : f"若为{condition}地块",
+        "false" : f"若不为{condition}地块"
+    }
+
+        

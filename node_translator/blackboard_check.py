@@ -72,6 +72,18 @@ def node_FilterByCharacterSharedBlackboard(node):
         "false" : f"若末影黑板上的{left_var} {compare_not} {right_var}"
     }
 
+# 检查末影黑板上是否存在目标的EnemyID（同UID单位间互通）
+def node_CheckHasEnemyIdInCharacterSharedBlackboard(node):
+    source_name = anne_dictionary("target",node["_source"])
+    target_name = anne_dictionary("target",node["_target"])
+    return {
+        "main" : f"检查{source_name}的末影黑板上是否存在与{target_name}的EnemyID（Key）",
+        "style_closed" : True,
+        "description" : "\"末影黑板\"为同一UID的干员实例间互通的数据",
+        "true" : f"若末影黑板上存在该Key（且Value不为0）",
+        "false" : f"若末影黑板上不存在该Key（或Value为0）"
+    }
+
 # 检查黑板是否为0或未定义
 def node_IsBlackboardZero(node):
     return {

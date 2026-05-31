@@ -144,17 +144,57 @@ def node_AttributeModifierWithBB(node):
     # 未解析参数：_targetType
     #target_name = anne_dictionary("target",node["_targetType"])
     attribute_type = anne_dictionary("attribute",node["_attributeType"])
-    #formula_type = anne_dictionary("formula",node["_formulaType"])
+    result = {
+        "main" : f"更新本Buff提供的{attribute_type}加成："
+    }
+    
     if node["_valueKey"] != None and node["_valueKey"] not in ["","none"]:
         if node["_formulaType"] == "FINAL_SCALER":
-            return {"main" : f"调整本Buff提供的{attribute_type}加成：+[{node['_valueKey']}]%(终乘)"}
+            result["main"] += f"+[{node['_valueKey']}]%(终乘)"
         elif node["_formulaType"] == "MULTIPLIER":
-            return {"main" : f"调整本Buff提供的{attribute_type}加成：+[{node['_valueKey']}]%(直乘)"}
+            result["main"] += f"+[{node['_valueKey']}]%(直乘)"
         elif node["_formulaType"] == "ADDITION":
-            return {"main" : f"调整本Buff提供的{attribute_type}加成：+[{node['_valueKey']}](直加)"}
+            result["main"] += f"+[{node['_valueKey']}](直加)"
         elif node["_formulaType"] == "FINAL_ADDITION":
-            return {"main" : f"调整本Buff提供的{attribute_type}加成：+[{node['_valueKey']}](终加)"}
-    return {"main" : f"清除本Buff提供的{attribute_type}加成"}
+            result["main"] += f"+[{node['_valueKey']}](终加)"
+    else:
+        if node["_formulaType"] == "FINAL_SCALER":
+            result["main"] += f"+0%(终乘)"
+        elif node["_formulaType"] == "MULTIPLIER":
+            result["main"] += f"+0%(直乘)"
+        elif node["_formulaType"] == "ADDITION":
+            result["main"] += f"+0(直加)"
+        elif node["_formulaType"] == "FINAL_ADDITION":
+            result["main"] += f"+0(终加)"
+    return result
+
+# 根据技能剩余时间，调整本buff提供的属性增益
+def node_RemainingRatioToAttributeModifier(node):
+    attribute_type = anne_dictionary("attribute",node["_attributeType"])
+    result = {
+        "main" : f"根据技能剩余时间，更新本Buff提供的{attribute_type}加成："
+    }
+    value_key = node["_attributeType"].lower()
+    if node["_formulaType"] == "FINAL_SCALER":
+        result["main"] += f"+[{value_key}]% × 乘数(终乘)"
+    elif node["_formulaType"] == "MULTIPLIER":
+        result["main"] += f"+[{value_key}]% × 乘数(直乘)"
+    elif node["_formulaType"] == "ADDITION":
+        result["main"] += f"+[{value_key}] × 乘数(直加)"
+    elif node["_formulaType"] == "FINAL_ADDITION":
+        result["main"] += f"+[{value_key}] × 乘数(终加)"
+    # 倍率
+    if node["_isInversed"]:
+        if node["_endTime"] == 0:
+            result["description"] = "乘数 = 1 - 剩余时间 / 技能持续时间"
+        else:
+            result["description"] = f"乘数 = 1 - min(剩余时间 / (技能持续时间 - {node['_endTime']}),1)"
+    else:
+        if node["_endTime"] == 0:
+            result["description"] = "乘数 = 剩余时间 / 技能持续时间"
+        else:
+            result["description"] = f"乘数 = min(剩余时间 / (技能持续时间 - {node['_endTime']}),1)"
+    return result
 
 # 切换模式
 def node_SwitchMode(node):
