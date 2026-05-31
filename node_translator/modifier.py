@@ -202,3 +202,9 @@ def node_FilterElementDamageModifer(node):
         }
 
 # 设置无视闪避效果
+def node_SetIgnoreMissFlag(node):
+    if node["_ignoreMissFlag"] == "PHYSICAL":
+        return {"main" : "给予本次调整值一个“若为物理，则可以无视闪避”的IgnoreMissFlag"}
+    elif node["_ignoreMissFlag"] == "MAGICAL":
+        return {"main" : "给予本次调整值一个“若为法术，则可以无视闪避”的IgnoreMissFlag"}
+    return {"main" : "给予本次调整值一个“可以无视闪避”的IgnoreMissFlag"}
