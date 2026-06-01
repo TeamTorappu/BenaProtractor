@@ -96,7 +96,7 @@ def rogue_player_level_rewards(item_type,blackboard):
 def rogue_battle_extra_reward(item_type,blackboard):
     timing = analyze_timing(item_type,blackboard)
     reward = analyze_item_reward(blackboard)
-    reward["main"] = f"{timing}战斗结束将额外" + reward
+    reward["main"] = f"{timing}战斗结束将额外" + reward["main"]
     return reward
 
 # 击破宝箱获得额外源石锭
