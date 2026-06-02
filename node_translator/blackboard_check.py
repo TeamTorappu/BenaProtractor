@@ -45,14 +45,14 @@ def node_IsBlackboardEqualWithFloat(node):
     if right_var == 0.0:
         return {
             "main" : f"检查黑板上的 [{left_var}]",
-            "true" : f"若 | [{left_var}] | <= 0.0000099999997",
-            "false" : f"若 | [{left_var}] | > 0.0000099999997"
+            "true" : f"若 [{left_var}] ≈ 0",
+            "false" : f"若 [{left_var}] ≈ 0"
         }
     else:
         return {
             "main" : f"检查黑板上的 [{left_var}]",
-            "true" : f"若 |[{left_var}] - {right_var}| <= 0.0000099999997",
-            "false" : f"若 |[{left_var}] - {right_var}| > 0.0000099999997"
+            "true" : f"若 [{left_var}] ≈ {right_var}",
+            "false" : f"若 [{left_var}] ≈ {right_var}"
         }
 
 # 检查末影黑板（同UID单位间互通）

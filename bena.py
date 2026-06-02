@@ -81,6 +81,8 @@ def make_enemy_name_table():
         for enemy_struct in json_data["enemies"]:
             enemy_key = enemy_struct.get("Key")
             enemy_name = enemy_struct.get("Value")[0]["enemyData"]["name"]["m_value"]
+            if "_" in enemy_key: # 为了方便，只保留翻译器需要的最后一部分
+                enemy_key = "_".join(enemy_key.split("_")[2:])
             ENEMY_NAMES[enemy_key] = enemy_name
             print(f"[贝娜]已读取到敌人 {enemy_name}（{enemy_key}）")
     else: # ArknightsAssets的格式

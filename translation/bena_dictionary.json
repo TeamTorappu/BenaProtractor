@@ -489,7 +489,11 @@
 			"take" : {
 				"damage" : "受伤时"
 			},
-			"killed" : "被击杀时"
+			"killed" : "被击杀时",
+			"start" : "开始时"
+		},
+		"force" : {
+			"withdraw" : "强制撤退"
 		},
 
 		"fx" : "特效",

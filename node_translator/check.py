@@ -624,23 +624,6 @@ def node_FilterByTargetAttribute(node):
             "false" : f"若其{attribute} {compare_not} [value]（默认{default_value}）"
         }
 
-# 检查目标元素值是否为全满/特定元素值是否为满
-def node_CheckTargetEpIsFull(node):
-    target_name = anne_dictionary("target",node["_targetType"])
-    if node["_elementType"] != None and node["_elementType"] != "":
-        element = anne_dictionary("element",node["_elementType"])
-        return {
-            "main" : f"检查{target_name}的{element}元素值",
-            "true" : f"若其{element}元素值 ≥ 其元素上限且不处于\"爆条\"状态",
-            "false" : f"若其{element}元素值 < 其元素上限或处于\"爆条\"状态"
-        }
-    else:
-        return {
-            "main" : f"检查{target_name}的所有类型的元素值",
-            "true" : f"若其所有元素值均 ≥ 其元素上限且不处于\"爆条\"状态",
-            "false" : f"若其任何一项元素值 < 其元素上限，或其处于\"爆条\"状态"
-        }
-
 # 检查目标等级
 def node_FilterByTargetDataLevel(node):
     target_name = anne_dictionary("target",node["_target"])

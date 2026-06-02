@@ -291,6 +291,17 @@ def node_CreateBuffToCertainSideUnits(node):
         result["main"] = f"让持有者为所有{side_name}单位创建{buff_name}：" + result["main"]
     return result
 
+# 向自己阻挡的单位创建Buff
+def node_CreateBuffToBlockee(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    blocker_name = anne_dictionary("target",node["_buffOwner"])
+    buff_name = "Buff"
+    result = analyze_buff(node['_buff'])
+    if node["_isDerivedBuff"]: # 属于附属Buff
+        buff_name = "本Buff的附属Buff"
+    result["main"] = f"为{blocker_name}阻挡的所有单位创建{buff_name}：" + result["main"]
+    return result
+
 
 # 触发此Buff（常用于循环或控制附属Buff）
 def node_TriggerBuff(node):

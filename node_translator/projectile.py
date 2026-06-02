@@ -53,5 +53,5 @@ def node_EmitProjectile(node):
 def node_FinishManagedProjectiles(node):
     target_name = anne_dictionary("target",node["_targetType"])
     return {
-        "main" : f"结束所有{target_name}发出的弹道"
+        "main" : f"结束所有{target_name}发出的、受管理的弹道（ManagedProjectile)"
     }
