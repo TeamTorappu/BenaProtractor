@@ -146,7 +146,7 @@ def analyze_selector(blackboard,prefix="",suffix=""):
                 enemy_excludes.append(f"{enemy_name}（{enemy_id}）")
             else:
                 enemy_excludes.append(f" {enemy_id} ")
-        target_name = target_name + "（" + "；".enemy_excludes + "除外）"
+        target_name = target_name + "（" + "；".join(enemy_excludes) + "除外）"
     if len(features) > 0:
         return f"{'、'.join(features)}的{prefix}{target_name}{suffix}"
     return f"{prefix}{target_name}{suffix}"
