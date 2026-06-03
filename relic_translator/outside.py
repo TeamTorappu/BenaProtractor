@@ -38,11 +38,45 @@ def rogue_immediate_cost(item_type,blackboard):
         }
     return {"main": f"{timing}消耗玩家 {blackboard['id']} × {math.floor(blackboard.get('count',0))}"}
 
-# 进入特殊节点奖励一次？
+# 开局额外招募券奖励
+def rogue_initial_recruit_reward(item_type,blackboard):
+    reward = analyze_item_reward(blackboard)
+    reward["main"] = "初始招募时，额外" + reward["main"]
+    return reward
+
+# 进入特定层数发放奖励
+def rogue_zone_into_reward(item_type,blackboard):
+    timing = analyze_timing(item_type,blackboard)
+    reward = analyze_item_reward(blackboard)
+    zone = blackboard["zone"]
+    zone_name = "???层"
+    if zone == "zone_2":
+        zone_name = "第二层"
+    elif zone == "zone_3":
+        zone_name = "第三层"
+    elif zone == "zone_4":
+        zone_name = "第四层"
+    elif zone == "zone_5":
+        zone_name = "第五层"
+    elif zone == "zone_6":
+        zone_name = "第六层"
+    elif zone == "zone_7":
+        zone_name = "第七层"
+    reward["main"] = timing + f"进入{zone_name}时" + reward["main"]
+    return reward
+
+# 进入岁兽残识发放奖励（仅一次）
 def rogue_secret_into_reward_once(item_type,blackboard):
     timing = analyze_timing(item_type,blackboard)
     reward = analyze_item_reward(blackboard)
-    reward["main"] = timing + "进入???节点时" + reward["main"]
+    reward["main"] = timing + "首次进入岁兽残识时" + reward["main"]
+    return reward
+
+# 进入岁兽残识发放奖励
+def rogue_secret_into_reward(item_type,blackboard):
+    timing = analyze_timing(item_type,blackboard)
+    reward = analyze_item_reward(blackboard)
+    reward["main"] = timing + "每次进入岁兽残识时" + reward["main"]
     return reward
 
 # 钱的自变化

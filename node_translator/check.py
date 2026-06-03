@@ -732,6 +732,18 @@ def node_CheckHeightTypeOfRootTile(node):
         "false" : f"若地块高度类型不为{height_type}"
     }
 
+# 检查移动朝向/部署朝向
+def node_CheckFaceDirection(node):
+    target_name = anne_dictionary("target",node["_target"])
+    direction = anne_dictionary("direction",node["_direction"])
+    direction_not = anne_dictionary("direction_not",node["_direction"])
+    return {
+        "main" : f"检查{target_name}的移动朝向（敌人类）/部署朝向（角色类）",
+        "description" : "敌人类单位未移动的情况下，其移动朝向为上",
+        "true" : f"若移动朝向/部署朝向为{direction}",
+        "false" : f"若移动朝向/部署朝向为{direction_not}"
+    }
+
 # 检查所在地块是否被角色类占用
 def node_CheckCharacterOnTile(node):
     target_name = anne_dictionary("target",node["_targetType"])

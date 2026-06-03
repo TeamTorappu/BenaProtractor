@@ -13,16 +13,16 @@ def node_ModifyCost(node):
         shared_flags.append(anne_dictionary("sharedflag","FORCE_TO_DISPLAY_NEGATIVE_NUMER"))
     if len(shared_flags) > 0:
         return {
-            "main" : f"令持有的部署费用+{node['_blackboardKey']}",
+            "main" : f"令持有的部署费用+[{node['_blackboardKey']}]",
             "description" : "、".join(shared_flags)
         }
     else:
-        return {"main" : f"令持有的部署费用+{node['_blackboardKey']}"}
+        return {"main" : f"令持有的部署费用+[{node['_blackboardKey']}]"}
     
 # 检查费用
 def node_CheckCost(node):
-    compare = anne_dictionary("compare",node["_condType"])
-    compare_not = anne_dictionary("compare_not",node["_condType"])
+    compare = anne_dictionary("compare",node["_compareType"])
+    compare_not = anne_dictionary("compare_not",node["_compareType"])
     if node["_considerNegativeCost"]: # 考虑负费
         return {
             "main" : "检查当前关卡的部署费用（可\"贷款\"）",

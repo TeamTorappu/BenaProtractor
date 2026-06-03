@@ -157,7 +157,8 @@ def node_SwitchMode(node):
     else:
         result["main"] += f"切换至{node['_modeIndex']}号模式"
     if node["_restartFSM"]: # 刷新状态机
-        result["description"] = "随后会强制重启状态机，可能导致部署状态机的部署保护失效"
+        result["main"] += "；并强制重启状态机"
+        result["description"] = "重启状态机可能导致部署状态机的部署保护失效"
     return result
 
 # 强制击倒
