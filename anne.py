@@ -306,6 +306,13 @@ class AnneRelic:
             method = getattr(self.translator, "rogue_"+effect_key, "")
             if method != "" :
                 rogue_effect.translation = method(rogue_effect.type,rogue_effect.blackboard)
+                if "global_buff" in rogue_effect.translation: # 翻译全局Buff
+                    # 尝试寻找全局Buff
+                    gbuff = ask_bena("global_buff",rogue_effect.translation["global_buff"])
+                    if gbuff != None:
+                        gbuff_translation = translate_whole_global_buff(gbuff)
+                        gbuff_translation["main"] = "施加逻辑&效果："
+                        rogue_effect.translation["children"].append(gbuff_translation)
                 return rogue_effect.translation
             else: # 无法翻译，把所有数据搓成可阅读的格式
                 prefix = analyze_timing(rogue_effect.type,rogue_effect.blackboard)
@@ -324,7 +331,8 @@ class AnneRelic:
     def translate_all(self,rogue_effect_list,return_list = False):
         children = []
         for rogue_effect in rogue_effect_list:
-            children.append(self.translate(rogue_effect))
+            translation = self.translate(rogue_effect)
+            children.append(translation)
         if return_list:
             return children
         else:
@@ -357,7 +365,7 @@ def translate_whole_buff(buff: Buff):
     return translation
 
 # 翻译一整个GlobalBuff
-def translate_whole_global_buff(gbuff: GlobalBuff):
+def translate_whole_global_buff(gbuff: GlobalBuff,extra_target_options: dict = {}):
     print("[安妮]尝试翻译GlobalBuff "+gbuff.buff_key)
     translation = {
         "main" : gbuff.buff_key,
@@ -366,23 +374,65 @@ def translate_whole_global_buff(gbuff: GlobalBuff):
     if gbuff.display_name != gbuff.buff_key:
         translation["main"] = f"{gbuff.display_name}（{gbuff.buff_key}）"
     # 主类
-    translation["children"].append({"main" : "类别："+gbuff.prefab_data["m_Script"]})
-    translation["children"].append({"main" : "阵营："+("敌方" if gbuff.prefab_data["_sourceType"] == "ENEMY" else "我方")})
+    if gbuff.prefab_data["m_Script"] != "GlobalBuff":
+        translation["children"].append({"main" : "类："+gbuff.prefab_data["m_Script"]})
+    side = "敌方" if gbuff.prefab_data["_sourceType"] == "ENEMY" else "我方"
     if gbuff.prefab_data["_overrideCameraEffect"] != "":
         translation["children"].append({"main" : "覆写镜头特效："+gbuff.prefab_data["_overrideCameraEffect"]})
+    # 额外目标选项预处理
+    target_options = gbuff.target_options
+    if len(extra_target_options.keys()) > 0:
+        target_options = target_options.copy()
+        for key, value in extra_target_options.items():
+            target_options[key] = value
     # 目标筛选逻辑
-    options_translation = ANNE_NODE.translator.analyze_target_options(gbuff.target_options,False)
-    options_translation["main"] = "筛选所有" + options_translation["main"]
-    translation["children"].append(options_translation)
+    target = "这些单位"
+    if target_options["enableAdvancedOptions"]: # 复杂筛选
+        side = "敌方" if gbuff.prefab_data["_sourceType"] == "ENEMY" else "我方"
+        #translation["children"].append({"main" : f"阵营：{side}"})
+        options_translation = ANNE_NODE.translator.analyze_target_options(target_options,True)
+        options_translation["main"] = f"以{side}视角，筛选出所有" + options_translation["main"] + "（受可选性制约；不受迷彩制约）"
+        translation["children"].append(options_translation)
+    else:
+        side = gbuff.prefab_data["_sourceType"]
+        target_side = target_options["targetSide"]
+        conditions = []
+        if side == "ALLY" and target_side == "ALLY":
+            conditions.append("我方")
+        elif side == "ENEMY" and target_side == "ALLY":
+            conditions.append("敌方")
+        elif side == "ALLY" and target_side == "ENEMY":
+            conditions.append("敌方")
+        elif side == "ENEMY" and target_side == "ENEMY":
+            conditions.append("我方")
+        elif side != "ALL":
+            conditions.append(side)
+        if target_options["targetCategory"] != "DEFAULT":
+            conditions.append(anne_dictionary("entity_category",target_options["targetCategory"]))
+        if target_options["targetMotion"] != "ALL":
+            conditions.append(anne_dictionary("motion",target_options["targetMotion"]))
+        if len(conditions) > 0:
+            target = "".join(conditions)+"单位"
+        else:
+            target = "任意单位"
     # 逐Buff添加至列表
     if len(gbuff.buff_datas) > 0:
-        buffs_translation = {"main" : "为场上的那些单位施加以下Buff：","children" : []}
+        buffs_translation = {"main" : f"当{target}登场时，为其施加以下Buff：","children" : []}
         for buff_data in gbuff.buff_datas:
-            buffs_translation["children"].append(ANNE_NODE.translator.analyze_buff(buff_data))
+            _buff = ANNE_NODE.translator.analyze_buff(buff_data)
+            if not buff_data["loadFromDB"] and buff_data["templateKey"] != "empty":
+                buff_template = ask_bena("buff_template",buff_data["templateKey"])
+                if buff_template != None:
+                    if "children" not in _buff:
+                        _buff["children"] = []
+                    buff_template_translation = translate_whole_buff_template(buff_template)
+                    for _child in buff_template_translation["children"]:
+                        _buff["children"].append(_child)
+            buffs_translation["children"].append(_buff)
         translation["children"].append(buffs_translation)
     # 逐DeckBuff添加至列表
     if len(gbuff.deck_buff_datas) > 0:
-        deck_buffs_translation = {"main" : "为待部署区的那些单位施加以下DeckBuff：","children" : []}
+        deck_buffs_translation = {"main" : f"为待部署区的{target}施加以下DeckBuff：","children" : []}
         for deck_buff_data in gbuff.deck_buff_datas:
             deck_buffs_translation["children"].append(ANNE_NODE.translator.analyze_deck_buff(deck_buff_data))
         translation["children"].append(deck_buffs_translation)

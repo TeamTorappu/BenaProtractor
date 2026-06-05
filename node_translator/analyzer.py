@@ -407,7 +407,10 @@ def analyze_buff(buff_data,full_information=False):
                 features.append(f"施加后立刻触发")
     # 覆盖类型配置
     if buff_data["disableOverride"]:
-        features.append(f"多个buff间互相独立，不处理覆盖")
+        if full_information:
+            features.append(f"不处理覆盖（同名效果间互相独立）")
+        else:
+            features.append(f"同名效果间互相独立")
     elif buff_data["overrideType"] != "DEFAULT":
         if buff_data["overrideType"] == "STACK" :
             stack_info = ""

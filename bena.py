@@ -217,6 +217,9 @@ def ask_bena(_type,input_id):
     elif _type == "buff_template":
         if input_id in BUFF_TEMPLATE_KEYS:
             return BUFF_TEMPLATE_DATA[input_id]
+    elif _type == "global_buff":
+        if input_id in GLOBAL_BUFF_KEYS:
+            return GLOBAL_BUFF_DUMMY[input_id]
     elif _type == "rogue_item":
         if input_id in ROGUELIKE_TOPIC_KEYS:
             return ROGUELIKE_TOPIC_TABLE[input_id]
@@ -273,7 +276,7 @@ def translate_buff_name_in_text(text: str):
         elif middle in BUFF_TEMPLATE_KEYS:
             middle = BUFF_TEMPLATE_DATA[middle].display_name
         else:
-            middle = translate_buff_name(middle) #现场进行翻译
+            middle = translate_buff_name(middle)+"("+middle+")" #现场进行翻译
         text = text[:left_place] + middle + text[right_place+1:]
     return text
 

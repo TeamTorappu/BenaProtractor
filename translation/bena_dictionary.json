@@ -1,5 +1,9 @@
 {
 	"buff_prefix" : {
+		"mainline12" : "惊霆无声",
+		"mainline14" : "慈悲灯塔",
+		"mainline15" : "离解复合",
+		"mainline16" : "反常光谱",
 		"autochess" : "卫戍协议",
 		"act1autochess" : "卫戍盟约",
 		"act1vautochess" : "卫戍废案",
@@ -13,6 +17,26 @@
 			"3" : "生息_重启锚点",
 			"" : "生息演算"
 		},
+		"racing" : {
+			"mode" : "源石虫庆典拉力赛"
+		},
+		"rogue" : {
+			"1" : "傀影肉鸽",
+			"2" : "水月肉鸽",
+			"3" : "萨米肉鸽",
+			"4" : "萨卡兹肉鸽",
+			"5" : "界园肉鸽",
+			"6" : "树海肉鸽"
+		},
+		"crisisv2" : {
+			"01" : "",
+			"02" : "",
+			"03" : "",
+			"04" : "",
+			"05" : ""
+		},
+
+		"act27side" : "火山旅梦",
 		"act28side" : {
 			"energy" : {
 				"buff" : "不义之财_能量控制"
@@ -24,8 +48,41 @@
 			},
 			"" : "不义之财"
 		},
-		"racing" : {
-			"mode" : "源石虫庆典拉力赛"
+		"act29side" : "崔林特尔梅之金",
+		"act35side" : "太阳甩在身后",
+		"act36side" : "泰拉饭",
+		"act38side" : "报幕者们",
+		"act43side" : "红丝绒",
+		"act44side" : "墟",
+		"act45side" : "无忧梦呓",
+		"act46side" : "雪山降临1101",
+		"act49side" : "辞岁行",
+		"act50side" : "泡影苍霆",
+		"act1bossrush" : "引航者#1",
+		"act2bossrush" : "引航者#2",
+		"act3bossrush" : "引航者#3",
+		"act4bossrush" : "引航者#4",
+		"act5bossrush" : "引航者#5",
+		"act6bossrush" : "引航者#6",
+		"act1enemyduel" : "争锋_青草城",
+		"act2enemyduel" : "争锋_蜜果城",
+		"act3enemyduel" : "争锋_绿藤城",
+		"act1break" : "矢量突破#1",
+		"act2break" : "矢量突破#2",
+		"act2fun" : "说唱之夜！",
+		"act3fun" : "狂弹要塞",
+		"act4fun" : "主播U",
+		"act5fun" : "泰拉投资大师课",
+		"act6fun" : "ARKnoNIGHTS",
+		"act7fun" : "黑色博士坠落",
+		"act1multi" : "促融共竞#1",
+		"act2multi" : "促融共竞#2",
+
+		"env" : {
+			"act46side" : "环境_雪山降临1101",
+			"act43side" : "环境_红丝绒",
+			"act35side" : "环境_太阳甩在身后",
+			"" : "环境"
 		},
 		
 		"slow3" : "地灵",
@@ -56,24 +113,21 @@
 			}
 		},
 		"enemy" : {
+			"act29side" : "敌方_崔林特尔梅之金",
+			"act38side" : "敌方_报幕者们",
+			"act49side" : "敌方_辞岁行",
 			"common" : "敌方通用",
 			"trace" : "敌方追踪",
 			"blord2" : "杜卡雷，“君主之红”",
 			"tjgdly" : "浪里玄条",
 			"confinement" : "禁锢状态",
+			"bloodsucker" : "敌方_大君系列",
 			"" : "敌方"
 		},
 		"trap" : {
 			"winfrie" : "紧急供暖器"
 		},
-		
-		"rogue" : {
-			"1" : "傀影肉鸽",
-			"2" : "水月肉鸽",
-			"3" : "萨米肉鸽",
-			"4" : "萨卡兹肉鸽",
-			"5" : "界园肉鸽"
-		},
+		"act2vecb" : "矢量_术能装备",
 		
 		"dragon" : {
 			"fire" : "烈焚灼息"
@@ -114,6 +168,9 @@
 			},
 			"swim" : "免疫水蚀"
 		},
+		"night" : {
+			"map" : "黑夜"
+		},
 		"status" : {
 			"resistance" : {
 				"reduction" : "反抵抗",
@@ -153,7 +210,9 @@
 		"block" : {
 			"radius" : {
 				"scaler" : "阻挡半径倍率"
-			}
+			},
+			"add" : "阻挡数增加",
+			"mcreep" : "交战_矿工游击队"
 		},
 		"common" : {
 			"weak" : {
@@ -207,6 +266,9 @@
 			}
 		},
 		"damage" : {
+			"block" : {
+				"once" : "护盾"
+			},
 			"resistance" : "庇护"
 		},
 		"immune" : {
@@ -237,6 +299,7 @@
 		}
 	},
 	"buff_element" : {
+		"buff" : "buff",
 		"s" : {
 			"1" : "一技能",
 			"2" : "二技能",
@@ -272,10 +335,16 @@
 			"004" : "四模组",
 			"" : "模组"
 		},
-		"skill" : "技能",
+		"skill" : {
+			"1" : "一技能",
+			"2" : "二技能",
+			"3" : "三技能",
+			"" : "技能"
+		},
 		"s1" : "一技能",
 		"s2" : "二技能",
 		"s3" : "三技能",
+		"s4" : "四技能",
 		"sk1" : "一技能",
 		"sk2" : "二技能",
 		"sk3" : "三技能",
@@ -285,6 +354,10 @@
 		"t3" : "三天赋",
 		"tr" : "特性",
 		"trait" : "特性",
+		"m0" : "模式零",
+		"m1" : "模式一",
+		"m2" : "模式二",
+		"m3" : "模式三",
 		
 		"periodic" : {
 			"damage" : "每秒受到伤害",
@@ -343,6 +416,7 @@
 			"" : "伤害"
 		},
 		"dmg" : {
+			"scale" : "伤害倍率",
 			"up" : "增伤",
 			"" : "伤"
 		},
@@ -378,28 +452,99 @@
 			"bonus" : "坚忍",
 			"" : "有限"
 		},
+
+		"block" : {
+			"cnt" : "阻挡数",
+			"free" : "无法阻挡",
+			"ctrl" : "阻挡_控制",
+			"damage" : "抵挡伤害",
+			"dmg" : "抵挡伤害",
+			"volume" : "占用阻挡数",
+			"fixed" : {
+				"damage" : "琉璃壁"
+			},
+			"three" : {
+				"or" : {
+					"more" : "阻挡三人以上"
+				},
+				"extend" : "阻挡三人"
+			},
+			"two" : {
+				"or" : {
+					"more" : "阻挡二人以上"
+				},
+				"extend" : "阻挡二人"
+			},
+			"" : "挡"
+		},
+		"not" : {
+			"blocked" : "未阻挡"
+		},
+		"ensure" : {
+			"block" : "确保阻挡数",
+			"" : "确保"
+		},
+		"release" : {
+			"from" : {
+				"blocker" : "解除阻挡"
+			},
+			"" : "释放"
+		},
+		"resetblock" : "恢复阻挡",
+		"blockee" : "被阻挡者",
+		"blocker" : "阻挡者",
+		"blockvolume" : "占用阻挡数",
+		"unblock" : "未阻挡",
 		
 		"aoe" : "群体",
+		"dot" : "秒伤",
+		"fixed" : {
+			"damage" : "固定值伤害",
+			"dmg" : "固定值伤害",
+			"" : "固定值"
+		},
 		"weak" : {
 			"damage" : "弱点伤害",
 			"" : "脆弱"
 		},
-		"cold" : "寒冷",
-		"double" : {
-			"cold" : "寒冷成对"
-		},
 		"critical" : "暴击",
 		"cirtical" : "暴击",
-		"fly" : "飞行",
-		"speed" : "速度",
-		"summon" : "召唤",
-		"evade" : "闪避",
-		"peak" : "精力充沛",
+
+		"negative" : "负",
+		"zero" : "零",
+		"one" : "一",
+		"two" : "二",
+		"three" : "三",
+		"four" : "四",
+		"five" : "五",
+		"six" : "六",
+		"seven" : "七",
+		"eight" : "八",
+		"nine" : "九",
+		"ten" : "十",
+		"eleven" : "十一",
+		"twelve" : "十二",
+		"thirteen" : "十三",
+		"forteen" : "十四",
+		"fourteen" : "十四",
+		"fifteen" : "十四",
+		"twenty" : "三十",
+		"thirty" : "三十",
+		"fourty" : "四十",
+		"fifty" : "五十",
+		"sixty" : "六十",
+		"seventy" : "七十",
+		"eighty" : "八十",
+		"ninty" : "九十",
+		"hundred" : "百",
+		"thousand" : "千",
+		"million" : "兆",
 		
 		"init" : "初始化",
 		"reset" : "重置",
 		"core" : "核心",
 		"common" : "常规",
+		"enhance" : "强化",
 		"enhanced" : "强化",
 		"advanced" : "加强",
 		"derived" : "附属",
@@ -430,6 +575,9 @@
 		"durable" : "耐久",
 		"recharge" : "补充",
 		"overload" : "过载",
+		"refresh" : "刷新",
+		"effect" : "效",
+		"move" : "移动",
 		
 		"same" : "同",
 		"diff" : "异",
@@ -439,15 +587,30 @@
 		"or" : "或",
 		"add" : "增加",
 		"minus" : "减少",
+		"mul" : "乘以",
+		"get" : "获得",
+		"lose" : "失去",
 		"up" : "提升",
 		"down" : "降低",
 		"cancel" : "取消",
-		"to" : "至",
 		"equal" : "相同",
+		"next" : {
+			"atk" : "下一次攻击",
+			"dmg" : "下一次伤害",
+			"" : "下一"
+		},
 		"sample" : "例",
 		"normal" : "普通",
 		"opposite" : "相反",
 		"vertical" : "垂直",
+		"to" : {
+			"block" : "至地块",
+			"" : "至"
+		},
+		"apply" : {
+			"dmg" : "施加伤害",
+			"" : "施加"
+		},
 		
 		"self" : "自身",
 		"ally" : "友方",
@@ -460,6 +623,10 @@
 		"enemy" : "敌人",
 		"token" : "召唤物",
 		"projectile" : "弹道",
+		"tile" : "地块",
+
+		"filter" : "过滤",
+		"tag" : "标签",
 		"drone" : "无人机",
 		
 		"born" : "出场",
@@ -478,7 +645,15 @@
 		"killed" : "击杀数",
 		"end" : "结束",
 		"log" : "记录",
+		"global" : {
+			"buff" : "全局buff",
+			"" : "全局"
+		},
 
+		"in" : {
+			"magiccircuit" : "重整束流",
+			"" : "在"
+		},
 		"on" : {
 			"buff" : {
 				"finish" : "结束时"
@@ -490,7 +665,15 @@
 				"damage" : "受伤时"
 			},
 			"killed" : "被击杀时",
-			"start" : "开始时"
+			"start" : "开始时",
+			"creep" : "溟痕上"
+		},
+		"when" : {
+			"blocked" : "阻挡期间",
+			"block" : "阻挡期间"
+		},
+		"after" : {
+			"dmg" : "伤害后"
 		},
 		"force" : {
 			"withdraw" : "强制撤退"
@@ -502,7 +685,7 @@
 		},
 		"audio" : "音效",
 		
-		
+		"attribute" : "属性",
 		"max" : {
 			"hp" : "最大生命"
 		},
@@ -525,9 +708,16 @@
 		"encourage" : "鼓舞",
 		"sluggish" : "停顿",
 		"steal" : "偷取",
+
+		"abnormal" : "异常",
 		"stun" : "晕眩",
 		"silence" : "沉默",
 		"camouflage" : "迷彩",
+		"unmovable" : "束缚",
+		"cold" : "寒冷",
+		"double" : {
+			"cold" : "寒冷成对"
+		},
 		"palsy" : "麻痹",
 		"palsying" : "麻痹震颤",
 		"disarmed" : {
@@ -541,9 +731,13 @@
 		"frozen" : "冻结",
 		"invisible" : "隐匿",
 		"undead" : "不死",
+		"blockfree" : "无法阻挡",
 
-		"IncludePure" : "包真伤",
-
+		"fly" : "飞行",
+		"speed" : "速度",
+		"summon" : "召唤",
+		"evade" : "闪避",
+		"peak" : "精力充沛",
 		"purify" : "净化",
 		"atkorcbt" : "攻击/阻挡攻击",
 		"charge" : {
@@ -554,13 +748,24 @@
 		"spareShot" : "节弹",
 		"devour" : "吞噬",
 		"vampire" : "吸血",
+		"highland" : "高地",
+		"lowland" : "低地",
+
+		"IncludePure" : "包真伤",
+		"AtkSpeedUp" : "攻速提升",
+		"AtkAndDefUp" : "攻防提升",
 
 		"blord2" : "杜卡雷",
+		"mcreep" : "矿工游击队",
+		"magiccircuit" : "重整束流",
 
 		"douququ" : "斗蛐蛐",
 		"first" : {
 			"step" : "先行一步"
 		},
+
+		"easterEgg" : "彩蛋",
+		"achievement" : "成就",
 
 		"bond" : {
 			"eff" : {

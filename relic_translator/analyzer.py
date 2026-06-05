@@ -119,6 +119,8 @@ def analyze_selector(blackboard,prefix="",suffix=""):
             features.append("地位级别为精英")
         elif blackboard["selector.enemy_level_type"] == "BOSS":
             features.append("地位级别为领袖")
+    elif "selector.boss_option" in blackboard: # 另一种写法
+        features.append("地位级别为领袖")
     # 阵营筛选处理
     if "selector.side" in blackboard:
         if blackboard["selector.side"] == "enemy" and "敌方" not in prefix:
