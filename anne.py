@@ -362,6 +362,19 @@ def translate_whole_buff(buff: Buff):
             translation["main"] = f"{buff.display_name}（{buff.buff_key}；" + translation["main"].split("（",1)[1]
         else:
             translation["main"] = f"{buff.display_name}（{buff.buff_key}）"
+    # 尝试把buff_template直接显示出来
+    if buff.buff_data["templateKey"] != "empty":
+        buff_template = ask_bena("buff_template",buff.buff_data["templateKey"])
+        if buff_template != None:
+            if "children" not in translation:
+                translation["children"] = []
+            buff_template_translation = translate_whole_buff_template(buff_template)
+            buff_template_translation["main"] = "机制&效果（Buff模板内容）："
+            translation["children"].append(buff_template_translation)
+        else:
+            translation["children"].append({
+                "main" : "机制&效果（Buff模板内容）：（未找到相应名称的Buff模板）"
+            })
     return translation
 
 # 翻译一整个GlobalBuff

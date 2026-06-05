@@ -113,22 +113,31 @@ def node_CheckAbilityDamageDeadly(node):
 
 # 弹药类技能弹药量修改综合节点
 def node_AmmoSkillCountModifier(node):
-    #未解析参数：_restoreMaxCount
     target_name = anne_dictionary("target",node["_targetType"])
+    
     if node["_modifyMaxCount"]: # 修改最大弹药数模式
         addon = "增加"
         if node["_addCountBBKey"] != None and node["_addCountBBKey"] != "":
+            if node["_restoreMaxCount"]: # “恢复上限”模式（其实就是减法）
+                addon = "减少"
             if node["_addCountUsePercent"]:
                 addon += " [" + node["_addCountBBKey"] + "] 倍"
             else:
                 addon += " [" + node["_addCountBBKey"] + "] 发"
         else:
+            ammo = node["_addCount"]
+            if node["_restoreMaxCount"]: # “恢复上限”模式（其实就是减法）
+                ammo = -ammo
+            if ammo < 0:
+                ammo = -ammo
+                addon = "减少"
             if node["_addCountUsePercent"]:
-                addon += to_percent(node["_addCount"])
+                addon += to_percent(ammo)
             else:
-                addon += str(node["_addCount"])+"发"
+                addon += str(ammo)+"发"
         return {
-            "main" : f"令{target_name}（角色类）当前开启的弹药类技能的最大弹药数{addon}"
+            "main" : f"令{target_name}（角色类）携带的弹药类技能的最大弹药数{addon}",
+            "description" : "若该技能当前已开启，则此效果需要下次开启才能显露"
         }
     if node["_recoverEventCount"]: # 恢复弹药模式
         recover = "恢复"

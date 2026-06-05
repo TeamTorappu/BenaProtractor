@@ -32,7 +32,7 @@ def rogue_global_buff_normal(item_type,blackboard):
     if len(true_blackboard) > 0:
         blackboard_result = {"main" : "黑板值（数据）：","children" : []}
         for key,bb in true_blackboard.items():
-            blackboard_result["children"].append({"main": str(key) + " : "+str(bb)})
+            blackboard_result["children"].append({"main": f"[{key}] = {bb}"})
         result["children"].append(blackboard_result)
     return result
 

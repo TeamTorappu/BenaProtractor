@@ -146,7 +146,7 @@ def analyze_buff(buff_data,full_information=False):
     buff_key = buff_data["buffKey"]
     # 开始解析
     features = []
-    blackboard = []
+    blackboard = {"main" : "黑板数据：","children":[]}
     template = "empty"
     has_resistable_flag = False
 
@@ -155,10 +155,10 @@ def analyze_buff(buff_data,full_information=False):
         for bb_data in buff_data["blackboard"]:
             if bb_data["value"]:
                 #blackboard[bb_data["key"]] = bb_data["value"]
-                blackboard.append({"main" : f"[{bb_data['key']}] = {bb_data['value']}"})
+                blackboard["children"].append({"main" : f"[{bb_data['key']}] = {bb_data['value']}"})
             elif bb_data["valueStr"]:
                 #blackboard[bb_data["key"]] = bb_data["valueStr"]
-                blackboard.append({"main" : f"[{bb_data['key']}] = \"{bb_data['valueStr']}\""})
+                blackboard["children"].append({"main" : f"[{bb_data['key']}] = \"{bb_data['valueStr']}\""})
 
     # 读取自数据库，一般是眩晕、寒冷那些，不管他
     if buff_data["loadFromDB"]:
@@ -373,35 +373,35 @@ def analyze_buff(buff_data,full_information=False):
     # 触发配置
     if buff_data["triggerLifeType"] == "INFINITY" : # 无限次触发
         if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
-            start_ticks = buff_data["firstTriggerInterval"]
+            start_ticks = math.ceil(buff_data["firstTriggerInterval"] * 30)
             if buff_data["triggerInterval"] >= 0:
-                ticks = buff_data['triggerInterval'] * 30
+                ticks = round(buff_data['triggerInterval'] * 30,3)
                 features.append(f"{start_ticks}帧后及后续每{ticks}帧触发一次")
             else:
                 features.append(f"{start_ticks}帧后触发仅一次")
         elif buff_data["triggerInterval"] >= 0:
             if buff_data["waitFirstTriggerInterval"]:
-                ticks = buff_data['triggerInterval'] * 30
+                ticks = round(buff_data['triggerInterval'] * 30,3)
                 features.append(f"每{ticks}帧触发一次")
             else:
-                ticks = buff_data['triggerInterval'] * 30
+                ticks = round(buff_data['triggerInterval'] * 30,3)
                 features.append(f"施加时及后续每{ticks}帧触发一次")
     else: #if buff_data["triggerLifeType"] in ["LIMITED","IMMEDIATELY"] : # 有限次触发
         trigget_cnt = buff_data["triggerCnt"]
         if trigget_cnt > 1:
             if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
-                start_ticks = math.ceil(buff_data["firstTriggerInterval"])
+                start_ticks = math.ceil(buff_data["firstTriggerInterval"] * 30)
                 if buff_data["triggerInterval"] >= 0:
-                    ticks = buff_data['triggerInterval'] * 30
+                    ticks = round(buff_data['triggerInterval'] * 30,3)
                     features.append(f"{start_ticks}帧后及后续每{ticks}帧触发一次，上限{trigget_cnt}次")
                 else:
                     features.append(f"{start_ticks}帧后触发仅一次")
             elif buff_data["triggerInterval"] >= 0:
-                ticks = buff_data['triggerInterval'] * 30
+                ticks = round(buff_data['triggerInterval'] * 30,3)
                 features.append(f"施加时及后续每{ticks}帧触发一次，上限{trigget_cnt}次")
         elif trigget_cnt == 1:
             if buff_data["waitFirstTriggerInterval"] and buff_data["firstTriggerInterval"] >= 0:
-                ticks = buff_data['firstTriggerInterval'] * 30
+                ticks = round(buff_data['triggerInterval'] * 30,3)
                 features.append(f"{ticks}帧后触发")
             else:
                 features.append(f"施加后立刻触发")
@@ -482,10 +482,10 @@ def analyze_buff(buff_data,full_information=False):
         result["description"] = "；".join(features)
     
     # 最后写入黑板数据
-    if len(blackboard) > 0:
+    if len(blackboard["children"]) > 0:
         if "children" not in result:
             result["children"] = []
-        result["children"] += blackboard
+        result["children"].append(blackboard)
     return result
 
 # 解析Buff的详细信息
