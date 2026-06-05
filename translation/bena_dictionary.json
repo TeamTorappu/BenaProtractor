@@ -17,6 +17,9 @@
 			"3" : "生息_重启锚点",
 			"" : "生息演算"
 		},
+		"multi" : {
+			"fortress" : "堡垒守御"
+		},
 		"racing" : {
 			"mode" : "源石虫庆典拉力赛"
 		},
@@ -109,6 +112,7 @@
 		"dmtpos" : "牵绊",
 		"upeople" : "乌萨斯平民",
 
+		"mpctrl" : "地图控制",
 		"token" : {
 			"wisdel" : "魂灵之影",
 			"phatm2" : {
@@ -126,6 +130,7 @@
 			"tjgdly" : "浪里玄条",
 			"confinement" : "禁锢状态",
 			"bloodsucker" : "敌方_大君系列",
+			"fotball" : "足球",
 			"" : "敌方"
 		},
 		"trap" : {
@@ -217,6 +222,18 @@
 			},
 			"add" : "阻挡数增加",
 			"mcreep" : "交战_矿工游击队"
+		},
+		"equip" : {
+			"heal" : {
+				"scale" : {
+					"up" : "模组_受治疗提升"
+				}
+			},
+			"ep" : {
+				"damage" : {
+					"scale" : "模组_元素损伤倍率"
+				}
+			}
 		},
 		"common" : {
 			"weak" : {
@@ -330,10 +347,30 @@
 			"004" : "四模组",
 			"" : "模组"
 		},
+		"equip" : {
+			"001" : "一模组",
+			"002" : "二模组",
+			"003" : "三模组",
+			"004" : "四模组",
+			"" : "装备"
+		},
+		"001" : {
+			"e" : "一模组"
+		},
+		"002" : {
+			"e" : "二模组"
+		},
+		"003" : {
+			"e" : "三模组"
+		},
+		"004" : {
+			"e" : "四模组"
+		},
 		"skill" : {
 			"1" : "一技能",
 			"2" : "二技能",
 			"3" : "三技能",
+			"on" : "技能开启",
 			"" : "技能"
 		},
 		"s1" : "一技能",
@@ -478,6 +515,11 @@
 			"bonus" : "坚忍",
 			"" : "有限"
 		},
+		"ammo" : {
+			"cost" : "消耗弹药",
+			"assign" : "记录弹药",
+			"" : "弹药"
+		},
 
 		"block" : {
 			"cnt" : "阻挡数",
@@ -574,30 +616,54 @@
 		"reset" : "重置",
 		"core" : "核心",
 		"derive" : "附属",
+		"event" : "事件",
 		"common" : "常规",
 		"limited" : "有限",
 		"unlimited" : "无限",
+		"override" : "覆盖",
 		"enhance" : "强化",
 		"enhanced" : "强化",
+		"advance" : "加强",
 		"advanced" : "加强",
 		"derived" : "附属",
 		"inf" : "永久",
+
+		"trace" : "追踪",
+		"tracer" : "追踪器",
 		"check" : "检测",
 		"checker" : "检测器",
+		"listen" : "监听",
 		"listener" : "监听器",
+		"cleane" : "清理",
+		"cleaner" : "清理器",
 		"timer" : "计时器",
 		"time" : "计时",
+		"times" : "次数",
+		"tick" : "帧",
+		"interval" : "间隔",
+		"tween" : "之间",
+		"revert" : "反转",
+		"ready" : "准备",
+		"try" : "尝试",
 		"trigger" : {
 			"Attack" : "攻击触发",
 			"Damage" : "伤害触发",
 			"" : "触发"
 		},
-		"switch" : "切换",
+		"switch" : {
+			"begin" : "切换开始",
+			"start" : "切换开始",
+			"end" : "切换结束",
+			"" : "切换"
+		},
+		"switchbegin" : "切换开始",
+		"switchend" : "切换结束",
 		"passive" : "被动",
 		"delay" : "延迟",
 		"input" : "输入",
 		"output" : "输出",
 		"out" : "输出",
+		"cache" : "缓存",
 		"mark" : "标记",
 		"aura" : "光环",
 		"bonus" : "增益",
@@ -655,6 +721,14 @@
 			"dmg" : "施加伤害",
 			"" : "施加"
 		},
+		"height" : {
+			"ctrl" : "高度控制",
+			"" : "高度"
+		},
+		"dir" : {
+			"ctrl" : "朝向控制",
+			"set" : "朝向设定"
+		},
 		
 		"self" : "自身",
 		"ally" : "友方",
@@ -666,13 +740,19 @@
 		"character" : "角色",
 		"enemy" : "敌人",
 		"token" : "召唤物",
+		"host" : "主人",
 		"projectile" : "弹道",
-		"tile" : "地块",
+		"tile" : {
+			"start" : "侵入点",
+			"end" : "保护目标点",
+			"" : "地块"
+		},
 
 		"filter" : "过滤",
 		"tag" : "标签",
 		"drone" : "无人机",
 		"elite" : "精英",
+		"boss" : "领袖",
 		
 		"born" : "出场",
 		"finish" : "退场",
@@ -807,15 +887,12 @@
 			"" : "重量"
 		},
 		"penetrate" : "穿透",
-		
-		"encourage" : "鼓舞",
-		"sluggish" : "停顿",
-		"steal" : "偷取",
 
 		"abnormal" : "异常",
 		"stun" : "晕眩",
 		"silence" : "沉默",
 		"camouflage" : "迷彩",
+		"Camouflage" : "迷彩",
 		"unmovable" : "束缚",
 		"cold" : "寒冷",
 		"palsy" : "麻痹",
@@ -833,6 +910,9 @@
 		"undead" : "不死",
 		"blockfree" : "无法阻挡",
 
+		"encourage" : "鼓舞",
+		"sluggish" : "停顿",
+		"steal" : "偷取",
 		"fly" : "飞行",
 		"speed" : "速度",
 		"unbalance" : "失衡",
@@ -852,6 +932,9 @@
 		"bleed" : "流血",
 		"sacrifice" : "献祭",
 		"rupture" : "创伤",
+		"bomb" : "炸弹",
+		"boom" : "爆炸",
+		"wait" : "等待",
 		"highland" : "高地",
 		"lowland" : "低地",
 
@@ -1026,6 +1109,7 @@
 		"skzrck" : "饮泣之刺",
 		"finaldefense" : "最终防线",
 		"levitateunbalancemasslossenter" : "进入浮空/失衡/失重时",
+		"name-cache" : "名称缓存",
 
 		"blord2" : "杜卡雷",
 		"mcreep" : "矿工游击队",
