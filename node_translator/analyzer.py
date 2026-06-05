@@ -164,11 +164,11 @@ def analyze_buff(buff_data,full_information=False):
     if buff_data["loadFromDB"]:
         if full_information:
             features.append("读取自数据库：[" + buff_key + "]")
-        elif len(blackboard) > 0:
+        elif len(blackboard["children"]) > 0:
             return {
                 "main" : "<" + buff_key + "> (读取自数据库)",
                 "link" : "buff." + buff_key,
-                "children" : blackboard
+                "children" : [blackboard]
             }
         else:
             return {"main" : "<" + buff_key + "> (读取自数据库)","link" : "buff." + buff_key}
@@ -450,7 +450,10 @@ def analyze_buff(buff_data,full_information=False):
         features.append(f"叠加优先级{buff_data['priority']}")
     # 黑板前缀
     if "stripBlackboardParamsWithBuffKey" in buff_data and buff_data["stripBlackboardParamsWithBuffKey"]:
-        features.append(f"使用有以BuffKey为前缀的黑板Key")
+        if full_information:
+            features.append(f"使用有以Buff名称为前缀的黑板键")
+        else:
+            features.append(f"使用带前缀的黑板键")
     # 特效方向
     if "enableInitDirectionFromSource" in buff_data and buff_data["enableInitDirectionFromSource"]:
         features.append(f"根据来源位置旋转特效方向")

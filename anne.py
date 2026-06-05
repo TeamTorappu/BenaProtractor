@@ -418,6 +418,8 @@ def translate_whole_global_buff(gbuff: GlobalBuff,extra_target_options: dict = {
             conditions.append("敌方")
         elif side == "ENEMY" and target_side == "ENEMY":
             conditions.append("我方")
+        elif side == "BOTH_ALLY_AND_ENEMY":
+            conditions.append("敌方与我方")
         elif side != "ALL":
             conditions.append(side)
         if target_options["targetCategory"] != "DEFAULT":
@@ -447,7 +449,17 @@ def translate_whole_global_buff(gbuff: GlobalBuff,extra_target_options: dict = {
     if len(gbuff.deck_buff_datas) > 0:
         deck_buffs_translation = {"main" : f"为待部署区的{target}施加以下DeckBuff：","children" : []}
         for deck_buff_data in gbuff.deck_buff_datas:
-            deck_buffs_translation["children"].append(ANNE_NODE.translator.analyze_deck_buff(deck_buff_data))
+            _buff = ANNE_NODE.translator.analyze_deck_buff(deck_buff_data)
+            buff_data = deck_buff_data["buff"]
+            if not buff_data["loadFromDB"] and buff_data["templateKey"] != "empty":
+                buff_template = ask_bena("buff_template",buff_data["templateKey"])
+                if buff_template != None:
+                    if "children" not in _buff:
+                        _buff["children"] = []
+                    buff_template_translation = translate_whole_buff_template(buff_template)
+                    for _child in buff_template_translation["children"]:
+                        _buff["children"].append(_child)
+            deck_buffs_translation["children"].append(_buff)
         translation["children"].append(deck_buffs_translation)
     # 剩下无法翻译的部分先直接展示
     for key, value in gbuff.prefab_data.items():

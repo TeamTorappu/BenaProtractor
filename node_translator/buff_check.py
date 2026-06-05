@@ -45,6 +45,7 @@ def node_CheckContainsBuff(node):
     if condition != "" :
         return {
             "main" : condition,
+            "link" : "buff." + ",buff.".join(node["_buffKeys"]),
             "true" : true_flag,
             "false" : false_flag
         }
@@ -60,6 +61,7 @@ def node_CheckContainsDerviedBuff(node):
     if node["_derviedBuffKey"] != None and node["_derviedBuffKey"] != "":
         return {
             "main" : f"检查持有者是否同时持有本Buff的附属Buff <{node['_derviedBuffKey']}>",
+            "link" : f"buff.{node['_derviedBuffKey']}",
             "true" : "若其同时持有该附属Buff",
             "false" : "若其不持有该附属Buff"
         }
@@ -77,4 +79,12 @@ def node_CheckRemainTime(node):
         "main" : "检查本Buff的剩余持续时间",
         "true" : f"若剩余时间 ≤ {remaining_time}秒",
         "false" : f"若剩余时间 > {remaining_time}秒"
+    }
+
+# 检查上下文中的Buff的名称
+def node_CheckMainBuffId(node):
+    return {
+        "main" : "检查\"上下文\"中的那个Buff的名称",
+        "true" : f"若该Buff名称为 <{node['_idToFilter']}>",
+        "false" : f"若该Buff名称不为 <{node['_idToFilter']}>"
     }

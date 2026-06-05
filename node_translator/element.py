@@ -24,18 +24,18 @@ def node_ApplyElementDamage(node):
         if node["_noSource"]:
             descriptions.append("视为无来源")
             if node["_fixedEpDamageKey"] != None and node["_fixedEpDamageKey"] != "":
-                result["main"] = f"对{target_name}造成 {node['_fixedEpDamageKey']}{scale} 点{element_type}损伤"
+                result["main"] = f"对{target_name}造成 [{node['_fixedEpDamageKey']}]{scale} 点{element_type}损伤"
                 if node["_fixedEpDamage"] != 0:
                     result["main"] += f"（默认{node['_fixedEpDamage']}点）"
             else:
-                result["main"] = f"对{target_name}造成 {node['_fixedEpDamage']}{scale} 点{element_type}损伤"
+                result["main"] = f"对{target_name}造成 [{node['_fixedEpDamage']}]{scale} 点{element_type}损伤"
         else:
             if node["_fixedEpDamageKey"] != None and node["_fixedEpDamageKey"] != "":
-                result["main"] = f"令{source_name}对{target_name}造成 {node['_fixedEpDamageKey']}{scale} 点{element_type}损伤"
+                result["main"] = f"令{source_name}对{target_name}造成 [{node['_fixedEpDamageKey']}]{scale} 点{element_type}损伤"
                 if node["_fixedEpDamage"] != 0:
                     result["main"] += f"（默认{node['_fixedEpDamage']}点）"
             else:
-                result["main"] = f"令{source_name}对{target_name}造成 {node['_fixedEpDamage']}{scale} 点{element_type}损伤"
+                result["main"] = f"令{source_name}对{target_name}造成 [{node['_fixedEpDamage']}]{scale} 点{element_type}损伤"
     else: 
         if node["_multiplyWithBuffValidStackCnt"] and node["_buffKey"] != None and node["_buffKey"] != "":
             scale += " × 层数"

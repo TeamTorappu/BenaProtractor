@@ -585,6 +585,13 @@
 		"RESPAWN_SELF" : "重新部署",
 		"MOVE_LIKE_RESPAWN_SELF" : "类移动的重新部署"
 	},
+	"ability_finish_reason" : {
+		"NORMAL_EXIT" : "正常完成",
+		"INTERRUPTED" : "被其他效果中断",
+		"OWNER_DEAD" : "本体死亡",
+		"TARGET_DEAD" : "目标死亡",
+		"PALSY" : "被麻痹打断"
+	},
 	"purpose" : {
 		"NONE" : "无类型行为",
 		"DAMAGE" : "伤害行为",

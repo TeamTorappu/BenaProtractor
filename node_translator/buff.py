@@ -85,7 +85,7 @@ def node_CreateBuffToHost(node):
     result = analyze_buff(node['_buffData'])
     if node["_isDerivedBuff"]: # 属于附属Buff
         buff_name = "本Buff的附属Buff"
-    result["main"] = f"让{source_name}（召唤物）为其持有者创建一个{buff_name}：" + result["main"]
+    result["main"] = f"让{source_name}（召唤物）为其主人创建一个{buff_name}：" + result["main"]
     return result
 
 # 创建具有格式化名称的Buff
@@ -305,16 +305,37 @@ def node_CreateBuffToBlockee(node):
 
 # 触发此Buff（常用于循环或控制附属Buff）
 def node_TriggerBuff(node):
-    if node["_force"]:
-        if node["_triggerDerivedBuffs"]:
-            return {"main" : "强制触发此Buff与旗下所有附属Buff"}
-        else:
-            return {"main" : "强制触发此Buff"}
+    action = "强制触发" if node["_force"] else "触发"
+    if node["_triggerDerivedBuffs"]:
+        return {"main" : f"{action}此Buff与旗下所有附属Buff"}
     else:
-        if node["_triggerDerivedBuffs"]:
-            return {"main" : "触发此Buff与旗下所有附属Buff"}
-        else:
-            return {"main" : "触发此Buff"}
+        return {"main" : f"{action}此Buff"}
+        
+# 触发特定名称的Buff（常用于循环或控制附属Buff）
+def node_TriggerBuffsByKeys(node):
+    action = "强制触发" if node["_forceTrigger"] else "触发"
+    condition = ""
+    buffs = []
+    for buff_key in node["_buffKeys"]:
+        buffs.append(f"<{buff_key}>")
+    if len(buffs) == 0:
+        return {"main" : f"尝试{action}某些Buff，但未配置Buff名，因此无效果"}
+    if node["_triggerAllBuffs"] and not node["_excludeThisBuff"]: # 触发全部Buff
+        buff_text = f" {buffs[0]} " if len(buffs) == 1 else "、".join(buffs)
+        if node["_excludeInTriggerAll"]: # 为什么要弄俩一模一样的参数
+            condition = "除此Buff外的"
+        return {
+            "main" : f"寻找{condition}所有名为 {buff_text} 的Buff，{action}这些Buff",
+            "link" : "buff."+",buff.".join(node["_buffKeys"])
+        }
+    else:
+        buff_text = f"{buffs[0]}" if len(buffs) == 1 else ("、".join(buffs[:-1])+f" 或 {buffs[-1]}")
+        if node["_excludeThisBuff"]: # 为什么要弄俩一模一样的参数
+            condition = "除此Buff外的"
+        return {
+            "main" : f"寻找{condition}首个名为 {buff_text} 的Buff，{action}该Buff",
+            "link" : "buff."+",buff.".join(node["_buffKeys"])
+        }
 
 # 结束此Buff
 def node_FinishBuff(node):

@@ -58,3 +58,29 @@ def node_FilterAbilityValidCastTargetCnt(node):
         "true" : f"若目标数 {compare} [cnt]",
         "false" : f"若目标数 {compare_not} [cnt]"
     }
+
+# 检查能力结束的原因
+def node_FilterByAbilityFinishReason(node):
+    target = "本Buff所隶属的能力" if node["_useBuffAbility"] else "当前\"上下文\"能力"
+    reason = anne_dictionary("ability_finish_reason",node["_finishReason"])
+    return {
+        "main" : f"检查{target}的结束原因",
+        "true" : f"若能力因\"{reason}\"结束",
+        "false" : f"若未结束或能力不因\"{reason}\"结束"
+    }
+
+# 检查能力是否不受麻痹影响
+def node_FilterByAbilityIgnorePalsyInterrupt(node):
+    if node["_skipUnitCheck"]:
+        return {
+            "main" : f"检查当前\"上下文\"能力是否被定义为\"无视麻痹\"",
+            "description" : f"只考虑配置，不考虑单位是否可受麻痹影响",
+            "true" : f"若其不可\"无视麻痹\"" if node["_unset"] else f"若其可\"无视麻痹\"",
+            "false" : f"若其可\"无视麻痹\"" if node["_unset"] else f"若其不可\"无视麻痹\""
+        }
+    else:
+        return {
+            "main" : f"检查当前\"上下文\"能力是否能够\"无视麻痹\"",
+            "true" : f"若其不可\"无视麻痹\"且能力持有者为敌人类" if node["_unset"] else f"若其可\"无视麻痹\"且能力持有者为敌人类",
+            "false" : f"若其可\"无视麻痹\"或能力持有者不为敌人类" if node["_unset"] else f"若其不可\"无视麻痹\"或能力持有者不为敌人类"
+        }

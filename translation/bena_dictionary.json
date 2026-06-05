@@ -290,20 +290,11 @@
 			"prob" : {
 				"retain" : "麻痹_概率不消耗"
 			}
-		},
-		"ep" : {
-			"break" : {
-				"sanity" : "神经损伤爆发",
-				"water" : "侵蚀损伤爆发",
-				"fire" : "灼燃损伤爆发",
-				"dark" : "凋亡损伤爆发"
-			},
-			"damage" : "元素损伤",
-			"" : "元素"
 		}
 	},
 	"buff_element" : {
 		"buff" : "buff",
+		"flag" : "flag",
 		"s" : {
 			"1" : "一技能",
 			"2" : "二技能",
@@ -362,6 +353,7 @@
 		"m1" : "模式一",
 		"m2" : "模式二",
 		"m3" : "模式三",
+		"ability" : "能力",
 		
 		"periodic" : {
 			"damage" : "每秒受到伤害",
@@ -381,7 +373,12 @@
 		"sp-onattack" : "攻击技力",
 		"sp+" : "技力+",
 		"modify" : {
-			"sp" : "修改技力",
+			"sp" : {
+				"recover" : {
+					"ratio" : "修改技力自然回复速度倍率"
+				},
+				"" : "修改技力"
+			},
 			"" : "修改"
 		},
 		"attack" : {
@@ -408,7 +405,12 @@
 			"block" : "伤害格挡",
 			"scale" : "伤害倍率",
 			"resistance" : "伤害抗性",
+			"penetrate" : "伤害穿透",
 			"value" : "伤害值",
+			"via" : {
+				"es" : "溢出治疗转伤害",
+				"" : "伤害_基于"
+			},
 			"reduce" : {
 				"all" : "全种类伤害减免",
 				"magical" : "法术伤害减免",
@@ -421,14 +423,34 @@
 		},
 		"dmg" : {
 			"scale" : "伤害倍率",
+			"penetrate" : "伤害穿透",
 			"up" : "增伤",
 			"" : "伤"
+		},
+		"ep" : {
+			"break" : {
+				"sanity" : "神经损伤爆发",
+				"water" : "侵蚀损伤爆发",
+				"fire" : "灼燃损伤爆发",
+				"dark" : "凋亡损伤爆发"
+			},
+			"damage" : {
+				"scale" : "元素损伤倍率",
+				"" : "元素损伤"
+			},
+			"" : "元素"
+		},
+		"extra" : {
+			"damage" : "额外伤害",
+			"" : "额外"
 		},
 		"by" : "基于",
 		"via" : {
 			"source" : {
 				"atk" : "基于来源攻击力"
 			},
+			"maxhp" : "基于最大生命",
+			"MaxHp" : "基于最大生命",
 			"" : "依"
 		},
 		"based" : {
@@ -479,6 +501,9 @@
 				},
 				"extend" : "阻挡二人"
 			},
+			"just" : {
+				"one" : "仅阻挡一人"
+			},
 			"" : "挡"
 		},
 		"not" : {
@@ -499,7 +524,8 @@
 		"blocker" : "阻挡者",
 		"blockvolume" : "占用阻挡数",
 		"unblock" : "未阻挡",
-		
+
+		"battle" : "战斗",
 		"aoe" : "群体",
 		"dot" : "秒伤",
 		"fixed" : {
@@ -547,7 +573,10 @@
 		"init" : "初始化",
 		"reset" : "重置",
 		"core" : "核心",
+		"derive" : "附属",
 		"common" : "常规",
+		"limited" : "有限",
+		"unlimited" : "无限",
 		"enhance" : "强化",
 		"enhanced" : "强化",
 		"advanced" : "加强",
@@ -556,7 +585,13 @@
 		"check" : "检测",
 		"checker" : "检测器",
 		"listener" : "监听器",
-		"trigger" : "触发",
+		"timer" : "计时器",
+		"time" : "计时",
+		"trigger" : {
+			"Attack" : "攻击触发",
+			"Damage" : "伤害触发",
+			"" : "触发"
+		},
 		"switch" : "切换",
 		"passive" : "被动",
 		"delay" : "延迟",
@@ -582,6 +617,8 @@
 		"refresh" : "刷新",
 		"effect" : "效",
 		"move" : "移动",
+		"resistance" : "抗性",
+		"distance" : "距离",
 		
 		"same" : "同",
 		"diff" : "异",
@@ -592,10 +629,12 @@
 		"add" : "增加",
 		"minus" : "减少",
 		"mul" : "乘以",
+		"final" : "最终",
 		"get" : "获得",
 		"lose" : "失去",
 		"up" : "提升",
 		"down" : "降低",
+		"boost" : "增益",
 		"cancel" : "取消",
 		"equal" : "相同",
 		"next" : {
@@ -607,6 +646,7 @@
 		"normal" : "普通",
 		"opposite" : "相反",
 		"vertical" : "垂直",
+		"pair" : "组合",
 		"to" : {
 			"block" : "至地块",
 			"" : "至"
@@ -632,6 +672,7 @@
 		"filter" : "过滤",
 		"tag" : "标签",
 		"drone" : "无人机",
+		"elite" : "精英",
 		
 		"born" : "出场",
 		"finish" : "退场",
@@ -644,7 +685,11 @@
 			"" : "死亡"
 		},
 		"suicide" : "自杀",
+		"locate" : "部署",
 		"withdraw" : "撤退",
+		"undeadable" : {
+			"damage" : "非致命伤害"
+		},
 		"kill" : {
 			"to" : "击杀时",
 			"" : "击杀"
@@ -656,9 +701,18 @@
 			"buff" : "全局buff",
 			"" : "全局"
 		},
+		"game" : {
+			"start" : "游戏开始",
+			"end" : "游戏结束"
+		},
 
 		"in" : {
 			"magiccircuit" : "重整束流",
+			"candle" : {
+				"holder" : {
+					"buff" : "秉烛"
+				}
+			},
 			"" : "在"
 		},
 		"on" : {
@@ -671,21 +725,59 @@
 			"take" : {
 				"damage" : "受伤时"
 			},
+			"born" : "登场时",
 			"kill" : "死亡时",
 			"killed" : "被击杀时",
 			"start" : "开始时",
+			"afterAttack" : "攻击后",
 			"creep" : "溟痕上"
 		},
 		"when" : {
 			"blocked" : "阻挡期间",
-			"block" : "阻挡期间"
+			"block" : "阻挡期间",
+			"take" : {
+				"dmg" : "每当受到伤害"
+			},
+			"" : "当"
+		},
+		"while" : {
+			"mass" : {
+				"loss" : "失重期间"
+			}
+		},
+		"during" : {
+			"abnormal" : {
+				"states" : "异常状态下"
+			}
 		},
 		"after" : {
-			"dmg" : "伤害后"
+			"dmg" : "伤害后",
+			"skill" : "技能后"
 		},
 		"force" : {
 			"withdraw" : "强制撤退"
 		},
+		"random" : {
+			"tile" : "随机地块",
+			"attack" : "随机攻击",
+			"damage" : "随机伤害"
+		},
+		"double" : {
+			"cold" : "寒冷成对",
+			"initial" : {
+				"SP" : "双倍初始SP"
+			},
+			"" : "双"
+		},
+		"hit" : {
+			"to" : {
+				"add" : {
+					"sp" : "命中回复SP"
+				}
+			},
+			"" : "击"
+		},
+		"lighter" : "变轻",
 
 		"fx" : "特效",
 		"no" : {
@@ -710,7 +802,10 @@
 		},
 		"def" : "防御",
 		"cost" : "费用",
-		"mass" : "重量",
+		"mass" : {
+			"loss" : "重量降低",
+			"" : "重量"
+		},
 		"penetrate" : "穿透",
 		
 		"encourage" : "鼓舞",
@@ -723,9 +818,6 @@
 		"camouflage" : "迷彩",
 		"unmovable" : "束缚",
 		"cold" : "寒冷",
-		"double" : {
-			"cold" : "寒冷成对"
-		},
 		"palsy" : "麻痹",
 		"palsying" : "麻痹震颤",
 		"disarmed" : {
@@ -743,6 +835,7 @@
 
 		"fly" : "飞行",
 		"speed" : "速度",
+		"unbalance" : "失衡",
 		"summon" : "召唤",
 		"evade" : "闪避",
 		"peak" : "精力充沛",
@@ -756,14 +849,183 @@
 		"spareShot" : "节弹",
 		"devour" : "吞噬",
 		"vampire" : "吸血",
+		"bleed" : "流血",
 		"sacrifice" : "献祭",
 		"rupture" : "创伤",
 		"highland" : "高地",
 		"lowland" : "低地",
 
+		"pioneer" : {
+			"hand" : "先锋手",
+			"" : "先锋"
+		},
+		"warrior" : {
+			"hand" : "近卫手",
+			"" : "近卫"
+		},
+		"tank" : "重装",
+		"medic" : "医疗",
+		"sniper" : "狙击",
+		"caster" : {
+			"hand" : "术师手",
+			"" : "术师"
+		},
+		"support" : "辅助",
+		"special" : {
+			"hand" : "特种手",
+			"" : "特殊"
+		},
+
+		"relic" : {
+			"battle" : "藏品_战",
+			"fight" : "藏品_斗",
+			"legacy" : "藏品_古",
+			"hand" : "藏品_手",
+			"book" : "藏品_书",
+			"encounter" : "藏品_遭",
+			"" : "藏品"
+		},
+		"copper" : "钱",
+		"exp" : "经验",
+		"life" : {
+			"point" : "目标生命值",
+			"" : "命"
+		},
+		"hand" : "手",
+		"encore" : "幻觉",
+		"difficulty" : {
+			"buff" : {
+				"11" : "N11_buff"
+			},
+			"" : "难度"
+		},
+		"enroll" : {
+			"3" : {
+				"ascension" : "新排异反应_进化",
+				"attribute" : {
+					"auto" : "新排异反应_失调与畸变",
+					"bleed" : "新排异反应_障碍与畸变",
+					"frozen" : "新排异反应_退行与畸变",
+					"" : "新排异反应_血肉畸变"
+				},
+				"auto" : {
+					"bleed" : "新排异反应_失调与障碍",
+					"frozen" : "新排异反应_退行与失调",
+					"" : "新排异反应_专注失调"
+				},
+				"bleed" : {
+					"frozen" : "新排异反应_退行与障碍",
+					"" : "新排异反应_造血障碍"
+				},
+				"frozen" : "新排异反应_神经退行",
+				"difficulty" : {
+					"18" : "新排异反应_N18"
+				},
+				"" : "新排异反应"
+			},
+			"" : "排异反应"
+		},
+		"king" : {
+			"suit" : "国王套",
+			"" : "国王"
+		},
+		"lordoffiends" : {
+			"suit" : "魔王套",
+			"" : "魔王"
+		},
+
 		"IncludePure" : "包真伤",
 		"AtkSpeedUp" : "攻速提升",
+		"atkSpeedUp" : "攻速提升",
 		"AtkAndDefUp" : "攻防提升",
+		"increaseMaxHP" : "生命上限提升",
+		"probDoubleHP" : "概率双倍生命",
+		"probdoubleenemyhp" : "敌人概率双倍生命",
+		"createBuffInRange" : "在范围内创建Buff",
+		"decreaseDeployCost" : "减少部署费用",
+		"decreasedeploycost" : "减少部署费用",
+		"respwanSpeedUp" : "再部署加速",
+		"respwanspeedup" : "再部署加速",
+		"damageViaDef" : "基于防御的伤害",
+		"extraDamage" : "额外伤害",
+		"extradamage" : "额外伤害",
+		"extraAttack" : "额外攻击",
+		"extraattack" : "额外攻击",
+		"afterAttack" : "攻击后",
+		"hostAtkUp" : "召唤物主人攻击提升",
+		"refCounter" : "对象计数器",
+		"DamageScale" : "提升伤害倍率",
+		"ViaTargetHPRatio" : "基于目标生命比例",
+		"hideEnemyHUD" : "隐藏敌人HUD",
+		"hideenemyhud" : "隐藏敌人HUD",
+		"darkenSpine" : "Spine黑化",
+		"unmovableAndDamage" : "束缚并伤害",
+		"blackfog" : "国度",
+		"unmovableaura" : "束缚光环",
+		"atkup" : "攻击提升",
+		"rangedatkup" : "范围攻击提升",
+		"losshp" : "损失生命值",
+		"rangedatkspeedup" : "范围攻速提升",
+		"camouflagrange" : "范围迷彩",
+		"dmgscaleviatargethpratio" : "基于目标生命比例提升伤害倍率",
+		"increasemaxhpwhenhavingshield" : "有护盾则增加最大生命",
+		"bornShield" : "部署屏障",
+		"bornshield" : "部署屏障",
+		"chargeSP" : "SP充能",
+		"chargeSp" : "SP充能",
+		"chargesp" : "SP充能",
+		"GetHealed" : "受治疗时",
+		"maxHP" : "最大生命",
+		"maxHp" : "最大生命",
+		"maxHpCore" : "最大生命核心",
+		"lossHP" : "流失生命",
+		"dmgPenetrate" : "伤害穿透",
+		"tokenevolution" : "召唤物进化",
+		"SPChain" : "SP链",
+		"spchain" : "SP链",
+		"spChain" : "SP链",
+		"castSkill" : "释放技能",
+		"MassLoss" : "失重",
+		"MassLossCore" : "失重核心",
+		"inRange" : "范围内",
+		"occupy" : {
+			"zero" : "占用零"
+		},
+		"whengethealed" : "得到治疗时",
+		"whenmanulskill" : "触发手动触发技能时",
+		"whenattack" : "攻击时",
+		"levitateCore" : "浮空核心",
+		"apoptosis" : "年代凋亡",
+		"addon" : {
+			"element" : {
+				"dmg" : "附带元素损伤"
+			}
+		},
+		"parasitic" : {
+			"buff" : "恐卡兹寄生"
+		},
+		"inherit" : {
+			"skzams" : {
+				"hp" : "终曲合声_继承生命值"
+			}
+		},
+		"lock" : {
+			"all" : {
+				"entities" : "封锁全部实体",
+				"chars" : "封锁全部角色"
+			}
+		},
+		"has" : {
+			"char" : {
+				"in" : {
+					"range" : "范围内有角色"
+				}
+			}
+		},
+		"skztzs" : "年代之刺",
+		"skzrck" : "饮泣之刺",
+		"finaldefense" : "最终防线",
+		"levitateunbalancemasslossenter" : "进入浮空/失衡/失重时",
 
 		"blord2" : "杜卡雷",
 		"mcreep" : "矿工游击队",

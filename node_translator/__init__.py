@@ -18,6 +18,7 @@ from .calculation import *
 from .check import *
 from .modifier import *
 from .state import *
+from .rogue import *
 from .util import *
 
 from .autochess import *
