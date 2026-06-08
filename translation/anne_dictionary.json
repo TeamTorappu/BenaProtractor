@@ -128,7 +128,7 @@
 		"ON_ES_OVER_ZERO" : "持有者得到的治疗量溢出时",
 		"ON_ENTER_MAGICCIRCUIT" : "持有者进入<重整束流>影响的地块时",
 		"ON_LEAVE_MAGICCIRCUIT" : "持有者离开<重整束流>影响的地块时",
-		"ON_OWNER_DYING" : "持有者陷入濒死状态机时",
+		"ON_OWNER_DYING" : "持有者即将死亡时",
 		"ON_GAME_OVER" : "战斗结束时",
 		"ON_MAKE_ENEMY_UNBALANCED" : "持有者令敌人类单位陷入失衡状态机时",
 		"ON_END_PULLING" : "持有者发动的拖拽的结束时",
@@ -226,8 +226,8 @@
 		"ALL" : "全部"
 	},
 	"skill_type" : {
-		"PASSIVE" : "被动技能",
-		"MANUAL" : "手动技能",
+		"PASSIVE" : "被动",
+		"MANUAL" : "手动触发",
 		"AUTO" : "自动触发"
 	},
 	"abnormal" : {
@@ -362,7 +362,18 @@
 		"NONE" : "无阵营关系",
 		"ALLY" : "相同阵营",
 		"ENEMY" : "对立阵营",
-		"ALL" : "相同阵营/对立阵营"
+		"BOTH_ALLY_AND_ENEMY" : "相同阵营/对立阵营",
+		"ALL" : "任意阵营"
+	},
+	"side_type_ally" : {
+		"ALLY" : "我方",
+		"ENEMY" : "敌方",
+		"NEUTRAL" : "中立"
+	},
+	"side_type_enemy" : {
+		"ALLY" : "敌方",
+		"ENEMY" : "我方/中立",
+		"NEUTRAL" : "敌方"
 	},
 	"modifier_target_type": {
 		"HP" : "生命值",

@@ -10,11 +10,18 @@ def node_AdvancedApplyDamage(node):
     source_name = anne_dictionary("target",node["_sourceType"])
     target_name = anne_dictionary("target",node["_targetType"])
     damage_name = analyze_damage(node) # 直接把整个node传参进去
-    default_atk_scale = to_percent(node["_defaultAtkScale"])
     result = {
-        "main" : f"让{source_name}对{target_name}造成{str(default_atk_scale)}的{damage_name}",
-        "description" : f"会读取黑板中的 [{node['_atkScaleVar']}] 覆盖此处的攻击力倍率"
+        "main" : f"让{source_name}对{target_name}造成"
     }
+    # 默认倍率不为0
+    if node['_atkScaleVar'] != None and node['_atkScaleVar'] != "":
+        result["main"] += f" [{node['_atkScaleVar']}] 倍率的{damage_name}"
+        if node["_defaultAtkScale"] != 1:
+            default_scale = to_percent(node["_defaultAtkScale"])
+            result["main"] += f"（默认{default_scale}）"
+    else:
+        default_scale = to_percent(node["_defaultAtkScale"])
+        result["main"] += f"{default_scale}倍率的{damage_name}"
     # 记录至黑板
     if node["_assignFinalDamageToBB"]:
         result["description"] += "；将最终伤害记录至黑板 [value]"
@@ -110,6 +117,21 @@ def node_FetchHpToBlackboard(node):
         return {
             "main" : f"对{target_name}造成一次{damage_type}，以此来匹配记录黑板上（{node['_blackboardStr']}）记录的{hp_type}"
         }
+
+# 根据最大生命值，制造一次伤害
+def node_DamageViaMaxHpRatio(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    damage_num = "造成 来源最大生命值 × [hp_ratio] "
+    damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
+    features = []
+    if node["_getMaxHpFromTarget"]:
+        damage_num = "造成 目标最大生命值 × [hp_ratio] "
+    result = {
+        "main" : f"对{target_name}造成{damage_num}的{damage_name}"
+    }
+    if len(features) > 0:
+        result["description"] = "；".join(features)
+    return result
 
 # 根据当前生命值，制造一次伤害
 def node_DamageViaCurHpRatio(node):
@@ -267,7 +289,14 @@ def node_InverseDamage(node):
     }
     if node["_sideMask"] != "ALL":
         side_type = anne_dictionary("side_type_relative",node["_sideMask"])
-        result["main"] = result["main"] + f"若伤害来源为{side_type}，"
+        if node["_sourceType"] == "MODIFIER_SOURCE": # 对面的视角（看自己？？？）
+            view_name = anne_dictionary("target",node["_sourceType"])
+            result["main"] = result["main"] + f"若伤害来源与其自身为{side_type}，"
+        elif node["_sourceType"] != "BUFF_OWNER" and node["_sourceType"] != "MODIFIER_TARGET": # 其他人的视角
+            view_name = anne_dictionary("target",node["_sourceType"])
+            result["main"] = result["main"] + f"若伤害来源与{view_name}为{side_type}，"
+        else: # 自己的视角
+            result["main"] = result["main"] + f"若伤害来源为{side_type}，"
     if node["_fixValue"]: # 固定值反伤模式
         result["main"] = result["main"] + f"对伤害来源造成{node['_damageValueKey']} × [atk_scale] 的无来源、预计算{damage}"
         if node["_hasSource"]:

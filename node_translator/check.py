@@ -290,8 +290,8 @@ def node_VertifyTarget(node):
         result["description"] = result["description"] + "；不受迷彩制约"
     else:
         result["description"] = "不受迷彩制约"
-    result["true"] = f"若{target_name}可被选择且符合条件）"
-    result["false"] = f"若{target_name}不可被选择且符合条件）"
+    result["true"] = f"若{target_name}可被选择且符合条件"
+    result["false"] = f"若{target_name}不可被选择且符合条件"
     return result
 
 
@@ -310,6 +310,35 @@ def node_IfTargetSide(node):
         "main" : f"检查{target_name}的阵营（绝对阵营）",
         "true" : f"若其为{side_type}单位",
         "false" : f"若其不为{side_type}单位"
+    }
+
+# 检查相对阵营
+def node_IfDamageTargetSide(node):
+    source_name = anne_dictionary("target",node["_sourceType"])
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_sideMask"] == "ALLY":
+        return {
+            "main" : f"检查{source_name}与{target_name}的阵营关系（相对阵营）",
+            "true" : f"若双方之间为相同阵营",
+            "false" : f"若双方之间为对立/无关阵营"
+        }
+    elif node["_sideMask"] == "ENEMY":
+        return {
+            "main" : f"检查{source_name}与{target_name}的阵营关系（相对阵营）",
+            "true" : f"若双方之间为对立阵营",
+            "false" : f"若双方之间为相同/无关阵营"
+        }
+    elif node["_sideMask"] == "BOTH_ALLY_AND_ENEMY":
+        return {
+            "main" : f"检查{source_name}与{target_name}的阵营关系（相对阵营）",
+            "true" : f"若双方之间为相同/对立阵营",
+            "false" : f"若双方之间为无关阵营"
+        }
+    # 不为这三个就是强行按ALL来
+    return {
+        "main" : f"检查{source_name}与{target_name}的阵营（相对阵营）",
+        "true" : f"若双方均不为无阵营",
+        "false" : f"若双方有任一为无阵营"
     }
     
 # 是否属于干员

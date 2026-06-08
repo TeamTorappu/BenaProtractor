@@ -1,4 +1,10 @@
 {
+	"buff_name" : {
+		"empty" : "空白",
+		"enemy_rogue_football[unlock_seal]" : "“仅剩的创意”[解除封印]",
+		"agent_002_e_1" : "情报官_二模组_1",
+		"HealViaMaxHpRatio" : "生命复原_基于生命上限"
+	},
 	"buff_prefix" : {
 		"mainline12" : "惊霆无声",
 		"mainline14" : "慈悲灯塔",
@@ -131,6 +137,7 @@
 			"confinement" : "禁锢状态",
 			"bloodsucker" : "敌方_大君系列",
 			"fotball" : "足球",
+			"sui" : "岁",
 			"" : "敌方"
 		},
 		"trap" : {
@@ -934,6 +941,7 @@
 		"rupture" : "创伤",
 		"bomb" : "炸弹",
 		"boom" : "爆炸",
+		"seal" : "封印",
 		"wait" : "等待",
 		"highland" : "高地",
 		"lowland" : "低地",
@@ -1099,10 +1107,15 @@
 			}
 		},
 		"has" : {
+			"target" : "存在目标",
+			"ally" : "存在友方",
+			"character" : "角色",
+			"operator" : "角色",
 			"char" : {
 				"in" : {
-					"range" : "范围内有角色"
-				}
+					"range" : "范围内存在角色"
+				},
+				"" : "角色"
 			}
 		},
 		"skztzs" : "年代之刺",

@@ -18,9 +18,9 @@ def node_HealViaMaxHpRatio(node):
     if node["_ignoreHealFree"]:
         extra = "（无视禁疗）"
         if node["_skipModifierEvent"]:
-            extra = "（无视禁疗；类生命\"流失\"）"
+            extra = "（无视禁疗；生命复原）"
     elif node["_skipModifierEvent"]:
-        extra = "（类生命\"流失\"）"
+        extra = "（生命复原）"
 
     result = {
         "main" : "",

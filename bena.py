@@ -314,13 +314,17 @@ def deep_translate(catalogue,keys):
 
 # 尝试翻译buff的名字
 def translate_buff_name(buff_key: str):
+    # 直接匹配
+    read_value = bena_dictionary("buff_name",buff_key)
+    if read_value != "":
+        return read_value
+    
+    # 拆分翻译
     prefix = ""
     if buff_key.startswith("["): #大前缀，一般是[g]
         right = buff_key.find("]")+1
         prefix = buff_key[:right]
         buff_key = buff_key[right:]
-    if buff_key == "empty": # 使用率最高的模板，给点排面
-        return "空白"
     keys = []
     extras = []
     result = []
@@ -349,9 +353,7 @@ def translate_buff_name(buff_key: str):
     if len(keys) > 0:
         if keys[0] == "enemy": # 敌人类单位名称前缀
             keys.pop(0)
-            if len(keys) >= 2 and keys[0] == "rogue" and keys[1] == "football" : # 你是肉鸽单位吗？双持剑士：我觉得我是
-                result.append("仅剩的创意")
-            elif len(keys) >= 2 and keys[1] == "2" and keys[0]+"_"+keys[1] in ENEMY_NAMES: # 那种带_2的敌人名字，虽然一般不会存在
+            if len(keys) >= 2 and keys[1] == "2" and keys[0]+"_"+keys[1] in ENEMY_NAMES: # 那种带_2的敌人名字，虽然一般不会存在
                 result.append(ENEMY_NAMES[keys.pop(0)+"_"+keys.pop(0)])
             elif len(keys) >= 1 and keys[0] in ENEMY_NAMES: # 敌人名字
                 result.append(ENEMY_NAMES[keys.pop(0)])

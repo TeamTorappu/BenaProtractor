@@ -63,7 +63,7 @@ def analyze_FP(FP: dict):
 def analyze_damage(damage_data,prefix="",suffix=""):
     features = []
     # 伤害类型
-    damage_type = damage_data["_damageType"]
+    damage_type = damage_data["_damageType"] if "_damageType" in damage_data else "NONE"
     damage_type_name = anne_dictionary("damage_type",damage_type)
     # 攻击类型
     attack_type = "NONE"
@@ -83,6 +83,9 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     elif "_getCachedAtkFromBlackboard" in damage_data and damage_data["_getCachedAtkFromBlackboard"]:
         if "_cachedAtkKey" in damage_data:
             features.append(f"使用黑板中({damage_data['_cachedAtkKey']})作为缓存攻击力")
+    # 伤害类型覆盖
+    if "_damageTypeKey" in damage_data and damage_data["_damageTypeKey"] != None and damage_data["_damageTypeKey"] != "":
+        damage_type_name = f"优先使用黑板 [{damage_data['_damageTypeKey']}] 所记述的伤害类型"
     # 各种SharedFlags处理（两种写法都有，因此两种写法都判断一遍）
     if "_skipModifierEvent" in damage_data and damage_data["_skipModifierEvent"]:
         if "_considerUnhurtable" in damage_data and damage_data["_considerUnhurtable"]:
@@ -196,16 +199,13 @@ def analyze_buff(buff_data,full_information=False):
             features.append("持续时间：无限")
         elif buff_data["lifeTimeType"] == "LIMITED":
             if buff_data["durationKey"] != None and buff_data["durationKey"] != "none":
-                features.append(f"持续时间：{buff_data['durationKey']} 秒")
+                features.append(f"持续时间：[{buff_data['durationKey']}] 秒")
             elif buff_data["lifeTime"] == 0.0:
-                features.append("持续时间：0秒（即Buff开始时事件结束后立刻结束）")
+                features.append("持续时间：0秒（即Buff开始后，执行完一部分事件立刻结束）")
             else:
-                seconds = math.floor(buff_data['lifeTime'])
-                ticks = math.ceil((buff_data['lifeTime'] % 1.0) * 30)
-                if seconds > 0:
-                    features.append(f"持续时间：{str(seconds)}秒 {str(ticks)}帧")
-                else:
-                    features.append(f"持续时间：{str(ticks)}帧")
+                seconds = round(buff_data['lifeTime'],3)
+                ticks = math.ceil(buff_data['lifeTime'] * 30)
+                features.append(f"持续时间：{str(seconds)}秒（{str(ticks)}帧）")
     else: # 简短时间
         if buff_data["lifeTimeType"] == "INFINITY":
             features.append("永久")
@@ -215,12 +215,8 @@ def analyze_buff(buff_data,full_information=False):
             elif buff_data["lifeTime"] == 0.0:
                 features.append("瞬间效果")
             else:
-                seconds = math.floor(buff_data['lifeTime'])
-                ticks = math.ceil((buff_data['lifeTime'] % 1.0) * 30)
-                if seconds > 0:
-                    features.append(f"持续{str(seconds)}秒 {str(ticks)}帧")
-                else:
-                    features.append(f"持续{str(ticks)}帧")
+                seconds = round(buff_data['lifeTime'],3)
+                features.append(f"持续{str(seconds)}秒")
 
     # 异常效果家族与属性增减
     attrs = buff_data["attributes"]
@@ -545,9 +541,16 @@ def analyze_target_options(option,relative_side=True):
     # 无视无法选择
     if option["ignoreTargetFree"]:
         if option["onlyIgnoreSomeOfTargetFreeCase"]:
-            abnormal_flag = anne_dictionary("abnormal",option["abnormalFlag"])
-            abnormal_combo = anne_dictionary("abnormal",option["abnormalCombo"])
-            descriptions.append("无视"+abnormal_flag+"/"+abnormal_combo)
+            if option["abnormalFlag"] != "E_NUM":
+                abnormal_flag = anne_dictionary("abnormal",option["abnormalFlag"])
+                if option["abnormalCombo"] != "E_NUM":
+                    abnormal_combo = anne_dictionary("abnormal",option["abnormalCombo"])
+                    descriptions.append("无视"+abnormal_flag+"/"+abnormal_combo)
+                else:
+                    descriptions.append("无视"+abnormal_flag)
+            if option["abnormalCombo"] != "E_NUM":
+                abnormal_combo = anne_dictionary("abnormal",option["abnormalCombo"])
+                descriptions.append("无视"+abnormal_combo)
         else:
             descriptions.append("无视无法选择")
     # 无视孤立
