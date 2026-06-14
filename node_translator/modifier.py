@@ -208,3 +208,10 @@ def node_SetIgnoreMissFlag(node):
     elif node["_ignoreMissFlag"] == "MAGICAL":
         return {"main" : "给予本次调整值一个“若为法术，则可以无视闪避”的IgnoreMissFlag"}
     return {"main" : "给予本次调整值一个“可以无视闪避”的IgnoreMissFlag"}
+
+# 修改调整值的来源
+def node_ChangeModifierSource(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    if node["_targetType"] == "BUFF_SOURCE" or node["_targetType"] == "BUFF_OWNER":
+        target_name = "本Buff的"+target_name
+    return {"main" : f"将本次调整值的来源覆写为{target_name}"}

@@ -3,9 +3,9 @@ import sys
 import urllib.request
 
 # Github仓库的根文件夹
-WEB = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/zh_CN/gamedata/"
+#WEB = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/zh_CN/gamedata/"
 #WEB = "https://torappu.prts.wiki/gamedata/latest/"
-#WEB = "https://raw.githubusercontent.com/ArknightsAssets/ArknightsGamedata/refs/heads/master/cn/gamedata/"
+WEB = "https://raw.githubusercontent.com/ArknightsAssets/ArknightsGamedata/refs/heads/master/cn/gamedata/"
 # 需要下载的文件
 # 以简体中文版数据为准（通常会是最新的）
 FILES = {
