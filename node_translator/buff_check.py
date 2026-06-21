@@ -5,12 +5,14 @@ from translator import anne_dictionary
 
 # 检查是否持有某Buff
 def node_CheckContainsBuff(node):
-    # 未解析参数：_loadFromBlackboard _checkSourceHost
+    # 未解析参数：_checkSourceHost
     target_name = anne_dictionary("target",node["_targetType"])
     condition = f"检查{target_name}是否"
     true_flag = "若其持有该Buff"
     false_flag = "若其没有该Buff"
-    if node["isAND"]: # 与模式
+    if node["_loadFromBlackboard "]: # 定向甄选
+        condition += f"持有黑板 [buff_key] 记载的buff"
+    elif node["isAND"]: # 与模式
         if len(node["_buffKeys"]) > 1:
             buffs = '、'.join([f"<{key}>" for key in node['_buffKeys']])
             if node["_checkBuffSource"]:

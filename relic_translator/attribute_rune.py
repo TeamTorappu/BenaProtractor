@@ -42,7 +42,7 @@ def rogue_layer_char_attribute_mul(item_type,blackboard):
         if is_attribute_key(key):
             name = anne_dictionary("attribute",key.upper())
             num = to_delta_percent(value) # +/-X%
-            modifiers.append(f"{name}+{num}")
+            modifiers.append(f"{name}{num}")
     # 选择器目标处理
     selector = analyze_selector(blackboard,"我方")
     hint = "（均为藏品符文）" if len(modifiers) > 1 else "（藏品符文）"
