@@ -201,7 +201,7 @@ def node_AOEDamage(node):
         selector = f"对位于{target_name}周边{range_id}范围的{target_options['main']}"
         if "description" in target_options:
             features.append(target_options["description"])
-        features.append("中点判定")
+        features.append("格子判定")
     result = {
         "main" : selector + "分别造成" + damage + damage_name
     }

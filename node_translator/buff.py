@@ -222,6 +222,12 @@ def node_CreateBuffInRange(node):
         result["description"] += "，且均为本Buff的附属Buff"
     if node["_excludeTarget"]:
         result["description"] += f"；不包含{target_name}本身"
+    if node["_useRadius"]:
+        result["description"] += f"；中点判定"
+    elif node["_useRangeToShow"] or node["_useAttackRange"] or node["_useCurrentModeRange"]:
+        result["description"] += f"；格子判定"
+    elif not node["_useGlobalRange"] and not node["_checkGiantTrapAllLocateTiles"] and node["_rangeId"] != None and node["_rangeId"] != "":
+        result["description"] += f"；格子判定"
     if node["_alwaysIncudeCurAtkTarget"]:
         result["description"] += f"；始终包含当前攻击的主目标"
     if node["_alwaysIncludeSourceBlocker"]:

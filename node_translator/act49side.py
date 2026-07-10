@@ -66,9 +66,15 @@ def node_Act49SideCheckWordTileBuildable(node):
 # 检查所在字格地块是否为某字
 def node_Act49SideCheckCharacterTileType(node):
     target_name = anne_dictionary("target",node["_targetType"])
+    if node["_checkAnyTile"]:
+        return {
+            "main" : f"检查{target_name}所在的地块",
+            "true" : "若该地块是字格地块",
+            "false" : "若该地块不是字格地块"
+        }
     if node["_tileType"] == "None":
         return {
-            "main" : f"检查{target_name}所在的字格地块上的字",
+            "main" : f"检查{target_name}所在的地块",
             "true" : "若该地块不是字格地块",
             "false" : "若该地块是字格地块"
         }

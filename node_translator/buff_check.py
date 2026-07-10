@@ -10,7 +10,7 @@ def node_CheckContainsBuff(node):
     condition = f"检查{target_name}是否"
     true_flag = "若其持有该Buff"
     false_flag = "若其没有该Buff"
-    if node["_loadFromBlackboard "]: # 定向甄选
+    if node["_loadFromBlackboard"]: # 定向甄选
         condition += f"持有黑板 [buff_key] 记载的buff"
     elif node["isAND"]: # 与模式
         if len(node["_buffKeys"]) > 1:
