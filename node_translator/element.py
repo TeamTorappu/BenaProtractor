@@ -55,7 +55,7 @@ def node_ApplyElementDamage(node):
 
 # 检查元素爆发类型
 def node_FilterEPBreakRecoveryType(node):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = anne_dictionary("target",node["_target"])
     result = {}
     if node["_readTypeFromBb"] and node["_bbKey"] != "":
         result["main"] = f"检查{target_name}的元素爆发是否为黑板 [{node['_bbKey']}] 记述的类型"
