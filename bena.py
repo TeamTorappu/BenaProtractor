@@ -31,7 +31,7 @@ ROGUELIKE_TOPIC_TABLE = {}
 ROGUELIKE_TOPIC_TABLE_PATH = "./tables/roguelike_topic_table.json"
 GLOBAL_BUFF_KEYS = []
 GLOBAL_BUFF_DUMMY = {}
-GLOBAL_BUFF_DUMMY_PATH = "./tables/global_buff_dummy.json"
+GLOBAL_BUFF_DUMMY_PATH = "./dummy/global_buff_dummy.json"
 
 print("[贝娜]我叫贝娜，来找一个出门就忘了回家的笨蛋。听说她还有些活要干，没办法，我也在这陪她一会好了。")
 

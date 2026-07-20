@@ -3,7 +3,22 @@
 		"empty" : "空白",
 		"enemy_rogue_football[unlock_seal]" : "“仅剩的创意”[解除封印]",
 		"agent_002_e_1" : "情报官_二模组_1",
-		"HealViaMaxHpRatio" : "生命复原_基于生命上限"
+		"HealViaMaxHpRatio" : "生命复原_基于生命上限",
+		"mcnist_s_3_projectile_trigger" : "机械师_三技能_弹道_触发",
+		"mcnist_block_damage_token" : "机械师_抵挡伤害_召唤物",
+		"mcnist_block_damage" : "机械师_抵挡伤害",
+		"mcnist_s_3_finish" : "机械师_三技能_退场",
+		"mcnist_s_3_cost" : "机械师_三技能_费用",
+		"mcnist_e_002_shield" : "机械师_二模组_盾",
+		"mcnist_e_002_trait_atk" : "机械师_二模组_特性_攻击",
+		"mcnist_s_3_token" : "机械师_三技能_召唤物",
+		"mcnist_s_3_projectile_mode" : "机械师_三技能_弹道_模式",
+		"mcnist_s_3_projectile_real" : "机械师_三技能_弹道_真",
+		"mcnist_s_3_projectile_token" : "机械师_三技能_弹道_召唤物",
+		"mcnist_s_3_projectile" : "机械师_三技能_弹道",
+		"mcnist_s_2_shield" : "机械师_二技能_盾",
+		"mcnist_s_2_mode" : "机械师_二技能_模式",
+		"mcnist_t_2" : "机械师_二天赋"
 	},
 	"buff_prefix" : {
 		"mainline12" : "惊霆无声",

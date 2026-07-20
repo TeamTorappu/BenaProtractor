@@ -27,10 +27,14 @@ def prepare_files():
         os.mkdir("./tables")
     
     # 遍历所需文件
+    first_download = True
     for name, url in FILES.items():
         if not os.path.exists("./tables/"+name):
-            print("[贝娜]没找到本地的 "+name)
-            print("[贝娜]尝试从网络下载...（如果下载较慢，建议尝试启用网络代理（俗称梯子））")
+            if not first_download:
+                first_download = True
+                print("[贝娜]缺少所需文件，即将开始下载明日方舟游戏数据")
+                print("[贝娜]如果发现下载较慢/失败，建议尝试启用网络代理（俗称梯子）后重新下载")
+            print("[贝娜]尝试从网络下载 " + name)
             try:
                 urllib.request.urlretrieve(WEB+url,"./tables/"+name,_progress)
                 print("")

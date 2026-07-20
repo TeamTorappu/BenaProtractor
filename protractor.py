@@ -32,11 +32,11 @@ class Protractor:
         self.control_panel = ttk.Frame(self.frame,width=200)
         self.control_panel.pack(fill="y",side="left")
         # 顶边菜单
-        self.menu_bar = tk.Menu(self.window)
-        self.window.config(menu=self.menu_bar)
-        self.menu_load = tk.Menu(self.menu_bar, tearoff=0)
-        self.menu_bar.add_cascade(label="加载", menu=self.menu_load)
-        self.menu_load.add_command(label="Buff模板")
+        #self.menu_bar = tk.Menu(self.window)
+        #self.window.config(menu=self.menu_bar)
+        #self.menu_load = tk.Menu(self.menu_bar, tearoff=0)
+        #self.menu_bar.add_cascade(label="加载", menu=self.menu_load)
+        #self.menu_load.add_command(label="Buff模板")
         # 目录
         self.directory_items = []
         self.directory_index = 0 # 用于为每个目录编号
