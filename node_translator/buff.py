@@ -261,6 +261,17 @@ def node_CreateBuffToToken(node):
     result["main"] = f"为{source_name}{target_num}{'且'.join(conditions)}召唤物创建{buff_name}：" + result["main"]
     return result
 
+# 为特定职业的所有单位创建Buff
+def node_CreateBuffToCertainProfession(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    professions = [anne_dictionary("profession",p) for p in node["_professionMask"]]
+    result = analyze_buff(node["_buffData"])
+    buff_name = "Buff"
+    if node["_isDerivedBuff"]: # 属于附属Buff
+        buff_name = "本Buff的附属Buff"
+    result["main"] = f"为所有{'/'.join(professions)}职业的单位创建{buff_name}：" + result["main"]
+    return result
+
 # 使用能力选择器创建Buff
 def node_CreateBuffUseAbilitySelector(node):
     # 未解析参数：_finishDerivedBuffIfParentFinish

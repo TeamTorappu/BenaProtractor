@@ -86,3 +86,21 @@ def node_CheckTargetEpIsFull(node):
             "true" : f"若其所有元素值均 ≥ 其元素上限且不处于\"爆条\"状态",
             "false" : f"若其任何一项元素值 < 其元素上限，或其处于\"爆条\"状态"
         }
+
+# 损伤倍率
+def node_EpDamageScale(node):
+    # 未解析参数：_isStackable _isValidStackCnt
+    features = []
+    if node["_filterApplyWay"] and node["_applyWayFilter"] != None and node["_applyWayFilter"] != "":
+        apply_way = anne_dictionary("apply_way",node["_applyWayFilter"])
+        features.append("施加途径为"+apply_way)
+    if node["_filterElementType"] and node["_elementType"] != None and node["_elementType"] != "":
+        element = anne_dictionary("element",node["_elementType"]) + "损伤"
+        features.append("元素类型为"+apply_way)
+
+    damage_scale = " (1 - [ep_damage_scale]) " if node["_isOneMinus"] else " [ep_damage_scale] "
+    action = "降低" if node["_isOneMinus"] else "提升"
+    if len(features) > 0:
+        return {"main" : f"若" + "且".join(features) + f"，令本次损伤{action}至{damage_scale}倍"}
+    else:
+        return {"main" : f"令本次损伤{action}至{damage_scale}倍"}
