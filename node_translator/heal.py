@@ -24,16 +24,16 @@ def node_HealViaMaxHpRatio(node):
 
     result = {
         "main" : "",
-        "description" : "治疗来源为Buff的来源；决定治疗量的生命值比例读取自黑板[hp_ratio]"
+        "description" : "治疗来源为Buff的来源"
     }
     if node["_healTarget"] == "BUFF_SOURCE": # 这种情况下是否取目标的生命值已经不重要了
-        result["main"] = f"来源恢复相当于其自身最大生命值一定比例的生命值{extra}"
+        result["main"] = f"Buff来源恢复相当于自身最大生命值一定比例的生命值{extra}"
     else:
         target_name = anne_dictionary("target",node["_healTarget"])
-        if node["_getMaxHpFromTarget"]:
-            result["main"] = f"{target_name}恢复相当于其自身最大生命值一定比例的生命值{extra}"
+        if node["_getMaxHpFromTarget"]: # 开了这个时以自己的最大生命值为准（怎么和参数名字反的）
+            result["main"] = f"{target_name}恢复 Buff来源最大生命值 × [hp_ratio] 点生命值{extra}"
         else:
-            result["main"] = f"{target_name}恢复相当于来源最大生命值一定比例的生命值{extra}"
+            result["main"] = f"{target_name}恢复相当于 其最大生命值 × [hp_ratio] 点生命值{extra}"
     return result
 
 # 基于伤害的治疗
