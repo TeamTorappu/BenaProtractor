@@ -323,3 +323,23 @@ def node_AssignGridPositionToBlackboard(node):
             "main" : f"将{target_name}所在地块的网格坐标记录至 [{node['_gridRowKey']}] 与 [{node['_gridColKey']}] 中",
             "description" : f"[{node['_gridRowKey']}] 为列，[{node['_gridColKey']}] 为行"
         }
+
+# 将当前生命值/生命上限/生命比例记录至黑板
+def node_RecordCurrentHpRatio(node):
+    owner_name = anne_dictionary("target",node["_ownerType"])
+    record_type = "当前生命值" if node["_recordType"] == "hp" else ("生命上限" if node["_recordType"] == "maxHp" else "生命比例")
+    # _needOffset 和 [hp_ratio_offset] 似乎是让一阶段的生命比例写成1.5之类的格式模拟“多血条”？
+    if node["_needOffset"]:
+        return {
+            "main" : f"将{owner_name}的{record_type}数值，加上 [hp_ratio_offset] 后，记录至黑板 [{node['_recordKey']}]"
+        }
+    return {
+        "main" : f"将{owner_name}的{record_type}数值记录至黑板 [{node['_recordKey']}]"
+    }
+
+# 将当前战斗计时记录至黑板
+def node_AssignPlayTimeToBB(node):
+    return {
+        "main" : f"将当前的战斗计时记录至黑板 [{node['_blackboardKey']}]",
+        "description" : "战斗计时为从战斗开始到现在的时间，单位为秒，上限为10000"
+    }

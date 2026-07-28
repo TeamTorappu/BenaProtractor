@@ -482,7 +482,10 @@
 		"MEDIC" : "医疗",
 		"SPECIAL" : "特种",
 		"TOKEN" : "召唤物",
-		"TRAP" : "装置"
+		"TRAP" : "装置",
+		"ALL" : "所有",
+		"CHARACTER" : "干员",
+		"WARRIOR, SNIPER, TANK, MEDIC, SUPPORT, CASTER, SPECIAL, PIONEER" : "干员"
 	},
 	"sub_profession" : {
 		"notchar1" : "干员附带单位",
@@ -616,7 +619,8 @@
 		"act25side_extra" : "\"孤星小游戏关卡\"",
 		"main_12" : "\"十二章\"",
 		"main_13" : "\"十三章\"",
-		"water" : "\"水地形\""
+		"water" : "\"水地形\"",
+		"savage" : "\"居民据点\""
 	},
 	"mount_point" : {
 		"FOOT" : "中心(0号)",
