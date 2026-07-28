@@ -1254,7 +1254,7 @@
 		"levitateunbalancemasslossenter" : "进入浮空/失衡/失重时",
 		"name-cache" : "名称缓存",
 		"loss" : {
-			"hp" : "所有人_损失生命值"
+			"hp" : "损失生命值"
 		},
 		"from" : {
 			"other" : {
