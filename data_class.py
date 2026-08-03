@@ -188,6 +188,17 @@ class RogueItem:
             self.display_type = "盒内的钱" # 这个没有数据，不需要展示
             #self.display_name += "(盒内)"
             self.hidden = True # 隐藏
+        elif self.type == "MAX_WEIGHT":
+            self.display_type = "容量"
+        elif self.type == "LEGACY":
+            self.display_type = "襁褓"
+        elif self.type == "SCRAP":
+            self.display_type = "零件"
+        elif self.type == "NODE_BUOY":
+            self.display_type = "节点强化"
+        elif self.type == "CHARACTER":
+            self.display_type = "应急干员"
+            self.hidden = True # 隐藏
         elif self.type in RESOURCE_TYPES:
             self.display_type = "资源"
         else:

@@ -615,6 +615,17 @@
 	},
 	"group_tag" : {
 	},
+	"rarity" : {
+		"TIER_1" : "1星",
+		"TIER_2" : "2星",
+		"TIER_3" : "3星",
+		"TIER_4" : "4星",
+		"TIER_5" : "5星",
+		"TIER_6" : "6星",
+		"TIER_3,TIER_4,TIER_5,TIER_6" : "3星以上",
+		"TIER_4,TIER_5,TIER_6" : "4星以上",
+		"TIER_5,TIER_6" : "5星以上"
+	},
 	"map_tag" : {
 		"act25side_extra" : "\"孤星小游戏关卡\"",
 		"main_12" : "\"十二章\"",
@@ -664,6 +675,39 @@
 		"tile_dygmny_2" : "化境地面(不可部署)",
 		"tile_dygmny_3" : "化境高台",
 		"tile_character" : "字格"
+	},
+	"rogue_zone" : {
+		"zone_1" : "第一层",
+		"zone_2" : "第二层",
+		"zone_3" : "第三层",
+		"zone_4" : "第四层",
+		"zone_5" : "第五层",
+		"zone_6" : "第六层",
+		"zone_7" : "第七层",
+		"zone_4_1" : "特殊第四层"
+	},
+	"rogue_stage" : {
+		"ro6_c_1" : "ISW-NO 血夜回魂",
+		"ro6_c_1_b" : "ISW-NO 毛绒游戏",
+		"ro6_c_1_c" : "ISW-NO 在劫难逃",
+		"ro6_c_2" : "ISW-NO 咩的朋友",
+		"ro6_c_3" : "ISW-NO 外显尖牙",
+		"ro6_c_4" : "ISW-NO 一视同仁",
+		"ro6_c_5" : "ISW-NO “闹乐”",
+		"ro6_c_6" : "ISW-NO “纵怒”",
+		"ro6_c_7" : "ISW-NO “灭身”",
+		"ro6_b_1_b" : "ISW-NO 哀悼铁腕",
+		"ro6_b_2_b" : "ISW-NO 赤金厄运",
+		"ro6_b_3_b" : "ISW-NO 冰冷流亡",
+		"ro6_b_4_b" : "ISW-DF 痛苦将息",
+		"ro6_t_8" : "ISW-NO 强买强卖",
+		"ro6_t_8_b" : "ISW-NO 强买强卖(异格)",
+		"ro6_t_8_c" : "ISW-NO 强买强卖(再旅)",
+		"ro6_t_9" : "ISW-NO 进退趋同",
+		"ro6_t_9_b" : "ISW-NO 进退趋同(异格)",
+		"ro6_t_9_c" : "ISW-NO 进退趋同(再旅)",
+		"ro6_t_10" : "ISW-NO 枯枝",
+		"ro6_t_11" : "ISW-NO 败叶"
 	},
 	"act49side_char" : {
 		"None" : "不是字格",

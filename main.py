@@ -22,7 +22,7 @@ LOAD_TYPES = {
     "rogue_6" : "树海肉鸽物品（藏品、零件等）"
 }
 
-DEFAULT_LOAD = ["buff","buff_template","rogue_5"]
+DEFAULT_LOAD = ["buff","buff_template","global_buff","rogue_6"]
 
 # 直接打开
 def start_with(loads):
@@ -49,6 +49,9 @@ def start_with(loads):
         PROTRACTOR.load_directory("rogue_item",bena.ROGUELIKE_TOPIC_TABLE)
     if "rogue_5" in loads:
         bena.load_roguelike_topic_table(5)
+        PROTRACTOR.load_directory("rogue_item",bena.ROGUELIKE_TOPIC_TABLE)
+    if "rogue_6" in loads:
+        bena.load_roguelike_topic_table(6)
         PROTRACTOR.load_directory("rogue_item",bena.ROGUELIKE_TOPIC_TABLE)
 
 # 读取缓存

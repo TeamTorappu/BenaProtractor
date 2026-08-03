@@ -5,7 +5,7 @@ import math
 
 from bena import ask_bena, ask_bena_character
 from translator import anne_dictionary
-from .analyzer import analyze_item_reward, to_delta, analyze_timing, analyze_item, to_delta_percent
+from .analyzer import analyze_item_reward, analyze_profession, analyze_sub_profession, to_delta, analyze_timing, analyze_item, to_delta_percent
 
 # 关卡内的可部署人数上限增减
 def rogue_level_char_limit_add(item_type,blackboard):
@@ -17,6 +17,8 @@ def rogue_level_char_limit_add(item_type,blackboard):
 
 # 立即奖励
 def rogue_immediate_reward(item_type,blackboard):
+    if blackboard["id"] == "rogue_6_hp" and blackboard["count"] == 0: # 神秘0个目标生命值
+        return {"main" : "占位效果"}
     timing = analyze_timing(item_type,blackboard)
     reward = analyze_item_reward(blackboard)
     reward["main"] = timing + reward["main"]
@@ -29,14 +31,14 @@ def rogue_immediate_cost(item_type,blackboard):
     if item != None:
         if item.type == "COPPER": # 界园钱的特殊处理
             return {
-                "main": f"{timing}让钱盒内的 {item.display_name} 变为大炎通宝。",
-                "link": blackboard['id']
+                "main" : f"{timing}让钱盒内的 {item.display_name} 变为大炎通宝。",
+                "link" : blackboard['id']
             }
         return {
-            "main": f"{timing}消耗玩家{item.display_type} {item.display_name} × {math.floor(blackboard.get('count',0))}",
-            "link": blackboard['id']
+            "main" : f"{timing}消耗玩家{item.display_type} {item.display_name} × {math.floor(blackboard.get('count',1))}",
+            "link" : blackboard['id']
         }
-    return {"main": f"{timing}消耗玩家 {blackboard['id']} × {math.floor(blackboard.get('count',0))}"}
+    return {"main" : f"{timing}消耗玩家 {blackboard['id']} × {math.floor(blackboard.get('count',0))}"}
 
 # 开局额外招募券奖励
 def rogue_initial_recruit_reward(item_type,blackboard):
@@ -44,26 +46,21 @@ def rogue_initial_recruit_reward(item_type,blackboard):
     reward["main"] = "初始招募时，额外" + reward["main"]
     return reward
 
-# 进入特定层数发放奖励
-def rogue_zone_into_reward(item_type,blackboard):
-    timing = analyze_timing(item_type,blackboard)
+# 下次开局奖励
+def rogue_init_gift(item_type,blackboard):
     reward = analyze_item_reward(blackboard)
-    zone = blackboard["zone"]
-    zone_name = "???层"
-    if zone == "zone_2":
-        zone_name = "第二层"
-    elif zone == "zone_3":
-        zone_name = "第三层"
-    elif zone == "zone_4":
-        zone_name = "第四层"
-    elif zone == "zone_5":
-        zone_name = "第五层"
-    elif zone == "zone_6":
-        zone_name = "第六层"
-    elif zone == "zone_7":
-        zone_name = "第七层"
-    reward["main"] = timing + f"进入{zone_name}时" + reward["main"]
+    reward["main"] = "下次开始探索时，额外" + reward["main"]
     return reward
+
+# 物品数量覆盖
+def rogue_item_cover_set(item_type,blackboard):
+    item = analyze_item(blackboard)
+    if item != None:
+        return {
+            "main" : f"让玩家的{item.display_type} {item.display_name} 数量增加/减少至 {math.floor(blackboard.get('count',1))}",
+            "link" : blackboard['id']
+        }
+    return {"main" : f"将玩家的 {blackboard['id']} 数量增加/减少至{math.floor(blackboard.get('count',1))}"}
 
 # 进入岁兽残识发放奖励（仅一次）
 def rogue_secret_into_reward_once(item_type,blackboard):
@@ -137,3 +134,44 @@ def rogue_battle_extra_reward(item_type,blackboard):
 def rogue_extra_gold_from_chest(item_type,blackboard):
     trap_name = ask_bena_character(blackboard["id"])
     return {"main" : f"战斗中每击破一个 {trap_name}，结束后就将给予 源石锭 × {math.floor(blackboard.get('count',0))}"}
+
+# 特定职业招募希望减少
+def rogue_recruit_cost(item_type,blackboard):
+    rarity = anne_dictionary("rarity",blackboard["rarity"])
+    professions = analyze_profession(blackboard["profession"])
+    delta = ("+" + int(blackboard["delta"])) if blackboard["delta"] > 0 else (str(int(blackboard["delta"])))
+    return {"main" : f"招募{rarity}的{professions}的希望{delta}"}
+
+# 特定职业进阶希望减少
+def rogue_upgrade_cost(item_type,blackboard):
+    rarity = anne_dictionary("rarity",blackboard["rarity"])
+    professions = analyze_profession(blackboard["profession"])
+    delta = ("+" + int(blackboard["delta"])) if blackboard["delta"] > 0 else (str(int(blackboard["delta"])))
+    return {"main" : f"进阶{rarity}的{professions}的希望{delta}"}
+
+# 特定子职业招募希望减少
+def rogue_recruit_cost_sub_profession(item_type,blackboard):
+    rarity = anne_dictionary("rarity",blackboard["rarity"])
+    sub_professions = analyze_sub_profession(blackboard["sub_profession"])
+    delta = ("+" + int(blackboard["delta"])) if blackboard["delta"] > 0 else (str(int(blackboard["delta"])))
+    return {"main" : f"招募{rarity}的{sub_professions}的希望{delta}"}
+
+# 特定子职业进阶希望减少
+def rogue_upgrade_cost_sub_profession(item_type,blackboard):
+    rarity = anne_dictionary("rarity",blackboard["rarity"])
+    sub_professions = analyze_sub_profession(blackboard["sub_profession"])
+    delta = ("+" + int(blackboard["delta"])) if blackboard["delta"] > 0 else (str(int(blackboard["delta"])))
+    return {"main" : f"进阶{rarity}的{sub_professions}的希望{delta}"}
+
+# 立刻招募
+def rogue_immediate_recruit(item_type,blackboard):
+    result = {
+        "main" : "立刻以临时招募的形式招募以下干员：",
+        "children" : []
+    }
+    for character in blackboard["char_list"].split(","):
+        character_name = ask_bena_character(character)
+        if character_name != character:
+            character_name += "（" + character + "）"
+            result["children"].append({"main" : character_name})
+    return result

@@ -1216,6 +1216,8 @@
 		"whenmanulskill" : "触发手动触发技能时",
 		"whenattack" : "攻击时",
 		"levitateCore" : "浮空核心",
+		"levitateAndMassLoss" : "浮空与失重",
+		"LevitateAndMassLoss" : "浮空与失重",
 		"apoptosis" : "年代凋亡",
 		"addon" : {
 			"element" : {
