@@ -2,7 +2,7 @@ import json
 import math
 import os
 
-from bena import ask_bena_enemy, ask_bena
+from bena import ask_bena_character, ask_bena_enemy, ask_bena
 from translator import anne_dictionary, is_anne_key
 GAP = 0.000000001
 
@@ -130,7 +130,14 @@ def analyze_selector(blackboard,prefix="",suffix=""):
     # 职业筛选处理
     if "selector.profession" in blackboard:
         target_name = analyze_profession(blackboard["selector.profession"])
-    # 敌人ID筛选
+    # 角色类ID筛选
+    if "selector.char" in blackboard:
+        char_name = ask_bena_character(blackboard["selector.char"])
+        if char_name != blackboard["selector.char"]:
+            target_name = f" {char_name}（{blackboard['selector.char']}）"
+        else:
+            target_name = f" {blackboard['selector.char']} "
+    # 敌人类ID筛选
     if "selector.enemy" in blackboard:
         enemy_name = ask_bena_enemy(blackboard["selector.enemy"])
         if enemy_name != blackboard["selector.enemy"]:

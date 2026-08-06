@@ -378,7 +378,7 @@ def translate_whole_buff(buff: Buff):
     return translation
 
 # 翻译一整个GlobalBuff
-def translate_whole_global_buff(gbuff: GlobalBuff,extra_target_options: dict = {}):
+def translate_whole_global_buff(gbuff: GlobalBuff):
     print("[安妮]尝试翻译GlobalBuff "+gbuff.buff_key)
     translation = {
         "main" : gbuff.buff_key,
@@ -394,10 +394,6 @@ def translate_whole_global_buff(gbuff: GlobalBuff,extra_target_options: dict = {
         translation["children"].append({"main" : "覆写镜头特效："+gbuff.prefab_data["_overrideCameraEffect"]})
     # 额外目标选项预处理
     target_options = gbuff.target_options
-    if len(extra_target_options.keys()) > 0:
-        target_options = target_options.copy()
-        for key, value in extra_target_options.items():
-            target_options[key] = value
     # 目标筛选逻辑
     target = "这些单位"
     if target_options["enableAdvancedOptions"]: # 复杂筛选
@@ -423,7 +419,8 @@ def translate_whole_global_buff(gbuff: GlobalBuff,extra_target_options: dict = {
         elif side != "ALL":
             conditions.append(side)
         if target_options["targetCategory"] != "DEFAULT":
-            conditions.append(anne_dictionary("entity_category",target_options["targetCategory"]))
+            entity_catergory = target_options["targetCategory"].split(", ")
+            conditions.append("/".join([anne_dictionary("entity_category",cate) for cate in entity_catergory]))
         if target_options["targetMotion"] != "ALL":
             conditions.append(anne_dictionary("motion",target_options["targetMotion"]))
         if len(conditions) > 0:
