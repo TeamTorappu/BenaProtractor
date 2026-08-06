@@ -296,20 +296,6 @@ def node_AssignManhattanDistanceToBB(node):
         "main" : f"计算{source_name}与{target_name}两者所在格之间的曼哈顿距离（整数），记录至黑板 [{node['_blackboardKey']}]"
     }
 
-# 将部署方向记录到黑板上
-def node_AssignDirectionToBB(node):
-    target_name = anne_dictionary("target",node["_targetType"])
-    if node['_isReverse']:
-        return {
-            "main" : f"将{target_name}朝向的相反方向记录至黑板 [{node['_blackboardKey']}]",
-            "description" : "即 上=2 右=3 下=0 左=1；若为\"无朝向\"，记录4"
-        }
-    else:
-        return {
-            "main" : f"将{target_name}朝向的方向记录至黑板 [{node['_blackboardKey']}]",
-            "description" : "即 上=0 右=1 下=2 左=3；若为\"无朝向\"，记录4"
-        }
-
 # 将所在地块的网格坐标记录到黑板上
 def node_AssignGridPositionToBlackboard(node):
     target_name = anne_dictionary("target",node["_targetType"])

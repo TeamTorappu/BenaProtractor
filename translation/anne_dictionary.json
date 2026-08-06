@@ -185,7 +185,9 @@
 		"ON_REACHED_TARGET" : "弹道抵达目的地时",
 		"ON_HIT_TILE" : "弹道击中地块时",
 		"ON_PROJECTILE_STOP" : "弹道停止时",
-		"ON_PROJECTILE_ELIMINATE" : "弹道被消除时"
+		"ON_PROJECTILE_ELIMINATE" : "弹道被消除时",
+		"ON_PROJECTILE_BORN" : "弹道诞生/脱手时",
+		"ON_PROJECTILE_TRIGGER" : "弹道每次触发时"
 	},
 	"on_event_priority" : {
 		"HIGHER_PRIORITY" : 2000,
@@ -273,6 +275,8 @@
 		"ATTRACTED" : "诱导",
 		"FEARED_PRIVATE" : "自惧",
 		"DOZE" : "小睡",
+		"TELEPORTED" : "被传送",
+		"GROUND_BOUND" : "缚地",
 		"SLEEPING" : "沉睡",
 		"SHELTERING" : "闭锁"
 	},
@@ -420,6 +424,12 @@
 		"SOUTH" : "北/西/东",
 		"WEST" : "北/南/东",
 		"EAST" : "北/南/西"
+	},
+	"direction_judge" : {
+		"OPPOSITE" : "相反",
+		"EQUAL" : "相同",
+		"VERTICAL" : "互相垂直",
+		"FACE_TARGET" : "FACE_TARGET（未翻译）"
 	},
 	"entity_category" : {
 		"NONE" : "无类型",

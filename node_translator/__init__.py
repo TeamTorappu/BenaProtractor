@@ -17,9 +17,11 @@ from .blackboard import *
 from .blackboard_check import *
 from .calculation import *
 from .check import *
+from .direction import *
 from .modifier import *
 from .state import *
 from .rebuild import *
+from .shield import *
 from .rogue import *
 from .util import *
 

@@ -44,6 +44,9 @@ def node_CreateCardBuff(node):
 
 # 结束CardBuff
 def node_FinishCardBuff(node):
-    return {
-        "main" : f"结束本Buff相关的CardBuff"
-    }
+    return {"main" : f"结束本Buff相关的CardBuff"}
+
+# 结束自己召唤物的特定CardBuff
+def node_FinishTokenCardBuffByKey(node):
+    source_name = anne_dictionary("target",node["_sourceType"])
+    return {"main" : f"结束{source_name}的召唤物的，名为 <{node['_cardBuffKey']}> 的CardBuff"}
