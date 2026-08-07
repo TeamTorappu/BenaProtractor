@@ -2,6 +2,7 @@
 # Buff类Node
 #----------------------------------------
 import math
+from bena import ask_bena_character, ask_bena_enemy
 from translator import anne_dictionary
 from .analyzer import analyze_target_options, analyze_buff
 
@@ -86,6 +87,20 @@ def node_CreateBuffToHost(node):
     if node["_isDerivedBuff"]: # 属于附属Buff
         buff_name = "本Buff的附属Buff"
     result["main"] = f"让{source_name}（召唤物）为其主人创建一个{buff_name}：" + result["main"]
+    return result
+
+# 向特定UID的单位创建Buff
+def node_CreateBuffToUnitId(node):
+    # 未解析参数：_recordCountKey
+    source_name = anne_dictionary("target",node["_source"])
+    result = analyze_buff(node['_buff'])
+    target_unit = ask_bena_enemy(node["_unitId"]) if node["_unitId"].startswith("enemy") else ask_bena_character(node["_unitId"])
+    target_unit += "(" + node["_unitId"] + ")"
+    if node["_useTargetOptions"] and node["_targetOptions"] != None:
+        target_option = analyze_target_options(node["_targetOptions"])
+        result["main"] = f"让{source_name}寻找所有{target_option}的 {target_unit} ，为它们创建Buff：" + result["main"]
+    else:
+        result["main"] = f"让{source_name}寻找所有 {target_unit} ，为它们创建Buff：" + result["main"]
     return result
 
 # 创建具有格式化名称的Buff
@@ -259,6 +274,17 @@ def node_CreateBuffToToken(node):
         if "link" in result:
             result["link"] = "buff." + node['_excludeBuffKey'] + "," + result["link"]
     result["main"] = f"为{source_name}{target_num}{'且'.join(conditions)}召唤物创建{buff_name}：" + result["main"]
+    return result
+
+# 为特定职业的所有单位创建Buff
+def node_CreateBuffToCertainProfession(node):
+    # 未解析参数：_finishDerivedBuffIfParentFinish
+    professions = [anne_dictionary("profession",p) for p in node["_professionMask"]]
+    result = analyze_buff(node["_buffData"])
+    buff_name = "Buff"
+    if node["_isDerivedBuff"]: # 属于附属Buff
+        buff_name = "本Buff的附属Buff"
+    result["main"] = f"为所有{'/'.join(professions)}职业的单位创建{buff_name}：" + result["main"]
     return result
 
 # 使用能力选择器创建Buff

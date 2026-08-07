@@ -99,6 +99,20 @@ def analyze_profession(profession_mask):
                 professions.append(anne_dictionary("profession",masked))
         return "、".join(["/".join(professions)+"干员"] + objects)
 
+# 子职业筛选的处理
+# 返回子职业的字符串。说明筛选的子职业以及“干员”
+def analyze_sub_profession(sub_profession_mask):
+    sub_profession_mask = sub_profession_mask.lower()
+    masked_list = [sub_profession_mask]
+    if "," in sub_profession_mask:
+        masked_list = sub_profession_mask.split(",")
+    elif "|" in sub_profession_mask:
+        masked_list = sub_profession_mask.split("|")
+    sub_professions = []
+    for masked in masked_list:
+        sub_professions.append(anne_dictionary("sub_profession",masked))
+    return "/".join(sub_professions)+"干员"
+
 # 整个选择器的处理
 # 返回选择器称呼的字符串。说明筛选的职业、部署类型以及“干员”和“召唤物”这样的称呼
 def analyze_selector(blackboard,prefix="",suffix=""):
@@ -146,7 +160,7 @@ def analyze_selector(blackboard,prefix="",suffix=""):
             target_name = f" {blackboard['selector.enemy']} "
         if "敌方" in prefix:
             prefix = prefix.replace("敌方","")
-    # 敌人ID反向筛选
+    # 敌人类ID反向筛选
     if "selector.enemy_exclude" in blackboard:
         enemy_excludes = []
         for enemy_id in blackboard["selector.enemy_exclude"].split("|"):

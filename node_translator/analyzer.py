@@ -99,7 +99,7 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     if "_instantKillLikeDamage" in damage_data and damage_data["_instantKillLikeDamage"]:
         features.append("类斩杀伤害")
     if "_isNotChangeableValue" in damage_data and damage_data["_isNotChangeableValue"]:
-        features.append("无法增/减/免伤/重设")
+        features.append("无法增/减/免/重设")
     elif "_forceDisplayDamageNum" in damage_data and damage_data["_forceDisplayDamageNum"]:
         features.append("强制红字")
     if "_noSource" in damage_data and damage_data["_noSource"]:

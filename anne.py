@@ -387,7 +387,9 @@ def translate_whole_global_buff(gbuff: GlobalBuff):
     if gbuff.display_name != gbuff.buff_key:
         translation["main"] = f"{gbuff.display_name}（{gbuff.buff_key}）"
     # 主类
-    if gbuff.prefab_data["m_Script"] != "GlobalBuff":
+    if gbuff.prefab_data["m_Script"] == "MonoBehaviour":
+        translation["children"].append({"main" : "类：未知"})
+    elif gbuff.prefab_data["m_Script"] != "GlobalBuff":
         translation["children"].append({"main" : "类："+gbuff.prefab_data["m_Script"]})
     side = "敌方" if gbuff.prefab_data["_sourceType"] == "ENEMY" else "我方"
     if gbuff.prefab_data["_overrideCameraEffect"] != "":
@@ -406,15 +408,11 @@ def translate_whole_global_buff(gbuff: GlobalBuff):
         side = gbuff.prefab_data["_sourceType"]
         target_side = target_options["targetSide"]
         conditions = []
-        if side == "ALLY" and target_side == "ALLY":
+        if (side == "ALLY" and target_side == "ALLY") or (side == "ENEMY" and target_side == "ENEMY"):
             conditions.append("我方")
-        elif side == "ENEMY" and target_side == "ALLY":
+        elif (side == "ENEMY" and target_side == "ALLY") or (side == "ALLY" and target_side == "ENEMY"):
             conditions.append("敌方")
-        elif side == "ALLY" and target_side == "ENEMY":
-            conditions.append("敌方")
-        elif side == "ENEMY" and target_side == "ENEMY":
-            conditions.append("我方")
-        elif side == "BOTH_ALLY_AND_ENEMY":
+        elif target_side == "BOTH_ALLY_AND_ENEMY":
             conditions.append("敌方与我方")
         elif side != "ALL":
             conditions.append(side)
@@ -458,9 +456,28 @@ def translate_whole_global_buff(gbuff: GlobalBuff):
                         _buff["children"].append(_child)
             deck_buffs_translation["children"].append(_buff)
         translation["children"].append(deck_buffs_translation)
+    # 额外Buff
+    if "_extraBuff" in gbuff.prefab_data and len(gbuff.prefab_data["_extraBuff"]) > 0:
+        buff_translation = {"main" : f"此外，在特定情况下，为所有{target}施加以下Buff：","children" : []}
+        buff_data = gbuff.prefab_data["_extraBuff"]
+        _buff = ANNE_NODE.translator.analyze_buff(buff_data)
+        if not buff_data["loadFromDB"] and buff_data["templateKey"] != "empty":
+            buff_template = ask_bena("buff_template",buff_data["templateKey"])
+            if buff_template != None:
+                if "children" not in _buff:
+                    _buff["children"] = []
+                buff_template_translation = translate_whole_buff_template(buff_template)
+                for _child in buff_template_translation["children"]:
+                    _buff["children"].append(_child)
+        buff_translation["children"].append(_buff)
+        translation["children"].append(buff_translation)
+    # Cardbuff
+    if "_cardbuffKey" in gbuff.prefab_data:
+        card_buff_translation = {"main" : f"为待部署区的{target}施加一个CardBuff：","children" : [{"main" : gbuff.prefab_data["_cardbuffKey"]}]}
+        translation["children"].append(card_buff_translation)
     # 剩下无法翻译的部分先直接展示
     for key, value in gbuff.prefab_data.items():
-        if key not in ["m_Script","_key","_options","_buffs","_deckBuffs","_sourceType","_overrideCameraEffect"]:
+        if key not in ["m_Script","_key","_options","_buffs","_deckBuffs","_extraBuff","_cardbuffKey","_sourceType","_overrideCameraEffect"]:
             translation["children"].append(key+" : "+str(value))
     return translation
 

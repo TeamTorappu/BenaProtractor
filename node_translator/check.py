@@ -434,6 +434,16 @@ def node_CheckMotionMode(node):
             "false" : f"若其当前为无行动类型的单位"
         }
 
+# 检查单位实体类型
+def node_CheckTargetCategory(node):
+    target_name = anne_dictionary("target",node["_targetType"])
+    entity_category = anne_dictionary("entity_category",node["_category"])
+    return {
+        "main" : f"检查{target_name}的实体类型",
+        "true" : f"若其为{entity_category}实体",
+        "false" : f"若其不为{entity_category}实体"
+    }
+
 # 追溯角色类单位死亡原因
 def node_FilterCharacterLastDeathReason(node):
     target_name = anne_dictionary("target",node["_characterType"])
@@ -493,14 +503,14 @@ def node_CheckConatinsMapTags(node):
         all_map_tag = "、".join(map_tags)
         return {
             "main" : f"检查当前关卡的地图TAG",
-            "true" : f"若当前关卡具有{all_map_tag}TAG中的任意一个",
-            "false" : f"若当前关卡均不具有{all_map_tag}TAG"
+            "true" : f"若当前关卡具有 {all_map_tag} 中的任意一个TAG",
+            "false" : f"若当前关卡均不具有 {all_map_tag} TAG"
         }
     elif len(map_tags) == 1:
         return {
             "main" : f"检查当前关卡的地图TAG",
-            "true" : f"若当前关卡具有{map_tags[0]}TAG",
-            "false" : f"若当前关卡没有{map_tags[0]}TAG"
+            "true" : f"若当前关卡具有 {map_tags[0]} TAG",
+            "false" : f"若当前关卡没有 {map_tags[0]} TAG"
         }
     else:
         return {

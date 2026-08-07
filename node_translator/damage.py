@@ -121,11 +121,11 @@ def node_FetchHpToBlackboard(node):
 # 根据最大生命值，制造一次伤害
 def node_DamageViaMaxHpRatio(node):
     target_name = anne_dictionary("target",node["_targetType"])
-    damage_num = "造成 来源最大生命值 × [hp_ratio] "
+    damage_num = "造成 其最大生命值 × [hp_ratio] "
     damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
     features = []
-    if node["_getMaxHpFromTarget"]:
-        damage_num = "造成 目标最大生命值 × [hp_ratio] "
+    if node["_getMaxHpFromTarget"]: # 开了这个时以自己的最大生命值为准（怎么和参数名字反的）
+        damage_num = "造成 Buff来源最大生命值 × [hp_ratio] "
     result = {
         "main" : f"对{target_name}造成{damage_num}的{damage_name}"
     }
