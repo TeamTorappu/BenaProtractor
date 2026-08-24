@@ -49,7 +49,10 @@ def node_AssignDamageValueToBlackboard(node):
         return {"main" : f"设 [value] 为 本次伤害的值 × [{node['_scaleKey']}]"}
     else:
         damage_type = anne_dictionary("damage_type",node["_damageType"])
-        return {"main" : f"将本次伤害值以{damage_type}伤害的形式，再次计算，设 [value] 为 所得的二次计算值（类型不对则为0）"}
+        return {
+            "main" : f"将本次伤害值作为攻击力，以{damage_type}伤害的形式再次计算伤害，设 [value] 为 所得的二次计算伤害值",
+            "description" : "本次计算使用100%攻击力倍率，0的附加攻击力，不触发计算伤害事件，但会触发对方的被计算伤害事件"
+        }
 
 # 确保黑板默认值，防止出错
 def node_EnsureBlackboardDefaultValue(node):

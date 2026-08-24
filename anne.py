@@ -6,7 +6,7 @@ import math
 import traceback
 from data_class import *
 from bena import ask_bena, translate_buff_name
-from relic_translator.analyzer import analyze_timing
+from relic_translator.analyzer import analyze_relic_selector, analyze_timing
 from translator import anne_dictionary, get_anne_dictionary
 
 ANNE_NODE = None
@@ -310,9 +310,15 @@ class AnneRelic:
                     # 尝试寻找全局Buff
                     gbuff = ask_bena("global_buff",rogue_effect.translation["global_buff"])
                     if gbuff != None:
-                        gbuff_translation = translate_whole_global_buff(gbuff)
-                        gbuff_translation["main"] = "施加逻辑&效果："
-                        rogue_effect.translation["children"].append(gbuff_translation)
+                        selector = analyze_relic_selector(rogue_effect.blackboard)
+                        gbuff_translation = translate_whole_global_buff(gbuff,selector)
+                        gbuff_translation["main"] = "战斗中："
+                        translation_apply_blackboard(gbuff_translation,rogue_effect.blackboard)
+                        if len(rogue_effect.translation["children"]) > 0:
+                            rogue_effect.translation["children"][0]["style_closed"] = True
+                            rogue_effect.translation["children"] = [gbuff_translation] + rogue_effect.translation["children"]
+                        else:
+                            rogue_effect.translation["children"].append(gbuff_translation)
                 return rogue_effect.translation
             else: # 无法翻译，把所有数据搓成可阅读的格式
                 prefix = analyze_timing(rogue_effect.type,rogue_effect.blackboard)
@@ -378,8 +384,9 @@ def translate_whole_buff(buff: Buff):
     return translation
 
 # 翻译一整个GlobalBuff
-def translate_whole_global_buff(gbuff: GlobalBuff):
+def translate_whole_global_buff(gbuff: GlobalBuff,relic_selector: dict = None):
     print("[安妮]尝试翻译GlobalBuff "+gbuff.buff_key)
+    # 处理翻译
     translation = {
         "main" : gbuff.buff_key,
         "children" : []
@@ -396,14 +403,19 @@ def translate_whole_global_buff(gbuff: GlobalBuff):
         translation["children"].append({"main" : "覆写镜头特效："+gbuff.prefab_data["_overrideCameraEffect"]})
     # 额外目标选项预处理
     target_options = gbuff.target_options
+    if relic_selector != None and len(relic_selector.keys()) > 0:
+        target_options = target_options.copy()
+        for key, bb in relic_selector.items():
+            target_options[key] = bb
     # 目标筛选逻辑
     target = "这些单位"
-    if target_options["enableAdvancedOptions"]: # 复杂筛选
-        side = "敌方" if gbuff.prefab_data["_sourceType"] == "ENEMY" else "我方"
-        #translation["children"].append({"main" : f"阵营：{side}"})
-        options_translation = ANNE_NODE.translator.analyze_target_options(target_options,True)
-        options_translation["main"] = f"以{side}视角，筛选出所有" + options_translation["main"] + "（受可选性制约；不受迷彩制约）"
-        translation["children"].append(options_translation)
+    #if target_options["enableAdvancedOptions"]: # 复杂筛选
+    side = "敌方" if gbuff.prefab_data["_sourceType"] == "ENEMY" else "我方"
+    #translation["children"].append({"main" : f"阵营：{side}"})
+    options_translation = ANNE_NODE.translator.analyze_target_options(target_options,True)
+    options_translation["main"] = f"以{side}视角，筛选出所有" + options_translation["main"] #+ "（受可选性制约；不受迷彩制约）"
+    translation["children"].append(options_translation)
+    """
     else:
         side = gbuff.prefab_data["_sourceType"]
         target_side = target_options["targetSide"]
@@ -425,6 +437,7 @@ def translate_whole_global_buff(gbuff: GlobalBuff):
             target = "".join(conditions)+"单位"
         else:
             target = "任意单位"
+    """
     # 逐Buff添加至列表
     if len(gbuff.buff_datas) > 0:
         buffs_translation = {"main" : f"当{target}登场时，为其施加以下Buff：","children" : []}
@@ -554,4 +567,21 @@ def translate_whole_rogue_item(rogue_item: RogueItem):
         effect_translation["main"] = rogue_item.display_type+"效果："
         translation["children"].append(effect_translation)
 
+    return translation
+
+# 将翻译中的所有黑板值替换为实际值
+def translation_apply_blackboard(translation: dict,blackboard: dict):
+    for i in ["main","description"]:
+        if i in translation:
+            for key,bb in blackboard.items():
+                if key in translation[i]:
+                    if isinstance(bb,int) or isinstance(bb,float):
+                        if bb < 0:
+                            translation[i] = translation[i].replace(f"[{key}]%(终乘)",str(bb * 100 + 100)+"%(终乘)")
+                        translation[i] = translation[i].replace(f"[{key}]%",str(bb * 100)+"%")
+                    translation[i] = translation[i].replace(f"[{key}]",str(bb))
+    if "children" in translation:
+        for child in translation["children"]:
+            if isinstance(child,dict) and "main" in child:
+                child = translation_apply_blackboard(child,blackboard)
     return translation

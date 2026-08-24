@@ -125,6 +125,8 @@ def analyze_selector(blackboard,prefix="",suffix=""):
             features.append("部署类型为近战位")
         elif blackboard["selector.buildable"] == "ranged":
             features.append("部署类型为远程位")
+        elif blackboard["selector.buildable"] == "all":
+            features.append("部署类型为全部位")
     # 地位级别
     if "selector.enemy_level_type" in blackboard:
         if blackboard["selector.enemy_level_type"] == "NORMAL":
@@ -144,14 +146,14 @@ def analyze_selector(blackboard,prefix="",suffix=""):
     # 职业筛选处理
     if "selector.profession" in blackboard:
         target_name = analyze_profession(blackboard["selector.profession"])
-    # 角色类ID筛选
+    # 角色类单位ID筛选
     if "selector.char" in blackboard:
         char_name = ask_bena_character(blackboard["selector.char"])
         if char_name != blackboard["selector.char"]:
             target_name = f" {char_name}（{blackboard['selector.char']}）"
         else:
             target_name = f" {blackboard['selector.char']} "
-    # 敌人类ID筛选
+    # 敌人类单位ID筛选
     if "selector.enemy" in blackboard:
         enemy_name = ask_bena_enemy(blackboard["selector.enemy"])
         if enemy_name != blackboard["selector.enemy"]:
@@ -173,6 +175,32 @@ def analyze_selector(blackboard,prefix="",suffix=""):
     if len(features) > 0:
         return f"{'、'.join(features)}的{prefix}{target_name}{suffix}"
     return f"{prefix}{target_name}{suffix}"
+
+# 藏品选择器的处理
+# 返回选择器的TargetOption
+def analyze_relic_selector(blackboard):
+    result = {}
+    # 部署类型
+    if "selector.buildable" in blackboard:
+        result["_buildableType"] = blackboard["selector.buildable"].upper()
+    # 地位级别
+    if "selector.enemy_level_type" in blackboard:
+        result["_enemyLevelMask"] = blackboard["selector.enemy_level_type"]
+    elif "selector.boss_option" in blackboard: # 另一种写法
+        result["_enemyLevelMask"] = "BOSS"
+    # 阵营筛选处理
+    if "selector.side" in blackboard:
+        result["targetSide"] = blackboard["selector.side"].upper()
+    # 角色类单位ID筛选
+    if "selector.char" in blackboard:
+        result["_charId"] = blackboard["selector.char"]
+    # 敌人类单位ID筛选
+    if "selector.enemy" in blackboard:
+        result["_enemyId"] = blackboard["selector.enemy"]
+    # 敌人ID反向筛选
+    if "selector.enemy_exclude" in blackboard:
+        result["_excludeEnemyId"] = blackboard["selector.enemy_exclude"]
+    return result
 
 # 道具的处理
 # 返回道具类
