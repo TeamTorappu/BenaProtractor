@@ -125,7 +125,7 @@
 		"ON_OWNER_ROOT_TILE_CHANGED" : "持有者进入新的地块时",
 		"ON_OTHER_RESISTABLE_BUFF_START" : "当持有者身上的另一可抵抗Buff开始时",
 		"ON_BEFORE_TRY_SET_EP_ZERO" : "持有者即将受到可致爆的损伤时",
-		"ON_ES_OVER_ZERO" : "持有者得到的治疗量溢出时",
+		"ON_ES_OVER_ZERO" : "持有者额外生命值超过0时",
 		"ON_ENTER_MAGICCIRCUIT" : "持有者进入<重整束流>影响的地块时",
 		"ON_LEAVE_MAGICCIRCUIT" : "持有者离开<重整束流>影响的地块时",
 		"ON_OWNER_DYING" : "持有者即将死亡时",
