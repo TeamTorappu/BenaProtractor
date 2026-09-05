@@ -347,7 +347,8 @@
 		"SANITY" : "神经",
 		"WATER" : "侵蚀",
 		"FIRE" : "灼燃",
-		"DARK" : "凋亡"
+		"DARK" : "凋亡",
+		"ANGER" : "狂躁"
 	},
 	"unit_type" : {
 		"CHARACTER" : "角色类",
@@ -429,13 +430,23 @@
 		"OPPOSITE" : "相反",
 		"EQUAL" : "相同",
 		"VERTICAL" : "互相垂直",
-		"FACE_TARGET" : "FACE_TARGET（未翻译）"
+		"FACE_TARGET" : "面向目标"
+	},
+	"direction_judge_not" : {
+		"OPPOSITE" : "垂直或相同",
+		"EQUAL" : "不同",
+		"VERTICAL" : "相同或相反",
+		"FACE_TARGET" : "非面向目标"
 	},
 	"entity_category" : {
 		"NONE" : "无类型",
 		"DEFAULT" : "默认类",
 		"TRAP_OR_ITEM" : "装置类",
-		"OBSTACLE" : "障碍物类"
+		"OBSTACLE" : "障碍物类",
+		"DEFAULT, TRAP_OR_ITEM" : "默认类/装置类",
+		"DEFAULT, OBSTACLE" : "默认类/障碍物类",
+		"TRAP_OR_ITEM, OBSTACLE" : "装置类/障碍物类",
+		"DEFAULT, TRAP_OR_ITEM, OBSTACLE" : "默认类/装置类/障碍物类"
 	},
 	"enemy_level" : {
 		"NONE" : "无",
