@@ -18,7 +18,14 @@
 		"mcnist_s_3_projectile" : "机械师_三技能_弹道",
 		"mcnist_s_2_shield" : "机械师_二技能_盾",
 		"mcnist_s_2_mode" : "机械师_二技能_模式",
-		"mcnist_t_2" : "机械师_二天赋"
+		"mcnist_t_2" : "机械师_二天赋",
+		"wang_stone1_s" : "棋子_1技能",
+		"wang_stone2_s" : "棋子_2技能",
+		"wang_stone2_t[damage]" : "棋子_2技能[伤害]",
+		"wang_stone2_t[damage][token]" : "棋子_2技能[伤害][召唤物]",
+		"wang_stone3_s" : "棋子_3技能",
+		"wang_stone3_t[damage]" : "棋子_3技能[伤害]",
+		"wang_stone3_t[damage][token]" : "棋子_3技能[伤害][召唤物]"
 	},
 	"buff_prefix" : {
 		"mainline12" : "惊霆无声",
@@ -33,6 +40,7 @@
 		"cooperate" : "促融共竞",
 		"halfidle" : "次生预案",
 		"halfIdle" : "次生预案",
+		"arkdex" : "奇象巡展",
 		"sandbox" : {
 			"2" : "生息_沙洲逸闻",
 			"3" : "生息_重启锚点",
@@ -71,6 +79,7 @@
 			"05" : "合约_涤墨作战"
 		},
 		"crisisv5" : "合约_涤墨作战",
+		"recalv2" : "全息作战矩阵",
 
 		"act27side" : "火山旅梦",
 		"act28side" : {
@@ -88,13 +97,15 @@
 		"act33side" : "巴别塔",
 		"act35side" : "太阳甩在身后",
 		"act36side" : "泰拉饭",
-		"act38side" : "报幕者们",
+		"act38side" : "揭幕者们",
 		"act43side" : "红丝绒",
 		"act44side" : "墟",
 		"act45side" : "无忧梦呓",
 		"act46side" : "雪山降临1101",
 		"act49side" : "辞岁行",
 		"act50side" : "泡影苍霆",
+		"act53side" : "直到大地变成一颗酸橙",
+		"act54side" : "月行水上",
 		"act1bossrush" : "引航者#1",
 		"act2bossrush" : "引航者#2",
 		"act3bossrush" : "引航者#3",
@@ -106,6 +117,7 @@
 		"act3enemyduel" : "争锋_绿藤城",
 		"act1break" : "矢量突破#1",
 		"act2break" : "矢量突破#2",
+		"act3break" : "矢量突破#3",
 		"act2fun" : "说唱之夜！",
 		"act3fun" : "狂弹要塞",
 		"act4fun" : "主播U",
@@ -582,6 +594,8 @@
 			"" : "弹药"
 		},
 
+		"rogue" : "肉鸽",
+		"sandbox" : "演算",
 		"block" : {
 			"cnt" : "阻挡数",
 			"free" : "无法阻挡",
@@ -944,6 +958,7 @@
 			"" : "击"
 		},
 		"lighter" : "变轻",
+		"status" : "状态",
 
 		"fx" : "特效",
 		"no" : {
@@ -1004,6 +1019,7 @@
 		"unbalance" : "失衡",
 		"summon" : "召唤",
 		"evade" : "闪避",
+		"dying" : "濒死",
 		"peak" : "精力充沛",
 		"purify" : "净化",
 		"atkorcbt" : "攻击/阻挡攻击",

@@ -71,11 +71,15 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     if "_attackType" in damage_data:
         attack_type = damage_data["_attackType"]
     attack_type_name = anne_dictionary("attack_type",attack_type)
-    # 来源处理
-    if "_noSource" in damage_data and damage_data["_noSource"]:
+    # 无来源处理
+    if "_onlyUseSourceOnCalculateDamage" in damage_data and damage_data["_onlyUseSourceOnCalculateDamage"]:
+        features.append("计算后改为无来源")
+    elif "_noSource" in damage_data and damage_data["_noSource"]:
         prefix += "无来源的"
-    elif "_onlyUseSourceOnCalculateDamage" in damage_data and damage_data["_onlyUseSourceOnCalculateDamage"]:
-        features.append("仅在计算伤害时使用来源处理")
+    elif  "_noSourceDamage" in damage_data and damage_data["_noSourceDamage"]:
+        prefix += "无来源的"
+    elif "_isNoSourceDamage" in damage_data and damage_data["_isNoSourceDamage"]:
+        prefix += "无来源的"
     # 特征处理
     if "_ignoreForSp" in damage_data and damage_data["_ignoreForSp"]:
         features.append("不触发受击回复")
@@ -103,12 +107,6 @@ def analyze_damage(damage_data,prefix="",suffix=""):
         features.append("无法增/减/免/重设")
     elif "_forceDisplayDamageNum" in damage_data and damage_data["_forceDisplayDamageNum"]:
         features.append("强制红字")
-    if "_noSource" in damage_data and damage_data["_noSource"]:
-        features.append("无来源")
-    elif "_isNoSourceDamage" in damage_data and damage_data["_isNoSourceDamage"]:
-        features.append("无来源")
-    elif "_noSourceDamage" in damage_data and damage_data["_noSourceDamage"]:
-        features.append("无来源")
     #if "_damageWithoutModify" in damage_data and damage_data["_damageWithoutModify"]: #似乎没有任何用途
     #    features.append("damageWithoutModify")
     if "_setSharedFlag" in damage_data and damage_data["_setSharedFlag"]:
