@@ -24,9 +24,15 @@ def node_AdvancedApplyDamage(node):
         result["main"] += f"{default_scale}倍率的{damage_name}"
     # 记录至黑板
     if node["_assignFinalDamageToBB"]:
-        result["description"] += "；将最终伤害记录至黑板 [value]"
+        if "description" not in result:
+            result["description"] = "将最终伤害记录至黑板 [value]"
+        else:
+            result["description"] += "；将最终伤害记录至黑板 [value]"
     elif node["_assignRealDamageToBB"]: # 和上一个是平行的，不过开了前面那个这里这个会被覆盖掉...
-        result["description"] += "；将产生的生命值变化量记录至黑板 [value]"
+        if "description" not in result:
+            result["description"] = "将产生的生命值变化量记录至黑板 [value]"
+        else:
+            result["description"] += "；将产生的生命值变化量记录至黑板 [value]"
     return result
 
 # 造成无来源伤害

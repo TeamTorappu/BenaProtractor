@@ -476,6 +476,11 @@
 			"scale" : "伤害倍率",
 			"resistance" : "伤害抗性",
 			"penetrate" : "伤害穿透",
+			"enhanced" : {
+				"" : "害伤充盈",
+				"magical" : "术法充盈",
+				"physical" : "理物充盈"
+			},
 			"value" : "伤害值",
 			"via" : {
 				"es" : "溢出治疗转伤害",
