@@ -272,11 +272,14 @@ def node_AssignAttributeAsDynamicVarToBB(node):
     else:
         return {"main" : f"将{target_name}的{attribute}数值记录至黑板 [dynamic]"}
 
-# 将某个属性的原始值记录到黑板上
+# 将某个属性的基础值（符文后四则前）记录到黑板上
 def node_AssignAttributeRawDataIntoBlackboard(node):
     target_name = anne_dictionary("target",node["_targetType"])
     attribute = anne_dictionary("attribute",node["_attributeType"])
-    return {"main" : f"将{target_name}的{attribute}的原始数据值记录至黑板 [{node['_blackBoardKey']}]"} # 对，这玩意的B大写了
+    return {
+        "main" : f"将{target_name}的{attribute}的基础数据值记录至黑板 [{node['_blackBoardKey']}]", # 对，这玩意的B大写了
+        "description" : "“基础属性”指的是经过符文和首次上下限处理后、直接加算前的属性值，通常为整数"
+    }
 
 # 将两者间的距离记录到黑板上
 def node_AssignDistanceToBB(node):
