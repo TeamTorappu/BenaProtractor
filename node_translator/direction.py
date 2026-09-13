@@ -3,19 +3,21 @@
 #----------------------------------------
 from translator import anne_dictionary
 
-DIRECTION_TIP = "敌人类单位未移动的情况下，其移动朝向为上"
+DIRECTION_TIP = "朝向仅有上/下/左/右四种状态，敌人类单位未移动的情况下，其移动朝向为上"
+FACE_DIRECTION_TIP = "朝向面向是面向矢量最相近的上/下/左/右方向；面向矢量通常会跟随移动方向、攻击目标、阻挡之类的发生变化"
+FACE_LR_TIP = "左右面向是面向矢量在X轴上的分量，Δx<0则为“左”，Δx≥0则为“左”；面向矢量通常会跟随移动方向、攻击目标、阻挡之类的发生变化"
 
 # 将部署方向记录到黑板上
 def node_AssignDirectionToBB(node):
     target_name = anne_dictionary("target",node["_targetType"])
     if node['_isReverse']:
         return {
-            "main" : f"将{target_name}朝向的相反方向记录至黑板 [{node['_blackboardKey']}]",
-            "description" : "即 上=2 右=3 下=0 左=1；若为\"无朝向\"，记录4"
+            "main" : f"将{target_name}部署朝向/移动朝向的相反方向记录至黑板 [{node['_blackboardKey']}]",
+            "description" : "即 上=2 右=3 下=0 左=1；若为\"无朝向\"，记录4。敌人类单位未移动情况下默认朝上。。"
         }
     return {
-        "main" : f"将{target_name}朝向的方向记录至黑板 [{node['_blackboardKey']}]",
-        "description" : "即 上=0 右=1 下=2 左=3；若为\"无朝向\"，记录4"
+        "main" : f"将{target_name}部署朝向/移动朝向的方向记录至黑板 [{node['_blackboardKey']}]",
+        "description" : "即 上=0 右=1 下=2 左=3；若为\"无朝向\"，记录4。敌人类单位未移动情况下默认朝上。"
     }
 
 # 检查移动朝向/部署朝向
@@ -24,26 +26,26 @@ def node_CheckFaceDirection(node):
     direction = anne_dictionary("direction",node["_direction"])
     direction_not = anne_dictionary("direction_not",node["_direction"])
     return {
-        "main" : f"检查{target_name}的移动朝向（敌人类）/部署朝向（角色类）",
+        "main" : f"检查{target_name}的朝向面向",
         "description" : DIRECTION_TIP,
         "true" : f"若其朝向为{direction}",
         "false" : f"若其朝向为{direction_not}"
     }
 
-# 检查单位是否朝左/朝右，但是实际上和上面那个效果一样
+# 检查单位的左右面向
 def node_CheckFaceLOrR(node):
     target_name = anne_dictionary("target",node["_target"])
     if node["_direction"] == "LEFT":
         return {
-            "main" : f"检查{target_name}的移动朝向（敌人类）/部署朝向（角色类）",
-            "description" : DIRECTION_TIP,
+            "main" : f"检查{target_name}的左右面向",
+            "description" : FACE_LR_TIP,
             "true" : f"若其朝向左边",
             "false" : f"若其不朝向左边"
         }
     elif node["_direction"] != "RIGHT":
         return {
-            "main" : f"检查{target_name}的移动朝向（敌人类）/部署朝向（角色类）",
-            "description" : DIRECTION_TIP,
+            "main" : f"检查{target_name}的左右面向",
+            "description" : FACE_LR_TIP,
             "true" : f"若其朝向右边",
             "false" : f"若其不朝向右边"
         }
