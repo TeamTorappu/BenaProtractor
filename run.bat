@@ -1,15 +1,28 @@
 @echo off
-:START
-python main.py
-if %ERRORLEVEL% NEQ 0 goto ERROR
+rem Launch Bena Protractor
+rem   default : project .venv python + Qt (PySide6) UI
+rem   fallback: if PySide6 is missing it falls back to the old tkinter UI
+rem   run.bat tk  -> force the tkinter UI
+setlocal
+cd /d "%~dp0"
 
-:FINE
+set "PYEXE=python"
+if exist ".venv\Scripts\python.exe" set "PYEXE=.venv\Scripts\python.exe"
+
+set "UIARG="
+if /i "%~1"=="tk" set "UIARG=--ui tk"
+
+:START
+"%PYEXE%" "tools\launch.py" %UIARG%
+if %ERRORLEVEL% NEQ 0 goto ERROR
 goto END
 
 :ERROR
-echo 发现错误，请点击以重复运行？
+echo.
+echo [run.bat] The program exited with an error. Press any key to retry...
 pause >nul
 goto START
 
-: END
-EXIT
+:END
+endlocal
+exit /b 0

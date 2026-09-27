@@ -22,7 +22,13 @@ def bena_dictionary(catalogue,type_str):
 # 安妮的查字典方法
 # 如果查不到会返回原文
 def anne_dictionary(catalogue,type_str):
-    return ANNE_DICTIONARY[catalogue].get(type_str,type_str)
+    # 两道兜底，缺一不可：
+    #   catalogue 缺失（写成 ANNE_DICTIONARY[catalogue] 会 KeyError）；
+    #   type_str 为 None（例如某个 Node 少带了自己要读的字段，.get(None) 会返回 None 并把
+    #   "None" 拼进译文里）。两种情况都退回原文，让译文保持可读、不炸整棵树。
+    if type_str is None:
+        return ""
+    return ANNE_DICTIONARY.get(catalogue,{}).get(type_str,type_str)
     
 # 获取贝娜的字典
 def get_bena_dictionary():

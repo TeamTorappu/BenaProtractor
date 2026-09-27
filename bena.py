@@ -29,6 +29,22 @@ ENEMY_NAMES_PATH = "./tables/enemy_names.json"
 ROGUELIKE_TOPIC_KEYS = []
 ROGUELIKE_TOPIC_TABLE = {}
 ROGUELIKE_TOPIC_TABLE_PATH = "./tables/roguelike_topic_table.json"
+# 每个季度各存一份（见 load_roguelike_topic_table 的说明）：
+# 上面那两个全局名只是「最近一次加载的季度」的别名，别拿它当唯一数据源。
+ROGUELIKE_SEASON_TABLES = {}
+ROGUELIKE_SEASON_KEYS = {}
+
+# 肉鸽季度的中文名兜底（数据里查不到 name 时用）。
+# 加新季度**不需要**动这里：新季度名会从 roguelike_topic_table.json 的 topics 里读出来。
+SEASON_NAMES = {
+    "rogue_1" : "傀影",
+    "rogue_2" : "水月",
+    "rogue_3" : "萨米",
+    "rogue_4" : "萨卡兹",
+    "rogue_5" : "界园",
+    "rogue_6" : "树海",
+}
+_ROGUELIKE_CATALOG = None
 GLOBAL_BUFF_KEYS = []
 GLOBAL_BUFF_DUMMY = {}
 GLOBAL_BUFF_DUMMY_PATH = "./dummy/global_buff_dummy.json"
@@ -157,7 +173,79 @@ def load_buff_template_data():
     print(f"[贝娜]已完成对buff_template_data.json的读取！")
 
 # 读取roguelike_topic_table.json，并解析
+def roguelike_season_catalog():
+    '''游戏数据里到底有哪些肉鸽季度 → {"rogue_1": "傀影", "rogue_7": "新季度", ...}
+
+    这个名字表是「加新肉鸽能不能直接用」的关键：以前季度号写死在
+    bootstrap.LOAD_TYPES / 导航列表 / range(1,7) 里，游戏一出新季度就得改五六个地方。
+    现在统一从 roguelike_topic_table.json 的 details 推导（名称优先查
+    肉鸽主题表里该季度的 name，查不到就退回 SEASON_NAMES，再退回季度号）。
+    '''
+    global _ROGUELIKE_CATALOG
+    if _ROGUELIKE_CATALOG is not None:
+        return dict(_ROGUELIKE_CATALOG)
+    catalog = {}
+    try:
+        with open(ROGUELIKE_TOPIC_TABLE_PATH,'r',encoding="UTF-8") as file:
+            json_data = json.load(file)
+        details = json_data.get("details",{}) or {}
+        topics = json_data.get("topics",{}) or {}
+        for key in details:
+            if not str(key).startswith("rogue_"):
+                continue
+            label = ""
+            topic = topics.get(key)
+            if isinstance(topic,dict):
+                label = str(topic.get("name") or "").strip()
+            if not label:
+                label = SEASON_NAMES.get(key,"")
+            if not label:
+                label = "第 " + str(key).split("_")[-1] + " 季"
+            catalog[key] = label
+    except Exception as error:
+        print(f"[贝娜]肉鸽季度索引读取失败：{error}")
+    if not catalog:                      # 数据没下载齐时给个兜底，别让界面空掉
+        catalog = {key:name for key,name in SEASON_NAMES.items()}
+    _ROGUELIKE_CATALOG = catalog
+    return dict(catalog)
+
+
+def roguelike_seasons():
+    '''肉鸽季度 key 列表，按季度号排序（"rogue_2" 排在 "rogue_10" 前面）'''
+
+    def _order(key):
+        try:
+            return int(str(key).split("_")[-1])
+        except ValueError:
+            return 999
+
+    return sorted(roguelike_season_catalog().keys(),key=_order)
+
+
+def roguelike_season_of(item_key):
+    '''按条目 key 反推它属于哪个季度（键前缀就是季度，例如 rogue_6_hp → rogue_6）'''
+    text = str(item_key or "")
+    if not text.startswith("rogue_"):
+        return None
+    parts = text.split("_")
+    if len(parts) < 2 or not parts[1].isdigit():
+        return None
+    return "rogue_" + parts[1]
+
+
 def load_roguelike_topic_table(season=5):
+    '''读取某个肉鸽季度的物品表
+
+    注意两个曾经踩过的坑：
+    1. 以前每次都往全局 ROGUELIKE_TOPIC_TABLE / _KEYS 里 **追加**，不清空：
+       同一个进程里加载两次就会看到重复条目；
+    2. 六个季度共用同一份全局表，于是「加载 rogue_2 却看到 rogue_6 的内容」——
+       页面标题写着「傀影肉鸽」、列表里是最后加载那季的藏品。
+
+    现在每个季度各存一份（ROGUELIKE_SEASON_TABLES / _KEYS），
+    全局的 ROGUELIKE_TOPIC_TABLE 只是个「当前季度」的别名，供老调用点继续用。
+    '''
+    global ROGUELIKE_TOPIC_TABLE, ROGUELIKE_TOPIC_KEYS
     if not os.path.exists(ROGUELIKE_TOPIC_TABLE_PATH):
         print(f"[贝娜]未能找到roguelike_topic_table.json，取消读取...")
         return
@@ -167,27 +255,44 @@ def load_roguelike_topic_table(season=5):
     with open(ROGUELIKE_TOPIC_TABLE_PATH,'r',encoding="UTF-8") as _f:
         json_data = json.load(_f)
     # 按季度读取需要的数据表
-    season = "rogue_" + str(season)
+    # 兼容两种写法：赛季号（6）与带前缀的 key（"rogue_6"）。
+    # 以前这里无脑拼 "rogue_" + str(season)，传 "rogue_6" 就会去找 rogue_rogue_6，
+    # 然后打印「找不到肉鸽季度」——六个季度全加载不出来就是这个原因（踩过）。
+    season_key = str(season)
+    if not season_key.startswith("rogue_"):
+        season_key = "rogue_" + season_key
+    season = season_key
     # 需要的东西都在details里，其他部分就不需要解析了
     season_data = json_data["details"].get(season,None)
     if season_data == None:
         print(f"[贝娜]找不到肉鸽季度"+season)
         return
+    # 本季度的表：每次重新读都从空的开始，避免重复累积
+    table = {}
+    keys = []
     # 读取藏品数据
     item_data = season_data.get("relics",{})
     item_list = season_data.get("items",{})
     for item_key,item_info in item_list.items():
         if item_key in item_data: # 有藏品数据，说明是藏品或者类似的东西
             item = RogueItem(season,item_key,item_info,item_data[item_key])
-            ROGUELIKE_TOPIC_KEYS.append(item_key)
-            ROGUELIKE_TOPIC_TABLE[item_key] = item
-            print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
         else: # 非藏品
             item = RogueItem(season,item_key,item_info)
-            ROGUELIKE_TOPIC_KEYS.append(item_key)
-            ROGUELIKE_TOPIC_TABLE[item_key] = item
-            print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
-    print(f"[贝娜]已完成对roguelike_topic_table.json的读取！")
+        keys.append(item_key)
+        table[item_key] = item
+        print(f"[贝娜]已读取肉鸽{item.display_type} {item.display_name}（{item_key}）")
+    ROGUELIKE_SEASON_TABLES[season] = table
+    ROGUELIKE_SEASON_KEYS[season] = keys
+    # 全局别名指向最近一次加载的季度（老代码 / 单季度调用点行为不变）
+    ROGUELIKE_TOPIC_TABLE = table
+    ROGUELIKE_TOPIC_KEYS = keys
+    print(f"[贝娜]已完成对roguelike_topic_table.json的读取！（{season}：{len(keys)} 条）")
+
+
+def roguelike_season_table(season):
+    '''取某个季度的表（season 可以是 6 / "rogue_6"），没有就返回空表'''
+    key = season if str(season).startswith("rogue_") else "rogue_" + str(season)
+    return ROGUELIKE_SEASON_TABLES.get(key,{})
     
 # 读取global_buff_dummy.json，并解析
 def load_global_buff_dummy():
