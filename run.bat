@@ -19,7 +19,7 @@ goto END
 
 :ERROR
 echo.
-echo [run.bat] The program exited with an error. Press any key to retry...
+echo [启动器] 发现错误。按任意键尝试重复运行...
 pause >nul
 goto START
 
