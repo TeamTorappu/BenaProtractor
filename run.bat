@@ -13,7 +13,7 @@ set "UIARG="
 if /i "%~1"=="tk" set "UIARG=--ui tk"
 
 :START
-"%PYEXE%" "tools\launch.py" %UIARG%
+"%PYEXE%" "main.py" %UIARG%
 if %ERRORLEVEL% NEQ 0 goto ERROR
 goto END
 
