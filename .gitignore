@@ -1,10 +1,28 @@
 /__pycache__
 /build
 /dist
+/dist_lean
 /output
 /tables
 /data
 main.spec
 /node_translator/__pycache__
 /relic_translator/__pycache__
+/ai/__pycache__
+/ui/__pycache__
+/tests/__pycache__
+/tools/__pycache__
 .cache
+
+# 运行期配置与缓存（可能含 API Key，不提交、不打包）
+.venv/
+.uvcache/
+.bena_ai.json
+.bena_cache/
+config.json
+
+# 界面自查截图
+/.screenshots/
+
+# 开发辅助：kilo 工作树镜像（对每个子目录都是一份源码副本，别提交）
+/.kilo/

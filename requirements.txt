@@ -1,0 +1,7 @@
+# 新界面（Fluent）依赖 PySide6；QFluentWidgets 提供 Fluent 外观控件。
+# 两者都装不上时程序会自动退回旧 tkinter 界面（内置，无需额外依赖）。
+PySide6>=6.6
+PySide6-Fluent-Widgets>=1.6
+
+# 只有打包时才需要：pip install pyinstaller
+# pyinstaller>=6.0
