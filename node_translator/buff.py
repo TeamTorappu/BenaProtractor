@@ -175,7 +175,7 @@ def CreateBuffInRange(node,blackboard):
     target_options = analyze_target_options(node["_targetOptions"])
     buffs = []
     for buff_data in node["_buffs"]:
-        buffs.append(analyze_buff(buff_data),blackboard)
+        buffs.append(analyze_buff(buff_data,blackboard))
     range_name = ""
     max_target = "所有"
     # 处理基本信息

@@ -145,12 +145,12 @@ def FilterDamageModifer(node,blackboard):
     result = {}
     if can_short:
         result["main"] = f"检查本次伤害"
-        result["true"] = "若为"+"".join(short_conditions)+"伤害"
-        result["false"] = "若不为"+"".join(short_conditions)+"伤害（或不是伤害）"
+        result["true"] = "为"+"".join(short_conditions)+"伤害"
+        result["false"] = "不为"+"".join(short_conditions)+"伤害（或不是伤害）"
     else:
         result["main"] = f"检查本次伤害是否满足：{'、'.join(conditions)}"
-        result["true"] = "若伤害满足上述所有条件"
-        result["false"] = "若伤害不满足上述条件（或不是伤害）"
+        result["true"] = "伤害满足上述所有条件"
+        result["false"] = "伤害不满足上述条件（或不是伤害）"
     # 检查未被取消
     if node["_filterModifierCancelled"]:
         result["true"] += "且未被取消"

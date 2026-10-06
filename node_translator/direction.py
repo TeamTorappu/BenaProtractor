@@ -40,8 +40,8 @@ def CheckFaceLOrR(node,blackboard):
     return {
         "main" : f"检查{target_name}的左右面向",
         "description" : FACE_LR_TIP,
-        "true" : f"其左右面向为\"{direction_name}\"",
-        "false" : f"其左右面向为\"{direction_not_name}\""
+        "true" : f"其左右面向为{direction_name}",
+        "false" : f"其左右面向为{direction_not_name}"
     }
 
 # 检查角色类单位的“部署朝向”
