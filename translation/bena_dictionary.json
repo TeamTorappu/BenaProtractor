@@ -232,11 +232,11 @@
 		},
 		"status" : {
 			"resistance" : {
-				"reduction" : "反抵抗",
-				"" : "抵抗"
+				"reduction" : "反状态抵抗",
+				"" : "状态抵抗"
 			},
 			"resistable" : {
-				"anti" : "可抵抗状态免疫"
+				"anti" : "可状态抵抗异常抗性"
 			}
 		},
 		"shield" : "护盾",
@@ -262,7 +262,7 @@
 		"resistable" : {
 			"abnormal" : {
 				"flag" : {
-					"anti" : "可抵抗效果反制集"
+					"anti" : "可状态抵抗异常反制集"
 				}
 			}
 		},
@@ -532,6 +532,10 @@
 			"damage" : "减少伤害",
 			"cost" : "减少费用",
 			"" : "减少"
+		},
+		"element" : {
+			"resistance" : "元素抗性",
+			"" : "元素"
 		},
 		"ep" : {
 			"sanity" : {
@@ -918,6 +922,7 @@
 
 		"filter" : "过滤",
 		"tag" : "标签",
+		"filtertag" : "过滤标签",
 		"drone" : "无人机",
 		"elite" : "精英",
 		"boss" : "领袖",
@@ -1148,6 +1153,7 @@
 
 		"push" : "推",
 		"pull" : "拉",
+		"knockback" : "击退",
 		"encourage" : "鼓舞",
 		"sluggish" : "停顿",
 		"steal" : "偷取",
@@ -1439,6 +1445,7 @@
 			"" : "寒冻"
 		},
 		"freezeattack2" : "寒冻攻击2",
+		"bristleback" : "\"钢背兽\"",
 		"snow" : "雪",
 		"bird" : "鸟",
 

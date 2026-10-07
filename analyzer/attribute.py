@@ -20,7 +20,15 @@ def analyze_attribute_modifiers(modifiers: list,blackboard: dict = {}):
         # 获取数据加成/减少的写法
         if modifier["fetchBaseValueFromSourceEntity"]: # 读取自本尊，特殊判断
             if formula == "FINAL_SCALER": # 实际为终加
-                value_str = f"+(Buff来源{attr_name})×{to_percent(value,True)}(终加)"
+                if modifier["loadFromBlackboard"]:
+                    bb_str = modifier["attributeType"].lower()  # 理论上是和type同名的黑板值
+                    if bb_str in blackboard:
+                        value = float(blackboard[bb_str])
+                        value_str = f"+(Buff来源{attr_name})×{to_percent(value,True)}(终加)"
+                    else:
+                        value_str = f"+(Buff来源{attr_name})×[{bb_str}](终加)"
+                else:
+                    value_str = f"+(Buff来源{attr_name})×{to_percent(value,True)}(终加)"
             else:
                 value_str = f"+???"
         elif modifier["loadFromBlackboard"]: # 读取自黑板，那value本身没用了，写个未知数

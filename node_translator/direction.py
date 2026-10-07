@@ -82,3 +82,15 @@ def CheckDirection(node,blackboard):
         "true" : f"{source_name}与{target_name}的朝向{judge}",
         "false" : f"{source_name}与{target_name}的朝向并不{judge}"
     }
+
+# 检查是否位于巨型Boss四个方向的地块
+def IfSourceFromEnemyDirection(node,blackboard):
+    source_name = anne_dictionary("target",node["_sourceType"])
+    #target_name = anne_dictionary("target",node["_targetType"])
+    direction_name = anne_dictionary("direction",node["_direction"])
+    return {
+        "main" : f"检查{source_name}是否位于自身占据的任意地块的\"正{direction_name}方\"",
+        "description" : "普通敌人相当于一个远牙3技能的检测范围；对于巨型敌人，左/右检查时判断自身占据地块的每一行，上/下检查时判断自身占据的地块每一列",
+        "true" : f"{source_name}位于\"正{direction_name}方\"的（不包括自身占据的地块）",
+        "false" : f"{source_name}不位于\"正{direction_name}方\"或位于自身占据的地块上"
+    }

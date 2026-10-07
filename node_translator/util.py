@@ -360,6 +360,19 @@ def PalsyBuffAdd(node,blackboard):
         "description" : "即\"若单位已有麻痹Buff，令该Buff叠层直至上限；并记录溢出层数...\""
     }
 
+# 概率节弹
+def CharSkillNotCountTimes(node,blackboard):
+    #target_name = anne_dictionary("target",node.get("_target",node["_targetType"]))
+    if "prob" in blackboard:
+        return {"main" : f"投掷一枚\"骰子\"（0.0~100.0，不包含100.0），出目低于{blackboard['prob']}时，本次能力使用将\"不消耗次数（弹药）\""}
+    else:
+        return {"main" : "投掷一枚\"骰子\"（0.0~100.0，不包含100.0），出目低于 [prob]（默认为0）时，本次能力使用将\"不消耗次数（弹药）\""}
+
+# 结束所有"可抵抗状态"
+def FinishAllStatusResistableBuffs(node,blackboard):
+    target_name = anne_dictionary("target",node.get("_target",node["_targetType"]))
+    return {"main" : f"结束{target_name}持有的所有\"可状态抵抗\"的Buff"}
+
 # 召唤师X模组的免费召唤条件
 def CheckTheLeftSameDeployedToken(node,blackboard):
     if node["_minCnt"] == 0:

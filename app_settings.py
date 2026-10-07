@@ -7,13 +7,13 @@ from data_sources import DEFAULT_SOURCE, SOURCE_LABELS
 LOAD_TYPES = {
     "buff": "常见 Buff",
     "buff_template": "Buff 模板 · 机制底层",
-    "global_buff": "全局 Buff · 藏品 / 关卡",
-    "rogue_1": "傀影 · 肉鸽物品",
-    "rogue_2": "水月 · 肉鸽物品",
-    "rogue_3": "萨米 · 肉鸽物品",
-    "rogue_4": "萨卡兹 · 肉鸽物品",
-    "rogue_5": "界园 · 肉鸽物品",
-    "rogue_6": "树海 · 肉鸽物品",
+    "global_buff": "全局 Buff · 藏品 / 盟约",
+    "rogue_1": "傀影 · 收藏品",
+    "rogue_2": "水月 · 收藏品 / 排异反应",
+    "rogue_3": "萨米 · 收藏品 / 密文板效果",
+    "rogue_4": "萨卡兹 · 收藏品",
+    "rogue_5": "界园 · 收藏品 / 通宝",
+    "rogue_6": "树海 · 收藏品 / 天气",
 }
 DEFAULT_LOAD = list(LOAD_TYPES)
 DEFAULTS = {

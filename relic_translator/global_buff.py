@@ -34,14 +34,20 @@ def global_buff_normal(item_type,blackboard):
         result["children"].append(blackboard_result)
     return result
 
-# 叠层加倍增幅量/减少量的全局Buff（累加时会-1）
-def global_buff_stack_base_one(item_type,blackboard):
+# 叠层加倍的全局Buff
+def global_buff_layer(item_type,blackboard):
     result = global_buff_normal(item_type,blackboard)
-    result["main"] += "（数值增幅量/减少量均乘以当前层数；同名效果间数值取增幅量/减少量累加）"
+    result["main"] += "（藏品层数记录在黑板 [stack_layer] 上）"
     return result
 
-# 叠层的全局Buff
+# 可叠加增幅量/减少量的全局Buff（累加时会-1）
+def global_buff_stack_base_one(item_type,blackboard):
+    result = global_buff_normal(item_type,blackboard)
+    result["main"] += "（同名效果间黑板值取增幅量/减少量累加）"
+    return result
+
+# 可叠加的全局Buff
 def global_buff_stack(item_type,blackboard):
     result = global_buff_normal(item_type,blackboard)
-    result["main"] += "（数值均乘以当前层数）"
+    result["main"] += "（同名效果间黑板值累加）"
     return result

@@ -52,3 +52,18 @@ def RoguelikeShowToastRL06(node,blackboard):
     elif node["_toastTypeRL06"] == "STEP_STEAL":
         return {"main" : f"展示{node['_lastTime']}秒“你的行动力被偷走了”（树海肉鸽风格）"}
     return {"main" : f"展示{node['_lastTime']}秒“???”（树海肉鸽风格）"}
+
+# 检查狭路相逢阶段
+def RoguelikeDuelModeCheckStage(node,blackboard):
+    state = node['gameStage']
+    if node["gameStage"] == "STAGE_CHOSEN":
+        state = "\"选择敌人\""
+    elif node["gameStage"] == "STAGE_READY":
+        state = "\"准备开始\""
+    elif node["gameStage"] == "STAGE_BATTLE":
+        state = "\"正式战斗\""
+    return {
+        "main" : "检查\"狭路相逢\"的模式阶段",
+        "true" : f"当前为{state}阶段",
+        "false" : f"当前不为{state}阶段",
+    }

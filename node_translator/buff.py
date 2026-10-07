@@ -279,7 +279,7 @@ def CreateBuffToToken(node,blackboard):
 # 为特定职业的所有单位创建Buff
 def CreateBuffToCertainProfession(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    professions = [anne_dictionary("profession",p) for p in node["_professionMask"]]
+    professions = [anne_dictionary("profession",p) for p in node["_professionMask"].split(", ")]
     result = analyze_buff(node["_buffData"],blackboard)
     buff_name = "Buff"
     if node["_isDerivedBuff"]: # 属于附属Buff

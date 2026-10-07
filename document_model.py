@@ -77,25 +77,13 @@ def document_rows(document, collapsed=frozenset()):
             children = part.get('children') or []
             foldable = bool(children or part.get('description'))
             role = 'heading' if depth == 0 else 'section' if children else 'body'
-            if part.get("last_one"):
-                if part.get('main'):
-                    yield DocumentRow(path, depth, str(part['main']), role, part.get('link', ''), foldable)
-                else:
-                    yield DocumentRow(path, depth, "......", role, part.get('link', ''), foldable)
-            else:
-                if part.get('main'):
-                    if part.get('true'):
-                        yield DocumentRow(path, depth, str(part['main'])+"，若"+str(part['true'])+"...", role, part.get('link', ''), foldable)
-                    elif part.get('false'):
-                        yield DocumentRow(path, depth, str(part['main'])+"，若"+str(part['false'])+"，则直接跳出", role, part.get('link', ''), foldable)
-                    else:
-                        yield DocumentRow(path, depth, str(part['main']), role, part.get('link', ''), foldable)
-                elif part.get('true') :
+            if part.get('main'):
+                yield DocumentRow(path, depth, str(part['main']), role, part.get('link', ''), foldable)
+            if not part.get("last_one"):
+                if part.get('true') :
                     yield DocumentRow(path, depth, "若"+str(part['true'])+"...", role, part.get('link', ''), foldable)
                 elif part.get('false'):
                     yield DocumentRow(path, depth, "若"+str(part['false'])+"，则直接跳出", role, part.get('link', ''), foldable)
-                else:
-                    yield DocumentRow(path, depth, "......", role, part.get('link', ''), foldable)
 
             # 子部分
             if path not in collapsed:

@@ -17,29 +17,12 @@ def analyze_rogue_item(blackboard):
 # 道具奖励的处理
 # 返回结构体，可能会带有链接
 def analyze_rogue_item_reward(blackboard):
+    item_id = blackboard.get("id","")
+    if item_id == "":
+        return {"main" : "给予玩家 棍木"}
+    if item_id.startswith("pool"):
+            return {"main" : f"给予玩家 {blackboard['id']} 奖池中的随机一个物品"}
     item = analyze_rogue_item(blackboard)
-    if item == None:
-        if "id" in blackboard:
-            if blackboard["id"].startswith("pool"):
-                return {
-                    "main" : f"给予玩家  {blackboard['id']} 奖池中的随机一个物品"
-                }
-            else:
-                return {
-                    "main" : f"给予玩家  {blackboard['id']} × {math.floor(blackboard.get('count',0))}",
-                    "link" : blackboard['id']
-                }
-        else:
-            return {
-                "main" : "给予玩家 棍木",
-                "link" : "minecraft.air"
-            }
-    if item.type == "COPPER": # 界园钱的特殊处理
-        return {
-            "main" : f"让 {item.display_name} 加入玩家钱盒",
-            "link" : blackboard['id']
-        }
-    return {
-        "main" : f"给予玩家 {item.display_name} × {math.floor(blackboard.get('count',0))}",
-        "link" : blackboard['id']
-    }
+    if item.type == "COPPER": # 界园钱的特殊描述
+        return {"main" : f"让 <rogue_item|{blackboard['id']}> 加入玩家钱盒"}
+    return {"main" : f"给予玩家 <rogue_item|{blackboard['id']}> × {math.floor(blackboard.get('count',0))}"}

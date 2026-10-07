@@ -75,7 +75,12 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
             features.append("永久")
         elif buff_data["lifeTimeType"] == "LIMITED":
             if buff_data["durationKey"] != None and buff_data["durationKey"] != "none":
-                features.append(f"持续 [{buff_data['durationKey']}] 秒")
+                if buff_data["durationKey"] in blackboard:
+                    features.append(f"持续 {blackboard[buff_data['durationKey']]} 秒")
+                else:
+                    features.append(f"持续 [{buff_data['durationKey']}] 秒")
+            elif buff_data["durationKey"] != "none" and "duration" in blackboard:
+                features.append(f"持续 {blackboard['duration']} 秒")
             elif buff_data["lifeTime"] == 0.0:
                 features.append("瞬间效果")
             else:
@@ -244,7 +249,9 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
     elif buff_data["overrideType"] != "DEFAULT":
         if buff_data["overrideType"] == "STACK" :
             stack_info = ""
-            max_stack = buff_data['maxStackCnt']
+            max_stack = int(buff_data['maxStackCnt'])
+            if "max_stack_cnt" in blackboard: # 黑板覆写叠层上限
+                max_stack = int(blackboard["max_stack_cnt"])
             if buff_data["refreshRemainingTimeWhenStackMax"]:
                 if max_stack == 1:
                     stack_info = f"再次施加仅刷新时间"

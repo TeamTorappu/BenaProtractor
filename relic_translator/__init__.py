@@ -3,6 +3,7 @@ from analyzer import *
 from .outside import *
 from .attribute_rune import *
 from .attribute_final_scaler import *
+from .char_limit import *
 from .cost import *
 from .layer import *
 from .global_buff import *

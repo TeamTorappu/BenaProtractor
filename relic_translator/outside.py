@@ -7,14 +7,6 @@ from bena import ask_bena, ask_bena_character
 from dictionary import anne_dictionary
 from analyzer import analyze_rogue_item_reward, analyze_profession, analyze_sub_profession, to_delta, analyze_relic_timing, analyze_rogue_item, to_delta_percent
 
-# 关卡内的可部署人数上限增减
-def level_char_limit_add(item_type,blackboard):
-    value = blackboard.get("value",0)
-    if value < 0:
-        return {"main": f"战斗中的可部署人数上限{to_delta(value)}（不会低于1）"}
-    else:
-        return {"main": f"战斗中的可部署人数上限{to_delta(value)}"}
-
 # 立即奖励
 def immediate_reward(item_type,blackboard):
     if blackboard["id"] == "rogue_6_hp" and blackboard["count"] == 0: # 神秘0个目标生命值
@@ -28,16 +20,8 @@ def immediate_reward(item_type,blackboard):
 def immediate_cost(item_type,blackboard):
     timing = analyze_relic_timing(item_type,blackboard)
     item = analyze_rogue_item(blackboard)
-    if item != None:
-        if item.type == "COPPER": # 界园钱的特殊处理
-            return {
-                "main" : f"{timing}让钱盒内的 {item.display_name} 变为大炎通宝。",
-                "link" : blackboard['id']
-            }
-        return {
-            "main" : f"{timing}消耗玩家{item.display_type} {item.display_name} × {math.floor(blackboard.get('count',1))}",
-            "link" : blackboard['id']
-        }
+    if item != None and item.type == "COPPER": # 界园钱的特殊处理
+        return {"main" : f"{timing}让钱盒内的 <rogue_item|{item.display_name}> 变为大炎通宝。"}
     return {"main" : f"{timing}消耗玩家 {blackboard['id']} × {math.floor(blackboard.get('count',0))}"}
 
 # 开局额外招募券奖励
@@ -87,15 +71,9 @@ def copper_exchange(item_type,blackboard):
         elif blackboard["id"] == "pool_reroll_copper_low":
             return {"main" : f"{timing}尝试将钱盒内的该钱替换为随机的厉钱"}
         else:
-            item = ask_bena("rogue_item",blackboard["id"])
-            if item != None:
-                # 变成指定通宝
-                if item.type != "COPPER": # 界园钱的特殊处理
-                    return {"main" : f"{timing}尝试将钱盒内的该钱替换为 {item.display_name}（非通宝，无法正常运作）"}
-                return {
-                    "main": f"{timing}尝试将钱盒内的该钱替换为 {item.display_name} 。",
-                    "link": blackboard['id']
-                }
+            return {
+                "main": f"{timing}尝试将钱盒内的该钱替换为 <rogue_item|{blackboard['id']}> 。"
+            }
     return {"main" : f"{timing}尝试将钱盒内的该钱替换为空气。"}
     
 # 战斗后额外掉落随机招募券

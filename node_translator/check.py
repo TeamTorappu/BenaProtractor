@@ -172,11 +172,12 @@ def CheckFilterTag(node,blackboard):
 # 检查势力
 def CheckCharacterGroupTag(node,blackboard):
     target_name = anne_dictionary("target",node["_targetType"])
-    group_name = anne_dictionary("group_tag",node["_groupTag"])
+    group_name = anne_dictionary("group_tag",blackboard["tag"] if "tag" in blackboard else node["_groupTag"])
     return {
-        "main" : f"检查{target_name}的势力标签",
-        "true" : f"其隶属于{group_name}势力",
-        "false" : f"其不隶属于{group_name}势力"
+        "main" : f"检查{target_name}所属的势力",
+        "description" : "\"隐藏势力\"列表中包含相应势力也算作所属该势力",
+        "true" : f"其所属{group_name}势力",
+        "false" : f"其不所属{group_name}势力"
     }
 
 
@@ -830,5 +831,3 @@ def CheckTargetRootTile(node,blackboard):
         "true" : f"为{condition}地块",
         "false" : f"不为{condition}地块"
     }
-
-        
