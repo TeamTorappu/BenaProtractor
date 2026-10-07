@@ -37,7 +37,7 @@ def global_buff_normal(item_type,blackboard):
 # 叠层加倍的全局Buff
 def global_buff_layer(item_type,blackboard):
     result = global_buff_normal(item_type,blackboard)
-    result["main"] += "（藏品层数记录在黑板 [stack_layer] 上）"
+    result["main"] += "，并藏品层数记录在其黑板 [stack_layer] 上"
     return result
 
 # 可叠加增幅量/减少量的全局Buff（累加时会-1）

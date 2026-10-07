@@ -22,7 +22,7 @@ def analyze_rogue_item_reward(blackboard):
         return {"main" : "给予玩家 棍木"}
     if item_id.startswith("pool"):
             return {"main" : f"给予玩家 {blackboard['id']} 奖池中的随机一个物品"}
-    item = analyze_rogue_item(blackboard)
+    item = ask_bena("rogue_item",blackboard["id"])
     if item.type == "COPPER": # 界园钱的特殊描述
         return {"main" : f"让 <rogue_item|{blackboard['id']}> 加入玩家钱盒"}
     return {"main" : f"给予玩家 <rogue_item|{blackboard['id']}> × {math.floor(blackboard.get('count',0))}"}

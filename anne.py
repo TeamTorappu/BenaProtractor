@@ -11,6 +11,7 @@ from dictionary import anne_dictionary, get_anne_dictionary
 
 ANNE_NODE = None
 ANNE_RELIC = None
+ANNE_RUNE = None
 
 DEX = "①②③④⑤⑥⑦⑧⑨"
 
@@ -292,13 +293,12 @@ class AnneRelic:
     import relic_translator as translator
     def __init__(self):
         _ = None
-        #print("[安妮]好的。")
         
     # 翻译重定向器，本质switch case
     # 翻译返回的结果始终是一层一层的结构体
     def translate(self,rogue_effect):
         effect_key = rogue_effect.key
-        print(f"[安妮]尝试翻译藏品效果 {effect_key}")
+        print(f"[安妮]尝试翻译藏品 {effect_key}")
         method = getattr(self.translator, effect_key, "")
         if method != "" :
             translation = method(rogue_effect.type,rogue_effect.blackboard)
@@ -334,9 +334,36 @@ class AnneRelic:
             children.append(translation)
         return {"main" : "","children" : children}
 
+'''
+#----------------------------------------
+# 安妮的符文翻译器
+#----------------------------------------
+'''
+class AnneRune:
+    import rune_translator as translator
+    def __init__(self):
+        _ = None
+        
+    # 翻译重定向器，本质switch case
+    # 翻译返回的结果始终是一层一层的结构体
+    def translate(self,rune_info):
+        rune_key = rune_info.key
+        print(f"[安妮]尝试翻译符文 {rune_key}")
+        method = getattr(self.translator, rune_key, "")
+        if method != "" :
+            translation = method(rune_info.selector,rune_info.blackboard)
+    
+    # 全部翻译
+    def translate_all(self,rune_info_list):
+        children = []
+        for rune_info in rune_info_list:
+            translation = self.translate(rune_info)
+            children.append(translation)
+        return {"main" : "","children" : children}
 
 ANNE_NODE = AnneNode()
 ANNE_RELIC = AnneRelic()
+ANNE_RUNE = AnneRune()
 #----------------------------------------
 #以下是供调用的方法
 #----------------------------------------

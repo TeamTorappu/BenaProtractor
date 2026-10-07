@@ -96,7 +96,7 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
             flags = []
             for flag in attrs["abnormalFlags"]:
                 flags.append(anne_dictionary("abnormal",flag))
-                # 包含可抵抗状态
+                # 包含可状态抵抗的异常
                 if flag in STATUS_RESISTABLE_ABNORMAL:
                     has_resistable_flag = True
             features.append("包含异常效果："+"、".join(flags))
@@ -104,7 +104,7 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
             for flag in attrs["abnormalFlags"]:
                 flag_name = anne_dictionary("abnormal",flag)
                 features.append(flag_name)
-                # 包含可抵抗状态
+                # 包含可状态抵抗的异常
                 if flag in STATUS_RESISTABLE_ABNORMAL:
                     has_resistable_flag = True
     # 异常免疫
@@ -184,19 +184,19 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
     # 属于状态可抵抗Buff？
     if buff_data["statusResistable"] == "YES":
         if full_information:
-            features.append("可抵抗（模式为YES）")
+            features.append("可状态抵抗（模式为YES）")
         else:
-            features.append("可抵抗")
+            features.append("可状态抵抗")
     elif (buff_data["statusResistable"] == "AUTOMATIC" and has_resistable_flag):
         if full_information:
-            features.append("可抵抗（模式为AUTOMATIC；因包含可抵抗异常效果而可抵抗）")
+            features.append("可状态抵抗（模式为AUTOMATIC；包含可状态抵抗的异常效果）")
         else:
-            features.append("可抵抗")
+            features.append("可状态抵抗")
     elif full_information:
         if buff_data["statusResistable"] == "AUTOMATIC": # and not has_resistable_flag
-            features.append("不可抵抗（模式为AUTOMATIC；但不包含可抵抗异常效果）")
+            features.append("不可状态抵抗（模式为AUTOMATIC；不包含可状态抵抗的异常效果）")
         else:
-            features.append("不可抵抗（模式为NO）")
+            features.append("不可状态抵抗（模式为NO）")
     # 处理覆盖时使用的Key
     if buff_data["overrideKey"] and buff_data["overrideKey"] != "empty" :
         if buff_data["independentCharacterSource"]: #每个来源独立OverrideKey
