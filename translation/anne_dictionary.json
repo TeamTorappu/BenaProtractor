@@ -278,7 +278,8 @@
 		"TELEPORTED" : "被传送",
 		"GROUND_BOUND" : "缚地",
 		"SLEEPING" : "沉睡",
-		"SHELTERING" : "闭锁"
+		"SHELTERING" : "闭锁",
+		"ISOLATE" : "放逐"
 	},
 	"attribute" : {
 		"MAX_HP" : "最大生命值",

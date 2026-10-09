@@ -13,7 +13,7 @@ def FilterByBlackboardValue(node,blackboard):
         right_var = "["+node["_anotherKeyToCompare"]+"]"
         if node["_anotherBuff"] and node["_buffKey"] != None: # 比对另一个Buff的黑板值
             if node["_targetType"] != "BUFF_OWNER":
-                target_name = anne_dictionary("target",node["_target"])
+                target_name = anne_dictionary("target",node["_targetType"])
                 return {
                     "main" : f"比对黑板上的{left_var}与{target_name}的另一buff <{node['_buffKey']}> 的{right_var}",
                     "true" : f"{left_var} {compare} {right_var}",

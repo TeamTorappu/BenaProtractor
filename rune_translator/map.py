@@ -4,11 +4,51 @@
 
 # 地块黑板乘算（选择器无效果）
 def map_tile_blackb_mul(selector,blackboard):
-    return {}
+    if blackboard.get("tile","") != "":
+        target_tiles = blackboard["tile"].split("|") #需翻译
+        result = {
+            "main" : "让关卡中所有 "+"、".join(target_tiles)+" 地块的黑板值乘以：",
+            "children" : []
+        }
+        for key, value in blackboard.items():
+            if key != "tile":
+                result["children"].append({"main" : str(key) + " *= " + str(value)})
+        return result
+    elif blackboard.get("location","") != "":
+        target_positions = blackboard["location"].split("|") #需翻译
+        result = {
+            "main" : "让关卡中"+"、".join(target_positions)+"位置的地块的黑板值乘以：",
+            "children" : []
+        }
+        for key, value in blackboard.items():
+            if key != "location":
+                result["children"].append({"main" : str(key) + " *= " + str(value)})
+        return result
+    return {"main" : "无效符文"}
 
 # 地块黑板加算（选择器无效果）
 def map_tile_blackb_add(selector,blackboard):
-    return {}
+    if blackboard.get("tile","") != "":
+        target_tiles = blackboard["tile"].split("|") #需翻译
+        result = {
+            "main" : "让关卡中所有 "+"、".join(target_tiles)+" 地块的黑板值增加：",
+            "children" : []
+        }
+        for key, value in blackboard.items():
+            if key != "tile":
+                result["children"].append({"main" : str(key) + " += " + str(value)})
+        return result
+    elif blackboard.get("location","") != "":
+        target_positions = blackboard["location"].split("|") #需翻译
+        result = {
+            "main" : "让关卡中"+"、".join(target_positions)+"位置的地块的黑板值增加：",
+            "children" : []
+        }
+        for key, value in blackboard.items():
+            if key != "location":
+                result["children"].append({"main" : str(key) + " += " + str(value)})
+        return result
+    return {"main" : "无效符文"}
 
 # 地块黑板重设（选择器无效果）
 def map_tile_blackb_assign(selector,blackboard):
@@ -20,6 +60,16 @@ def map_tile_blackb_assign(selector,blackboard):
         }
         for key, value in blackboard.items():
             if key != "tile":
-                result["children"].append({"main" : str(key) + " : " + str(value)})
+                result["children"].append({"main" : str(key) + " = " + str(value)})
+        return result
+    elif blackboard.get("location","") != "":
+        target_positions = blackboard["location"].split("|") #需翻译
+        result = {
+            "main" : "覆写关卡中"+"、".join(target_positions)+"位置的地块的黑板值：",
+            "children" : []
+        }
+        for key, value in blackboard.items():
+            if key != "location":
+                result["children"].append({"main" : str(key) + " = " + str(value)})
         return result
     return {"main" : "无效符文"}
