@@ -100,7 +100,7 @@ def AttributeModifierWithBB(node,blackboard):
     
     if node["_valueKey"] != None and node["_valueKey"] not in ["","none"]:
         if node["_formulaType"] == "FINAL_SCALER":
-            result["main"] += f"+[{node['_valueKey']}]%(终乘)"
+            result["main"] += f"×[{node['_valueKey']}]%(终乘)"
         elif node["_formulaType"] == "MULTIPLIER":
             result["main"] += f"+[{node['_valueKey']}]%(直乘)"
         elif node["_formulaType"] == "ADDITION":
@@ -109,7 +109,7 @@ def AttributeModifierWithBB(node,blackboard):
             result["main"] += f"+[{node['_valueKey']}](终加)"
     else:
         if node["_formulaType"] == "FINAL_SCALER":
-            result["main"] += f"+0%(终乘)"
+            result["main"] += f"×0%(终乘)"
         elif node["_formulaType"] == "MULTIPLIER":
             result["main"] += f"+0%(直乘)"
         elif node["_formulaType"] == "ADDITION":
@@ -126,7 +126,7 @@ def RemainingRatioToAttributeModifier(node,blackboard):
     }
     value_key = node["_attributeType"].lower()
     if node["_formulaType"] == "FINAL_SCALER":
-        result["main"] += f"+[{value_key}]% × 乘数(终乘)"
+        result["main"] += f"×[{value_key}]% × 乘数(终乘)"
     elif node["_formulaType"] == "MULTIPLIER":
         result["main"] += f"+[{value_key}]% × 乘数(直乘)"
     elif node["_formulaType"] == "ADDITION":

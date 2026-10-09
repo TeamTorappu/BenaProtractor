@@ -73,8 +73,8 @@ def ModifyBlackboard(node,blackboard):
         if node["_addBasedOriginValue"]: # 原始值加上对象值
             result["main"] = f"设 [{bb_key}] = [{bb_key}] + [{from_key}]"
         if node["_checkFromBlackboardValue"]: # 开启这个会在处理前增加一次检查，检查不通过则处理失败
-            result["true"] = f"若上述逻辑能正常处理"
-            result["false"] = f"若 [{from_key}] 不存在"
+            result["true"] = f"上述逻辑能正常处理"
+            result["false"] = f" [{from_key}] 不存在"
         return result
     else: # 就和直接设置数值没区别了
         return {
