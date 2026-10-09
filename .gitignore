@@ -14,4 +14,4 @@ main.spec
 /.qa-*
 /tests/__pycache__
 /analyzer/__pycache__
-/rune_translator
+/rune_translator/__pycache__
