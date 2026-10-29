@@ -9,6 +9,7 @@ import time
 import urllib.error
 import urllib.request
 from app_paths import app_path
+from table_history import TABLE_LOCK, list_snapshots, same_content, stage_snapshot
 from data_sources import DEFAULT_SOURCE, SOURCE_LABELS, SOURCE_URLS
 
 WEB = SOURCE_URLS[DEFAULT_SOURCE]
@@ -74,6 +75,7 @@ def validate_table(name, path):
     elif name == "enemy_database.json":
         if not isinstance(data.get("enemies", data), (list, dict)):
             raise ValueError("enemy_database.json 格式错误")
+    return data
 
 
 def prepare_files(force=False, names=None, progress=None, directory=None, opener=None, validator=None, source=DEFAULT_SOURCE):
@@ -96,7 +98,8 @@ def prepare_files(force=False, names=None, progress=None, directory=None, opener
         old_entries = {}
     entries = dict(old_entries)
     changed = []
-    with tempfile.TemporaryDirectory(prefix=".update-", dir=directory) as temporary:
+    with TABLE_LOCK, tempfile.TemporaryDirectory(prefix=".update-", dir=directory) as temporary:
+        list_snapshots(directory)
         stage = Path(temporary)
         for index, name in enumerate(names, 1):
             target = directory / name
@@ -133,8 +136,9 @@ def prepare_files(force=False, names=None, progress=None, directory=None, opener
                                      "etag": response.headers.get("ETag", ""),
                                      "last_modified": response.headers.get("Last-Modified", ""),
                                      "checked_at": time.time()}
-                validate_table(name, stage / name)
-                changed.append(name)
+                data = validate_table(name, stage / name)
+                if not same_content(target, data):
+                    changed.append(name)
             except urllib.error.HTTPError as error:
                 if error.code != 304 or not target.exists() or not same_source:
                     raise
@@ -143,6 +147,7 @@ def prepare_files(force=False, names=None, progress=None, directory=None, opener
         if validator and changed:
             validator({name: stage / name if name in changed else directory / name for name in names})
         (stage / ".update.json").write_text(json.dumps({"checked_at": time.time(), "source": source, "files": entries}, indent=2), encoding="utf-8")
+        snapshot = stage_snapshot(directory, stage, FILES) if changed else None
         replaced = []
         try:
             for name in changed + [".update.json"]:
@@ -152,6 +157,10 @@ def prepare_files(force=False, names=None, progress=None, directory=None, opener
                     os.replace(target, backup)
                 replaced.append((target, backup))
                 os.replace(stage / name, target)
+            if snapshot:
+                history = directory / ".history"
+                history.mkdir(exist_ok=True)
+                os.replace(snapshot, history / snapshot.name)
         except OSError:
             for target, backup in reversed(replaced):
                 if backup.exists():

@@ -16,6 +16,8 @@ from downloader import prepare_files, update_due
 from vs_theme import install_theme
 from ide_shell import Workspace
 from preferences_view import Preferences
+from table_history import list_snapshots
+from table_history_view import TableHistory
 from dpi import DpiScale, enable_dpi_awareness
 
 log = logging.getLogger(__name__)
@@ -46,6 +48,7 @@ class Protractor:
         self.busy = False
         self.closed = False
         self.settings_window = None
+        self.table_history_window = None
         self.pending_search = None
         self.messages = queue.Queue()
         self.next_auto_attempt = 0
@@ -216,6 +219,13 @@ class Protractor:
         else:
             self.settings_window = Preferences(self)
 
+    def open_table_history(self):
+        if self.table_history_window and self.table_history_window.winfo_exists():
+            self.table_history_window.lift()
+            self.table_history_window.reload()
+        else:
+            self.table_history_window = TableHistory(self)
+
     def install_catalog(self, catalog, settings):
         previous = self.current.target if self.current else None
         catalog.install()
@@ -271,6 +281,7 @@ class Protractor:
 
         def worker():
             try:
+                list_snapshots()
                 names = required_files(candidate['tables'])
                 ready = all(app_path('tables', name).exists() for name in names)
                 loaded = False
@@ -324,6 +335,8 @@ class Protractor:
                     self.progress.configure(mode='determinate', value=0)
                     self.update_button.configure(state='normal')
                     self.settings_button.configure(state='normal')
+                    if self.table_history_window and self.table_history_window.winfo_exists():
+                        self.table_history_window.reload()
         except queue.Empty:
             pass
         except Exception as error:
@@ -343,6 +356,8 @@ class Protractor:
 
     def close(self):
         self.closed = True
+        if self.table_history_window and self.table_history_window.winfo_exists():
+            self.table_history_window.close()
         for token in (self.pending_search, self.poll_token, self.auto_token):
             if token:
                 self.window.after_cancel(token)

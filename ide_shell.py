@@ -141,7 +141,7 @@ class Workspace:
             '编辑(E)': [('复制全文', app.copy_all, ''), ('搜索', app.focus_search, 'Ctrl+F')],
             '视图(V)': [('中文伪代码', lambda: app.select_view(0), ''), ('原始代码', lambda: app.select_view(1), ''), None,
                          ('数据资源管理器', self.toggle_explorer, ''), ('输出', self.toggle_output, '')],
-            '工具(T)': [('更新数据', app.refresh, 'F5'), ('选项', app.open_settings, '')],
+            '工具(T)': [('更新数据', app.refresh, 'F5'), ('数据历史与差异', app.open_table_history, ''), ('选项', app.open_settings, '')],
         }
         for label, items in commands.items():
             button = tk.Menubutton(self.menus, text=label, bg=COLORS['panel'], fg=COLORS['text'],
