@@ -10,7 +10,7 @@ import urllib.error
 import urllib.request
 from app_paths import app_path
 from table_history import TABLE_LOCK, list_snapshots, same_content, stage_snapshot
-from data_sources import DEFAULT_SOURCE, SOURCE_LABELS, SOURCE_URLS
+from app_settings import DEFAULT_SOURCE, SOURCE_LABELS, SOURCE_URLS
 
 WEB = SOURCE_URLS[DEFAULT_SOURCE]
 FILES = {
@@ -19,6 +19,7 @@ FILES = {
     "roguelike_topic_table.json": "excel/roguelike_topic_table.json",
     "buff_template_data.json": "battle/buff_template_data.json",
     "enemy_database.json": "levels/enemydata/enemy_database.json",
+    "activity_table.json": "excel/activity_table.json",
 }
 
 

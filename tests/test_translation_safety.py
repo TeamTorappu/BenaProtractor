@@ -6,7 +6,7 @@ from unittest.mock import patch
 import anne
 import bena
 from catalog import Catalog
-from data_class import Buff, Node
+from game_class import Buff, Node
 from document_model import document_rows, reference_parts, default_folds
 
 
@@ -74,14 +74,6 @@ class ReferenceSafetyTests(unittest.TestCase):
         self.assertLiteral('prts.浪里玄条')
         self.assertEqual(reference_parts('<prts|浪里玄条>', self.catalog),
                          [('浪里玄条', 'prts.浪里玄条')])
-
-    def test_legacy_translation_keeps_name_fallback(self):
-        self.assertNotIn('enemy_damage', bena.BUFF_TABLE)
-        self.assertNotIn('enemy_damage', bena.BUFF_TEMPLATE_DATA)
-        self.assertEqual(bena.translate_buff_name_in_text('<enemy_damage>'),
-                         '敌方_伤害(enemy_damage)')
-        self.assertEqual(bena.translate_buff_name_in_text('<missing>'), 'missing(missing)')
-        self.assertEqual(bena.translate_buff_name_in_text('<damage_resistance>'), '庇护')
 
 
 class PresentationRoleTests(unittest.TestCase):

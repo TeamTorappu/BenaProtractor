@@ -3,7 +3,7 @@ from dataclasses import dataclass
 import json
 import bena
 from app_paths import app_path
-from data_class import Buff, BuffTemplate, GlobalBuff, RogueItem
+from game_class import Buff, BuffTemplate, GlobalBuff, RogueItem
 
 BASE_FILES = ["buff_table.json", "buff_template_data.json", "character_table.json", "enemy_database.json"]
 
@@ -27,7 +27,7 @@ class Entry:
     def name(self):
         return self.obj.display_name
 
-
+# 大目录
 class Catalog:
     def __init__(self, tables, paths=None):
         self.tables = list(tables)

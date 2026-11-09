@@ -820,6 +820,9 @@
 		"egirShip" : "【阿戈尔】",
 		"kazimierzShip" : "【卡西米尔】",
 		"siracusaShip" : "【叙拉古】",
+		"ursus" : "【乌萨斯】",
+		"lethania" : "【莱塔尼亚】",
+		"iberia" : "【伊比利亚】",
 		"maniShip" : "【调和】",
 		"soloShip" : "【独行】",
 		"suntShip" : "【绝技】",
@@ -833,7 +836,8 @@
 		"raidShip" : "【突袭】",
 		"miraShip" : "【奇迹】",
 		"visiShip" : "【远见】",
-		"investShip" : "【投资人】"
+		"investShip" : "【投资人】",
+		"docShip" : "【聚合】"
 	},
 	"bond_can_mani" : {
 		"yanShip" : "true",

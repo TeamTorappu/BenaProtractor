@@ -4,8 +4,8 @@
 #----------------------------------------
 import os
 import json
-from data_class import *
-from dictionary import bena_dictionary
+from game_class import *
+from dictionary import get_bena_dictionary
 
 # 表格数据
 BUFF_KEYS = []
@@ -17,24 +17,51 @@ BUFF_TEMPLATE_DATA_PATH = "./tables/buff_template_data.json"
 CHARACTER_KEYS = []
 CHARACTER_TABLE = {}
 CHARACTER_TABLE_PATH = "./tables/character_table.json"
-CHARACTER_SHORT_NAMES = {}
-CHARACTER_NAMES = {}
-CHARACTER_NAMES_PATH = "./tables/character_names.json"
 ENEMY_DATABASE_KEYS = []
 ENEMY_DATABASE = {}
 ENEMY_DATABASE_PATH = "./tables/enemy_database.json"
-ENEMY_SHORT_NAMES = {}
-ENEMY_NAMES = {}
-ENEMY_NAMES_PATH = "./tables/enemy_names.json"
 ROGUELIKE_TOPIC_KEYS = []
 ROGUELIKE_TOPIC_TABLE = {}
 ROGUELIKE_TOPIC_TABLE_PATH = "./tables/roguelike_topic_table.json"
+ACTIVITY_TABLE = {}
+ACTIVITY_TABLE_PATH = "./tables/activity_table.json"
+
+# 生成的表格
 GLOBAL_BUFF_KEYS = []
 GLOBAL_BUFF_DUMMY = {}
 GLOBAL_BUFF_DUMMY_PATH = "./dummy/global_buff_dummy.json"
+CHARACTER_SHORT_NAMES = {}
+CHARACTER_NAMES = {}
+CHARACTER_NAMES_PATH = "./tables/character_names.json"
+ENEMY_SHORT_NAMES = {}
+ENEMY_NAMES = {}
+ENEMY_NAMES_PATH = "./tables/enemy_names.json"
+AUTOCHESS_TABLE = {}
+AUTOCHESS_TABLE_PATH = "./tables/activity_table_autochess.json"
+COLLECTION_TABLE = {}
+COLLECTION_TABLE_PATH = "./tables/activity_table_collection.json"
+ARCADE_TABLE = {}
+ARCADE_TABLE_PATH = "./tables/activity_table_arcade.json"
+ARK_HUB_TABLE = {}
+ARK_HUB_TABLE_PATH = "./tables/activity_table_ark_hub.json"
+BOSS_RUSH_TABLE = {}
+BOSS_RUSH_TABLE_PATH = "./tables/activity_table_boss_rush.json"
+VEC_BREAK_V2_TABLE = {}
+VEC_BREAK_V2_TABLE_PATH = "./tables/activity_table_vec_break_v2.json"
+ACT_FOOTBALL_TABLE = {}
+ACT_FOOTBALL_TABLE_PATH = "./tables/activity_table_act_football.json"
+ENEMY_DUEL_TABLE = {}
+ENEMY_DUEL_TABLE_PATH = "./tables/activity_table_enemy_duel.json"
+HALFIDLE_VERIFY1_TABLE = {}
+HALFIDLE_VERIFY1_TABLE_PATH = "./tables/activity_table_halfidle_verify1.json"
 
 print("[贝娜]我叫贝娜，来找一个出门就忘了回家的笨蛋。听说她还有些活要干，没办法，我也在这陪她一会好了。")
 
+'''
+#----------------------------------------
+# 数据表拆分
+#----------------------------------------
+'''
 # 读取character_table.json，将获取到的名称制作成一个单独的json以供使用。
 def make_character_name_table():
     print(f"[贝娜]开始读取character_table.json")
@@ -54,20 +81,8 @@ def make_character_name_table():
     print(f"[贝娜]现在开始将干员的ID与名称对照记录至character_names.json")
     with open(CHARACTER_NAMES_PATH ,'w',encoding="UTF-8") as _f:
         _f.write(json.dumps(CHARACTER_NAMES,indent=4,ensure_ascii=False))
+    del json_data
     print(f"[贝娜]character_names.json记录完毕！")
-
-# 加载角色名称表，若不存在将现场生成一个
-def load_character_names():
-    if not os.path.exists(CHARACTER_NAMES_PATH):
-        print("[贝娜]不存在character_names.json或已过时！开始重新生成该文件")
-        make_character_name_table()
-    else:
-        # 获取文件数据
-        with open(CHARACTER_NAMES_PATH,'r',encoding="UTF-8") as _f:
-            json_data = json.load(_f)
-        for key,name in json_data.items():
-            CHARACTER_NAMES[key] = name
-        print("[贝娜]character_names.json读取完毕！")
 
 # 读取enemy_database.json，将获取到的名称制作成一个单独的json以供使用。
 def make_enemy_name_table():
@@ -97,8 +112,77 @@ def make_enemy_name_table():
     print(f"[贝娜]现在开始将干员的ID与名称对照记录至enemy_names.json")
     with open(ENEMY_NAMES_PATH ,'w',encoding="UTF-8") as _f:
         _f.write(json.dumps(ENEMY_NAMES,indent=4,ensure_ascii=False))
+    del json_data
     print(f"[贝娜]enemy_names.json记录完毕！")
 
+# 读取activity_table.json，将获取到的名称制作成若干单独的json以供使用。
+def split_activity_table():
+    print(f"[贝娜]开始读取activity_table.json")
+    json_data = {}
+    # 获取文件数据
+    with open(ENEMY_DATABASE_PATH,'r',encoding="UTF-8") as _f:
+        json_data = json.load(_f)
+    print(f"[贝娜]已完成对activity_table.json的读取！")
+    # 开始拆分写入文件供未来使用
+    print(f"[贝娜]现在开始将活动数据拆分记录至activity_table_xxxxxx.json")
+    activity_data = json_data["activity"]
+    # 卫戍协议
+    if "AUTOCHESS" in activity_data:
+        with open(AUTOCHESS_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["AUTOCHESS"],indent=4,ensure_ascii=False))
+    # COLLECTION是啥？不管，先分了看看
+    if "COLLECTION" in activity_data:
+        with open(COLLECTION_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["COLLECTION"],indent=4,ensure_ascii=False))
+    # 视相博物馆
+    if "ARCADE" in activity_data:
+        with open(ARCADE_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["ARCADE"],indent=4,ensure_ascii=False))
+    # 奇象巡礼
+    if "ARK_HUB" in activity_data:
+        with open(ARK_HUB_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["ARK_HUB"],indent=4,ensure_ascii=False))
+    # 引航者试炼
+    if "BOSS_RUSH" in activity_data:
+        with open(BOSS_RUSH_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["BOSS_RUSH"],indent=4,ensure_ascii=False))
+    # 矢量突破
+    if "VEC_BREAK_V2" in activity_data:
+        with open(VEC_BREAK_V2_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["VEC_BREAK_V2"],indent=4,ensure_ascii=False))
+    # 阵地足球
+    if "ACT_FOOTBALL" in activity_data:
+        with open(ACT_FOOTBALL_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["ACT_FOOTBALL"],indent=4,ensure_ascii=False))
+    # 争锋频道
+    if "ENEMY_DUEL" in activity_data:
+        with open(ENEMY_DUEL_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["ENEMY_DUEL"],indent=4,ensure_ascii=False))
+    # 次生预案
+    if "HALFIDLE_VERIFY1" in activity_data:
+        with open(HALFIDLE_VERIFY1_TABLE_PATH ,'w',encoding="UTF-8") as _f:
+            _f.write(json.dumps(activity_data["HALFIDLE_VERIFY1"],indent=4,ensure_ascii=False))
+    del json_data
+    print(f"[贝娜]activity_table.json拆分完毕！")
+
+'''
+#----------------------------------------
+# 数据加载
+#----------------------------------------
+'''
+# 加载角色名称表，若不存在将现场生成一个
+def load_character_names():
+    if not os.path.exists(CHARACTER_NAMES_PATH):
+        print("[贝娜]不存在character_names.json或已过时！开始重新生成该文件")
+        make_character_name_table()
+    else:
+        # 获取文件数据
+        with open(CHARACTER_NAMES_PATH,'r',encoding="UTF-8") as _f:
+            json_data = json.load(_f)
+        for key,name in json_data.items():
+            CHARACTER_NAMES[key] = name
+        print("[贝娜]character_names.json读取完毕！")
+        
 # 加载敌人名称表，若不存在将现场生成一个
 def load_enemy_names():
     if not os.path.exists(ENEMY_NAMES_PATH):
@@ -111,7 +195,16 @@ def load_enemy_names():
         for key,name in json_data.items():
             ENEMY_NAMES[key] = name
         print("[贝娜]enemy_names.json读取完毕！")
-        
+
+# 加载敌人名称表，若不存在将现场生成一个
+def load_autochess_table():
+    if not os.path.exists(AUTOCHESS_TABLE_PATH):
+        print("[贝娜]不存在activity_table_autochess.json或已过时！开始重新生成该文件")
+        split_activity_table();
+    # 获取文件数据
+    with open(AUTOCHESS_TABLE_PATH ,'r',encoding="UTF-8") as _f:
+        AUTOCHESS_TABLE = json.load(_f)
+    print("[贝娜]activity_table_autochess.json读取完毕！")
 
 # 读取buff_table.json，并解析
 def load_buff_table():
@@ -209,6 +302,11 @@ def load_global_buff_dummy():
         print(f"[贝娜]已读取GBuff {buff.display_name}（{buff_key}）")
     print(f"[贝娜]已完成对global_buff_dummy.json的读取！")
 
+'''
+#----------------------------------------
+# 数据表查询
+#----------------------------------------
+'''
 # 询问贝娜一个ID有没有对应的数据，若没有将原路返回
 def ask_bena(_type,input_id):
     if _type == "buff":
@@ -262,6 +360,11 @@ def ask_bena_enemy(enemy_id: str):
         return ENEMY_NAMES[enemy_id]
     return enemy_id
 
+'''
+#----------------------------------------
+# Buff名翻译
+#----------------------------------------
+'''
 # 将一段文本中所有以<>框起来的文本进行“翻译”
 def translate_buff_name_in_text(text: str):
     while "<" in text and ">" in text:

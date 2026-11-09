@@ -28,7 +28,8 @@
 		"wang_stone3_t[damage][token]" : "棋子_3技能[伤害][召唤物]",
 		"free_summon[card]" : "召唤师_X模组_免费召唤[手卡]",
 		"free_summon[token]" : "召唤师_X模组_免费召唤[召唤物]",
-		"enemy[reborn]_absorb_fireseed" : "敌人[重生]_吸收_塑能基质"
+		"enemy[reborn]_absorb_fireseed" : "敌人[重生]_吸收_塑能基质",
+		"char_hdbell_s1_knock_back" : "角色_行铃_一技能_击退"
 	},
 	"buff_prefix" : {
 		"mainline12" : "惊霆无声",
@@ -36,9 +37,10 @@
 		"mainline15" : "离解复合",
 		"mainline16" : "反常光谱",
 		"autochess" : "卫戍协议",
+		"act1vautochess" : "老卫戍",
 		"act1autochess" : "卫戍盟约",
-		"act1vautochess" : "卫戍废案",
 		"act2autochess" : "卫戍下半",
+		"act3autochess" : "卫戍规程",
 		"legion" : {
 			"cddiff" : "保全派驻_战术装备整理箱",
 			"" : "保全派驻"
@@ -1157,6 +1159,9 @@
 		"push" : "推",
 		"pull" : "拉",
 		"knockback" : "击退",
+		"knock" : {
+			"back" : "击退"
+		},
 		"encourage" : "鼓舞",
 		"sluggish" : "停顿",
 		"steal" : "偷取",
@@ -1476,6 +1481,9 @@
 				"egir" : "阿戈尔盟约",
 				"kazimierz" : "卡西米尔盟约",
 				"siracusa" : "叙拉古盟约",
+				"ursus" : "乌萨斯盟约",
+				"lethania" : "莱塔尼亚盟约",
+				"iberia" : "伊比利亚盟约",
 				"mani" : "调和盟约",
 				"solo" : "独行盟约",
 				"sunt" : "绝技盟约",
@@ -1489,7 +1497,8 @@
 				"raid" : "突袭盟约",
 				"mira" : "奇迹盟约",
 				"visi" : "远见盟约",
-				"invest" : "投资人盟约"
+				"invest" : "投资人盟约",
+				"doc" : "聚合盟约"
 			}
 		}
 	}

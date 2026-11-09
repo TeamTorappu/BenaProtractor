@@ -4,7 +4,7 @@
 #----------------------------------------
 import math
 import traceback
-from data_class import *
+from game_class import *
 from bena import ask_bena, translate_buff_name
 from analyzer import analyze_selector_target_options_override, analyze_relic_timing, analyze_buff, analyze_deckbuff, analyze_target_options_side, analyze_target_options_conditions
 from dictionary import anne_dictionary, get_anne_dictionary
@@ -61,7 +61,7 @@ class AnneNode:
                 children = []
                 for key,content in node.node_data.items():
                     if isinstance(content,dict): # 如果是子节点或者buff，还是要嵌套翻译一下试试的
-                        if "attributes" in content: # buff
+                        if "attributes" in content and isinstance(content["attributes"],dict): # 看着像buff
                             buff = analyze_buff(content,blackboard)
                             buff["main"] = str(key) + " : " + buff["main"]
                             children.append(buff)

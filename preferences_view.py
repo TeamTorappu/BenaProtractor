@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import ttk, font
 from app_settings import LOAD_TYPES, normalize_settings
 from downloader import read_metadata
-from data_sources import DEFAULT_SOURCE, SOURCE_LABELS
+from app_settings import DEFAULT_SOURCE, SOURCE_LABELS
 from vs_theme import COLORS, style_titlebar
 from dpi import DpiScale
 

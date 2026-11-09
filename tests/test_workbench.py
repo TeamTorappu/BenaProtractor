@@ -9,10 +9,10 @@ from unittest.mock import patch
 
 from app_settings import DEFAULT_LOAD, normalize_settings, save_settings, load_settings
 from catalog import Catalog
-from data_class import Buff
+from game_class import Buff
 from downloader import prepare_files, read_metadata, update_due
 from editor_views import reference_parts, json_spans
-from data_sources import SOURCE_URLS
+from app_settings import SOURCE_URLS
 from downloader import FILES
 
 

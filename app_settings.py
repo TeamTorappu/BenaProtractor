@@ -2,7 +2,7 @@
 import json
 import os
 from app_paths import app_path
-from data_sources import DEFAULT_SOURCE, SOURCE_LABELS
+from app_settings import DEFAULT_SOURCE, SOURCE_LABELS
 
 LOAD_TYPES = {
     "buff": "常见 Buff",
@@ -14,6 +14,7 @@ LOAD_TYPES = {
     "rogue_4": "萨卡兹 · 收藏品",
     "rogue_5": "界园 · 收藏品 / 通宝",
     "rogue_6": "树海 · 收藏品 / 天气",
+    "autochess": "卫戍协议",
 }
 DEFAULT_LOAD = list(LOAD_TYPES)
 DEFAULTS = {

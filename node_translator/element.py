@@ -8,7 +8,7 @@ def ApplyElementDamage(node,blackboard):
     source_name = anne_dictionary("target",node["_sourceType"])
     target_name = anne_dictionary("target",node["_targetType"])
     element_type = anne_dictionary("element",node["_elementDamageType"])
-    scale = " × " + node["_epDamageScale"]
+    scale = " × [" + node["_epDamageScale"] + "]"
     result = {"main" : ""}
     descriptions = []
     if node["_loadElementTypeFromBb"]: # 读取黑板

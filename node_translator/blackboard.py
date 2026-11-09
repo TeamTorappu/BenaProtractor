@@ -46,7 +46,10 @@ def AssignDamageValueToBlackboard(node,blackboard):
     if node["_assignRealDelta"]:
         return {"main" : "设 [value] 为 本次伤害实际造成的生命值变化量（取绝对值）"}
     elif node["_assignValueWithoutCalculate"]:
-        return {"main" : f"设 [value] 为 本次伤害的值 × [{node['_scaleKey']}]"}
+        if node["_scaleKey"] != None and node["_scaleKey"] != "":
+            return {"main" : f"设 [value] 为 本次伤害的值 × [{node['_scaleKey']}]"}
+        else:
+            return {"main" : f"设 [value] 为 本次伤害的值"}
     else:
         damage_type = anne_dictionary("damage_type",node["_damageType"])
         return {
