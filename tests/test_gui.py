@@ -9,9 +9,9 @@ from contextlib import redirect_stdout, redirect_stderr
 from unittest.mock import patch
 import tkinter as tk
 
-from app_paths import app_path
+from app_paths import app_path, required_files
 from app_settings import DEFAULT_LOAD, LOAD_TYPES, normalize_settings
-from catalog import Catalog, required_files
+from bena.catalog import Catalog
 from protractor import Protractor
 
 

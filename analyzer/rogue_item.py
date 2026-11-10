@@ -3,12 +3,13 @@
 #----------------------------------------
 import math
 
-from bena import ask_bena
 from dictionary import anne_dictionary
 
 # 道具的处理
 # 返回道具类
 def analyze_rogue_item(blackboard):
+    from bena import ask_bena
+
     if "id" in blackboard:
         item = ask_bena("rogue_item",blackboard["id"])
         return item
@@ -17,6 +18,8 @@ def analyze_rogue_item(blackboard):
 # 道具奖励的处理
 # 返回结构体，可能会带有链接
 def analyze_rogue_item_reward(blackboard):
+    from bena import ask_bena
+
     item_id = blackboard.get("id","")
     if item_id == "":
         return {"main" : "给予玩家 棍木"}

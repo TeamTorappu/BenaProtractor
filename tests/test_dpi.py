@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import Mock, patch
 
 import dpi
-from catalog import Catalog
+from bena.catalog import Catalog
 from preferences_view import Preferences
 from protractor import Protractor
 

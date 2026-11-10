@@ -1,4 +1,6 @@
-"""Launch Bena's Protractor with a responsive window before loading data."""
+#----------------------------------------
+# 核心
+#----------------------------------------
 import logging
 from protractor import Protractor
 

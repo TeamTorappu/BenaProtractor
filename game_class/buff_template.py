@@ -2,7 +2,8 @@
 # Buff模板
 #----------------------------------------
 import json
-from gameclasses.event_to_action import EventToAction
+from dictionary import anne_dictionary
+from game_class.event_to_action import EventToAction
 
 class BuffTemplate:
     def __init__(self, buff_key, buff_data):
@@ -26,3 +27,22 @@ class BuffTemplate:
     # 获取原文
     def get_raw_data(self):
         return json.dumps(self.buff_data,indent=4,ensure_ascii=False)
+
+    # 翻译
+    def translate(self,blackboard : dict = {}):
+        print("[安妮]尝试翻译Buff模板 "+self.buff_key)
+        translation = {
+            "main" : self.buff_key,
+            "children" : []
+        }
+        if self.display_name != self.buff_key:
+            translation["main"] = f"{self.display_name}（{self.buff_key}）"
+        if self.on_event_priority != "DEFAULT":
+            priority = anne_dictionary("event_priority",self.on_event_priority)
+            translation["children"].append("事件优先级："+priority)
+        if self.effect_key != "":
+            translation["children"].append("特效："+self.effect_key)
+        # 逐个事件进行翻译
+        for event in self.events:
+            translation["children"].append(event.translate(blackboard))
+        return translation

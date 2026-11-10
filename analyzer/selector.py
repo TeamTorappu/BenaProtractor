@@ -2,11 +2,12 @@
 # 解析选择器
 #----------------------------------------
 from .profession import analyze_profession
-from bena import ask_bena_character, ask_bena_enemy
 
 # 整个选择器的处理
 # 返回选择器称呼的字符串。说明筛选的职业、部署类型以及“干员”和“召唤物”这样的称呼
 def analyze_selector(blackboard,prefix="",suffix=""):
+    from bena import ask_bena_character, ask_bena_enemy
+
     # 部署类型处理
     features = []
     target_name = "单位"

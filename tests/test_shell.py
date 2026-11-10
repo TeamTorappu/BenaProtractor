@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import tkinter as tk
 import unittest
 
-from catalog import Catalog
+from bena.catalog import Catalog
 from protractor import Protractor
 
 

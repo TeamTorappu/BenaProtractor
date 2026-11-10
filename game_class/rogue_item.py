@@ -2,7 +2,7 @@
 # 肉鸽物品（藏品、队伍、零件、通宝等）
 #----------------------------------------
 import json
-from gameclasses.relic import Relic
+from game_class.relic import Relic
 
 RESOURCE_TYPES = [
     "GOLD","EXP","HP","HPMAX","SHIELD","SQUAD_CAPACITY",
@@ -76,3 +76,44 @@ class RogueItem:
             return json.dump([self.item_info,self.item_data],indent=4,ensure_ascii=False)
         else:
             return json.dump([self.item_info],indent=4,ensure_ascii=False)
+
+    # 翻译
+    def translate(self):
+        from anne.anne_relic import anne_relic_translate_all
+        from bena import ask_bena
+
+        print(f"[安妮]尝试翻译{self.display_type} {self.display_name}（{self.item_key}）")
+        translation = {
+            "main" : f"{self.display_name}（{self.item_key}）",
+            "children" : []
+        }
+        # 展示原始的文案
+        if self.item_info["description"] != None:
+            translation["description"] = self.item_info["description"]
+        
+        # 类型和稀有度
+        translation["children"].append({"main" : "类型 : " + self.display_type + "("+self.type+"）"})
+        translation["children"].append({"main" : "稀有度 : " + self.item_info["rarity"]}) # 需翻译
+        
+        # 界园的钱始终有两套，加个超链接
+        if self.type == "COPPER_BUFF":
+            another_key = self.item_key.replace("copper_buff","copper")
+            if ask_bena("rogue_item",another_key) != None:
+                translation["children"].append({"main" : f"（这里的鹰文可能与游戏内有出入，文案用的钱请见  <rogue_item|{another_key}>）"})
+        elif self.type == "COPPER":
+            another_key = self.item_key.replace("copper","copper_buff")
+            if ask_bena("rogue_item",another_key) != None:
+                translation["children"].append({"main" : f"（这是展示文案用的钱，钱的实际效果请见 <rogue_item|{another_key}>）"})
+
+        # 藏品效果或解释的原文
+        if self.item_info["usage"] != None:
+            usage = {"main" : self.display_type+"描述文：","children": []}
+            translation["children"].append(usage)
+        
+        # 效果文本
+        if self.has_effect:
+            effect_translation = anne_relic_translate_all(self.effect_list)
+            effect_translation["main"] = self.display_type+"效果："
+            translation["children"].append(effect_translation)
+
+        return translation

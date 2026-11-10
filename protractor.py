@@ -9,9 +9,9 @@ import time
 import tkinter as tk
 
 import anne
-from app_paths import app_path
+from app_paths import app_path, required_files
 from app_settings import LOAD_TYPES, load_settings, normalize_settings, save_settings
-from catalog import Catalog, required_files
+from bena import Catalog
 from downloader import prepare_files, update_due
 from vs_theme import install_theme
 from ide_shell import Workspace
@@ -127,10 +127,8 @@ class Protractor:
             self.history_index = len(self.history) - 1
         self.update_history_buttons()
         self.workspace.set_document(entry)
-        translators = {'buff': anne.translate_whole_buff, 'buff_template': anne.translate_whole_buff_template,
-                       'global_buff': anne.translate_whole_global_buff, 'rogue_item': anne.translate_whole_rogue_item}
         try:
-            document = translators[entry.category](copy.deepcopy(entry.obj))
+            document = entry.obj.translate() # translators[entry.category](copy.deepcopy(entry.obj))
         except Exception as error:
             log.exception('翻译失败: %s', target)
             document = {'main': entry.name, 'children': [{'main': '翻译失败', 'description': str(error)}]}
@@ -282,23 +280,27 @@ class Protractor:
         def worker():
             try:
                 list_snapshots()
-                names = required_files(candidate['tables'])
+                tables = candidate['tables']
+                names = required_files(tables)
                 ready = all(app_path('tables', name).exists() for name in names)
                 loaded = False
                 if startup and ready:
                     try:
-                        snapshot = Catalog(candidate['tables']).load()
+                        new_catalog = Catalog(tables)
+                        snapshot = new_catalog.load()
                         self.messages.put(('loaded', (snapshot, candidate)))
                         loaded = True
                     except Exception:
-                        log.exception('Local data invalid')
+                        log.exception("本地数据不可用")
+
                 needs_update = not startup or not loaded or candidate['auto_update'] and update_due(candidate['update_hours'], names=names, source=candidate['download_source'])
                 if needs_update:
                     changed = prepare_files(force=ready, names=names, progress=progress,
                                             source=candidate['download_source'],
-                                            validator=lambda paths: Catalog(candidate['tables'], paths).load())
+                                            validator=lambda paths: Catalog(tables, paths).load())
                     if changed or not loaded or settings is not None:
-                        self.messages.put(('loaded', (Catalog(candidate['tables']).load(), candidate)))
+                        new_catalog = Catalog(tables)
+                        self.messages.put(('loaded', (new_catalog.load(), candidate)))
                     progress(f'已更新 {len(changed)} 个文件' if changed else '数据已是最新')
                 else:
                     progress('本地数据已加载')

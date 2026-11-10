@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import anne
 import bena
-from catalog import Catalog
+from bena.catalog import Catalog
 from game_class import Buff, Node
 from document_model import document_rows, reference_parts, default_folds
 

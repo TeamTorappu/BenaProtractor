@@ -2,7 +2,7 @@
 # 藏品符文
 #----------------------------------------
 import json
-from analyzer import analyze_blackboard
+from analyzer.blackboard import analyze_blackboard
 
 class Relic:
     def __init__(self, relic_data, item_type):

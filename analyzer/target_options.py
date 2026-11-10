@@ -2,12 +2,13 @@
 # 解析目标选项
 #----------------------------------------
 from .profession import analyze_profession
-from bena import ask_bena_character, ask_bena_enemy
 from dictionary import anne_dictionary
 
 # 解析目标选项的详细信息
 # 返回结构体
 def analyze_target_options(option: dict,relative_side=True,base_by_side = "ALLY"):
+    from bena import ask_bena_character, ask_bena_enemy
+
     conditions = []
     # 阵营
     side = analyze_target_options_side(option,relative_side,base_by_side)
@@ -108,6 +109,8 @@ def analyze_target_options_side(option: dict,relative_side = True,base_by_side =
 # 解析目标选项阵营以外的所有条件（用于表述globalbuff）
 # 返回列表
 def analyze_target_options_conditions(option: dict):
+    from bena import ask_bena_character, ask_bena_enemy
+
     conditions = []
     main_conditions = []
     # 职业筛选

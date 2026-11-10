@@ -1,4 +1,3 @@
-/__pycache__
 /build
 /dist
 /output
@@ -6,12 +5,16 @@
 /tables
 /data
 main.spec
-/node_translator/__pycache__
-/relic_translator/__pycache__
 .cache
 .settings.json
 /.qa
 /.qa-*
+
+/__pycache__
 /tests/__pycache__
 /analyzer/__pycache__
-/rune_translator/__pycache__
+/anne/node_translator/__pycache__
+/anne/relic_translator/__pycache__
+/anne/rune_translator/__pycache__
+/anne/__pycache__
+/bena/__pycache__

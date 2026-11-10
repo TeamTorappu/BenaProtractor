@@ -7,8 +7,9 @@ import urllib.error
 from pathlib import Path
 from unittest.mock import patch
 
+from app_paths import required_files
 from app_settings import DEFAULT_LOAD, normalize_settings, save_settings, load_settings
-from catalog import Catalog
+from bena.catalog import Catalog
 from game_class import Buff
 from downloader import prepare_files, read_metadata, update_due
 from editor_views import reference_parts, json_spans
@@ -234,6 +235,12 @@ class SettingsTests(unittest.TestCase):
         self.assertTrue(seasons <= set(DEFAULT_LOAD))
         self.assertTrue(seasons <= set(normalize_settings({})['tables']))
         self.assertEqual(normalize_settings({'tables': ['rogue_1']})['tables'], ['rogue_1'])
+
+    def test_required_files_add_rogue_and_autochess_tables_as_names(self):
+        files = required_files(['rogue_1', 'autochess'])
+        self.assertIn('roguelike_topic_table.json', files)
+        self.assertIn('activity_table.json', files)
+        self.assertTrue(all(isinstance(name, str) and name.endswith('.json') for name in files))
 
     def test_theme_defaults_and_valid_values(self):
         self.assertEqual(normalize_settings({})['theme'], 'light')

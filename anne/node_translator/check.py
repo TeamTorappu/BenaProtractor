@@ -1,7 +1,7 @@
 #----------------------------------------
 # 检查类Node
 #----------------------------------------
-from bena import ENEMY_NAMES, ask_bena_character, ask_bena_enemy
+from bena import ask_bena_character, ask_bena_enemy
 
 from dictionary import anne_dictionary
 from analyzer import analyze_fp, analyze_target_options
@@ -727,12 +727,7 @@ def CheckEnemyId(node,blackboard):
     enemy_names = []
     if not node["_loadIdFromBb"]:
         for enemy_id in node["_filterIds"]:
-            if "_" in enemy_id and enemy_id.startswith("enemy_"):
-                enemy_name = enemy_id.split("_")[2] # 这是实际ID，就看这个就好
-                if enemy_name in ENEMY_NAMES:
-                    enemy_names.append(ENEMY_NAMES[enemy_name])
-                else:
-                    enemy_names.append(enemy_id)
+            enemy_names.append(ask_bena_enemy(enemy_id))
     result = None
     if node["_loadIdFromBb"]:
         result = {

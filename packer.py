@@ -17,7 +17,7 @@ RESOURCES = (
     'icon/icon.ico',
     'translation/bena_dictionary.json',
     'translation/anne_dictionary.json',
-    'dummy/global_buff_dummy.json',
+    'table_dummies/global_buff_dummy.json',
 )
 
 

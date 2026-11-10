@@ -5,6 +5,7 @@ from .buff import *
 from .deckbuff import *
 from .damage import *
 
+from .blackboard import *
 from .attribute import *
 from .profession import *
 from .selector import *
