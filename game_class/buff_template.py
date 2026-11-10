@@ -1,7 +1,6 @@
 #----------------------------------------
 # Buff模板
 #----------------------------------------
-import json
 from dictionary import anne_dictionary
 from game_class.event_to_action import EventToAction
 
@@ -26,7 +25,7 @@ class BuffTemplate:
 
     # 获取原文
     def get_raw_data(self):
-        return json.dumps(self.buff_data,indent=4,ensure_ascii=False)
+        return self.buff_data
 
     # 翻译
     def translate(self,blackboard : dict = {}):

@@ -1,7 +1,6 @@
 #----------------------------------------
 # 伪代码节点
 #----------------------------------------
-import json
 
 class Node:
     def __init__(self, node_data):
@@ -22,6 +21,7 @@ class Node:
         self.condition_nodes = None
         self.succeed_nodes = None
         self.fail_nodes = None
+        self.hidden = False
         # 预处理
         #if node_data.has_key("_buff"):
         #    # 获取附属Buff
@@ -54,4 +54,4 @@ class Node:
 
     # 获取原文
     def get_raw_data(self):
-        return json.dump(self.node_data,indent=4,ensure_ascii=False)
+        return self.node_data

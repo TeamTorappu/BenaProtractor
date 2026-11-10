@@ -1,8 +1,6 @@
 #----------------------------------------
 # 全局Buff
 #----------------------------------------
-import json
-
 from analyzer.buff import analyze_buff
 from analyzer.deckbuff import analyze_deckbuff
 from analyzer.selector import analyze_selector_target_options_override
@@ -32,7 +30,7 @@ class GlobalBuff:
     
     # 获取原文
     def get_raw_data(self):
-        return json.dumps(self.prefab_data,indent=4,ensure_ascii=False)
+        return self.prefab_data
     
     # 翻译
     def translate(self,blackboard : dict = {}):

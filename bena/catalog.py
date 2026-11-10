@@ -5,7 +5,7 @@ import json
 from dataclasses import dataclass
 from app_paths import app_path
 
-GROUPS = ["buff", "buff_template", "global_buff", "rogue_item"]
+GROUPS = ["buff", "buff_template", "global_buff", "rogue_item", "autochess_3"]
 
 @dataclass
 class Entry:
@@ -24,7 +24,7 @@ class Entry:
 
 # 大目录
 class Catalog:
-    def __init__(self, tables, paths=None):
+    def __init__(self, tables):
         self.tables = list(tables)
         self.loaded_tables = set()
         self.entries = {}
@@ -33,7 +33,6 @@ class Catalog:
         self.enemies = {}
         self.character_display_names = {}
         self.enemy_display_names = {}
-        self.paths = paths or {}
         self.warnings = []
         self.names = {}
 
@@ -41,11 +40,6 @@ class Catalog:
         entry = Entry(category, key, obj, table or category)
         self.groups[category][key] = obj
         self.entries[entry.target] = entry
-
-    def read(self, name):
-        path = self.paths.get(name, app_path("tables", name))
-        with open(path, encoding="utf-8-sig") as stream:
-            return json.load(stream)
 
     def load(self):
         from bena.catalog_load import load_tables, prepare_tables

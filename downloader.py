@@ -56,11 +56,6 @@ def matches_source(entry, source, url):
 
 
 def validate_table(name, path):
-    # 活动表太大了，简单判断以下就好
-    if name == "activity_table.json":
-        if os.path.isfile(path) and os.path.getsize(path) > 10485760: # 大于10mb即可
-            raise ValueError("activity_table.json 过小")
-    
     # 其他表
     with open(path, encoding="utf-8-sig") as stream:
         data = json.load(stream)
@@ -82,6 +77,9 @@ def validate_table(name, path):
     elif name == "enemy_database.json":
         if not isinstance(data.get("enemies", data), (list, dict)):
             raise ValueError("enemy_database.json 格式错误")
+    elif name == "activity_table.json":
+        if os.path.getsize(path) < 10485760: # 大于1mb即可
+            raise ValueError("activity_table.json 过小")
     return data
 
 

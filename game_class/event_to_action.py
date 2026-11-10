@@ -1,7 +1,6 @@
 #----------------------------------------
 # 事件与操作
 #----------------------------------------
-import json
 from dictionary import anne_dictionary
 from game_class.node import Node
 
@@ -12,12 +11,11 @@ class EventToAction:
         self.node_list = []
         for node_data in node_data_list:
             self.node_list.append(Node(node_data))
+        self.hidden = False
     
     # 获取原文
     def get_raw_data(self):
-        new_dict = {}
-        new_dict[self.event_key] = [node.node_data for node in self.node_list]
-        return json.dumps(new_dict,indent=4,ensure_ascii=False)
+        return [node.node_data for node in self.node_list]
 
     # 翻译
     def translate(self,blackboard={}):

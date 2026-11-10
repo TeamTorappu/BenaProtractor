@@ -190,8 +190,10 @@ class Workspace:
         app = self.app
         app.window.title(f'{entry.name} - 贝娜的量角器')
         files = {'buff': 'buff_table.json', 'buff_template': 'buff_template_data.json',
-                 'global_buff': 'global_buff_dummy.json', 'rogue_item': 'roguelike_topic_table.json'}
-        app.breadcrumb.configure(text=files[entry.category])
+            'global_buff': 'global_buff_dummy.json', 'rogue_item': 'roguelike_topic_table.json',
+            'autochess_3': 'activity_table_autochess.json'
+        }
+        app.breadcrumb.configure(text=files.get(entry.category,"what_is_this.json"))
         app.key_label.configure(text='›  ' + entry.key)
         children = app.properties.get_children()
         if children:

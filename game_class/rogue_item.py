@@ -1,7 +1,6 @@
 #----------------------------------------
 # 肉鸽物品（藏品、队伍、零件、通宝等）
 #----------------------------------------
-import json
 from game_class.relic import Relic
 
 RESOURCE_TYPES = [
@@ -73,9 +72,9 @@ class RogueItem:
     # 获取原文
     def get_raw_data(self):
         if self.item_data != None and "buffs" in self.item_data:
-            return json.dump([self.item_info,self.item_data],indent=4,ensure_ascii=False)
+            return [self.item_info,self.item_data]
         else:
-            return json.dump([self.item_info],indent=4,ensure_ascii=False)
+            return [self.item_info]
 
     # 翻译
     def translate(self):

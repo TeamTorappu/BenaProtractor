@@ -137,7 +137,7 @@ class Protractor:
         if entry.category == 'rogue_item':
             raw = {'item_info': obj.item_info, 'item_data': obj.item_data} if obj.has_effect else obj.item_info
         else:
-            raw = {entry.key: obj.prefab_data if entry.category == 'global_buff' else obj.buff_data}
+            raw = {entry.key: obj.get_raw_data()}
         self.source.show(raw)
         self.sync_selection()
         if not self.busy:
@@ -296,8 +296,7 @@ class Protractor:
                 needs_update = not startup or not loaded or candidate['auto_update'] and update_due(candidate['update_hours'], names=names, source=candidate['download_source'])
                 if needs_update:
                     changed = prepare_files(force=ready, names=names, progress=progress,
-                                            source=candidate['download_source'],
-                                            validator=lambda paths: Catalog(tables, paths).load())
+                                            source=candidate['download_source'])
                     if changed or not loaded or settings is not None:
                         new_catalog = Catalog(tables)
                         self.messages.put(('loaded', (new_catalog.load(), candidate)))

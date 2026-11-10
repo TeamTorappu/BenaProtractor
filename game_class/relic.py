@@ -1,7 +1,6 @@
 #----------------------------------------
 # 藏品符文
 #----------------------------------------
-import json
 from analyzer.blackboard import analyze_blackboard
 
 class Relic:
@@ -10,8 +9,15 @@ class Relic:
         self.key = relic_data["key"]
         self.type = item_type # 父级的类型，用于传参
         self.blackboard = analyze_blackboard(relic_data["blackboard"])
-        self.translation = None
+        self.display_name == ""
+        self.hidden = False
+
+    # 获取显示名
+    def get_display_name(self):
+        if self.display_name == "":
+            return self.key
+        return self.display_name
 
     # 获取原文
     def get_raw_data(self):
-        return json.dump(self.relic_data,indent=4,ensure_ascii=False)
+        return self.relic_data
