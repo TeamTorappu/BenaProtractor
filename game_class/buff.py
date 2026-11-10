@@ -1,8 +1,6 @@
 #----------------------------------------
 # Buff
 #----------------------------------------
-import json
-
 from analyzer.buff import analyze_buff
 
 class Buff:
@@ -20,7 +18,7 @@ class Buff:
     
     # 获取原文
     def get_raw_data(self):
-        return json.dumps(self.buff_data,indent=4,ensure_ascii=False)
+        return self.buff_data
 
     # 翻译
     def translate(self,blackboard: dict = {}):
