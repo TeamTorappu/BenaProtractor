@@ -6,6 +6,7 @@ import json
 from app_paths import app_path, app_path_file_exists, app_path_file_missing
 from bena.split_activity_table import split_activity_table
 from game_class import Buff, BuffTemplate, GlobalBuff, RogueItem
+from game_class.autochess_band import AutochessBand
 from game_class.autochess_char_chess import AutochessCharChess
 from game_class.autochess_garrison import AutochessGarrison
 
@@ -52,19 +53,35 @@ def load_tables(catalog):
                 
     if app_path_file_exists("table_dummies", "activity_table_autochess.json"):
         with open(app_path("table_dummies", "activity_table_autochess.json"), encoding="utf-8") as _f:
-            json_data = json.load(_f)["act3autochess"]["V3_1"]
-            for key, data in json_data["charShopChessDatas"].items():
-                chess_data = json_data["charChessDataDict"].get(data["chessId"],{})
+            json_data = json.load(_f)
+            act_data = json_data["activity"]["act3autochess"]["V3_1"]
+            info_data = json_data["autoChessData"]
+            # 干员棋子
+            for key, data in act_data["charShopChessDatas"].items():
+                chess_data = act_data["charChessDataDict"].get(data["chessId"],{})
+                golden_chess_data = act_data["charChessDataDict"].get(data["goldenChessId"],{})
                 garrison_data = {}
                 if "garrisonIds" in chess_data and chess_data["garrisonIds"] != None:
                     for garrison in chess_data["garrisonIds"]:
-                        garrison_data[garrison] = json_data["garrisonDataDict"].get(garrison,{})
-                catalog.add("autochess_3", key, AutochessCharChess(key,chess_data,data,garrison_data))
+                        garrison_data[garrison] = act_data["garrisonDataDict"].get(garrison,{})
+                golden_garrison_data = {}
+                if "garrisonIds" in golden_chess_data and golden_chess_data["garrisonIds"] != None:
+                    for garrison in golden_chess_data["garrisonIds"]:
+                        golden_garrison_data[garrison] = act_data["garrisonDataDict"].get(garrison,{})
+                catalog.add("autochess_3", key, AutochessCharChess(key,data,chess_data,garrison_data,golden_chess_data,golden_garrison_data))
+            # 策略/分队
+            for key, data in act_data["bandDataListDict"].items():
+                band_info = info_data["bandDataDict"].get(key,{})
+                if data["effectId"] != None:
+                    band_effect_info = act_data["effectInfoDataDict"].get(data["effectId"],{})
+                    band_effect_buff = act_data["effectBuffInfoDataDict"].get(data["effectId"],{})
+                    catalog.add("autochess_3", key, AutochessBand(key, data, band_info, band_effect_info, band_effect_buff))
+                else:
+                    catalog.add("autochess_3", key, AutochessBand(key, data, band_info))
 
-    
     catalog.loaded_tables.update(("buff", "buff_template", "global_buff"))
 
-    # 加载肉鸽极度
+    # 加载肉鸽季度
     seasons = [t for t in catalog.tables if t.startswith("rogue_")]
     if seasons:
         with open(app_path("tables", "roguelike_topic_table.json"), encoding="utf-8") as _f:

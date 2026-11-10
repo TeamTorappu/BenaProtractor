@@ -4,7 +4,7 @@ import json
 import re
 import bena
 
-REFERENCE_PATTERN = re.compile(r'<([a-z_]+)\|([^<>|\r\n]+)>')
+REFERENCE_PATTERN = re.compile(r'<([a-z][a-z0-9_]*)\|([^<>|\r\n]+)>')
 
 
 def reference_parts(value, catalog):
@@ -27,6 +27,8 @@ def reference_parts(value, catalog):
             label = bena.translate_buff_name(key)
             parts.append((f'{label}（{key}）' if label != key else key, None))
         elif category == 'rogue_item':
+            parts.append((key, None))
+        elif category == 'autochess_3':
             parts.append((key, None))
         else:
             parts.append((match.group(), None))

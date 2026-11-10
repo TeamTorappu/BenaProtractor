@@ -12,6 +12,8 @@ STATUS_RESISTABLE_ABNORMAL = ["STUNNED","COLD","FROZEN","FEARED","PALSY","ATTRAC
 # 返回结构体
 def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
     buff_key = buff_data["buffKey"]
+    if buff_key == None:
+        buff_key = "null"
     # 开始解析
     features = []
     blackboard_dict = {"main" : "黑板数据：","children":[]}

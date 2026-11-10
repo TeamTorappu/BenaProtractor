@@ -13,7 +13,7 @@ from document_model import document_rows, reference_parts, default_folds
 class ReferenceSafetyTests(unittest.TestCase):
     def setUp(self):
         self.catalog = Catalog(['buff'])
-        for category in ('buff', 'buff_template', 'global_buff', 'rogue_item'):
+        for category in ('buff', 'buff_template', 'global_buff', 'rogue_item', 'autochess_3'):
             self.catalog.add(category, 'same_id', Buff('same_id', {}))
         self.catalog.add('buff_template', 'damage_resistance', Buff('damage_resistance', {}))
         self.catalog.add('buff', 'only_buff', Buff('only_buff', {}))
@@ -40,6 +40,11 @@ class ReferenceSafetyTests(unittest.TestCase):
                 with self.subTest(category=category):
                     parts = reference_parts('<' + category + '|same_id>', self.catalog)
                     self.assertEqual([t for _, t in parts if t], [category + '.same_id'])
+
+    def test_autochess_digit_category_is_parsed_as_link(self):
+        self.catalog.add('autochess_3', 'same_id', Buff('same_id', {}))
+        self.assertEqual(reference_parts('<autochess_3|same_id>', self.catalog),
+                         [('same_id', 'autochess_3.same_id')])
 
     def test_invalid_markers_are_literal(self):
         for text in ('<bogus|same_id>', '<|same_id>', '<buff|>', '<buff||same_id>'):

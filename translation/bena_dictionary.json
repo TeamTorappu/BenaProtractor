@@ -1470,36 +1470,148 @@
 		"easterEgg" : "彩蛋",
 		"achievement" : "成就",
 
+		"gar" : {
+			"effect" : "特质效果",
+			"event" : "特质事件"
+		},
 		"bond" : {
 			"eff" : {
-				"assis" : "协防盟约",
-				"yan" : "炎盟约",
-				"sargon" : "萨尔贡盟约",
-				"kjerag" : "谢拉格盟约",
-				"laterano" : "拉特兰盟约",
-				"victoria" : "维多利亚盟约",
-				"egir" : "阿戈尔盟约",
-				"kazimierz" : "卡西米尔盟约",
-				"siracusa" : "叙拉古盟约",
-				"ursus" : "乌萨斯盟约",
-				"lethania" : "莱塔尼亚盟约",
-				"iberia" : "伊比利亚盟约",
-				"mani" : "调和盟约",
-				"solo" : "独行盟约",
-				"sunt" : "绝技盟约",
-				"arcane" : "奥术盟约",
-				"preci" : "精准盟约",
-				"swift" : "迅捷盟约",
-				"skillful" : "灵巧盟约",
-				"deput" : "助力盟约",
-				"indom" : "不屈盟约",
-				"stead" : "坚守盟约",
-				"raid" : "突袭盟约",
-				"mira" : "奇迹盟约",
-				"visi" : "远见盟约",
-				"invest" : "投资人盟约",
-				"doc" : "聚合盟约"
+				"yan" : {
+					"power" : "炎盟约·六人",
+					"" : "炎盟约"
+				},
+				"sargon" : {
+					"power" : "萨尔贡盟约·六人",
+					"" : "萨尔贡盟约"
+				},
+				"kjerag" : {
+					"power" : "谢拉格盟约·六人",
+					"" : "谢拉格盟约"
+				},
+				"laterano" : {
+					"power" : "拉特兰盟约·六人",
+					"" : "拉特兰盟约"
+				},
+				"victoria" : {
+					"power" : "维多利亚盟约·六人",
+					"" : "维多利亚盟约"
+				},
+				"egir" : {
+					"power" : "阿戈尔盟约·六人",
+					"" : "阿戈尔盟约"
+				},
+				"kazimierz" : {
+					"power" : "卡西米尔盟约·六人",
+					"" : "卡西米尔盟约"
+				},
+				"siracusa" : {
+					"power" : "叙拉古盟约·六人",
+					"" : "叙拉古盟约"
+				},
+				"ursus" : {
+					"power" : "乌萨斯盟约·六人",
+					"" : "乌萨斯盟约"
+				},
+				"lethania" : {
+					"power" : "莱塔尼亚盟约·六人",
+					"" : "莱塔尼亚盟约"
+				},
+				"iberia" : {
+					"power" : "伊比利亚盟约·六人",
+					"" : "伊比利亚盟约"
+				},
+				"assis" : {
+					"power" : "协防干员盟约·强化",
+					"" : "协防干员盟约"
+				},
+				"mani" : {
+					"power" : "调和盟约·强化",
+					"" : "调和盟约"
+				},
+				"solo" : {
+					"power" : "独行盟约·强化",
+					"" : "独行盟约"
+				},
+				"sunt" : {
+					"power" : "绝技盟约·强化",
+					"" : "绝技盟约"
+				},
+				"arcane" : {
+					"power" : "奥术盟约·强化",
+					"" : "奥术盟约"
+				},
+				"preci" : {
+					"power" : "精准盟约·强化",
+					"" : "精准盟约"
+				},
+				"swift" : {
+					"power" : "迅捷盟约·强化",
+					"" : "迅捷盟約"
+				},
+				"skillful" : {
+					"power" : "灵巧盟约·强化",
+					"" : "灵巧盟约"
+				},
+				"deput" : {
+					"power" : "助力盟约·强化",
+					"" : "助力盟约"
+				},
+				"indom" : {
+					"power" : "不屈盟约·强化",
+					"" : "不屈盟约"
+				},
+				"stead" : {
+					"power" : "坚守盟约·强化",
+					"" : "坚守盟约"
+				},
+				"raid" : {
+					"power" : "突袭盟约·强化",
+					"" : "突袭盟约"
+				},
+				"mira" : {
+					"power" : "奇迹盟约·强化",
+					"" : "奇迹盟约"
+				},
+				"visi" : {
+					"power" : "远见盟约·强化",
+					"" : "远见盟约"
+				},
+				"invest" : {
+					"power" : "投资人盟约·强化",
+					"" : "投资人盟约"
+				},
+				"doc" : {
+					"power" : "聚合盟约·强化",
+					"" : "聚合盟约"
+				}
 			}
-		}
+		},
+		"ex" : {
+			"bond" : {
+				"cnt" : "临时盟约层数"
+			}
+		},
+		"ursusexbondcnt" : "乌萨斯临时盟约层数",
+		"bondstackmax" : "盟约叠层上限",
+		"attrbybond" : "盟约层数转属性",
+		"gartriggercnt" : "特质触发次数",
+		"globalbuff" : "全局Buff",
+		"switchcharinhand" : "向休整区换人",
+		"switchhand" : "休整区换人",
+		"triggergar" : "触发特质",
+		"firstdamgecold" : "首次伤害寒冷",
+		"bondadd" : "盟约叠加",
+		"onstart" : "开始时",
+		"onfinish" : "结束时",
+		"battlestart" : "战斗开始",
+		"inrange" : "范围内",
+		"selfdead" : "自灭",
+		"skillstart" : "技能开始",
+		"skillfinish" : "技能结束",
+		"epbreak" : "元素爆发",
+		"eprecoverspeed" : "元素爆发恢复速度",
+		"attackslow" : "攻击带减速",
+		"charkillenemy" : "角色杀敌人",
+		"addsp" : "加技力"
 	}
 }

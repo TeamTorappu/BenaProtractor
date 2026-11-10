@@ -68,6 +68,10 @@ class RogueItem:
             self.has_effect = True
             for buff in item_data["buffs"]:
                 self.effect_list.append(Relic(buff,self.type))
+
+    # 获取显示名
+    def get_display_name(self):
+        return self.display_name
     
     # 获取原文
     def get_raw_data(self):

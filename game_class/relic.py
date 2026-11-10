@@ -9,7 +9,7 @@ class Relic:
         self.key = relic_data["key"]
         self.type = item_type # 父级的类型，用于传参
         self.blackboard = analyze_blackboard(relic_data["blackboard"])
-        self.display_name == ""
+        self.display_name = ""
         self.hidden = False
 
     # 获取显示名
@@ -21,3 +21,8 @@ class Relic:
     # 获取原文
     def get_raw_data(self):
         return self.relic_data
+
+    # 翻译
+    def translate(self):
+        from anne.anne_relic import anne_relic_translate
+        return anne_relic_translate(self)
