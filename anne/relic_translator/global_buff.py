@@ -51,3 +51,12 @@ def global_buff_stack(item_type,blackboard):
     result = global_buff_normal(item_type,blackboard)
     result["main"] += "（同名效果间黑板值累加）"
     return result
+
+# 带验证的全局Buff（存疑）
+def env_gbuff_new_with_verify(item_type,blackboard):
+    result = global_buff_normal(item_type,blackboard)
+    new_info = "生效全局Buff"
+    if item_type == "AUTOCHESS_EQUIP":
+        new_info = "对携带装备的干员单独生效全局Buff"
+    result["main"] = result["main"].replace("生效全局Buff",new_info)
+    return result

@@ -9,7 +9,6 @@ from app_paths import app_path
 
 REASONABLE_ACTIVITIES = {
     #"AUTOCHESS" : "activity_table_autochess.json", # 卫戍协议另起炉灶
-    #"COLLECTION" : "activity_table_collection.json",
     #"ARCADE" : "activity_table_arcade.json",
     #"ARK_HUB" : "activity_table_ark_hub.json",
     #"BOSS_RUSH" : "activity_table_boss_rush.json",

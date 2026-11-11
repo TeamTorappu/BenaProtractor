@@ -1,17 +1,14 @@
 #----------------------------------------
-# 卫戍协议 · 策略 / 分队
+# 卫戍协议 · 策略
 #----------------------------------------
-from bena import ask_bena_character
 from dictionary import anne_dictionary
-from game_class.relic import Relic
 
 class AutochessBand:
-    def __init__(self, band_id, band_data, band_info = {}, band_effect_info = {}, band_effect_buff = {}):
+    def __init__(self, band_id, band_data, band_info = {}, band_effect = None):
         self.band_id = band_id
         self.band_data = band_data
         self.band_info = band_info
-        self.band_effect_info = band_effect_info
-        self.band_effect_buff = [Relic(relic_data,"AUTOCHESS_BAND") for relic_data in band_effect_buff]
+        self.band_effect = band_effect
         self.band_type = band_data["bandType"]
         self.band_hp = band_data["totalHp"] if band_data["totalHp"] else 0
         self.display_name = "策略：" + band_info.get("bandName", str(band_id))
@@ -41,14 +38,10 @@ class AutochessBand:
             "children" : [{"main" : self.band_info["unlockDesc"]}]
         })
         # 策略效果（藏品）
-        if len(self.band_effect_buff) > 0:
-            effect_dict = {
-                "main" : "策略效果（藏品）：",
-                "children" : []
-            }
-            for relic in self.band_effect_buff:
-                effect_dict["children"].append(relic.translate())
-            result["children"].append(effect_dict)
+        if self.band_effect != None:
+            effect_translation = self.band_effect.translate()
+            effect_translation["main"] = "策略效果（藏品）："
+            result["children"].append(effect_translation)
         # 禁用模式/难度
         if len(self.band_data["inactiveModeIdList"]) > 0:
             result["children"].append({"main" : ""})

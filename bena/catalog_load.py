@@ -8,6 +8,7 @@ from bena.split_activity_table import split_activity_table
 from game_class import Buff, BuffTemplate, GlobalBuff, RogueItem
 from game_class.autochess_band import AutochessBand
 from game_class.autochess_char_chess import AutochessCharChess
+from game_class.autochess_effect import AutochessEffect
 from game_class.autochess_garrison import AutochessGarrison
 
 # 准备工作
@@ -69,13 +70,18 @@ def load_tables(catalog):
                     for garrison in golden_chess_data["garrisonIds"]:
                         golden_garrison_data[garrison] = act_data["garrisonDataDict"].get(garrison,{})
                 catalog.add("autochess_3", key, AutochessCharChess(key,data,chess_data,garrison_data,golden_chess_data,golden_garrison_data))
+            # 卫戍效果
+            for key, data in act_data["effectInfoDataDict"].items():
+                effect_buff = act_data["effectBuffInfoDataDict"].get(key,{})
+                catalog.add("autochess_3", key, AutochessEffect(key, data, effect_buff))
             # 策略/分队
             for key, data in act_data["bandDataListDict"].items():
                 band_info = info_data["bandDataDict"].get(key,{})
                 if data["effectId"] != None:
                     band_effect_info = act_data["effectInfoDataDict"].get(data["effectId"],{})
                     band_effect_buff = act_data["effectBuffInfoDataDict"].get(data["effectId"],{})
-                    catalog.add("autochess_3", key, AutochessBand(key, data, band_info, band_effect_info, band_effect_buff))
+                    band_effect = AutochessEffect(data["effectId"], band_effect_info, band_effect_buff)
+                    catalog.add("autochess_3", key, AutochessBand(key, data, band_info, band_effect))
                 else:
                     catalog.add("autochess_3", key, AutochessBand(key, data, band_info))
 
