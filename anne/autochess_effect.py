@@ -2,7 +2,7 @@
 # 卫戍协议 · 效果
 #----------------------------------------
 from dictionary import anne_dictionary
-from anne.relic import Relic
+from anne.rune import Rune
 
 EFFECT_TYPE = {
     "BAND_SKILL" : "策略技能",
@@ -21,7 +21,7 @@ class AutochessEffect:
         self.effect_buff_info = effect_buff_info
         self.effect_name = effect_info["effectName"]
         self.effect_type = effect_info["effectType"]
-        self.effect_relics = [Relic(relic_data,"AUTOCHESS_"+self.effect_type) for relic_data in effect_buff_info]
+        self.effect_runes = [Rune(rune_data) for rune_data in effect_buff_info]
         self.display_name = ""
         self.hidden = False
 
@@ -51,6 +51,14 @@ class AutochessEffect:
             "children" : []
         }
         result["children"].append({"main" : self.effect_info["effectDesc"].replace("\\n","\n")})
-        for relic in self.effect_relics:
-            result["children"].append(relic.translate())
+        for rune in self.effect_runes:
+            if rune.rune_key == "enve_gbuff_new_with_verify":
+                gbuff_translation = rune.translate()
+                new_info = "将对特定单位生效"
+                if self.effect_type == "EQUIP": # 卫戍装备，对装备的单位生效
+                    new_info = "将对穿戴装备的单位生效"
+                gbuff_translation["main"] = gbuff_translation["main"].replace("将生效",new_info)
+                result["children"].append(gbuff_translation)
+            else:
+                result["children"].append(rune.translate())
         return result

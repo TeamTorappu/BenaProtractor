@@ -3,14 +3,6 @@
 #----------------------------------------
 from dictionary import anne_dictionary
 
-# 逻辑 如果+否则
-def IfElse(node,blackboard):
-    return {"main" : "如果...","true":"如果是...","false":"如果不是..."}
-
-# 逻辑 如果全部+否则
-def IfConditions(node,blackboard):
-    return {"main" : "如果满足条件...","true":"如果是...","false":"如果不是..."}
-
 # 假节点，用于翻译占位
 def Dummy(node,blackboard):
     return {"main" : node["_dummy"]}

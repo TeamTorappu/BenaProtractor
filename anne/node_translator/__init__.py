@@ -6,12 +6,15 @@ from .card_buff import *
 from .global_buff import *
 from .damage import *
 from .damage_modify import *
+from .damage_check import *
 from .block_damage import *
 from .heal import *
 from .cost import *
 from .element import *
 from .projectile import *
 from .logic import *
+from .if_else import *
+from .if_conditions import *
 from .random import *
 from .blackboard import *
 from .blackboard_check import *
@@ -23,8 +26,9 @@ from .state import *
 from .rebuild import *
 from .shield import *
 from .palsy import *
-from .rogue import *
 from .util import *
+
+from .rogue import *
 
 from .autochess import *
 from .act49side import *

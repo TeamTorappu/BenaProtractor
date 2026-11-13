@@ -66,8 +66,6 @@ class RogueItem:
         self.has_effect = False
         if item_data != None and "buffs" in item_data:
             self.has_effect = True
-            for buff in item_data["buffs"]:
-                self.effect_list.append(Relic(buff,self.type))
 
     # 获取显示名
     def get_display_name(self):
@@ -109,15 +107,16 @@ class RogueItem:
 
         # 藏品效果或解释的原文
         if self.item_info["usage"] != None:
-            usage = {"main" : self.display_type+"描述文：","children": []}
+            usage = {"main" : self.display_type+"描述：","children": []}
+            usage["children"].append({"main" : self.item_info["usage"]})
             translation["children"].append(usage)
         
         # 效果文本
         if self.has_effect:
             effect_translation = {"main" : "","children" : []}
-            for rogue_effect in self.effect_list:
-                translation = rogue_effect.translate()
-                effect_translation["children"].append(translation)
+            for relic_data in self.item_data["buffs"]:
+                relic_translation = Relic(relic_data,self.type).translate()
+                effect_translation["children"].append(relic_translation)
             effect_translation["main"] = self.display_type+"效果："
             translation["children"].append(effect_translation)
 

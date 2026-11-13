@@ -82,6 +82,13 @@ class ReferenceSafetyTests(unittest.TestCase):
 
 
 class PresentationRoleTests(unittest.TestCase):
+    def test_cyclic_document_trees_do_not_recurse_forever(self):
+        document = {'main': '根节点'}
+        document['children'] = [document]
+
+        self.assertEqual([r.text for r in document_rows(document)], ['根节点'])
+        self.assertEqual(default_folds(document), set())
+
     def test_children_change_folding_but_not_action_color(self):
         document = {'main': '事件', 'children': [
             {'main': '创建Buff', 'children': [{'main': '黑板数据'}], 'style_closed': True},

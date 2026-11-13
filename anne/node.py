@@ -39,7 +39,7 @@ class Node:
             if method != "" :
                 translation = method(self.node_data,blackboard)
             else: # 无法翻译，把所有数据搓成可阅读的格式
-                translation = self.fake_translate(self,blackboard)
+                translation = self.fake_translate(blackboard)
         except Exception as e:
             print(f"[安妮]... {self.node_name} 节点翻译失败了")
             traceback.print_exc()
@@ -105,9 +105,7 @@ class Node:
                     children.append({"main" : "]"})
                 else:
                     children.append({"main" : str(key) + " : []"})
-            elif key == "$type":
-                children.append({"main": self.node_name})
-            else:
+            elif key != "$type":
                 children.append({"main": str(key) + " : " + str(content)})
         return {
             "main" : self.node_name+"（未翻译）",

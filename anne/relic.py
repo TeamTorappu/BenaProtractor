@@ -7,7 +7,7 @@ from anne import relic_translator
 from bena import ask_bena
 
 class Relic:
-    def __init__(self, relic_data, item_type):
+    def __init__(self, relic_data, item_type = "RELIC"):
         self.relic_data = relic_data
         self.key = relic_data["key"]
         self.type = item_type # 父级的类型，用于传参

@@ -15,17 +15,12 @@ def global_buff_normal(item_type,blackboard):
         "children" : []
     }
     # 预处理黑板数据与选择器
-    has_selector = False
-    extra_target_options = {}
     true_blackboard = {}
     for key,bb in blackboard.items():
         if key.startswith("selector."):
             has_selector = True
         elif key != "key" and key != "trig_type":
             true_blackboard[str(key)] = bb
-    # 添加选择器结果
-    #if has_selector:
-    #    result["description"] = "仅对" + analyze_selector(blackboard) + "生效"
     # 添加黑板结果
     if len(true_blackboard) > 0:
         blackboard_result = {"main" : "黑板值（数据）：","children" : []}

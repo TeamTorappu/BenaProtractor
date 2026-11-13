@@ -32,15 +32,16 @@ class AutochessBand:
         if self.band_type == "BONDRELEVANT":
             bonds = [anne_dictionary("bond_id",bond_id) for bond_id in self.band_data["relateBondList"]]
             result["description"] += " | " + "".join(bonds) + "专属策略"
-        result["children"].append({"main" : self.band_data["bandDesc"]})
+        result["children"].append({"main" : self.band_data["bandDesc"].replace("\\n","\n")})
         result["children"].append({
             "main" : "解锁条件：",
             "children" : [{"main" : self.band_info["unlockDesc"]}]
         })
-        # 策略效果（藏品）
+        # 策略效果
         if self.band_effect != None:
             effect_translation = self.band_effect.translate()
-            effect_translation["main"] = "策略效果（藏品）："
+            effect_translation["main"] = "策略效果（符文）："
+            del effect_translation["children"][0]
             result["children"].append(effect_translation)
         # 禁用模式/难度
         if len(self.band_data["inactiveModeIdList"]) > 0:
