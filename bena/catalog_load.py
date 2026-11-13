@@ -5,11 +5,11 @@ import json
 
 from app_paths import app_path, app_path_file_exists, app_path_file_missing
 from bena.split_activity_table import split_activity_table
-from game_class import Buff, BuffTemplate, GlobalBuff, RogueItem
-from game_class.autochess_band import AutochessBand
-from game_class.autochess_char_chess import AutochessCharChess
-from game_class.autochess_effect import AutochessEffect
-from game_class.autochess_garrison import AutochessGarrison
+from anne import Buff, BuffTemplate, GlobalBuff, RogueItem
+from anne.autochess_band import AutochessBand
+from anne.autochess_char_chess import AutochessCharChess
+from anne.autochess_effect import AutochessEffect
+from anne.autochess_garrison import AutochessGarrison
 
 # 准备工作
 def prepare_tables(catalog):

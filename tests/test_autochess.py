@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from game_class.autochess_char_chess import AutochessCharChess
+from anne.autochess_char_chess import AutochessCharChess
 
 
 class AutochessCharChessTests(unittest.TestCase):
@@ -22,7 +22,7 @@ class AutochessCharChessTests(unittest.TestCase):
 
     def test_missing_character_ids_have_a_display_fallback(self):
         chess = self.make_chess(6)
-        with patch("game_class.autochess_char_chess.ask_bena_character", return_value=None):
+        with patch("anne.autochess_char_chess.ask_bena_character", return_value=None):
             self.assertEqual(chess.get_display_name(), "[Ⅵ]自定义棋子（chess_char_6_diy1_a）")
             translation = chess.translate()
         self.assertIn({"main": "盟约干员：未指定"}, translation["children"])
@@ -30,7 +30,7 @@ class AutochessCharChessTests(unittest.TestCase):
 
     def test_chess_levels_map_to_one_based_rank_symbols(self):
         chess = self.make_chess(1, char_id="char_1")
-        with patch("game_class.autochess_char_chess.ask_bena_character", return_value="测试干员"):
+        with patch("anne.autochess_char_chess.ask_bena_character", return_value="测试干员"):
             self.assertEqual(chess.get_display_name(), "[Ⅰ]测试干员")
 
 

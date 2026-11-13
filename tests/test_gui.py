@@ -244,6 +244,17 @@ class WorkbenchIntegrationTests(unittest.TestCase):
         self.app.translation.toggle((0,))
         self.assertIn('deep', self.app.translation.text.get('1.0', 'end'))
 
+    def test_color_markup_renders_plain_text_with_color_tags(self):
+        text = '【猎人战法-未解锁】\n<@autochess.dgreen>调度中心等级达到4级解锁</>\n<@autochess.dgreen>点击使用</>：获得1名【阿戈尔】干员（等阶不高于当前调度中心）'
+        self.app.translation.show({'main': text}, self.catalog)
+        rendered = self.app.translation.text.get('1.0', 'end-1c')
+        self.assertNotIn('<@autochess.dgreen>', rendered)
+        self.assertIn('调度中心等级达到4级解锁', rendered)
+        self.assertIn('点击使用', rendered)
+        color_tags = [tag for tag in self.app.translation.text.tag_names('2.0') if tag.startswith('color_')]
+        self.assertTrue(color_tags)
+        self.assertEqual(self.app.translation.text.tag_cget(color_tags[0], 'foreground'), '#098658')
+
     def test_node_tree_removed_and_options_save(self):
         self.assertEqual([self.app.main_panel.tab(tab, 'text') for tab in self.app.main_panel.tabs()], ['中文伪代码', '原始代码'])
         self.assertFalse(hasattr(self.app, 'graph_view'))

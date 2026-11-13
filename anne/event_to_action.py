@@ -1,16 +1,15 @@
 #----------------------------------------
-# 事件与操作
+# 事件→操作
 #----------------------------------------
 from dictionary import anne_dictionary
-from game_class.node import Node
+from anne.action import Action
 
 # Buff的伪代码承载类
 class EventToAction:
-    def __init__(self, event_key, node_data_list):
+    def __init__(self, event_key, action_data):
         self.event_key = event_key
-        self.node_list = []
-        for node_data in node_data_list:
-            self.node_list.append(Node(node_data))
+        self.action = Action(action_data)
+        self.display_name = ""
         self.hidden = False
     
     # 获取原文
@@ -19,10 +18,8 @@ class EventToAction:
 
     # 翻译
     def translate(self,blackboard={}):
-        from anne.anne_node import anne_node_translate_all
-
         print("[安妮]尝试翻译事件 "+self.event_key)
-        translation = anne_node_translate_all(self.node_list,blackboard)
+        translation = self.action.translate(blackboard)
         translation["main"] = self.event_key
         translation["role"] = "section"
         event_name = anne_dictionary("buff_event",self.event_key)

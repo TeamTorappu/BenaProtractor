@@ -6,7 +6,7 @@ from unittest.mock import patch
 import anne
 import bena
 from bena.catalog import Catalog
-from game_class import Buff, Node
+from anne import Buff, Node
 from document_model import document_rows, reference_parts, default_folds
 
 
@@ -104,7 +104,7 @@ class PresentationRoleTests(unittest.TestCase):
 
 class ConditionalOutputTests(unittest.TestCase):
     def setUp(self):
-        self.translator = anne.AnneNode()
+        from anne import anne_node as translator
         self.check = {'$type': 'CheckAbnormalCombo', '_targetType': 'TARGET',
                       '_abnormalCombo': 'SLEEPING', '_isUnset': False}
         self.success = {'$type': 'Dummy', '_dummy': '成功效果'}

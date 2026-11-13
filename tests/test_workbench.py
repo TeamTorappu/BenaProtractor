@@ -10,7 +10,7 @@ from unittest.mock import patch
 from app_paths import required_files
 from app_settings import DEFAULT_LOAD, normalize_settings, save_settings, load_settings
 from bena.catalog import Catalog
-from game_class import Buff
+from anne import Buff
 from downloader import prepare_files, read_metadata, update_due
 from editor_views import reference_parts, json_spans
 from app_settings import SOURCE_URLS

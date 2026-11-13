@@ -22,6 +22,7 @@ from .modifier import *
 from .state import *
 from .rebuild import *
 from .shield import *
+from .palsy import *
 from .rogue import *
 from .util import *
 

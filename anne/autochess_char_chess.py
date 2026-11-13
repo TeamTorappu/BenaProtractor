@@ -3,7 +3,7 @@
 #----------------------------------------
 from bena import ask_bena_character
 from dictionary import anne_dictionary
-from game_class.autochess_garrison import AutochessGarrison
+from anne.autochess_garrison import AutochessGarrison
 
 DEX = ["[Ⅰ]","[Ⅱ]","[Ⅲ]","[Ⅳ]","[Ⅴ]","[Ⅵ]"]
 

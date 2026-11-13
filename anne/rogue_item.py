@@ -1,7 +1,7 @@
 #----------------------------------------
 # 肉鸽物品（藏品、队伍、零件、通宝等）
 #----------------------------------------
-from game_class.relic import Relic
+from anne.relic import Relic
 
 RESOURCE_TYPES = [
     "GOLD","EXP","HP","HPMAX","SHIELD","SQUAD_CAPACITY",
@@ -82,7 +82,6 @@ class RogueItem:
 
     # 翻译
     def translate(self):
-        from anne.anne_relic import anne_relic_translate_all
         from bena import ask_bena
 
         print(f"[安妮]尝试翻译{self.display_type} {self.display_name}（{self.item_key}）")
@@ -115,7 +114,10 @@ class RogueItem:
         
         # 效果文本
         if self.has_effect:
-            effect_translation = anne_relic_translate_all(self.effect_list)
+            effect_translation = {"main" : "","children" : []}
+            for rogue_effect in self.effect_list:
+                translation = rogue_effect.translate()
+                effect_translation["children"].append(translation)
             effect_translation["main"] = self.display_type+"效果："
             translation["children"].append(effect_translation)
 

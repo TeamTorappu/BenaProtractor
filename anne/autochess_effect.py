@@ -2,7 +2,7 @@
 # 卫戍协议 · 效果
 #----------------------------------------
 from dictionary import anne_dictionary
-from game_class.relic import Relic
+from anne.relic import Relic
 
 EFFECT_TYPE = {
     "BAND_SKILL" : "策略技能",
@@ -50,7 +50,7 @@ class AutochessEffect:
             "main" : self.get_display_name() + "（" + self.effect_id + "）",
             "children" : []
         }
-        result["children"].append({"main" : self.effect_info["effectDesc"]})
+        result["children"].append({"main" : self.effect_info["effectDesc"].replace("\\n","\n")})
         for relic in self.effect_relics:
             result["children"].append(relic.translate())
         return result

@@ -14,11 +14,18 @@
 #    ],
 #}
 
-from .anne_node import *
-from .anne_buff import *
-from .anne_global_buff import *
-from .anne_relic import *
-from .anne_rune import *
-from .anne_autochess import *
+# 加载顺序从小到大
+from .node import Node
+from .action import Action
+from .event_to_action import EventToAction
+from .buff_template import BuffTemplate
+from .rune import Rune
+from .relic import Relic
+from .buff import Buff
+from .global_buff import GlobalBuff
+from .rogue_item import RogueItem
+from .autochess_garrison import AutochessGarrison
+from .autochess_char_chess import AutochessCharChess
+from .autochess_band import AutochessBand
 
 print("[安妮]嗯。")

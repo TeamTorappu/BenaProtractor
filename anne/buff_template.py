@@ -2,7 +2,7 @@
 # Buff模板
 #----------------------------------------
 from dictionary import anne_dictionary
-from game_class.event_to_action import EventToAction
+from anne.event_to_action import EventToAction
 
 class BuffTemplate:
     def __init__(self, buff_key, buff_data):

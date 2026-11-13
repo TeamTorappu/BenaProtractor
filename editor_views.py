@@ -1,10 +1,182 @@
 """IDE document surfaces with margin folding and selectable, read-only text."""
 import json
+import re
 import tkinter as tk
 from tkinter import ttk, font
 from document_model import reference_parts, json_spans, document_rows, default_folds
 from vs_theme import COLORS, menu
 from dpi import DpiScale
+
+COLOR_TAG_PATTERN = re.compile(r'<@([A-Za-z0-9_.-]+)>(.*?)</>')
+COLOR_TAGS = {
+    "mission.levelname": "#FFDE00",
+    "mission.number": "#FFDE00",
+    "tu.kw": "#0098DC",
+    "tu.imp": "#FF0000",
+    "cc.vup": "#0098DC",
+    "cc.vdown": "#FF6237",
+    "cc.rem": "#F49800",
+    "cc.kw": "#00B0FF",
+    "cc.pn": "#000000",
+    "cc.talpu": "#000000",
+    "ba.vup": "#0098DC",
+    "ba.vdown": "#FF6237",
+    "ba.rem": "#F49800",
+    "ba.kw": "#00B0FF",
+    "ba.pn": "#000000",
+    "ba.talpu": "#0098DC",
+    "ba.xa": "#FF0000",
+    "ba.xb": "#FF7D00",
+    "ba.xc": "#FFFF00",
+    "ba.xd": "#00FF00",
+    "ba.xe": "#00FFFF",
+    "ba.xf": "#0291FF",
+    "ba.xg": "#FF00FF",
+    "ba.gild": "#2FAC78",
+    "ba.enemy": "#D83C3C",
+    "ba.drop": "#36ACFF",
+    "ba.acrem": "#727272",
+    "ba.velc": "#21ffc3",
+    "ba.delc": "#ff9000",
+    "ba.dgrey": "#9a9a9a",
+    "eb.key": "#00FFFF",
+    "eb.danger": "#FF0000",
+    "ro.get": "#0098DC",
+    "ro.lose": "#C82A36",
+    "rolv.rem": "#FF4C22",
+    "lv.description": "#d8d769",
+    "lv.extrades": "#d8d769",
+    "lv.sand2desc": "#a0a001",
+    "lv.item": "#FFFFFF",
+    "lv.rem": "#FFFFFF",
+    "lv.fs": "#FF0000",
+    "lv.sp": "#fd4600",
+    "lv.ez": "#0098dc",
+    "recalrune.nag": "#c9001c",
+    "recalrune.pos": "#0098dc",
+    "crisisv2.nag": "#ea9818",
+    "crisisv2.pos": "#16acaa",
+    "crisisv2.cra": "#d7181c",
+    "ro1.get": "#E5B684",
+    "ro2.lose": "#FF6E6E",
+    "ro2.get": "#59DDDC",
+    "ro2.virtue": "#0098dc",
+    "ro2.mutation": "#9266b2",
+    "ro2.desc": "#6d6d6d",
+    "ro3.lose": "#FF6E6E",
+    "ro3.get": "#9ed9fd",
+    "ro3.redt": "#ff4532",
+    "ro3.greent": "#4ffaa5",
+    "ro3.bluet": "#0085ff",
+    "ro3.bosst": "#ffffff",
+    "ro4.lose": "#FF6E6E",
+    "ro4.get": "#28bfe5",
+    "ro5.lose": "#FF6E6E",
+    "ro5.get": "#28bfe5",
+    "ro6.get": "#38d0d4",
+    "ro6.lose": "#d13464",
+    "rc.title": "#FFFFFF",
+    "rc.subtitle": "#FFC90E",
+    "rc.em": "#FF7F27",
+    "rc.eml": "#32CD32",
+    "ga.title": "#FFFFFF",
+    "ga.subtitle": "#FFC90E",
+    "ga.up": "#FF7F27",
+    "ga.adgacha": "#00C8FF",
+    "ga.nbgacha": "#00DDBB",
+    "ga.limadgacha": "#FF7E1F",
+    "ga.percent": "#FFD800",
+    "ga.attention": "#FF3126",
+    "ga.classicgacha": "#00A8FF",
+    "attainga.desc": "#FF0000",
+    "attainga.desc2": "#FFD800",
+    "attainga.attention": "#E1322C",
+    "linkagega.charname": "#FFF6A9",
+    "linkagega.title": "#FF8A00",
+    "ga.spgacha": "#FF8A00",
+    "ga.spgacha.return": "#FFCB00",
+    "limtedga.title": "#FFFFFF",
+    "limtedga.subtitle": "#FFC90E",
+    "limtedga.up": "#FF7F27",
+    "limtedga.21": "#D7BCFF",
+    "limtedga.percent": "#FFD800",
+    "limtedga.attention": "#E1322C",
+    "limtedga.lattention": "#FF9E58",
+    "vc.newyear10": "#FF3823",
+    "vc.adgacha": "#0098DC",
+    "vc.attention": "#FFD800",
+    "act.missiontips": "#d9bd6a",
+    "lv.hdbg": "#7ba61f",
+    "autochess.gray": "#777777",
+    "autochess.dgreen": "#40B196",
+    "vecbreakv2.highlight": "#d8741a",
+    "dp.level.dis": "#909090",
+    "dp.level.rich": "#4970ff",
+    "dp.level.raid": "#ff1f1f",
+    "duel.ping.low": "#7fa826",
+    "duel.ping.medium": "#ec7a00",
+    "duel.ping.high": "#ff3d3d",
+    "duel.milestone": "#D4133C",
+    "duel.dm.award": "#36BBCC",
+    "duel.dm.condition": "#C9C9C9",
+    "tu.ht": "#ff8d00",
+    "multiv3.teambuff": "#d0294c",
+    "multiv3.matchdesc": "#2ea0af",
+    "multiv3.unlocktoast": "#ff3a64",
+    "multiv3.photodesc": "#31acbc",
+    "acdm.award": "#04d3a3",
+    "acdm.milestone": "#2da186",
+    "acdm.hudtip": "#04d3a3",
+    "acdm.buff": "#2da186",
+    "acdm.tracker": "#2da186",
+    "trap.number": "#018FCE",
+    "trap.debuff": "#d83c3c",
+    "trap.monster": "#d83c3c",
+    "trap.combine": "#018FCE",
+    "trap.drop": "#018FCE",
+    "strategy.number": "#018FCE",
+    "strategy.text": "#018FCE",
+    "strategy.text2": "#767676",
+    "gacha.text": "#f3e468",
+    "buff.number": "#ede160",
+    "level.highlight": "#ede161",
+    "lv.act20side": "#F7BC44",
+    "lv.act20sre": "#F7BC44",
+    "lv.mhitem": "#A57F5B",
+    "lv.mhtx": "#1B1B1B",
+    "lv.mhfs": "#A57F5B",
+    "cc.miu": "#8F7156",
+    "ping.low": "#7fa826",
+    "ping.medium": "#ec7a00",
+    "ping.high": "#ff3d3d",
+    "match.success": "#36BBCC",
+    "map.normal": "#36BBCC",
+    "map.football": "#36BBCC",
+    "map.defence": "#36BBCC",
+    "milestone": "#D4133C",
+    "dm.award": "#36BBCC",
+    "dm.condition": "#C9C9C9",
+    "tutor": "#36BBCC",
+    "lv.muitem": "#D4133C",
+    "token.highlight": "#d8741a",
+    "ba.grt": "#FFAB27",
+    "ba.exl": "#14F0AF",
+    "ba.hrd": "#DA2536",
+    "firework.npc": "#810d17",
+    "act.spreward": "#FF5001",
+    "char.oblv": "#7799cc",
+    "char.mort": "#779977",
+    "char.dolr": "#bb9955",
+    "char.amor": "#aa4477",
+    "char.tmor": "#335566",
+    "act.timelimit": "#ffe300",
+    "lv.pycitem": "#D14631",
+    "lv.pyctx": "#1B1B1B",
+    "lv.pycfs": "#D14631",
+    "arkodcact53side.lv": "#2FA29B",
+    "vc.text": "#898989",
+    "vc.endtime": "#ff0327"
+}
 
 
 class TextPane(ttk.Frame):
@@ -140,9 +312,26 @@ class TranslationView(TextPane):
         self.catalog = None
         self.collapsed = set()
         self.links = {}
+        self.color_tags = {}
         super().__init__(master, size=size)
         self.text.bind('<Motion>', self.hover_link)
         self.text.bind('<ButtonRelease-1>', self.activate_link)
+
+    @staticmethod
+    def color_for(name):
+        return COLOR_TAGS.get(name, COLORS['text'])
+
+    @classmethod
+    def split_markup(cls, value):
+        parts, offset = [], 0
+        for match in COLOR_TAG_PATTERN.finditer(value):
+            if match.start() > offset:
+                parts.append((value[offset:match.start()], None))
+            parts.append((match.group(2), cls.color_for(match.group(1))))
+            offset = match.end()
+        if offset < len(value):
+            parts.append((value[offset:], None))
+        return parts
 
     def apply_palette(self):
         super().apply_palette()
@@ -151,6 +340,8 @@ class TranslationView(TextPane):
             self.text.tag_configure(role, foreground=color)
         for tag in self.links:
             self.text.tag_configure(tag, foreground=COLORS['blue'], underline=True)
+        for tag, color in self.color_tags.items():
+            self.text.tag_configure(tag, foreground=color)
 
     def show(self, document, catalog):
         self.document, self.catalog = document, catalog
@@ -163,7 +354,10 @@ class TranslationView(TextPane):
             return
         for tag in self.links:
             self.text.tag_delete(tag)
+        for tag in self.color_tags:
+            self.text.tag_delete(tag)
         self.links.clear()
+        self.color_tags.clear()
         self.set_text('')
         self.text.configure(state='normal')
         for row in document_rows(self.document, self.collapsed):
@@ -173,14 +367,20 @@ class TranslationView(TextPane):
             indent = f'indent_{row.depth}'
             self.text.tag_configure(indent, lmargin2=self.reading_font.measure('    ' * row.depth))
             self.text.insert('end', '    ' * row.depth, (indent,))
-            for label, target in reference_parts(row.text, self.catalog):
-                tags = (row.role, indent)
-                if target:
-                    tag = f'reference_{len(self.links)}'
-                    self.links[tag] = target
-                    self.text.tag_configure(tag, foreground=COLORS['blue'], underline=True)
-                    tags += (tag,)
-                self.text.insert('end', label, tags)
+            for text, color in self.split_markup(row.text):
+                for label, target in reference_parts(text, self.catalog):
+                    tags = (row.role, indent)
+                    if color:
+                        tag = f'color_{len(self.color_tags)}'
+                        self.color_tags[tag] = color
+                        self.text.tag_configure(tag, foreground=color)
+                        tags += (tag,)
+                    if target:
+                        tag = f'reference_{len(self.links)}'
+                        self.links[tag] = target
+                        self.text.tag_configure(tag, foreground=COLORS['blue'], underline=True)
+                        tags += (tag,)
+                    self.text.insert('end', label, tags)
             self.text.insert('end', '\n')
         self.text.configure(state='disabled')
         self.draw_margin()
@@ -215,7 +415,7 @@ class TranslationView(TextPane):
     def full_text(self):
         if self.document is None:
             return self.text.get('1.0', 'end-1c')
-        return '\n'.join('    ' * row.depth + ''.join(text for text, _ in reference_parts(row.text, self.catalog))
+        return '\n'.join('    ' * row.depth + ''.join(text for text, _ in reference_parts(COLOR_TAG_PATTERN.sub(r'\2', row.text), self.catalog))
                          for row in document_rows(self.document))
 
     def copy_all(self):
