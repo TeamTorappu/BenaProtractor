@@ -847,3 +847,26 @@ def CheckTargetRootTile(node,blackboard):
         "true" : f"为{condition}地块",
         "false" : f"不为{condition}地块"
     }
+
+# 检查两者间直线距离，或检查单位到地块的曼哈顿距离
+def CheckDistance(node,blackboard):
+    source_name = anne_dictionary("target",node["_source"])
+    radius = node["_radius"]
+    if node["_radiusBbKey"] != None and node["_radiusBbKey"] != "":
+        if node["_radiusBbKey"] in blackboard:
+            radius = str(blackboard[node["_radiusBbKey"]])
+    if node["_checkCertainPosition"]: # 检查到某个位置的曼哈顿距离
+        col = str(blackboard[node['_colKey']]) if node['_colKey'] in blackboard else f"[{node['_colKey']}]" 
+        row = str(blackboard[node['_rowKey']]) if node['_rowKey'] in blackboard else f"[{node['_rowKey']}]" 
+        return {
+            "main" : f"检查{source_name}与({row},{col})位置的地块中心之间的曼哈顿距离",
+            "true" : f"曼哈顿距离 ≤ {radius}",
+            "false" : f"曼哈顿距离 > {radius}，或单位不存在"
+        }
+    else:
+        target_name = anne_dictionary("target",node["_target"])
+        return {
+            "main" : f"检查{source_name}与{target_name}之间的直线距离",
+            "true" : f"直线距离 ≤ {radius}",
+            "false" : f"直线距离 > {radius}，或任一单位不存在"
+        }

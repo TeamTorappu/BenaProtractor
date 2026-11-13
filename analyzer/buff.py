@@ -6,7 +6,7 @@ import math
 from .attribute import analyze_attribute_modifiers
 from dictionary import anne_dictionary
 
-STATUS_RESISTABLE_ABNORMAL = ["STUNNED","COLD","FROZEN","FEARED","PALSY","ATTRACTED"]
+ABFLAGS_IS_AUTO_STATUS_RESISTABLE = ["STUNNED","COLD","FROZEN","DOZE"]
 
 # 解析Buff的详细信息
 # 返回结构体
@@ -99,7 +99,7 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
             for flag in attrs["abnormalFlags"]:
                 flags.append(anne_dictionary("abnormal",flag))
                 # 包含可状态抵抗的异常
-                if flag in STATUS_RESISTABLE_ABNORMAL:
+                if flag in ABFLAGS_IS_AUTO_STATUS_RESISTABLE:
                     has_resistable_flag = True
             features.append("包含异常效果："+"、".join(flags))
         else:
@@ -107,7 +107,7 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
                 flag_name = anne_dictionary("abnormal",flag)
                 features.append(flag_name)
                 # 包含可状态抵抗的异常
-                if flag in STATUS_RESISTABLE_ABNORMAL:
+                if flag in ABFLAGS_IS_AUTO_STATUS_RESISTABLE:
                     has_resistable_flag = True
     # 异常免疫
     if attrs["abnormalImmunes"] != None and len(attrs["abnormalImmunes"]) > 0:
@@ -300,7 +300,7 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
     # 准备返回buff
     result = {"main" : "<buff|" + buff_key + ">"}
     if buff_data["loadFromDB"]:
-        result["link"] = "buff."+buff_key
+        result["main"] += "（读取自数据库）"
     elif template != "empty":
         if full_information: # 完整显示
             result["children"] = [{
@@ -309,13 +309,11 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
             }]
         else: # 简短显示
             if template == buff_key:
-                result["main"] += "（使用同名模板）"
-                result["link"] = "buff_template."+template
+                result["main"] = "<buff_template|" + buff_key + ">（使用同名模板）"
             elif template == "empty":
                 result["main"] += "（不使用模板）"
             else:
                 result["main"] += f"（模板：<buff_template|{template}>）"
-                result["link"] = "buff_template."+template
     if full_information: # 按需返回子列表
         if "children" not in result:
             result["children"] = []

@@ -1,0 +1,227 @@
+{
+	"AttributeType" : {
+		"MAX_HP" : 0,
+		"ATK" : 1,
+		"DEF" : 2,
+		"MAGIC_RESISTANCE" : 3,
+		"COST" : 4,
+		"BLOCK_CNT" : 5,
+		"MOVE_SPEED" : 6,
+		"ATTACK_SPEED" : 7,
+		"BASE_ATTACK_TIME" : 8,
+		"RESERVED_0" : 9,
+		"RESERVED_1" : 10,
+		"RESERVED_2" : 11,
+		"RESERVED_3" : 12,
+		"HP_RECOVERY_PER_SEC" : 13,
+		"SP_RECOVERY_PER_SEC" : 14,
+		"ABILITY_RANGE_FORWARD_EXTEND" : 15,
+		"MAX_DEPLOY_COUNT" : 16,
+		"DEF_PENETRATE" : 17,
+		"MAGIC_RESIST_PENETRATE" : 18,
+		"HP_RECOVERY_PER_SEC_BY_MAX_HP_RATIO" : 19,
+		"TAUNT_LEVEL" : 20,
+		"RESPAWN_TIME" : 21,
+		"MAX_DECK_STACK_CNT" : 22,
+		"MASS_LEVEL" : 23,
+		"BASE_FORCE_LEVEL" : 24,
+		"DEF_PENETRATE_FIXED" : 25,
+		"ONE_MINUS_STATUS_RESISTANCE" : 26,
+		"MAGIC_RESIST_PENETRATE_FIXED" : 27,
+		"MAX_EP" : 28,
+		"EP_RECOVERY_PER_SEC" : 29,
+		"SP_RECOVER_RATIO" : 30,
+		"EP_DAMAGE_RESISTANCE" : 31,
+		"EP_RESISTANCE" : 32,
+		"DAMAGE_HITRATE_PHYSICAL" : 33,
+		"DAMAGE_HITRATE_MAGICAL" : 34,
+		"EP_BREAK_RECOVER_SPEED" : 35,
+		"SLOW_DOWN" : 36,
+		"BLOCK_RADIUS_SCALE" : 37,
+		"E_NUM" : 38
+	},
+	"FormulaItem" : {
+		"ADDITION" : 0,
+		"MULTIPLIER" : 1,
+		"FINAL_ADDITION" : 2,
+		"FINAL_SCALER" : 3
+	},
+	"LifeType" : {
+		"IMMEDIATELY" : 0,
+		"LIMITED" : 1,
+		"INFINITY" : 2,
+		"CUSTOM" : 3
+	},
+	"BuffData.OverrideType" : {
+		"DEFAULT" : 0,
+		"STACK" : 1,
+		"UNIQUE" : 2,
+		"EXTEND" : 3,
+		"EXTEND_TIME" : 4
+	},
+	"BuffData.StatusResistable" : {
+		"NO" : 0,
+		"YES" : 1,
+		"AUTOMATIC" : 2
+	},
+	"BuffData.OnEventPriority" : {
+		"HIGHER_PRIORITY" : 2000,
+		"HIGH_PRIORITY" : 1000,
+		"DEFAULT" : 0,
+		"LOW_PRIORITY" : -1000,
+		"LOWER_PRIORITY" : -2000,
+		"LOWEST_PRIORITY" : -3000,
+		"TITI_DOZE_PRIORITY" : -4000
+	},
+	"SideTypeIndex" : {
+		"ALLY" : 0,
+		"ENEMY" : 1,
+		"NEUTRAL" : 2,
+		"ENUM" : 3
+	},
+	"SideType" : {
+		"NONE" : 0,
+		"ALLY" : 1,
+		"ENEMY" : 2,
+		"BOTH_ALLY_AND_ENEMY" : 3,
+		"NEUTRAL" : 4,
+		"ALL" : 7
+	},
+	"EntityCategory" : {
+		"NONE" : 0,
+		"DEFAULT" : 1,
+		"TRAP_OR_ITEM" : 2,
+		"OBSTACLE" : 4
+	},
+	"MotionMask" : {
+		"NONE" : 0,
+		"WALK_ONLY" : 1,
+		"FLY_ONLY" : 2,
+		"ALL" : 3
+	},
+	"AbnormalFlag" : {
+		"STUNNED" : 0,
+		"SP_RECOVER_STOPPED" : 1,
+		"TARGET_FREE" : 2,
+		"BLOCK_FREE" : 3,
+		"HIDDEN" : 4,
+		"INVINCIBLE" : 5,
+		"UNDEADABLE" : 6,
+		"HEAL_FREE" : 7,
+		"UNBALANCE_IMMUNE" : 8,
+		"INVISIBLE" : 9,
+		"UNUSED_PLACEHOLDER_2" : 14,
+		"ALLY_TARGET_FREE" : 15,
+		"UNUSED_PLACEHOLDER_1" : 10,
+		"DISARMED" : 11,
+		"SILENCED" : 12,
+		"UNMOVABLE" : 13,
+		"FROZEN" : 16,
+		"CAMOUFLAGE" : 17,
+		"FORCE_DISARMED" : 18,
+		"STUNNED_NO_AMPLIFY_DAMAGE" : 19,
+		"DISABLE_COMBAT" : 20,
+		"ELEMENT_FREE_ALL" : 21,
+		"UNMOVABLE_PRIVATE" : 22,
+		"COLD" : 23,
+		"SKILL_NOT_ACTIVATABLE" : 24,
+		"LEVITATE" : 25,
+		"DURANCE" : 26,
+		"NOT_WITHDRAWABLE" : 27,
+		"OUT_OF_GROUND" : 28,
+		"SP_MODIFY_STOPPED" : 29,
+		"ANTI_STATUS_RESISTABLE" : 30,
+		"DISARMED_COMBAT" : 31,
+		"TOWER_TARGET_FREE" : 32,
+		"FEARED" : 33,
+		"SKILL_ACTIVABLE_IN_ABNORMAL" : 34,
+		"MOTION_TARGET_FREE" : 35,
+		"FORCE_LEVITATE" : 36,
+		"BUFF_ADD_CAN_BE_CANCELED_IF_DEFENSE" : 37,
+		"DEFENSE_BUFF_ADD_IF_CANCELABLE_BUFF" : 38,
+		"PALSY" : 39,
+		"PALSYING" : 40,
+		"ATTRACTED" : 41,
+		"FEARED_PRIVATE" : 42,
+		"DOZE" : 43,
+		"E_NUM" : 44
+	},
+	"AbnormalCombo" : {
+		"SLEEPING" : 0,
+		"SHELTERING" : 1,
+		"E_NUM" : 2
+	},
+	"BuildableType" : {
+		"NONE" : 0,
+		"MELEE" : 1,
+		"RANGED" : 2,
+		"ALL" : 3
+	},
+	"UnitType" : {
+		"NONE" : 0,
+		"CHARACTER" : 1,
+		"ENEMY" : 2,
+		"TOKEN" : 3
+	},
+	"UnitTypeMask" : {
+		"NONE" : 0,
+		"CHARACTER" : 1,
+		"ENEMY" : 2,
+		"TOKEN" : 4,
+		"ALL" : 7
+	},
+	"ActionPurposeMask" : {
+		"NONE" : 0,
+		"DAMAGE" : 1,
+		"HEAL" : 2,
+		"EP_DAMAGE" : 4,
+		"EP_HEAL" : 8
+	},
+	"ProfessionCategory" : {
+		"NONE" : 0,
+		"WARRIOR" : 1,
+		"SNIPER" : 2,
+		"TANK" : 4,
+		"MEDIC" : 8,
+		"SUPPORT" : 16,
+		"CASTER" : 32,
+		"SPECIAL" : 64,
+		"TOKEN" : 128,
+		"TRAP" : 256,
+		"PIONEER" : 512
+	},
+	"ProfessionCategories" : {
+		"ALL" : 1023,
+		"CHARACTER" : 639
+	},
+	"PlayerSideMask" : {
+		"ALL" : 0,
+		"SIDE_A" : 2,
+		"SIDE_B" : 4,
+		"NONE" : 255
+	},
+	"Deck.Card.DeckBuffLifeType" : {
+		"ALL_THE_TIME" : 0,
+		"UNTIL_NEXT_SPAWN" : 1
+	},
+	"Deck.Card.CardEffectType" : {
+		"NONE" : 0,
+		"DURANCE" : 1,
+		"UNDEPLOYABLE" : 2,
+		"TAUNT" : 3,
+		"DEVOURED" : 4,
+		"MUTATION" : 5,
+		"MHWRBG" : 6,
+		"WTRMAN_DISTURB" : 7,
+		"CHOSEN_ONE" : 8,
+		"ASCENSION" : 9,
+		"ANGEL2" : 10,
+		"RL5_RELIC_CARDG" : 11,
+		"RL5_CANDLE" : 12,
+		"E_NUM" : 13
+	},
+	"RandomTileGlobalBuff.RandomWeightType" : {
+		"MANHATTAN_DISTANCE_FROM_CENTER" : 0,
+		"EQUAL_WEIGHT" : 1
+	}
+}

@@ -49,3 +49,15 @@ def RandomSetter(node,blackboard):
         }
     else:
         return {"main" : f"设置 [{node['_targetKey']}] 为 [{min_key}] ~ [{max_key}] 的一个随机浮点数（不包含[{max_key}]）"}
+
+# 向黑板存入随机字符串
+def AssignRandomKeyToBlackboard(node,blackboard):
+    if node["_keys"] == 0:
+        return {
+            "main" : f"向黑板上的[{node['_targetBB']}]存入随机字符串，但是没有配存什么",
+        }
+    return {
+        "main" : f"向黑板上的[{node['_targetBB']}]存入以下随机字符串之一：",
+        "description" : "每一项的权重等同于与该字符串同名的黑板值的数值（默认权重为1）",
+        "children" : ["\""+str(key)+"\"" for key in node["_keys"]]
+    }

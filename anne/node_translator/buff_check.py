@@ -145,3 +145,12 @@ def FilterByBuffStackCount(node,blackboard):
     if len(features) > 0:
         result["description"] += "；"+"；".join(features)
     return result
+
+# 检查是否持有可抵抗状态
+def CheckContainsStatusResistableBuff(node,blackboard):
+    target_name = anne_dictionary("target",node["_targetType"])
+    return {
+        "main" : f"检查{target_name}持有的所有Buff",
+        "true" : f"其中含有任何一个\"可状态抵抗\"的Buff",
+        "false" : f"其中不含有任何一个\"可状态抵抗\"的Buff"
+    }

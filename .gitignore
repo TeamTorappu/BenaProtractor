@@ -22,3 +22,5 @@ main.spec
 /game_class/__pycache__
 
 /table_dummies/activity_table_*.json
+/global_buff_dummy_maker/__pycache__
+/global_buff_dummy_maker/input

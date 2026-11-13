@@ -103,7 +103,21 @@ def CheckHasEnemyIdInCharacterSharedBlackboard(node,blackboard):
 # 检查黑板是否为0或未定义
 def IsBlackboardZero(node,blackboard):
     return {
-        "main" : f"检查黑板 [{node['_var']}] 的值",
+        "main" : f"检查黑板上 [{node['_var']}] 的值",
         "true" : f"不存在或 [{node['_var']}] = 0",
         "false" : f"存在且 [{node['_var']}] ≠ 0"
     }
+
+# 检查黑板上的两个数据是否为同一字符串
+def FilterByBlackboardStrIsValue(node,blackboard):
+    # 未解析参数：_targetType
+    result = {
+        "main" : f"比对黑板上 [{node['_var']}] 和 [{node['_valueKeyToCompare']}] 的字符串数据",
+        "true" : f"[{node['_var']}] = [{node['_valueKeyToCompare']}]",
+        "false" : f"[{node['_var']}] ≠ [{node['_valueKeyToCompare']}]",
+    }
+    if not node["_checkIsEqual"]:
+        result["true"], result["false"] = result["false"], result["true"]
+    if node["_useOrdinalIgnoreCase"]: # 忽略大小写差异
+        result["main"] += "（忽略大小写差异）"
+    return result
