@@ -13,6 +13,7 @@ class Rune:
         self.blackboard = analyze_blackboard(self.blackboard_data)
         self.selector = selector
         self.display_name = ""
+        self.catagory = "符文"
         self.hidden = False
 
     # 获取显示名

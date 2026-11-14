@@ -6,8 +6,9 @@ from analyzer.buff import analyze_buff
 class Buff:
     def __init__(self, buff_key, buff_data):
         self.buff_key = buff_key
-        self.display_name = buff_key
         self.buff_data = buff_data
+        self.display_name = buff_key
+        self.catagory = "Buff数据库"
         self.hidden = False
     
     # 获取显示名

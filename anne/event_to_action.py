@@ -1,7 +1,7 @@
 #----------------------------------------
 # 事件→操作
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from anne.action import Action
 
 # Buff的伪代码承载类
@@ -10,6 +10,7 @@ class EventToAction:
         self.event_key = event_key
         self.action = Action(action_data)
         self.display_name = ""
+        self.catagory = "事件+操作"
         self.hidden = False
     
     # 获取原文
@@ -22,7 +23,7 @@ class EventToAction:
         translation = self.action.translate(blackboard)
         translation["main"] = self.event_key
         translation["role"] = "section"
-        event_name = anne_dictionary("buff_event",self.event_key)
+        event_name = enum_dictionary("buff_event",self.event_key)
         if event_name != self.event_key:
             translation["main"] = f"{event_name}（{self.event_key}）"
         return translation

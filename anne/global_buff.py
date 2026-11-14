@@ -15,11 +15,12 @@ NOT_SHOW_KEYS = [
 class GlobalBuff:
     def __init__(self, buff_key, prefab_data):
         self.buff_key = buff_key
-        self.display_name = buff_key
         self.prefab_data = prefab_data
         self.target_options = prefab_data["_options"]
         self.buff_datas = prefab_data["_buffs"]
         self.deck_buff_datas = prefab_data["_deckBuffs"]
+        self.display_name = buff_key
+        self.catagory = "全局Buff"
         self.hidden = False
     
     # 获取显示名

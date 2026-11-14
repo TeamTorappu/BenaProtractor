@@ -3,7 +3,7 @@
 #----------------------------------------
 import math
 
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 道具的处理
 # 返回道具类

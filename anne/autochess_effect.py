@@ -1,7 +1,7 @@
 #----------------------------------------
 # 卫戍协议 · 效果
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from anne.rune import Rune
 
 EFFECT_TYPE = {
@@ -11,7 +11,7 @@ EFFECT_TYPE = {
     "EQUIP" : "装备效果",
     "ENEMY_GAIN" : "悬赏决策",
     "ENEMY" : "敌方强化",
-    "BUFF_GAIN" : "增益决策",
+    "BUFF_GAIN" : "战术决策",
 }
 
 class AutochessEffect:
@@ -23,21 +23,18 @@ class AutochessEffect:
         self.effect_type = effect_info["effectType"]
         self.effect_runes = [Rune(rune_data) for rune_data in effect_buff_info]
         self.display_name = ""
+        self.catagory = EFFECT_TYPE[self.effect_type] if self.effect_type in EFFECT_TYPE else "卫戍效果"
         self.hidden = False
 
     # 获取显示名
     def get_display_name(self):
         if self.display_name == "":
-            if self.effect_type in EFFECT_TYPE:
-                self.display_name = EFFECT_TYPE[self.effect_type] + "："
-            else:
-                self.display_name = "卫戍效果："
             if self.effect_name != None and self.effect_name != "":
-                self.display_name += self.effect_name
+                self.display_name = self.effect_name
                 if self.effect_type == "EQUIP" and self.effect_id.startswith("eff_acgarm"):
                     self.display_name += "（进阶）"
             else:
-                self.display_name += self.effect_id
+                self.display_name = self.effect_id
         return self.display_name
 
     # 获取原文

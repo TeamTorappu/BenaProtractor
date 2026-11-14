@@ -4,7 +4,7 @@
 import math
 
 from bena import ask_bena, ask_bena_character
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from analyzer import analyze_rogue_item_reward, analyze_profession, analyze_sub_profession, to_delta, analyze_relic_timing, analyze_rogue_item, to_delta_percent
 
 # 立即奖励
@@ -100,28 +100,28 @@ def extra_gold_from_chest(item_type,blackboard):
 
 # 特定职业招募希望减少
 def recruit_cost(item_type,blackboard):
-    rarity = anne_dictionary("rarity",blackboard["rarity"])
+    rarity = enum_dictionary("rarity",blackboard["rarity"])
     professions = analyze_profession(blackboard["profession"])
     delta = ("+" + int(blackboard["delta"])) if blackboard["delta"] > 0 else (str(int(blackboard["delta"])))
     return {"main" : f"招募{rarity}的{professions}的希望{delta}"}
 
 # 特定职业进阶希望减少
 def upgrade_cost(item_type,blackboard):
-    rarity = anne_dictionary("rarity",blackboard["rarity"])
+    rarity = enum_dictionary("rarity",blackboard["rarity"])
     professions = analyze_profession(blackboard["profession"])
     delta = ("+" + int(blackboard["delta"])) if blackboard["delta"] > 0 else (str(int(blackboard["delta"])))
     return {"main" : f"进阶{rarity}的{professions}的希望{delta}"}
 
 # 特定子职业招募希望减少
 def recruit_cost_sub_profession(item_type,blackboard):
-    rarity = anne_dictionary("rarity",blackboard["rarity"])
+    rarity = enum_dictionary("rarity",blackboard["rarity"])
     sub_professions = analyze_sub_profession(blackboard["sub_profession"])
     delta = ("+" + int(blackboard["delta"])) if blackboard["delta"] > 0 else (str(int(blackboard["delta"])))
     return {"main" : f"招募{rarity}的{sub_professions}的希望{delta}"}
 
 # 特定子职业进阶希望减少
 def upgrade_cost_sub_profession(item_type,blackboard):
-    rarity = anne_dictionary("rarity",blackboard["rarity"])
+    rarity = enum_dictionary("rarity",blackboard["rarity"])
     sub_professions = analyze_sub_profession(blackboard["sub_profession"])
     delta = ("+" + int(blackboard["delta"])) if blackboard["delta"] > 0 else (str(int(blackboard["delta"])))
     return {"main" : f"进阶{rarity}的{sub_professions}的希望{delta}"}

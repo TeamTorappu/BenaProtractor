@@ -4,7 +4,7 @@
 import math
 
 from .attribute import analyze_attribute_modifiers
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 ABFLAGS_IS_AUTO_STATUS_RESISTABLE = ["STUNNED","COLD","FROZEN","DOZE"]
 
@@ -45,7 +45,7 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
     # 检查模板与事件优先级
     if buff_data["templateKey"] != "empty" :
         template = buff_data["templateKey"]
-        priority = anne_dictionary("event_priority",buff_data['onEventPriority'])
+        priority = enum_dictionary("event_priority",buff_data['onEventPriority'])
         # 覆写事件优先级
         if buff_data["overrideOnEventPriority"]:
             if full_information:
@@ -53,7 +53,7 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
             else:
                 features.append(f"事件优先级覆写为 {priority}")
     elif buff_data["overrideOnEventPriority"] or buff_data['onEventPriority'] != "DEFAULT":
-        priority = anne_dictionary("event_priority",buff_data['onEventPriority'])
+        priority = enum_dictionary("event_priority",buff_data['onEventPriority'])
         if full_information:
             features.append(f"事件优先级：{priority}")
         else:
@@ -97,14 +97,14 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
         if full_information:
             flags = []
             for flag in attrs["abnormalFlags"]:
-                flags.append(anne_dictionary("abnormal",flag))
+                flags.append(enum_dictionary("abnormal",flag))
                 # 包含可状态抵抗的异常
                 if flag in ABFLAGS_IS_AUTO_STATUS_RESISTABLE:
                     has_resistable_flag = True
             features.append("包含异常效果："+"、".join(flags))
         else:
             for flag in attrs["abnormalFlags"]:
-                flag_name = anne_dictionary("abnormal",flag)
+                flag_name = enum_dictionary("abnormal",flag)
                 features.append(flag_name)
                 # 包含可状态抵抗的异常
                 if flag in ABFLAGS_IS_AUTO_STATUS_RESISTABLE:
@@ -114,11 +114,11 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
         if full_information:
             flags = []
             for flag in attrs["abnormalImmunes"]:
-                flags.append(anne_dictionary("abnormal",flag))
+                flags.append(enum_dictionary("abnormal",flag))
             features.append("包含异常免疫："+"、".join(flags))
         else:
             for flag in attrs["abnormalImmunes"]:
-                flag_name = anne_dictionary("abnormal",flag)
+                flag_name = enum_dictionary("abnormal",flag)
                 if full_information:
                     features.append("包含异常免疫："+flag_name)
                 else:
@@ -128,33 +128,33 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
         if full_information:
             flags = []
             for flag in attrs["abnormalAntis"]:
-                flags.append(anne_dictionary("abnormal",flag))
+                flags.append(enum_dictionary("abnormal",flag))
             features.append("包含异常反制："+"、".join(flags))
         else:
             for flag in attrs["abnormalAntis"]:
-                flag_name = anne_dictionary("abnormal",flag)
+                flag_name = enum_dictionary("abnormal",flag)
                 features.append(flag_name+"反制")
     # 异常组合
     if attrs["abnormalCombos"] != None and len(attrs["abnormalCombos"]) > 0:
         if full_information:
             combos = []
             for combo in attrs["abnormalCombos"]:
-                combos.append(anne_dictionary("abnormal",combo))
+                combos.append(enum_dictionary("abnormal",combo))
             features.append("包含异常组合："+"、".join(combos))
         else:
             for combo in attrs["abnormalCombos"]:
-                combo_name = anne_dictionary("abnormal",combo)
+                combo_name = enum_dictionary("abnormal",combo)
                 features.append(combo_name)
     # 异常组合免疫
     if attrs["abnormalComboImmunes"] != None and len(attrs["abnormalComboImmunes"]) > 0:
         if full_information:
             combos = []
             for combo in attrs["abnormalComboImmunes"]:
-                combos.append(anne_dictionary("abnormal",combo))
+                combos.append(enum_dictionary("abnormal",combo))
             features.append("包含异常组合免疫："+"、".join(combos))
         else:
             for combo in attrs["abnormalComboImmunes"]:
-                combo_name = anne_dictionary("abnormal",combo)
+                combo_name = enum_dictionary("abnormal",combo)
                 features.append(combo_name+"免疫")
     # 属性加成（四 则 运 算）
     if attrs["attributeModifiers"] != None and len(attrs["attributeModifiers"]) > 0:

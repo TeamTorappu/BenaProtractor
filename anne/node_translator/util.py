@@ -1,7 +1,7 @@
 #----------------------------------------
 # 效果类Node（或者叫未分类更好）
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from analyzer import analyze_damage, to_percent
 
 # 补充召唤物数量
@@ -51,7 +51,7 @@ def AtkScaleUp(node,blackboard):
 # 修改技力
 def ModifySp(node,blackboard):
     # 未解析参数：_spString
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     modify_type = "减少" if node["_isMinis"] else "增加"
     amount = str(node["_modifyValue"])+"点"
     result = {"main" : ""}
@@ -75,7 +75,7 @@ def ModifySp(node,blackboard):
     result["main"] = f"令{target_name}的技力{modify_type}{amount}"
     # 修改技力
     if not node["_dontCheckSpType"] and node["_spMask"] != "ALL":
-        sp_type = anne_dictionary("sp_type",node["_spMask"])
+        sp_type = enum_dictionary("sp_type",node["_spMask"])
         result["main"] = f"若{target_name}技力类型为 {sp_type} ，令其技力{modify_type}{amount}"
     if len(descriptions) > 0:
         result["description"] = "；".join(descriptions)
@@ -83,7 +83,7 @@ def ModifySp(node,blackboard):
 
 # 增减占用阻挡数
 def AddEnemyBlockVolume(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     addon = node["_additionVolume"] * (-1 if node["_isMinus"] else 1)
     return {"main" : f"让{target_name}（敌人类）的占用阻挡数{addon}"}
 
@@ -92,8 +92,8 @@ def AddEnemyBlockVolume(node,blackboard):
 # 调整本buff提供的属性增益
 def AttributeModifierWithBB(node,blackboard):
     # 未解析参数：_targetType
-    #target_name = anne_dictionary("target",node["_targetType"])
-    attribute_type = anne_dictionary("attribute",node["_attributeType"])
+    #target_name = enum_dictionary("target",node["_targetType"])
+    attribute_type = enum_dictionary("attribute",node["_attributeType"])
     result = {
         "main" : f"更新本Buff提供的{attribute_type}加成："
     }
@@ -120,7 +120,7 @@ def AttributeModifierWithBB(node,blackboard):
 
 # 根据技能剩余时间，调整本buff提供的属性增益
 def RemainingRatioToAttributeModifier(node,blackboard):
-    attribute_type = anne_dictionary("attribute",node["_attributeType"])
+    attribute_type = enum_dictionary("attribute",node["_attributeType"])
     result = {
         "main" : f"根据技能剩余时间，更新本Buff提供的{attribute_type}加成："
     }
@@ -148,7 +148,7 @@ def RemainingRatioToAttributeModifier(node,blackboard):
 
 # 切换模式
 def SwitchMode(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     result = {"main" : f"令{target_name}"}
     if node["_restoreDefault"]:
         result["main"] += "切换回默认模式"
@@ -163,7 +163,7 @@ def SwitchMode(node,blackboard):
 
 # 强制击倒
 def InstantKill(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node["_killSource"]: # 改为击杀上下文中的来源
         target_name = "上下文来源"
     features = []
@@ -275,7 +275,7 @@ def Withdraw(node,blackboard):
 
 # 清空技力（减少等同于当前技力值的技力）
 def ClearCharacterSp(node,blackboard):
-    target_name = anne_dictionary("target",node["_charFrom"])
+    target_name = enum_dictionary("target",node["_charFrom"])
     if node["_forceFlag"]:
         return {"main" : f"令{target_name}清空技力（强制流失等同于当前技力值的技力）"}
     else:
@@ -283,7 +283,7 @@ def ClearCharacterSp(node,blackboard):
 
 # 修改目标生命值
 def ModifyLifePoint(node,blackboard):
-    source_name = anne_dictionary("target",node["_sourceType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
     value = " - ["+node["_blackboardKey"]+"]" if node["_isSub"] else " + ["+node["_blackboardKey"]+"]"
     if node["_isReachExit"]:
         return {"main" : f"令关卡目标生命值{value}，视为由{source_name}\"抵达路径终点\"导致的修改"}
@@ -294,15 +294,15 @@ def ModifyLifePoint(node,blackboard):
     
 # 修改阻挡模式
 def ChangeCharBlockMode(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     if node["_resetToDefault"]:
         return {"main" : f"令{target_name}的阻挡模式切换回初始模式（可能是\"地面阻挡\"）"}
-    block_mode = anne_dictionary("block_mode",node["_blockMode"])
+    block_mode = enum_dictionary("block_mode",node["_blockMode"])
     return {"main" : f"令{target_name}的阻挡模式切换为{block_mode}"}
 
 # 记录战斗LOG（通常用于记录模组任务、藏品掉落、跨关卡生命比例继承等数据）
 def LogExtraBattleInfo(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     if node["_countInHostIfToken"]:
         target_name += "（若为召唤物，改为其主人）"
     key = "[key]" if node["_loadKeyFromBlackBoard"] else node["_key"]
@@ -348,7 +348,7 @@ def LogExtraBattleInfo(node,blackboard):
 
 # 概率节弹
 def CharSkillNotCountTimes(node,blackboard):
-    #target_name = anne_dictionary("target",node.get("_target",node["_targetType"]))
+    #target_name = enum_dictionary("target",node.get("_target",node["_targetType"]))
     if "prob" in blackboard:
         return {"main" : f"投掷一枚\"骰子\"（0.0~100.0，不包含100.0），出目低于{blackboard['prob']}时，本次能力使用将\"不消耗次数（弹药）\""}
     else:
@@ -356,7 +356,7 @@ def CharSkillNotCountTimes(node,blackboard):
 
 # 结束所有"可抵抗状态"
 def FinishAllStatusResistableBuffs(node,blackboard):
-    target_name = anne_dictionary("target",node.get("_target",node["_targetType"]))
+    target_name = enum_dictionary("target",node.get("_target",node["_targetType"]))
     return {"main" : f"结束{target_name}持有的所有\"可状态抵抗\"的Buff"}
 
 # 召唤师X模组的免费召唤条件
@@ -376,7 +376,7 @@ def CheckTheLeftSameDeployedToken(node,blackboard):
 
 # 召唤师X模组的免费召唤实现
 def SetCharacterDontOccupyDeployCntFlag(node,blackboard):
-    #target_name = anne_dictionary("target",node["_targetType"])
+    #target_name = enum_dictionary("target",node["_targetType"])
     if node["_isUnset"]:
         return {"main" : f"令手卡中的此召唤物不再享有\"免费召唤\"的特权"}
     else:
@@ -385,13 +385,13 @@ def SetCharacterDontOccupyDeployCntFlag(node,blackboard):
 
 # 播放音效
 def PlayAudio(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     return {"main" : f"让{target_name}播放音效 {node['_audioSignal']}"}
     
 # 创建特效
 def CreateEffect(node,blackboard):
     # 暂不详细翻译
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     effect_id = ""
     if node["_effectKey"] != None and node["_effectKey"] != "":
         if node["_effectKey"] in blackboard:

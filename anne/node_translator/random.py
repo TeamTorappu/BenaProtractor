@@ -1,7 +1,7 @@
 #----------------------------------------
 # 概率类Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 骰子
 def Dice(node,blackboard):
@@ -22,7 +22,7 @@ def DicePRD(node,blackboard):
 
 # 骰子，概率合并处理
 def DiceByBuffKeys(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node["_isReverseProb"]: # 成功一次
         return {
             "main" : "投掷一枚\"合并骰子\"，进行概率检定（取0.0~100.0之内的随机浮点数，不包括100.0）",

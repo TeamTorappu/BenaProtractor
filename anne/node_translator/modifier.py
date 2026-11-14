@@ -1,7 +1,7 @@
 #----------------------------------------
 # 调整值专用的Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 是否为伤害？实际判定上为检查是否为伤害+伤害类型不为治疗
 def IsDamage(node,blackboard):
@@ -37,9 +37,9 @@ def IsAtkScaleZero(node,blackboard):
 
 # 调整值实际产生影响后是否
 def FilterModifierByRealDelta(node,blackboard):
-    modifier_target = anne_dictionary("modifier_target_type",node["_modifierTargetType"])
-    compare = anne_dictionary("compare",node["_condType"])
-    compare_not = anne_dictionary("compare_not",node["_condType"])
+    modifier_target = enum_dictionary("modifier_target_type",node["_modifierTargetType"])
+    compare = enum_dictionary("compare",node["_condType"])
+    compare_not = enum_dictionary("compare_not",node["_condType"])
     return {
         "main" : "在调整值影响后",
         "true" : f" {modifier_target} {compare} 原先的{modifier_target}",
@@ -56,7 +56,7 @@ def CheckModifierContainsKey(node,blackboard):
 
 # 取消调整值
 def CancelModifier(node,blackboard):
-    reason = anne_dictionary("cancel_reason",node["_reason"])
+    reason = enum_dictionary("cancel_reason",node["_reason"])
     return {"main" : "取消本次调整值，原因："+reason}
 
 # 确保伤害或治疗量至少有...
@@ -104,7 +104,7 @@ def FilterDamageModifer(node,blackboard):
             conditions.append("来源ID为"+node["_sourceId"])
             short_conditions.append("源自 "+node["_sourceId"]+" 的")
         else:
-            target_name = anne_dictionary("target",node["_source"])
+            target_name = enum_dictionary("target",node["_source"])
             conditions.append("来源为"+target_name)
             short_conditions.append("源自"+target_name+"的")
     else: # 仅仅检查是否为有来源？
@@ -117,12 +117,12 @@ def FilterDamageModifer(node,blackboard):
                 short_conditions.append("存在来源的")
     # 检查施加途径
     if node["_filterApplyWay"]:
-        apply_way = anne_dictionary("apply_way",node["_applyWay"])
+        apply_way = enum_dictionary("apply_way",node["_applyWay"])
         conditions.append("施加途径为"+apply_way)
         short_conditions.append(apply_way+"途径的")
     # 检查伤害类型
     if node["_filterDamageType"]:
-        damage_type = anne_dictionary("damage_type",node["_damageMask"])
+        damage_type = enum_dictionary("damage_type",node["_damageMask"])
         conditions.append("伤害类型为"+damage_type)
         if node["_filterSharedMask"] and node["_sharedFlag"] == "SKIP_MODIFIER_EVENT": # 生命流失
             if node["_damageMask"] == "PURE":
@@ -133,12 +133,12 @@ def FilterDamageModifer(node,blackboard):
             short_conditions.append(damage_type)
     # 检查攻击类型
     if node["_filterAttackType"]:
-        attack_type = anne_dictionary("attack_type",node["_attackTypeFilter"])
+        attack_type = enum_dictionary("attack_type",node["_attackTypeFilter"])
         conditions.append("攻击类型为"+attack_type)
         short_conditions.append(attack_type)
     # 检查标签
     if node["_filterSharedMask"] and (not node["_filterDamageType"] or node["_sharedFlag"] != "SKIP_MODIFIER_EVENT"): #生命流失前面处理过了
-        shared_flag = anne_dictionary("sharedflag",node["_sharedFlag"])
+        shared_flag = enum_dictionary("sharedflag",node["_sharedFlag"])
         conditions.append("具有"+shared_flag+"标签")
         can_short = False
     # 写入条件    if len(conditions) > 0:
@@ -172,7 +172,7 @@ def ModifierScaleUp(node,blackboard):
 # 检查调整值对象行动类型
 def IfModifierTarget(node,blackboard):
     if node["_mode"] != "ALL":
-        motion = anne_dictionary("motion",node["_mode"])
+        motion = enum_dictionary("motion",node["_mode"])
         return {
             "main" : f"检查调整值对象的行动类型",
             "true" : f"其当前为{motion}单位",
@@ -188,7 +188,7 @@ def IfModifierTarget(node,blackboard):
 # 检查是否为元素损伤/特定类型元素损伤的调整值
 def FilterElementDamageModifer(node,blackboard):
     if node["_filterEPType"]:
-        ep_type = anne_dictionary("element",node["_epType"])
+        ep_type = enum_dictionary("element",node["_epType"])
         return {
             "main" : f"检查本次调整值是否为{ep_type}损伤",
             "true" : f"为{ep_type}损伤",
@@ -201,6 +201,14 @@ def FilterElementDamageModifer(node,blackboard):
             "false" : f"不是元素损伤"
         }
 
+# 检查是否为元素治疗
+def IsElementHeal(node,blackboard):
+    return {
+        "main" : f"检查本次调整值是否为元素治疗",
+        "true" : f"为元素治疗",
+        "false" : f"不是元素治疗"
+    }
+
 # 设置无视闪避效果
 def SetIgnoreMissFlag(node,blackboard):
     if node["_ignoreMissFlag"] == "PHYSICAL":
@@ -211,7 +219,7 @@ def SetIgnoreMissFlag(node,blackboard):
 
 # 修改调整值的来源
 def ChangeModifierSource(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node["_targetType"] == "BUFF_SOURCE" or node["_targetType"] == "BUFF_OWNER":
         target_name = "本Buff的"+target_name
     return {"main" : f"将本次调整值的来源覆写为{target_name}"}

@@ -3,13 +3,13 @@
 #----------------------------------------
 from bena import ask_bena_character, ask_bena_enemy
 
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from analyzer import analyze_fp, analyze_target_options
 
 # 检查异常效果（带免疫）
 def CheckIfDamageHasSharedFlags(node,blackboard):
     sharedflag = node["_sharedFlags"]
-    #sharedflag_name = anne_dictionary("sharedflag",node["_sharedFlags"])
+    #sharedflag_name = enum_dictionary("sharedflag",node["_sharedFlags"])
     if node["_isUnset"]:
         return {
             "main" : f"检查本次伤害是否带有{sharedflag}标签",
@@ -25,7 +25,7 @@ def CheckIfDamageHasSharedFlags(node,blackboard):
 
 # 检查伤害取消原因
 def FilterDamageCancellation(node,blackboard):
-    reasons = "、".join([anne_dictionary("cancel_reason",reason)+"("+reason+")" for reason in node["_allowedCancelReasons"]])
+    reasons = "、".join([enum_dictionary("cancel_reason",reason)+"("+reason+")" for reason in node["_allowedCancelReasons"]])
     if node["_acceptUncancelled"]:
         return {
             "main" : f"检查本次伤害是否已取消，并检查取消的原因",

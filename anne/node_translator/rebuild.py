@@ -2,12 +2,12 @@
 # 再部署类Node
 #----------------------------------------
 from analyzer import analyze_buff
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 在特定范围内再部署此干员
 def RebuildCharacterOnTileInRange(node,blackboard):
     # 未解析参数：_owner
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     range_id = node["_rangeId"]
     direction = "相同方向"
     # 修改朝向

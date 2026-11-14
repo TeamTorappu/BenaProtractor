@@ -13,6 +13,7 @@ class Relic:
         self.type = item_type # 父级的类型，用于传参
         self.blackboard = analyze_blackboard(relic_data["blackboard"])
         self.display_name = ""
+        self.catagory = "藏品"
         self.hidden = False
 
     # 获取显示名

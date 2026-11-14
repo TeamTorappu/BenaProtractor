@@ -18,49 +18,49 @@ class RogueItem:
         self.season = season
         self.display_name = item_info["name"].strip() # 猜猜为什么
         self.type = item_info["type"]
-        self.display_type = ""
+        self.catagory = ""
         self.hidden = False
         # 处理分类显示
         if self.type == "RELIC":
-            self.display_type = "藏品"
+            self.catagory = "收藏品"
         elif self.type == "BAND":
-            self.display_type = "分队"
+            self.catagory = "分队"
         elif self.type == "RECRUIT_TICKET":
-            self.display_type = "招募券"
+            self.catagory = "招募券"
         elif self.type == "UPGRADE_TICKET":
-            self.display_type = "进阶券"
+            self.catagory = "进阶券"
         elif self.type == "ACTIVE_TOOL":
-            self.display_type = "支援装置"
+            self.catagory = "支援装置"
         elif self.type == "FEATURE":
-            self.display_type = "机制"
+            self.catagory = "机制"
         elif self.type == "WRATH":
-            self.display_type = "岁时"
+            self.catagory = "岁时"
             if item_data == None:
                 self.hidden = True # 无效果则隐藏
         elif self.type == "COPPER_BUFF":
-            self.display_type = "钱" # 这是骰出的钱
+            self.catagory = "钱" # 这是骰出的钱
             if item_data == None:
                 self.hidden = True # 无效果则隐藏
         elif self.type == "COPPER":
-            self.display_type = "盒内的钱" # 这个没有数据，不需要展示
+            self.catagory = "盒内的钱" # 这个没有数据，不需要展示
             #self.display_name += "(盒内)"
             self.hidden = True # 隐藏
         elif self.type == "MAX_WEIGHT":
-            self.display_type = "容量"
+            self.catagory = "容量"
         elif self.type == "LEGACY":
-            self.display_type = "襁褓"
+            self.catagory = "襁褓"
         elif self.type == "SCRAP":
-            self.display_type = "零件"
+            self.catagory = "零件"
         elif self.type == "NODE_BUOY":
-            self.display_type = "节点强化"
+            self.catagory = "节点强化"
         elif self.type == "CHARACTER":
-            self.display_type = "应急干员"
+            self.catagory = "应急干员"
             self.display_name += "（应急）"
             self.hidden = True # 隐藏
         elif self.type in RESOURCE_TYPES:
-            self.display_type = "资源"
+            self.catagory = "资源"
         else:
-            self.display_type = self.type # "鸽物"
+            self.catagory = self.type # "鸽物"
         # 如果是藏品或者类藏品，读取持有的buff数据
         self.effect_list = []
         self.has_effect = False
@@ -82,7 +82,7 @@ class RogueItem:
     def translate(self):
         from bena import ask_bena
 
-        print(f"[安妮]尝试翻译{self.display_type} {self.display_name}（{self.item_key}）")
+        print(f"[安妮]尝试翻译{self.catagory} {self.display_name}（{self.item_key}）")
         translation = {
             "main" : f"{self.display_name}（{self.item_key}）",
             "children" : []
@@ -92,7 +92,7 @@ class RogueItem:
             translation["description"] = self.item_info["description"]
         
         # 类型和稀有度
-        translation["children"].append({"main" : "类型 : " + self.display_type + "("+self.type+"）"})
+        translation["children"].append({"main" : "类型 : " + self.catagory + "("+self.type+"）"})
         translation["children"].append({"main" : "稀有度 : " + self.item_info["rarity"]}) # 需翻译
         
         # 界园的钱始终有两套，加个超链接
@@ -107,7 +107,7 @@ class RogueItem:
 
         # 藏品效果或解释的原文
         if self.item_info["usage"] != None:
-            usage = {"main" : self.display_type+"描述：","children": []}
+            usage = {"main" : self.catagory+"描述：","children": []}
             usage["children"].append({"main" : self.item_info["usage"]})
             translation["children"].append(usage)
         
@@ -117,7 +117,7 @@ class RogueItem:
             for relic_data in self.item_data["buffs"]:
                 relic_translation = Relic(relic_data,self.type).translate()
                 effect_translation["children"].append(relic_translation)
-            effect_translation["main"] = self.display_type+"效果："
+            effect_translation["main"] = self.catagory+"效果："
             translation["children"].append(effect_translation)
 
         return translation

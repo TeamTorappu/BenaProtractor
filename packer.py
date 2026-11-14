@@ -15,8 +15,8 @@ from app_settings import normalize_settings
 SOURCE_DIR = Path(__file__).resolve().parent
 RESOURCES = (
     'icon/icon.ico',
-    'translation/bena_dictionary.json',
-    'translation/anne_dictionary.json',
+    'translation/buff_dictionary.json',
+    'translation/enum_dictionary.json',
     'table_dummies/global_buff_dummy.json',
 )
 

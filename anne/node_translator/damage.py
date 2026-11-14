@@ -1,14 +1,14 @@
 #----------------------------------------
 # 伤害类Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from analyzer import analyze_buff, analyze_damage, analyze_target_options, to_percent
     
 # 造成伤害
 def AdvancedApplyDamage(node,blackboard):
     # 未解析参数：_emitSourceOnCalculateDamage
-    source_name = anne_dictionary("target",node["_sourceType"])
-    target_name = anne_dictionary("target",node["_targetType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     damage_name = analyze_damage(node) # 直接把整个node传参进去
     result = {
         "main" : f"让{source_name}对{target_name}造成"
@@ -52,8 +52,8 @@ def NoSourceDamageNew(node,blackboard):
 # 造成固定值伤害
 def FixedValueDamage(node,blackboard):
     # 未解析参数：_devideDamageFromAbilityCnt
-    source_name = anne_dictionary("target",node["_damageSourceType"])
-    target_name = anne_dictionary("target",node["_damageTargetType"])
+    source_name = enum_dictionary("target",node["_damageSourceType"])
+    target_name = enum_dictionary("target",node["_damageTargetType"])
     damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
     result = {}
     features = []
@@ -81,9 +81,9 @@ def FixedValueDamage(node,blackboard):
 
 # 造成基于某种属性的伤害（主要由刻俄柏与泡泡使用）
 def DamageViaAttr(node,blackboard):
-    source_name = anne_dictionary("target",node["_sourceType"])
-    target_name = anne_dictionary("target",node["_targetType"])
-    attribute = anne_dictionary("attribute",node["_attributeType"])+"属性"
+    source_name = enum_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
+    attribute = enum_dictionary("attribute",node["_attributeType"])+"属性"
     damage_name = analyze_damage(node) # 直接把整个node传参进去
     scale = "100%"
     multiplier = ""
@@ -104,8 +104,8 @@ def DamageViaAttr(node,blackboard):
 
 # 根据记录生命值，制造一次伤害来匹配记录的生命值
 def FetchHpToBlackboard(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
-    damage_type = anne_dictionary("damage_type",node["_damageType"])
+    target_name = enum_dictionary("target",node["_targetType"])
+    damage_type = enum_dictionary("damage_type",node["_damageType"])
     if node["_skipModifierEvent"]:
         if node["_damageType"] == "PURE":
             damage_type = "生命流失"
@@ -126,7 +126,7 @@ def FetchHpToBlackboard(node,blackboard):
 
 # 根据最大生命值，制造一次伤害
 def DamageViaMaxHpRatio(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     damage_num = "造成 其最大生命值 × [hp_ratio] "
     damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
     features = []
@@ -141,7 +141,7 @@ def DamageViaMaxHpRatio(node,blackboard):
 
 # 根据当前生命值，制造一次伤害
 def DamageViaCurHpRatio(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     damage_num = "造成 来源当前生命值 × [hp_ratio] "
     damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
     features = []
@@ -165,10 +165,10 @@ def DamageViaCurHpRatio(node,blackboard):
 # 根据移动距离差，制造一次伤害
 def DamageByDistance(node,blackboard):
     # 未解析参数：_isInit
-    source_name = anne_dictionary("target",node["_sourceType"])
-    target_name = anne_dictionary("target",node["_targetType"])
-    damage_type = anne_dictionary("damage_type",node["_damageType"])
-    attack_type = anne_dictionary("attack_type",node["_attackType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
+    damage_type = enum_dictionary("damage_type",node["_damageType"])
+    attack_type = enum_dictionary("attack_type",node["_attackType"])
     return {
         "main" : f"计算两次调用间{target_name}的\"总移动距离\"差，令{source_name}对{target_name}造成一次 [value] × 距离差(格数) 的预计算{attack_type}{damage_type}伤害",
         "description" : "\"总移动距离\"每5帧更新一次，首次调用、距离差为0、或大于4格时不造成伤害；伤害不受攻击力倍率与附加攻击力影响"
@@ -177,8 +177,8 @@ def DamageByDistance(node,blackboard):
 # 造成群体伤害
 def AOEDamage(node,blackboard):
     # 未解析参数：_createEffect、_hitEffectKey、_hitEffectUseSourceFaceTo
-    source_name = anne_dictionary("target",node["_sourceType"])
-    target_name = anne_dictionary("target",node["_targetType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     damage_name = analyze_damage(node,"预计算") # 直接把整个node传参进去
     damage_key = node['_damageKey'] if node['_damageKey'] != "" else "value"
     damage = f" [{damage_key}] 点" if node["_useDamageFromBB"] else f" {source_name}攻击力 "
@@ -244,7 +244,7 @@ def BleedingDamagePerSec(node,blackboard):
     damage_prefix = ""
     damage = ""
     if node["_elementDamageType"] != "NONE": # 损伤模式
-        damage = anne_dictionary("element",node["_elementDamageType"]) + "损伤" # 那我问你环境元素损伤呢？
+        damage = enum_dictionary("element",node["_elementDamageType"]) + "损伤" # 那我问你环境元素损伤呢？
     else:
         damage = analyze_damage(node)
     damage_formula = ""
@@ -285,7 +285,7 @@ def BleedingDamagePerSec(node,blackboard):
 
 # 反弹伤害
 def InverseDamage(node,blackboard):
-    source_name = anne_dictionary("target",node["_sourceType"]) if node["_hasSource"] else ""
+    source_name = enum_dictionary("target",node["_sourceType"]) if node["_hasSource"] else ""
     if node["_sourceType"] == "BUFF_SOURCE": # 防止混淆
         source_name = "BUFF来源"
     damage = analyze_damage(node)
@@ -294,12 +294,12 @@ def InverseDamage(node,blackboard):
         "description" : "反弹的伤害与原本伤害的施加途径相同"
     }
     if node["_sideMask"] != "ALL":
-        side_type = anne_dictionary("side_type_relative",node["_sideMask"])
+        side_type = enum_dictionary("side_type_relative",node["_sideMask"])
         if node["_sourceType"] == "MODIFIER_SOURCE": # 对面的视角（看自己？？？）
-            view_name = anne_dictionary("target",node["_sourceType"])
+            view_name = enum_dictionary("target",node["_sourceType"])
             result["main"] = result["main"] + f"若伤害来源与其自身为{side_type}，"
         elif node["_sourceType"] != "BUFF_OWNER" and node["_sourceType"] != "MODIFIER_TARGET": # 其他人的视角
-            view_name = anne_dictionary("target",node["_sourceType"])
+            view_name = enum_dictionary("target",node["_sourceType"])
             result["main"] = result["main"] + f"若伤害来源与{view_name}为{side_type}，"
         else: # 自己的视角
             result["main"] = result["main"] + f"若伤害来源为{side_type}，"

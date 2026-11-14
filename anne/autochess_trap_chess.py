@@ -1,7 +1,7 @@
 #----------------------------------------
 # 卫戍协议 · 装置棋子
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 DEX = ["[Ⅰ]","[Ⅱ]","[Ⅲ]","[Ⅳ]","[Ⅴ]","[Ⅵ]"]
 
@@ -12,8 +12,9 @@ class AutochessTrapChess:
         self.trap_shop_data = trap_shop_data
         self.golden_trap_data = golden_trap_data
         self.golden_trap_shop_data = golden_trap_shop_data
-        self.display_name = ""
         self.has_golden = golden_trap_data != None
+        self.display_name = ""
+        self.catagory = "装置棋子"
         self.hidden = False
 
     # 获取显示名

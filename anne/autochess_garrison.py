@@ -2,19 +2,18 @@
 # 卫戍协议 · 干员特质
 #----------------------------------------
 from analyzer.blackboard import analyze_blackboard
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 class AutochessGarrison:
     def __init__(self, garrison_id, garrison_data):
         self.garrison_id = garrison_id
         self.garrison_data = garrison_data
-        self.display_name = ""
+        self.display_name = self.garrison_id
+        self.catagory = "干员特质"
         self.hidden = False
 
     # 获取显示名
     def get_display_name(self):
-        if self.display_name == "":
-            return self.garrison_id
         return self.display_name
 
     # 获取原文
@@ -25,9 +24,10 @@ class AutochessGarrison:
     def translate(self):
         result = {
             "main" : self.get_display_name(),
+            "description" : str(self.garrison_data["eventTypeDesc"]),
             "children" : []
         }
-        result["children"].append({"main" : "事件类型："+str(self.garrison_data["eventTypeDesc"])+"（"+str(self.garrison_data["eventType"])+"）"})
+        result["children"].append({"main" : "事件类型："+str(self.garrison_data["eventType"])})
         result["children"].append({"main" : "效果类型："+str(self.garrison_data["effectType"])})
 
         bb = analyze_blackboard(self.garrison_data["blackboard"])

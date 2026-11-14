@@ -3,25 +3,25 @@
 #----------------------------------------
 import math
 from bena import ask_bena_character, ask_bena_enemy
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from analyzer import analyze_target_options, analyze_buff
 
 # 创建Buff
 def CreateBuff(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    target_name = anne_dictionary("target",node["_buffOwner"])
+    target_name = enum_dictionary("target",node["_buffOwner"])
     buff_name = "本Buff的附属Buff" if node["_isDerivedBuff"] else "Buff"
     result = analyze_buff(node['_buff'],blackboard)
     result["main"] = f"为{target_name}创建一个{buff_name}：" + result["main"]
     if node["_useSpecialBuffSource"]:
-        buff_source = anne_dictionary("target",node["_specialBuffSource"])
+        buff_source = enum_dictionary("target",node["_specialBuffSource"])
         result["main"] = "令" + buff_source + result["main"]
     return result
 
 # 创建多个独立但同名的Buff
 def CreateBuffs(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    target_name = anne_dictionary("target",node["_buffOwner"])
+    target_name = enum_dictionary("target",node["_buffOwner"])
     buff_name = "Buff"
     result = analyze_buff(node["_buffPair"]["buff"],blackboard)
     num = node["_buffPair"]["count"]
@@ -37,7 +37,7 @@ def CreateBuffs(node,blackboard):
 # 创建多层Buff
 def CreateBuffStacked(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    target_name = anne_dictionary("target",node["_buffOwner"])
+    target_name = enum_dictionary("target",node["_buffOwner"])
     buff_name = "本Buff的附属Buff" if node["_isDerivedBuff"] else "Buff"
     result = analyze_buff(node['_buff'],blackboard)
     # 只有两种情况下可以创建多层Buff：1. Buff叠层类型为STACK；2. Buff不开启覆盖且"_isDisableOverrideBuff"参数为真
@@ -54,7 +54,7 @@ def CreateBuffStacked(node,blackboard):
 # 依照ID创建数据库Buff
 def CreateBuffById(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    target_name = anne_dictionary("target",node["_buffOwner"])
+    target_name = enum_dictionary("target",node["_buffOwner"])
     buff_name = "本Buff的附属Buff" if node["_isDerivedBuff"] else "Buff"
     if node["_loadFromBlackboard"]:
         return {"main" : f"为{target_name}创建一个{buff_name}（读取自数据库中 [buff_key] 所记述的Buff）"}
@@ -67,8 +67,8 @@ def CreateBuffById(node,blackboard):
 # 创建Buff，将召唤物主人作为来源
 def CreateBuffUseHostAsSource(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    target_name = anne_dictionary("target",node["_targetType"])
-    source_name = anne_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
     buff_name = "Buff"
     result = analyze_buff(node['_buffData'],blackboard)
     if node["_isDerivedBuff"]: # 属于附属Buff
@@ -81,7 +81,7 @@ def CreateBuffUseHostAsSource(node,blackboard):
 # 由召唤物给主人创建Buff
 def CreateBuffToHost(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    source_name = anne_dictionary("target",node["_sourceType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
     buff_name = "Buff"
     result = analyze_buff(node['_buffData'],blackboard)
     if node["_isDerivedBuff"]: # 属于附属Buff
@@ -92,7 +92,7 @@ def CreateBuffToHost(node,blackboard):
 # 向特定UID的单位创建Buff
 def CreateBuffToUnitId(node,blackboard):
     # 未解析参数：_recordCountKey
-    source_name = anne_dictionary("target",node["_source"])
+    source_name = enum_dictionary("target",node["_source"])
     result = analyze_buff(node['_buff'],blackboard)
     target_unit = ask_bena_enemy(node["_unitId"]) if node["_unitId"].startswith("enemy") else ask_bena_character(node["_unitId"])
     target_unit += "(" + node["_unitId"] + ")"
@@ -106,14 +106,14 @@ def CreateBuffToUnitId(node,blackboard):
 # 创建具有格式化名称的Buff
 def CreateBuffUseOverrideBuffKey(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    target_name = anne_dictionary("target",node["_buffOwner"])
+    target_name = enum_dictionary("target",node["_buffOwner"])
     buff_name = "本Buff的附属Buff" if node["_isDerivedBuff"] else "Buff"
     buff_copy = node["_buff"].copy()
     buff_copy["buffKey"] = node["_overrideBuffKeyFormat"].replace("{0}","(本Buff名)")
     result = analyze_buff(buff_copy,blackboard)
     result["main"] = f"为{target_name}创建一个{buff_name}：" + result["main"]
     if node["_useSpecialBuffSource"]:
-        buff_source = anne_dictionary("target",node["_specialBuffSource"])
+        buff_source = enum_dictionary("target",node["_specialBuffSource"])
         result["main"] = "令" + buff_source + result["main"]
     return result
 
@@ -137,9 +137,9 @@ def RandomCreateBuff(node,blackboard):
             break
     if same_target:
         if node["_isDerivedBuff"]:
-            result["main"] = f"为{anne_dictionary('target',target)}随机创建下列附属Buff之一（均为本Buff的附属Buff）："
+            result["main"] = f"为{enum_dictionary('target',target)}随机创建下列附属Buff之一（均为本Buff的附属Buff）："
         else:
-            result["main"] = f"为{anne_dictionary('target',target)}随机创建下列Buff之一："
+            result["main"] = f"为{enum_dictionary('target',target)}随机创建下列Buff之一："
     else:
         if node["_isDerivedBuff"]:
             result["main"] = f"随机进行以下一项Buff的创建："
@@ -154,7 +154,7 @@ def RandomCreateBuff(node,blackboard):
             if _data["weightKey"] != None and _data["weightKey"] != "":
                 weight = "[" + _data["weightKey"] + "]"
             if not same_target:
-                owner = anne_dictionary("target",_data["buffOwner"])
+                owner = enum_dictionary("target",_data["buffOwner"])
                 buff["main"] = "为"+owner+"创建："+buff["main"]
             buff["main"] = weight+" - "+buff["main"]
             result["children"].append(buff)
@@ -162,7 +162,7 @@ def RandomCreateBuff(node,blackboard):
         for _data in node["_datas"]:
             buff = analyze_buff(_data["buff"],blackboard)
             if not same_target:
-                owner = anne_dictionary("target",_data["buffOwner"])
+                owner = enum_dictionary("target",_data["buffOwner"])
                 buff["main"] = "为"+owner+"创建："+buff["main"]
             result["children"].append(buff)
     return result
@@ -170,8 +170,8 @@ def RandomCreateBuff(node,blackboard):
 # 在一定区域内创建Buff
 def CreateBuffInRange(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    source_name = anne_dictionary("target",node["_sourceType"])
-    target_name = anne_dictionary("target",node["_targetType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     target_options = analyze_target_options(node["_targetOptions"])
     buffs = []
     for buff_data in node["_buffs"]:
@@ -225,7 +225,7 @@ def CreateBuffInRange(node,blackboard):
         range_name = "周围（逻辑不明）的"
     # 部署类型额外判定
     if node["_filterByBuildableType"]:
-        target_options["main"] = "部署类型为"+anne_dictionary("buildable_type_filter",node['_allowedBuildableType'])+"的"+target_options["main"]
+        target_options["main"] = "部署类型为"+enum_dictionary("buildable_type_filter",node['_allowedBuildableType'])+"的"+target_options["main"]
     # 返回结果
     result = {
         "main" : f"选择{range_name}{max_target}{target_options['main']}，\"依次\"为这些单位创建以下Buff：" ,
@@ -259,7 +259,7 @@ def CreateBuffInRange(node,blackboard):
 # 为自己的所有召唤物创建Buff
 def CreateBuffToToken(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    source_name = anne_dictionary("target",node["_sourceType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
     target_num = "首个" if node["_onlyToFirstTarget"] else "所有"
     conditions = []
     buff_name = "Buff"
@@ -267,7 +267,7 @@ def CreateBuffToToken(node,blackboard):
         buff_name = "本Buff的附属Buff"
     result = analyze_buff(node["_buffData"],blackboard)
     if node["_excludeTarget"]: # 排除目标召唤物
-        target_name = anne_dictionary("target",node["_targetType"])
+        target_name = enum_dictionary("target",node["_targetType"])
         conditions.append(f"非{target_name}的")
     if node["_excludeByBuffKey"]: # 排除具有指定Buff的召唤物
         conditions.append(f"不具有 <buff|{node['_excludeBuffKey']}> Buff的")
@@ -279,7 +279,7 @@ def CreateBuffToToken(node,blackboard):
 # 为特定职业的所有单位创建Buff
 def CreateBuffToCertainProfession(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    professions = [anne_dictionary("profession",p) for p in node["_professionMask"].split(", ")]
+    professions = [enum_dictionary("profession",p) for p in node["_professionMask"].split(", ")]
     result = analyze_buff(node["_buffData"],blackboard)
     buff_name = "Buff"
     if node["_isDerivedBuff"]: # 属于附属Buff
@@ -290,8 +290,8 @@ def CreateBuffToCertainProfession(node,blackboard):
 # 使用能力选择器创建Buff
 def CreateBuffUseAbilitySelector(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    buff_source_name = anne_dictionary("target",node["_buffSourceType"] if node["_overrideBuffSourceType"] else node["_sourceType"]) # 覆写Buff来源
-    ability_source_name = anne_dictionary("target",node["_abilityFromTargetType"] if node["_useAbilityFromTarget"] else node["_sourceType"]) # 覆写能力来源  
+    buff_source_name = enum_dictionary("target",node["_buffSourceType"] if node["_overrideBuffSourceType"] else node["_sourceType"]) # 覆写Buff来源
+    ability_source_name = enum_dictionary("target",node["_abilityFromTargetType"] if node["_useAbilityFromTarget"] else node["_sourceType"]) # 覆写能力来源  
     ability_name = node["_abilityName"]
     if buff_source_name != ability_source_name:
         ability_name = f"{ability_source_name}的{ability_name}"
@@ -303,7 +303,7 @@ def CreateBuffUseAbilitySelector(node,blackboard):
         result["true"] = "若该选择器存在可选目标"
         result["false"] = "若该选择器不存在可选目标"
     if node["_targetType"] != node["_sourceType"]: # 起点
-        position_name = anne_dictionary("target",node["_targetType"])
+        position_name = enum_dictionary("target",node["_targetType"])
         result["main"] = f"让{buff_source_name}借用{position_name}所在位置和部署方向，使用{ability_name}能力的选择器，对选中目标创建{buff_name}：" + result["main"]
     else:
         result["main"] = f"让{buff_source_name}使用{ability_name}能力的选择器，对选中目标创建{buff_name}：" + result["main"]
@@ -312,7 +312,7 @@ def CreateBuffUseAbilitySelector(node,blackboard):
 # 向特定阵营的所有单位创建Buff
 def CreateBuffToCertainSideUnits(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    side_name = anne_dictionary("side_type",node["_sideMask"])
+    side_name = enum_dictionary("side_type",node["_sideMask"])
     buff_name = "Buff"
     result = analyze_buff(node['_buff'],blackboard)
     if node["_isDerivedBuff"]: # 属于附属Buff
@@ -326,7 +326,7 @@ def CreateBuffToCertainSideUnits(node,blackboard):
 # 向自己阻挡的单位创建Buff
 def CreateBuffToBlockee(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    blocker_name = anne_dictionary("target",node["_buffOwner"])
+    blocker_name = enum_dictionary("target",node["_buffOwner"])
     buff_name = "Buff"
     result = analyze_buff(node['_buff'],blackboard)
     if node["_isDerivedBuff"]: # 属于附属Buff
@@ -380,11 +380,11 @@ def FinishBuff(node,blackboard):
 # 结束特定Buff(s)
 def FinishBuffsById(node,blackboard):
     # 未解析参数：_updateOverrideMap _finishHostBuff
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     buff_name = "黑板[buff_key]指定的Buff" if node["_loadFromBlackboard"] else f" <buff|{node['_buffKey']}> "
     # 仅限某人的buff
     if node["_checkBuffSource"]:
-        source_name = anne_dictionary("target",node["_sourceType"])
+        source_name = enum_dictionary("target",node["_sourceType"])
         if node["_alsoClearNullSource"]:
             buff_name = "来源于" + source_name + "或无来源的" + buff_name
         else:
@@ -402,7 +402,7 @@ def FinishBuffsById(node,blackboard):
 
 # 结束特定来源的特定Buff(s)
 def FinishBuffsByIdByBuffSource(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     source = "无来源"
     # 非无来源的判断
     if node["_sourceType"] != None:
@@ -410,12 +410,12 @@ def FinishBuffsByIdByBuffSource(node,blackboard):
             if node["_sourceType"] == "BUFF_SOURCE":
                 source = "来源于本BUFF来源（召唤物）的持有者"
             else:
-                source = "来源于" + anne_dictionary("target",node["_sourceType"]) + "（召唤物）的持有者"
+                source = "来源于" + enum_dictionary("target",node["_sourceType"]) + "（召唤物）的持有者"
         else:
             if node["_sourceType"] == "BUFF_SOURCE":
                 source = "与本BUFF相同来源"
             else:
-                source = "来源于" + anne_dictionary("target",node["_sourceType"])
+                source = "来源于" + enum_dictionary("target",node["_sourceType"])
         if node["_alsoClearNullSource"]:
             source = source + "的、或是无来源"
     result = {
@@ -447,7 +447,7 @@ def FinishDerivedBuffById(node,blackboard):
 # 实际逻辑是挂一个附属Buff，然后结束自身
 def AttachAsDerivedBuffById(node,blackboard):
     # 未解析参数：_finishDerivedBuffIfParentFinish
-    target_name = anne_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_sourceType"])
     if node["_attachToSourceHost"]:
         target_name += "(召唤物)的主人"
     buff_key = "黑板[buff_key]指定的Buff" if node["_loadFromBlackboard"] else f" <buff|{node['_buffKey']}> "
@@ -465,7 +465,7 @@ def AttachAsDerivedBuffById(node,blackboard):
 
 # 伪叠加逻辑（结束自己，令对方黑板值+1，但并非叠加）
 def StackByBuffStart(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     return {
         "main" : f"在Buff开始时尝试\"叠层\"，寻找{target_name}身上与本Buff同名同源的另一个Buff",
         "description" : "此\"叠层\"非彼Buff叠加，仅仅是令对方黑板值增加的特殊逻辑而已",

@@ -80,7 +80,10 @@ class Preferences(tk.Toplevel):
         page = self.pages['tables']
         ttk.Label(page, text='显示的 table', font=('Microsoft YaHei UI', 11, 'bold')).pack(anchor='w', pady=px(0, 12))
         for key, label in LOAD_TYPES.items():
-            ttk.Checkbutton(page, text=label, variable=self.tables[key]).pack(anchor='w')
+            if key == 'buff':
+                ttk.Label(page, text='Buff、Buff 模板和全局 Buff 为必需数据，始终加载。').pack(anchor='w')
+            else:
+                ttk.Checkbutton(page, text=label, variable=self.tables[key]).pack(anchor='w')
         ttk.Separator(page).pack(fill='x', pady=px(10))
         ttk.Checkbutton(page, text='显示隐藏条目', variable=self.hidden).pack(anchor='w')
 

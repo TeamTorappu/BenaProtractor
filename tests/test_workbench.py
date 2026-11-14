@@ -8,7 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from app_paths import required_files
-from app_settings import DEFAULT_LOAD, normalize_settings, save_settings, load_settings
+from app_settings import DEFAULT_LOAD, LOAD_TYPES, normalize_settings, save_settings, load_settings
 from bena.catalog import Catalog
 from anne import Buff
 from downloader import prepare_files, read_metadata, update_due
@@ -43,6 +43,16 @@ class ReferenceTests(unittest.TestCase):
     def test_duplicate_translated_name_is_not_ambiguous_link(self):
         self.catalog.names['重复名字'] = list(self.catalog.entries.values())
         self.assertIsNone(self.catalog.resolve('重复名字'))
+
+    def test_groups_are_created_for_categories_when_entries_are_added(self):
+        catalog = Catalog(['custom_table'])
+        self.assertEqual(catalog.groups, {})
+
+        obj = Buff('custom_id', {})
+        catalog.add('custom_category', 'custom_id', obj, 'custom_table')
+
+        self.assertEqual(catalog.groups, {'custom_category': {'custom_id': obj}})
+        self.assertIs(catalog.resolve('custom_category.custom_id').obj, obj)
 
 
 class SourceTests(unittest.TestCase):
@@ -87,8 +97,8 @@ class RogueCatalogTests(unittest.TestCase):
         catalog = Catalog(['buff'])
         with patch.object(catalog, 'read', side_effect=fixtures.__getitem__):
             catalog.load()
-        self.assertEqual(catalog.loaded_tables, {'buff', 'buff_template', 'global_buff'})
-        self.assertFalse(catalog.groups['rogue_item'])
+        self.assertEqual(catalog.loaded_tables, {'buff'})
+        self.assertNotIn('rogue_item', catalog.groups)
 
 
 class Response(io.BytesIO):
@@ -234,7 +244,13 @@ class SettingsTests(unittest.TestCase):
         seasons = {f'rogue_{index}' for index in range(1, 7)}
         self.assertTrue(seasons <= set(DEFAULT_LOAD))
         self.assertTrue(seasons <= set(normalize_settings({})['tables']))
-        self.assertEqual(normalize_settings({'tables': ['rogue_1']})['tables'], ['rogue_1'])
+        self.assertEqual(normalize_settings({'tables': ['rogue_1']})['tables'], ['buff', 'rogue_1'])
+        self.assertNotIn('buff_template', LOAD_TYPES)
+        self.assertNotIn('global_buff', LOAD_TYPES)
+        self.assertEqual(
+            normalize_settings({'tables': ['buff_template', 'global_buff']})['tables'],
+            ['buff'],
+        )
 
     def test_required_files_add_rogue_and_autochess_tables_as_names(self):
         files = required_files(['rogue_1', 'autochess'])
@@ -255,7 +271,7 @@ class SettingsTests(unittest.TestCase):
             path = Path(directory) / 'settings.json'
             save_settings(settings, path)
             self.assertEqual(load_settings(path), settings)
-        self.assertEqual(normalize_settings({'tables': []})['tables'], [])
+        self.assertEqual(normalize_settings({'tables': []})['tables'], ['buff'])
 
 
 if __name__ == '__main__':

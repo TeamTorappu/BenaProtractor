@@ -2,14 +2,14 @@
 # 角色类符文
 #----------------------------------------
 from analyzer import is_attribute_key,to_percent,analyze_selector
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 角色属性乘法符文
 def char_attribute_mul(selector,blackboard):
     modifiers = []
     for key,value in blackboard.items():
         if is_attribute_key(key):
-            name = anne_dictionary("attribute",key.upper())
+            name = enum_dictionary("attribute",key.upper())
             power = to_percent(value) # ×X%
             modifiers.append(f"{name}×{power}")
     # 选择器目标处理

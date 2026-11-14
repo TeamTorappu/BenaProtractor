@@ -1,13 +1,13 @@
 #----------------------------------------
 # 屏障相关Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 获取当前已有屏障值
 def FilterByShieldValue(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
-    compare = anne_dictionary("compare",node["_condType"])
-    compare_not = anne_dictionary("compare_not",node["_condType"])
+    target_name = enum_dictionary("target",node["_targetType"])
+    compare = enum_dictionary("compare",node["_condType"])
+    compare_not = enum_dictionary("compare_not",node["_condType"])
     buff_name = "Buff"
     shield_value = str(node["_shieldValue"])
     if node["_shieldKey"] != None and node["_shieldKey"] != "":
@@ -19,9 +19,9 @@ def FilterByShieldValue(node,blackboard):
         if node["_filterSource"] == "BUFF_SOURCE" and not node["_filterHostOrToken"]:
             buff_name = "与本Buff同来源的Buff"
         elif node["_filterHostOrToken"]:
-            buff_name = "来源于" + anne_dictionary("target",node["_filterSource"]) + "的主人/召唤物的BUFF"
+            buff_name = "来源于" + enum_dictionary("target",node["_filterSource"]) + "的主人/召唤物的BUFF"
         else:
-            buff_name = "来源于" + anne_dictionary("target",node["_filterSource"]) + "的BUFF"
+            buff_name = "来源于" + enum_dictionary("target",node["_filterSource"]) + "的BUFF"
     result = {
         "main" : f"检查{target_name}的所有{buff_name}中的\"屏障值\"之和",
         "description" : "其实就是检查所有Buff的 [dynamic] 黑板，即使该黑板值并不作此用途也会被视为\"屏障值\"",

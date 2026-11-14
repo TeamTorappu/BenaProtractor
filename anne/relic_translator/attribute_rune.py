@@ -4,7 +4,7 @@
 import math
 
 from bena import ask_bena
-from analyzer import analyze_relic_timing, anne_dictionary, to_delta_percent, to_delta, analyze_selector, is_attribute_key, to_percent
+from analyzer import analyze_relic_timing, enum_dictionary, to_delta_percent, to_delta, analyze_selector, is_attribute_key, to_percent
 
 # 角色属性乘法藏品符文
 def char_attribute_mul(item_type,blackboard):
@@ -12,7 +12,7 @@ def char_attribute_mul(item_type,blackboard):
     modifiers = []
     for key,value in blackboard.items():
         if is_attribute_key(key):
-            name = anne_dictionary("attribute",key.upper())
+            name = enum_dictionary("attribute",key.upper())
             power = to_delta_percent(value) # +/-X%
             modifiers.append(f"{name}{power}")
     # 选择器目标处理
@@ -26,7 +26,7 @@ def char_attribute_add(item_type,blackboard):
     modifiers = []
     for key,value in blackboard.items():
         if is_attribute_key(key):
-            name = anne_dictionary("attribute",key.upper())
+            name = enum_dictionary("attribute",key.upper())
             num = to_delta(value) # +/-X
             modifiers.append(f"{name}{num}")
     # 选择器目标处理
@@ -40,7 +40,7 @@ def layer_char_attribute_mul(item_type,blackboard):
     modifiers = []
     for key,value in blackboard.items():
         if is_attribute_key(key):
-            name = anne_dictionary("attribute",key.upper())
+            name = enum_dictionary("attribute",key.upper())
             num = to_delta_percent(value) # +/-X%
             modifiers.append(f"{name}{num}")
     # 选择器目标处理
@@ -64,7 +64,7 @@ def layer_char_attribute_add(item_type,blackboard):
     modifiers = []
     for key,value in blackboard.items():
         if is_attribute_key(key):
-            name = anne_dictionary("attribute",key.upper())
+            name = enum_dictionary("attribute",key.upper())
             power = to_delta(value) # +/-X
             modifiers.append(f"{name}{power}")
     # 选择器目标处理
@@ -88,7 +88,7 @@ def enemy_attribute_mul(item_type,blackboard):
     modifiers = []
     for key,value in blackboard.items():
         if is_attribute_key(key):
-            name = anne_dictionary("attribute",key.upper())
+            name = enum_dictionary("attribute",key.upper())
             power = to_delta_percent(value) # +/-X%
             modifiers.append(f"{name}{power}")
     # 选择器目标处理
@@ -102,7 +102,7 @@ def enemy_attribute_add(item_type,blackboard):
     modifiers = []
     for key,value in blackboard.items():
         if is_attribute_key(key):
-            name = anne_dictionary("attribute",key.upper())
+            name = enum_dictionary("attribute",key.upper())
             num = to_delta(value) # +/-X
             modifiers.append(f"{name}{num}")
     # 选择器目标处理

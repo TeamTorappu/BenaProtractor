@@ -1,12 +1,12 @@
 #----------------------------------------
 # CardBuff类Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from analyzer import analyze_buff
 
 # 创建CardBuff
 def CreateCardBuff(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     descriptions = []
     cardbuff_type = "永久Cardbuff" 
     if node["_lifeType"] == "UNTIL_NEXT_SPAWN" :
@@ -48,5 +48,5 @@ def FinishCardBuff(node,blackboard):
 
 # 结束自己召唤物的特定CardBuff
 def FinishTokenCardBuffByKey(node,blackboard):
-    source_name = anne_dictionary("target",node["_sourceType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
     return {"main" : f"结束{source_name}的召唤物的，名为 <cardbuff|{node['_cardBuffKey']}> 的CardBuff"}

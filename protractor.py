@@ -84,20 +84,34 @@ class Protractor:
         selected_table = next((key for key, label in LOAD_TYPES.items() if label == self.filter_var.get()), None)
         entries = self.catalog.visible(self.settings['show_hidden'])
         visible = [entry for entry in entries if (selected_table is None or entry.table == selected_table)
-                   and all(term in f'{entry.name} {entry.key}'.casefold() for term in terms)]
-        expanded = {self.directory.item(key, 'text'): self.directory.item(key, 'open') for key in self.directory.get_children()}
+                   and all(term in f'{entry.name} {entry.key} {entry.obj.catagory}'.casefold() for term in terms)]
+        expanded = {}
+
+        def remember_expansion(parent=''):
+            for item in self.directory.get_children(parent):
+                expanded[item] = self.directory.item(item, 'open')
+                remember_expansion(item)
+
+        remember_expansion()
         roots = self.directory.get_children()
         if roots:
             self.directory.delete(*roots)
         groups = {}
         for entry in visible:
-            groups.setdefault(entry.table, []).append(entry)
-        for table, items in groups.items():
+            category = getattr(entry.obj, 'catagory', type(entry.obj).__name__)
+            groups.setdefault(entry.table, {}).setdefault(category, []).append(entry)
+        for table, categories in groups.items():
             group = 'table:' + table
             label = LOAD_TYPES[table]
-            self.directory.insert('', 'end', iid=group, text=label, open=True if terms else expanded.get(label, True))
-            for entry in items:
-                self.directory.insert(group, 'end', iid=entry.target, text=entry.name)
+            self.directory.insert('', 'end', iid=group, text=label, open=True if terms else expanded.get(group, True))
+            for category, items in categories.items():
+                category_group = f'category:{table}:{category}'
+                self.directory.insert(
+                    group, 'end', iid=category_group, text=category,
+                    open=True if terms else expanded.get(category_group, True),
+                )
+                for entry in items:
+                    self.directory.insert(category_group, 'end', iid=entry.target, text=entry.name)
         self.count_label.configure(text=f'{len(visible):,} / {len(entries):,} 条目')
         self.sync_selection()
 
@@ -231,7 +245,7 @@ class Protractor:
         self.current = None
         self.history = [target for target in self.history if target in catalog.entries]
         self.history_index = min(self.history_index, len(self.history) - 1)
-        options = ['全部 table'] + [LOAD_TYPES[key] for key in self.settings['tables']]
+        options = ['全部'] + [LOAD_TYPES[key] for key in self.settings['tables']]
         self.filter.configure(values=options)
         if self.filter_var.get() not in options:
             self.filter_var.set(options[0])

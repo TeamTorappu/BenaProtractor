@@ -1,29 +1,29 @@
 #----------------------------------------
 # 能力类Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from analyzer import to_percent
 
 # 触发某个能力
 def TriggerAbility(node,blackboard):
     # 未解析参数：_checkCanUseAblityFlag
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     ability_name = node["_abilityName"]
     if node["_ownerType"] == node["_targetType"]:
         return {"main" :f"尝试让{target_name}触发{ability_name}能力"}
     else:
-        owner_name = anne_dictionary("target",node["_ownerType"])
+        owner_name = enum_dictionary("target",node["_ownerType"])
         return {"main" :f"尝试让{owner_name}向{target_name}触发{ability_name}能力"}
 
 # 触发自动触发技能（无视触发条件）
 def TriggerAutoSkill(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     return {"main" : f"尝试让{target_name}触发其自动触发的技能（无视其自动触发条件，其余技能条件不会无视）"}
 
 # 触发敌用技能
 def TriggerEnemySkill(node,blackboard):
-    owner_name = anne_dictionary("target",node["_ownerType"])
-    target_name = anne_dictionary("target",node["_targetType"])
+    owner_name = enum_dictionary("target",node["_ownerType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     skill_name = node["_skillName"] if node["_skillName"] != None and node["_skillName"] != "" else " [skill_name] "
     # 各项参数
     conditions = []
@@ -57,7 +57,7 @@ def TriggerEnemySkill(node,blackboard):
 
 # 中断角色类技能
 def InterruptCharacterSkill(node,blackboard):
-    target_name = anne_dictionary("target",node["_charFrom"])
+    target_name = enum_dictionary("target",node["_charFrom"])
     features = []
     if node["_resetAbilityCooldownIgnoreAffecting"]: # 按yj的逻辑，两个都开的话其实是重置两次冷却，意义不明
         features.append("强制重置能力的内置冷却（即使目前仍在生效也重置）")
@@ -72,13 +72,13 @@ def InterruptCharacterSkill(node,blackboard):
 
 # 中断召唤物的技能
 def InterruptTokenSkill(node,blackboard):
-    host_name = anne_dictionary("target",node["_hostType"])
+    host_name = enum_dictionary("target",node["_hostType"])
     return {"main" : f"由{host_name}终止Buff持有者的技能（通常来说，持有者应该是{host_name}的召唤物）"}
 
 # 中断能力
 def InterruptAbility(node,blackboard):
     # 未解析参数：_stopAffect
-    owner_name = anne_dictionary("target",node["_ownerType"])
+    owner_name = enum_dictionary("target",node["_ownerType"])
     if node["_useBlackboardCardUidAsOwner"]:
         owner_name = f"UID为[card_uid]的单位"
     ability = ""
@@ -98,7 +98,7 @@ def InterruptAbility(node,blackboard):
 
 # 能力的伤害可能致命时（蕾缪安2技能斩杀线逻辑）
 def CheckAbilityDamageDeadly(node,blackboard):
-    source_name = anne_dictionary("target",node["_sourceType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
     if node["_damageType"] != "PHYSICAL": # 如果填入的不是物理伤害——直接失败。这是给设计师的图灵测试？？？
         return {
             "main" : f"检查{source_name}当前的攻击力倍率与目标的状态，但配置存在问题",
@@ -113,7 +113,7 @@ def CheckAbilityDamageDeadly(node,blackboard):
 
 # 弹药类技能弹药量修改综合节点
 def AmmoSkillCountModifier(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     
     if node["_modifyMaxCount"]: # 修改最大弹药数模式
         addon = "增加"
@@ -185,9 +185,18 @@ def AmmoSkillCountModifier(node,blackboard):
         "main" : f"尝试修改{target_name}（角色类）弹药类技能，但无事发生"
     }
 
+# 将剩余弹药量记录至黑板
+def AssignAmmoSkillRemainingCountToBB(node,blackboard):
+    target_name = enum_dictionary("target",node["_ownerType"])
+    return {
+        "main" : f"将{target_name}当前技能剩余弹药量记录至黑板 [{node['_blackboardKey']}]",
+        "true" : f"{target_name}处于弹药类技能期间且弹药量不为0",
+        "false" : f"{target_name}不处于弹药类技能期间，或者当前弹药量为0"
+    }
+
 # 战栗的打断Combat的能力
 def InterruptEnemyCombat(node,blackboard):
-    target_name = anne_dictionary("target",node["_ownerType"])
+    target_name = enum_dictionary("target",node["_ownerType"])
     return {
         "main" : f"若{target_name}目前使用中的动画能力为当前模式下的Combat能力（或同名能力），将该能力打断",
         "true" : "为该能力且打断成功",

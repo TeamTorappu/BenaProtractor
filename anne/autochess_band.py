@@ -1,7 +1,7 @@
 #----------------------------------------
 # 卫戍协议 · 策略
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 class AutochessBand:
     def __init__(self, band_id, band_data, band_info = {}, band_effect = None):
@@ -12,6 +12,7 @@ class AutochessBand:
         self.band_type = band_data["bandType"]
         self.band_hp = band_data["totalHp"] if band_data["totalHp"] else 0
         self.display_name = "策略：" + band_info.get("bandName", str(band_id))
+        self.catagory = "策略"
         self.hidden = False
 
     # 获取显示名
@@ -30,7 +31,7 @@ class AutochessBand:
             "children" : []
         }
         if self.band_type == "BONDRELEVANT":
-            bonds = [anne_dictionary("bond_id",bond_id) for bond_id in self.band_data["relateBondList"]]
+            bonds = [enum_dictionary("bond_id",bond_id) for bond_id in self.band_data["relateBondList"]]
             result["description"] += " | " + "".join(bonds) + "专属策略"
         result["children"].append({"main" : self.band_data["bandDesc"].replace("\\n","\n")})
         result["children"].append({
@@ -49,6 +50,6 @@ class AutochessBand:
             result["children"].append({
                 "main" : "在以下模式/难度中无法使用：",
                 "children" : [mode_id for mode_id in self.band_data["inactiveModeIdList"]]
-                #"children" : [anne_dictionary("auto_chess_mode_id",mode_id) for mode_id in self.band_data["inactiveModeIdList"]]
+                #"children" : [enum_dictionary("auto_chess_mode_id",mode_id) for mode_id in self.band_data["inactiveModeIdList"]]
             })
         return result

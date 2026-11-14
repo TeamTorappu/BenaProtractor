@@ -5,8 +5,6 @@ import json
 from dataclasses import dataclass
 from app_paths import app_path
 
-GROUPS = ["buff", "buff_template", "global_buff", "rogue_item", "autochess_3"]
-
 @dataclass
 class Entry:
     category: str
@@ -28,7 +26,7 @@ class Catalog:
         self.tables = list(tables)
         self.loaded_tables = set()
         self.entries = {}
-        self.groups = {key: {} for key in GROUPS}
+        self.groups = {}
         self.characters = {}
         self.enemies = {}
         self.character_display_names = {}
@@ -38,7 +36,7 @@ class Catalog:
 
     def add(self, category, key, obj, table=None):
         entry = Entry(category, key, obj, table or category)
-        self.groups[category][key] = obj
+        self.groups.setdefault(category, {})[key] = obj
         self.entries[entry.target] = entry
 
     def load(self):
@@ -65,7 +63,12 @@ class Catalog:
             return self.entries[target]
         if target.split(".", 1)[0] in self.groups and "." in target:
             return None
-        for category in dict.fromkeys([prefer, "buff", "buff_template", "global_buff", "rogue_item"]):
+        categories = dict.fromkeys(
+            category for category in
+            (prefer, "buff", "buff_template", "global_buff", "rogue_item", *self.groups)
+            if category
+        )
+        for category in categories:
             entry = self.entries.get(f"{category}.{target}")
             if entry:
                 return entry
@@ -76,5 +79,5 @@ class Catalog:
         if entry.category == "buff_template":
             return entry.obj
         if entry.category == "buff":
-            return self.groups["buff_template"].get(entry.obj.buff_data.get("templateKey"))
+            return self.groups.get("buff_template", {}).get(entry.obj.buff_data.get("templateKey"))
         return None

@@ -1,7 +1,7 @@
 #----------------------------------------
 # 多条件判断式Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 DEX = "①②③④⑤⑥⑦⑧⑨"
 
@@ -42,14 +42,14 @@ def IfConditions(node,blackboard):
             true_flags.append(text)
             del _result["true"]
         else:
-            true_flags.append(_result["main"]+"处理成功")
+            true_flags.append(DEX[index]+"处理成功")
         if "false" in _result:
             text = _result["false"]
             text = DEX[index] + text
             false_flags.append(text)
             del _result["false"]
         else:
-            false_flags.append(_result["main"]+"处理成功")
+            false_flags.append(DEX[index]+"处理失败")
         index += 1
     # IfConditions同样只影响内圈，对外圈逻辑不影响
     if node["_isAnd"]:

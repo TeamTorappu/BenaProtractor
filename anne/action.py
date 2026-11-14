@@ -11,6 +11,7 @@ class Action:
         self.action_data = action_data
         self.node_list = [Node(node_data) for node_data in action_data]
         self.display_name = ""
+        self.catagory = "行为"
         self.hidden = False
 
     # 获取原文

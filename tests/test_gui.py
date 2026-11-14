@@ -147,6 +147,10 @@ class WorkbenchIntegrationTests(unittest.TestCase):
         self.app.search_var.set('SLUGGISH')
         self.app.try_search()
         self.assertTrue(self.app.directory.exists('buff.sluggish'))
+        category_group = self.app.directory.parent('buff.sluggish')
+        self.assertEqual(self.app.directory.item(category_group, 'text'),
+                         self.catalog.entries['buff.sluggish'].obj.catagory)
+        self.assertEqual(self.app.directory.parent(category_group), 'table:buff')
         self.app.search_var.set('')
         self.catalog.tables = DEFAULT_LOAD
         with patch('protractor.save_settings'), redirect_stdout(io.StringIO()):
@@ -175,7 +179,15 @@ class WorkbenchIntegrationTests(unittest.TestCase):
                     app.filter_var.set(LOAD_TYPES[season])
                     app.try_search()
                     self.assertEqual(app.directory.get_children(), ('table:' + season,))
-                    children = app.directory.get_children('table:' + season)
+                    category_groups = app.directory.get_children('table:' + season)
+                    self.assertTrue(category_groups)
+                    self.assertTrue(all(app.directory.parent(category_group) == 'table:' + season
+                                        for category_group in category_groups))
+                    children = tuple(
+                        target
+                        for category_group in category_groups
+                        for target in app.directory.get_children(category_group)
+                    )
                     self.assertTrue(children)
                     self.assertTrue(all(app.catalog.entries[target].table == season for target in children))
                     expected_keys = set(details[season]['items'])
@@ -202,7 +214,7 @@ class WorkbenchIntegrationTests(unittest.TestCase):
                 self.assertEqual(app.history, history)
                 refresh.assert_not_called()
         finally:
-            app.filter_var.set('全部 table')
+            app.filter_var.set('全部')
             with patch('protractor.save_settings'), redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
                 app.apply_settings(original_settings)
 
@@ -261,6 +273,10 @@ class WorkbenchIntegrationTests(unittest.TestCase):
         self.app.open_settings()
         dialog = self.app.settings_window
         self.assertEqual(set(dialog.pages), {'environment', 'tables', 'updates'})
+        table_controls = [widget.cget('text') for widget in dialog.pages['tables'].winfo_children()
+                          if widget.winfo_class() == 'TCheckbutton']
+        self.assertNotIn(LOAD_TYPES['buff'], table_controls)
+        self.assertTrue(dialog.tables['buff'].get())
         dialog.theme.set('深色')
         with patch.object(self.app, 'apply_settings') as applied:
             dialog.apply()

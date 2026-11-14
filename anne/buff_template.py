@@ -1,21 +1,19 @@
 #----------------------------------------
 # Buff模板
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from anne.event_to_action import EventToAction
 
 class BuffTemplate:
     def __init__(self, buff_key, buff_data):
         self.buff_key = buff_key
-        self.display_name = buff_key
         self.buff_data = buff_data
         self.template_key = buff_data["templateKey"] if "templateKey" in buff_data else buff_key # 虽然不知道有啥区别，总之留着吧
         self.effect_key = buff_data["effectKey"]
-        self.hidden = False
         self.on_event_priority = buff_data["onEventPriority"]
-        self.events = []
-        for event_name in buff_data["eventToActions"].keys():
-            self.events.append(EventToAction(event_name,buff_data["eventToActions"][event_name]))
+        self.display_name = buff_key
+        self.catagory = "Buff模板"
+        self.hidden = False
     
     # 获取显示名
     def get_display_name(self):
@@ -37,11 +35,12 @@ class BuffTemplate:
         if self.display_name != self.buff_key:
             translation["main"] = f"{self.display_name}（{self.buff_key}）"
         if self.on_event_priority != "DEFAULT":
-            priority = anne_dictionary("event_priority",self.on_event_priority)
+            priority = enum_dictionary("event_priority",self.on_event_priority)
             translation["children"].append("事件优先级："+priority)
         if self.effect_key != "":
             translation["children"].append("特效："+self.effect_key)
         # 逐个事件进行翻译
-        for event in self.events:
+        for event_name in self.buff_data["eventToActions"].keys():
+            event = EventToAction(event_name,self.buff_data["eventToActions"][event_name])
             translation["children"].append(event.translate(blackboard))
         return translation

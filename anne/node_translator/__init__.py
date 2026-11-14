@@ -24,6 +24,7 @@ from .direction import *
 from .modifier import *
 from .state import *
 from .rebuild import *
+from .dynamic_ability import *
 from .shield import *
 from .palsy import *
 from .util import *

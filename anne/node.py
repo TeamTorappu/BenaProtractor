@@ -24,6 +24,8 @@ class Node:
         self.condition_nodes = None
         self.succeed_nodes = None
         self.fail_nodes = None
+        self.display_name = node_name
+        self.catagory = "节点"
         self.hidden = False
 
     # 获取原文

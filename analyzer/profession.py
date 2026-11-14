@@ -1,7 +1,7 @@
 #----------------------------------------
 # 解析职业或职业掩码
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 职业筛选的处理
 # 返回职业的字符串。说明筛选的职业以及“干员”和“召唤物”这样的称呼
@@ -48,18 +48,18 @@ def analyze_profession(profession_mask,condition_like=False):
             return "召唤物"
         if has_trap:
             return "装置"
-        return anne_dictionary("profession",professions[0])+"干员"
+        return enum_dictionary("profession",professions[0])+"干员"
     # 保留处理
     if condition_like:
         if len(professions) > 0:
-            return "职业为" + "/".join([anne_dictionary("profession",profession) for profession in professions]) + "的"
+            return "职业为" + "/".join([enum_dictionary("profession",profession) for profession in professions]) + "的"
     op_professions = []
     objects = []
     for profession in professions:
         if profession in ["TOKEN","TRAP"]:
-            objects.append(anne_dictionary("profession",profession))
+            objects.append(enum_dictionary("profession",profession))
         else:
-            op_professions.append(anne_dictionary("profession",profession))
+            op_professions.append(enum_dictionary("profession",profession))
     return "、".join(["/".join(op_professions)+"干员"] + objects)
 
 # 子职业筛选的处理
@@ -73,5 +73,5 @@ def analyze_sub_profession(sub_profession_mask):
         masked_list = sub_profession_mask.split("|")
     sub_professions = []
     for masked in masked_list:
-        sub_professions.append(anne_dictionary("sub_profession",masked))
+        sub_professions.append(enum_dictionary("sub_profession",masked))
     return "/".join(sub_professions)+"干员"

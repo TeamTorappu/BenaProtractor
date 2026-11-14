@@ -2,7 +2,7 @@
 # 解析目标选项
 #----------------------------------------
 from .profession import analyze_profession
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 解析目标选项的详细信息
 # 返回结构体
@@ -16,13 +16,13 @@ def analyze_target_options(option: dict,relative_side=True,base_by_side = "ALLY"
         conditions.append(side)
     # 实体类型
     if option["targetCategory"] != "DEFAULT":
-        conditions.append(anne_dictionary("entity_category",option["targetCategory"]))
+        conditions.append(enum_dictionary("entity_category",option["targetCategory"]))
     # 行动方式
     if option["targetMotion"] != "ALL":
-        conditions.append(anne_dictionary("motion",option["targetMotion"]))
+        conditions.append(enum_dictionary("motion",option["targetMotion"]))
     # 单位类型
     if option["checkUnitType"]:
-        conditions.append(anne_dictionary("unit_type",option["unitTypeMask"]))
+        conditions.append(enum_dictionary("unit_type",option["unitTypeMask"]))
 
     # 开始处理进阶选项
     descriptions = []
@@ -32,7 +32,7 @@ def analyze_target_options(option: dict,relative_side=True,base_by_side = "ALLY"
         descriptions += analyze_target_options_advance_options(option)
     # 行为覆写
     if option["purposeMask"] != "NONE":
-        purpose = anne_dictionary("purpose",option["purposeMask"])
+        purpose = enum_dictionary("purpose",option["purposeMask"])
         descriptions.append(f"视为一次{purpose}")
     unit_name = "单位"
     # 职业筛选
@@ -42,7 +42,7 @@ def analyze_target_options(option: dict,relative_side=True,base_by_side = "ALLY"
     # 一些藏品相关的参数
     # 必须为特定部署类型的单位
     if "_buildableType" in option:
-        buildable = anne_dictionary("buildable_type",option["_buildableType"])
+        buildable = enum_dictionary("buildable_type",option["_buildableType"])
         conditions.append(f"部署位为{buildable}")
     # 必须是含有特定id的角色类单位
     if "_charId" in option:
@@ -54,7 +54,7 @@ def analyze_target_options(option: dict,relative_side=True,base_by_side = "ALLY"
         unit_name = "角色类" + unit_name
     # 必须是特定地位级别的单位
     if "_enemyLevelMask" in option:
-        enemy_level = anne_dictionary("enemy_level",option["_enemyLevelMask"])
+        enemy_level = enum_dictionary("enemy_level",option["_enemyLevelMask"])
         conditions.append(f"地位级别为{enemy_level}")
     # 必须是含有特定id的敌人类单位
     if "_enemyId" in option:
@@ -92,18 +92,18 @@ def analyze_target_options_side(option: dict,relative_side = True,base_by_side =
             if base_by_side == "ENEMY" and relative_side:
                 # 本质是绝对阵营处理
                 if option["targetSide"] == "ALLY":
-                    return anne_dictionary("side_type","ENEMY")
+                    return enum_dictionary("side_type","ENEMY")
                 elif option == "ENEMY":
-                    return anne_dictionary("side_type","BOTH_ALLY_AND_NEUTRAL")
+                    return enum_dictionary("side_type","BOTH_ALLY_AND_NEUTRAL")
                 #elif option == "BOTH_ALLY_AND_ENEMY":
-                #    main_conditions.append(anne_dictionary("side_type","ALL")
+                #    main_conditions.append(enum_dictionary("side_type","ALL")
             else:
-                return anne_dictionary("side_type",option["targetSide"])
+                return enum_dictionary("side_type",option["targetSide"])
         elif not option["ignoreTargetSide"] and option["targetSide"] != "ALL":
             if relative_side:
-                return anne_dictionary("side_type_relative",option["targetSide"])
+                return enum_dictionary("side_type_relative",option["targetSide"])
             else:
-                return anne_dictionary("side_type",option["targetSide"])
+                return enum_dictionary("side_type",option["targetSide"])
     return ""
 
 # 解析目标选项阵营以外的所有条件（用于表述globalbuff）
@@ -118,18 +118,18 @@ def analyze_target_options_conditions(option: dict):
         conditions.append(analyze_profession(option["professionMask"],True))
     # 实体类型
     if option["targetCategory"] != "DEFAULT":
-        conditions.append(anne_dictionary("entity_category",option["targetCategory"]))
+        conditions.append(enum_dictionary("entity_category",option["targetCategory"]))
     # 行动方式
     if option["targetMotion"] != "ALL":
-        conditions.append(anne_dictionary("motion",option["targetMotion"]))
+        conditions.append(enum_dictionary("motion",option["targetMotion"]))
     # 单位类型
     if option["checkUnitType"]:
-        conditions.append(anne_dictionary("unit_type",option["unitTypeMask"]))
+        conditions.append(enum_dictionary("unit_type",option["unitTypeMask"]))
 
     # 一些藏品相关的参数
     # 必须为特定部署类型的单位
     if "_buildableType" in option:
-        buildable = anne_dictionary("buildable_type",option["_buildableType"])
+        buildable = enum_dictionary("buildable_type",option["_buildableType"])
         conditions.append(f"部署位为{buildable}")
     # 必须是含有特定id的角色类单位
     if "_charId" in option:
@@ -142,7 +142,7 @@ def analyze_target_options_conditions(option: dict):
             main_conditions.append(f"角色类")
     # 必须是特定地位级别的单位
     if "_enemyLevelMask" in option:
-        enemy_level = anne_dictionary("enemy_level",option["_enemyLevelMask"])
+        enemy_level = enum_dictionary("enemy_level",option["_enemyLevelMask"])
         conditions.append(f"地位级别为{enemy_level}")
     # 必须是含有特定id的敌人类单位
     if "_enemyId" in option:
@@ -171,14 +171,14 @@ def analyze_target_options_advance_options(option: dict):
     if option["ignoreTargetFree"]:
         if option["onlyIgnoreSomeOfTargetFreeCase"]:
             if option["abnormalFlag"] != "E_NUM":
-                abnormal_flag = anne_dictionary("abnormal",option["abnormalFlag"])
+                abnormal_flag = enum_dictionary("abnormal",option["abnormalFlag"])
                 if option["abnormalCombo"] != "E_NUM":
-                    abnormal_combo = anne_dictionary("abnormal",option["abnormalCombo"])
+                    abnormal_combo = enum_dictionary("abnormal",option["abnormalCombo"])
                     features.append("无视"+abnormal_flag+"/"+abnormal_combo+"的可选性影响")
                 else:
                     features.append("无视"+abnormal_flag+"的可选性影响")
             if option["abnormalCombo"] != "E_NUM":
-                abnormal_combo = anne_dictionary("abnormal",option["abnormalCombo"])
+                abnormal_combo = enum_dictionary("abnormal",option["abnormalCombo"])
                 features.append("无视"+abnormal_combo+"的可选性影响")
         else:
             features.append("无视无法选择")
@@ -190,10 +190,10 @@ def analyze_target_options_advance_options(option: dict):
         features.append("无视禁疗")
     # 排除特定有异常效果单位
     if "excludeSomeAbnormalFlags" in option and option["excludeSomeAbnormalFlags"]:
-        abnormal_flag = anne_dictionary("abnormal",option["excludeAbnormalFlag"])
+        abnormal_flag = enum_dictionary("abnormal",option["excludeAbnormalFlag"])
         features.append(f"不影响持有{abnormal_flag}异常的单位")
     # 必须含有特定异常效果单位
     if "containSomeAbnormalFlags" in option and option["containSomeAbnormalFlags"]:
-        abnormal_flag = anne_dictionary("abnormal",option["containAbnormalFlag"])
+        abnormal_flag = enum_dictionary("abnormal",option["containAbnormalFlag"])
         features.append(f"仅影响持有{abnormal_flag}异常的单位")
     return features

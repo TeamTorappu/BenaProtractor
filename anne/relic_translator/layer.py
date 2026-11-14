@@ -1,7 +1,7 @@
 #----------------------------------------
 # 叠层相关效果
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 from analyzer import analyze_relic_timing, to_percent
 
@@ -31,7 +31,7 @@ def layer_pass_stage(item_type,blackboard):
     result["main"] = result["main"].replace("战斗结束","完成特定关卡") + "；包括关卡："
     result["children"] = []
     for stage in blackboard["stage_ids"].split(","):
-        stage_name = anne_dictionary("rogue_stage",stage)
+        stage_name = enum_dictionary("rogue_stage",stage)
         if stage_name != stage:
             stage_name += "（" + stage + "）"
         result["children"].append({"main" : stage_name})

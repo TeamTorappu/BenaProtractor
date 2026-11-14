@@ -1,7 +1,7 @@
 #----------------------------------------
 # 朝向相关Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 DIRECTION_TIP = "朝向仅有上/下/左/右四种状态，敌人类单位未移动的情况下，其移动朝向为上"
 FACE_DIRECTION_TIP = "朝向面向是面向矢量最相近的上/下/左/右方向；面向矢量通常会跟随移动方向、攻击目标、阻挡之类的发生变化"
@@ -9,7 +9,7 @@ FACE_LR_TIP = "左右面向是面向矢量在X轴上的分量，Δx<0则为“�
 
 # 将部署方向记录到黑板上
 def AssignDirectionToBB(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node['_isReverse']:
         return {
             "main" : f"将{target_name}部署朝向/移动朝向的相反方向记录至黑板 [{node['_blackboardKey']}]",
@@ -22,9 +22,9 @@ def AssignDirectionToBB(node,blackboard):
 
 # 检查移动朝向/部署朝向
 def CheckFaceDirection(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
-    direction = anne_dictionary("direction",node["_direction"])
-    direction_not = anne_dictionary("direction_not",node["_direction"])
+    target_name = enum_dictionary("target",node["_target"])
+    direction = enum_dictionary("direction",node["_direction"])
+    direction_not = enum_dictionary("direction_not",node["_direction"])
     return {
         "main" : f"检查{target_name}的朝向面向",
         "description" : DIRECTION_TIP,
@@ -34,9 +34,9 @@ def CheckFaceDirection(node,blackboard):
 
 # 检查单位的左右面向
 def CheckFaceLOrR(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
-    direction_name = anne_dictionary("direction_lr",node["_direction"])
-    direction_not_name = anne_dictionary("direction_lr_not",node["_direction"])
+    target_name = enum_dictionary("target",node["_target"])
+    direction_name = enum_dictionary("direction_lr",node["_direction"])
+    direction_not_name = enum_dictionary("direction_lr_not",node["_direction"])
     return {
         "main" : f"检查{target_name}的左右面向",
         "description" : FACE_LR_TIP,
@@ -46,7 +46,7 @@ def CheckFaceLOrR(node,blackboard):
 
 # 检查角色类单位的“部署朝向”
 def CheckCharacterDefaultDirection(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     if node["_useBB"] and node["_bbKey"] != None and node["_bbKey"] != "": #唯一的区别
         return {
             "main" : f"检查{target_name}的部署朝向（角色类）",
@@ -54,8 +54,8 @@ def CheckCharacterDefaultDirection(node,blackboard):
             "true" : f"其部署朝向与黑板上记述的 [{node['_bbKey']}] 相同",
             "false" : f"其部署朝向与黑板上记述的 [{node['_bbKey']}] 不同"
         }
-    direction_name = anne_dictionary("direction",node["_direction"])
-    direction_not_name = anne_dictionary("direction_not",node["_direction"])
+    direction_name = enum_dictionary("direction",node["_direction"])
+    direction_not_name = enum_dictionary("direction_not",node["_direction"])
     return {
         "main" : f"检查{target_name}的移动朝向（敌人类）/部署朝向（角色类）",
         "description" : DIRECTION_TIP,
@@ -65,8 +65,8 @@ def CheckCharacterDefaultDirection(node,blackboard):
 
 # 检查两者之间的朝向
 def CheckDirection(node,blackboard):
-    source_name = anne_dictionary("target",node["_source"])
-    target_name = anne_dictionary("target",node["_target"])
+    source_name = enum_dictionary("target",node["_source"])
+    target_name = enum_dictionary("target",node["_target"])
     if node["_judgeType"] == "FACE_TARGET":
         return {
             "main" : f"检查{source_name}的部署移动朝向（敌人类）/部署朝向（角色类）是否面向{target_name}",
@@ -74,8 +74,8 @@ def CheckDirection(node,blackboard):
             "true" : f"{source_name}的朝向面向{target_name}",
             "false" : f"{source_name}的朝向不面向{target_name}"
         }
-    judge = anne_dictionary("direction_judge",node["_judgeType"])
-    judge_not = anne_dictionary("direction_judge_not",node["_judgeType"])
+    judge = enum_dictionary("direction_judge",node["_judgeType"])
+    judge_not = enum_dictionary("direction_judge_not",node["_judgeType"])
     return {
         "main" : f"检查{source_name}与{target_name}两者的移动朝向（敌人类）/部署朝向（角色类）",
         "description" : DIRECTION_TIP,
@@ -85,9 +85,9 @@ def CheckDirection(node,blackboard):
 
 # 检查是否位于巨型Boss四个方向的地块
 def IfSourceFromEnemyDirection(node,blackboard):
-    source_name = anne_dictionary("target",node["_sourceType"])
-    #target_name = anne_dictionary("target",node["_targetType"])
-    direction_name = anne_dictionary("direction",node["_direction"])
+    source_name = enum_dictionary("target",node["_sourceType"])
+    #target_name = enum_dictionary("target",node["_targetType"])
+    direction_name = enum_dictionary("direction",node["_direction"])
     return {
         "main" : f"检查{source_name}是否位于自身占据的任意地块的\"正{direction_name}方\"",
         "description" : "普通敌人相当于一个远牙3技能的检测范围；对于巨型敌人，左/右检查时判断自身占据地块的每一行，上/下检查时判断自身占据的地块每一列",

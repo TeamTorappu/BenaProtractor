@@ -1,7 +1,7 @@
 #----------------------------------------
 # 卫戍协议的Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 检查战斗中
 def AutoChessIsInBattle(node,blackboard):
@@ -35,10 +35,10 @@ def AutoChessCheckDifficulty(node,blackboard):
 # 在黑板记录盟约生效人数
 def AutoChessAssignBondCharCntToBB(node,blackboard):
     # 未解析参数：_target、_filterAllSides
-    bond_id = anne_dictionary("bond_id",node["_bondId"])
+    bond_id = enum_dictionary("bond_id",node["_bondId"])
     if node["_filterCount"]: # 判断模式
-        compare = anne_dictionary("compare",node["_condType"])
-        compare_not = anne_dictionary("compare_not",node["_condType"])
+        compare = enum_dictionary("compare",node["_condType"])
+        compare_not = enum_dictionary("compare_not",node["_condType"])
         return {
             "main" : f"将{bond_id}盟约生效人数记录至黑板[{node['_keyToStoreCnt']}]，并判断人数",
             "true" : f"生效人数 {compare} [{node['_keyToCompare']}]",
@@ -56,7 +56,7 @@ def AutoChessAssignBondStackCntToBB(node,blackboard):
     if node["_assignCurrentMaxBond"]:
         bond_id = "最高层数盟约"
     elif node["_bondId"] != None and node["_bondId"] not in ["","none"]:
-        bond_id = anne_dictionary("bond_id",node["_bondId"])+"盟约"
+        bond_id = enum_dictionary("bond_id",node["_bondId"])+"盟约"
         if node["_bondBlackboardKey"] != None and node["_bondBlackboardKey"] not in ["","none"]: # 没有人类了
             result["description"] =f"会读取黑板上的[{node['_bondBlackboardKey']}]，以黑板指定的盟约为准"
     elif node["_bondBlackboardKey"] != None and node["_bondBlackboardKey"] not in ["","none"]: # 没有人类了
@@ -74,7 +74,7 @@ def AutoChessAssignBondStackCntToBB(node,blackboard):
 
 # 在黑板记录装备数量
 def AutochessAssignEquipCntToBlackboard(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node["_onlyGoldenEquip"]:
         return {
             "main" : f"读取{target_name}携带的已进阶装备数量，并记录至黑板[{node['_blackboardKey']}]",
@@ -92,7 +92,7 @@ def AutoChessAssignChessCntToBB(node,blackboard):
     if node["_assignGoldenChess"]: # 罗素队的检查
         return {"main" : f"统计在场精锐单位，将数量记录至黑板[{bb_key}]"}
     elif node["_assignSameId"]: # 夕队的检查同名单位
-        target_name = anne_dictionary("target",node["_targetType"])
+        target_name = enum_dictionary("target",node["_targetType"])
         return {"main" : f"统计在场与{target_name}同名的单位（包括其自身），将数量记录至黑板[{bb_key}]"}
     else: # 记录0
         return {"main" : f"尝试统计在场同名/精锐单位数，但未给定检查条件，因此设 [{bb_key}] = 0"}
@@ -100,7 +100,7 @@ def AutoChessAssignChessCntToBB(node,blackboard):
 
 # 检查角色是否已进阶
 def AutoChessFilterChess(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node["_filterGolden"]:
         return {
             "main" : f"检查{target_name}进阶状态",
@@ -116,7 +116,7 @@ def AutoChessFilterChess(node,blackboard):
 
 # 检查角色/范围内角色是否属于XX盟约
 def AutoChessFilterCharacterBondIds(node,blackboard):
-    bond_ids = [anne_dictionary("bond_id",bond) for bond in node["_bondIds"]]
+    bond_ids = [enum_dictionary("bond_id",bond) for bond in node["_bondIds"]]
     bond_filter = ""
     
     if len(bond_ids) > 1:
@@ -132,11 +132,11 @@ def AutoChessFilterCharacterBondIds(node,blackboard):
     #考虑调和盟约
     if node["_considerManiShip"]:
         for bond in node["_bondIds"]:
-            if anne_dictionary("bond_can_mani",bond) == "true": #字典里有就行
+            if enum_dictionary("bond_can_mani",bond) == "true": #字典里有就行
                 bond_filter += "/【调和】盟约"
                 break
     # 处理对象
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     if node["_checkTargetInRangeId"]: # 检查目标范围内是否存在符合盟约单位
         return {
             "main" : f"检查{target_name}的{node['_checkTargetInRangeId']}范围内所有角色的盟约",
@@ -152,7 +152,7 @@ def AutoChessFilterCharacterBondIds(node,blackboard):
 
 # 检查目标的InstID，或者检查黑板里是否有目标的UID
 def AutochessCheckTarget(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node["_checkCardUidInBlackboard"]:
         return {
             "main" : f"检查本Buff的黑板上是否记录有{target_name}的UID",
@@ -175,5 +175,5 @@ def AutochessCheckTarget(node,blackboard):
 
 # 触发核心盟约能力
 def AutoChessTriggerGarrisonAbility(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     return {"main" : f"触发{target_name}自身的盟约特质（通常为叠层效果）"}

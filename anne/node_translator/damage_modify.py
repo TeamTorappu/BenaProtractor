@@ -2,11 +2,11 @@
 # 修改伤害类Node
 #----------------------------------------
 from analyzer import to_percent
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 弱点伤害（必须于计算伤害时使用）
 def WeakDamage(node,blackboard):
-    #source_name = anne_dictionary("target",node["_sourceType"])
+    #source_name = enum_dictionary("target",node["_sourceType"])
     return {
         #"main" : f"让{source_name}的本次伤害变为弱点伤害",
         "main" : f"让本次伤害变为弱点伤害",
@@ -17,9 +17,17 @@ def WeakDamage(node,blackboard):
 
 # “分摊伤害”，实际上是给予其他单位当前伤害的一部分。
 def DamageSplit(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
-    attack_type = anne_dictionary("attack_type",node["_attackType"])
-    return {"main" : f"将本次伤害的X%以同类型{attack_type}伤害的形式传递给{target_name}（原伤害不会变化）"}
+    target_name = enum_dictionary("target",node["_targetType"])
+    attack_type = enum_dictionary("attack_type",node["_attackType"])
+    percent = "[damage_resistance]"
+    if "damage_resistance" in blackboard:
+        percent = to_percent(blackboard["damage_resistance"],True)
+    return {
+        "main" : f"将本次伤害一部分\"传递\"给{target_name}，传递量 = 当前伤害值 × {percent}",
+        "description" : f"产生的新伤害为真实{attack_type}伤害，生命流失；此逻辑不会修改原有伤害",
+        "true" : f"成功对{target_name}产生了伤害",
+        "false" : f"未能成功对{target_name}产生伤害"
+    }
 
 # 伤害倍率
 def DamageScale(node,blackboard):
@@ -66,7 +74,7 @@ def DamageScale(node,blackboard):
     # 检查伤害类型与施加方式
     conditions = []
     if node["_filterDamageType"]:
-        conditions.append("伤害类型为"+anne_dictionary("damage_type",node["_damageMask"]))
+        conditions.append("伤害类型为"+enum_dictionary("damage_type",node["_damageMask"]))
     if node["_filterApplyWay"]:
         if node["_applyWayFilter"] == "NONE":
             conditions.append("施加方式为无类型施加")
@@ -82,34 +90,34 @@ def DamageScale(node,blackboard):
     if len(conditions) > 0:
         return {
             "main" : f"若{'且'.join(conditions)}，{text}",
-            "true" : f"若成功修改伤害",
-            "false" : f"若不满足条件或无法修改伤害"
+            "true" : f"成功修改伤害",
+            "false" : f"不满足条件或无法修改伤害"
         }
     return {
         "main" : text,
-        "true" : f"若成功修改伤害",
-        "false" : f"若无法修改伤害"
+        "true" : f"成功修改伤害",
+        "false" : f"无法修改伤害"
     }
 
 # 基于距离的伤害倍率提升
 def DamageScaleBaseOnDistance(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
-    source_name = anne_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
     condition = ""
     result = {}
     if node["_filterDamageType"] and node["_filterApplyWay"]: # 伤害类型与施加途径筛选
-        damage_type = anne_dictionary("damage_type",node["_damageMask"])
-        apply_way = anne_dictionary("apply_way",node["_applyWayFilter"])
+        damage_type = enum_dictionary("damage_type",node["_damageMask"])
+        apply_way = enum_dictionary("apply_way",node["_applyWayFilter"])
         condition = f"若本次伤害是{apply_way}的{damage_type}伤害，"
         result["true"] = f"若本次伤害的伤害类型为{damage_type}且施加途径为{apply_way}"
         result["false"] = f"若本次伤害的伤害类型不为{damage_type}或者施加途径不为{apply_way}"
     elif node["_filterDamageType"]: # 伤害类型筛选
-        damage_type = anne_dictionary("damage_type",node["_damageMask"])
+        damage_type = enum_dictionary("damage_type",node["_damageMask"])
         condition = f"若本次伤害是{damage_type}伤害，"
         result["true"] = f"若本次伤害的伤害类型为{damage_type}"
         result["false"] = f"若本次伤害的伤害类型不为{damage_type}"
     elif node["_filterApplyWay"]: # 施加途径筛选
-        apply_way = anne_dictionary("apply_way",node["_applyWayFilter"])
+        apply_way = enum_dictionary("apply_way",node["_applyWayFilter"])
         if node["_applyWayFilter"] == "NONE":
             apply_way = "无"
         condition = f"若本次伤害由{apply_way}途径施加，"
@@ -130,7 +138,7 @@ def Evade(node,blackboard):
     features = []
     # 检查伤害类型
     if node["_damageMask"] != "ALL":
-        damage_type = anne_dictionary("damage_type",node["_damageMask"])
+        damage_type = enum_dictionary("damage_type",node["_damageMask"])
         features.append(f"{damage_type}")
     # 检查伤害的施加方式
     if node["_applyWayFilter"] == "NONE": # 仅无类型
@@ -156,7 +164,7 @@ def Evade(node,blackboard):
 # 增加附加攻击力（逻哥2天赋）
 def AtkAdditionUpBeforeCalcDamage(node,blackboard):
     if node["_filterDamageType"]:
-        damage_type = anne_dictionary("damage_type",node["_damageType"])
+        damage_type = enum_dictionary("damage_type",node["_damageType"])
         return {
             "main" : f"若本次伤害类型为{damage_type}，令其附加攻击力增加 {node['_atkAdditionKey']}（默认{node['_defaultValue']}点）",
             "true" : f"本次伤害确为{damage_type}伤害",
@@ -169,7 +177,7 @@ def AtkAdditionUpBeforeCalcDamage(node,blackboard):
 
 # 修改伤害类型（弱点伤害相关机制）
 def ModifyDamageType(node,blackboard):
-    damage_type = anne_dictionary("damage_type",node["_damageType"])
+    damage_type = enum_dictionary("damage_type",node["_damageType"])
     return {
         "main" : f"将本次伤害的类型改为{damage_type}"
     }

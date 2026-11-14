@@ -1,7 +1,7 @@
 #----------------------------------------
 # 解析伤害
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 解析伤害类的详细信息
 # 返回字符串
@@ -9,12 +9,12 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     features = []
     # 伤害类型
     damage_type = damage_data["_damageType"] if "_damageType" in damage_data else "NONE"
-    damage_type_name = anne_dictionary("damage_type",damage_type)
+    damage_type_name = enum_dictionary("damage_type",damage_type)
     # 攻击类型
     attack_type = "NONE"
     if "_attackType" in damage_data:
         attack_type = damage_data["_attackType"]
-    attack_type_name = anne_dictionary("attack_type",attack_type)
+    attack_type_name = enum_dictionary("attack_type",attack_type)
     # 无来源处理
     if "_onlyUseSourceOnCalculateDamage" in damage_data and damage_data["_onlyUseSourceOnCalculateDamage"]:
         features.append("计算后改为无来源")
@@ -55,12 +55,12 @@ def analyze_damage(damage_data,prefix="",suffix=""):
     #    features.append("damageWithoutModify")
     if "_setSharedFlag" in damage_data and damage_data["_setSharedFlag"]:
         if "_sharedFlagIndex" in damage_data:
-            shared_flag_name = anne_dictionary("sharedflag",damage_data["_sharedFlagIndex"])
+            shared_flag_name = enum_dictionary("sharedflag",damage_data["_sharedFlagIndex"])
             if shared_flag_name not in features:
                 features.append(shared_flag_name)
     # 疑似是火陈的小巧思，限定伤害类型的无视闪避
     if "_ignoreMissFlag" in damage_data and damage_data["_ignoreMissFlag"] != "NONE":
-        features.append("无视"+anne_dictionary("damage_type",damage_data["_ignoreMissFlag"])+"闪避")
+        features.append("无视"+enum_dictionary("damage_type",damage_data["_ignoreMissFlag"])+"闪避")
     # 乘以黑板值
     #if "_multiplierByKey" in damage_data and damage_data["_multiplierByKey"]:
     #    if "_multiplierKey" in damage_data and damage_data["_multiplierKey"]:
@@ -80,7 +80,7 @@ def analyze_damage(damage_data,prefix="",suffix=""):
             reason_mask = damage_data["_ignoreCancelReasonMask"].split(", ")
             reasons = []
             for reason in reason_mask:
-                reasons.append(anne_dictionary("cancel_reason",reason))
+                reasons.append(enum_dictionary("cancel_reason",reason))
             features.append("不受"+"/".join(reasons)+"影响")
     if len(features) > 0:
         suffix += "（"+"；".join(features)+"）"

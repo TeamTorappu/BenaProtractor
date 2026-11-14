@@ -76,7 +76,7 @@ class PackagingTests(unittest.TestCase):
             self.assertEqual(local.read_bytes(), personal)
 
     def test_missing_executable_or_resource_does_not_create_an_empty_archive(self):
-        for missing in ('dist/main.exe', 'translation/anne_dictionary.json'):
+        for missing in ('dist/main.exe', 'translation/enum_dictionary.json'):
             with self.subTest(missing=missing), tempfile.TemporaryDirectory() as temporary:
                 source = Path(temporary)
                 self.prepare_files(source)

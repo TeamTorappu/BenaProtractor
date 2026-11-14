@@ -4,9 +4,7 @@ import os
 from app_paths import app_path
 
 LOAD_TYPES = {
-    "buff" : "Buff · 常见 Buff",
-    "buff_template" : "Buff 模板 · 机制底层",
-    "global_buff" : "全局 Buff · 藏品 / 盟约机制",
+    "buff" : "Buff（常见 Buff / 模板 / 全局 Buff）",
     "rogue_1" : "傀影与猩红孤钻",
     "rogue_2" : "水月与深蓝之树",
     "rogue_3" : "探索者的银凇止境",
@@ -49,7 +47,8 @@ def normalize_settings(data):
     if isinstance(source, str) and source in SOURCE_LABELS:
         result['download_source'] = source
     if isinstance(data.get("tables"), list):
-        result["tables"] = list(dict.fromkeys(x for x in data["tables"] if isinstance(x, str) and x in LOAD_TYPES))
+        selected = (x for x in data["tables"] if isinstance(x, str) and x in LOAD_TYPES)
+        result["tables"] = list(dict.fromkeys(("buff", *selected)))
     for key in ("auto_update", "show_hidden"):
         if isinstance(data.get(key), bool):
             result[key] = data[key]

@@ -2,7 +2,7 @@
 # 卫戍协议 · 干员棋子
 #----------------------------------------
 from bena import ask_bena_character
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from anne.autochess_garrison import AutochessGarrison
 
 DEX = ["[Ⅰ]","[Ⅱ]","[Ⅲ]","[Ⅳ]","[Ⅴ]","[Ⅵ]"]
@@ -20,10 +20,11 @@ class AutochessCharChess:
         self.backup_char_id = char_data["backupCharId"]
         self.chess_level = char_data["chessLevel"]
         self.bonds = chess_data["bondIds"] # 金的应该和普通的一样，这里不校验了
-        self.display_name = ""
         self.has_golden = golden_chess_data != None
         self.golden_chess_data = golden_chess_data
         self.garrison_datas = garrison_datas
+        self.display_name = ""
+        self.catagory = "干员棋子"
         self.hidden = False
         # 加入索引
         for bond_id in self.bonds:
@@ -52,7 +53,7 @@ class AutochessCharChess:
             "description" : "【无盟约】",
             "children" : []
         }
-        bonds = [anne_dictionary("bond_id",bond_id) for bond_id in self.bonds]
+        bonds = [enum_dictionary("bond_id",bond_id) for bond_id in self.bonds]
         if len(bonds) > 0:
             result["description"] = " ".join(bonds)
         if self.char_id != None and self.backup_char_id != self.char_id and self.backup_char_id != None:
@@ -83,7 +84,7 @@ class AutochessCharChess:
         for bond_id in self.bonds:
             if bond_id in BOND_REFERENCE and len(BOND_REFERENCE[bond_id]) > 0:
                 bond_info = {
-                    "main" : anne_dictionary("bond_id",bond_id) + "："
+                    "main" : enum_dictionary("bond_id",bond_id) + "："
                 }
                 for char in BOND_REFERENCE[bond_id]:
                     bond_info["main"] += "<autochess_3|" + char.chess_id + "> "

@@ -2,12 +2,12 @@
 # 治疗类Node
 #----------------------------------------
 from analyzer import to_percent
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 固定数值治疗
 def FixedValueHeal(node,blackboard):
-    source_name = anne_dictionary("target",node["_sourceType"])
-    target_name = anne_dictionary("target",node["_targetType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     extra = ""
     if node["_ignoreHealFree"]:
         extra = "（无视禁疗）"
@@ -32,7 +32,7 @@ def HealViaMaxHpRatio(node,blackboard):
     if node["_healTarget"] == "BUFF_SOURCE": # 这种情况下是否取目标的生命值已经不重要了
         result["main"] = f"Buff来源恢复相当于自身最大生命值一定比例的生命值{extra}"
     else:
-        target_name = anne_dictionary("target",node["_healTarget"])
+        target_name = enum_dictionary("target",node["_healTarget"])
         heal_scale = to_percent(blackboard["hp_ratio"]) if "hp_ratio" in blackboard else "[hp_ratio]"
         if node["_getMaxHpFromTarget"]: # 开了这个时以自己的最大生命值为准（怎么和参数名字反的）
             result["main"] = f"{target_name}恢复 Buff来源最大生命值 × {heal_scale} 的生命值{extra}"

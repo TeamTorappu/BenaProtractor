@@ -1,16 +1,16 @@
 #----------------------------------------
 # 弹道类Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 发出弹道
 def EmitProjectile(node,blackboard):
     # 未解析参数：_buffDataList _extraBlackboard _overwriteBlackboard _useProjectileAsTarget _useSnapshotAbilityWhenFromBuff
-    source_name = anne_dictionary("target",node["_sourceType"]) if node["_useSourceAsProjectileSource"] else "持有者"
-    target_name = anne_dictionary("target",node["_targetType"])
-    target_point = target_name + "的" + anne_dictionary("mount_point",node["_mountPoint"]) + "吸附点"
+    source_name = enum_dictionary("target",node["_sourceType"]) if node["_useSourceAsProjectileSource"] else "持有者"
+    target_name = enum_dictionary("target",node["_targetType"])
+    target_point = target_name + "的" + enum_dictionary("mount_point",node["_mountPoint"]) + "吸附点"
     start_point = "所在地块中心" if node["_emitOnRootTile"] else (source_name + "的弹道出发点")
-    projectile_event = anne_dictionary("projectile_event",node["_ev"])
+    projectile_event = enum_dictionary("projectile_event",node["_ev"])
     projectile = node["_projectileKey"]
     features = []
     result = {}
@@ -21,7 +21,7 @@ def EmitProjectile(node,blackboard):
         if node["_useAbilityTileSelector"]: # 使用专门的能力选择器
             target_point = "选取的特定地块"
             if node["_useAbilityFromOther"]:
-                ability_owner = anne_dictionary("target",node["_abilityOwner"])
+                ability_owner = enum_dictionary("target",node["_abilityOwner"])
                 features.append(f"使用{ability_owner}的{node['_abilityName']}能力选取目的地块")
             else:
                 features.append(f"使用来源的{node['_abilityName']}能力选取目的地块")
@@ -45,13 +45,14 @@ def EmitProjectile(node,blackboard):
     result["main"] = f"从{start_point}，向{target_name}，发射{projectile}弹道"
     # 弹道事件
     if node["_actions"] != None and len(node["_actions"]) > 0:
+        from anne.action import Action
         result["main"] += f"；当{projectile_event}，执行："
-        result["sub_nodes"] = node["_actions"]
+        result["children"] = Action(node["_actions"]).translate(blackboard)["children"]
     return result
 
 # 结束所有目标的弹道
 def FinishManagedProjectiles(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     return {
         "main" : f"结束所有{target_name}发出的、受管理的弹道（ManagedProjectile)"
     }

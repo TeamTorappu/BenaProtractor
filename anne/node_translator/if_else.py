@@ -1,7 +1,7 @@
 #----------------------------------------
 # 条件判断式Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 如果+否则
 def IfElse(node,blackboard):

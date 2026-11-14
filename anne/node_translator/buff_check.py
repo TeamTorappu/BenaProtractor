@@ -1,12 +1,12 @@
 #----------------------------------------
 # Buff相关的检查类Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 检查是否持有某Buff
 def CheckContainsBuff(node,blackboard):
     # 未解析参数：
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     condition = f"检查{target_name}是否"
     true_flag = "其持有该Buff"
     false_flag = "其没有该Buff"
@@ -16,7 +16,7 @@ def CheckContainsBuff(node,blackboard):
         if len(node["_buffKeys"]) > 1:
             buffs = '、'.join([f"<buff|{key}>" for key in node['_buffKeys']])
             if node["_checkBuffSource"]:
-                source_name = anne_dictionary("target",node["_buffSourceType"])
+                source_name = enum_dictionary("target",node["_buffSourceType"])
                 condition += f"同时持有来自{source_name}的 {buffs} Buff"
             else:
                 condition += f"同时持有 {buffs} Buff"
@@ -24,7 +24,7 @@ def CheckContainsBuff(node,blackboard):
             false_flag = "其少了其中任意一个Buff"
         elif len(node["_buffKeys"]) == 1:
             if node["_checkBuffSource"]:
-                source_name = anne_dictionary("target",node["_buffSourceType"])
+                source_name = enum_dictionary("target",node["_buffSourceType"])
                 if node["_checkSourceHost"]:
                     source_name = source_name+"（召唤物）的主人"
                 condition += f"持有来自{source_name}的 <buff|{node['_buffKeys'][0]}> Buff"
@@ -34,7 +34,7 @@ def CheckContainsBuff(node,blackboard):
         if len(node["_buffKeys"]) > 1:
             buffs = '、'.join([f"<buff|{key}>" for key in node['_buffKeys']])
             if node["_checkBuffSource"]:
-                source_name = anne_dictionary("target",node["_buffSourceType"])
+                source_name = enum_dictionary("target",node["_buffSourceType"])
                 if node["_checkSourceHost"]:
                     source_name = source_name+"（召唤物）的主人"
                 condition += f"持有来自{source_name}的 {buffs} 中的任意一个Buff"
@@ -44,7 +44,7 @@ def CheckContainsBuff(node,blackboard):
             false_flag = "其全部Buff都没有"
         elif len(node["_buffKeys"]) == 1:
             if node["_checkBuffSource"]:
-                source_name = anne_dictionary("target",node["_buffSourceType"])
+                source_name = enum_dictionary("target",node["_buffSourceType"])
                 if node["_checkSourceHost"]:
                     source_name = source_name+"（召唤物）的主人"
                 condition += f"持有来自{source_name}的 <buff|{node['_buffKeys'][0]}> Buff"
@@ -99,11 +99,11 @@ def CheckMainBuffId(node,blackboard):
 
 # 检查Buff叠加层数
 def FilterByBuffStackCount(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node["_checkTargetHost"]:
         target_name = target_name+"（召唤物）的主人"
-    compare = anne_dictionary("compare",node["_condType"])
-    compare_not = anne_dictionary("compare_not",node["_condType"])
+    compare = enum_dictionary("compare",node["_condType"])
+    compare_not = enum_dictionary("compare_not",node["_condType"])
     features = []
     # 处理Buff对象
     buff_name = f"名为 <buff|{node['_buffKey']}> Buff"
@@ -111,7 +111,7 @@ def FilterByBuffStackCount(node,blackboard):
         if node["_sourceType"] == "BUFF_SOURCE":
             buff_name = "相同来源的、" + buff_name
         else:
-            buff_source = anne_dictionary("target",node["_sourceType"])
+            buff_source = enum_dictionary("target",node["_sourceType"])
             buff_name = "来源于" + buff_source + "的、" + buff_name
     # 处理右侧比对对象
     default_value = int(node["_stackCount"]) - int(node["_stackCountPeeling"])
@@ -148,7 +148,7 @@ def FilterByBuffStackCount(node,blackboard):
 
 # 检查是否持有可抵抗状态
 def CheckContainsStatusResistableBuff(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     return {
         "main" : f"检查{target_name}持有的所有Buff",
         "true" : f"其中含有任何一个\"可状态抵抗\"的Buff",

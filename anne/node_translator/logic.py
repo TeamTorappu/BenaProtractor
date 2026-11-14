@@ -1,18 +1,7 @@
 #----------------------------------------
 # 逻辑类Node（通常不在这里处理）
 #----------------------------------------
-from dictionary import anne_dictionary
-
-# 假节点，用于翻译占位
-def Dummy(node,blackboard):
-    return {"main" : node["_dummy"]}
-
-# 假节点，带子节点列表，用于嵌套翻译
-def DummyWithSubNodes(node,blackboard):
-    return {
-        "main" : node['_dummy'],
-        "sub_nodes" : node["_subNodes"]
-    }
+from dictionary import enum_dictionary
 
 # 否则
 def IfNot(node,blackboard):
@@ -26,8 +15,9 @@ def AlwaysNext(node,blackboard):
 def Loop(node,blackboard):
     loop_time = ""
     result = {
-        "sub_nodes" : list(node["_loopBody"] or [])
+        "main" : "循环以下内容："
     }
+
     if node["_useMappingList"]: # 按数据循环
         key_mapping_list = node["_keyMappingList"]
         result["main"] = f"进行{len(key_mapping_list)}次循环，并在每次循环前设置黑板值："
@@ -56,14 +46,17 @@ def Loop(node,blackboard):
         result["main"] = f"循环执行以下内容{loop_time}："
     else: # 无限循环
         result["main"] = "无限循环以下内容："
+    
+    # 循环内容
+    from anne.action import Action
+    loop_body = Action(node["_loopBody"] or []).translate(blackboard)
+    result["children"] += loop_body["children"]
+    
     # 失败终止模式 vs 成功终止模式
     if node["_stopWhenPreviousSucceed"]:
         # result["description"] = "若内部任一节点执行失败将进入下次循环；若全部执行成功将提前终止循环；本节点始终视为执行成功"
         result["description"] = "若内部任一节点执行失败，尝试进行下一次循环"
-        result["sub_nodes"].append({
-            "$type" : "Torappu.Battle.Action.Nodes+Dummy, Assembly-CSharp",
-            "_dummy" : "跳出循环"
-        })
+        result["children"].append({"main" : "跳出循环"})
     else:
         result["description"] = "若内部任一节点执行失败，仅此次结束循环"
     return result
@@ -72,22 +65,18 @@ def Loop(node,blackboard):
 def AlwaysExecuteNodeList(node,blackboard):
     result = {
         "main" : "分区执行以下节点：",
-        "sub_nodes" : []
+        "description" : "分区之间的运行互不干扰，内部处理失败时改为转跳至下一分区",
+        "children" : []
     }
     if node["_failWhenOneFail"]:
-        result["description"] = "若某一分区出现执行中止的情况，后续分区不再处理"
         result["true"] = "若所有分区均执行成功，无一失败"
         result["false"] = "若任一分区执行中止"
-    else:
-        result["description"] = "分区之间的运行结果互不干扰，内部失败后直接转跳到下一分区处理"
     # 分区
+    from anne.action import Action
     index = 1
-    for chunk in node["_nodes"]:
-        chunk_node = {
-            "$type" : "Torappu.Battle.Action.Nodes+DummyWithSubNodes, Assembly-CSharp",
-            "_dummy" : f"第{index}分区：",
-            "_subNodes" : chunk
-        }
+    for chunk_nodes in node["_nodes"]:
+        chunk = Action(chunk_nodes).translate(blackboard)
+        chunk["main"] = f"第{index}分区："
         index += 1
-        result["sub_nodes"].append(chunk_node)
+        result["children"].append(chunk)
     return result

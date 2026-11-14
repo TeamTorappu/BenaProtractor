@@ -1,7 +1,7 @@
 #----------------------------------------
 # 肉鸽特色Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 获取源石锭数量
 def AssignGoldToBlackboard(node,blackboard):
@@ -12,7 +12,7 @@ def AssignGoldToBlackboard(node,blackboard):
 
 # 检查角色是否已秉烛
 def RoguelikeFilterCharacterInCandleHolder(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     return {
         "main" : f"检查{target_name}（干员）是否已秉烛",
         "description" : "黑流树海中的应急干员实现逻辑同样为“秉烛”",

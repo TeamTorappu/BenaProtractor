@@ -1,7 +1,7 @@
 #----------------------------------------
 # GlobalBuff相关Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 将某个GlobalBuff的黑板值誊写到自己黑板上
 def AssignGlobalBuffBlackboardToBB(node,blackboard):

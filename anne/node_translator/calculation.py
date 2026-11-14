@@ -2,7 +2,7 @@
 # 计算类Node
 #----------------------------------------
 import math
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 from analyzer import to_delta
 # 用各种参数计算黑板值
 def CalculateBlackboardValueViaParams(node,blackboard):

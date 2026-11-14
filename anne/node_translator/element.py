@@ -1,13 +1,13 @@
 #----------------------------------------
 # 元素损伤相关Node
 #----------------------------------------
-from dictionary import anne_dictionary
+from dictionary import enum_dictionary
 
 # 施加元素损伤
 def ApplyElementDamage(node,blackboard):
-    source_name = anne_dictionary("target",node["_sourceType"])
-    target_name = anne_dictionary("target",node["_targetType"])
-    element_type = anne_dictionary("element",node["_elementDamageType"])
+    source_name = enum_dictionary("target",node["_sourceType"])
+    target_name = enum_dictionary("target",node["_targetType"])
+    element_type = enum_dictionary("element",node["_elementDamageType"])
     scale = " × [" + node["_epDamageScale"] + "]"
     result = {"main" : ""}
     descriptions = []
@@ -55,14 +55,14 @@ def ApplyElementDamage(node,blackboard):
 
 # 检查元素爆发类型
 def FilterEPBreakRecoveryType(node,blackboard):
-    target_name = anne_dictionary("target",node["_target"])
+    target_name = enum_dictionary("target",node["_target"])
     result = {}
     if node["_readTypeFromBb"] and node["_bbKey"] != "":
         result["main"] = f"检查{target_name}的元素爆发是否为黑板 [{node['_bbKey']}] 记述的类型"
         result["true"] = "若爆发的类型与黑板相同"
         result["false"] = "若爆发的类型与黑板不同"
     else:
-        element = anne_dictionary("element",node["_recoveryType"])
+        element = enum_dictionary("element",node["_recoveryType"])
         result["main"] = f"检查{target_name}的元素爆发是否{element}"
         result["true"] = f"若爆发类型为{element}"
         result["false"] = f"若爆发类型不为{element}"
@@ -72,9 +72,9 @@ def FilterEPBreakRecoveryType(node,blackboard):
     
 # 检查目标元素值是否为全满/特定元素值是否为满
 def CheckTargetEpIsFull(node,blackboard):
-    target_name = anne_dictionary("target",node["_targetType"])
+    target_name = enum_dictionary("target",node["_targetType"])
     if node["_elementType"] != None and node["_elementType"] != "":
-        element = anne_dictionary("element",node["_elementType"])
+        element = enum_dictionary("element",node["_elementType"])
         return {
             "main" : f"检查{target_name}的{element}元素值",
             "true" : f"其{element}元素值 ≥ 其元素上限且不处于\"爆条\"状态",
@@ -92,10 +92,10 @@ def EpDamageScale(node,blackboard):
     # 未解析参数：_isStackable _isValidStackCnt
     features = []
     if node["_filterApplyWay"] and node["_applyWayFilter"] != None and node["_applyWayFilter"] != "":
-        apply_way = anne_dictionary("apply_way",node["_applyWayFilter"])
+        apply_way = enum_dictionary("apply_way",node["_applyWayFilter"])
         features.append("施加途径为"+apply_way)
     if node["_filterElementType"] and node["_elementType"] != None and node["_elementType"] != "":
-        element = anne_dictionary("element",node["_elementType"]) + "损伤"
+        element = enum_dictionary("element",node["_elementType"]) + "损伤"
         features.append("元素类型为"+apply_way)
 
     damage_scale = " (1 - [ep_damage_scale]) " if node["_isOneMinus"] else " [ep_damage_scale] "

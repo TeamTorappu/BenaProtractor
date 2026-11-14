@@ -5,7 +5,7 @@
 # 格挡/护盾/屏障（还得根据黑板的具体情况具体分析）
 def BlockDamage(node,blackboard):
     # 未解析参数：_useSource _sourceType
-    #source_name = anne_dictionary("target",node["_sourceType"])
+    #source_name = enum_dictionary("target",node["_sourceType"])
     name = "格挡此次伤害"
     features = []
     description = "若无法响应/伤害已被无效化本节点视为无法处理"

@@ -44,13 +44,13 @@ def load_tables(catalog):
     # Buff模板表加载
     with open(app_path("tables","buff_template_data.json"), encoding="utf-8") as _f:
         for key, data in json.load(_f).items():
-            catalog.add("buff_template", key, BuffTemplate(key, data))
+            catalog.add("buff_template", key, BuffTemplate(key, data), "buff")
 
     # Dummy表加载
     if app_path_file_exists("table_dummies", "global_buff_dummy.json"):
         with open(app_path("table_dummies", "global_buff_dummy.json"), encoding="utf-8") as _f:
             for key, data in json.load(_f).items():
-                catalog.add("global_buff", key, GlobalBuff(key, data))
+                catalog.add("global_buff", key, GlobalBuff(key, data), "buff")
                 
     if app_path_file_exists("table_dummies", "activity_table_autochess.json"):
         with open(app_path("table_dummies", "activity_table_autochess.json"), encoding="utf-8") as _f:
@@ -85,7 +85,7 @@ def load_tables(catalog):
                 else:
                     catalog.add("autochess_3", key, AutochessBand(key, data, band_info))
 
-    catalog.loaded_tables.update(("buff", "buff_template", "global_buff"))
+    catalog.loaded_tables.add("buff")
 
     # 加载肉鸽季度
     seasons = [t for t in catalog.tables if t.startswith("rogue_")]

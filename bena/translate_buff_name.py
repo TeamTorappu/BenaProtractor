@@ -1,13 +1,13 @@
 #----------------------------------------
 # 翻译Buff名
 #----------------------------------------
-from dictionary import bena_dictionary
+from dictionary import buff_dictionary
 
 # 字典深查询
 # 返回可处理部分和不可处理部分
 def deep_translate(catalogue,keys):
     key_num = len(keys)
-    read_value = bena_dictionary(catalogue,keys[0])
+    read_value = buff_dictionary(catalogue,keys[0])
     if read_value != "":
         # 单项匹配
         if key_num == 1:
@@ -48,7 +48,7 @@ def deep_translate(catalogue,keys):
 def translate_buff_name(buff_key: str):
     from bena import CATALOG
     # 直接匹配
-    read_value = bena_dictionary("buff_name",buff_key)
+    read_value = buff_dictionary("buff_name",buff_key)
     if read_value != "":
         return read_value
     
@@ -69,9 +69,9 @@ def translate_buff_name(buff_key: str):
     elif "_" in buff_key:
         keys = buff_key.split("_")
     else: # 单词语，直接查询一下返回
-        read_value = bena_dictionary("buff_prefix",buff_key)
+        read_value = buff_dictionary("buff_prefix",buff_key)
         if read_value == "":
-            read_value = bena_dictionary("buff_element",buff_key)
+            read_value = buff_dictionary("buff_element",buff_key)
         if read_value != "":
             if isinstance(read_value,dict):
                 if "" in read_value:
