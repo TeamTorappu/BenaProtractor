@@ -6,33 +6,58 @@ from dictionary import enum_dictionary
 # 职业筛选的处理
 # 返回职业的字符串。说明筛选的职业以及“干员”和“召唤物”这样的称呼
 def analyze_profession(profession_mask,condition_like=False):
-    profession_mask = profession_mask.upper()
     # 职业掩码分析
     professions = []
     has_trap = False
     has_token = False
-    if "PIONEER" in profession_mask:
-        professions.append("PIONEER")
-    if "WARRIOR" in profession_mask:
-        professions.append("WARRIOR")
-    if "TANK" in profession_mask:
-        professions.append("TANK")
-    if "SNIPER" in profession_mask:
-        professions.append("SNIPER")
-    if "CASTER" in profession_mask:
-        professions.append("CASTER")
-    if "SUPPORT" in profession_mask:
-        professions.append("SUPPORT")
-    if "MEDIC" in profession_mask:
-        professions.append("MEDIC")
-    if "SPECIAL" in profession_mask:
-        professions.append("SPECIAL")
-    if "TRAP" in profession_mask:
-        professions.append("TRAP")
-        has_trap = True
-    if "TOKEN" in profession_mask:
-        professions.append("TOKEN")
-        has_token = True
+    if isinstance(profession_mask,float) or isinstance(profession_mask,int) or profession_mask.isdigit(): # 二进制掩码
+        int_mask = int(profession_mask)
+        if int_mask & 1: # 近卫
+            professions.append("WARRIOR")
+        if int_mask & 2: # 狙击
+            professions.append("SNIPER")
+        if int_mask & 4: # 重装
+            professions.append("TANK")
+        if int_mask & 8: # 医疗
+            professions.append("MEDIC")
+        if int_mask & 16: # 辅助
+            professions.append("SUPPORT")
+        if int_mask & 32: # 术师
+            professions.append("CASTER")
+        if int_mask & 64: # 特种
+            professions.append("SPECIAL")
+        if int_mask & 128: # 召唤物
+            professions.append("TOKEN")
+            has_token = True
+        if int_mask & 256: # 装置
+            professions.append("TRAP")
+            has_trap = True
+        if int_mask & 512: # 先锋
+            professions.append("PIONEER")
+    else: # 被解析成字符串的掩码
+        str_mask = str(profession_mask).upper()
+        if "WARRIOR" in str_mask: # 近卫
+            professions.append("WARRIOR")
+        if "SNIPER" in str_mask: # 狙击
+            professions.append("SNIPER")
+        if "TANK" in str_mask: # 重装
+            professions.append("TANK")
+        if "MEDIC" in str_mask: # 医疗
+            professions.append("MEDIC")
+        if "SUPPORT" in str_mask: # 辅助
+            professions.append("SUPPORT")
+        if "CASTER" in str_mask: # 术师
+            professions.append("CASTER")
+        if "SPECIAL" in str_mask: # 特种
+            professions.append("SPECIAL")
+        if "TOKEN" in str_mask: # 召唤物
+            professions.append("TOKEN")
+            has_token = True
+        if "TRAP" in str_mask: # 装置
+            professions.append("TRAP")
+            has_trap = True
+        if "PIONEER" in str_mask: # 先锋
+            professions.append("PIONEER")
     # 全职业，相当于没判
     if len(professions) >= 10:
         return "" if condition_like else "干员、召唤物、装置"
@@ -49,6 +74,8 @@ def analyze_profession(profession_mask,condition_like=False):
         if has_trap:
             return "装置"
         return enum_dictionary("profession",professions[0])+"干员"
+    if len(professions) == 0:
+        return "\"没有人\""
     # 保留处理
     if condition_like:
         if len(professions) > 0:

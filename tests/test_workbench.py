@@ -8,7 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from app_paths import required_files
-from app_settings import DEFAULT_LOAD, LOAD_TYPES, normalize_settings, save_settings, load_settings
+from app_settings import normalize_settings, save_settings, load_settings
 from bena.catalog import Catalog
 from anne import Buff
 from downloader import prepare_files, read_metadata, update_due
@@ -109,63 +109,67 @@ class Response(io.BytesIO):
 
 class UpdateTests(unittest.TestCase):
     def test_both_sources_route_every_table_and_record_origin(self):
-        data = {'buff_table.json': {'b': {'templateKey': 'empty'}},
-                'buff_template_data.json': {'b': {'eventToActions': {}}},
-                'character_table.json': {'c': {'name': '干员'}},
-                'enemy_database.json': {'enemies': []},
-                'roguelike_topic_table.json': {'details': {}}}
+        names = ['buff_table', 'buff_template_data', 'character_table',
+                 'enemy_database', 'roguelike_topic_table']
+        data = {'buff_table': {'b': {'templateKey': 'empty'}},
+                'buff_template_data': {'b': {'eventToActions': {}}},
+                'character_table': {'c': {'name': '干员'}},
+                'enemy_database': {'enemies': []},
+                'roguelike_topic_table': {'details': {}}}
         for source, base in SOURCE_URLS.items():
             with self.subTest(source=source), tempfile.TemporaryDirectory() as directory:
                 urls = []
                 def opener(request, **kwargs):
                     urls.append(request.full_url)
-                    name = next(name for name, path in FILES.items() if request.full_url == base + path)
+                    name = next(name for name in names if request.full_url == base + FILES[name])
                     return Response(data[name])
-                self.assertEqual(prepare_files(True, list(FILES), directory=directory, opener=opener, source=source), list(FILES))
-                self.assertEqual(urls, [base + path for path in FILES.values()])
+                self.assertEqual(prepare_files(True, names, directory=directory, opener=opener, source=source), names)
+                self.assertEqual(urls, [base + FILES[name] for name in names])
                 metadata = read_metadata(directory)
                 self.assertEqual(metadata['source'], source)
-                for name in FILES:
+                for name in names:
                     self.assertEqual(metadata['files'][name]['source'], source)
                     self.assertEqual(metadata['files'][name]['url'], base + FILES[name])
 
     def test_source_switch_refetches_without_reusing_other_sources_etag(self):
         with tempfile.TemporaryDirectory() as directory:
-            prepare_files(True, ['buff_table.json'], directory=directory,
+            prepare_files(True, ['buff_table'], directory=directory,
                           opener=lambda *a, **k: Response({'github': {'templateKey': 'empty'}}))
-            self.assertTrue(update_due(24, directory, ['buff_table.json'], source='prts'))
+            self.assertTrue((Path(directory) / 'buff_table.json').is_file())
+            self.assertFalse((Path(directory) / 'buff_table').exists())
+            self.assertTrue(update_due(24, directory, ['buff_table'], source='prts'))
             def switched(request, **kwargs):
-                self.assertEqual(request.full_url, SOURCE_URLS['prts'] + FILES['buff_table.json'])
+                self.assertEqual(request.full_url, SOURCE_URLS['prts'] + FILES['buff_table'])
                 self.assertIsNone(request.get_header('If-none-match'))
                 self.assertIsNone(request.get_header('If-modified-since'))
                 return Response({'prts': {'templateKey': 'empty'}})
-            self.assertEqual(prepare_files(False, ['buff_table.json'], directory=directory, opener=switched, source='prts'), ['buff_table.json'])
+            self.assertEqual(prepare_files(False, ['buff_table'], directory=directory, opener=switched, source='prts'), ['buff_table'])
             self.assertIn('prts', json.loads((Path(directory) / 'buff_table.json').read_text()))
-            self.assertFalse(update_due(24, directory, ['buff_table.json'], source='prts'))
-            self.assertTrue(update_due(24, directory, ['buff_table.json'], source='github'))
+            self.assertFalse(update_due(24, directory, ['buff_table'], source='prts'))
+            self.assertTrue(update_due(24, directory, ['buff_table'], source='github'))
             def unchanged(request, **kwargs):
                 self.assertEqual(request.get_header('If-none-match'), 'example-tag')
                 raise urllib.error.HTTPError(request.full_url, 304, 'unchanged', {}, None)
-            self.assertEqual(prepare_files(True, ['buff_table.json'], directory=directory, opener=unchanged, source='prts'), [])
+            self.assertEqual(prepare_files(True, ['buff_table'], directory=directory, opener=unchanged, source='prts'), [])
 
     def test_failed_source_switch_preserves_local_data_and_origin(self):
         with tempfile.TemporaryDirectory() as directory:
-            prepare_files(True, ['buff_table.json'], directory=directory,
+            prepare_files(True, ['buff_table'], directory=directory,
                           opener=lambda *a, **k: Response({'github': {'templateKey': 'empty'}}))
             old_data = (Path(directory) / 'buff_table.json').read_bytes()
             old_metadata = (Path(directory) / '.update.json').read_bytes()
             with self.assertRaises(ValueError):
-                prepare_files(True, ['buff_table.json'], directory=directory,
+                prepare_files(True, ['buff_table'], directory=directory,
                               opener=lambda *a, **k: Response({'invalid': True}), source='prts')
             self.assertEqual((Path(directory) / 'buff_table.json').read_bytes(), old_data)
             self.assertEqual((Path(directory) / '.update.json').read_bytes(), old_metadata)
 
     def test_legacy_update_metadata_belongs_to_github(self):
         with tempfile.TemporaryDirectory() as directory:
-            metadata = {'files': {'buff_table.json': {'checked_at': time.time(), 'etag': 'old'}}}
+            metadata = {'files': {'buff_table': {'checked_at': time.time(), 'etag': 'old'}}}
             (Path(directory) / '.update.json').write_text(json.dumps(metadata))
-            self.assertFalse(update_due(24, directory, ['buff_table.json'], source='github'))
-            self.assertTrue(update_due(24, directory, ['buff_table.json'], source='prts'))
+            self.assertFalse(update_due(24, directory, ['buff_table'], source='github'))
+            self.assertTrue(update_due(24, directory, ['buff_table'], source='prts'))
 
     def test_unknown_source_is_rejected_before_download(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -183,27 +187,27 @@ class UpdateTests(unittest.TestCase):
                     return Response({'new': {'templateKey': 'empty'}})
                 return Response({'invalid': True})
             with self.assertRaises(ValueError):
-                prepare_files(True, ['buff_table.json', 'buff_template_data.json'], directory=directory, opener=opener)
+                prepare_files(True, ['buff_table', 'buff_template_data'], directory=directory, opener=opener)
             self.assertIn('old', json.loads(path.read_text()))
             self.assertFalse((Path(directory) / '.update.json').exists())
             self.assertFalse(list(Path(directory).glob('.update-*')))
 
     def test_304_and_check_interval(self):
         with tempfile.TemporaryDirectory() as directory:
-            prepare_files(True, ['buff_table.json'], directory=directory, opener=lambda *a, **k: Response({'b': {'templateKey': 'empty'}}))
+            prepare_files(True, ['buff_table'], directory=directory, opener=lambda *a, **k: Response({'b': {'templateKey': 'empty'}}))
             def unchanged(request, **kwargs):
                 self.assertEqual(request.get_header('If-none-match'), 'example-tag')
                 raise urllib.error.HTTPError(request.full_url, 304, 'unchanged', {}, None)
-            self.assertEqual(prepare_files(True, ['buff_table.json'], directory=directory, opener=unchanged), [])
-            self.assertFalse(update_due(24, directory, ['buff_table.json']))
-            self.assertTrue(update_due(24, directory, ['character_table.json']))
+            self.assertEqual(prepare_files(True, ['buff_table'], directory=directory, opener=unchanged), [])
+            self.assertFalse(update_due(24, directory, ['buff_table']))
+            self.assertTrue(update_due(24, directory, ['character_table']))
 
     def test_parse_validator_blocks_commit(self):
         with tempfile.TemporaryDirectory() as directory:
             def reject(paths):
                 raise ValueError('incompatible schema')
             with self.assertRaises(ValueError):
-                prepare_files(True, ['buff_table.json'], directory=directory,
+                prepare_files(True, ['buff_table'], directory=directory,
                               opener=lambda *a, **k: Response({'b': {'templateKey': 'empty'}}), validator=reject)
             self.assertFalse((Path(directory) / 'buff_table.json').exists())
 
@@ -218,7 +222,7 @@ class UpdateTests(unittest.TestCase):
                     raise OSError('simulated disk failure')
                 return real_replace(source, dest)
             with patch('downloader.os.replace', side_effect=replace), self.assertRaises(OSError):
-                prepare_files(True, ['buff_table.json'], directory=directory,
+                prepare_files(True, ['buff_table'], directory=directory,
                               opener=lambda *a, **k: Response({'new': {'templateKey': 'empty'}}))
             self.assertIn('old', json.loads(target.read_text()))
 
@@ -240,23 +244,11 @@ class SettingsTests(unittest.TestCase):
             self.assertEqual(load_settings(path)['download_source'], 'prts')
             self.assertFalse(load_settings(path)['auto_update'])
 
-    def test_all_rogue_themes_are_enabled_by_default(self):
-        seasons = {f'rogue_{index}' for index in range(1, 7)}
-        self.assertTrue(seasons <= set(DEFAULT_LOAD))
-        self.assertTrue(seasons <= set(normalize_settings({})['tables']))
-        self.assertEqual(normalize_settings({'tables': ['rogue_1']})['tables'], ['buff', 'rogue_1'])
-        self.assertNotIn('buff_template', LOAD_TYPES)
-        self.assertNotIn('global_buff', LOAD_TYPES)
-        self.assertEqual(
-            normalize_settings({'tables': ['buff_template', 'global_buff']})['tables'],
-            ['buff'],
-        )
-
     def test_required_files_add_rogue_and_autochess_tables_as_names(self):
-        files = required_files(['rogue_1', 'autochess'])
-        self.assertIn('roguelike_topic_table.json', files)
-        self.assertIn('activity_table.json', files)
-        self.assertTrue(all(isinstance(name, str) and name.endswith('.json') for name in files))
+        files = required_files(['rogue_1', 'autochess_3'])
+        self.assertIn('roguelike_topic_table', files)
+        self.assertIn('activity_table', files)
+        self.assertTrue(all(isinstance(name, str) and not name.endswith('.json') for name in files))
 
     def test_theme_defaults_and_valid_values(self):
         self.assertEqual(normalize_settings({})['theme'], 'light')

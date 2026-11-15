@@ -14,13 +14,13 @@ from app_settings import DEFAULT_SOURCE, SOURCE_LABELS, SOURCE_URLS
 
 WEB = SOURCE_URLS[DEFAULT_SOURCE]
 FILES = {
-    "buff_table.json": "buff_table.json",
-    "character_table.json": "excel/character_table.json",
-    "roguelike_topic_table.json": "excel/roguelike_topic_table.json",
-    "buff_template_data.json": "battle/buff_template_data.json",
-    "enemy_database.json": "levels/enemydata/enemy_database.json",
-    "activity_table.json": "excel/activity_table.json",
-    "crisis_v2_table.json": "excel/crisis_v2_table.json",
+    "buff_table": "buff_table.json",
+    "character_table": "excel/character_table.json",
+    "roguelike_topic_table": "excel/roguelike_topic_table.json",
+    "buff_template_data": "battle/buff_template_data.json",
+    "enemy_database": "levels/enemydata/enemy_database.json",
+    "activity_table": "excel/activity_table.json",
+    "crisis_v2_table": "excel/crisis_v2_table.json",
 }
 
 
@@ -62,23 +62,23 @@ def validate_table(name, path):
         data = json.load(stream)
     if not isinstance(data, dict) or not data:
         raise ValueError(f"{name} 不是有效的数据对象")
-    if name == "buff_template_data.json":
+    if name == "buff_template_data":
         if not all(isinstance(v, dict) and isinstance(v.get("eventToActions"), dict)
                    and all(isinstance(nodes, list) for nodes in v["eventToActions"].values()) for v in data.values()):
             raise ValueError("buff_template_data.json 缺少有效的 eventToActions")
-    elif name == "buff_table.json":
+    elif name == "buff_table":
         if not all(isinstance(v, dict) and "templateKey" in v for v in data.values()):
             raise ValueError("buff_table.json 缺少 templateKey")
-    elif name == "roguelike_topic_table.json":
+    elif name == "roguelike_topic_table":
         if not isinstance(data.get("details"), dict):
             raise ValueError("roguelike_topic_table.json 缺少 details")
-    elif name == "character_table.json":
+    elif name == "character_table":
         if not all(isinstance(v, dict) and "name" in v for v in data.values()):
             raise ValueError("character_table.json 缺少 name")
-    elif name == "enemy_database.json":
+    elif name == "enemy_database":
         if not isinstance(data.get("enemies", data), (list, dict)):
             raise ValueError("enemy_database.json 格式错误")
-    elif name == "activity_table.json":
+    elif name == "activity_table":
         if os.path.getsize(path) < 10485760: # 大于1mb即可
             raise ValueError("activity_table.json 过小")
     return data
@@ -108,7 +108,9 @@ def prepare_files(force=False, names=None, progress=None, directory=None, opener
         list_snapshots(directory)
         stage = Path(temporary)
         for index, name in enumerate(names, 1):
-            target = directory / name
+            filename = name+".json"
+            target = directory / filename
+            staged_target = stage / filename
             url = SOURCE_URLS[source] + FILES[name]
             previous = old_entries.get(name, {})
             if not isinstance(previous, dict):
@@ -126,7 +128,7 @@ def prepare_files(force=False, names=None, progress=None, directory=None, opener
             request = urllib.request.Request(url, headers=headers)
             try:
                 with opener(request, timeout=30) as response:
-                    with (stage / name).open("wb") as output:
+                    with staged_target.open("wb") as output:
                         received = 0
                         last_report = 0
                         while True:
@@ -142,7 +144,7 @@ def prepare_files(force=False, names=None, progress=None, directory=None, opener
                                      "etag": response.headers.get("ETag", ""),
                                      "last_modified": response.headers.get("Last-Modified", ""),
                                      "checked_at": time.time()}
-                data = validate_table(name, stage / name)
+                data = validate_table(name, staged_target)
                 if not same_content(target, data):
                     changed.append(name)
             except urllib.error.HTTPError as error:
@@ -151,18 +153,22 @@ def prepare_files(force=False, names=None, progress=None, directory=None, opener
                 validate_table(name, target)
                 entries[name] = dict(previous, source=source, url=url, checked_at=time.time())
         if validator and changed:
-            validator({name: stage / name if name in changed else directory / name for name in names})
+            validator({
+                name: stage / (name+".json") if name in changed
+                else directory / (name+".json")
+                for name in names
+            })
         (stage / ".update.json").write_text(json.dumps({"checked_at": time.time(), "source": source, "files": entries}, indent=2), encoding="utf-8")
-        snapshot = stage_snapshot(directory, stage, FILES) if changed else None
+        snapshot = stage_snapshot(directory, stage, [(name+".json") for name in FILES]) if changed else None
         replaced = []
         try:
-            for name in changed + [".update.json"]:
-                target = directory / name
-                backup = stage / (name + ".backup")
+            for filename in [(name+".json") for name in changed] + [".update.json"]:
+                target = directory / filename
+                backup = stage / (filename + ".backup")
                 if target.exists():
                     os.replace(target, backup)
                 replaced.append((target, backup))
-                os.replace(stage / name, target)
+                os.replace(stage / filename, target)
             if snapshot:
                 history = directory / ".history"
                 history.mkdir(exist_ok=True)

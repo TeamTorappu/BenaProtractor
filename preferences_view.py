@@ -2,9 +2,9 @@
 import time
 import tkinter as tk
 from tkinter import ttk, font
-from app_settings import LOAD_TYPES, normalize_settings
+from app_paths import TABLES
 from downloader import read_metadata
-from app_settings import DEFAULT_SOURCE, SOURCE_LABELS
+from app_settings import DEFAULT_SOURCE, SOURCE_LABELS, normalize_settings
 from vs_theme import COLORS, style_titlebar
 from dpi import DpiScale
 
@@ -47,7 +47,7 @@ class Preferences(tk.Toplevel):
         self.auto = tk.BooleanVar(value=app.settings['auto_update'])
         self.hours = tk.StringVar(value=str(app.settings['update_hours']))
         self.source = tk.StringVar(value=SOURCE_LABELS[app.settings['download_source']])
-        self.tables = {key: tk.BooleanVar(value=key in app.settings['tables']) for key in LOAD_TYPES}
+        self.tables = {key: tk.BooleanVar(value=key in app.settings['tables']) for key in TABLES}
         self.build_environment()
         self.build_tables()
         self.build_updates()
@@ -79,9 +79,9 @@ class Preferences(tk.Toplevel):
         px = self.px
         page = self.pages['tables']
         ttk.Label(page, text='加载的 table', font=('Microsoft YaHei UI', 11, 'bold')).pack(anchor='w', pady=px(0, 12))
-        for key, label in LOAD_TYPES.items():
+        for key, data in TABLES.items():
             if key != 'buff':
-                ttk.Checkbutton(page, text=label, variable=self.tables[key]).pack(anchor='w')
+                ttk.Checkbutton(page, text=data["label"], variable=self.tables[key]).pack(anchor='w')
         ttk.Separator(page).pack(fill='x', pady=px(10))
         ttk.Checkbutton(page, text='显示隐藏条目', variable=self.hidden).pack(anchor='w')
 

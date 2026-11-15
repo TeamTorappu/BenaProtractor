@@ -9,8 +9,8 @@ from contextlib import redirect_stdout, redirect_stderr
 from unittest.mock import patch
 import tkinter as tk
 
-from app_paths import app_path, required_files
-from app_settings import DEFAULT_LOAD, LOAD_TYPES, normalize_settings
+from app_paths import TABLES, app_path, required_files
+from app_settings import DEFAULT_LOAD, normalize_settings
 from bena.catalog import Catalog
 from protractor import Protractor
 
@@ -36,7 +36,8 @@ class StartupSettingsTests(unittest.TestCase):
                     root.destroy()
 
 
-@unittest.skipUnless(all(app_path('tables', name).exists() for name in required_files(DEFAULT_LOAD)), 'Local game tables not available')
+@unittest.skipUnless(all(app_path('tables', name+".json").exists()
+                         for name in required_files(DEFAULT_LOAD)), 'Local game tables not available')
 class WorkbenchIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -168,15 +169,15 @@ class WorkbenchIntegrationTests(unittest.TestCase):
         app = self.app
         original_settings = dict(app.settings)
         details = self.catalog.read('roguelike_topic_table.json')['details']
-        seasons = [key for key in LOAD_TYPES if key.startswith('rogue_')]
+        seasons = [key for key in TABLES if key.startswith('rogue_')]
         app.search_var.set('')
         app.history, app.history_index = [], -1
         try:
             with patch('protractor.save_settings'), patch.object(app, 'refresh') as refresh, redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
                 app.apply_settings(dict(app.settings, tables=list(DEFAULT_LOAD)))
                 for season in seasons:
-                    self.assertIn(LOAD_TYPES[season], app.filter.cget('values'))
-                    app.filter_var.set(LOAD_TYPES[season])
+                    self.assertIn(TABLES[season], app.filter.cget('values'))
+                    app.filter_var.set(TABLES[season])
                     app.try_search()
                     self.assertEqual(app.directory.get_children(), ('table:' + season,))
                     category_groups = app.directory.get_children('table:' + season)
@@ -208,7 +209,7 @@ class WorkbenchIntegrationTests(unittest.TestCase):
                 self.assertEqual(app.history, history)
                 self.assertEqual(app.current.table, 'rogue_5')
                 app.apply_settings(dict(app.settings, tables=['buff', 'rogue_1', 'rogue_6']))
-                app.filter_var.set(LOAD_TYPES['rogue_1'])
+                app.filter_var.set(TABLES['rogue_1'])
                 app.try_search()
                 self.assertEqual(app.directory.get_children(), ('table:rogue_1',))
                 self.assertEqual(app.history, history)
@@ -275,7 +276,7 @@ class WorkbenchIntegrationTests(unittest.TestCase):
         self.assertEqual(set(dialog.pages), {'environment', 'tables', 'updates'})
         table_controls = [widget.cget('text') for widget in dialog.pages['tables'].winfo_children()
                           if widget.winfo_class() == 'TCheckbutton']
-        self.assertNotIn(LOAD_TYPES['buff'], table_controls)
+        self.assertNotIn(TABLES['buff'], table_controls)
         self.assertTrue(dialog.tables['buff'].get())
         dialog.theme.set('深色')
         with patch.object(self.app, 'apply_settings') as applied:

@@ -9,3 +9,4 @@ from .deck_card import *
 
 # 新式符文
 from .global_buff import *
+from .util import *

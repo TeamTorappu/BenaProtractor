@@ -1,19 +1,8 @@
 """Persistent preferences with legacy .cache migration."""
 import json
 import os
-from app_paths import app_path
+from app_paths import app_path,TABLES
 
-LOAD_TYPES = {
-    "buff" : "Buff（机制底层）",
-    "rogue_1" : "傀影与猩红孤钻",
-    "rogue_2" : "水月与深蓝之树",
-    "rogue_3" : "探索者的银凇止境",
-    "rogue_4" : "萨卡兹的无终奇语",
-    "rogue_5" : "岁的界园志异",
-    "rogue_6" : "沉沦者的黑流树海",
-    "autochess_3" : "卫戍协议:规程",
-    "vec_break_3" : "矢量突破#3",
-}
 DEFAULT_LOAD = ["buff","rogue_6","autochess_3"]
 DEFAULT_SOURCE = "github"
 DEFAULTS = {
@@ -48,7 +37,7 @@ def normalize_settings(data):
     if isinstance(source, str) and source in SOURCE_LABELS:
         result['download_source'] = source
     if isinstance(data.get("tables"), list):
-        selected = (x for x in data["tables"] if isinstance(x, str) and x in LOAD_TYPES)
+        selected = (x for x in data["tables"] if isinstance(x, str) and x in TABLES)
         result["tables"] = list(dict.fromkeys(("buff", *selected)))
     for key in ("auto_update", "show_hidden"):
         if isinstance(data.get(key), bool):

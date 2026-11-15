@@ -6,12 +6,12 @@ from anne import rune_translator
 from bena import ask_bena
 
 class Rune:
-    def __init__(self, rune_data, selector = {}):
+    def __init__(self, rune_data):
         self.rune_data = rune_data
         self.rune_key = rune_data["key"]
         self.blackboard_data = rune_data["blackboard"]
         self.blackboard = analyze_blackboard(self.blackboard_data)
-        self.selector = selector
+        self.selector = rune_data["selector"] if "selector" in rune_data else None
         self.display_name = ""
         self.catagory = "符文"
         self.hidden = False
@@ -32,7 +32,7 @@ class Rune:
         print(f"[安妮]尝试翻译符文 {effect_key}")
         method = getattr(rune_translator, effect_key, "")
         if method != "" :
-            translation = method(self.selector,self.blackboard)
+            translation = method(self.blackboard,self.selector)
             if "global_buff" in translation: # 翻译GlobalBuff
                 # 尝试寻找GlobalBuff
                 gbuff = ask_bena("GlobalBuff",translation["global_buff"])

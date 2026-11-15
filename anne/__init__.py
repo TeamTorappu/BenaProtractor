@@ -24,6 +24,7 @@ from .relic import Relic
 from .buff import Buff
 from .global_buff import GlobalBuff
 from .rogue_item import RogueItem
+from .crisis import Crisis
 from .autochess_garrison import AutochessGarrison
 from .autochess_char_chess import AutochessCharChess
 from .autochess_band import AutochessBand

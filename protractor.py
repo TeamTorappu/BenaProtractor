@@ -9,8 +9,8 @@ import time
 import tkinter as tk
 
 import anne
-from app_paths import app_path, required_files
-from app_settings import LOAD_TYPES, load_settings, normalize_settings, save_settings
+from app_paths import TABLES, app_path, required_files
+from app_settings import load_settings, normalize_settings, save_settings
 from bena import Catalog
 from downloader import prepare_files, update_due
 from vs_theme import install_theme
@@ -81,7 +81,7 @@ class Protractor:
         if self.catalog is None:
             return
         terms = self.search_var.get().casefold().split()
-        selected_table = next((key for key, label in LOAD_TYPES.items() if label == self.filter_var.get()), None)
+        selected_table = next((key for key, data in TABLES.items() if data["label"] == self.filter_var.get()), None)
         entries = self.catalog.visible(self.settings['show_hidden'])
         visible = [entry for entry in entries if (selected_table is None or entry.table == selected_table)
                    and all(term in entry.search_key for term in terms)]
@@ -102,7 +102,7 @@ class Protractor:
             groups.setdefault(entry.table, {}).setdefault(category, []).append(entry)
         for table, categories in groups.items():
             group = 'table:' + table
-            label = LOAD_TYPES[table]
+            label = TABLES[table]["label"]
             self.directory.insert('', 'end', iid=group, text=label, open=True if terms else expanded.get(group, True))
             for category, items in categories.items():
                 category_group = f'category:{table}:{category}'
@@ -241,7 +241,7 @@ class Protractor:
         self.current = None
         self.history = [target for target in self.history if target in catalog.entries]
         self.history_index = min(self.history_index, len(self.history) - 1)
-        options = ['全部'] + [LOAD_TYPES[key] for key in self.settings['tables']]
+        options = ['全部'] + [TABLES[key]["label"] for key in self.settings['tables']]
         self.filter.configure(values=options)
         if self.filter_var.get() not in options:
             self.filter_var.set(options[0])
@@ -292,7 +292,7 @@ class Protractor:
                 list_snapshots()
                 tables = candidate['tables']
                 names = required_files(tables)
-                ready = all(app_path('tables', name).exists() for name in names)
+                ready = all(app_path('tables', name+".json").exists() for name in names)
                 loaded = False
                 if startup and ready:
                     try:

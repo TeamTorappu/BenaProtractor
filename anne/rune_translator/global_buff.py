@@ -6,7 +6,7 @@ from bena import translate_buff_name
 from analyzer import analyze_selector, analyze_relic_timing
 
 # 常规的GlobalBuff
-def env_gbuff_new(selector,blackboard):
+def env_gbuff_new(blackboard,selector=None):
     global_buff_key = blackboard["key"]
     result = {
         "main" : f"战斗中将生效GlobalBuff：<GlobalBuff|{global_buff_key}>",
@@ -29,6 +29,6 @@ def env_gbuff_new(selector,blackboard):
     return result
 
 # 带验证的GlobalBuff（建议在别处翻译具体逻辑）
-def env_gbuff_new_with_verify(selector,blackboard):
-    result = env_gbuff_new(selector,blackboard)
+def env_gbuff_new_with_verify(blackboard,selector=None):
+    result = env_gbuff_new(blackboard,selector)
     return result

@@ -9,7 +9,7 @@ from anne import Buff, BuffTemplate, GlobalBuff, RogueItem
 from anne.autochess_band import AutochessBand
 from anne.autochess_char_chess import AutochessCharChess
 from anne.autochess_effect import AutochessEffect
-from anne.autochess_garrison import AutochessGarrison
+from anne.crisis import Crisis
 
 # 准备工作
 def prepare_tables(catalog):
@@ -104,6 +104,22 @@ def load_tables(catalog):
                 else:
                     catalog.add("autochess_3", key, AutochessBand(key, data, band_info))
         catalog.loaded_tables.add("autochess_3")
+
+    # 加载全息作战矩阵
+    if "recal_rune" in catalog.tables:
+        with open(app_path("tables", "crisis_v2_table.json"), encoding="utf-8") as _f:
+            json_data = json.load(_f)
+            for season_key, season_data in json_data["recalRuneData"]["seasons"].items():
+                stages = season_data["stages"]
+                for stage_key, stage_data in stages.items():
+                    level_name = stage_data["levelCode"] + " " + stage_data["levelName"]
+                    for key, crisis_data in stage_data["runes"].items():
+                        crisis = Crisis(key, crisis_data)
+                        crisis.catagory = level_name
+                        catalog.add("recal_rune", key, crisis)
+        catalog.loaded_tables.add("recal_rune")
+
+
 
 # 后处理table
 def install_tables(catalog):
