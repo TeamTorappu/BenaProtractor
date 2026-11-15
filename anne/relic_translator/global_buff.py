@@ -1,16 +1,16 @@
 #----------------------------------------
-# 全局Buff相关效果
+# GlobalBuff相关效果
 #----------------------------------------
 from bena import translate_buff_name
 
 from analyzer import analyze_selector, analyze_relic_timing
 
-# 常规的全局Buff
+# 常规的GlobalBuff
 def global_buff_normal(item_type,blackboard):
     timing = analyze_relic_timing(item_type,blackboard)
     global_buff_key = blackboard["key"]
     result = {
-        "main" : f"{timing}战斗中将生效全局Buff：<global_buff|{global_buff_key}>",
+        "main" : f"{timing}战斗中将生效GlobalBuff：<GlobalBuff|{global_buff_key}>",
         "global_buff" : global_buff_key,
         "children" : []
     }
@@ -29,29 +29,29 @@ def global_buff_normal(item_type,blackboard):
         result["children"].append(blackboard_result)
     return result
 
-# 叠层加倍的全局Buff
+# 叠层加倍的GlobalBuff
 def global_buff_layer(item_type,blackboard):
     result = global_buff_normal(item_type,blackboard)
     result["main"] += "，并藏品层数记录在其黑板 [stack_layer] 上"
     return result
 
-# 可叠加增幅量/减少量的全局Buff（累加时会-1）
+# 可叠加增幅量/减少量的GlobalBuff（累加时会-1）
 def global_buff_stack_base_one(item_type,blackboard):
     result = global_buff_normal(item_type,blackboard)
     result["main"] += "（同名效果间黑板值取增幅量/减少量累加）"
     return result
 
-# 可叠加的全局Buff
+# 可叠加的GlobalBuff
 def global_buff_stack(item_type,blackboard):
     result = global_buff_normal(item_type,blackboard)
     result["main"] += "（同名效果间黑板值累加）"
     return result
 
-# 带验证的全局Buff（存疑）
+# 带验证的GlobalBuff（存疑）
 def env_gbuff_new_with_verify(item_type,blackboard):
     result = global_buff_normal(item_type,blackboard)
-    new_info = "生效全局Buff"
+    new_info = "生效GlobalBuff"
     if item_type == "AUTOCHESS_EQUIP":
-        new_info = "对携带装备的干员单独生效全局Buff"
-    result["main"] = result["main"].replace("生效全局Buff",new_info)
+        new_info = "对携带装备的干员单独生效GlobalBuff"
+    result["main"] = result["main"].replace("生效GlobalBuff",new_info)
     return result

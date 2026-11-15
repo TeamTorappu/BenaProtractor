@@ -11,7 +11,7 @@ GBUFF_DIRECTORY = "./input/MonoBehaviour/"
 GBUFF = {}
 SAVE_PATH = "../table_dummies"
 
-# 全局Buff类
+# GlobalBuff类
 #class Gbuff:
     
 

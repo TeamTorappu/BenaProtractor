@@ -4,7 +4,7 @@ import os
 from app_paths import app_path
 
 LOAD_TYPES = {
-    "buff" : "Buff（常见 Buff / 模板 / 全局 Buff）",
+    "buff" : "Buff（机制底层）",
     "rogue_1" : "傀影与猩红孤钻",
     "rogue_2" : "水月与深蓝之树",
     "rogue_3" : "探索者的银凇止境",
@@ -12,14 +12,10 @@ LOAD_TYPES = {
     "rogue_5" : "岁的界园志异",
     "rogue_6" : "沉沦者的黑流树海",
     "autochess_3" : "卫戍协议:规程",
+    "vec_break_3" : "矢量突破#3",
 }
-DEFAULT_LOAD = list(LOAD_TYPES)
+DEFAULT_LOAD = ["buff","rogue_6","autochess_3"]
 DEFAULT_SOURCE = "github"
-SOURCE_LABELS = {
-    "github" : "GitHub",
-    "github2" : "GitHub（备用）",
-    "prts" : "PRTS"
-}
 DEFAULTS = {
     "tables" : DEFAULT_LOAD,
     "auto_update" : True,
@@ -29,6 +25,11 @@ DEFAULTS = {
     "show_hidden" : False,
     "theme" : "light",
     "download_source" : DEFAULT_SOURCE
+}
+SOURCE_LABELS = {
+    "github" : "GitHub",
+    "github2" : "GitHub（备用）",
+    "prts" : "PRTS"
 }
 SOURCE_URLS = {
     'github' : 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/zh_CN/gamedata/',

@@ -4,7 +4,7 @@ import json
 import re
 import bena
 
-REFERENCE_PATTERN = re.compile(r'<([a-z][a-z0-9_]*)\|([^<>|\r\n]+)>')
+REFERENCE_PATTERN = re.compile(r'<([A-Za-z0-9_]*)\|([^<>|\r\n]+)>')
 
 
 def reference_parts(value, catalog):
@@ -19,19 +19,11 @@ def reference_parts(value, catalog):
         entry = catalog.entries.get(target)
         if entry is not None:
             parts.append((entry.name, entry.target))
-        elif category == 'prts':
-            parts.append((key, target))
-        elif category in ('buff', 'buff_template', 'global_buff', 'cardbuff'):
-            # Prefab-only Buff names still use the original translation fallback.
-            # Its result is display text only, never another lookup key.
+        elif category in ('Buff', 'BuffTemplate', 'GlobalBuff', 'CardBuff'):
             label = bena.translate_buff_name(key)
             parts.append((f'{label}（{key}）' if label != key else key, None))
-        elif category == 'rogue_item':
-            parts.append((key, None))
-        elif category == 'autochess_3':
-            parts.append((key, None))
         else:
-            parts.append((match.group(), None))
+            parts.append((key, None))
         offset = match.end()
     if offset < len(value):
         parts.append((value[offset:], None))

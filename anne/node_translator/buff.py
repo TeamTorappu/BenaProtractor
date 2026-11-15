@@ -60,7 +60,7 @@ def CreateBuffById(node,blackboard):
         return {"main" : f"为{target_name}创建一个{buff_name}（读取自数据库中 [buff_key] 所记述的Buff）"}
     else:
         return {
-            "main" : f"为{target_name}创建一个{buff_name}：<buff|{node['_buffKey']}>（读取自数据库）",
+            "main" : f"为{target_name}创建一个{buff_name}：<Buff|{node['_buffKey']}>（读取自数据库）",
             "link" : "buff."+node["_buffKey"]
         }
     
@@ -270,7 +270,7 @@ def CreateBuffToToken(node,blackboard):
         target_name = enum_dictionary("target",node["_targetType"])
         conditions.append(f"非{target_name}的")
     if node["_excludeByBuffKey"]: # 排除具有指定Buff的召唤物
-        conditions.append(f"不具有 <buff|{node['_excludeBuffKey']}> Buff的")
+        conditions.append(f"不具有 <Buff|{node['_excludeBuffKey']}> Buff的")
         if "link" in result:
             result["link"] = "buff." + node['_excludeBuffKey'] + "," + result["link"]
     result["main"] = f"为{source_name}{target_num}{'且'.join(conditions)}召唤物创建{buff_name}：" + result["main"]
@@ -349,7 +349,7 @@ def TriggerBuffsByKeys(node,blackboard):
     condition = ""
     buffs = []
     for buff_key in node["_buffKeys"]:
-        buffs.append(f"<buff|{buff_key}>")
+        buffs.append(f"<Buff|{buff_key}>")
     if len(buffs) == 0:
         return {"main" : f"尝试{action}某些Buff，但未配置Buff名，因此无效果"}
     if node["_triggerAllBuffs"] and not node["_excludeThisBuff"]: # 触发全部Buff
@@ -381,7 +381,7 @@ def FinishBuff(node,blackboard):
 def FinishBuffsById(node,blackboard):
     # 未解析参数：_updateOverrideMap _finishHostBuff
     target_name = enum_dictionary("target",node["_targetType"])
-    buff_name = "黑板[buff_key]指定的Buff" if node["_loadFromBlackboard"] else f" <buff|{node['_buffKey']}> "
+    buff_name = "黑板[buff_key]指定的Buff" if node["_loadFromBlackboard"] else f" <Buff|{node['_buffKey']}> "
     # 仅限某人的buff
     if node["_checkBuffSource"]:
         source_name = enum_dictionary("target",node["_sourceType"])
@@ -419,7 +419,7 @@ def FinishBuffsByIdByBuffSource(node,blackboard):
         if node["_alsoClearNullSource"]:
             source = source + "的、或是无来源"
     result = {
-        "main" : f"清除{target_name}身上，所有{source}的 <buff|{node['_buffKey']}> Buff"
+        "main" : f"清除{target_name}身上，所有{source}的 <Buff|{node['_buffKey']}> Buff"
     }
     if node["_sourceType"] == None and not node["_alsoClearWhenSourceIsNull"]:
         result["main"] = f"清除{target_name}身上特定来源的Buff，但是未配置来源，也无法清除无来源Buff"
@@ -437,9 +437,9 @@ def FinishDerivedBuffById(node,blackboard):
     # 未解析参数：_updateOverrideMap _decCntIfStack
     result = {}
     if node["_decCntIfStack"]:
-        result["main"] = f"结束本Buff所有名为 <buff|{node['_buffKey']}> 的附属Buff；若为可叠层的附属Buff，改为减少一层叠层（变为0层时仍将结束）"
+        result["main"] = f"结束本Buff所有名为 <Buff|{node['_buffKey']}> 的附属Buff；若为可叠层的附属Buff，改为减少一层叠层（变为0层时仍将结束）"
     else:
-        result["main"] = f"结束本Buff所有名为 <buff|{node['_buffKey']}> 的附属Buff"
+        result["main"] = f"结束本Buff所有名为 <Buff|{node['_buffKey']}> 的附属Buff"
     result["link"] = "buff." + node["_buffKey"]
     return result
 
@@ -450,7 +450,7 @@ def AttachAsDerivedBuffById(node,blackboard):
     target_name = enum_dictionary("target",node["_sourceType"])
     if node["_attachToSourceHost"]:
         target_name += "(召唤物)的主人"
-    buff_key = "黑板[buff_key]指定的Buff" if node["_loadFromBlackboard"] else f" <buff|{node['_buffKey']}> "
+    buff_key = "黑板[buff_key]指定的Buff" if node["_loadFromBlackboard"] else f" <Buff|{node['_buffKey']}> "
     result = {
         "main" : f"若此Buff不是附属Buff，将自己\"挂载\"为{target_name}下{buff_key}的附属Buff",
         "description" : "会保留自己下属的附属关系，会保留黑板值等数据",

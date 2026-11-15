@@ -176,9 +176,18 @@
 		"ON_SKILL_RETRIGGERED" : "持有者使用技能的装备应变时",
 		"ON_AUTO_CHESS_MODE_CHANGED" : "卫戍协议中，战斗正式开始时",
 		"ON_OWNER_BLOCK_MODE_CHANGED" : "持有者阻挡模式变化时",
-		"ON_OWNER_HP_FULL" : "持有者生命值变动后，生命比例大于等于1时",
+		"ON_OWNER_HP_FULL" : "持有者生命值变动后，生命比例≥100%时",
 		"ON_PROJECTILE_SELECT_TARGETS" : "弹道抵达目的地或停止后，选择/过滤目标前",
-		"ON_OWNER_REBORN" : "持有者进入重生状态机时（存疑）"
+		"ON_OWNER_REBORN" : "持有者进入重生状态机时（存疑）",
+		"ON_SANDBOX_V3_RESOURCE_CNT_CHANGE" : "生息演算(V3)中，持有者携带资源数量变化时",
+		"ON_BLOCK_CNT_CHANGE" : "持有者阻挡数变化时",
+		"ON_SANDBOX_V3_RECIPE_CHANGE" : "生息演算(V3)中，可用配方变化时",
+		"ON_ENTER_GROUND_BOUND_STATE" : "持有者进入缚地状态时",
+		"ON_BEFORE_EXIT_GROUND_BOUND_STATE" : "持有者即将退出缚地状态时",
+		"ON_OTHER_BUFF_LATE_ENABLE" : "其他Buff开始后的下一帧",
+		"ON_PROJECTILE_BORN" : "持有者的弹道创建时",
+		"ON_PROJECTILE_HIT_TARGET" : "持有者的弹道击中目标时",
+		"ON_OWNER_BORN_EXIT" : "持有者退出部署状态机时"
 	},
 	"projectile_event" : {
 		"ON_HIT_OBJECT" : "弹道击中单位时",

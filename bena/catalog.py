@@ -7,18 +7,29 @@ from app_paths import app_path
 
 @dataclass
 class Entry:
-    category: str
+    table: str
     key: str
     obj: object
-    table: str
 
     @property
     def target(self):
-        return f"{self.category}.{self.key}"
+        return type(self.obj).__name__ + "." + self.key
+    
+    @property
+    def type_name(self):
+        return type(self.obj).__name__
+
+    @property
+    def catagory(self):
+        return self.obj.catagory
 
     @property
     def name(self):
-        return self.obj.display_name
+        return self.obj.get_display_name()
+    
+    @property
+    def search_key(self):
+        return (self.key+" "+self.obj.get_display_name()+" "+self.obj.catagory).casefold()
 
 # 大目录
 class Catalog:
@@ -34,9 +45,9 @@ class Catalog:
         self.warnings = []
         self.names = {}
 
-    def add(self, category, key, obj, table=None):
-        entry = Entry(category, key, obj, table or category)
-        self.groups.setdefault(category, {})[key] = obj
+    def add(self, table, key, obj):
+        entry = Entry(table, key, obj)
+        self.groups.setdefault(table, {})[key] = obj
         self.entries[entry.target] = entry
 
     def load(self):

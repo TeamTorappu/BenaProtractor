@@ -1,5 +1,5 @@
 #----------------------------------------
-# 全局Buff
+# GlobalBuff
 #----------------------------------------
 from analyzer.buff import analyze_buff
 from analyzer.deckbuff import analyze_deckbuff
@@ -20,7 +20,7 @@ class GlobalBuff:
         self.buff_datas = prefab_data["_buffs"]
         self.deck_buff_datas = prefab_data["_deckBuffs"]
         self.display_name = buff_key
-        self.catagory = "全局Buff"
+        self.catagory = "GlobalBuff"
         self.hidden = False
     
     # 获取显示名
@@ -101,7 +101,7 @@ class GlobalBuff:
             for buff_data in self.buff_datas:
                 _buff = analyze_buff(buff_data,blackboard)
                 if not buff_data["loadFromDB"] and buff_data["templateKey"] != "empty":
-                    buff_template = ask_bena("buff_template",buff_data["templateKey"])
+                    buff_template = ask_bena("BuffTemplate",buff_data["templateKey"])
                     if buff_template != None:
                         if "children" not in _buff:
                             _buff["children"] = []
@@ -120,7 +120,7 @@ class GlobalBuff:
                 _buff = analyze_deckbuff(deck_buff_data,blackboard)
                 buff_data = deck_buff_data["buff"]
                 if not buff_data["loadFromDB"] and buff_data["templateKey"] != "empty":
-                    buff_template = ask_bena("buff_template",buff_data["templateKey"])
+                    buff_template = ask_bena("BuffTemplate",buff_data["templateKey"])
                     if buff_template != None:
                         if "children" not in _buff:
                             _buff["children"] = []
@@ -138,7 +138,7 @@ class GlobalBuff:
             buff_data = self.prefab_data["_extraBuff"]
             _buff = analyze_buff(buff_data,blackboard)
             if not buff_data["loadFromDB"] and buff_data["templateKey"] != "empty":
-                buff_template = ask_bena("buff_template",buff_data["templateKey"])
+                buff_template = ask_bena("BuffTemplate",buff_data["templateKey"])
                 if buff_template != None:
                     if "children" not in _buff:
                         _buff["children"] = []

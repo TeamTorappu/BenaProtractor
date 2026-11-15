@@ -69,7 +69,7 @@ class WorkbenchIntegrationTests(unittest.TestCase):
 
     def test_inline_links_keep_correct_targets(self):
         self.app.translation.show({'main': '引用测试', 'children': [
-            {'main': '停顿 <buff|sluggish> / <buff_template|skadi2_t_2> / <buff|not_an_existing_buff>'}]}, self.catalog)
+            {'main': '停顿 <Buff|sluggish> / <BuffTemplate|skadi2_t_2> / <Buff|not_an_existing_buff>'}]}, self.catalog)
         self.assertIn('buff.sluggish', self.app.translation.links.values())
         self.assertIn('buff_template.skadi2_t_2', self.app.translation.links.values())
         self.assertFalse(any('not_an_existing_buff' in t for t in self.app.translation.links.values()))
@@ -80,11 +80,11 @@ class WorkbenchIntegrationTests(unittest.TestCase):
 
     def test_only_typed_markers_create_links(self):
         view = self.app.translation
-        plain = '庇护 / sluggish / <sluggish> / <buff_template|庇护>'
+        plain = '庇护 / sluggish / <sluggish> / <BuffTemplate|庇护>'
         view.show({'main': plain, 'link': 'buff.sluggish,prts.浪里玄条'}, self.catalog)
         self.assertFalse(view.links)
         self.assertNotIn('[PRTS]', view.text.get('1.0', 'end-1c'))
-        marked = '庇护 / <buff|sluggish> / <buff_template|damage_resistance>'
+        marked = '庇护 / <Buff|sluggish> / <BuffTemplate|damage_resistance>'
         view.show({'main': marked}, self.catalog)
         self.assertEqual(list(view.links.values()), ['buff.sluggish', 'buff_template.damage_resistance'])
         self.assertEqual(view.text.get('1.0', 'end-1c').rstrip('\n'), view.full_text())

@@ -20,6 +20,7 @@ FILES = {
     "buff_template_data.json": "battle/buff_template_data.json",
     "enemy_database.json": "levels/enemydata/enemy_database.json",
     "activity_table.json": "excel/activity_table.json",
+    "crisis_v2_table.json": "excel/crisis_v2_table.json",
 }
 
 

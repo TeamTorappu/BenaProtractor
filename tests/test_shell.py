@@ -51,7 +51,7 @@ class ExplorerVisibilityTests(unittest.TestCase):
                 catalog = Catalog([])
                 catalog.add('buff', 'sample', SimpleNamespace(display_name='Sample', hidden=False))
                 app.translation.show({'main': 'root', 'children': [
-                    {'main': '<buff|sample>', 'children': [{'main': 'detail'}]}]}, catalog)
+                    {'main': '<Buff|sample>', 'children': [{'main': 'detail'}]}]}, catalog)
                 app.translation.toggle((0,))
                 app.source.show({'sample': 1})
                 app.search_var.set('sample')

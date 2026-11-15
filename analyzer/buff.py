@@ -36,11 +36,11 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
             features.append("读取自数据库：[" + buff_key + "]")
         elif len(blackboard_dict["children"]) > 0:
             return {
-                "main" : "<buff|" + buff_key + "> (读取自数据库)",
+                "main" : "<Buff|" + buff_key + "> (读取自数据库)",
                 "children" : [blackboard_dict]
             }
         else:
-            return {"main" : "<buff|" + buff_key + "> (读取自数据库)"}
+            return {"main" : "<Buff|" + buff_key + "> (读取自数据库)"}
     
     # 检查模板与事件优先级
     if buff_data["templateKey"] != "empty" :
@@ -298,22 +298,22 @@ def analyze_buff(buff_data: dict,blackboard: dict = {},full_information=False):
         features.append(f"根据来源位置旋转特效方向")
 
     # 准备返回buff
-    result = {"main" : "<buff|" + buff_key + ">"}
+    result = {"main" : "<Buff|" + buff_key + ">"}
     if buff_data["loadFromDB"]:
         result["main"] += "（读取自数据库）"
     elif template != "empty":
         if full_information: # 完整显示
             result["children"] = [{
-                "main" : f"Buff模板：<buff_template|{template}>",
+                "main" : f"Buff模板：<BuffTemplate|{template}>",
                 "link" : "buff_template."+template
             }]
         else: # 简短显示
             if template == buff_key:
-                result["main"] = "<buff_template|" + buff_key + ">（使用同名模板）"
+                result["main"] = "<BuffTemplate|" + buff_key + ">（使用同名模板）"
             elif template == "empty":
                 result["main"] += "（不使用模板）"
             else:
-                result["main"] += f"（模板：<buff_template|{template}>）"
+                result["main"] += f"（模板：<BuffTemplate|{template}>）"
     if full_information: # 按需返回子列表
         if "children" not in result:
             result["children"] = []

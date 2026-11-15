@@ -26,7 +26,7 @@ class ReferenceTests(unittest.TestCase):
         self.catalog.install()
 
     def test_typed_marker_and_missing_target(self):
-        parts = reference_parts('添加 <buff_template|same_id>，找不到 <buff|missing_id>', self.catalog)
+        parts = reference_parts('添加 <BuffTemplate|same_id>，找不到 <Buff|missing_id>', self.catalog)
         links = [target for _, target in parts if target]
         self.assertEqual(links, ['buff_template.same_id'])
         self.assertIn(('missing_id', None), parts)

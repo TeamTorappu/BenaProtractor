@@ -62,7 +62,7 @@ class DpiLayoutTests(unittest.TestCase):
         catalog = Catalog([])
         catalog.add('buff', 'sample', SimpleNamespace(display_name='Sample', hidden=False))
         document = {'main': 'root', 'children': [
-            {'main': 'action <buff|sample>', 'children': [{'main': 'detail'}]}]}
+            {'main': 'action <Buff|sample>', 'children': [{'main': 'detail'}]}]}
         snapshots = []
         for dpi in (96, 144, 192):
             with self.subTest(dpi=dpi), self.make_app(dpi) as app:

@@ -87,7 +87,7 @@ class AutochessCharChess:
                     "main" : enum_dictionary("bond_id",bond_id) + "："
                 }
                 for char in BOND_REFERENCE[bond_id]:
-                    bond_info["main"] += "<autochess_3|" + char.chess_id + "> "
+                    bond_info["main"] += "<AutochessCharChess|" + char.chess_id + "> "
                 bond_info["main"] = bond_info["main"].strip()
                 related_chars.append(bond_info)
         if len(related_chars) > 0:

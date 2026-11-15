@@ -43,7 +43,7 @@ def zone_into_cost(item_type,blackboard):
     result = {
         "main" : timing + "消耗玩家"
     }
-    result["main"] += f" <rogue_item|{blackboard['id']}> × {math.floor(blackboard.get('count',1))}"
+    result["main"] += f" <RogueItem|{blackboard['id']}> × {math.floor(blackboard.get('count',1))}"
 
     return result
 

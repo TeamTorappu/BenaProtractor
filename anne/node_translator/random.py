@@ -26,14 +26,14 @@ def DiceByBuffKeys(node,blackboard):
     if node["_isReverseProb"]: # 成功一次
         return {
             "main" : "投掷一枚\"合并骰子\"，进行概率检定（取0.0~100.0之内的随机浮点数，不包括100.0）",
-            "description" : f"取{target_name}身上所有 <buff|{node['_buffKey']}> Buff的 [{node['_probKey']}] ，计算\"成功一次\"的概率作为实际概率",
+            "description" : f"取{target_name}身上所有 <Buff|{node['_buffKey']}> Buff的 [{node['_probKey']}] ，计算\"成功一次\"的概率作为实际概率",
             "true" : f"出值 ≤ (1 - (1 - [{node['_probKey']}]₁) × (1 - [{node['_probKey']}]₂) × ...) × 100（检定成功)",
             "false" : f"出值 > (1 - (1 - [{node['_probKey']}]₁) × (1 - [{node['_probKey']}]₂) × ...) × 100（检定失败）"
         }
     else:  # 全部成功
         return {
             "main" : "投掷一枚\"合并骰子\"，进行概率检定（取0.0~100.0之内的随机浮点数，不包括100.0）",
-            "description" : f"取{target_name}身上所有 <buff|{node['_buffKey']}> Buff的 [{node['_probKey']}] ，计算\"全部成功\"的概率作为实际概率",
+            "description" : f"取{target_name}身上所有 <Buff|{node['_buffKey']}> Buff的 [{node['_probKey']}] ，计算\"全部成功\"的概率作为实际概率",
             "true" : f"出值 ≤ [{node['_probKey']}]₁ × [{node['_probKey']}]₂ × ... × 100（检定成功)",
             "false" : f"出值 > [{node['_probKey']}]₁ × [{node['_probKey']}]₂ × ... × 100（检定失败）"
         }

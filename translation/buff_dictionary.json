@@ -1456,6 +1456,7 @@
 		"bristleback" : "\"钢背兽\"",
 		"snow" : "雪",
 		"bird" : "鸟",
+		"drown" : "溺水",
 
 		"blord2" : "杜卡雷",
 		"mcreep" : "矿工游击队",
@@ -1595,7 +1596,7 @@
 		"bondstackmax" : "盟约叠层上限",
 		"attrbybond" : "盟约层数转属性",
 		"gartriggercnt" : "特质触发次数",
-		"globalbuff" : "全局Buff",
+		"globalbuff" : "GlobalBuff",
 		"switchcharinhand" : "向休整区换人",
 		"switchhand" : "休整区换人",
 		"triggergar" : "触发特质",

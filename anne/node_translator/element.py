@@ -58,17 +58,33 @@ def FilterEPBreakRecoveryType(node,blackboard):
     target_name = enum_dictionary("target",node["_target"])
     result = {}
     if node["_readTypeFromBb"] and node["_bbKey"] != "":
-        result["main"] = f"检查{target_name}的元素爆发是否为黑板 [{node['_bbKey']}] 记述的类型"
+        result["main"] = f"检查{target_name}的元素损伤爆发是否为黑板 [{node['_bbKey']}] 记述的类型"
         result["true"] = "若爆发的类型与黑板相同"
         result["false"] = "若爆发的类型与黑板不同"
     else:
         element = enum_dictionary("element",node["_recoveryType"])
-        result["main"] = f"检查{target_name}的元素爆发是否{element}"
+        result["main"] = f"检查{target_name}的元素损伤爆发是否{element}"
         result["true"] = f"若爆发类型为{element}"
         result["false"] = f"若爆发类型不为{element}"
     if node["_skipInEPBreakRecoveryCheck"]: # ON_BEFORE_EP_BREAK_START时点里使用，跳过“是否还在恢复”判断
         result["description"] = "兼容模式：若在元素爆发前则改为检查本次元素爆发类型"
     return result
+
+# 检查目标是否正处于元素爆发
+def IsTargetInEPBreakRecovery(node,blackboard):
+    target_name = enum_dictionary("target",node["_target"])
+    if node["_checkRecoveryType"]:
+        element = enum_dictionary("element",node["_elementType"])
+        return {
+            "main" : f"检查{target_name}的是否处于{element}损伤爆发期间",
+            "true" : f"若其处于{element}损伤爆发期间",
+            "false" : f"若其不处于{element}损伤爆发期间"
+        }
+    return {
+        "main" : f"检查{target_name}的是否处于任意元素的元素损伤爆发期间",
+        "true" : f"若其处于爆发期间",
+        "false" : f"若其不处于爆发期间"
+    }
     
 # 检查目标元素值是否为全满/特定元素值是否为满
 def CheckTargetEpIsFull(node,blackboard):

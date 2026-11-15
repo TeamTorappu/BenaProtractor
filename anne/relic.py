@@ -35,11 +35,11 @@ class Relic:
         method = getattr(relic_translator, effect_key, "")
         if method != "" :
             translation = method(self.type,self.blackboard)
-            if "global_buff" in translation: # 翻译全局Buff
-                # 尝试寻找全局Buff
-                gbuff = ask_bena("global_buff",translation["global_buff"])
+            if "global_buff" in translation: # 翻译GlobalBuff
+                # 尝试寻找GlobalBuff
+                gbuff = ask_bena("GlobalBuff",translation["global_buff"])
                 if gbuff == None:
-                    gbuff = ask_bena("global_buff",translation["global_buff"].lower()) #试试小写，Assetbundle的问题
+                    gbuff = ask_bena("GlobalBuff",translation["global_buff"].lower()) #试试小写，Assetbundle的问题
                 if gbuff != None:
                     gbuff_translation = gbuff.translate(self.blackboard)
                     gbuff_translation["main"] = "战斗中："

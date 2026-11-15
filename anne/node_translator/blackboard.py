@@ -90,7 +90,7 @@ def EnsureBlackboardDefaultValue(node,blackboard):
 # 从其他Buff的黑板中获取黑板值
 def AssignBuffBlackboardFromOthers(node,blackboard):
     target_name = enum_dictionary("target",node["_targetType"])
-    buff_name = " <buff|" + node["_buffKey"] + "> Buff"
+    buff_name = " <Buff|" + node["_buffKey"] + "> Buff"
     if node["_filterBuffSource"]:
         if node["_sourceType"]:
             buff_name = "由同一来源提供的" + buff_name
@@ -112,16 +112,16 @@ def AssignBuffBlackboard(node,blackboard):
             if node["_buffKeyAssignFrom"] != None and node["_buffKeyAssignFrom"] != "":
                 source_buff_name = node["_buffKeyAssignFrom"]
                 source_bb = node["_buffKeyAssignFrom"] + " 的 [" + node["_valueKey"] + "]"
-                return {"main" : f"尝试寻找{target_name}持有的首个 <buff|{source_buff_name}> Buff，设本Buff黑板上的 {target_bb} = {source_bb}"}
+                return {"main" : f"尝试寻找{target_name}持有的首个 <Buff|{source_buff_name}> Buff，设本Buff黑板上的 {target_bb} = {source_bb}"}
         else:
             if node["_buffKeyAssignFrom"] != None and node["_buffKeyAssignFrom"] != "":
                 source_buff_name = node["_buffKeyAssignFrom"]
                 target_bb = target_buff_name + " 的 " + target_bb
                 source_bb = node["_buffKeyAssignFrom"] + " 的 [" + node["_valueKey"] + "]"
                 if node["_assignFirstBuff"]:
-                    return {"main" : f"尝试寻找{target_name}持有的首个 <buff|{source_buff_name}> 与 <buff|{target_buff_name}> Buff，设 {target_bb} = {source_bb}"}
+                    return {"main" : f"尝试寻找{target_name}持有的首个 <Buff|{source_buff_name}> 与 <Buff|{target_buff_name}> Buff，设 {target_bb} = {source_bb}"}
                 else:
-                    return {"main" : f"尝试寻找{target_name}持有的首个 <buff|{source_buff_name}> Buff，设该单位的所有<buff|{target_buff_name}>黑板上的 {target_bb} = {source_bb}"}
+                    return {"main" : f"尝试寻找{target_name}持有的首个 <Buff|{source_buff_name}> Buff，设该单位的所有<Buff|{target_buff_name}>黑板上的 {target_bb} = {source_bb}"}
     # 固定值
     value = node["_defaultValue"]
     if node["_valueKey"] != None and node["_valueKey"] != "":
@@ -130,9 +130,9 @@ def AssignBuffBlackboard(node,blackboard):
     if (node["_buffKey"] != None and node["_buffKey"] != "") or node["_useCurBuffBB"]:
         return {"main" : f"设本Buff黑板上的 {target_bb} = {value}"}
     elif node["_assignFirstBuff"]:
-        return {"main" : f"尝试寻找{target_name}持有的首个 <buff|{target_buff_name}> Buff，设该Buff的 {target_bb} = {value}"}
+        return {"main" : f"尝试寻找{target_name}持有的首个 <Buff|{target_buff_name}> Buff，设该Buff的 {target_bb} = {value}"}
     else:
-        return {"main" : f"设{target_name}的所有 <buff|{target_buff_name}> Buff黑板上的 {target_bb} = {value}"}
+        return {"main" : f"设{target_name}的所有 <Buff|{target_buff_name}> Buff黑板上的 {target_bb} = {value}"}
 
 # 添加其他Buff的黑板值
 def AddBuffBlackboard(node,blackboard):
@@ -157,9 +157,9 @@ def AddBuffBlackboard(node,blackboard):
         else:
             formula = f"{target_bb} += {addon}"
     if node["_checkBuffSource"]:
-        return {"main" : f"尝试寻找{target_name}持有的首个同来源的 <buff|{target_buff_name}> Buff，设该Buff的 {formula}"}
+        return {"main" : f"尝试寻找{target_name}持有的首个同来源的 <Buff|{target_buff_name}> Buff，设该Buff的 {formula}"}
     else:
-        return {"main" : f"尝试寻找{target_name}持有的首个 <buff|{target_buff_name}> Buff，设该Buff的 {formula}"}
+        return {"main" : f"尝试寻找{target_name}持有的首个 <Buff|{target_buff_name}> Buff，设该Buff的 {formula}"}
 
 # 记录末影黑板（同UID单位间互通）
 def AddCharacterSharedBlackboard(node,blackboard):

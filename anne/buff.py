@@ -29,7 +29,7 @@ class Buff:
         translation = analyze_buff(self.buff_data,blackboard,True)
         # 如果内部有自己的小巧思BuffKey
         if self.buff_key != self.buff_data["buffKey"]: 
-            translation["description"] = "这个Buff的卡名在规则上被视为 <buff|"+self.buff_data["buffKey"]+"> "
+            translation["description"] = "这个Buff的卡名在规则上被视为 <Buff|"+self.buff_data["buffKey"]+"> "
             if "（" in translation["main"]:
                 translation["main"] = self.buff_key + "（" + translation["main"].split("（",1)[1]
             else:
@@ -42,7 +42,7 @@ class Buff:
                 translation["main"] = f"{self.display_name}（{self.buff_key}）"
         # 尝试把buff_template直接显示出来
         if self.buff_data["templateKey"] != "empty":
-            buff_template = ask_bena("buff_template",self.buff_data["templateKey"])
+            buff_template = ask_bena("BuffTemplate",self.buff_data["templateKey"])
             if buff_template != None:
                 if "children" not in translation:
                     translation["children"] = []

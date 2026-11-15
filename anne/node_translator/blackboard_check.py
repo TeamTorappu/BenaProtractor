@@ -15,13 +15,13 @@ def FilterByBlackboardValue(node,blackboard):
             if node["_targetType"] != "BUFF_OWNER":
                 target_name = enum_dictionary("target",node["_targetType"])
                 return {
-                    "main" : f"比对黑板上的{left_var}与{target_name}的另一buff <buff|{node['_buffKey']}> 的{right_var}",
+                    "main" : f"比对黑板上的{left_var}与{target_name}的另一buff <Buff|{node['_buffKey']}> 的{right_var}",
                     "true" : f"{left_var} {compare} {right_var}",
                     "false" : f"{left_var} {compare_not} {right_var}"
                 }
             else:
                 return {
-                    "main" : f"比对黑板上的{left_var}与另一buff <buff|{node['_buffKey']}> 的{right_var}",
+                    "main" : f"比对黑板上的{left_var}与另一buff <Buff|{node['_buffKey']}> 的{right_var}",
                     "true" : f"{left_var} {compare} {right_var}",
                     "false" : f"{left_var} {compare_not} {right_var}"
                 }

@@ -21,8 +21,8 @@ def immediate_cost(item_type,blackboard):
     timing = analyze_relic_timing(item_type,blackboard)
     item = analyze_rogue_item(blackboard)
     if item != None and item.type == "COPPER": # 界园钱的特殊处理
-        return {"main" : f"{timing}让钱盒内的 <rogue_item|{item.item_key}> 变为大炎通宝。"}
-    return {"main" : f"{timing}消耗玩家 <rogue_item|{blackboard['id']}> × {math.floor(blackboard.get('count',0))}"}
+        return {"main" : f"{timing}让钱盒内的 <RogueItem|{item.item_key}> 变为大炎通宝。"}
+    return {"main" : f"{timing}消耗玩家 <RogueItem|{blackboard['id']}> × {math.floor(blackboard.get('count',0))}"}
 
 # 开局额外招募券奖励
 def initial_recruit_reward(item_type,blackboard):
@@ -41,7 +41,7 @@ def item_cover_set(item_type,blackboard):
     item = analyze_rogue_item(blackboard)
     if item != None:
         return {
-            "main" : f"让玩家的{item.display_type} <rogue_item|{item.item_key}> 数量增加/减少至 {math.floor(blackboard.get('count',1))}",
+            "main" : f"让玩家的 <RogueItem|{item.item_key}> 数量增加/减少至 {math.floor(blackboard.get('count',1))}",
             "link" : blackboard['id']
         }
     return {"main" : f"将玩家的 {blackboard['id']} 数量增加/减少至{math.floor(blackboard.get('count',1))}"}
@@ -58,7 +58,7 @@ def copper_exchange(item_type,blackboard):
             return {"main" : f"{timing}尝试将钱盒内的该钱替换为随机的厉钱"}
         else:
             return {
-                "main": f"{timing}尝试将钱盒内的该钱替换为 <rogue_item|{blackboard['id']}> 。"
+                "main": f"{timing}尝试将钱盒内的该钱替换为 <RogueItem|{blackboard['id']}> 。"
             }
     return {"main" : f"{timing}尝试将钱盒内的该钱替换为空气。"}
     
@@ -77,7 +77,7 @@ def up_reward(item_type,blackboard):
     if blackboard["mask"] == "battle":
         timing = "战斗胜利时，"
     percent = to_delta_percent(blackboard["up"])
-    return {"main" : f"{timing}使获得的 <rogue_item|{blackboard['id']}> 数量{percent}"}
+    return {"main" : f"{timing}使获得的 <RogueItem|{blackboard['id']}> 数量{percent}"}
 
 # 玩家升级时的额外奖励
 def player_level_rewards(item_type,blackboard):

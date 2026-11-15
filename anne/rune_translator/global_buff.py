@@ -1,15 +1,15 @@
 #----------------------------------------
-# 全局Buff相关符文
+# GlobalBuff相关符文
 #----------------------------------------
 from bena import translate_buff_name
 
 from analyzer import analyze_selector, analyze_relic_timing
 
-# 常规的全局Buff
+# 常规的GlobalBuff
 def env_gbuff_new(selector,blackboard):
     global_buff_key = blackboard["key"]
     result = {
-        "main" : f"战斗中将生效全局Buff：<global_buff|{global_buff_key}>",
+        "main" : f"战斗中将生效GlobalBuff：<GlobalBuff|{global_buff_key}>",
         "global_buff" : global_buff_key,
         "children" : []
     }
@@ -28,7 +28,7 @@ def env_gbuff_new(selector,blackboard):
         result["children"].append(blackboard_result)
     return result
 
-# 带验证的全局Buff（建议在别处翻译具体逻辑）
+# 带验证的GlobalBuff（建议在别处翻译具体逻辑）
 def env_gbuff_new_with_verify(selector,blackboard):
     result = env_gbuff_new(selector,blackboard)
     return result

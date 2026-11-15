@@ -14,7 +14,7 @@ def CheckContainsBuff(node,blackboard):
         condition += f"持有黑板 [buff_key] 记载的buff"
     elif node["isAND"]: # 与模式
         if len(node["_buffKeys"]) > 1:
-            buffs = '、'.join([f"<buff|{key}>" for key in node['_buffKeys']])
+            buffs = '、'.join([f"<Buff|{key}>" for key in node['_buffKeys']])
             if node["_checkBuffSource"]:
                 source_name = enum_dictionary("target",node["_buffSourceType"])
                 condition += f"同时持有来自{source_name}的 {buffs} Buff"
@@ -27,12 +27,12 @@ def CheckContainsBuff(node,blackboard):
                 source_name = enum_dictionary("target",node["_buffSourceType"])
                 if node["_checkSourceHost"]:
                     source_name = source_name+"（召唤物）的主人"
-                condition += f"持有来自{source_name}的 <buff|{node['_buffKeys'][0]}> Buff"
+                condition += f"持有来自{source_name}的 <Buff|{node['_buffKeys'][0]}> Buff"
             else:
-                condition += f"持有 <buff|{node['_buffKeys'][0]}> Buff"
+                condition += f"持有 <Buff|{node['_buffKeys'][0]}> Buff"
     else: # 或模式
         if len(node["_buffKeys"]) > 1:
-            buffs = '、'.join([f"<buff|{key}>" for key in node['_buffKeys']])
+            buffs = '、'.join([f"<Buff|{key}>" for key in node['_buffKeys']])
             if node["_checkBuffSource"]:
                 source_name = enum_dictionary("target",node["_buffSourceType"])
                 if node["_checkSourceHost"]:
@@ -47,9 +47,9 @@ def CheckContainsBuff(node,blackboard):
                 source_name = enum_dictionary("target",node["_buffSourceType"])
                 if node["_checkSourceHost"]:
                     source_name = source_name+"（召唤物）的主人"
-                condition += f"持有来自{source_name}的 <buff|{node['_buffKeys'][0]}> Buff"
+                condition += f"持有来自{source_name}的 <Buff|{node['_buffKeys'][0]}> Buff"
             else:
-                condition += f"持有 <buff|{node['_buffKeys'][0]}> Buff"
+                condition += f"持有 <Buff|{node['_buffKeys'][0]}> Buff"
     if condition != "" :
         return {
             "main" : condition,
@@ -68,7 +68,7 @@ def CheckContainsBuff(node,blackboard):
 def CheckContainsDerviedBuff(node,blackboard):
     if node["_derviedBuffKey"] != None and node["_derviedBuffKey"] != "":
         return {
-            "main" : f"检查持有者是否同时持有本Buff的附属Buff <buff|{node['_derviedBuffKey']}>",
+            "main" : f"检查持有者是否同时持有本Buff的附属Buff <Buff|{node['_derviedBuffKey']}>",
             "link" : f"buff.{node['_derviedBuffKey']}",
             "true" : "其同时持有该附属Buff",
             "false" : "其不持有该附属Buff"
@@ -93,8 +93,8 @@ def CheckRemainTime(node,blackboard):
 def CheckMainBuffId(node,blackboard):
     return {
         "main" : "检查\"上下文\"中的那个Buff的名称",
-        "true" : f"该Buff名称为 <buff|{node['_idToFilter']}>",
-        "false" : f"该Buff名称不为 <buff|{node['_idToFilter']}>"
+        "true" : f"该Buff名称为 <Buff|{node['_idToFilter']}>",
+        "false" : f"该Buff名称不为 <Buff|{node['_idToFilter']}>"
     }
 
 # 检查Buff叠加层数
@@ -106,7 +106,7 @@ def FilterByBuffStackCount(node,blackboard):
     compare_not = enum_dictionary("compare_not",node["_condType"])
     features = []
     # 处理Buff对象
-    buff_name = f"名为 <buff|{node['_buffKey']}> Buff"
+    buff_name = f"名为 <Buff|{node['_buffKey']}> Buff"
     if node["_checkBuffSource"]:
         if node["_sourceType"] == "BUFF_SOURCE":
             buff_name = "相同来源的、" + buff_name

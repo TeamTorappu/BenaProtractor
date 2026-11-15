@@ -84,7 +84,7 @@ class Protractor:
         selected_table = next((key for key, label in LOAD_TYPES.items() if label == self.filter_var.get()), None)
         entries = self.catalog.visible(self.settings['show_hidden'])
         visible = [entry for entry in entries if (selected_table is None or entry.table == selected_table)
-                   and all(term in f'{entry.name} {entry.key} {entry.obj.catagory}'.casefold() for term in terms)]
+                   and all(term in entry.search_key for term in terms)]
         expanded = {}
 
         def remember_expansion(parent=''):
@@ -98,7 +98,7 @@ class Protractor:
             self.directory.delete(*roots)
         groups = {}
         for entry in visible:
-            category = getattr(entry.obj, 'catagory', type(entry.obj).__name__)
+            category = entry.catagory
             groups.setdefault(entry.table, {}).setdefault(category, []).append(entry)
         for table, categories in groups.items():
             group = 'table:' + table
@@ -142,17 +142,13 @@ class Protractor:
         self.update_history_buttons()
         self.workspace.set_document(entry)
         try:
-            document = entry.obj.translate() # translators[entry.category](copy.deepcopy(entry.obj))
+            document = entry.obj.translate()
         except Exception as error:
             log.exception('翻译失败: %s', target)
             document = {'main': entry.name, 'children': [{'main': '翻译失败', 'description': str(error)}]}
         self.translation.show(document, self.catalog)
         obj = entry.obj
-        if entry.category == 'rogue_item':
-            raw = {'item_info': obj.item_info, 'item_data': obj.item_data} if obj.has_effect else obj.item_info
-        else:
-            raw = {entry.key: obj.get_raw_data()}
-        self.source.show(raw)
+        self.source.show(obj.get_raw_data())
         self.sync_selection()
         if not self.busy:
             self.status.set(entry.target)

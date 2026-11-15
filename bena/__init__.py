@@ -7,7 +7,11 @@ CATALOG = None
 
 # 询问贝娜一个ID有没有对应的数据，若没有将原路返回
 def ask_bena(_type,input_id):
-    return CATALOG.groups.get(_type, {}).get(input_id)
+    #return CATALOG.groups.get(_type, {}).get(input_id)
+    entry = CATALOG.entries.get(f'{_type}.{input_id}')
+    if entry != None:
+        return entry.obj
+    return None
 
 # 询问贝娜一个角色ID有没有对应的名字，若没有将原路返回
 def ask_bena_character(character_id: str):

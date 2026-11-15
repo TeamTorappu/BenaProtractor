@@ -14,7 +14,7 @@ from anne.autochess_garrison import AutochessGarrison
 # 准备工作
 def prepare_tables(catalog):
     if app_path_file_missing("table_dummies", "global_buff_dummy.json"):
-        print("[贝娜]全局Buff伪表不存在...没办法加载全局Buff，可能会影响藏品机制翻译")
+        print("[贝娜]GlobalBuff伪表不存在...没办法加载GlobalBuff，可能会影响藏品机制翻译")
     if app_path_file_exists("tables","activity_table.json") and app_path_file_missing("table_dummies", "activity_table_autochess.json"):
         split_activity_table()
 
@@ -44,15 +44,34 @@ def load_tables(catalog):
     # Buff模板表加载
     with open(app_path("tables","buff_template_data.json"), encoding="utf-8") as _f:
         for key, data in json.load(_f).items():
-            catalog.add("buff_template", key, BuffTemplate(key, data), "buff")
+            catalog.add("buff", key, BuffTemplate(key, data))
 
-    # Dummy表加载
+    # GlobalBuff表加载
     if app_path_file_exists("table_dummies", "global_buff_dummy.json"):
         with open(app_path("table_dummies", "global_buff_dummy.json"), encoding="utf-8") as _f:
             for key, data in json.load(_f).items():
-                catalog.add("global_buff", key, GlobalBuff(key, data), "buff")
+                catalog.add("buff", key, GlobalBuff(key, data))
                 
-    if app_path_file_exists("table_dummies", "activity_table_autochess.json"):
+    catalog.loaded_tables.add("buff")
+    
+
+    # 加载肉鸽季度
+    seasons = [t for t in catalog.tables if t.startswith("rogue_")]
+    if seasons:
+        with open(app_path("tables", "roguelike_topic_table.json"), encoding="utf-8") as _f:
+            details = json.load(_f)["details"]
+            for season in seasons:
+                if season not in details:
+                    catalog.warnings.append(f"数据中尚无 {season}")
+            for season, data in details.items():
+                if not season.startswith("rogue_"):
+                    continue
+                for key, info in data.get("items", {}).items():
+                    catalog.add(season, key, RogueItem(season, key, info, data.get("relics", {}).get(key)))
+                catalog.loaded_tables.add(season)
+            
+    # 加载卫戍协议
+    if "autochess_3" in catalog.tables and app_path_file_exists("table_dummies", "activity_table_autochess.json"):
         with open(app_path("table_dummies", "activity_table_autochess.json"), encoding="utf-8") as _f:
             json_data = json.load(_f)
             act_data = json_data["activity"]["act3autochess"]["V3_1"]
@@ -84,34 +103,17 @@ def load_tables(catalog):
                     catalog.add("autochess_3", key, AutochessBand(key, data, band_info, band_effect))
                 else:
                     catalog.add("autochess_3", key, AutochessBand(key, data, band_info))
+        catalog.loaded_tables.add("autochess_3")
 
-    catalog.loaded_tables.add("buff")
-
-    # 加载肉鸽季度
-    seasons = [t for t in catalog.tables if t.startswith("rogue_")]
-    if seasons:
-        with open(app_path("tables", "roguelike_topic_table.json"), encoding="utf-8") as _f:
-            details = json.load(_f)["details"]
-            for season in seasons:
-                if season not in details:
-                    catalog.warnings.append(f"数据中尚无 {season}")
-            # All themes share one file. Keep their contents available while
-            # table preferences only control which groups are shown.
-            for season, data in details.items():
-                if not season.startswith("rogue_"):
-                    continue
-                for key, info in data.get("items", {}).items():
-                    catalog.add("rogue_item", key, RogueItem(season, key, info, data.get("relics", {}).get(key)), season)
-                catalog.loaded_tables.add(season)
-
+# 后处理table
 def install_tables(catalog):
     from bena.translate_buff_name import translate_buff_name
     for entry in catalog.entries.values():
-        if entry.category in ["buff","buff_template","global_buff"]:
+        if entry.table in ["buff","buff_template","global_buff"]:
             entry.obj.display_name = translate_buff_name(entry.key)
         else:
             entry.obj.display_name = entry.obj.get_display_name()
     catalog.names = {}
     for entry in catalog.entries.values():
-        if entry.category != "rogue_item":
+        if not entry.table.startswith("rogue_"):
             catalog.names.setdefault(entry.name, []).append(entry)

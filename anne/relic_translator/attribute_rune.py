@@ -49,10 +49,10 @@ def layer_char_attribute_mul(item_type,blackboard):
     # 依照持有的“物品”数量增加角色属性
     if "stack_by_res" in blackboard:
         need_item_key = blackboard["stack_by_res"]
-        need_item = ask_bena("rogue_item",need_item_key)
+        need_item = ask_bena("RogueItem",need_item_key)
         need_var = math.floor(blackboard["stack_by_res_cnt"])
         return {
-            "main" : f"{timing}每有{need_var}个 <rogue_item|{need_item_key}>（向下取整），{selector}{'、'.join(modifiers)}{hint}",
+            "main" : f"{timing}每有{need_var}个 <RogueItem|{need_item_key}>（向下取整），{selector}{'、'.join(modifiers)}{hint}",
             "link" : "rogue_item." + need_item_key
         }
     else: # 普通叠层
@@ -73,10 +73,10 @@ def layer_char_attribute_add(item_type,blackboard):
     # 依照持有的“物品”数量增加角色属性
     if "stack_by_res" in blackboard:
         need_item_key = blackboard["stack_by_res"]
-        need_item = ask_bena("rogue_item",need_item_key)
+        need_item = ask_bena("RogueItem",need_item_key)
         need_var = math.floor(blackboard["stack_by_res_cnt"])
         return {
-            "main" : f"{timing}每有{need_var}个 <rogue_item|{need_item_key}>（向下取整），{selector}{'、'.join(modifiers)}{hint}",
+            "main" : f"{timing}每有{need_var}个 <RogueItem|{need_item_key}>（向下取整），{selector}{'、'.join(modifiers)}{hint}",
             "link" : "rogue_item." + need_item_key
         }
     else: # 普通叠层

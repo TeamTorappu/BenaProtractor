@@ -40,25 +40,20 @@ class ReferenceSafetyTests(unittest.TestCase):
                 with self.subTest(category=category):
                     parts = reference_parts('<' + category + '|same_id>', self.catalog)
                     self.assertEqual([t for _, t in parts if t], [category + '.same_id'])
-
-    def test_autochess_digit_category_is_parsed_as_link(self):
-        self.catalog.add('autochess_3', 'same_id', Buff('same_id', {}))
-        self.assertEqual(reference_parts('<autochess_3|same_id>', self.catalog),
-                         [('same_id', 'autochess_3.same_id')])
-
+                    
     def test_invalid_markers_are_literal(self):
-        for text in ('<bogus|same_id>', '<|same_id>', '<buff|>', '<buff||same_id>'):
+        for text in ('<bogus|same_id>', '<|same_id>', '<Buff|>', '<Buff||same_id>'):
             with self.subTest(text=text):
                 self.assertLiteral(text)
 
     def test_missing_targets_never_fall_back_to_other_categories_or_names(self):
-        for text in ('<global_buff|only_buff>', '<rogue_item|buff.same_id>',
-                     '<rogue_item|“庇护”>', '<buff_template|庇护>'):
+        for text in ('<GlobalBuff|only_buff>', '<RogueItem|buff.same_id>',
+                     '<RogueItem|“庇护”>', '<BuffTemplate|庇护>'):
             with self.subTest(text=text):
                 self.assertFalse(any(t for _, t in reference_parts(text, self.catalog)))
 
     def test_relic_raw_key_links_to_relic(self):
-        parts = reference_parts('<rogue_item|rogue_6_relic_fight_7>', self.catalog)
+        parts = reference_parts('<RogueItem|rogue_6_relic_fight_7>', self.catalog)
         self.assertEqual(parts, [('“庇护”', 'rogue_item.rogue_6_relic_fight_7')])
 
     def test_plain_text_and_untyped_markers_never_link(self):
@@ -69,10 +64,10 @@ class ReferenceSafetyTests(unittest.TestCase):
                 self.assertLiteral(text)
 
     def test_prefab_only_buff_name_translation_does_not_create_a_link(self):
-        self.assertEqual(reference_parts('<buff|enemy_damage>', self.catalog),
+        self.assertEqual(reference_parts('<Buff|enemy_damage>', self.catalog),
                          [('敌方_伤害（enemy_damage）', None)])
         with patch('document_model.bena.translate_buff_name', return_value='庇护'):
-            self.assertEqual(reference_parts('<buff|prefab_only_id>', self.catalog),
+            self.assertEqual(reference_parts('<Buff|prefab_only_id>', self.catalog),
                              [('庇护（prefab_only_id）', None)])
 
     def test_prts_links_also_require_explicit_markers(self):

@@ -189,17 +189,16 @@ class Workspace:
     def set_document(self, entry):
         app = self.app
         app.window.title(f'{entry.name} - 贝娜的量角器')
-        files = {'buff': 'buff_table.json', 'buff_template': 'buff_template_data.json',
-            'global_buff': 'global_buff_dummy.json', 'rogue_item': 'roguelike_topic_table.json',
-            'autochess_3': 'activity_table_autochess.json'
-        }
-        app.breadcrumb.configure(text=files.get(entry.category,"what_is_this.json"))
+        #files = {'buff': 'buff_table.json', 'buff_template': 'buff_template_data.json',
+        #    'global_buff': 'global_buff_dummy.json', 'rogue_item': 'roguelike_topic_table.json',
+        #    'autochess_3': 'activity_table_autochess.json'
+        #}
+        #app.breadcrumb.configure(text=files.get(entry.table,"what_is_this.json"))
         app.key_label.configure(text='›  ' + entry.key)
         children = app.properties.get_children()
         if children:
             app.properties.delete(*children)
-        template = getattr(entry.obj, 'buff_data', {}).get('templateKey', '')
-        for key, value in [('名称', entry.name), ('ID', entry.key), ('Table', entry.table), ('模板', template)]:
+        for key, value in [('名称', entry.name), ('ID', entry.key), ('类型', entry.type_name)]:
             app.properties.insert('', 'end', text=key, values=(value,))
 
     def apply_palette(self):
