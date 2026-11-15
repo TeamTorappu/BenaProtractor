@@ -45,15 +45,13 @@ class Node:
         except Exception as e:
             print(f"[安妮]... {self.node_name} 节点翻译失败了")
             traceback.print_exc()
-            translation = {
-                "main" : self.node_name+"（翻译失败）",
-                "style_closed" : True,
-            }
+            translation = {"main" : self.node_name+"（翻译失败）"}
         # 返回译文
         return translation
     
     # 假翻译（仅把结构保留下来，通常是因为还没翻译）
     def fake_translate(self,blackboard={}):
+        from anne.action import Action
         children = []
         for key,content in self.node_data.items():
             if isinstance(content,dict): # 如果是子节点或者buff，还是要嵌套翻译一下试试的
@@ -79,14 +77,9 @@ class Node:
                         children.append({"main" : str(key) + " : {}"})
             elif isinstance(content,list): # 可能是子节点列表或者buff列表？
                 if len(content) > 0 and "$type" in content[0]: # 子节点列表
-                    sub_content_list = []
-                    for sub_content in content:
-                        new_node = Node(sub_content)
-                        if new_node != None:
-                            sub_content_list.append(new_node)
-                    sub_node_list = Node.translate_list(sub_content_list,blackboard)
-                    sub_node_list["main"] = str(key) + " : " + sub_node_list["main"]
-                    children.append(sub_node_list)
+                    sub_action = Action(content).translate(blackboard)
+                    sub_action["main"] = str(key) + " : " + sub_action["main"]
+                    children.append(sub_action)
                 elif len(content) > 0 and "attributes" in content[0]: # 附属Buff列表
                     children_children = []
                     for scontent in content:
@@ -111,6 +104,5 @@ class Node:
                 children.append({"main": str(key) + " : " + str(content)})
         return {
             "main" : self.node_name+"（未翻译）",
-            "style_closed" : True,
             "children" : children
         }

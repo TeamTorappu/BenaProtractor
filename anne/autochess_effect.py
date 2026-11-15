@@ -23,7 +23,7 @@ class AutochessEffect:
         self.effect_type = effect_info["effectType"]
         self.effect_runes = [Rune(rune_data) for rune_data in effect_buff_info]
         self.display_name = ""
-        self.catagory = EFFECT_TYPE[self.effect_type] if self.effect_type in EFFECT_TYPE else "卫戍效果"
+        self.catagory = EFFECT_TYPE[self.effect_type] if self.effect_type in EFFECT_TYPE else "卫戍协议机制"
         self.hidden = False
 
     # 获取显示名
@@ -48,6 +48,7 @@ class AutochessEffect:
             "children" : []
         }
         result["children"].append({"main" : self.effect_info["effectDesc"].replace("\\n","\n")})
+        rune_translation = {"main" : self.catagory + "效果（符文）：","children" : []}
         for rune in self.effect_runes:
             if rune.rune_key == "enve_gbuff_new_with_verify":
                 gbuff_translation = rune.translate()
@@ -55,7 +56,8 @@ class AutochessEffect:
                 if self.effect_type == "EQUIP": # 卫戍装备，对装备的单位生效
                     new_info = "将对穿戴装备的单位生效"
                 gbuff_translation["main"] = gbuff_translation["main"].replace("将生效",new_info)
-                result["children"].append(gbuff_translation)
+                rune_translation["children"].append(gbuff_translation)
             else:
-                result["children"].append(rune.translate())
+                rune_translation["children"].append(rune.translate())
+        result["children"].append(rune_translation)
         return result

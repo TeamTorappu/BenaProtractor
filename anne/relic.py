@@ -53,7 +53,6 @@ class Relic:
             prefix = analyze_relic_timing(self.type,self.blackboard)
             translation = {
                 "main" : prefix+effect_key+"（未翻译）",
-                "style_closed" : True,
                 "children" : []
             }
             for key,bb in self.blackboard.items():
