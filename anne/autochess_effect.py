@@ -7,8 +7,8 @@ from anne.rune import Rune
 EFFECT_TYPE = {
     "BAND_SKILL" : "策略技能",
     "CHAR_MAP" : "干员养成加成",
-    "BOND" : "盟约效果",
-    "EQUIP" : "装备效果",
+    "BOND" : "盟约",
+    "EQUIP" : "装备",
     "ENEMY_GAIN" : "悬赏决策",
     "ENEMY" : "敌方强化",
     "BUFF_GAIN" : "战术决策",
